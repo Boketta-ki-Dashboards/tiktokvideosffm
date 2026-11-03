@@ -98,7 +98,9 @@ export const TikTokSubtitles: React.FC<TikTokSubtitlesProps> = ({
 			{pages.map((page, index) => {
 				const next = pages[index + 1];
 				const startFrame = Math.round((page.startMs / 1000) * fps);
-				const endMs = Math.min(next ? next.startMs : Infinity, page.startMs + page.durationMs + 400);
+				// Seite endet kurz nach ihrem letzten Wort (nicht erst beim nächsten Satz) → keine „hängenden“ Untertitel in Pausen
+				const lastWordEnd = page.tokens.length > 0 ? page.tokens[page.tokens.length - 1].toMs : page.startMs + page.durationMs;
+				const endMs = Math.min(next ? next.startMs : Infinity, lastWordEnd + 350);
 				const endFrame = Math.round((endMs / 1000) * fps);
 				const durationInFrames = Math.max(1, endFrame - startFrame);
 				return (

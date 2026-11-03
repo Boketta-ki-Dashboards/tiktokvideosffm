@@ -6,7 +6,7 @@ import {SoundEffect, Voiceover} from '../../components/audio/Voiceover';
 import {GrainOverlay} from '../../components/backgrounds/GrainOverlay';
 import {SafeAreaGuides} from '../../components/layout/SafeArea';
 import {TikTokSubtitles} from '../../components/subtitles/TikTokSubtitles';
-import {flashCut, whipPan, zoomThrough} from '../../components/transitions/presentations';
+import {circleReveal, flashCut, whipPan, zoomThrough} from '../../components/transitions/presentations';
 import type {VoiceoverManifest} from '../../lib/script-timing';
 import {buildTimeline, type SceneSpec, type Timeline} from '../../lib/timeline';
 import {ensureFontsLoaded} from '../../theme/fonts';
@@ -15,6 +15,8 @@ import type {Cues} from './cues';
 import {EscalationScene} from './scenes/EscalationScene';
 import {IntroScene} from './scenes/IntroScene';
 import {MediaScene} from './scenes/MediaScene';
+import {NightMapScene} from './scenes/NightMapScene';
+import {OutroScene} from './scenes/OutroScene';
 import {ProtestScene} from './scenes/ProtestScene';
 import {WorldScene} from './scenes/WorldScene';
 import script from './script.json';
@@ -23,27 +25,38 @@ import voiceoverManifest from './voiceover.json';
 ensureFontsLoaded();
 
 export const FRANKFURT_SCENES: SceneSpec[] = [
-	{id: 'intro', segmentIds: ['intro'], minSeconds: 2.6},
+	{id: 'intro', segmentIds: ['intro'], minSeconds: 2.2},
 	{id: 'protest', segmentIds: ['protest'], transitionInFrames: 10},
-	{id: 'escalation', segmentIds: ['escalation', 'bilanz'], transitionInFrames: 8},
+	{id: 'nightmap', segmentIds: ['escalation', 'shop1', 'shop2', 'shop3', 'shop4'], transitionInFrames: 8},
+	{id: 'bilanz', segmentIds: ['bilanz'], transitionInFrames: 12},
 	{id: 'world', segmentIds: ['media1', 'media2'], transitionInFrames: 14},
 	{id: 'media', segmentIds: [], startAfterSegment: {id: 'media2', offsetMs: 250}, transitionInFrames: 12},
+	{id: 'outro', segmentIds: ['outro'], transitionInFrames: 14},
 ];
+
+/** Schlüsselwörter, deren Zeitpunkt eine Szene für Animationen braucht (z. B. Tippen auf das Plus). */
+const SCENE_KEYWORDS: Record<string, string[]> = {
+	outro: ['Plus', 'Kommentare'],
+};
 
 const SCENE_COMPONENTS: Record<string, React.FC<{cues: Cues; durationInFrames: number}>> = {
 	intro: IntroScene,
 	protest: ProtestScene,
-	escalation: EscalationScene,
+	nightmap: NightMapScene,
+	bilanz: EscalationScene,
 	world: WorldScene,
 	media: MediaScene,
+	outro: OutroScene,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const TRANSITIONS: Record<string, TransitionPresentation<any>> = {
 	protest: whipPan({direction: 'left'}),
-	escalation: flashCut({color: '#FFFFFF'}),
+	nightmap: flashCut({color: '#FFFFFF'}),
+	bilanz: whipPan({direction: 'left'}),
 	world: zoomThrough({strength: 0.4}),
 	media: whipPan({direction: 'up'}),
+	outro: circleReveal({x: '50%', y: '43%'}),
 };
 
 export const frankfurtSchema = z.object({
@@ -87,7 +100,7 @@ export const calculateFrankfurtMetadata: CalculateMetadataFunction<FrankfurtProp
 	};
 };
 
-const cuesFor = (sceneFrom: number, segmentIds: string[], manifest: VoiceoverManifest, fps: number): Cues => {
+const cuesFor = (sceneFrom: number, sceneId: string, segmentIds: string[], manifest: VoiceoverManifest, fps: number): Cues => {
 	const cues: Cues = {};
 	for (const s of manifest.segments) {
 		if (segmentIds.includes(s.id)) {
@@ -98,7 +111,26 @@ const cuesFor = (sceneFrom: number, segmentIds: string[], manifest: VoiceoverMan
 		}
 	}
 
+	const keywords = SCENE_KEYWORDS[sceneId];
+	if (keywords) {
+		const words: Record<string, number> = {};
+		for (const k of keywords) {
+			const hit = manifest.captions.find((c) => c.text.trim().replace(/[.,:;!?–]/g, '').startsWith(k));
+			if (hit) {
+				words[k] = Math.round((hit.startMs / 1000) * fps) - sceneFrom;
+			}
+		}
+
+		cues.words = words;
+	}
+
 	return cues;
+};
+
+/** Absoluter Frame eines Wortes (für Soundeffekte). */
+const wordAt = (manifest: VoiceoverManifest, word: string, fps: number) => {
+	const hit = manifest.captions.find((c) => c.text.trim().replace(/[.,:;!?–]/g, '').startsWith(word));
+	return hit ? Math.round((hit.startMs / 1000) * fps) : null;
 };
 
 export const FrankfurtHeadlines: React.FC<FrankfurtProps> = ({subtitles, sfx, voiceVolume, showSafeArea, voiceover, timeline}) => {
@@ -124,7 +156,7 @@ export const FrankfurtHeadlines: React.FC<FrankfurtProps> = ({subtitles, sfx, vo
 
 					items.push(
 						<TransitionSeries.Sequence key={scene.id} name={`Szene: ${scene.id}`} durationInFrames={scene.durationInFrames}>
-							<Scene cues={cuesFor(scene.from, spec.segmentIds, voiceover, fps)} durationInFrames={scene.durationInFrames} />
+							<Scene cues={cuesFor(scene.from, scene.id, spec.segmentIds, voiceover, fps)} durationInFrames={scene.durationInFrames} />
 						</TransitionSeries.Sequence>,
 					);
 					return items;
@@ -140,12 +172,16 @@ export const FrankfurtHeadlines: React.FC<FrankfurtProps> = ({subtitles, sfx, vo
 				? plan.scenes.slice(1).map((s) => (
 						<SoundEffect
 							key={`sfx-${s.id}`}
-							src={s.id === 'escalation' ? 'sfx/impact.wav' : 'sfx/whoosh.wav'}
+							src={s.id === 'nightmap' ? 'sfx/impact.wav' : 'sfx/whoosh.wav'}
 							at={Math.max(0, s.cutFrame - 6)}
 							volume={0.35}
 						/>
 					))
 				: null}
+
+			{sfx && wordAt(voiceover, 'Plus', fps) !== null ? (
+				<SoundEffect src="sfx/pop.wav" at={(wordAt(voiceover, 'Plus', fps) ?? 0) + 6} volume={0.6} name="Tippen auf Plus" />
+			) : null}
 
 			{showSafeArea ? <SafeAreaGuides /> : null}
 		</AbsoluteFill>

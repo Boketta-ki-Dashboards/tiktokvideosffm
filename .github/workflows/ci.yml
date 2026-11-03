@@ -37,7 +37,7 @@ jobs:
         run: npx remotion browser ensure
 
       - name: Testbilder rendern (Smoke-Test)
-        run: node scripts/render-still.mjs --comp FrankfurtHeadlines --frames 30,250,450,580 --scale 0.5
+        run: node scripts/render-still.mjs --comp FrankfurtHeadlines --frames 30,330,560,960,1250,1650 --scale 0.5
 
       - name: Testbilder hochladen
         uses: actions/upload-artifact@v4

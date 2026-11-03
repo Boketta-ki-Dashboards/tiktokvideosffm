@@ -16,12 +16,13 @@ on:
         default: FrankfurtHeadlines
         type: string
       voice:
-        description: "Sprecherspur: repo = vorhandene Spur · import = voice-input/<video_id>.mp3|wav|m4a · piper = kostenlos neu erzeugen · none = stumm"
+        description: "Sprecherspur: repo = vorhandene Spur · chatterbox = natürliche Stimme neu erzeugen (≈ 10–20 min) · import = voice-input/<video_id>.mp3|wav|m4a · piper = schnelle Roboterstimme · none = stumm"
         required: true
         default: repo
         type: choice
         options:
           - repo
+          - chatterbox
           - import
           - piper
           - none
@@ -52,7 +53,7 @@ jobs:
   render:
     name: Rendern & prüfen
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    timeout-minutes: 75
     env:
       # Standardwerte greifen beim PR-Selbsttest (dort gibt es keine Eingaben)
       COMPOSITION: ${{ inputs.composition || 'FrankfurtHeadlines' }}
@@ -93,11 +94,24 @@ jobs:
         run: npm run typecheck
 
       # ---------- Stimme ----------
-      - name: Python für Piper einrichten
-        if: env.VOICE_MODE == 'piper'
+      - name: Python für Sprachsynthese einrichten
+        if: env.VOICE_MODE == 'piper' || env.VOICE_MODE == 'chatterbox'
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
+      - name: Chatterbox-Modell aus Cache laden (≈ 3 GB)
+        if: env.VOICE_MODE == 'chatterbox'
+        uses: actions/cache@v4
+        with:
+          path: .cache/huggingface
+          key: chatterbox-multilingual-model-v1
+
+      - name: Natürliche Stimme mit Chatterbox erzeugen (kostenlos, lokal, Vorlage CC0)
+        if: env.VOICE_MODE == 'chatterbox'
+        run: |
+          bash scripts/voice/setup-chatterbox.sh
+          node scripts/voice/chatterbox-tts.mjs --video "$VIDEO_ID"
 
       - name: Piper-Stimmmodell aus Cache laden
         if: env.VOICE_MODE == 'piper'
@@ -146,6 +160,11 @@ jobs:
         run: |
           AUDIO_FLAG=""
           [ "$VOICE_MODE" = "none" ] && AUDIO_FLAG="--allow-no-audio"
+          # Neu erzeugte Sprecherspur mitliefern (zum Übernehmen ins Repository)
+          if [ "$VOICE_MODE" = "chatterbox" ] || [ "$VOICE_MODE" = "piper" ] || [ "$VOICE_MODE" = "import" ]; then
+            cp "public/voiceover/${VIDEO_ID}/voiceover.mp3" "output/${VIDEO_ID}-voiceover.mp3" || true
+            cp "src/videos/${VIDEO_ID}/voiceover.json" "output/${VIDEO_ID}-voiceover.json" || true
+          fi
           node scripts/render.mjs "$COMPOSITION" \
             --out "output/${COMPOSITION}.mp4" \
             --crf "$CRF" \
@@ -174,6 +193,7 @@ jobs:
           name: ${{ inputs.composition || 'FrankfurtHeadlines' }}-run${{ github.run_number }}
           path: |
             output/*.mp4
+            output/*.mp3
             output/*.png
             output/*.json
           if-no-files-found: error

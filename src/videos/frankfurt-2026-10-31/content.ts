@@ -55,8 +55,8 @@ export const DEMANDS = {
 
 /** Bilanz laut Polizei / hessischem Innenministerium (hessenschau.de, 01.11.2026). */
 export const TOLL = {
-	place: 'Zeil · Frankfurter Innenstadt',
-	when: 'Abend des 31. Oktober 2026',
+	place: 'Polizei & Innenministerium',
+	when: 'Angaben vom 01.11.2026',
 	stats: [
 		{value: 54, label: 'Festnahmen', attribution: 'Polizei / Innenministerium'},
 		{value: 100, prefix: 'rund ', label: 'verletzte Polizisten', attribution: 'laut Innenminister Poseck'},
@@ -167,3 +167,110 @@ export const HEADLINES = [
 export const MORE_OUTLETS = ['Euronews', 'The Korea Times', 'Business Today', 'Arab News'];
 
 export const FINAL_SOURCES = ['hessenschau.de', 'Reuters', 'AFP/France 24', 'Euronews', 'ABC News'];
+
+export type NightEvent = {
+	id: string;
+	segment: 'shop1' | 'shop2' | 'shop3' | 'shop4';
+	title: string;
+	status: string;
+	/** Angezeigte Uhrzeit – nur so genau, wie belegt. */
+	time: string;
+	timeKind: 'Meldung' | 'Alarm laut Inhaber';
+	/** Lage laut OpenStreetMap (Snipes, Laufshop, 43einhalb) bzw. nur Straße/Platz, wenn das Geschäft nicht genannt wird. */
+	at: [number, number];
+	icon: 'shoe' | 'perfume' | 'shield' | 'run';
+	labelOffset: [number, number];
+	labelAlign: 'left' | 'right' | 'center';
+};
+
+/**
+ * Die Nacht in der Innenstadt – NUR belegte, in Medien genannte Fälle.
+ * Uhrzeiten = Zeitpunkt der Meldung im hessenschau.de-Liveticker (Ereignis kann etwas früher liegen),
+ * beim Laufshop die Alarmzeit laut Inhaber. Siehe references/frankfurt-2026-10-31/sources.md.
+ */
+export const NIGHT_EVENTS: NightEvent[] = [
+	{
+		id: 'snipes',
+		segment: 'shop1',
+		title: 'Snipes',
+		status: 'geplündert · Zeil',
+		time: '21:41',
+		timeKind: 'Meldung',
+		at: [50.1143647, 8.6837118],
+		icon: 'shoe',
+		labelOffset: [36, -70],
+		labelAlign: 'left',
+	},
+	{
+		id: 'parfum',
+		segment: 'shop2',
+		title: 'Parfümgeschäft',
+		status: 'stark beschädigt · Liebfrauenberg',
+		time: '22:37',
+		timeKind: 'Meldung',
+		at: [50.1128375, 8.6816387],
+		icon: 'perfume',
+		labelOffset: [-36, -64],
+		labelAlign: 'right',
+	},
+	{
+		id: 'waffen',
+		segment: 'shop2',
+		title: 'Waffengeschäft',
+		status: 'angegriffen · Berliner Straße',
+		time: '22:37',
+		timeKind: 'Meldung',
+		at: [50.1118278, 8.6822265],
+		icon: 'shield',
+		labelOffset: [36, 70],
+		labelAlign: 'left',
+	},
+	{
+		id: 'laufshop',
+		segment: 'shop3',
+		title: 'Frankfurter Laufshop',
+		status: 'Einbruch · Große Friedberger Str.',
+		time: 'kurz vor 23 Uhr',
+		timeKind: 'Alarm laut Inhaber',
+		at: [50.1163831, 8.6859088],
+		icon: 'run',
+		labelOffset: [-36, -66],
+		labelAlign: 'right',
+	},
+	{
+		id: '43einhalb',
+		segment: 'shop4',
+		title: '43einhalb',
+		status: 'Scheibe eingeschlagen · Eschenheimer Tor',
+		time: '00:47',
+		timeKind: 'Meldung',
+		at: [50.1167128, 8.6801031],
+		icon: 'shoe',
+		labelOffset: [36, 66],
+		labelAlign: 'left',
+	},
+];
+
+export const NIGHT_MAP = {
+	kicker: 'DIE NACHT IN DER INNENSTADT',
+	/** Polizei räumt den Bereich Hauptwache – Konstablerwache (hessenschau-Liveticker 22:03). */
+	clearing: {street: 'Zeil', time: '22:03', label: 'Polizei räumt die Zeil'},
+	/** Polizeimitteilung 23:27: Krawalle verlagern sich u. a. zum Eschenheimer Tor. */
+	hotspot: {at: [50.1173865, 8.679264] as [number, number], time: '23:27', label: 'Krawalle verlagern sich'},
+	places: {
+		hauptwache: [50.1138071, 8.6791483] as [number, number],
+		konstablerwache: [50.1146301, 8.6868253] as [number, number],
+		eschenheimerTor: [50.1173865, 8.679264] as [number, number],
+		center: [50.1139, 8.6826] as [number, number],
+	},
+	footnote:
+		'Polizei: 5 Geschäfte geplündert – welche, wurde nicht veröffentlicht. Gezeigt: in Medien genannte Fälle. Linie = Reihenfolge der Meldungen, keine belegte Laufroute.',
+	sources: ['hessenschau.de-Liveticker 31.10./01.11.2026', 'hessenschau.de 01.11.2026', 'TextilWirtschaft 01.11.2026'],
+};
+
+export const OUTRO = {
+	title: 'Danke fürs Zusehen!',
+	channelName: 'SmokingTikTok',
+	initials: 'ST',
+	commentPrompt: 'Welches Thema als Nächstes?',
+};

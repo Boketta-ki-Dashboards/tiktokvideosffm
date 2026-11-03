@@ -11,12 +11,13 @@
  *   src/videos/<video>/voiceover.json             (Segment-Timings + Untertitel)
  */
 import {spawnSync} from 'node:child_process';
-import {existsSync, mkdtempSync, rmSync, writeFileSync} from 'node:fs';
+import {existsSync, mkdtempSync, rmSync} from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import {estimateCaptionsForSegments, parseSegmentText} from '../../src/lib/script-timing.ts';
-import {durationSeconds, ffmpeg, masterVoice, trimSilenceFilter} from '../lib/ffmpeg.mjs';
-import {ensureDir, parseArgs, readScript, ROOT, writeManifest} from '../lib/project.mjs';
+import {parseSegmentText} from '../../src/lib/script-timing.ts';
+import {durationSeconds, ffmpeg, trimSilenceFilter} from '../lib/ffmpeg.mjs';
+import {parseArgs, readScript, ROOT} from '../lib/project.mjs';
+import {assembleVoiceTrack} from '../lib/voice-build.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 const videoId = args.video ?? 'frankfurt-2026-10-31';
@@ -38,17 +39,8 @@ if (!existsSync(piperBin) || !existsSync(model)) {
 const tmp = mkdtempSync(path.join(os.tmpdir(), 'piper-'));
 const SAMPLE_RATE = 22050;
 
-const silence = (ms, file) => {
-	ffmpeg(['-f', 'lavfi', '-i', `anullsrc=r=${SAMPLE_RATE}:cl=mono`, '-t', (ms / 1000).toFixed(3), '-c:a', 'pcm_s16le', file]);
-	return file;
-};
-
 try {
-	const parts = [];
-	const timings = [];
-	let cursorMs = script.leadInMs ?? 300;
-	parts.push(silence(cursorMs, path.join(tmp, 'lead.wav')));
-
+	const segments = [];
 	for (const [i, segment] of script.segments.entries()) {
 		const {spoken} = parseSegmentText(segment.text);
 		const raw = path.join(tmp, `${i}-raw.wav`);
@@ -63,40 +55,17 @@ try {
 
 		const trimmed = path.join(tmp, `${i}.wav`);
 		ffmpeg(['-i', raw, '-af', trimSilenceFilter(), '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', trimmed]);
-		const ms = Math.round(durationSeconds(trimmed) * 1000);
-		timings.push({id: segment.id, startMs: cursorMs, endMs: cursorMs + ms});
-		parts.push(trimmed);
-		cursorMs += ms;
-		console.log(`  ${segment.id.padEnd(12)} ${(ms / 1000).toFixed(2)} s  „${spoken}“`);
-
-		const pause = i < script.segments.length - 1 ? (segment.pauseAfterMs ?? 200) : 0;
-		if (pause > 0) {
-			parts.push(silence(pause, path.join(tmp, `${i}-pause.wav`)));
-			cursorMs += pause;
-		}
+		segments.push({id: segment.id, file: trimmed});
+		console.log(`  ${segment.id.padEnd(12)} ${durationSeconds(trimmed).toFixed(2)} s  „${spoken}“`);
 	}
 
-	const list = path.join(tmp, 'list.txt');
-	writeFileSync(list, parts.map((p) => `file '${p}'`).join('\n'));
-	const joined = path.join(tmp, 'joined.wav');
-	ffmpeg(['-f', 'concat', '-safe', '0', '-i', list, '-c:a', 'pcm_s16le', joined]);
-
-	const outDir = ensureDir(path.join(ROOT, 'public', 'voiceover', videoId));
-	const outFile = path.join(outDir, 'voiceover.mp3');
-	masterVoice(joined, outFile);
-
-	const manifest = {
-		version: 1,
+	const {outFile, manifestFile} = assembleVoiceTrack({
 		videoId,
+		script,
+		segments,
+		sampleRate: SAMPLE_RATE,
 		source: `piper:${voice} (length_scale ${lengthScale})`,
-		audioFile: `voiceover/${videoId}/voiceover.mp3`,
-		durationMs: timings[timings.length - 1].endMs,
-		segments: timings,
-		captions: estimateCaptionsForSegments(script, timings),
-		captionsSource: 'script-estimate',
-		generatedAt: new Date().toISOString(),
-	};
-	const manifestFile = writeManifest(videoId, manifest);
+	});
 	console.log(`✔ Sprecherspur: ${path.relative(ROOT, outFile)} (${durationSeconds(outFile).toFixed(2)} s)`);
 	console.log(`✔ Manifest:     ${path.relative(ROOT, manifestFile)}`);
 } finally {

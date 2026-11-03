@@ -80,9 +80,11 @@ export const VOICE_MASTER_FILTER = `${VOICE_EQ_FILTER},loudnorm=I=-14:TP=-1.5:LR
 /**
  * Zweistufige Lautheitsnormalisierung (EBU R128) auf −14 LUFS / −1,5 dBTP –
  * Standard für TikTok/Instagram. Timing bleibt exakt erhalten.
+ * Wichtig: Die Stimme wird VOR der Messung auf Stereo (Doppel-Mono) gelegt – so wird sie im Video
+ * abgespielt. Eine Mono-Messung wäre im fertigen Stereo-Video 3 dB zu laut.
  */
-export const masterVoice = (input, output, {extraFilter = '', codecArgs = ['-c:a', 'libmp3lame', '-b:a', '192k']} = {}) => {
-	const pre = [VOICE_EQ_FILTER, extraFilter].filter(Boolean).join(',');
+export const masterVoice = (input, output, {extraFilter = '', codecArgs = ['-c:a', 'libmp3lame', '-b:a', '128k', '-joint_stereo', '1']} = {}) => {
+	const pre = ['pan=stereo|c0=c0|c1=c0', VOICE_EQ_FILTER, extraFilter].filter(Boolean).join(',');
 	const res = spawnSync(
 		bin('ffmpeg'),
 		['-hide_banner', '-nostdin', '-i', input, '-af', `${pre},loudnorm=I=-14:TP=-1.5:LRA=7:print_format=json`, '-f', 'null', '-'],
@@ -91,6 +93,6 @@ export const masterVoice = (input, output, {extraFilter = '', codecArgs = ['-c:a
 	const json = res.stderr.slice(res.stderr.lastIndexOf('{'));
 	const m = JSON.parse(json.slice(0, json.indexOf('}') + 1));
 	const second = `loudnorm=I=-14:TP=-1.5:LRA=7:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`;
-	ffmpeg(['-i', input, '-af', `${pre},${second},aresample=48000`, '-ac', '1', ...codecArgs, output]);
+	ffmpeg(['-i', input, '-af', `${pre},${second},aresample=48000`, '-ac', '2', ...codecArgs, output]);
 	return {measuredLufs: Number(m.input_i)};
 };

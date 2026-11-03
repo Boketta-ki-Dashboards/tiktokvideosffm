@@ -118,7 +118,7 @@ try {
 	// 4: Ausgabe
 	const outDir = ensureDir(path.join(ROOT, 'public', 'voiceover', videoId));
 	const outFile = path.join(outDir, 'voiceover.mp3');
-	ffmpeg(['-i', work, '-af', `adelay=${leadInMs}:all=1`, '-ac', '1', '-c:a', 'libmp3lame', '-b:a', '192k', outFile]);
+	ffmpeg(['-i', work, '-af', `adelay=${leadInMs}:all=1`, '-ac', '2', '-c:a', 'libmp3lame', '-b:a', '128k', '-joint_stereo', '1', outFile]);
 
 	const manifest = {
 		version: 1,

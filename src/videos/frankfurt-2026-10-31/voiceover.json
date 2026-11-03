@@ -1,344 +1,782 @@
 {
 	"version": 1,
 	"videoId": "frankfurt-2026-10-31",
-	"source": "piper:de_DE-thorsten-high (length_scale 0.8)",
+	"source": "chatterbox-multilingual:thorsten-cc0-ref.flac (ex 0.7, cfg 0.3, tempo 1.08)",
 	"audioFile": "voiceover/frankfurt-2026-10-31/voiceover.mp3",
-	"durationMs": 17378,
+	"durationMs": 56381,
 	"segments": [
 		{
 			"id": "intro",
-			"startMs": 300,
-			"endMs": 2123
+			"startMs": 250,
+			"endMs": 2940
 		},
 		{
 			"id": "protest",
-			"startMs": 2603,
-			"endMs": 5759
+			"startMs": 3290,
+			"endMs": 7398
 		},
 		{
 			"id": "escalation",
-			"startMs": 5939,
-			"endMs": 9147
+			"startMs": 7648,
+			"endMs": 10628
+		},
+		{
+			"id": "shop1",
+			"startMs": 10928,
+			"endMs": 15165
+		},
+		{
+			"id": "shop2",
+			"startMs": 15415,
+			"endMs": 20284
+		},
+		{
+			"id": "shop3",
+			"startMs": 20534,
+			"endMs": 23721
+		},
+		{
+			"id": "shop4",
+			"startMs": 23971,
+			"endMs": 31015
 		},
 		{
 			"id": "bilanz",
-			"startMs": 9307,
-			"endMs": 12279
+			"startMs": 33315,
+			"endMs": 38376
 		},
 		{
 			"id": "media1",
-			"startMs": 12479,
-			"endMs": 14682
+			"startMs": 38726,
+			"endMs": 42529
 		},
 		{
 			"id": "media2",
-			"startMs": 14782,
-			"endMs": 17378
+			"startMs": 42649,
+			"endMs": 45986
+		},
+		{
+			"id": "outro",
+			"startMs": 48586,
+			"endMs": 56381
 		}
 	],
 	"captions": [
 		{
 			"text": "Frankfurt,",
-			"startMs": 300,
-			"endMs": 665,
-			"timestampMs": 483,
+			"startMs": 250,
+			"endMs": 788,
+			"timestampMs": 519,
 			"confidence": null
 		},
 		{
 			"text": " 31.",
-			"startMs": 665,
-			"endMs": 1394,
-			"timestampMs": 1030,
+			"startMs": 788,
+			"endMs": 1864,
+			"timestampMs": 1326,
 			"confidence": null
 		},
 		{
 			"text": " Oktober.",
-			"startMs": 1394,
-			"endMs": 2123,
-			"timestampMs": 1759,
+			"startMs": 1864,
+			"endMs": 2940,
+			"timestampMs": 2402,
 			"confidence": null
 		},
 		{
 			"text": " Tausende",
-			"startMs": 2603,
-			"endMs": 3048,
-			"timestampMs": 2826,
+			"startMs": 3290,
+			"endMs": 3869,
+			"timestampMs": 3580,
 			"confidence": null
 		},
 		{
 			"text": " junge",
-			"startMs": 3048,
-			"endMs": 3344,
-			"timestampMs": 3196,
+			"startMs": 3869,
+			"endMs": 4254,
+			"timestampMs": 4062,
 			"confidence": null
 		},
 		{
 			"text": " Menschen",
-			"startMs": 3344,
-			"endMs": 3640,
-			"timestampMs": 3492,
+			"startMs": 4254,
+			"endMs": 4640,
+			"timestampMs": 4447,
 			"confidence": null
 		},
 		{
 			"text": " demonstrieren –",
-			"startMs": 3640,
-			"endMs": 4366,
-			"timestampMs": 4003,
+			"startMs": 4640,
+			"endMs": 5585,
+			"timestampMs": 5113,
 			"confidence": null
 		},
 		{
 			"text": " laut",
-			"startMs": 4366,
-			"endMs": 4514,
-			"timestampMs": 4440,
+			"startMs": 5585,
+			"endMs": 5778,
+			"timestampMs": 5682,
 			"confidence": null
 		},
 		{
 			"text": " Polizei",
-			"startMs": 4514,
-			"endMs": 4959,
-			"timestampMs": 4737,
+			"startMs": 5778,
+			"endMs": 6357,
+			"timestampMs": 6068,
 			"confidence": null
 		},
 		{
 			"text": " rund",
-			"startMs": 4959,
-			"endMs": 5107,
-			"timestampMs": 5033,
+			"startMs": 6357,
+			"endMs": 6549,
+			"timestampMs": 6453,
 			"confidence": null
 		},
 		{
 			"text": " 8.000.",
-			"startMs": 5107,
-			"endMs": 5759,
-			"timestampMs": 5433,
+			"startMs": 6549,
+			"endMs": 7398,
+			"timestampMs": 6974,
 			"confidence": null
 		},
 		{
 			"text": " Am",
-			"startMs": 5939,
-			"endMs": 6082,
-			"timestampMs": 6011,
+			"startMs": 7648,
+			"endMs": 7935,
+			"timestampMs": 7792,
 			"confidence": null
 		},
 		{
 			"text": " Abend",
-			"startMs": 6082,
-			"endMs": 6367,
-			"timestampMs": 6225,
+			"startMs": 7935,
+			"endMs": 8508,
+			"timestampMs": 8222,
 			"confidence": null
 		},
 		{
 			"text": " eskaliert",
-			"startMs": 6367,
-			"endMs": 6794,
-			"timestampMs": 6581,
+			"startMs": 8508,
+			"endMs": 9367,
+			"timestampMs": 8938,
 			"confidence": null
 		},
 		{
 			"text": " die",
-			"startMs": 6794,
-			"endMs": 6937,
-			"timestampMs": 6866,
+			"startMs": 9367,
+			"endMs": 9654,
+			"timestampMs": 9511,
 			"confidence": null
 		},
 		{
-			"text": " Lage:",
-			"startMs": 6937,
-			"endMs": 7379,
-			"timestampMs": 7158,
+			"text": " Lage.",
+			"startMs": 9654,
+			"endMs": 10628,
+			"timestampMs": 10141,
 			"confidence": null
 		},
 		{
-			"text": " Auf",
-			"startMs": 7379,
-			"endMs": 7522,
-			"timestampMs": 7451,
+			"text": " Gegen",
+			"startMs": 10928,
+			"endMs": 11389,
+			"timestampMs": 11159,
+			"confidence": null
+		},
+		{
+			"text": " 21:40",
+			"startMs": 11389,
+			"endMs": 12194,
+			"timestampMs": 11792,
+			"confidence": null
+		},
+		{
+			"text": " Uhr",
+			"startMs": 12194,
+			"endMs": 13000,
+			"timestampMs": 12597,
+			"confidence": null
+		},
+		{
+			"text": " wird",
+			"startMs": 13000,
+			"endMs": 13231,
+			"timestampMs": 13116,
+			"confidence": null
+		},
+		{
+			"text": " Snipes",
+			"startMs": 13231,
+			"endMs": 13461,
+			"timestampMs": 13346,
+			"confidence": null
+		},
+		{
+			"text": " auf",
+			"startMs": 13461,
+			"endMs": 13691,
+			"timestampMs": 13576,
 			"confidence": null
 		},
 		{
 			"text": " der",
-			"startMs": 7522,
-			"endMs": 7664,
-			"timestampMs": 7593,
+			"startMs": 13691,
+			"endMs": 13922,
+			"timestampMs": 13807,
 			"confidence": null
 		},
 		{
 			"text": " Zeil",
-			"startMs": 7664,
-			"endMs": 7807,
-			"timestampMs": 7736,
-			"confidence": null
-		},
-		{
-			"text": " werden",
-			"startMs": 7807,
-			"endMs": 8092,
-			"timestampMs": 7950,
-			"confidence": null
-		},
-		{
-			"text": " Geschäfte",
-			"startMs": 8092,
-			"endMs": 8520,
-			"timestampMs": 8306,
+			"startMs": 13922,
+			"endMs": 14152,
+			"timestampMs": 14037,
 			"confidence": null
 		},
 		{
 			"text": " geplündert.",
-			"startMs": 8520,
-			"endMs": 9147,
-			"timestampMs": 8834,
+			"startMs": 14152,
+			"endMs": 15165,
+			"timestampMs": 14659,
 			"confidence": null
 		},
 		{
-			"text": " 54",
-			"startMs": 9307,
-			"endMs": 9929,
-			"timestampMs": 9618,
+			"text": " Bis",
+			"startMs": 15415,
+			"endMs": 15654,
+			"timestampMs": 15535,
 			"confidence": null
 		},
 		{
-			"text": " Festnahmen,",
-			"startMs": 9929,
-			"endMs": 10505,
-			"timestampMs": 10217,
+			"text": " kurz",
+			"startMs": 15654,
+			"endMs": 15892,
+			"timestampMs": 15773,
 			"confidence": null
 		},
 		{
-			"text": " rund",
-			"startMs": 10505,
-			"endMs": 10661,
-			"timestampMs": 10583,
+			"text": " nach",
+			"startMs": 15892,
+			"endMs": 16131,
+			"timestampMs": 16012,
 			"confidence": null
 		},
 		{
-			"text": " 100",
-			"startMs": 10661,
-			"endMs": 10972,
-			"timestampMs": 10817,
+			"text": " halb",
+			"startMs": 16131,
+			"endMs": 16370,
+			"timestampMs": 16251,
 			"confidence": null
 		},
 		{
-			"text": " verletzte",
-			"startMs": 10972,
-			"endMs": 11439,
-			"timestampMs": 11206,
+			"text": " elf",
+			"startMs": 16370,
+			"endMs": 16608,
+			"timestampMs": 16489,
 			"confidence": null
 		},
 		{
-			"text": " Polizisten.",
-			"startMs": 11439,
-			"endMs": 12279,
-			"timestampMs": 11859,
+			"text": " trifft",
+			"startMs": 16608,
+			"endMs": 16847,
+			"timestampMs": 16728,
 			"confidence": null
 		},
 		{
-			"text": " Noch",
-			"startMs": 12479,
-			"endMs": 12640,
-			"timestampMs": 12560,
+			"text": " es",
+			"startMs": 16847,
+			"endMs": 17086,
+			"timestampMs": 16967,
 			"confidence": null
 		},
 		{
-			"text": " in",
-			"startMs": 12640,
-			"endMs": 12801,
-			"timestampMs": 12721,
+			"text": " auch",
+			"startMs": 17086,
+			"endMs": 17324,
+			"timestampMs": 17205,
 			"confidence": null
 		},
 		{
-			"text": " der",
-			"startMs": 12801,
-			"endMs": 12961,
-			"timestampMs": 12881,
+			"text": " ein",
+			"startMs": 17324,
+			"endMs": 17563,
+			"timestampMs": 17444,
 			"confidence": null
 		},
 		{
-			"text": " Nacht",
-			"startMs": 12961,
-			"endMs": 13122,
-			"timestampMs": 13042,
-			"confidence": null
-		},
-		{
-			"text": " berichten",
-			"startMs": 13122,
-			"endMs": 13605,
-			"timestampMs": 13364,
-			"confidence": null
-		},
-		{
-			"text": " Reuters",
-			"startMs": 13605,
-			"endMs": 13926,
-			"timestampMs": 13766,
+			"text": " Parfümgeschäft",
+			"startMs": 17563,
+			"endMs": 18518,
+			"timestampMs": 18041,
 			"confidence": null
 		},
 		{
 			"text": " und",
-			"startMs": 13926,
-			"endMs": 14087,
-			"timestampMs": 14007,
+			"startMs": 18518,
+			"endMs": 18756,
+			"timestampMs": 18637,
+			"confidence": null
+		},
+		{
+			"text": " ein",
+			"startMs": 18756,
+			"endMs": 18995,
+			"timestampMs": 18876,
+			"confidence": null
+		},
+		{
+			"text": " Waffengeschäft.",
+			"startMs": 18995,
+			"endMs": 20284,
+			"timestampMs": 19640,
+			"confidence": null
+		},
+		{
+			"text": " Kurz",
+			"startMs": 20534,
+			"endMs": 20770,
+			"timestampMs": 20652,
+			"confidence": null
+		},
+		{
+			"text": " vor",
+			"startMs": 20770,
+			"endMs": 21006,
+			"timestampMs": 20888,
+			"confidence": null
+		},
+		{
+			"text": " elf:",
+			"startMs": 21006,
+			"endMs": 21502,
+			"timestampMs": 21254,
+			"confidence": null
+		},
+		{
+			"text": " Einbruch",
+			"startMs": 21502,
+			"endMs": 21974,
+			"timestampMs": 21738,
+			"confidence": null
+		},
+		{
+			"text": " beim",
+			"startMs": 21974,
+			"endMs": 22210,
+			"timestampMs": 22092,
+			"confidence": null
+		},
+		{
+			"text": " Frankfurter",
+			"startMs": 22210,
+			"endMs": 22918,
+			"timestampMs": 22564,
+			"confidence": null
+		},
+		{
+			"text": " Laufshop.",
+			"startMs": 22918,
+			"endMs": 23721,
+			"timestampMs": 23320,
+			"confidence": null
+		},
+		{
+			"text": " Dann",
+			"startMs": 23971,
+			"endMs": 24189,
+			"timestampMs": 24080,
+			"confidence": null
+		},
+		{
+			"text": " verlagern",
+			"startMs": 24189,
+			"endMs": 24843,
+			"timestampMs": 24516,
+			"confidence": null
+		},
+		{
+			"text": " sich",
+			"startMs": 24843,
+			"endMs": 25061,
+			"timestampMs": 24952,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 25061,
+			"endMs": 25279,
+			"timestampMs": 25170,
+			"confidence": null
+		},
+		{
+			"text": " Krawalle",
+			"startMs": 25279,
+			"endMs": 25934,
+			"timestampMs": 25607,
+			"confidence": null
+		},
+		{
+			"text": " Richtung",
+			"startMs": 25934,
+			"endMs": 26370,
+			"timestampMs": 26152,
+			"confidence": null
+		},
+		{
+			"text": " Eschenheimer",
+			"startMs": 26370,
+			"endMs": 27242,
+			"timestampMs": 26806,
+			"confidence": null
+		},
+		{
+			"text": " Tor –",
+			"startMs": 27242,
+			"endMs": 27657,
+			"timestampMs": 27450,
+			"confidence": null
+		},
+		{
+			"text": " auch",
+			"startMs": 27657,
+			"endMs": 27875,
+			"timestampMs": 27766,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 27875,
+			"endMs": 28093,
+			"timestampMs": 27984,
+			"confidence": null
+		},
+		{
+			"text": " Schuhladen",
+			"startMs": 28093,
+			"endMs": 28747,
+			"timestampMs": 28420,
+			"confidence": null
+		},
+		{
+			"text": " 43einhalb",
+			"startMs": 28747,
+			"endMs": 29837,
+			"timestampMs": 29292,
+			"confidence": null
+		},
+		{
+			"text": " wird",
+			"startMs": 29837,
+			"endMs": 30055,
+			"timestampMs": 29946,
+			"confidence": null
+		},
+		{
+			"text": " getroffen.",
+			"startMs": 30055,
+			"endMs": 31015,
+			"timestampMs": 30535,
+			"confidence": null
+		},
+		{
+			"text": " Bilanz:",
+			"startMs": 33315,
+			"endMs": 34022,
+			"timestampMs": 33669,
+			"confidence": null
+		},
+		{
+			"text": " 54",
+			"startMs": 34022,
+			"endMs": 34934,
+			"timestampMs": 34478,
+			"confidence": null
+		},
+		{
+			"text": " Festnahmen,",
+			"startMs": 34934,
+			"endMs": 35777,
+			"timestampMs": 35356,
+			"confidence": null
+		},
+		{
+			"text": " rund",
+			"startMs": 35777,
+			"endMs": 36005,
+			"timestampMs": 35891,
+			"confidence": null
+		},
+		{
+			"text": " 100",
+			"startMs": 36005,
+			"endMs": 36461,
+			"timestampMs": 36233,
+			"confidence": null
+		},
+		{
+			"text": " verletzte",
+			"startMs": 36461,
+			"endMs": 37145,
+			"timestampMs": 36803,
+			"confidence": null
+		},
+		{
+			"text": " Polizisten.",
+			"startMs": 37145,
+			"endMs": 38376,
+			"timestampMs": 37761,
+			"confidence": null
+		},
+		{
+			"text": " Noch",
+			"startMs": 38726,
+			"endMs": 39004,
+			"timestampMs": 38865,
+			"confidence": null
+		},
+		{
+			"text": " in",
+			"startMs": 39004,
+			"endMs": 39281,
+			"timestampMs": 39143,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 39281,
+			"endMs": 39559,
+			"timestampMs": 39420,
+			"confidence": null
+		},
+		{
+			"text": " Nacht",
+			"startMs": 39559,
+			"endMs": 39836,
+			"timestampMs": 39698,
+			"confidence": null
+		},
+		{
+			"text": " berichten",
+			"startMs": 39836,
+			"endMs": 40669,
+			"timestampMs": 40253,
+			"confidence": null
+		},
+		{
+			"text": " Reuters",
+			"startMs": 40669,
+			"endMs": 41224,
+			"timestampMs": 40947,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 41224,
+			"endMs": 41502,
+			"timestampMs": 41363,
 			"confidence": null
 		},
 		{
 			"text": " AFP,",
-			"startMs": 14087,
-			"endMs": 14682,
-			"timestampMs": 14385,
+			"startMs": 41502,
+			"endMs": 42529,
+			"timestampMs": 42016,
 			"confidence": null
 		},
 		{
 			"text": " bis",
-			"startMs": 14782,
-			"endMs": 14951,
-			"timestampMs": 14867,
+			"startMs": 42649,
+			"endMs": 42866,
+			"timestampMs": 42758,
 			"confidence": null
 		},
 		{
 			"text": " Sonntagabend",
-			"startMs": 14951,
-			"endMs": 15625,
-			"timestampMs": 15288,
+			"startMs": 42866,
+			"endMs": 43732,
+			"timestampMs": 43299,
 			"confidence": null
 		},
 		{
 			"text": " Medien",
-			"startMs": 15625,
-			"endMs": 15962,
-			"timestampMs": 15794,
+			"startMs": 43732,
+			"endMs": 44166,
+			"timestampMs": 43949,
 			"confidence": null
 		},
 		{
 			"text": " von",
-			"startMs": 15962,
-			"endMs": 16131,
-			"timestampMs": 16047,
+			"startMs": 44166,
+			"endMs": 44383,
+			"timestampMs": 44275,
 			"confidence": null
 		},
 		{
 			"text": " Indien",
-			"startMs": 16131,
-			"endMs": 16468,
-			"timestampMs": 16300,
+			"startMs": 44383,
+			"endMs": 44816,
+			"timestampMs": 44600,
 			"confidence": null
 		},
 		{
 			"text": " bis",
-			"startMs": 16468,
-			"endMs": 16636,
-			"timestampMs": 16552,
+			"startMs": 44816,
+			"endMs": 45033,
+			"timestampMs": 44925,
 			"confidence": null
 		},
 		{
 			"text": " Australien.",
-			"startMs": 16636,
-			"endMs": 17378,
-			"timestampMs": 17007,
+			"startMs": 45033,
+			"endMs": 45986,
+			"timestampMs": 45510,
+			"confidence": null
+		},
+		{
+			"text": " Danke",
+			"startMs": 48586,
+			"endMs": 48956,
+			"timestampMs": 48771,
+			"confidence": null
+		},
+		{
+			"text": " fürs",
+			"startMs": 48956,
+			"endMs": 49141,
+			"timestampMs": 49049,
+			"confidence": null
+		},
+		{
+			"text": " Zusehen!",
+			"startMs": 49141,
+			"endMs": 49956,
+			"timestampMs": 49549,
+			"confidence": null
+		},
+		{
+			"text": " Vergesst",
+			"startMs": 49956,
+			"endMs": 50326,
+			"timestampMs": 50141,
+			"confidence": null
+		},
+		{
+			"text": " nicht,",
+			"startMs": 50326,
+			"endMs": 50641,
+			"timestampMs": 50484,
+			"confidence": null
+		},
+		{
+			"text": " das",
+			"startMs": 50641,
+			"endMs": 50826,
+			"timestampMs": 50734,
+			"confidence": null
+		},
+		{
+			"text": " Plus",
+			"startMs": 50826,
+			"endMs": 51012,
+			"timestampMs": 50919,
+			"confidence": null
+		},
+		{
+			"text": " wegzumachen –",
+			"startMs": 51012,
+			"endMs": 51919,
+			"timestampMs": 51466,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 51919,
+			"endMs": 52104,
+			"timestampMs": 52012,
+			"confidence": null
+		},
+		{
+			"text": " schreibt",
+			"startMs": 52104,
+			"endMs": 52289,
+			"timestampMs": 52197,
+			"confidence": null
+		},
+		{
+			"text": " in",
+			"startMs": 52289,
+			"endMs": 52474,
+			"timestampMs": 52382,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 52474,
+			"endMs": 52659,
+			"timestampMs": 52567,
+			"confidence": null
+		},
+		{
+			"text": " Kommentare,",
+			"startMs": 52659,
+			"endMs": 53530,
+			"timestampMs": 53095,
+			"confidence": null
+		},
+		{
+			"text": " über",
+			"startMs": 53530,
+			"endMs": 53900,
+			"timestampMs": 53715,
+			"confidence": null
+		},
+		{
+			"text": " welches",
+			"startMs": 53900,
+			"endMs": 54270,
+			"timestampMs": 54085,
+			"confidence": null
+		},
+		{
+			"text": " Thema",
+			"startMs": 54270,
+			"endMs": 54641,
+			"timestampMs": 54456,
+			"confidence": null
+		},
+		{
+			"text": " wir",
+			"startMs": 54641,
+			"endMs": 54826,
+			"timestampMs": 54734,
+			"confidence": null
+		},
+		{
+			"text": " als",
+			"startMs": 54826,
+			"endMs": 55011,
+			"timestampMs": 54919,
+			"confidence": null
+		},
+		{
+			"text": " Nächstes",
+			"startMs": 55011,
+			"endMs": 55381,
+			"timestampMs": 55196,
+			"confidence": null
+		},
+		{
+			"text": " sprechen",
+			"startMs": 55381,
+			"endMs": 55751,
+			"timestampMs": 55566,
+			"confidence": null
+		},
+		{
+			"text": " sollen.",
+			"startMs": 55751,
+			"endMs": 56381,
+			"timestampMs": 56066,
 			"confidence": null
 		}
 	],
 	"captionsSource": "script-estimate",
-	"generatedAt": "2026-11-03T10:49:09.276Z"
+	"generatedAt": "2026-11-03T12:21:32.879Z"
 }

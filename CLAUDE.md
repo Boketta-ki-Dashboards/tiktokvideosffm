@@ -10,7 +10,8 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 ## Harte Regeln
 
 1. **Keine kostenpflichtigen Dienste, keine API-Keys.** Keine ElevenLabs-/OpenAI-/Cloud-TTS-Aufrufe einbauen,
-   auch wenn ein Remotion-Skill das vorschlägt. Stimme: Piper (lokal) oder Import einer fertigen Datei.
+   auch wenn ein Remotion-Skill das vorschlägt. Stimme: **Chatterbox (Standard, natürlich)**, Piper (schnelle
+   Vorschau) – beide lokal – oder Import einer fertigen Datei. Stimmvorlagen nur mit Erlaubnis/Lizenz (`voices/README.md`).
 2. **Fakten nur mit Beleg.** Jede Zahl, jedes Zitat, jede Schlagzeile steht mit Quelle und Abrufdatum in
    `references/<video-id>/sources.md` und im `content.ts` des Videos. Nichts erfinden, nichts zuspitzen.
    - Zahlen immer mit Urheber („laut Polizei“, „laut Veranstalter“, „laut Innenminister …“).
@@ -36,7 +37,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 | Bildrate | 30 fps |
 | Video | H.264 High, yuv420p, BT.709, CRF 18, `+faststart` |
 | Audio | AAC 192 kbit/s, 48 kHz; Sprecher auf −14 LUFS, True Peak −1,5 dBTP |
-| Länge | Testvideo 15–20 s; Standard-News 20–60 s |
+| Länge | Standard-News 20–60 s (Frankfurt-Video ≈ 50 s inkl. Abspann) |
 
 `npm run render -- <Komposition>` erzeugt genau diese Norm, `npm run verify -- <datei>` prüft sie.
 
@@ -73,11 +74,17 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   Szene → `pauseAfterMs` im Skript erhöhen. `maxDurationMs` kürzt nur den Nachlauf (Tests: `npm test`).
 - Piper ist leicht zufällig (Dauer schwankt ±0,3 s): nach jedem `voice:piper` Länge prüfen und die erzeugten
   Dateien committen – der Workflow (`voice: repo`) rendert dann reproduzierbar.
-- Wege: `npm run voice:piper` (kostenlos, offline) · `npm run voice:import -- --file …` (fertige MP3/WAV,
+- Wege: `npm run voice:chatterbox -- --check` (natürlich, Standard) · `npm run voice:piper` (schnell, künstlich) ·
+  `npm run voice:import -- --file …` (fertige MP3/WAV,
   auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
 - Soundeffekte nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`) oder CC0 mit Nachweis in `references/`.
-- Sprechtempo: Piper `lengthScale` 0.78–0.88 (TikTok-typisch zügig).
+- Sprechtempo: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88 (TikTok-typisch zügig).
+- Chatterbox-Lautschrift: englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
+  Abkürzungen buchstabieren (`{AFP|A F P}`). Nach jeder Erzeugung `--check` (Whisper-Gegenprobe) lesen.
+- Uhrzeiten nur so genau wie belegt („kurz vor 23 Uhr“ statt erfundener Minute); Ticker-Zeiten als „Meldung“ kennzeichnen.
+- Karten: Bewegungen/Routen nur zeigen, wenn belegt – sonst „Reihenfolge der Meldungen“ und so beschriften.
+  OpenStreetMap-Hinweis „© OpenStreetMap-Mitwirkende“ muss sichtbar sein (macht `CityStreetMap`).
 
 ## Projektstruktur
 
@@ -91,6 +98,8 @@ src/
   showcase/     Vorschau aller Bausteine (Platzhalter)
   Root.tsx      Registrierung aller Kompositionen
 public/         statische Dateien (voiceover/, sfx/)
+voices/         Stimmvorlagen für Chatterbox (nur mit Lizenz, siehe voices/README.md)
+src/data/maps/  Stadtpläne aus OpenStreetMap (ODbL)
 voice-input/    hochgeladene Roh-Sprecherdateien (<video-id>.mp3|wav|m4a)
 tests/          Unit-Tests (node --test)
 scripts/        Node-Skripte: render, verify, still, voice/*, audio/*
@@ -117,7 +126,9 @@ npm run check                                 # TypeScript + ESLint + Unit-Tests
 npm run still -- --comp FrankfurtHeadlines --every 30
 npm run render -- FrankfurtHeadlines          # MP4 + Prüfbericht in output/
 npm run verify -- output/FrankfurtHeadlines.mp4
+npm run voice:setup-chatterbox && npm run voice:chatterbox -- --video frankfurt-2026-10-31 --check
 npm run voice:setup-piper && npm run voice:piper -- --video frankfurt-2026-10-31
+node scripts/maps/build-osm-map.mjs --bbox 8.6700,50.1085,8.6915,50.1185 --out src/data/maps/frankfurt-innenstadt.json
 npm run voice:import -- --video frankfurt-2026-10-31 --file voice-input/sprecher.mp3
 ```
 

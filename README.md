@@ -5,7 +5,8 @@ Cloudbasiertes Produktionssystem für **animierte TikTok-Erklärvideos** – geb
 Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nötig.
 
 **Erstes Testvideo:** „Wie die Ereignisse vom 31. Oktober 2026 in Frankfurt internationale Schlagzeilen machten“
-– 19,9 s, 1080 × 1920, 30 fps, H.264/AAC, mit deutscher KI-Sprecherstimme und synchronen Untertiteln.
+– ca. 50 s, 1080 × 1920, 30 fps, H.264/AAC, mit natürlicher deutscher KI-Stimme, synchronen Untertiteln,
+animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
 ---
@@ -16,7 +17,8 @@ Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](referenc
 2. Links den Workflow **„Video rendern“** wählen.
 3. Rechts **„Run workflow“** → Branch wählen → Eingaben prüfen:
    - `composition`: `FrankfurtHeadlines`
-   - `voice`: `repo` (vorhandene Sprecherspur), `import` (deine Datei aus `voice-input/`), `piper` (Stimme kostenlos neu erzeugen) oder `none` (stumm)
+   - `voice`: `repo` (vorhandene Sprecherspur), `chatterbox` (natürliche Stimme neu erzeugen, ≈ 10–20 min),
+     `import` (deine Datei aus `voice-input/`), `piper` (schnelle Roboterstimme) oder `none` (stumm)
    - `crf`: `18` (Qualität)
 4. **„Run workflow“** klicken. Nach ca. 3–6 Minuten ist der Lauf grün.
 5. Den Lauf öffnen → ganz unten unter **Artifacts** auf `FrankfurtHeadlines-run<N>` klicken → ZIP herunterladen.
@@ -32,6 +34,8 @@ Der Prüfbericht steht zusätzlich in der Zusammenfassung des Workflow-Laufs.
 | Städte & Hintergründe | `GradientSky`, `Stars`, `Clouds`, `CitySkyline` (prozedural, jede Stadt), `FrankfurtSkyline` (handgezeichnet, mit Main & Eisernem Steg), `StreetFacades`, `EmergencyLights`, `GrainOverlay` |
 | Figuren | `VectorPerson` (Gehzyklus, Jubeln, Schilder mit Symbolen), `Crowd` (Tiefenstaffelung, Marsch) |
 | Weltkarte | `WorldMap` (Natural Earth 1:50 Mio., Kamerafahrten, Länder-Highlights, animierte Verbindungsbögen, Pins mit Flaggen-Labels), `PLACES`, `COUNTRY_IDS` |
+| Stadtplan | `CityStreetMap` (echte OpenStreetMap-Geometrie, Kamerafahrt, Marker mit Info-Karten, Straßen-Sweeps, Brennpunkte, Abfolge-Linie); Daten per `scripts/maps/build-osm-map.mjs` |
+| Abspann | `FollowCta` (Finger tippt auf das Folgen-Plus, Plus → Haken, Kommentar-Aufforderung) |
 | Flaggen, Medien, Quellen | `Flag` (17 Länder + Fallback), `MediaBadge` (neutrale Wortmarke, optional lizenziertes Logo), `HeadlineCard` (Original-Schlagzeile + Übersetzung), `SourceCredit` |
 | Statistiken & Infografiken | `AnimatedNumber` (deutsches Zahlenformat), `StatCard`, `ComparisonBars`, `ProgressRing`, `Timeline` |
 | Kamera & Übergänge | `Camera` (Keyframes: Zoom, Schwenk, Neigung, Wackeln), `KenBurns`, `focusOn`; Übergänge `zoomThrough`, `whipPan`, `circleReveal`, `flashCut` + Remotion `fade`/`slide`/`wipe` |
@@ -48,7 +52,8 @@ Jede Variante erzeugt `public/voiceover/<video>/voiceover.mp3` + `src/videos/<vi
 
 | Weg | Befehl | Wann |
 |---|---|---|
-| **Piper** (kostenlos, offline, Stimme „Thorsten“, CC0) | `npm run voice:setup-piper` → `npm run voice:piper -- --video frankfurt-2026-10-31` | Standard, voll automatisch (auch im Workflow mit `voice: piper`) |
+| **Chatterbox** (natürlich, kostenlos, lokal; MIT-Modell + CC0-Stimmvorlage) | `npm run voice:setup-chatterbox` → `npm run voice:chatterbox -- --video frankfurt-2026-10-31 --check` | **Standard**, auch im Workflow (`voice: chatterbox`) |
+| **Piper** (sehr schnell, aber künstlich) | `npm run voice:setup-piper` → `npm run voice:piper -- --video frankfurt-2026-10-31` | schnelle Vorschau |
 | **Fertige MP3/WAV importieren** | `npm run voice:import -- --video frankfurt-2026-10-31 --file voice-input/sprecher.mp3` | eigene Aufnahme oder Datei aus einer TTS-App deiner Wahl |
 | Wortgenaue Untertitel (Whisper, lokal) | `npm run captions:whisper -- --video frankfurt-2026-10-31` | nach einem Import, wenn die Schätzung nicht reicht |
 | Stumm | `node scripts/voice/estimate-manifest.mjs --video …` | Vorschau ohne Stimme |

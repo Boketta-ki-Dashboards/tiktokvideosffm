@@ -20,7 +20,9 @@
     "captions:whisper": "node scripts/voice/transcribe-whisper.mjs",
     "test": "node --test tests/*.test.ts",
     "voice:estimate": "node scripts/voice/estimate-manifest.mjs",
-    "sfx": "node scripts/audio/generate-sfx.mjs"
+    "sfx": "node scripts/audio/generate-sfx.mjs",
+    "voice:setup-chatterbox": "bash scripts/voice/setup-chatterbox.sh",
+    "voice:chatterbox": "node scripts/voice/chatterbox-tts.mjs"
   },
   "engines": {
     "node": ">=22.18"

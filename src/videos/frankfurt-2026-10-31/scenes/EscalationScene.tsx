@@ -40,11 +40,11 @@ const icons = {
 const ICONS = [icons.arrest, icons.police, icons.shop];
 const ACCENTS = [COLORS.alert, COLORS.signal, COLORS.cyan];
 
-/** Szene 3: Nacht auf der Zeil, Blaulicht-Stimmung, Bilanz der Polizei. */
+/** Szene: Bilanz der Nacht (Polizei / Innenministerium) vor nächtlicher Häuserzeile mit Blaulicht-Stimmung. */
 export const EscalationScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
-	const bilanz = cue(cues, 'bilanz', 50);
-	const dim = interpolate(frame, [bilanz.from - 10, bilanz.from + 8], [0, 0.55], clamp);
+	const bilanz = cue(cues, 'bilanz', 8);
+	const dim = interpolate(frame, [0, 14], [0.2, 0.55], clamp);
 
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night}}>
@@ -78,8 +78,8 @@ export const EscalationScene: React.FC<SceneProps> = ({cues, durationInFrames}) 
 
 			<SafeArea>
 				<div style={{display: 'flex', flexDirection: 'column', gap: 24, marginTop: 10}}>
-					<Kicker text="AM ABEND" color={COLORS.alert} delay={2} />
-					<LowerThird title={TOLL.place} subtitle={TOLL.when} delay={8} accent={COLORS.alert} />
+					<Kicker text="BILANZ DER NACHT" color={COLORS.alert} delay={2} />
+					<LowerThird title={TOLL.place} subtitle={TOLL.when} delay={6} accent={COLORS.alert} />
 					<div style={{display: 'flex', flexDirection: 'column', gap: 18, marginTop: 30}}>
 						{TOLL.stats.map((s, i) => (
 							<StatCard
@@ -88,13 +88,13 @@ export const EscalationScene: React.FC<SceneProps> = ({cues, durationInFrames}) 
 								prefix={'prefix' in s ? s.prefix : undefined}
 								label={s.label}
 								attribution={s.attribution}
-								delay={bilanz.from + i * 9}
+								delay={Math.max(10, bilanz.from + 8) + i * 9}
 								accent={ACCENTS[i]}
 								icon={ICONS[i]}
 							/>
 						))}
 					</div>
-					<SourceCredit sources={[TOLL.source]} delay={bilanz.from + 26} />
+					<SourceCredit sources={[TOLL.source]} delay={Math.max(10, bilanz.from + 8) + 26} />
 				</div>
 			</SafeArea>
 		</AbsoluteFill>
