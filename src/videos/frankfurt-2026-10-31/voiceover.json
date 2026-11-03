@@ -1,0 +1,344 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-2026-10-31",
+	"source": "piper:de_DE-thorsten-high (length_scale 0.8)",
+	"audioFile": "voiceover/frankfurt-2026-10-31/voiceover.mp3",
+	"durationMs": 17378,
+	"segments": [
+		{
+			"id": "intro",
+			"startMs": 300,
+			"endMs": 2123
+		},
+		{
+			"id": "protest",
+			"startMs": 2603,
+			"endMs": 5759
+		},
+		{
+			"id": "escalation",
+			"startMs": 5939,
+			"endMs": 9147
+		},
+		{
+			"id": "bilanz",
+			"startMs": 9307,
+			"endMs": 12279
+		},
+		{
+			"id": "media1",
+			"startMs": 12479,
+			"endMs": 14682
+		},
+		{
+			"id": "media2",
+			"startMs": 14782,
+			"endMs": 17378
+		}
+	],
+	"captions": [
+		{
+			"text": "Frankfurt,",
+			"startMs": 300,
+			"endMs": 665,
+			"timestampMs": 483,
+			"confidence": null
+		},
+		{
+			"text": " 31.",
+			"startMs": 665,
+			"endMs": 1394,
+			"timestampMs": 1030,
+			"confidence": null
+		},
+		{
+			"text": " Oktober.",
+			"startMs": 1394,
+			"endMs": 2123,
+			"timestampMs": 1759,
+			"confidence": null
+		},
+		{
+			"text": " Tausende",
+			"startMs": 2603,
+			"endMs": 3048,
+			"timestampMs": 2826,
+			"confidence": null
+		},
+		{
+			"text": " junge",
+			"startMs": 3048,
+			"endMs": 3344,
+			"timestampMs": 3196,
+			"confidence": null
+		},
+		{
+			"text": " Menschen",
+			"startMs": 3344,
+			"endMs": 3640,
+			"timestampMs": 3492,
+			"confidence": null
+		},
+		{
+			"text": " demonstrieren –",
+			"startMs": 3640,
+			"endMs": 4366,
+			"timestampMs": 4003,
+			"confidence": null
+		},
+		{
+			"text": " laut",
+			"startMs": 4366,
+			"endMs": 4514,
+			"timestampMs": 4440,
+			"confidence": null
+		},
+		{
+			"text": " Polizei",
+			"startMs": 4514,
+			"endMs": 4959,
+			"timestampMs": 4737,
+			"confidence": null
+		},
+		{
+			"text": " rund",
+			"startMs": 4959,
+			"endMs": 5107,
+			"timestampMs": 5033,
+			"confidence": null
+		},
+		{
+			"text": " 8.000.",
+			"startMs": 5107,
+			"endMs": 5759,
+			"timestampMs": 5433,
+			"confidence": null
+		},
+		{
+			"text": " Am",
+			"startMs": 5939,
+			"endMs": 6082,
+			"timestampMs": 6011,
+			"confidence": null
+		},
+		{
+			"text": " Abend",
+			"startMs": 6082,
+			"endMs": 6367,
+			"timestampMs": 6225,
+			"confidence": null
+		},
+		{
+			"text": " eskaliert",
+			"startMs": 6367,
+			"endMs": 6794,
+			"timestampMs": 6581,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 6794,
+			"endMs": 6937,
+			"timestampMs": 6866,
+			"confidence": null
+		},
+		{
+			"text": " Lage:",
+			"startMs": 6937,
+			"endMs": 7379,
+			"timestampMs": 7158,
+			"confidence": null
+		},
+		{
+			"text": " Auf",
+			"startMs": 7379,
+			"endMs": 7522,
+			"timestampMs": 7451,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 7522,
+			"endMs": 7664,
+			"timestampMs": 7593,
+			"confidence": null
+		},
+		{
+			"text": " Zeil",
+			"startMs": 7664,
+			"endMs": 7807,
+			"timestampMs": 7736,
+			"confidence": null
+		},
+		{
+			"text": " werden",
+			"startMs": 7807,
+			"endMs": 8092,
+			"timestampMs": 7950,
+			"confidence": null
+		},
+		{
+			"text": " Geschäfte",
+			"startMs": 8092,
+			"endMs": 8520,
+			"timestampMs": 8306,
+			"confidence": null
+		},
+		{
+			"text": " geplündert.",
+			"startMs": 8520,
+			"endMs": 9147,
+			"timestampMs": 8834,
+			"confidence": null
+		},
+		{
+			"text": " 54",
+			"startMs": 9307,
+			"endMs": 9929,
+			"timestampMs": 9618,
+			"confidence": null
+		},
+		{
+			"text": " Festnahmen,",
+			"startMs": 9929,
+			"endMs": 10505,
+			"timestampMs": 10217,
+			"confidence": null
+		},
+		{
+			"text": " rund",
+			"startMs": 10505,
+			"endMs": 10661,
+			"timestampMs": 10583,
+			"confidence": null
+		},
+		{
+			"text": " 100",
+			"startMs": 10661,
+			"endMs": 10972,
+			"timestampMs": 10817,
+			"confidence": null
+		},
+		{
+			"text": " verletzte",
+			"startMs": 10972,
+			"endMs": 11439,
+			"timestampMs": 11206,
+			"confidence": null
+		},
+		{
+			"text": " Polizisten.",
+			"startMs": 11439,
+			"endMs": 12279,
+			"timestampMs": 11859,
+			"confidence": null
+		},
+		{
+			"text": " Noch",
+			"startMs": 12479,
+			"endMs": 12640,
+			"timestampMs": 12560,
+			"confidence": null
+		},
+		{
+			"text": " in",
+			"startMs": 12640,
+			"endMs": 12801,
+			"timestampMs": 12721,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 12801,
+			"endMs": 12961,
+			"timestampMs": 12881,
+			"confidence": null
+		},
+		{
+			"text": " Nacht",
+			"startMs": 12961,
+			"endMs": 13122,
+			"timestampMs": 13042,
+			"confidence": null
+		},
+		{
+			"text": " berichten",
+			"startMs": 13122,
+			"endMs": 13605,
+			"timestampMs": 13364,
+			"confidence": null
+		},
+		{
+			"text": " Reuters",
+			"startMs": 13605,
+			"endMs": 13926,
+			"timestampMs": 13766,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 13926,
+			"endMs": 14087,
+			"timestampMs": 14007,
+			"confidence": null
+		},
+		{
+			"text": " AFP,",
+			"startMs": 14087,
+			"endMs": 14682,
+			"timestampMs": 14385,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 14782,
+			"endMs": 14951,
+			"timestampMs": 14867,
+			"confidence": null
+		},
+		{
+			"text": " Sonntagabend",
+			"startMs": 14951,
+			"endMs": 15625,
+			"timestampMs": 15288,
+			"confidence": null
+		},
+		{
+			"text": " Medien",
+			"startMs": 15625,
+			"endMs": 15962,
+			"timestampMs": 15794,
+			"confidence": null
+		},
+		{
+			"text": " von",
+			"startMs": 15962,
+			"endMs": 16131,
+			"timestampMs": 16047,
+			"confidence": null
+		},
+		{
+			"text": " Indien",
+			"startMs": 16131,
+			"endMs": 16468,
+			"timestampMs": 16300,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 16468,
+			"endMs": 16636,
+			"timestampMs": 16552,
+			"confidence": null
+		},
+		{
+			"text": " Australien.",
+			"startMs": 16636,
+			"endMs": 17378,
+			"timestampMs": 17007,
+			"confidence": null
+		}
+	],
+	"captionsSource": "script-estimate",
+	"generatedAt": "2026-11-03T10:49:09.276Z"
+}

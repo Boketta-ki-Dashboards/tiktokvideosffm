@@ -1,0 +1,47 @@
+name: CI
+
+# Schnelle Qualitätsprüfung bei jedem Push/PR: Typen, Lint, Bundle + Testbilder.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: TypeScript
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Unit-Tests (Timing Stimme ↔ Szenen)
+        run: npm test
+
+      - name: Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Testbilder rendern (Smoke-Test)
+        run: node scripts/render-still.mjs --comp FrankfurtHeadlines --frames 30,250,450,580 --scale 0.5
+
+      - name: Testbilder hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-stills
+          path: output/stills/*.png
+          retention-days: 7

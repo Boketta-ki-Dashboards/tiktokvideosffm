@@ -1,0 +1,45 @@
+{
+	"videoId": "frankfurt-2026-10-31",
+	"language": "de-DE",
+	"leadInMs": 300,
+	"tailMs": 2500,
+	"voice": {
+		"piperModel": "de_DE-thorsten-high",
+		"lengthScale": 0.8,
+		"noiseScale": 0.6,
+		"noiseWScale": 0.6
+	},
+	"segments": [
+		{
+			"id": "intro",
+			"text": "Frankfurt, {31. Oktober|einunddreißigster Oktober}.",
+			"pauseAfterMs": 480
+		},
+		{
+			"id": "protest",
+			"text": "Tausende junge Menschen demonstrieren – laut Polizei rund {8.000|achttausend}.",
+			"pauseAfterMs": 180
+		},
+		{
+			"id": "escalation",
+			"text": "Am Abend eskaliert die Lage: Auf der Zeil werden Geschäfte geplündert.",
+			"pauseAfterMs": 160
+		},
+		{
+			"id": "bilanz",
+			"text": "{54|Vierundfünfzig} Festnahmen, rund {100|hundert} verletzte Polizisten.",
+			"pauseAfterMs": 200
+		},
+		{
+			"id": "media1",
+			"text": "Noch in der Nacht berichten Reuters und {AFP|A F P},",
+			"pauseAfterMs": 100
+		},
+		{
+			"id": "media2",
+			"text": "bis Sonntagabend Medien von Indien bis Australien.",
+			"pauseAfterMs": 0
+		}
+	],
+	"maxDurationMs": 20000
+}
