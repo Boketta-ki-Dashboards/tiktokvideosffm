@@ -2,7 +2,7 @@ name: Video rendern
 
 # Manuell starten: GitHub → Actions → „Video rendern“ → „Run workflow“.
 # Ergebnis: MP4 (+ Cover-Bild + Prüfbericht) als herunterladbares Artefakt.
-# Selbsttest: Ändert ein Pull Request diesen Workflow, wird automatisch mit Standardwerten gerendert.
+# Selbsttest: Ändert ein Pull Request diesen Workflow, werden alle Folgen mit der Sprecherspur aus dem Repository gerendert.
 
 on:
   pull_request:
@@ -51,14 +51,18 @@ concurrency:
 
 jobs:
   render:
-    name: Rendern & prüfen
+    name: Rendern & prüfen (${{ inputs.composition || matrix.composition }})
     runs-on: ubuntu-24.04
     timeout-minutes: 75
+    strategy:
+      fail-fast: false
+      # Manuell: genau die eingegebene Komposition · PR-Selbsttest: alle Folgen
+      matrix:
+        include: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '[{"composition":"","video_id":""}]' || '[{"composition":"FrankfurtHeadlines","video_id":"frankfurt-2026-10-31"},{"composition":"FrankfurtShops","video_id":"frankfurt-2026-10-31-geschaefte"}]') }}
     env:
-      # Standardwerte greifen beim PR-Selbsttest (dort gibt es keine Eingaben)
-      COMPOSITION: ${{ inputs.composition || 'FrankfurtHeadlines' }}
+      COMPOSITION: ${{ inputs.composition || matrix.composition }}
       VOICE_MODE: ${{ inputs.voice || 'repo' }}
-      VIDEO_ID: ${{ inputs.video_id || 'frankfurt-2026-10-31' }}
+      VIDEO_ID: ${{ inputs.video_id || matrix.video_id }}
       CRF: ${{ inputs.crf || '18' }}
       RENDER_COVER: ${{ github.event_name != 'workflow_dispatch' || inputs.cover }}
 
@@ -118,7 +122,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/piper-voices
-          key: piper-voices-${{ hashFiles(format('src/videos/{0}/script.json', inputs.video_id || 'frankfurt-2026-10-31')) }}
+          key: piper-voices-${{ hashFiles(format('src/videos/{0}/script.json', inputs.video_id || matrix.video_id)) }}
           restore-keys: piper-voices-
 
       - name: Sprecherspur mit Piper erzeugen (kostenlos, offline)
@@ -190,7 +194,7 @@ jobs:
       - name: Video als Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.composition || 'FrankfurtHeadlines' }}-run${{ github.run_number }}
+          name: ${{ inputs.composition || matrix.composition }}-run${{ github.run_number }}
           path: |
             output/*.mp4
             output/*.mp3

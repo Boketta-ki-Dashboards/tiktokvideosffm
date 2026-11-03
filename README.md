@@ -29,8 +29,11 @@ Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md
      `import` (deine Datei aus `voice-input/`), `piper` (schnelle Roboterstimme) oder `none` (stumm)
    - `crf`: `18` (Qualität)
 4. **„Run workflow“** klicken. Nach ca. 3–6 Minuten ist der Lauf grün.
-5. Den Lauf öffnen → ganz unten unter **Artifacts** auf `FrankfurtHeadlines-run<N>` klicken → ZIP herunterladen.
-   Darin: `FrankfurtHeadlines.mp4`, `FrankfurtHeadlines-cover.png` (Titelbild) und der Prüfbericht.
+5. Den Lauf öffnen → ganz unten unter **Artifacts** auf `<Komposition>-run<N>` (z. B. `FrankfurtShops-run4`) klicken
+   → ZIP herunterladen. Darin: `<Komposition>.mp4`, `<Komposition>-cover.png` (Titelbild) und der Prüfbericht.
+
+Vor dem Merge (der Knopf „Run workflow“ erscheint erst, wenn der Workflow auf `main` liegt): Ändert ein Pull Request
+`render-video.yml`, rendert der Workflow automatisch **beide Folgen** – die Artefakte hängen am jeweiligen Lauf im PR.
 
 Auf dem iPhone: ZIP in der Dateien-App öffnen → MP4 antippen → Teilen → „Video sichern“ → in TikTok hochladen.
 Der Prüfbericht steht zusätzlich in der Zusammenfassung des Workflow-Laufs.
