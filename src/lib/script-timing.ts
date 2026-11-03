@@ -17,6 +17,8 @@ export type ScriptSegment = {
 	text: string;
 	/** Pause nach dem Segment (ms). */
 	pauseAfterMs?: number;
+	/** Optional: eigener Zufallswert für die KI-Stimme (z. B. wenn ein Satz verschliffen klingt). */
+	seed?: number;
 };
 
 export type VoiceSettings = {

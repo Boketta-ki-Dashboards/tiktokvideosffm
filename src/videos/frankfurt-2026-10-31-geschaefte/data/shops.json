@@ -1,0 +1,257 @@
+{
+	"meta": {
+		"title": "Beschädigte und geplünderte Geschäfte – Frankfurt, 31.10./01.11.2026",
+		"stand": "03.11.2026",
+		"hinweis": "Status-Logik: 'gepluendert' nur bei belegter Entwendung, 'beschaedigt' bei belegtem Sachschaden ohne belegte Entwendung, 'ungeklaert' wenn Laden oder Schaden nicht eindeutig zugeordnet ist. Koordinaten aus OpenStreetMap (ODbL); 'praezision' sagt, ob es die Ladenadresse ist oder nur die Straße.",
+		"offiziell": {
+			"beschaedigt": {
+				"anzahl": 17,
+				"quelle": "Hessisches Innenministerium, Pressemitteilung 02.11.2026: „Daneben wurden mit aktuellem Stand 17 Geschäfte beschädigt.“",
+				"url": "https://innen.hessen.de/presse/erste-einordnung-nach-gewaltausbruechen-waehrend-und-nach-der-versammlung-der-generation-z",
+				"datum": "2026-11-02"
+			},
+			"gepluendert": {
+				"anzahl": 5,
+				"quelle": "Polizeisprecher am Sonntagmorgen (ZDFheute) bzw. Innenminister Poseck/Einsatzleitung: „17 Läden … wurden beschädigt, 5 von ihnen geplündert“ (dpa) – die 5 sind TEIL der 17.",
+				"url": "https://www.zdfheute.de/politik/deutschland/frankfurt-ausschreitungen-polizei-protest-gewahrsam-100.html",
+				"datum": "2026-11-01"
+			}
+		}
+	},
+	"shops": [
+		{
+			"id": "snipes",
+			"name": "Snipes",
+			"kategorie": "Sneaker / Sportmode",
+			"adresse": "Zeil 79 (Ecke Hasengasse)",
+			"lat": 50.1143647,
+			"lon": 8.6837118,
+			"praezision": "adresse",
+			"status": "gepluendert",
+			"schaden": {"sachschaden": true, "eindringen": "ja", "entwendung": "ja"},
+			"kurz": "Täter dringen ein und kommen mit Kartons und Schuhen heraus; Scheiben mit „riesigen Löchern“.",
+			"details": "Ticker 21:41: Jugendliche dringen ein, kommen mit Kartons und Sneakern heraus. 23:02: Laden „von außen komplett zerstört“, unter Polizeischutz. t-online 03.11.: eingebrochen und geplündert, Fassade verbrettert, Scheiben werden ausgetauscht.",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "presse", "name": "hessenschau.de-Liveticker", "datum": "2026-10-31", "zeit": "21:41", "url": "https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html"},
+				{"art": "presse", "name": "t-online Frankfurt", "datum": "2026-11-03", "url": "https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/-stehe-unter-schock-frankfurter-haendler-nach-demo-gewalt-fassungslos.html"},
+				{"art": "adresse", "name": "FashionUnited (Flagship Zeil 79)", "datum": "2024-10-04", "url": "https://fashionunited.de/nachrichten/einzelhandel/frankfurt-brudi-neues-snipes-flagship-an-der-zeil/2024100458448/"}
+			],
+			"bild": {"typ": "illustration", "motiv": "shoe"}
+		},
+		{
+			"id": "hasengasse",
+			"name": "Geschäft in der Hasengasse",
+			"kategorie": "unbekannt",
+			"adresse": "Hasengasse (Hausnummer nicht veröffentlicht)",
+			"lat": 50.11365,
+			"lon": 8.68376,
+			"praezision": "strasse",
+			"status": "ungeklaert",
+			"schaden": {"sachschaden": true, "eindringen": "unbekannt", "entwendung": "versuch"},
+			"kurz": "Schaufenster eingeschlagen, Polizei bestätigt Plünderungsversuch – Laden nicht öffentlich benannt.",
+			"details": "Ticker 21:04 und 22:37: Scheiben in der Hasengasse eingeschlagen; Polizei bestätigt einen Plünderungsversuch. Welcher Laden betroffen ist, nennt keine Quelle.",
+			"belegstaerke": "mittel",
+			"quellen": [
+				{"art": "presse", "name": "hessenschau.de-Liveticker", "datum": "2026-10-31", "zeit": "21:04 / 22:37", "url": "https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "unknown"}
+		},
+		{
+			"id": "oil-de-parfum",
+			"name": "Oil de Parfum",
+			"kategorie": "Parfümerie",
+			"adresse": "Liebfrauenberg 54–56",
+			"lat": 50.1129357,
+			"lon": 8.6814517,
+			"praezision": "adresse",
+			"status": "beschaedigt",
+			"schaden": {"sachschaden": true, "eindringen": "unbekannt", "entwendung": "unbekannt"},
+			"kurz": "Mehrere Schaufenster zersplittert, Auslagen beschädigt.",
+			"details": "Ticker 22:37: Scheiben und Auslagen eines Parfümgeschäfts am Liebfrauenberg stark beschädigt; 23:54 Fotos. Eigenes Video 01.11., 00:05 Uhr: Schild „Oil De Parfum“, Straßenschild „Liebfrauenberg 56–54“, mindestens zwei Fenster zersplittert, eines mit Loch.",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "presse", "name": "hessenschau.de-Liveticker", "datum": "2026-10-31", "zeit": "22:37", "url": "https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html"},
+				{"art": "video", "name": "Eigenes Video (bereitgestellt), 01.11.2026 00:05 Uhr", "datum": "2026-11-01", "url": null}
+			],
+			"bild": {"typ": "foto", "datei": "episodes/frankfurt-geschaefte/oil-de-parfum-2026-11-01-0005.jpg", "zeigt": "schaden", "credit": "Eigene Aufnahme · 01.11., 00:05 Uhr"}
+		},
+		{
+			"id": "waffen",
+			"name": "Waffengeschäft",
+			"kategorie": "Waffenfachgeschäft",
+			"adresse": "Berliner Straße (Name nicht veröffentlicht)",
+			"lat": 50.111953,
+			"lon": 8.682851,
+			"praezision": "strasse",
+			"status": "gepluendert",
+			"schaden": {"sachschaden": true, "eindringen": "ja", "entwendung": "ja"},
+			"kurz": "Schaufenster eingeschlagen, mindestens eine Waffe gestohlen; Polizei stellt zwei Waffen sicher.",
+			"details": "Ticker 23:10: Attacke auf ein Waffengeschäft in der Berliner Straße, SEK vor Ort. Polizei: zwei Waffen sichergestellt. dpa: Schreckschusswaffen entwendet. t-online: geplündert, mindestens eine Waffe gestohlen; 18-Jähriger in U-Haft.",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "presse", "name": "hessenschau.de-Liveticker", "datum": "2026-10-31", "zeit": "23:10", "url": "https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html"},
+				{"art": "polizei", "name": "Polizei via hessenschau.de", "datum": "2026-11-01", "url": "https://www.hessenschau.de/panorama/scheiben-eingeschlagen-geschaefte-gepluendert-ausschreitungen-in-frankfurt-v6,gen-z-ausschreitungen-frankfurt-100.html"},
+				{"art": "presse", "name": "t-online Frankfurt", "datum": "2026-11-03", "url": "https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/-stehe-unter-schock-frankfurter-haendler-nach-demo-gewalt-fassungslos.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "shield"}
+		},
+		{
+			"id": "bayat",
+			"name": "Orient-Teppichhaus Bayat",
+			"kategorie": "Teppichhandel",
+			"adresse": "Berliner Straße (Ecke Hasengasse)",
+			"lat": 50.1122644,
+			"lon": 8.683702,
+			"praezision": "adresse",
+			"status": "beschaedigt",
+			"schaden": {"sachschaden": true, "eindringen": "nein", "entwendung": "nein"},
+			"kurz": "Schaufenster beschädigt – das Panzerglas hielt, nichts gestohlen.",
+			"details": "t-online 03.11.: Schaufenster mit Spanplatte abgedeckt; Panzerglas hielt, kein Einbruch, nichts geplündert. Inhaber Khodayar Bayat: „Ich stehe unter Schock.“",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "haendler", "name": "t-online Frankfurt (Inhaber Khodayar Bayat)", "datum": "2026-11-03", "url": "https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/-stehe-unter-schock-frankfurter-haendler-nach-demo-gewalt-fassungslos.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "carpet"}
+		},
+		{
+			"id": "wein",
+			"name": "Weingeschäft",
+			"kategorie": "Weinhandel",
+			"adresse": "Berliner Straße (Name nicht veröffentlicht)",
+			"lat": 50.11215,
+			"lon": 8.6842,
+			"praezision": "strasse",
+			"status": "beschaedigt",
+			"schaden": {"sachschaden": true, "eindringen": "unbekannt", "entwendung": "unbekannt"},
+			"kurz": "Beschädigt, am 03.11. weiter geschlossen.",
+			"details": "t-online 03.11.: Ein Weingeschäft in der Berliner Straße ist beschädigt und weiterhin geschlossen. Name nicht genannt.",
+			"belegstaerke": "mittel",
+			"quellen": [
+				{"art": "presse", "name": "t-online Frankfurt", "datum": "2026-11-03", "url": "https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/-stehe-unter-schock-frankfurter-haendler-nach-demo-gewalt-fassungslos.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "wine"}
+		},
+		{
+			"id": "kosmetik",
+			"name": "Kosmetikstudio",
+			"kategorie": "Kosmetik",
+			"adresse": "Berliner Straße (Name nicht veröffentlicht)",
+			"lat": 50.11223,
+			"lon": 8.68474,
+			"praezision": "strasse",
+			"status": "beschaedigt",
+			"schaden": {"sachschaden": true, "eindringen": "unbekannt", "entwendung": "unbekannt"},
+			"kurz": "Beschädigt, am 03.11. weiter geschlossen.",
+			"details": "t-online 03.11.: Ein Kosmetikstudio in der Berliner Straße ist beschädigt und weiterhin geschlossen. Name nicht genannt.",
+			"belegstaerke": "mittel",
+			"quellen": [
+				{"art": "presse", "name": "t-online Frankfurt", "datum": "2026-11-03", "url": "https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/-stehe-unter-schock-frankfurter-haendler-nach-demo-gewalt-fassungslos.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "cosmetics"}
+		},
+		{
+			"id": "laufshop",
+			"name": "Frankfurter Laufshop",
+			"kategorie": "Laufsport",
+			"adresse": "Große Friedberger Straße 37–39",
+			"lat": 50.1163831,
+			"lon": 8.6859088,
+			"praezision": "adresse",
+			"status": "gepluendert",
+			"schaden": {"sachschaden": true, "eindringen": "ja", "entwendung": "ja"},
+			"kurz": "Scheibe eingeschlagen, Täter dringen ein und stehlen vor allem Kleidung und Schuhe.",
+			"details": "Inhaber Jost Wiebelhaus: Alarm „kurz vor elf“, Scheibe zerstört, Unbekannte drangen ein und stahlen überwiegend Bekleidung, auch Schuhe. Wiedereröffnung Montag 10 Uhr. „Für uns war das Allerwichtigste, dass es nur Sachschäden waren und keine Personenschäden.“",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "haendler", "name": "schuhkurier (Inhaber)", "datum": "2026-11-02", "url": "https://www.schuhkurier.de/frankfurter-laufshop-zum-glueck-nur-sachschaden/"},
+				{"art": "haendler", "name": "hessenschau.de (Inhaber)", "datum": "2026-11-01", "url": "https://www.hessenschau.de/panorama/krawalle-in-frankfurt-geschaefte-raeumen-auf-rhein-verspricht-schnelle-hilfe-v1,ladenbesitzer-randale-100.html"},
+				{"art": "presse", "name": "dpa via WNOZ", "datum": "2026-11-02", "url": "https://www.wnoz.de/nachrichten/baden-wuerttemberg-und-hessen/scherben-solidaritaet-und-sorgen-vor-der-naechsten-demo-1160675.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "run"}
+		},
+		{
+			"id": "laufshop-nachbar",
+			"name": "Nachbarladen des Laufshops",
+			"kategorie": "unbekannt",
+			"adresse": "Große Friedberger Straße (Name nicht veröffentlicht)",
+			"lat": 50.11655,
+			"lon": 8.68588,
+			"praezision": "ungefaehr",
+			"status": "ungeklaert",
+			"schaden": {"sachschaden": true, "eindringen": "unbekannt", "entwendung": "unbekannt"},
+			"kurz": "Großer Riss in der Scheibe – Laden nicht benannt.",
+			"details": "dpa 02.11.: „In einem Nachbarladen wird ein großer Riss in der Scheibe am Montagmorgen noch abgeklebt.“ Zuordnung zum Laufshop-Umfeld aus dem Textzusammenhang; Name und genaue Lage unbekannt.",
+			"belegstaerke": "niedrig",
+			"quellen": [
+				{"art": "presse", "name": "dpa via WNOZ", "datum": "2026-11-02", "url": "https://www.wnoz.de/nachrichten/baden-wuerttemberg-und-hessen/scherben-solidaritaet-und-sorgen-vor-der-naechsten-demo-1160675.html"}
+			],
+			"bild": {"typ": "illustration", "motiv": "unknown"}
+		},
+		{
+			"id": "11teamsports",
+			"name": "11teamsports",
+			"kategorie": "Teamsport / Fußball",
+			"adresse": "Große Eschenheimer Straße 13a",
+			"lat": 50.1155921,
+			"lon": 8.6793306,
+			"praezision": "adresse",
+			"status": "beschaedigt",
+			"schaden": {"sachschaden": true, "eindringen": "unklar", "entwendung": "nicht belegt"},
+			"kurz": "Schaufensterfront zerstört, Menschenmenge an der offenen Front – Diebstahl nicht belegt.",
+			"details": "Social-Media-Video (Nacht): Schriftzug „11TEAMSPORTS“, im Hintergrund das Flemings-Hotel am Eschenheimer Tor; große Scheibe zerstört, Scherben auf dem Gehweg, Menschenmenge direkt an der offenen Front. Eigenes Video 01.11., 12:49 Uhr: unteres Schaufenster („Final Rush Pack“) zerbrochen. Keine Presse- oder Händlerangabe; Eindringen/Entwendung nicht eindeutig belegt.",
+			"belegstaerke": "mittel",
+			"quellen": [
+				{"art": "video", "name": "Eigenes Video (bereitgestellt), 01.11.2026 12:49 Uhr", "datum": "2026-11-01", "url": null},
+				{"art": "video", "name": "TikTok-Video (Bildschirmaufnahme, bereitgestellt), gepostet 01.11.2026", "datum": "2026-11-01", "url": null},
+				{"art": "adresse", "name": "11teamsports Store Frankfurt", "datum": "2026-11-03", "url": "https://www.11teamsports.com/de-de/11teamsports/stores/store-frankfurt/"}
+			],
+			"bild": {"typ": "foto", "datei": "episodes/frankfurt-geschaefte/11teamsports-2026-11-01-1249.jpg", "zeigt": "schaden", "credit": "Eigene Aufnahme · 01.11., 12:49 Uhr"}
+		},
+		{
+			"id": "43einhalb",
+			"name": "43einhalb",
+			"kategorie": "Sneaker",
+			"adresse": "am Eschenheimer Tor",
+			"lat": 50.1167128,
+			"lon": 8.6801031,
+			"praezision": "adresse",
+			"status": "gepluendert",
+			"schaden": {"sachschaden": true, "eindringen": "nein", "entwendung": "ja"},
+			"kurz": "Scheibe eingeschlagen, Ware aus der Auslage gestohlen – Täter nicht im Laden.",
+			"details": "Ticker 00:47: eingeschlagene Scheiben beim Sneakershop 43einhalb. Händler Mischa Krewer (TextilWirtschaft): eine Scheibe eingeschlagen, Ware aus der Auslage entwendet, Täter drangen nicht ein.",
+			"belegstaerke": "hoch",
+			"quellen": [
+				{"art": "presse", "name": "hessenschau.de-Liveticker", "datum": "2026-11-01", "zeit": "00:47", "url": "https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html"},
+				{"art": "haendler", "name": "TextilWirtschaft (Händler)", "datum": "2026-11-01", "url": "https://www.textilwirtschaft.de/retail/pluenderungen-und-vandalismus-der-tag-danach-438806"}
+			],
+			"bild": {"typ": "illustration", "motiv": "shoe"}
+		}
+	],
+	"offeneFaelle": [
+		{
+			"id": "snipes-nachbar",
+			"name": "Geschäft neben/an der Ecke von Snipes",
+			"stand": "offen – keine Quelle",
+			"details": "Direkte Nachbarn laut OpenStreetMap: Juwelier Pletzsch (ca. 30 m westlich), Breitling (ca. 20 m östlich), Hirmer Große Größen (Hasengasse 25). Für keinen dieser Läden liegt ein Bericht, Foto oder Video mit Schaden vor. Möglicherweise identisch mit dem unbenannten Laden in der Hasengasse oder dem dpa-„Scherbenhaufen“ auf der Zeil – nicht separat gezählt."
+		},
+		{
+			"id": "zeil-scherben",
+			"name": "Geschäft auf der Zeil mit Scherbenhaufen",
+			"stand": "nicht separat gezählt",
+			"details": "dpa 02.11.: „Vor einem Geschäft auf der Zeil liegt ein großer zusammengekehrter Scherbenhaufen.“ Kann Snipes sein – nicht separat gezählt, um Doppelzählung zu vermeiden."
+		},
+		{
+			"id": "berliner-weitere",
+			"name": "Weitere Schaufenster in der Berliner Straße",
+			"stand": "vermutlich identisch",
+			"details": "Ticker 22:37: „in der Berliner Straße mehrere Schaufenster“ – vermutlich dieselben Läden (Waffengeschäft, Bayat, Weingeschäft, Kosmetikstudio)."
+		},
+		{
+			"id": "zweites-schuhgeschaeft",
+			"name": "„Zwei Schuhgeschäfte“ geplündert (Polizei)",
+			"stand": "zugeordnet (wahrscheinlich)",
+			"details": "Polizei: Plünderungen „unter anderem in zwei Schuhgeschäften“. Wahrscheinlich Snipes und 43einhalb (Sneaker) – nicht als eigener Fall gezählt."
+		}
+	]
+}

@@ -9,6 +9,13 @@ import {
 	frankfurtSchema,
 } from './videos/frankfurt-2026-10-31/FrankfurtHeadlines';
 import {FrankfurtCover} from './videos/frankfurt-2026-10-31/FrankfurtCover';
+import {
+	calculateShopsMetadata,
+	FrankfurtShops,
+	shopsDefaultProps,
+	shopsSchema,
+} from './videos/frankfurt-2026-10-31-geschaefte/FrankfurtShops';
+import {FrankfurtShopsCover} from './videos/frankfurt-2026-10-31-geschaefte/FrankfurtShopsCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -26,6 +33,19 @@ export const RemotionRoot: React.FC = () => {
 					calculateMetadata={calculateFrankfurtMetadata}
 				/>
 				<Still id="FrankfurtHeadlines-Cover" component={FrankfurtCover} width={VIDEO.width} height={VIDEO.height} />
+				{/* Folge 2: beschädigte und geplünderte Geschäfte */}
+				<Composition
+					id="FrankfurtShops"
+					component={FrankfurtShops}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={shopsSchema}
+					defaultProps={shopsDefaultProps}
+					calculateMetadata={calculateShopsMetadata}
+				/>
+				<Still id="FrankfurtShops-Cover" component={FrankfurtShopsCover} width={VIDEO.width} height={VIDEO.height} />
 			</Folder>
 			<Folder name="Bibliothek">
 				<Composition

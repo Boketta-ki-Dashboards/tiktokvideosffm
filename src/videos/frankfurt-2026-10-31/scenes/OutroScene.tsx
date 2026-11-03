@@ -18,8 +18,6 @@ export const OutroScene: React.FC<SceneProps> = ({cues}) => {
 				tapFrame={tapFrame}
 				commentFrame={commentFrame}
 				title={OUTRO.title}
-				channelName={OUTRO.channelName}
-				initials={OUTRO.initials}
 				commentPrompt={OUTRO.commentPrompt}
 			/>
 		</AbsoluteFill>

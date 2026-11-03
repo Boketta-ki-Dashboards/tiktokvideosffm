@@ -81,7 +81,8 @@ export const buildTimeline = ({
 		return toFrames(Math.max(0, firstSegment - anticipationMs));
 	});
 
-	const tail = maxDurationMs ? Math.max(1500, Math.min(tailMs, maxDurationMs - manifest.durationMs)) : tailMs;
+	// maxDurationMs kürzt den Nachlauf höchstens bis 1,5 s – ein ausdrücklich kürzerer tailMs gilt trotzdem
+	const tail = maxDurationMs ? Math.min(tailMs, Math.max(1500, maxDurationMs - manifest.durationMs)) : tailMs;
 	const end = Math.floor(((manifest.durationMs + tail) / 1000) * fps);
 	const ends = [...cuts.slice(1), end];
 

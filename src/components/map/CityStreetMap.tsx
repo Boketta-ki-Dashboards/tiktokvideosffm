@@ -79,6 +79,10 @@ export type CityStreetMapProps = {
 	/** Bildschirmpunkt, auf den die Kamera zentriert (Standard: leicht oberhalb der Mitte). */
 	anchor?: [number, number];
 	streetLabels?: Array<{text: string; at: LatLon; rotate?: number; size?: number}>;
+	/** Straßennamen, deren Beschriftung automatisch entlang der Geometrie platziert wird. */
+	autoStreetLabels?: string[];
+	/** Sichtbarkeit der Straßennamen (z. B. beim Hineinzoomen einblenden). */
+	labelOpacity?: number;
 	theme?: Partial<typeof DEFAULT_THEME>;
 };
 
@@ -99,6 +103,64 @@ export const projectLatLon = (map: CityMapData, [lat, lon]: LatLon): [number, nu
 	(lon - map.meta.center.lon) * map.meta.metersPerDegree.x,
 	-(lat - map.meta.center.lat) * map.meta.metersPerDegree.y,
 ];
+
+/** Gemeinsame Kamera-Berechnung – auch für Overlays (z. B. Schadenspins) nutzbar. */
+export const useCityCamera = (map: CityMapData, camera: CityCameraKeyframe[], anchor: [number, number] | undefined, frame: number) => {
+	const {width, height} = useVideoConfig();
+	const [ax, ay] = anchor ?? [width / 2, height * 0.43];
+	const cam = useMemo(() => camera.map((k) => ({...k, p: projectLatLon(map, k.center)})), [camera, map]);
+	const opts = {...clamp, easing: EASE_IN_OUT};
+	const frames = cam.map((k) => k.frame);
+	const cx = cam.length > 1 ? interpolate(frame, frames, cam.map((k) => k.p[0]), opts) : cam[0].p[0];
+	const cy = cam.length > 1 ? interpolate(frame, frames, cam.map((k) => k.p[1]), opts) : cam[0].p[1];
+	const zoom = cam.length > 1 ? Math.exp(interpolate(frame, frames, cam.map((k) => Math.log(k.zoom)), opts)) : cam[0].zoom;
+	const tx = ax - cx * zoom;
+	const ty = ay - cy * zoom;
+	const toScreen = (ll: LatLon): [number, number] => {
+		const [x, y] = projectLatLon(map, ll);
+		return [x * zoom + tx, y * zoom + ty];
+	};
+
+	return {zoom, tx, ty, toScreen};
+};
+
+/**
+ * Straßennamen automatisch aus der Geometrie: Label mittig auf dem längsten Abschnitt,
+ * entlang der Straße gedreht (immer lesbar, nie kopfüber).
+ */
+export const computeStreetLabel = (map: CityMapData, name: string): {x: number; y: number; angle: number; length: number} | null => {
+	const d = map.streets[name];
+	if (!d) {
+		return null;
+	}
+
+	let best: {x: number; y: number; angle: number; length: number} | null = null;
+	for (const part of d.split('M').filter(Boolean)) {
+		const nums = part.match(/-?[0-9.]+/g)?.map(Number) ?? [];
+		const pts: Array<[number, number]> = [];
+		for (let i = 0; i + 1 < nums.length; i += 2) pts.push([nums[i], nums[i + 1]]);
+		let len = 0;
+		for (let i = 1; i < pts.length; i++) len += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+		if (pts.length < 2 || (best && len <= best.length)) continue;
+		// Mittelpunkt entlang der Polylinie
+		let acc = 0;
+		for (let i = 1; i < pts.length; i++) {
+			const seg = Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1]);
+			if (acc + seg >= len / 2) {
+				const t = (len / 2 - acc) / (seg || 1);
+				let angle = (Math.atan2(pts[i][1] - pts[i - 1][1], pts[i][0] - pts[i - 1][0]) * 180) / Math.PI;
+				if (angle > 90) angle -= 180;
+				if (angle < -90) angle += 180;
+				best = {x: pts[i - 1][0] + (pts[i][0] - pts[i - 1][0]) * t, y: pts[i - 1][1] + (pts[i][1] - pts[i - 1][1]) * t, angle, length: len};
+				break;
+			}
+
+			acc += seg;
+		}
+	}
+
+	return best;
+};
 
 const BaseLayers: React.FC<{map: CityMapData; theme: typeof DEFAULT_THEME}> = React.memo(({map, theme}) => (
 	<g>
@@ -129,26 +191,22 @@ export const CityStreetMap: React.FC<CityStreetMapProps> = ({
 	sequence,
 	anchor,
 	streetLabels = [],
+	autoStreetLabels,
+	labelOpacity = 1,
 	theme: themeOverride,
 }) => {
 	const frame = useCurrentFrame();
 	const {fps, width, height} = useVideoConfig();
 	const theme = useMemo(() => ({...DEFAULT_THEME, ...themeOverride}), [themeOverride]);
 	const maskId = useSvgId('city-map');
-	const [ax, ay] = anchor ?? [width / 2, height * 0.43];
-
-	const cam = useMemo(() => camera.map((k) => ({...k, p: projectLatLon(map, k.center)})), [camera, map]);
-	const opts = {...clamp, easing: EASE_IN_OUT};
-	const frames = cam.map((k) => k.frame);
-	const cx = cam.length > 1 ? interpolate(frame, frames, cam.map((k) => k.p[0]), opts) : cam[0].p[0];
-	const cy = cam.length > 1 ? interpolate(frame, frames, cam.map((k) => k.p[1]), opts) : cam[0].p[1];
-	const zoom = cam.length > 1 ? Math.exp(interpolate(frame, frames, cam.map((k) => Math.log(k.zoom)), opts)) : cam[0].zoom;
-	const tx = ax - cx * zoom;
-	const ty = ay - cy * zoom;
-	const toScreen = (ll: LatLon): [number, number] => {
-		const [x, y] = projectLatLon(map, ll);
-		return [x * zoom + tx, y * zoom + ty];
-	};
+	const {zoom, tx, ty, toScreen} = useCityCamera(map, camera, anchor, frame);
+	const autoLabels = useMemo(
+		() =>
+			(autoStreetLabels ?? [])
+				.map((name) => ({name, l: computeStreetLabel(map, name)}))
+				.filter((x): x is {name: string; l: NonNullable<ReturnType<typeof computeStreetLabel>>} => Boolean(x.l)),
+		[autoStreetLabels, map],
+	);
 
 	const sequencePath = useMemo(() => {
 		if (!sequence) {
@@ -292,6 +350,39 @@ export const CityStreetMap: React.FC<CityStreetMapProps> = ({
 						}}
 					>
 						{l.text}
+					</div>
+				);
+			})}
+
+			{/* Automatische Straßennamen entlang der Geometrie */}
+			{autoLabels.map(({name, l}) => {
+				const x = l.x * zoom + tx;
+				const y = l.y * zoom + ty;
+				const size = Math.min(30, Math.max(17, 13 + zoom * 9));
+				if (l.length * zoom < name.length * size * 0.62) {
+					return null; // Straße auf dem Bildschirm zu kurz für den Namen
+				}
+
+				return (
+					<div
+						key={`auto-${name}`}
+						style={{
+							position: 'absolute',
+							left: x,
+							top: y,
+							translate: '-50% -50%',
+							rotate: `${l.angle}deg`,
+							fontFamily: FONTS.body,
+							fontWeight: 700,
+							fontSize: size,
+							letterSpacing: 0.5,
+							color: withAlpha('#DCE3FF', 0.82),
+							whiteSpace: 'nowrap',
+							opacity: labelOpacity,
+							textShadow: '0 0 6px #090D20, 0 0 6px #090D20, 0 2px 4px rgba(0,0,0,0.9)',
+						}}
+					>
+						{name}
 					</div>
 				);
 			})}

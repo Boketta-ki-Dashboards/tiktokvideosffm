@@ -25,8 +25,14 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 4. **Keine realen Personen darstellen.** Figuren sind anonyme, stilisierte Vektorfiguren. Gewalt nicht
    explizit zeigen – Lichtstimmung, Symbole, Zahlen.
 5. **Keine großen Binärdateien committen.** MP4/MOV/WebM sind per `.gitignore` ausgeschlossen; Renderings
-   landen in `output/` (ignoriert) bzw. als GitHub-Artefakt. Erlaubt: Sprecher-MP3 (< 1 MB), kurze SFX-WAVs.
-6. **Remotion-Pakete immer exakt gleiche Version** (`--save-exact`, aktuell 4.0.540). Upgrade mit
+   landen in `output/` (ignoriert) bzw. als GitHub-Artefakt. Erlaubt: Sprecher-MP3 (128 kbit/s, ≈ 1 MB pro Minute), kurze SFX-WAVs, kleine Standbilder (< 200 KB).
+6. **Branding nur aus `src/theme/brand.ts`** (TikTok: **@frankfurtred3**, Profilbild „S“). Nie Accountnamen hart codieren.
+7. **Schadensangaben dreistufig trennen:** sichtbarer Sachschaden · dokumentiertes Eindringen · nachgewiesene Entwendung.
+   „Geplündert“ nur bei belegter Entwendung. Offizielle Zahlen (17 beschädigt / 5 davon geplündert) nie mit eigener
+   Recherche-Zählung vermischen; die 5 sind Teil der 17. Keine erfundenen Schadenssummen.
+8. **Fotos:** nur eigene/lizenzierte Bilder, keine erkennbaren Personen, Pressefotos nicht übernehmen; Fassadenfotos nie als
+   Schadensfoto ausgeben; sonst `StorefrontIllustration` (im Bild als „Illustration“ gekennzeichnet). Rechte in `references/<id>/medienrechte.md`.
+9. **Remotion-Pakete immer exakt gleiche Version** (`--save-exact`, aktuell 4.0.540). Upgrade mit
    `npx remotion upgrade`, danach Typecheck + Testrender.
 
 ## Exportnorm (TikTok / iPhone)
@@ -85,6 +91,13 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 - Uhrzeiten nur so genau wie belegt („kurz vor 23 Uhr“ statt erfundener Minute); Ticker-Zeiten als „Meldung“ kennzeichnen.
 - Karten: Bewegungen/Routen nur zeigen, wenn belegt – sonst „Reihenfolge der Meldungen“ und so beschriften.
   OpenStreetMap-Hinweis „© OpenStreetMap-Mitwirkende“ muss sichtbar sein (macht `CityStreetMap`).
+
+## Videos
+
+| Komposition | Ordner | Inhalt |
+|---|---|---|
+| `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1: Demo, Nacht, internationale Schlagzeilen |
+| `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2: Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
 
 ## Projektstruktur
 

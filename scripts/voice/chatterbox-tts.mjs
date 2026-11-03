@@ -9,6 +9,7 @@
  * Ablauf je Satz: „Vorlauf-Wort“ + Satz erzeugen (Chatterbox verschluckt sonst oft das erste Wort) →
  * Vorlauf an der ersten Sprechpause abschneiden → Stille trimmen → Tempo anpassen → Zusammenbau + Mastering.
  * --check: vergleicht jeden Satz per Whisper (falls installiert) mit dem Skript.
+ * Satz klingt verschliffen? Im Skript beim Segment "seed": <Zahl> setzen → nur dieser Satz wird neu erzeugt.
  * Cache: Rohaufnahmen liegen in .cache/voice-segments/<video>/ – nur geänderte Sätze werden neu erzeugt
  *        (Pausen/Tempo ändern = Sekunden statt Minuten). --fresh erzwingt alles neu, --only id1,id2 gezielt.
  */
@@ -59,7 +60,7 @@ const keyFor = (segment, attempt) =>
 				ex: cfg.exaggeration,
 				cfg: cfg.cfgWeight,
 				t: cfg.temperature,
-				seed: Number(cfg.seed) + attempt * 101,
+				seed: Number(segment.seed ?? cfg.seed) + attempt * 101,
 			}),
 		)
 		.digest('hex')
@@ -120,7 +121,7 @@ const whisperCheck = (file, expected) => {
 try {
 	const targets = script.segments.filter((s) => !only || only.includes(s.id));
 	const jobsFor = (segs, attempt) =>
-		segs.map((s) => ({id: s.id, seed: Number(cfg.seed) + attempt * 101, text: `${cfg.prefix} ${parseSegmentText(s.text).spoken}`}));
+		segs.map((s) => ({id: s.id, seed: Number(s.seed ?? cfg.seed) + attempt * 101, text: `${cfg.prefix} ${parseSegmentText(s.text).spoken}`}));
 
 	let pending = targets;
 	const done = new Map();

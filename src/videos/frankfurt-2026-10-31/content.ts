@@ -270,7 +270,5 @@ export const NIGHT_MAP = {
 
 export const OUTRO = {
 	title: 'Danke fürs Zusehen!',
-	channelName: 'SmokingTikTok',
-	initials: 'ST',
 	commentPrompt: 'Welches Thema als Nächstes?',
 };

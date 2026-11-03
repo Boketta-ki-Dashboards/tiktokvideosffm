@@ -9,6 +9,13 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**Folge 2 – „Welche Läden hat es getroffen?“** (Komposition `FrankfurtShops`, ≈ 78 s): animierte Schadenskarte der
+Innenstadt mit allen recherchierten Geschäften (rot = Diebstahl belegt, orange = Sachschaden, grau = ungeklärt),
+Infokarten mit Fotos/Illustrationen, Schadenshöhe, Gesamtbilanz (offiziell vs. Recherche) und Outro @frankfurtred3.
+Daten: [`src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json`](src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json) ·
+Tabelle & Quellen: [`references/frankfurt-2026-10-31-geschaefte/sources.md`](references/frankfurt-2026-10-31-geschaefte/sources.md) ·
+Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md) · Medienrechte: [`medienrechte.md`](references/frankfurt-2026-10-31-geschaefte/medienrechte.md)
+
 ---
 
 ## Video herunterladen (GitHub Actions)
@@ -16,7 +23,8 @@ Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](referenc
 1. Im Repository oben auf **Actions** klicken.
 2. Links den Workflow **„Video rendern“** wählen.
 3. Rechts **„Run workflow“** → Branch wählen → Eingaben prüfen:
-   - `composition`: `FrankfurtHeadlines`
+   - `composition`: `FrankfurtHeadlines` (Folge 1) oder `FrankfurtShops` (Folge 2)
+   - `video_id`: `frankfurt-2026-10-31` bzw. `frankfurt-2026-10-31-geschaefte` (nur für Stimme neu erzeugen/importieren)
    - `voice`: `repo` (vorhandene Sprecherspur), `chatterbox` (natürliche Stimme neu erzeugen, ≈ 10–20 min),
      `import` (deine Datei aus `voice-input/`), `piper` (schnelle Roboterstimme) oder `none` (stumm)
    - `crf`: `18` (Qualität)
@@ -35,7 +43,8 @@ Der Prüfbericht steht zusätzlich in der Zusammenfassung des Workflow-Laufs.
 | Figuren | `VectorPerson` (Gehzyklus, Jubeln, Schilder mit Symbolen), `Crowd` (Tiefenstaffelung, Marsch) |
 | Weltkarte | `WorldMap` (Natural Earth 1:50 Mio., Kamerafahrten, Länder-Highlights, animierte Verbindungsbögen, Pins mit Flaggen-Labels), `PLACES`, `COUNTRY_IDS` |
 | Stadtplan | `CityStreetMap` (echte OpenStreetMap-Geometrie, Kamerafahrt, Marker mit Info-Karten, Straßen-Sweeps, Brennpunkte, Abfolge-Linie); Daten per `scripts/maps/build-osm-map.mjs` |
-| Abspann | `FollowCta` (Finger tippt auf das Folgen-Plus, Plus → Haken, Kommentar-Aufforderung) |
+| Abspann | `FollowCta` (Finger tippt auf das Folgen-Plus, Plus → Haken, Kommentar-Aufforderung); Account & Profilbild aus `src/theme/brand.ts` (**@frankfurtred3**, „S“) |
+| Schadenskarte | `DamagePins` (Status-Pins rot/orange/grau, Cluster statt Überlappung, kollisionsfreie Schilder, Verbindungslinien), `ShopCard`, `StorefrontIllustration`; automatische Straßennamen in `CityStreetMap` |
 | Flaggen, Medien, Quellen | `Flag` (17 Länder + Fallback), `MediaBadge` (neutrale Wortmarke, optional lizenziertes Logo), `HeadlineCard` (Original-Schlagzeile + Übersetzung), `SourceCredit` |
 | Statistiken & Infografiken | `AnimatedNumber` (deutsches Zahlenformat), `StatCard`, `ComparisonBars`, `ProgressRing`, `Timeline` |
 | Kamera & Übergänge | `Camera` (Keyframes: Zoom, Schwenk, Neigung, Wackeln), `KenBurns`, `focusOn`; Übergänge `zoomThrough`, `whipPan`, `circleReveal`, `flashCut` + Remotion `fade`/`slide`/`wipe` |

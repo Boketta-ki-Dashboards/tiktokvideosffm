@@ -1,0 +1,111 @@
+{
+	"videoId": "frankfurt-2026-10-31-geschaefte",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 90000,
+	"voice": {
+		"engine": "chatterbox",
+		"chatterbox": {
+			"reference": "voices/thorsten-cc0-ref.flac",
+			"exaggeration": 0.7,
+			"cfgWeight": 0.3,
+			"temperature": 0.8,
+			"tempo": 1.15,
+			"seed": 7,
+			"prefix": "Also."
+		},
+		"piperModel": "de_DE-thorsten-high",
+		"lengthScale": 0.8
+	},
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "{17|Siebzehn} Geschäfte wurden bei den Krawallen in Frankfurt beschädigt.",
+			"pauseAfterMs": 250,
+			"seed": 11
+		},
+		{
+			"id": "hook2",
+			"text": "Fünf davon laut erster Polizeibilanz geplündert.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "hook3",
+			"text": "Aber welche Läden hat es wirklich getroffen?",
+			"pauseAfterMs": 450
+		},
+		{
+			"id": "map1",
+			"text": "Die bekannten Fälle liegen rund um Zeil, Berliner Straße und Eschenheimer Tor.",
+			"pauseAfterMs": 350
+		},
+		{
+			"id": "snipes",
+			"text": "{Snipes|Snaips} auf der Zeil: Jugendliche dringen ein und kommen mit Kartons und Schuhen wieder heraus.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "hasengasse",
+			"text": "In der Hasengasse gehen Scheiben zu Bruch, die Polizei bestätigt einen Plünderungsversuch – welcher Laden, ist nicht bekannt.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "parfum",
+			"text": "Am Liebfrauenberg zersplittern die Schaufenster von {Oil de Parfum|Oil de Parfüm}.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "waffen",
+			"text": "In der Berliner Straße wird aus einem Waffengeschäft mindestens eine Waffe gestohlen.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "bayat",
+			"text": "Ein paar Läden weiter hält beim Teppichhaus {Bayat|Bajat} das Panzerglas.",
+			"pauseAfterMs": 200,
+			"seed": 11
+		},
+		{
+			"id": "weinkosmetik",
+			"text": "Auch ein Weingeschäft und ein Kosmetikstudio werden beschädigt.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "laufshop",
+			"text": "Beim Frankfurter Laufshop dringen Unbekannte ein und stehlen vor allem Kleidung.",
+			"pauseAfterMs": 300,
+			"seed": 11
+		},
+		{
+			"id": "elfteam",
+			"text": "Videos zeigen die zerstörte Front von {11teamsports|Elf Tiem Sports} – ob dort etwas gestohlen wurde, ist nicht belegt.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "e43",
+			"text": "Und bei {43einhalb|dreiundvierzigeinhalb} verschwindet Ware aus der Auslage.",
+			"pauseAfterMs": 450
+		},
+		{
+			"id": "schaden",
+			"text": "Die Schadenssumme? Laut Polizei erheblich – beziffert ist sie bis heute nicht.",
+			"pauseAfterMs": 400
+		},
+		{
+			"id": "over1",
+			"text": "Neun betroffene Geschäfte lassen sich inzwischen zuordnen, bei vier ist ein Diebstahl belegt.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "over2",
+			"text": "Der Rest der offiziellen Bilanz bleibt ohne Namen.",
+			"pauseAfterMs": 700
+		},
+		{
+			"id": "outro",
+			"text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!",
+			"pauseAfterMs": 0
+		}
+	]
+}

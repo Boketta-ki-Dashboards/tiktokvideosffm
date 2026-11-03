@@ -3,6 +3,7 @@ import {AbsoluteFill, interpolate, random, useCurrentFrame, useVideoConfig} from
 import {clamp, EASE_IN_OUT, EASE_OUT, springIn} from '../../lib/animation';
 import {withAlpha} from '../../lib/color';
 import {COLORS, FONTS, SHADOWS} from '../../theme/tokens';
+import {BRAND} from '../../theme/brand';
 import {KineticText} from '../text/KineticText';
 
 export type FollowCtaProps = {
@@ -11,9 +12,12 @@ export type FollowCtaProps = {
 	/** Frame, ab dem die Kommentar-Aufforderung erscheint. */
 	commentFrame: number;
 	title?: string;
-	/** Kurzname/Initialen im Profilbild. */
-	initials?: string;
-	channelName?: string;
+	/** Buchstabe im Profilbild (Standard aus src/theme/brand.ts). */
+	avatarLetter?: string;
+	/** TikTok-Handle ohne @ (Standard aus src/theme/brand.ts). */
+	handle?: string;
+	/** Radius des Profilbilds in px. */
+	avatarRadius?: number;
 	commentPrompt?: string;
 };
 
@@ -59,8 +63,9 @@ export const FollowCta: React.FC<FollowCtaProps> = ({
 	tapFrame,
 	commentFrame,
 	title = 'Danke fürs Zusehen!',
-	initials = 'ST',
-	channelName = 'SmokingTikTok',
+	avatarLetter = BRAND.avatarLetter,
+	handle = BRAND.handle,
+	avatarRadius = 140,
 	commentPrompt = 'Welches Thema als Nächstes?',
 }) => {
 	const frame = useCurrentFrame();
@@ -70,7 +75,7 @@ export const FollowCta: React.FC<FollowCtaProps> = ({
 	const avatarIn = springIn({frame, fps, delay: 4, damping: 12});
 	const avatarX = width / 2;
 	const avatarY = 760;
-	const avatarR = 140;
+	const avatarR = avatarRadius;
 
 	// Finger: kommt von rechts unten, tippt, zieht sich zurück
 	const approach = interpolate(frame, [tapFrame - 22, tapFrame], [0, 1], {...clamp, easing: EASE_IN_OUT});
@@ -137,7 +142,7 @@ export const FollowCta: React.FC<FollowCtaProps> = ({
 						width: '100%',
 						height: '100%',
 						borderRadius: '50%',
-						background: `linear-gradient(135deg, ${COLORS.violet}, ${COLORS.cyan})`,
+						background: `radial-gradient(circle at 30% 25%, ${BRAND.avatarGradient[0]}, ${BRAND.avatarGradient[1]} 78%)`,
 						border: '8px solid #FFFFFF',
 						boxShadow: SHADOWS.card,
 						display: 'flex',
@@ -150,7 +155,17 @@ export const FollowCta: React.FC<FollowCtaProps> = ({
 						letterSpacing: -2,
 					}}
 				>
-					{initials}
+					<span
+						style={{
+							fontSize: avatarR * 1.25,
+							fontStyle: 'italic',
+							lineHeight: 1,
+							translate: `0 ${-avatarR * 0.04}px`,
+							textShadow: '0 6px 0 rgba(0,0,0,0.25), 0 0 30px rgba(255,255,255,0.25)',
+						}}
+					>
+						{avatarLetter}
+					</span>
 				</div>
 				<div
 					style={{
@@ -204,7 +219,7 @@ export const FollowCta: React.FC<FollowCtaProps> = ({
 					opacity: avatarIn,
 				}}
 			>
-				<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 40, color: COLORS.text}}>@{channelName}</span>
+				<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 40, color: COLORS.text}}>@{handle}</span>
 				<span
 					style={{
 						fontFamily: FONTS.heading,
