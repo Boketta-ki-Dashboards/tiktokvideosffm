@@ -79,7 +79,7 @@
 		},
 		{
 			"id": "elfteam",
-			"text": "Videos zeigen die zerstörte Front von {11teamsports|Elf Tiem Sports} – ob dort etwas gestohlen wurde, ist nicht belegt.",
+			"text": "Bei {11teamsports|Elf Tiem Sports} zeigt ein Video aus der Nacht, wie Beute aus dem Laden getragen wird – wir haben es selbst gesehen.",
 			"pauseAfterMs": 300
 		},
 		{
@@ -94,7 +94,7 @@
 		},
 		{
 			"id": "over1",
-			"text": "Neun betroffene Geschäfte lassen sich inzwischen zuordnen, bei vier ist ein Diebstahl belegt.",
+			"text": "Neun betroffene Geschäfte lassen sich inzwischen zuordnen, bei fünf ist ein Diebstahl belegt.",
 			"pauseAfterMs": 250
 		},
 		{

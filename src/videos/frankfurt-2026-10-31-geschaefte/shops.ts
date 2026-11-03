@@ -6,7 +6,7 @@ import type {DamageStatus} from '../../components/media/ShopCard';
 import type {StorefrontMotif} from '../../components/media/StorefrontIllustration';
 import data from './data/shops.json';
 
-export type ShopSource = {art: 'presse' | 'polizei' | 'haendler' | 'video' | 'adresse'; name: string; datum: string; zeit?: string; url: string | null};
+export type ShopSource = {art: 'presse' | 'polizei' | 'haendler' | 'video' | 'augenzeuge' | 'adresse'; name: string; datum: string; zeit?: string; url: string | null};
 
 export type Shop = {
 	id: string;
@@ -81,4 +81,5 @@ export const KNOWN_LOSSES = [
 	{shop: 'Frankfurter Laufshop', what: 'vor allem Kleidung, auch Schuhe'},
 	{shop: '43einhalb', what: 'Ware aus der Auslage'},
 	{shop: 'Waffengeschäft', what: 'mind. eine Waffe'},
+	{shop: '11teamsports', what: 'Ware (Video der Nacht)'},
 ];

@@ -19,7 +19,7 @@ test('jedes Geschäft hat Pflichtfelder, gültigen Status und mindestens eine Qu
 		assert.ok(['hoch', 'mittel', 'niedrig'].includes(s.belegstaerke));
 		assert.ok(s.quellen.length > 0, `${s.id}: keine Quelle`);
 		for (const q of s.quellen) {
-			assert.ok(q.url || q.art === 'video', `${s.id}: Quelle ohne URL muss ein Video-Beleg sein`);
+			assert.ok(q.url || q.art === 'video' || q.art === 'augenzeuge', `${s.id}: Quelle ohne URL muss ein Video- oder Augenzeugenbeleg sein`);
 			assert.match(q.datum, /^2\d{3}-\d{2}-\d{2}$/);
 		}
 	}

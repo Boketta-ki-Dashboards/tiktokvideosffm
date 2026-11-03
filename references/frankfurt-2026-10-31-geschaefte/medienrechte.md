@@ -9,3 +9,23 @@
 
 **Nicht verwendet:** Pressefotos (Urheberrecht Dritter), das TikTok-Video eines fremden Accounts (Rechte Dritter,
 erkennbare Personen) und Bilder mit erkennbaren Gesichtern (Persönlichkeitsrecht).
+
+## Fotos aus der Nacht – Stand der Suche (03.11.2026)
+
+- **Frei lizenzierte Bilder (Wikimedia Commons, Flickr CC):** keine Aufnahmen der Krawallnacht gefunden.
+- **Social-Media-Posts fremder Accounts:** Jedes Foto und jedes Video ist urheberrechtlich geschützt (§ 72 UrhG gilt
+  auch für einfache Handyfotos). Ohne Erlaubnis drohen Löschung, Urheberrechts-Strikes für den TikTok-Account und
+  Abmahnungen. Erkennbare Personen bräuchten zusätzlich deren Einwilligung (§ 22 KUG).
+- **So kommen echte Nachtbilder legal ins Video:**
+  1. **Eigene Aufnahmen** des Kanalbetreibers aus der Nacht (bevorzugt). Standbilder ohne erkennbare Gesichter
+     auswählen oder Gesichter verpixeln.
+  2. **Erlaubnis des Urhebers**, z. B. für das 11teamsports-Nachtvideo. Das Video zeigt bei 24,7–25,4 s nur Beine und
+     die herausgetragene Ware, keine Gesichter, und eignet sich deshalb gut als Beweisbild. Die Erlaubnis
+     (Screenshot der Nachricht) unter `references/frankfurt-2026-10-31-geschaefte/erlaubnisse/` ablegen und dann in
+     `shops.json` als `"bild": {"typ": "foto", …, "credit": "Video: @name (mit Erlaubnis)"}` eintragen.
+
+Vorlage für die Anfrage (TikTok-Direktnachricht):
+
+> Hi! Ich mache auf TikTok kurze Erklärvideos zu den Krawallen in Frankfurt. Darf ich ein Standbild aus deinem Video
+> vom 31.10. (11teamsports, Große Eschenheimer Straße) verwenden? Es sind keine Gesichter zu sehen, und ich nenne
+> dich als Quelle („Video: @deinname“). Danke!

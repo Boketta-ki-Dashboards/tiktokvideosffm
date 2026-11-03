@@ -20,6 +20,9 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
    - Umstrittene Einzelbehauptungen (z. B. Herkunft von Tatverdächtigen) nur mit sorgfältiger Einordnung – im
      Zweifel weglassen und in `sources.md` unter „Bewusst NICHT verwendet“ begründen.
    - Platzhalter (Showcase) klar als „Beispiel/Platzhalter“ kennzeichnen.
+   - Eigene Beobachtung des Kanalbetreibers vor Ort ist ein Beleg (`"art": "augenzeuge"`), wenn sie im Video offen als solche
+     benannt wird („wir haben es vor Ort gesehen“). Sie wird nie als Polizei- oder Medienangabe ausgegeben.
+   - Referenzvideos **vollständig** Bild für Bild auswerten (Kontaktbogen mit 2 fps, verdächtige Stellen mit 5–10 fps), nicht nur Ausschnitte.
 3. **Keine fremden Logos/Marken nachbauen.** Medien erscheinen als neutrale Wortmarke (`MediaBadge`).
    Echte Logos nur mit Nutzungsrecht als Datei in `public/` (`logoFile`-Prop).
 4. **Keine realen Personen darstellen.** Figuren sind anonyme, stilisierte Vektorfiguren. Gewalt nicht

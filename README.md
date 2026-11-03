@@ -9,7 +9,7 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
-**Folge 2 – „Welche Läden hat es getroffen?“** (Komposition `FrankfurtShops`, ≈ 78 s): animierte Schadenskarte der
+**Folge 2 – „Welche Läden hat es getroffen?“** (Komposition `FrankfurtShops`, ≈ 77,5 s): animierte Schadenskarte der
 Innenstadt mit allen recherchierten Geschäften (rot = Diebstahl belegt, orange = Sachschaden, grau = ungeklärt),
 Infokarten mit Fotos/Illustrationen, Schadenshöhe, Gesamtbilanz (offiziell vs. Recherche) und Outro @frankfurtred3.
 Daten: [`src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json`](src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json) ·

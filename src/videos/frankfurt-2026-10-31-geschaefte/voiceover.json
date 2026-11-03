@@ -3,7 +3,7 @@
 	"videoId": "frankfurt-2026-10-31-geschaefte",
 	"source": "chatterbox-multilingual:thorsten-cc0-ref.flac (ex 0.7, cfg 0.3, tempo 1.15)",
 	"audioFile": "voiceover/frankfurt-2026-10-31-geschaefte/voiceover.mp3",
-	"durationMs": 76395,
+	"durationMs": 77002,
 	"segments": [
 		{
 			"id": "hook1",
@@ -63,32 +63,32 @@
 		{
 			"id": "elfteam",
 			"startMs": 49438,
-			"endMs": 55418
+			"endMs": 55566
 		},
 		{
 			"id": "e43",
-			"startMs": 55718,
-			"endMs": 59072
+			"startMs": 55866,
+			"endMs": 59220
 		},
 		{
 			"id": "schaden",
-			"startMs": 59522,
-			"endMs": 64156
+			"startMs": 59670,
+			"endMs": 64304
 		},
 		{
 			"id": "over1",
-			"startMs": 64556,
-			"endMs": 69752
+			"startMs": 64704,
+			"endMs": 70359
 		},
 		{
 			"id": "over2",
-			"startMs": 70002,
-			"endMs": 72766
+			"startMs": 70609,
+			"endMs": 73373
 		},
 		{
 			"id": "outro",
-			"startMs": 73466,
-			"endMs": 76395
+			"startMs": 74073,
+			"endMs": 77002
 		}
 	],
 	"captions": [
@@ -905,440 +905,475 @@
 			"confidence": null
 		},
 		{
-			"text": " Videos",
+			"text": " Bei",
 			"startMs": 49438,
-			"endMs": 49850,
-			"timestampMs": 49644,
+			"endMs": 49624,
+			"timestampMs": 49531,
 			"confidence": null
 		},
 		{
-			"text": " zeigen",
-			"startMs": 49850,
-			"endMs": 50263,
-			"timestampMs": 50057,
+			"text": " 11teamsports",
+			"startMs": 49624,
+			"endMs": 50181,
+			"timestampMs": 49903,
 			"confidence": null
 		},
 		{
-			"text": " die",
-			"startMs": 50263,
-			"endMs": 50469,
-			"timestampMs": 50366,
-			"confidence": null
-		},
-		{
-			"text": " zerstörte",
-			"startMs": 50469,
-			"endMs": 51088,
-			"timestampMs": 50779,
-			"confidence": null
-		},
-		{
-			"text": " Front",
-			"startMs": 51088,
-			"endMs": 51294,
-			"timestampMs": 51191,
-			"confidence": null
-		},
-		{
-			"text": " von",
-			"startMs": 51294,
-			"endMs": 51500,
-			"timestampMs": 51397,
-			"confidence": null
-		},
-		{
-			"text": " 11teamsports –",
-			"startMs": 51500,
-			"endMs": 52304,
-			"timestampMs": 51902,
-			"confidence": null
-		},
-		{
-			"text": " ob",
-			"startMs": 52304,
-			"endMs": 52510,
-			"timestampMs": 52407,
-			"confidence": null
-		},
-		{
-			"text": " dort",
-			"startMs": 52510,
-			"endMs": 52717,
-			"timestampMs": 52614,
-			"confidence": null
-		},
-		{
-			"text": " etwas",
-			"startMs": 52717,
-			"endMs": 53129,
-			"timestampMs": 52923,
-			"confidence": null
-		},
-		{
-			"text": " gestohlen",
-			"startMs": 53129,
-			"endMs": 53748,
-			"timestampMs": 53439,
-			"confidence": null
-		},
-		{
-			"text": " wurde,",
-			"startMs": 53748,
-			"endMs": 54304,
-			"timestampMs": 54026,
-			"confidence": null
-		},
-		{
-			"text": " ist",
-			"startMs": 54304,
-			"endMs": 54511,
-			"timestampMs": 54408,
-			"confidence": null
-		},
-		{
-			"text": " nicht",
-			"startMs": 54511,
-			"endMs": 54717,
-			"timestampMs": 54614,
-			"confidence": null
-		},
-		{
-			"text": " belegt.",
-			"startMs": 54717,
-			"endMs": 55418,
-			"timestampMs": 55068,
-			"confidence": null
-		},
-		{
-			"text": " Und",
-			"startMs": 55718,
-			"endMs": 55900,
-			"timestampMs": 55809,
-			"confidence": null
-		},
-		{
-			"text": " bei",
-			"startMs": 55900,
-			"endMs": 56083,
-			"timestampMs": 55992,
-			"confidence": null
-		},
-		{
-			"text": " 43einhalb",
-			"startMs": 56083,
-			"endMs": 56994,
-			"timestampMs": 56539,
-			"confidence": null
-		},
-		{
-			"text": " verschwindet",
-			"startMs": 56994,
-			"endMs": 57541,
-			"timestampMs": 57268,
-			"confidence": null
-		},
-		{
-			"text": " Ware",
-			"startMs": 57541,
-			"endMs": 57905,
-			"timestampMs": 57723,
-			"confidence": null
-		},
-		{
-			"text": " aus",
-			"startMs": 57905,
-			"endMs": 58088,
-			"timestampMs": 57997,
-			"confidence": null
-		},
-		{
-			"text": " der",
-			"startMs": 58088,
-			"endMs": 58270,
-			"timestampMs": 58179,
-			"confidence": null
-		},
-		{
-			"text": " Auslage.",
-			"startMs": 58270,
-			"endMs": 59072,
-			"timestampMs": 58671,
-			"confidence": null
-		},
-		{
-			"text": " Die",
-			"startMs": 59522,
-			"endMs": 59710,
-			"timestampMs": 59616,
-			"confidence": null
-		},
-		{
-			"text": " Schadenssumme?",
-			"startMs": 59710,
-			"endMs": 60723,
-			"timestampMs": 60217,
-			"confidence": null
-		},
-		{
-			"text": " Laut",
-			"startMs": 60723,
-			"endMs": 60910,
-			"timestampMs": 60817,
-			"confidence": null
-		},
-		{
-			"text": " Polizei",
-			"startMs": 60910,
-			"endMs": 61473,
-			"timestampMs": 61192,
-			"confidence": null
-		},
-		{
-			"text": " erheblich –",
-			"startMs": 61473,
-			"endMs": 62205,
-			"timestampMs": 61839,
-			"confidence": null
-		},
-		{
-			"text": " beziffert",
-			"startMs": 62205,
-			"endMs": 62768,
-			"timestampMs": 62487,
-			"confidence": null
-		},
-		{
-			"text": " ist",
-			"startMs": 62768,
-			"endMs": 62955,
-			"timestampMs": 62862,
-			"confidence": null
-		},
-		{
-			"text": " sie",
-			"startMs": 62955,
-			"endMs": 63143,
-			"timestampMs": 63049,
-			"confidence": null
-		},
-		{
-			"text": " bis",
-			"startMs": 63143,
-			"endMs": 63331,
-			"timestampMs": 63237,
-			"confidence": null
-		},
-		{
-			"text": " heute",
-			"startMs": 63331,
-			"endMs": 63706,
-			"timestampMs": 63519,
-			"confidence": null
-		},
-		{
-			"text": " nicht.",
-			"startMs": 63706,
-			"endMs": 64156,
-			"timestampMs": 63931,
-			"confidence": null
-		},
-		{
-			"text": " Neun",
-			"startMs": 64556,
-			"endMs": 64755,
-			"timestampMs": 64656,
-			"confidence": null
-		},
-		{
-			"text": " betroffene",
-			"startMs": 64755,
-			"endMs": 65551,
-			"timestampMs": 65153,
-			"confidence": null
-		},
-		{
-			"text": " Geschäfte",
-			"startMs": 65551,
-			"endMs": 66149,
-			"timestampMs": 65850,
-			"confidence": null
-		},
-		{
-			"text": " lassen",
-			"startMs": 66149,
-			"endMs": 66547,
-			"timestampMs": 66348,
-			"confidence": null
-		},
-		{
-			"text": " sich",
-			"startMs": 66547,
-			"endMs": 66746,
-			"timestampMs": 66647,
-			"confidence": null
-		},
-		{
-			"text": " inzwischen",
-			"startMs": 66746,
-			"endMs": 67343,
-			"timestampMs": 67045,
-			"confidence": null
-		},
-		{
-			"text": " zuordnen,",
-			"startMs": 67343,
-			"endMs": 67881,
-			"timestampMs": 67612,
-			"confidence": null
-		},
-		{
-			"text": " bei",
-			"startMs": 67881,
-			"endMs": 68080,
-			"timestampMs": 67981,
-			"confidence": null
-		},
-		{
-			"text": " vier",
-			"startMs": 68080,
-			"endMs": 68279,
-			"timestampMs": 68180,
-			"confidence": null
-		},
-		{
-			"text": " ist",
-			"startMs": 68279,
-			"endMs": 68478,
-			"timestampMs": 68379,
+			"text": " zeigt",
+			"startMs": 50181,
+			"endMs": 50366,
+			"timestampMs": 50274,
 			"confidence": null
 		},
 		{
 			"text": " ein",
-			"startMs": 68478,
-			"endMs": 68677,
-			"timestampMs": 68578,
+			"startMs": 50366,
+			"endMs": 50552,
+			"timestampMs": 50459,
 			"confidence": null
 		},
 		{
-			"text": " Diebstahl",
-			"startMs": 68677,
-			"endMs": 69075,
-			"timestampMs": 68876,
+			"text": " Video",
+			"startMs": 50552,
+			"endMs": 50924,
+			"timestampMs": 50738,
 			"confidence": null
 		},
 		{
-			"text": " belegt.",
-			"startMs": 69075,
-			"endMs": 69752,
-			"timestampMs": 69414,
-			"confidence": null
-		},
-		{
-			"text": " Der",
-			"startMs": 70002,
-			"endMs": 70181,
-			"timestampMs": 70092,
-			"confidence": null
-		},
-		{
-			"text": " Rest",
-			"startMs": 70181,
-			"endMs": 70361,
-			"timestampMs": 70271,
+			"text": " aus",
+			"startMs": 50924,
+			"endMs": 51109,
+			"timestampMs": 51017,
 			"confidence": null
 		},
 		{
 			"text": " der",
-			"startMs": 70361,
-			"endMs": 70540,
-			"timestampMs": 70451,
+			"startMs": 51109,
+			"endMs": 51295,
+			"timestampMs": 51202,
+			"confidence": null
+		},
+		{
+			"text": " Nacht,",
+			"startMs": 51295,
+			"endMs": 51611,
+			"timestampMs": 51453,
+			"confidence": null
+		},
+		{
+			"text": " wie",
+			"startMs": 51611,
+			"endMs": 51796,
+			"timestampMs": 51704,
+			"confidence": null
+		},
+		{
+			"text": " Beute",
+			"startMs": 51796,
+			"endMs": 52168,
+			"timestampMs": 51982,
+			"confidence": null
+		},
+		{
+			"text": " aus",
+			"startMs": 52168,
+			"endMs": 52353,
+			"timestampMs": 52261,
+			"confidence": null
+		},
+		{
+			"text": " dem",
+			"startMs": 52353,
+			"endMs": 52539,
+			"timestampMs": 52446,
+			"confidence": null
+		},
+		{
+			"text": " Laden",
+			"startMs": 52539,
+			"endMs": 52911,
+			"timestampMs": 52725,
+			"confidence": null
+		},
+		{
+			"text": " getragen",
+			"startMs": 52911,
+			"endMs": 53468,
+			"timestampMs": 53190,
+			"confidence": null
+		},
+		{
+			"text": " wird –",
+			"startMs": 53468,
+			"endMs": 53820,
+			"timestampMs": 53644,
+			"confidence": null
+		},
+		{
+			"text": " wir",
+			"startMs": 53820,
+			"endMs": 54006,
+			"timestampMs": 53913,
+			"confidence": null
+		},
+		{
+			"text": " haben",
+			"startMs": 54006,
+			"endMs": 54378,
+			"timestampMs": 54192,
+			"confidence": null
+		},
+		{
+			"text": " es",
+			"startMs": 54378,
+			"endMs": 54563,
+			"timestampMs": 54471,
+			"confidence": null
+		},
+		{
+			"text": " selbst",
+			"startMs": 54563,
+			"endMs": 54749,
+			"timestampMs": 54656,
+			"confidence": null
+		},
+		{
+			"text": " gesehen.",
+			"startMs": 54749,
+			"endMs": 55566,
+			"timestampMs": 55158,
+			"confidence": null
+		},
+		{
+			"text": " Und",
+			"startMs": 55866,
+			"endMs": 56048,
+			"timestampMs": 55957,
+			"confidence": null
+		},
+		{
+			"text": " bei",
+			"startMs": 56048,
+			"endMs": 56231,
+			"timestampMs": 56140,
+			"confidence": null
+		},
+		{
+			"text": " 43einhalb",
+			"startMs": 56231,
+			"endMs": 57142,
+			"timestampMs": 56687,
+			"confidence": null
+		},
+		{
+			"text": " verschwindet",
+			"startMs": 57142,
+			"endMs": 57689,
+			"timestampMs": 57416,
+			"confidence": null
+		},
+		{
+			"text": " Ware",
+			"startMs": 57689,
+			"endMs": 58053,
+			"timestampMs": 57871,
+			"confidence": null
+		},
+		{
+			"text": " aus",
+			"startMs": 58053,
+			"endMs": 58236,
+			"timestampMs": 58145,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 58236,
+			"endMs": 58418,
+			"timestampMs": 58327,
+			"confidence": null
+		},
+		{
+			"text": " Auslage.",
+			"startMs": 58418,
+			"endMs": 59220,
+			"timestampMs": 58819,
+			"confidence": null
+		},
+		{
+			"text": " Die",
+			"startMs": 59670,
+			"endMs": 59858,
+			"timestampMs": 59764,
+			"confidence": null
+		},
+		{
+			"text": " Schadenssumme?",
+			"startMs": 59858,
+			"endMs": 60871,
+			"timestampMs": 60365,
+			"confidence": null
+		},
+		{
+			"text": " Laut",
+			"startMs": 60871,
+			"endMs": 61058,
+			"timestampMs": 60965,
+			"confidence": null
+		},
+		{
+			"text": " Polizei",
+			"startMs": 61058,
+			"endMs": 61621,
+			"timestampMs": 61340,
+			"confidence": null
+		},
+		{
+			"text": " erheblich –",
+			"startMs": 61621,
+			"endMs": 62353,
+			"timestampMs": 61987,
+			"confidence": null
+		},
+		{
+			"text": " beziffert",
+			"startMs": 62353,
+			"endMs": 62916,
+			"timestampMs": 62635,
+			"confidence": null
+		},
+		{
+			"text": " ist",
+			"startMs": 62916,
+			"endMs": 63103,
+			"timestampMs": 63010,
+			"confidence": null
+		},
+		{
+			"text": " sie",
+			"startMs": 63103,
+			"endMs": 63291,
+			"timestampMs": 63197,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 63291,
+			"endMs": 63479,
+			"timestampMs": 63385,
+			"confidence": null
+		},
+		{
+			"text": " heute",
+			"startMs": 63479,
+			"endMs": 63854,
+			"timestampMs": 63667,
+			"confidence": null
+		},
+		{
+			"text": " nicht.",
+			"startMs": 63854,
+			"endMs": 64304,
+			"timestampMs": 64079,
+			"confidence": null
+		},
+		{
+			"text": " Neun",
+			"startMs": 64704,
+			"endMs": 64921,
+			"timestampMs": 64813,
+			"confidence": null
+		},
+		{
+			"text": " betroffene",
+			"startMs": 64921,
+			"endMs": 65787,
+			"timestampMs": 65354,
+			"confidence": null
+		},
+		{
+			"text": " Geschäfte",
+			"startMs": 65787,
+			"endMs": 66437,
+			"timestampMs": 66112,
+			"confidence": null
+		},
+		{
+			"text": " lassen",
+			"startMs": 66437,
+			"endMs": 66871,
+			"timestampMs": 66654,
+			"confidence": null
+		},
+		{
+			"text": " sich",
+			"startMs": 66871,
+			"endMs": 67087,
+			"timestampMs": 66979,
+			"confidence": null
+		},
+		{
+			"text": " inzwischen",
+			"startMs": 67087,
+			"endMs": 67737,
+			"timestampMs": 67412,
+			"confidence": null
+		},
+		{
+			"text": " zuordnen,",
+			"startMs": 67737,
+			"endMs": 68322,
+			"timestampMs": 68030,
+			"confidence": null
+		},
+		{
+			"text": " bei",
+			"startMs": 68322,
+			"endMs": 68539,
+			"timestampMs": 68431,
+			"confidence": null
+		},
+		{
+			"text": " fünf",
+			"startMs": 68539,
+			"endMs": 68756,
+			"timestampMs": 68648,
+			"confidence": null
+		},
+		{
+			"text": " ist",
+			"startMs": 68756,
+			"endMs": 68972,
+			"timestampMs": 68864,
+			"confidence": null
+		},
+		{
+			"text": " ein",
+			"startMs": 68972,
+			"endMs": 69189,
+			"timestampMs": 69081,
+			"confidence": null
+		},
+		{
+			"text": " Diebstahl",
+			"startMs": 69189,
+			"endMs": 69622,
+			"timestampMs": 69406,
+			"confidence": null
+		},
+		{
+			"text": " belegt.",
+			"startMs": 69622,
+			"endMs": 70359,
+			"timestampMs": 69991,
+			"confidence": null
+		},
+		{
+			"text": " Der",
+			"startMs": 70609,
+			"endMs": 70788,
+			"timestampMs": 70699,
+			"confidence": null
+		},
+		{
+			"text": " Rest",
+			"startMs": 70788,
+			"endMs": 70968,
+			"timestampMs": 70878,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 70968,
+			"endMs": 71147,
+			"timestampMs": 71058,
 			"confidence": null
 		},
 		{
 			"text": " offiziellen",
-			"startMs": 70540,
-			"endMs": 71258,
-			"timestampMs": 70899,
+			"startMs": 71147,
+			"endMs": 71865,
+			"timestampMs": 71506,
 			"confidence": null
 		},
 		{
 			"text": " Bilanz",
-			"startMs": 71258,
-			"endMs": 71617,
-			"timestampMs": 71438,
+			"startMs": 71865,
+			"endMs": 72224,
+			"timestampMs": 72045,
 			"confidence": null
 		},
 		{
 			"text": " bleibt",
-			"startMs": 71617,
-			"endMs": 71797,
-			"timestampMs": 71707,
+			"startMs": 72224,
+			"endMs": 72404,
+			"timestampMs": 72314,
 			"confidence": null
 		},
 		{
 			"text": " ohne",
-			"startMs": 71797,
-			"endMs": 72156,
-			"timestampMs": 71977,
+			"startMs": 72404,
+			"endMs": 72763,
+			"timestampMs": 72584,
 			"confidence": null
 		},
 		{
 			"text": " Namen.",
-			"startMs": 72156,
-			"endMs": 72766,
-			"timestampMs": 72461,
+			"startMs": 72763,
+			"endMs": 73373,
+			"timestampMs": 73068,
 			"confidence": null
 		},
 		{
 			"text": " Danke",
-			"startMs": 73466,
-			"endMs": 73825,
-			"timestampMs": 73646,
+			"startMs": 74073,
+			"endMs": 74432,
+			"timestampMs": 74253,
 			"confidence": null
 		},
 		{
 			"text": " fürs",
-			"startMs": 73825,
-			"endMs": 74005,
-			"timestampMs": 73915,
+			"startMs": 74432,
+			"endMs": 74612,
+			"timestampMs": 74522,
 			"confidence": null
 		},
 		{
 			"text": " Zusehen –",
-			"startMs": 74005,
-			"endMs": 74706,
-			"timestampMs": 74356,
+			"startMs": 74612,
+			"endMs": 75313,
+			"timestampMs": 74963,
 			"confidence": null
 		},
 		{
 			"text": " Plus",
-			"startMs": 74706,
-			"endMs": 74886,
-			"timestampMs": 74796,
+			"startMs": 75313,
+			"endMs": 75493,
+			"timestampMs": 75403,
 			"confidence": null
 		},
 		{
 			"text": " wegmachen",
-			"startMs": 74886,
-			"endMs": 75425,
-			"timestampMs": 75156,
+			"startMs": 75493,
+			"endMs": 76032,
+			"timestampMs": 75763,
 			"confidence": null
 		},
 		{
 			"text": " nicht",
-			"startMs": 75425,
-			"endMs": 75604,
-			"timestampMs": 75515,
+			"startMs": 76032,
+			"endMs": 76211,
+			"timestampMs": 76122,
 			"confidence": null
 		},
 		{
 			"text": " vergessen!",
-			"startMs": 75604,
-			"endMs": 76395,
-			"timestampMs": 76000,
+			"startMs": 76211,
+			"endMs": 77002,
+			"timestampMs": 76607,
 			"confidence": null
 		}
 	],
 	"captionsSource": "script-estimate",
-	"generatedAt": "2026-11-03T15:14:46.500Z"
+	"generatedAt": "2026-11-03T19:38:25.995Z"
 }

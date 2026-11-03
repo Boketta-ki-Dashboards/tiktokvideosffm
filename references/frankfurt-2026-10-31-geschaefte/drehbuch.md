@@ -1,6 +1,6 @@
 # Drehbuch – Folge 2: „Welche Läden hat es getroffen?“
 
-Komposition `FrankfurtShops` · 1080×1920 · 30 fps · Stimme: Chatterbox (Vorlage Thorsten-Voice, CC0) · Länge ≈ 78 s
+Komposition `FrankfurtShops` · 1080×1920 · 30 fps · Stimme: Chatterbox (Vorlage Thorsten-Voice, CC0) · Länge ≈ 77,5 s
 
 | Zeit | Bild | Sprechertext (wörtlich) | Beleg |
 |---|---|---|---|
@@ -15,11 +15,11 @@ Komposition `FrankfurtShops` · 1080×1920 · 30 fps · Stimme: Chatterbox (Vorl
 | 36.5–40.7 s | Tour 5 – Teppichhaus Bayat | Ein paar Läden weiter hält beim Teppichhaus Bayat das Panzerglas. | t-online 03.11. (Inhaber) |
 | 40.9–44.4 s | Tour 6/7 – Weingeschäft, Kosmetikstudio | Auch ein Weingeschäft und ein Kosmetikstudio werden beschädigt. | t-online 03.11. |
 | 44.7–49.1 s | Tour 8 – Frankfurter Laufshop (+ Hinweis Nachbarladen) | Beim Frankfurter Laufshop dringen Unbekannte ein und stehlen vor allem Kleidung. | schuhkurier/hessenschau (Inhaber) |
-| 49.4–55.4 s | Tour 9 – 11teamsports (Foto) | Videos zeigen die zerstörte Front von 11teamsports – ob dort etwas gestohlen wurde, ist nicht belegt. | eigene Videos 01.11. |
-| 55.7–59.1 s | Tour 10 – 43einhalb | Und bei 43einhalb verschwindet Ware aus der Auslage. | TextilWirtschaft (Händler), Ticker 00:47 |
-| 59.5–64.2 s | Schadenshöhe – Panel | Die Schadenssumme? Laut Polizei erheblich – beziffert ist sie bis heute nicht. | dpa 01.11., Polizei |
-| 64.6–69.8 s | Gesamtübersicht – offiziell vs. Recherche | Neun betroffene Geschäfte lassen sich inzwischen zuordnen, bei vier ist ein Diebstahl belegt. | shops.json (Recherche) |
-| 70.0–72.8 s | Gesamtübersicht – alle Pins beschriftet | Der Rest der offiziellen Bilanz bleibt ohne Namen. | Innenministerium/Polizei |
-| 73.5–76.4 s | Outro @frankfurtred3 | Danke fürs Zusehen – Plus wegmachen nicht vergessen! | – |
+| 49.4–55.6 s | Tour 9 – 11teamsports (Foto, Status geplündert) | Bei 11teamsports zeigt ein Video aus der Nacht, wie Beute aus dem Laden getragen wird – wir haben es selbst gesehen. | Video der Nacht (19,4 s; 24,7–25,4 s), Augenzeuge (Kanalbetreiber), eigenes Video 01.11. |
+| 55.9–59.2 s | Tour 10 – 43einhalb | Und bei 43einhalb verschwindet Ware aus der Auslage. | TextilWirtschaft (Händler), Ticker 00:47 |
+| 59.7–64.3 s | Schadenshöhe – Panel | Die Schadenssumme? Laut Polizei erheblich – beziffert ist sie bis heute nicht. | dpa 01.11., Polizei |
+| 64.7–70.4 s | Gesamtübersicht – offiziell vs. Recherche | Neun betroffene Geschäfte lassen sich inzwischen zuordnen, bei fünf ist ein Diebstahl belegt. | shops.json (Recherche); Hinweis im Bild: „Recherche ≠ Polizeibilanz“ |
+| 70.6–73.4 s | Gesamtübersicht – alle Pins beschriftet | Der Rest der offiziellen Bilanz bleibt ohne Namen. | Innenministerium/Polizei |
+| 74.1–77.0 s | Outro @frankfurtred3 | Danke fürs Zusehen – Plus wegmachen nicht vergessen! | – |
 
-Aussprachehilfen im Skript: Snipes→„Snaips“, Oil de Parfum→„Oil de Parfüm“, Bayat→„Bajat“, 11teamsports→„Elf Tiem Sports“, 43einhalb→„dreiundvierzigeinhalb“. Whisper-Gegenprobe: alle 17 Sätze verständlich (Stand 03.11.).
+Aussprachehilfen im Skript: Snipes→„Snaips“, Oil de Parfum→„Oil de Parfüm“, Bayat→„Bajat“, 11teamsports→„Elf Tiem Sports“, 43einhalb→„dreiundvierzigeinhalb“. Whisper-Gegenprobe: alle 17 Sätze erkannt; kleine Verschleifungen bei „geplündert“, „Plünderungsversuch“ und „dringen … ein“ (Stand 03.11.).

@@ -28,11 +28,13 @@ Legende Status: 🔴 Entwendung belegt · 🟠 Sachschaden belegt, Entwendung ni
 | 7 | **Kosmetikstudio** | Berliner Straße (Name nicht veröffentlicht) | 🟠 beschädigt | ja | unbekannt | unbekannt | mittel | [t-online][to] |
 | 8 | **Frankfurter Laufshop** | Große Friedberger Straße 37–39 | 🔴 geplündert | ja | ja | ja (v. a. Kleidung, Schuhe) | hoch | [schuhkurier][sk], [hessenschau][hr-laden], [dpa/WNOZ][wnoz] |
 | 9 | Nachbarladen des Laufshops | Große Friedberger Straße (ungefähr) | ⚪ ungeklärt | ja (großer Riss) | unbekannt | unbekannt | niedrig | [dpa/WNOZ][wnoz] |
-| 10 | **11teamsports** („TeamSport11“) | Große Eschenheimer Straße 13a | 🟠 beschädigt | ja (Schaufensterfront zerstört) | unklar | nicht belegt | mittel | eigene Videos (s. u.), Adresse: [11teamsports][11t] |
+| 10 | **11teamsports** („TeamSport11“) | Große Eschenheimer Straße 13a | 🔴 geplündert | ja (Schaufensterfront zerstört) | ja (Personen an/in der offenen Front) | ja (Video: Ware wird herausgetragen; Augenzeuge) | mittel | Video der Nacht + eigene Beobachtung (s. u.), Adresse: [11teamsports][11t] |
 | 11 | **43einhalb** | am Eschenheimer Tor | 🔴 geplündert | ja (eine Scheibe) | nein | ja (Ware aus der Auslage) | hoch | [Ticker 00:47][hr-ticker], [TextilWirtschaft, Händler][tw] |
 
-**Zusammenfassung:** 9 Geschäfte zugeordnet (Name oder Branche + Straße), davon 4 mit belegter Entwendung
-(Snipes, Waffengeschäft, Laufshop, 43einhalb) – damit sind 4 der offiziell 5 Plünderungen zuordenbar.
+**Zusammenfassung:** 9 Geschäfte zugeordnet (Name oder Branche + Straße), davon 5 mit belegter Entwendung
+(Snipes, Waffengeschäft, Laufshop, 43einhalb – Presse/Polizei/Händler; 11teamsports – Video der Nacht + Augenzeuge).
+**Achtung:** Dass es genau die offiziell 5 geplünderten Läden sind, hat die Polizei nicht bestätigt – im Video steht deshalb
+„Recherche ≠ Polizeibilanz“.
 2 weitere belegte Schadensorte ohne Ladennamen. Die übrigen Läden der offiziellen 17 sind nicht öffentlich benannt.
 
 ### Offene bzw. nicht separat gezählte Fälle
@@ -53,9 +55,13 @@ Legende Status: 🔴 Entwendung belegt · 🟠 Sachschaden belegt, Entwendung ni
   Schaufenster, Fußballtrikots in den Fenstern, beige Fassade.
 - **Schaden:** Nachtvideo: große Scheibe fehlt, Scherben auf dem Gehweg; Tagvideo: unteres linkes Schaufenster zerbrochen,
   Glasreste im Rahmen. → **Sachschaden belegt.**
-- **Eindringen/Entwendung:** Menschenmenge direkt an der offenen Front; ob Personen hineingingen oder Ware entwendet
-  wurde, ist im Video **nicht eindeutig erkennbar** → nicht belegt.
-- **Presse/Händler:** Keine Presse- oder Händleräußerung gefunden (Suche 03.11.).
+- **Eindringen/Entwendung (erneute Bild-für-Bild-Prüfung, 03.11.):** Im Nachtvideo greifen Personen durch die zerstörte
+  Front (Bild 19,2 s), eine Person steht mit prall gefüllter Tüte direkt am Fenster (19,4–19,6 s), und zwei Personen tragen
+  ein grünes Kleidungsstück mit Etikett bzw. ein gelbes Teil vom Ladeneingang weg (24,7–25,4 s). Zusätzlich hat der
+  Kanalbetreiber die Entwendung vor Ort selbst beobachtet (Augenzeuge). → **Entwendung belegt**, Status „geplündert“.
+  (Die erste Fassung hatte nur die Sekunden 6–8 ausgewertet und die Entwendung deshalb als „nicht belegt“ geführt.)
+- **Presse/Händler/Polizei:** Keine Äußerung gefunden (Suche 03.11.). Belegstärke daher „mittel“ (Video + Augenzeuge,
+  keine offizielle Bestätigung).
 
 ## Referenzvideos (bereitgestellt) – Auswertung
 
@@ -65,7 +71,7 @@ Legende Status: 🔴 Entwendung belegt · 🟠 Sachschaden belegt, Entwendung ni
 | `74e5225b…mp4` (01.11., 00:05) | **Oil De Parfum**, Straßenschild „Liebfrauenberg 56–54“, mehrere zersplitterte Scheiben | **Standbild im Video** (ohne Personen) |
 | `97e770fd…mp4` (01.11., 00:10) | Gehweg, Kiosk „Easy to go“ mit Baustellenabsperrung – kein Ladenschaden | nicht verwendet |
 | `4782c93e…mp4` (01.11., 12:49) | **11teamsports** bei Tag, zerbrochenes Schaufenster | **Standbild im Video** (Ausschnitt ohne Personen) |
-| `7de2f94e…mp4` (Bildschirmaufnahme TikTok, gepostet 01.11.) | **11teamsports** nachts, zerstörte Front, Menschenmenge | nur Recherche (fremder Post, erkennbare Personen) |
+| `7de2f94e…mp4` (Bildschirmaufnahme TikTok, gepostet 01.11.) | **11teamsports** nachts: zerstörte Front, Ware wird herausgetragen (19,4 s; 24,7–25,4 s) | **Beleg** für die Entwendung; Bild nicht im Video (fremder Post, erkennbare Personen) – mit Erlaubnis des Urhebers einbaubar, siehe `medienrechte.md` |
 
 ## Quellen
 

@@ -155,22 +155,40 @@ const SummaryPanel: React.FC<{from: number}> = ({from}) => {
 				left: 64,
 				right: 150,
 				display: 'flex',
-				gap: 14,
+				flexDirection: 'column',
+				gap: 12,
 				opacity: Math.min(1, s * 1.5),
 				translate: `0 ${(1 - s) * 80}px`,
 			}}
 		>
-			<div style={{flex: 1, padding: '16px 18px', borderRadius: RADII.md, background: 'rgba(7,10,28,0.92)', border: `2px solid ${COLORS.panelBorder}`}}>
-				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, color: COLORS.textMuted, letterSpacing: 1.5}}>OFFIZIELL</div>
-				<Stat value={off.beschaedigt.anzahl} label="beschädigt" color={STATUS_STYLE.beschaedigt.color} delay={from + 4} />
-				<Stat value={off.gepluendert.anzahl} label="davon geplündert" color={STATUS_STYLE.gepluendert.color} delay={from + 8} />
-				<div style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 19, color: COLORS.textDim}}>Innenministerium 02.11. · Polizei 01.11.</div>
+			<div style={{display: 'flex', gap: 14}}>
+				<div style={{flex: 1, padding: '16px 18px', borderRadius: RADII.md, background: 'rgba(7,10,28,0.92)', border: `2px solid ${COLORS.panelBorder}`}}>
+					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, color: COLORS.textMuted, letterSpacing: 1.5}}>OFFIZIELL</div>
+					<Stat value={off.beschaedigt.anzahl} label="beschädigt" color={STATUS_STYLE.beschaedigt.color} delay={from + 4} />
+					<Stat value={off.gepluendert.anzahl} label="davon geplündert" color={STATUS_STYLE.gepluendert.color} delay={from + 8} />
+					<div style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 22, color: COLORS.textDim}}>Innenministerium 02.11. · Polizei 01.11.</div>
+				</div>
+				<div style={{flex: 1, padding: '16px 18px', borderRadius: RADII.md, background: 'rgba(7,10,28,0.92)', border: `2px solid ${withAlpha(COLORS.signal, 0.6)}`}}>
+					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, color: COLORS.signal, letterSpacing: 1.5}}>RECHERCHE</div>
+					<Stat value={RESEARCH_STATS.identified} label="Geschäfte zugeordnet" color={COLORS.text} delay={from + 10} />
+					<Stat value={RESEARCH_STATS.theft} label="mit belegtem Diebstahl" color={STATUS_STYLE.gepluendert.color} delay={from + 14} />
+					<Stat value={RESEARCH_STATS.unnamedPlaces} label="Orte ohne Namen" color={STATUS_STYLE.ungeklaert.color} delay={from + 18} />
+				</div>
 			</div>
-			<div style={{flex: 1, padding: '16px 18px', borderRadius: RADII.md, background: 'rgba(7,10,28,0.92)', border: `2px solid ${withAlpha(COLORS.signal, 0.6)}`}}>
-				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, color: COLORS.signal, letterSpacing: 1.5}}>RECHERCHE</div>
-				<Stat value={RESEARCH_STATS.identified} label="Geschäfte zugeordnet" color={COLORS.text} delay={from + 10} />
-				<Stat value={RESEARCH_STATS.theft} label="mit belegtem Diebstahl" color={STATUS_STYLE.gepluendert.color} delay={from + 14} />
-				<Stat value={RESEARCH_STATS.unnamedPlaces} label="Orte ohne Namen" color={STATUS_STYLE.ungeklaert.color} delay={from + 18} />
+			<div
+				style={{
+					padding: '10px 16px',
+					borderRadius: RADII.md,
+					background: 'rgba(7,10,28,0.88)',
+					fontFamily: FONTS.body,
+					fontWeight: 600,
+					fontSize: 22,
+					lineHeight: 1.25,
+					color: COLORS.textMuted,
+					opacity: interpolate(frame, [from + 20, from + 32], [0, 1], clamp),
+				}}
+			>
+				Recherche ≠ Polizeibilanz: Ob es genau dieselben Läden sind, hat die Polizei nicht bestätigt.
 			</div>
 		</div>
 	);

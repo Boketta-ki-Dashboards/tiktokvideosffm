@@ -196,17 +196,18 @@
 			"lat": 50.1155921,
 			"lon": 8.6793306,
 			"praezision": "adresse",
-			"status": "beschaedigt",
-			"schaden": {"sachschaden": true, "eindringen": "unklar", "entwendung": "nicht belegt"},
-			"kurz": "Schaufensterfront zerstört, Menschenmenge an der offenen Front – Diebstahl nicht belegt.",
-			"details": "Social-Media-Video (Nacht): Schriftzug „11TEAMSPORTS“, im Hintergrund das Flemings-Hotel am Eschenheimer Tor; große Scheibe zerstört, Scherben auf dem Gehweg, Menschenmenge direkt an der offenen Front. Eigenes Video 01.11., 12:49 Uhr: unteres Schaufenster („Final Rush Pack“) zerbrochen. Keine Presse- oder Händlerangabe; Eindringen/Entwendung nicht eindeutig belegt.",
+			"status": "gepluendert",
+			"schaden": {"sachschaden": true, "eindringen": "ja", "entwendung": "ja"},
+			"kurz": "Front zerstört – ein Video der Nacht zeigt, wie Ware aus dem Laden getragen wird.",
+			"details": "Video der Nacht (TikTok-Post, als Bildschirmaufnahme bereitgestellt; Schriftzug „11TEAMSPORTS“, im Hintergrund das Flemings-Hotel am Eschenheimer Tor): große Scheibe zerstört, Personen greifen durch die offene Front (Bild 19,2 s), eine Person mit prall gefüllter Tüte direkt am Fenster (19,4–19,6 s), Personen tragen ein grünes Kleidungsstück mit Etikett und ein gelbes Teil vom Ladeneingang weg (24,7–25,4 s). Der Kanalbetreiber war vor Ort und hat die Entwendung selbst beobachtet. Eigenes Video 01.11., 12:49 Uhr: unteres Schaufenster („Final Rush Pack“) zerbrochen. Keine Polizei- oder Händlerangabe (Stand 03.11.) – ob der Laden zu den offiziell 5 geplünderten zählt, ist nicht bestätigt.",
 			"belegstaerke": "mittel",
 			"quellen": [
+				{"art": "video", "name": "Video aus der Nacht (TikTok-Post, Bildschirmaufnahme bereitgestellt; im Video nicht gezeigt)", "datum": "2026-11-01", "url": null},
+				{"art": "augenzeuge", "name": "Augenzeuge vor Ort (Kanalbetreiber, eigene Beobachtung)", "datum": "2026-10-31", "url": null},
 				{"art": "video", "name": "Eigenes Video (bereitgestellt), 01.11.2026 12:49 Uhr", "datum": "2026-11-01", "url": null},
-				{"art": "video", "name": "TikTok-Video (Bildschirmaufnahme, bereitgestellt), gepostet 01.11.2026", "datum": "2026-11-01", "url": null},
 				{"art": "adresse", "name": "11teamsports Store Frankfurt", "datum": "2026-11-03", "url": "https://www.11teamsports.com/de-de/11teamsports/stores/store-frankfurt/"}
 			],
-			"bild": {"typ": "foto", "datei": "episodes/frankfurt-geschaefte/11teamsports-2026-11-01-1249.jpg", "zeigt": "schaden", "credit": "Eigene Aufnahme · 01.11., 12:49 Uhr"}
+			"bild": {"typ": "foto", "datei": "episodes/frankfurt-geschaefte/11teamsports-2026-11-01-1249.jpg", "zeigt": "schaden", "credit": "Eigene Aufnahme · 01.11., 12:49"}
 		},
 		{
 			"id": "43einhalb",
