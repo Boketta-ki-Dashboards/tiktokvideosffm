@@ -2,8 +2,12 @@ name: Video rendern
 
 # Manuell starten: GitHub → Actions → „Video rendern“ → „Run workflow“.
 # Ergebnis: MP4 (+ Cover-Bild + Prüfbericht) als herunterladbares Artefakt.
+# Selbsttest: Ändert ein Pull Request diesen Workflow, wird automatisch mit Standardwerten gerendert.
 
 on:
+  pull_request:
+    paths:
+      - .github/workflows/render-video.yml
   workflow_dispatch:
     inputs:
       composition:
@@ -41,7 +45,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: render-${{ github.ref }}-${{ inputs.composition }}
+  group: render-${{ github.ref }}-${{ inputs.composition || 'default' }}
   cancel-in-progress: false
 
 jobs:
@@ -50,11 +54,12 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 45
     env:
-      COMPOSITION: ${{ inputs.composition }}
-      VOICE_MODE: ${{ inputs.voice }}
-      VIDEO_ID: ${{ inputs.video_id }}
-      CRF: ${{ inputs.crf }}
-      RENDER_COVER: ${{ inputs.cover }}
+      # Standardwerte greifen beim PR-Selbsttest (dort gibt es keine Eingaben)
+      COMPOSITION: ${{ inputs.composition || 'FrankfurtHeadlines' }}
+      VOICE_MODE: ${{ inputs.voice || 'repo' }}
+      VIDEO_ID: ${{ inputs.video_id || 'frankfurt-2026-10-31' }}
+      CRF: ${{ inputs.crf || '18' }}
+      RENDER_COVER: ${{ github.event_name != 'workflow_dispatch' || inputs.cover }}
 
     steps:
       - name: Eingaben prüfen
@@ -99,7 +104,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/piper-voices
-          key: piper-voices-${{ hashFiles(format('src/videos/{0}/script.json', inputs.video_id)) }}
+          key: piper-voices-${{ hashFiles(format('src/videos/{0}/script.json', inputs.video_id || 'frankfurt-2026-10-31')) }}
           restore-keys: piper-voices-
 
       - name: Sprecherspur mit Piper erzeugen (kostenlos, offline)
@@ -166,7 +171,7 @@ jobs:
       - name: Video als Artefakt bereitstellen
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ inputs.composition }}-run${{ github.run_number }}
+          name: ${{ inputs.composition || 'FrankfurtHeadlines' }}-run${{ github.run_number }}
           path: |
             output/*.mp4
             output/*.png
