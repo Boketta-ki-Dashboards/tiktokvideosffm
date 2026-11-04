@@ -1,0 +1,19 @@
+{
+	"text": "Frankfurt am Main. Wann geht es nach den Ausschreitungen wirklich weiter? Am vierzehnten, zwanzigsten oder einundzwanzigsten November? Hier sind die bestätigten Informationen.",
+	"provider": "elevenlabs",
+	"name": "Adam - Dominant, Firm",
+	"voiceId": "pNInz6obpgDQGcFmaJgB",
+	"category": "premade",
+	"modelId": "eleven_multilingual_v2",
+	"voiceSettings": {
+		"stability": 0.45,
+		"similarity_boost": 0.8,
+		"style": 0.2,
+		"use_speaker_boost": true,
+		"speed": 1.08
+	},
+	"seed": 20261104,
+	"characters": 175,
+	"cacheKey": "5ce02ab15f3424277281",
+	"durationSeconds": 10.2
+}
