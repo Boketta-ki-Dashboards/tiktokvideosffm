@@ -31,7 +31,7 @@ const rows = script.segments.map((seg) => {
 
 const out = `# Drehbuch – ${args.title ?? id}
 
-Komposition \`${args.comp ?? ''}\` · 1080×1920 · 30 fps · Stimme: Chatterbox (Vorlage Thorsten-Voice, CC0) · Sprechzeit ≈ ${secs(manifest.durationMs)} s
+Komposition \`${args.comp ?? ''}\` · 1080×1920 · 30 fps · Stimme: ElevenLabs Adam (eleven_multilingual_v2) · Sprechzeit ≈ ${secs(manifest.durationMs)} s
 
 | Zeit | Bild | Sprechertext (wörtlich, Anzeigeform) | Beleg |
 |---|---|---|---|

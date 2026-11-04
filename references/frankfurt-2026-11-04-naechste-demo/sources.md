@@ -81,11 +81,14 @@ Quelle: [hessenschau, 02.11.2026, 19:07 Uhr][hr-jurist].
   Der 14.11.-Beitrag ist im öffentlichen Kanal nicht mehr sichtbar (Beitragsnummer 26 fehlt zwischen 31.10. und 03.11.); Lücken in der Nummerierung haben aber auch andere Gründe – nur Indiz, kein Beweis. Belegt ist die Löschung durch Apollo News.
 - Apollo News ist ein meinungsstarkes Portal; der 14.11. wird deshalb zusätzlich durch dpa/lsw (Staatsanzeiger BW) gestützt.
 
-## Stimme (Whisper-Gegenprobe, 04.11.2026)
+## Stimme
 
-Alle 14 Sätze wurden von der Gegenprobe wortgetreu erkannt. Auffälligkeiten (bitte anhören): „Jugendstreiktag“ wird als „Jugendschreiktag“ erkannt,
-„Poseck“ bewusst als „Posek“ gesprochen. Der Name „Gen Z regelt“ wird **nicht gesprochen** (Sprecher verhaspelt ihn trotz mehrerer Lautschriften: „Dschen Zett“, „Gen Zett“,
-„Generation Zett“); er steht stattdessen im Chat-Fenster, in der Kartenlegende („laut ‚Gen Z regelt‘“) und in den Quellenzeilen.
+**Aktuelle Fassung (Standard): ElevenLabs „Adam – Dominant, Firm“** (Voice-ID `pNInz6obpgDQGcFmaJgB`, Kategorie premade, per API bestätigt),
+Modell `eleven_multilingual_v2`, Einstellungen siehe `config/voice.json`. Audio: `public/voiceover/frankfurt-2026-11-04-naechste-demo/voiceover-adam.mp3`,
+Untertitel aus den ElevenLabs-Zeichen-Zeitstempeln. Whisper-Gegenprobe (04.11.): alle 14 Sätze wortgetreu erkannt, inklusive „Gen Z regelt“
+(Lautschrift „Dschen Zett“), aller Datumsangaben und „Grundgesetz“. Der Name „Gen Z regelt“ wird mit Adam wieder gesprochen (wie im ursprünglichen Skript).
+
+Alte Fassung (aufbewahrt, nicht mehr aktiv): Chatterbox – `voiceover-chatterbox.mp3` + `voiceover.chatterbox.json`.
 
 ## Quellen (abgerufen 04.11.2026)
 
