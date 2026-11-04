@@ -3,1294 +3,1294 @@
 	"videoId": "frankfurt-2026-11-04-naechste-demo",
 	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
 	"audioFile": "voiceover/frankfurt-2026-11-04-naechste-demo/voiceover-adam.mp3",
-	"durationMs": 85288,
+	"durationMs": 78181,
 	"segments": [
 		{
 			"id": "hook1",
 			"startMs": 200,
-			"endMs": 4705,
-			"hash": "40dbd51d96ce537649bb"
+			"endMs": 4194,
+			"hash": "ca1d53ba3ee9b556ba99"
 		},
 		{
 			"id": "hook2",
-			"startMs": 4905,
-			"endMs": 8760,
-			"hash": "6ee551e27caf33e03c19"
+			"startMs": 4394,
+			"endMs": 7923,
+			"hash": "b451af9d766660790401"
 		},
 		{
 			"id": "hook3",
-			"startMs": 8960,
-			"endMs": 13232,
-			"hash": "f258bc15d4833153f49a"
+			"startMs": 8123,
+			"endMs": 12628,
+			"hash": "67ca6136dedb4a9e34f4"
 		},
 		{
 			"id": "d14",
-			"startMs": 13632,
-			"endMs": 21527,
-			"hash": "86892bc1b82d0a38cc75"
+			"startMs": 13028,
+			"endMs": 20644,
+			"hash": "c6a1c4bffb51625d89f5"
 		},
 		{
 			"id": "d21",
-			"startMs": 22327,
-			"endMs": 28411,
-			"hash": "528d9a926ea3b1e3b2c1"
+			"startMs": 21444,
+			"endMs": 26877,
+			"hash": "0074c258b14badd167bd"
 		},
 		{
 			"id": "d20a",
-			"startMs": 28811,
-			"endMs": 39910,
-			"hash": "547dee87f9c877637a44"
+			"startMs": 27277,
+			"endMs": 37354,
+			"hash": "bc0c780b316412269682"
 		},
 		{
 			"id": "d20b",
-			"startMs": 40110,
-			"endMs": 46101,
-			"hash": "549ffb38a9f97e2ffa0a"
+			"startMs": 37554,
+			"endMs": 42802,
+			"hash": "24f6ba5a09dc09f9eaec"
 		},
 		{
 			"id": "pol1",
-			"startMs": 46501,
-			"endMs": 52956,
-			"hash": "a770f38277feb3bf9f44"
+			"startMs": 43202,
+			"endMs": 48914,
+			"hash": "5f9d6eafaf8a1d3cac96"
 		},
 		{
 			"id": "pol2",
-			"startMs": 53156,
-			"endMs": 55803,
-			"hash": "d9da56b960027dc30e0a"
+			"startMs": 49114,
+			"endMs": 51529,
+			"hash": "d4caadfe536e0b774de7"
 		},
 		{
 			"id": "law1",
-			"startMs": 56203,
-			"endMs": 62612,
-			"hash": "b6bd55c26b9730fca626"
+			"startMs": 51929,
+			"endMs": 57780,
+			"hash": "6ecf92743cbc872401e4"
 		},
 		{
 			"id": "law2",
-			"startMs": 62812,
-			"endMs": 69081,
-			"hash": "4b613e674118ec481922"
+			"startMs": 57980,
+			"endMs": 63646,
+			"hash": "30227c377dc47d33a22b"
 		},
 		{
 			"id": "sum1",
-			"startMs": 69481,
-			"endMs": 75704,
-			"hash": "d8579a88e7b38fd7993c"
+			"startMs": 64046,
+			"endMs": 69526,
+			"hash": "42cd1ff485ef191f65b7"
 		},
 		{
 			"id": "sum2",
-			"startMs": 75904,
-			"endMs": 81430,
-			"hash": "a7e3720bdb8e4e797bdd"
+			"startMs": 69726,
+			"endMs": 74602,
+			"hash": "cc3d63c28731e62a6ed3"
 		},
 		{
 			"id": "outro",
-			"startMs": 82130,
-			"endMs": 85288,
-			"hash": "824d0678ed86f55c1129"
+			"startMs": 75302,
+			"endMs": 78181,
+			"hash": "530f2a31176c5e1b1901"
 		}
 	],
 	"captions": [
 		{
 			"text": "Frankfurt",
 			"startMs": 200,
-			"endMs": 676,
-			"timestampMs": 438,
+			"endMs": 595,
+			"timestampMs": 398,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 722,
-			"endMs": 804,
-			"timestampMs": 763,
+			"startMs": 630,
+			"endMs": 699,
+			"timestampMs": 665,
 			"confidence": 1
 		},
 		{
 			"text": " Main.",
-			"startMs": 862,
-			"endMs": 1338,
-			"timestampMs": 1100,
+			"startMs": 746,
+			"endMs": 1187,
+			"timestampMs": 967,
 			"confidence": 1
 		},
 		{
 			"text": " Wann",
-			"startMs": 1814,
-			"endMs": 2000,
-			"timestampMs": 1907,
+			"startMs": 1628,
+			"endMs": 1791,
+			"timestampMs": 1710,
 			"confidence": 1
 		},
 		{
 			"text": " geht",
-			"startMs": 2046,
-			"endMs": 2220,
-			"timestampMs": 2133,
+			"startMs": 1825,
+			"endMs": 1976,
+			"timestampMs": 1901,
 			"confidence": 1
 		},
 		{
 			"text": " es",
-			"startMs": 2278,
-			"endMs": 2336,
-			"timestampMs": 2307,
+			"startMs": 2023,
+			"endMs": 2081,
+			"timestampMs": 2052,
 			"confidence": 1
 		},
 		{
 			"text": " nach",
-			"startMs": 2394,
-			"endMs": 2522,
-			"timestampMs": 2458,
+			"startMs": 2127,
+			"endMs": 2243,
+			"timestampMs": 2185,
 			"confidence": 1
 		},
 		{
 			"text": " dem",
-			"startMs": 2557,
-			"endMs": 2673,
-			"timestampMs": 2615,
+			"startMs": 2278,
+			"endMs": 2383,
+			"timestampMs": 2331,
 			"confidence": 1
 		},
 		{
 			"text": " 31.",
-			"startMs": 2743,
-			"endMs": 3497,
-			"timestampMs": 3120,
+			"startMs": 2441,
+			"endMs": 3102,
+			"timestampMs": 2772,
 			"confidence": 1
 		},
 		{
 			"text": " Oktober",
-			"startMs": 3567,
-			"endMs": 3950,
-			"timestampMs": 3759,
+			"startMs": 3172,
+			"endMs": 3497,
+			"timestampMs": 3335,
 			"confidence": 1
 		},
 		{
 			"text": " weiter?",
-			"startMs": 3985,
-			"endMs": 4705,
-			"timestampMs": 4345,
+			"startMs": 3532,
+			"endMs": 4194,
+			"timestampMs": 3863,
 			"confidence": 1
 		},
 		{
 			"text": " Am",
-			"startMs": 4905,
-			"endMs": 5068,
-			"timestampMs": 4987,
+			"startMs": 4394,
+			"endMs": 4557,
+			"timestampMs": 4476,
 			"confidence": 1
 		},
 		{
 			"text": " 14.",
-			"startMs": 5126,
-			"endMs": 5880,
-			"timestampMs": 5503,
+			"startMs": 4603,
+			"endMs": 5311,
+			"timestampMs": 4957,
 			"confidence": 1
 		},
 		{
 			"text": " oder",
-			"startMs": 5985,
-			"endMs": 6263,
-			"timestampMs": 6124,
+			"startMs": 5416,
+			"endMs": 5659,
+			"timestampMs": 5538,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 6321,
-			"endMs": 6472,
-			"timestampMs": 6397,
+			"startMs": 5706,
+			"endMs": 5845,
+			"timestampMs": 5776,
 			"confidence": 1
 		},
 		{
 			"text": " 21.",
-			"startMs": 6577,
-			"endMs": 7506,
-			"timestampMs": 7042,
+			"startMs": 5950,
+			"endMs": 6774,
+			"timestampMs": 6362,
 			"confidence": 1
 		},
 		{
 			"text": " November?",
-			"startMs": 7540,
-			"endMs": 8760,
-			"timestampMs": 8150,
+			"startMs": 6809,
+			"endMs": 7923,
+			"timestampMs": 7366,
 			"confidence": 1
 		},
 		{
 			"text": " Im",
-			"startMs": 8960,
-			"endMs": 9123,
-			"timestampMs": 9042,
+			"startMs": 8123,
+			"endMs": 8286,
+			"timestampMs": 8205,
 			"confidence": 1
 		},
 		{
 			"text": " Netz",
-			"startMs": 9181,
-			"endMs": 9355,
-			"timestampMs": 9268,
+			"startMs": 8355,
+			"endMs": 8553,
+			"timestampMs": 8454,
 			"confidence": 1
 		},
 		{
 			"text": " kursieren",
-			"startMs": 9413,
-			"endMs": 9889,
-			"timestampMs": 9651,
+			"startMs": 8611,
+			"endMs": 9110,
+			"timestampMs": 8861,
 			"confidence": 1
 		},
 		{
 			"text": " verschiedene",
-			"startMs": 9935,
-			"endMs": 10504,
-			"timestampMs": 10220,
+			"startMs": 9156,
+			"endMs": 9586,
+			"timestampMs": 9371,
 			"confidence": 1
 		},
 		{
 			"text": " Termine.",
-			"startMs": 10551,
-			"endMs": 11236,
-			"timestampMs": 10894,
+			"startMs": 9621,
+			"endMs": 10166,
+			"timestampMs": 9894,
 			"confidence": 1
 		},
 		{
 			"text": " Doch",
-			"startMs": 11456,
-			"endMs": 11654,
-			"timestampMs": 11555,
+			"startMs": 10271,
+			"endMs": 10468,
+			"timestampMs": 10370,
 			"confidence": 1
 		},
 		{
 			"text": " was",
-			"startMs": 11688,
-			"endMs": 11828,
-			"timestampMs": 11758,
+			"startMs": 10515,
+			"endMs": 10689,
+			"timestampMs": 10602,
 			"confidence": 1
 		},
 		{
 			"text": " stimmt",
-			"startMs": 11874,
-			"endMs": 12211,
-			"timestampMs": 12043,
+			"startMs": 10793,
+			"endMs": 11293,
+			"timestampMs": 11043,
 			"confidence": 1
 		},
 		{
 			"text": " wirklich?",
-			"startMs": 12269,
-			"endMs": 13232,
-			"timestampMs": 12751,
+			"startMs": 11420,
+			"endMs": 12628,
+			"timestampMs": 12024,
 			"confidence": 1
 		},
 		{
 			"text": " Laut",
-			"startMs": 13632,
-			"endMs": 13911,
-			"timestampMs": 13772,
+			"startMs": 13028,
+			"endMs": 13237,
+			"timestampMs": 13133,
 			"confidence": 1
 		},
 		{
 			"text": " Medien",
-			"startMs": 13980,
-			"endMs": 14480,
-			"timestampMs": 14230,
+			"startMs": 13307,
+			"endMs": 13771,
+			"timestampMs": 13539,
 			"confidence": 1
 		},
 		{
 			"text": " stand",
-			"startMs": 14549,
-			"endMs": 14805,
-			"timestampMs": 14677,
+			"startMs": 13829,
+			"endMs": 14061,
+			"timestampMs": 13945,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 14828,
-			"endMs": 14944,
-			"timestampMs": 14886,
+			"startMs": 14085,
+			"endMs": 14189,
+			"timestampMs": 14137,
 			"confidence": 1
 		},
 		{
 			"text": " 14.",
-			"startMs": 15002,
-			"endMs": 15536,
-			"timestampMs": 15269,
+			"startMs": 14235,
+			"endMs": 14677,
+			"timestampMs": 14456,
 			"confidence": 1
 		},
 		{
 			"text": " November",
-			"startMs": 15594,
-			"endMs": 16047,
-			"timestampMs": 15821,
+			"startMs": 14723,
+			"endMs": 15141,
+			"timestampMs": 14932,
 			"confidence": 1
 		},
 		{
 			"text": " kurz",
-			"startMs": 16117,
-			"endMs": 16360,
-			"timestampMs": 16239,
+			"startMs": 15199,
+			"endMs": 15431,
+			"timestampMs": 15315,
 			"confidence": 1
 		},
 		{
 			"text": " im",
-			"startMs": 16407,
-			"endMs": 16476,
-			"timestampMs": 16442,
+			"startMs": 15466,
+			"endMs": 15536,
+			"timestampMs": 15501,
 			"confidence": 1
 		},
 		{
 			"text": " Telegram-Kanal",
-			"startMs": 16546,
-			"endMs": 17382,
-			"timestampMs": 16964,
+			"startMs": 15594,
+			"endMs": 16407,
+			"timestampMs": 16001,
 			"confidence": 1
 		},
 		{
 			"text": " von",
-			"startMs": 17440,
-			"endMs": 17591,
-			"timestampMs": 17516,
+			"startMs": 16465,
+			"endMs": 16639,
+			"timestampMs": 16552,
 			"confidence": 1
 		},
 		{
 			"text": " Gen",
-			"startMs": 17649,
-			"endMs": 17881,
-			"timestampMs": 17765,
+			"startMs": 16674,
+			"endMs": 16975,
+			"timestampMs": 16825,
 			"confidence": 1
 		},
 		{
 			"text": " Z",
-			"startMs": 17951,
-			"endMs": 18183,
-			"timestampMs": 18067,
+			"startMs": 17080,
+			"endMs": 17382,
+			"timestampMs": 17231,
 			"confidence": 1
 		},
 		{
 			"text": " regelt –",
-			"startMs": 18253,
-			"endMs": 18833,
-			"timestampMs": 18543,
+			"startMs": 17486,
+			"endMs": 18136,
+			"timestampMs": 17811,
 			"confidence": 1
 		},
 		{
 			"text": " dann",
-			"startMs": 19193,
-			"endMs": 19367,
-			"timestampMs": 19280,
+			"startMs": 18415,
+			"endMs": 18578,
+			"timestampMs": 18497,
 			"confidence": 1
 		},
 		{
 			"text": " wurde",
-			"startMs": 19414,
-			"endMs": 19623,
-			"timestampMs": 19519,
+			"startMs": 18624,
+			"endMs": 18845,
+			"timestampMs": 18735,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 19669,
-			"endMs": 19762,
-			"timestampMs": 19716,
+			"startMs": 18891,
+			"endMs": 18984,
+			"timestampMs": 18938,
 			"confidence": 1
 		},
 		{
 			"text": " Beitrag",
-			"startMs": 19832,
-			"endMs": 20273,
-			"timestampMs": 20053,
+			"startMs": 19042,
+			"endMs": 19437,
+			"timestampMs": 19240,
 			"confidence": 1
 		},
 		{
 			"text": " gelöscht.",
-			"startMs": 20319,
-			"endMs": 21527,
-			"timestampMs": 20923,
+			"startMs": 19472,
+			"endMs": 20644,
+			"timestampMs": 20058,
 			"confidence": 1
 		},
 		{
 			"text": " Für",
-			"startMs": 22327,
-			"endMs": 22501,
-			"timestampMs": 22414,
+			"startMs": 21444,
+			"endMs": 21607,
+			"timestampMs": 21526,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 22524,
-			"endMs": 22640,
-			"timestampMs": 22582,
+			"startMs": 21630,
+			"endMs": 21734,
+			"timestampMs": 21682,
 			"confidence": 1
 		},
 		{
 			"text": " 21.",
-			"startMs": 22699,
-			"endMs": 23511,
-			"timestampMs": 23105,
+			"startMs": 21781,
+			"endMs": 22454,
+			"timestampMs": 22118,
 			"confidence": 1
 		},
 		{
 			"text": " November",
-			"startMs": 23546,
-			"endMs": 24010,
-			"timestampMs": 23778,
+			"startMs": 22489,
+			"endMs": 22895,
+			"timestampMs": 22692,
 			"confidence": 1
 		},
 		{
 			"text": " finden",
-			"startMs": 24068,
-			"endMs": 24324,
-			"timestampMs": 24196,
+			"startMs": 22942,
+			"endMs": 23174,
+			"timestampMs": 23058,
 			"confidence": 1
 		},
 		{
 			"text": " wir",
-			"startMs": 24370,
-			"endMs": 24498,
-			"timestampMs": 24434,
+			"startMs": 23209,
+			"endMs": 23325,
+			"timestampMs": 23267,
 			"confidence": 1
 		},
 		{
 			"text": " keine",
-			"startMs": 24545,
-			"endMs": 24777,
-			"timestampMs": 24661,
+			"startMs": 23360,
+			"endMs": 23569,
+			"timestampMs": 23465,
 			"confidence": 1
 		},
 		{
 			"text": " Quelle –",
-			"startMs": 24823,
-			"endMs": 25555,
-			"timestampMs": 25189,
+			"startMs": 23603,
+			"endMs": 24277,
+			"timestampMs": 23940,
 			"confidence": 1
 		},
 		{
 			"text": " weder",
-			"startMs": 25694,
-			"endMs": 25949,
-			"timestampMs": 25822,
+			"startMs": 24405,
+			"endMs": 24637,
+			"timestampMs": 24521,
 			"confidence": 1
 		},
 		{
 			"text": " vom",
-			"startMs": 25996,
-			"endMs": 26135,
-			"timestampMs": 26066,
+			"startMs": 24672,
+			"endMs": 24799,
+			"timestampMs": 24736,
 			"confidence": 1
 		},
 		{
 			"text": " Veranstalter",
-			"startMs": 26193,
-			"endMs": 26878,
-			"timestampMs": 26536,
+			"startMs": 24846,
+			"endMs": 25449,
+			"timestampMs": 25148,
 			"confidence": 1
 		},
 		{
 			"text": " noch",
-			"startMs": 26925,
-			"endMs": 27087,
-			"timestampMs": 27006,
+			"startMs": 25484,
+			"endMs": 25624,
+			"timestampMs": 25554,
 			"confidence": 1
 		},
 		{
 			"text": " von",
-			"startMs": 27122,
-			"endMs": 27261,
-			"timestampMs": 27192,
+			"startMs": 25658,
+			"endMs": 25798,
+			"timestampMs": 25728,
 			"confidence": 1
 		},
 		{
 			"text": " Behörden.",
-			"startMs": 27308,
-			"endMs": 28411,
-			"timestampMs": 27860,
+			"startMs": 25833,
+			"endMs": 26877,
+			"timestampMs": 26355,
 			"confidence": 1
 		},
 		{
 			"text": " Konkret:",
-			"startMs": 28811,
-			"endMs": 29566,
-			"timestampMs": 29189,
+			"startMs": 27277,
+			"endMs": 27962,
+			"timestampMs": 27620,
 			"confidence": 1
 		},
 		{
 			"text": " Freitag,",
-			"startMs": 29786,
-			"endMs": 30587,
-			"timestampMs": 30187,
+			"startMs": 28171,
+			"endMs": 28914,
+			"timestampMs": 28543,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 30703,
-			"endMs": 30854,
-			"timestampMs": 30779,
+			"startMs": 29018,
+			"endMs": 29146,
+			"timestampMs": 29082,
 			"confidence": 1
 		},
 		{
 			"text": " 20.",
-			"startMs": 30901,
-			"endMs": 31412,
-			"timestampMs": 31157,
+			"startMs": 29181,
+			"endMs": 29599,
+			"timestampMs": 29390,
 			"confidence": 1
 		},
 		{
 			"text": " November.",
-			"startMs": 31470,
-			"endMs": 32073,
-			"timestampMs": 31772,
+			"startMs": 29645,
+			"endMs": 30168,
+			"timestampMs": 29907,
 			"confidence": 1
 		},
 		{
 			"text": " Ab",
-			"startMs": 32329,
-			"endMs": 32491,
-			"timestampMs": 32410,
+			"startMs": 30412,
+			"endMs": 30563,
+			"timestampMs": 30488,
 			"confidence": 1
 		},
 		{
 			"text": " 14",
-			"startMs": 32549,
-			"endMs": 32921,
-			"timestampMs": 32735,
+			"startMs": 30609,
+			"endMs": 30934,
+			"timestampMs": 30772,
 			"confidence": 1
 		},
 		{
 			"text": " Uhr",
-			"startMs": 33025,
-			"endMs": 33304,
-			"timestampMs": 33165,
+			"startMs": 31039,
+			"endMs": 31306,
+			"timestampMs": 31173,
 			"confidence": 1
 		},
 		{
 			"text": " ruft",
-			"startMs": 33362,
-			"endMs": 33722,
-			"timestampMs": 33542,
+			"startMs": 31352,
+			"endMs": 31700,
+			"timestampMs": 31526,
 			"confidence": 1
 		},
 		{
 			"text": " Gen",
-			"startMs": 33827,
-			"endMs": 34128,
-			"timestampMs": 33978,
+			"startMs": 31805,
+			"endMs": 32084,
+			"timestampMs": 31945,
 			"confidence": 1
 		},
 		{
 			"text": " Z",
-			"startMs": 34233,
-			"endMs": 34500,
-			"timestampMs": 34367,
+			"startMs": 32188,
+			"endMs": 32432,
+			"timestampMs": 32310,
 			"confidence": 1
 		},
 		{
 			"text": " regelt",
-			"startMs": 34604,
-			"endMs": 35150,
-			"timestampMs": 34877,
+			"startMs": 32536,
+			"endMs": 33059,
+			"timestampMs": 32798,
 			"confidence": 1
 		},
 		{
 			"text": " in",
-			"startMs": 35371,
-			"endMs": 35522,
-			"timestampMs": 35447,
+			"startMs": 33268,
+			"endMs": 33407,
+			"timestampMs": 33338,
 			"confidence": 1
 		},
 		{
 			"text": " 34",
-			"startMs": 35591,
-			"endMs": 36439,
-			"timestampMs": 36015,
+			"startMs": 33465,
+			"endMs": 34208,
+			"timestampMs": 33837,
 			"confidence": 1
 		},
 		{
 			"text": " Städten",
-			"startMs": 36462,
-			"endMs": 36857,
-			"timestampMs": 36660,
+			"startMs": 34231,
+			"endMs": 34603,
+			"timestampMs": 34417,
 			"confidence": 1
 		},
 		{
 			"text": " zum",
-			"startMs": 36915,
-			"endMs": 37054,
-			"timestampMs": 36985,
+			"startMs": 34649,
+			"endMs": 34777,
+			"timestampMs": 34713,
 			"confidence": 1
 		},
 		{
 			"text": " Protest",
-			"startMs": 37112,
-			"endMs": 37542,
-			"timestampMs": 37327,
+			"startMs": 34823,
+			"endMs": 35195,
+			"timestampMs": 35009,
 			"confidence": 1
 		},
 		{
 			"text": " auf –",
-			"startMs": 37623,
-			"endMs": 38076,
-			"timestampMs": 37850,
+			"startMs": 35276,
+			"endMs": 35717,
+			"timestampMs": 35497,
 			"confidence": 1
 		},
 		{
 			"text": " auch",
-			"startMs": 38273,
-			"endMs": 38470,
-			"timestampMs": 38372,
+			"startMs": 35903,
+			"endMs": 36089,
+			"timestampMs": 35996,
 			"confidence": 1
 		},
 		{
 			"text": " in",
-			"startMs": 38529,
-			"endMs": 38598,
-			"timestampMs": 38564,
+			"startMs": 36135,
+			"endMs": 36205,
+			"timestampMs": 36170,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurt.",
-			"startMs": 38668,
-			"endMs": 39910,
-			"timestampMs": 39289,
+			"startMs": 36263,
+			"endMs": 37354,
+			"timestampMs": 36809,
 			"confidence": 1
 		},
 		{
 			"text": " Es",
-			"startMs": 40110,
-			"endMs": 40273,
-			"timestampMs": 40192,
+			"startMs": 37554,
+			"endMs": 37693,
+			"timestampMs": 37624,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 40319,
-			"endMs": 40435,
-			"timestampMs": 40377,
+			"startMs": 37728,
+			"endMs": 37833,
+			"timestampMs": 37781,
 			"confidence": 1
 		},
 		{
 			"text": " zugleich",
-			"startMs": 40458,
-			"endMs": 40888,
-			"timestampMs": 40673,
+			"startMs": 37856,
+			"endMs": 38239,
+			"timestampMs": 38048,
 			"confidence": 1
 		},
 		{
 			"text": " ein",
-			"startMs": 40958,
-			"endMs": 41097,
-			"timestampMs": 41028,
+			"startMs": 38297,
+			"endMs": 38413,
+			"timestampMs": 38355,
 			"confidence": 1
 		},
 		{
 			"text": " europaweiter",
-			"startMs": 41155,
-			"endMs": 41828,
-			"timestampMs": 41492,
+			"startMs": 38460,
+			"endMs": 39052,
+			"timestampMs": 38756,
 			"confidence": 1
 		},
 		{
 			"text": " Jugendstreiktag.",
-			"startMs": 41863,
-			"endMs": 42873,
-			"timestampMs": 42368,
+			"startMs": 39087,
+			"endMs": 39980,
+			"timestampMs": 39534,
 			"confidence": 1
 		},
 		{
 			"text": " Der",
-			"startMs": 43233,
-			"endMs": 43361,
-			"timestampMs": 43297,
+			"startMs": 40306,
+			"endMs": 40410,
+			"timestampMs": 40358,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurter",
-			"startMs": 43396,
-			"endMs": 43930,
-			"timestampMs": 43663,
+			"startMs": 40445,
+			"endMs": 40874,
+			"timestampMs": 40660,
 			"confidence": 1
 		},
 		{
 			"text": " Treffpunkt",
-			"startMs": 43976,
-			"endMs": 44487,
-			"timestampMs": 44232,
+			"startMs": 40909,
+			"endMs": 41362,
+			"timestampMs": 41136,
 			"confidence": 1
 		},
 		{
 			"text": " steht",
-			"startMs": 44510,
-			"endMs": 44742,
-			"timestampMs": 44626,
+			"startMs": 41385,
+			"endMs": 41571,
+			"timestampMs": 41478,
 			"confidence": 1
 		},
 		{
 			"text": " noch",
-			"startMs": 44789,
-			"endMs": 44917,
-			"timestampMs": 44853,
+			"startMs": 41606,
+			"endMs": 41722,
+			"timestampMs": 41664,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 44963,
-			"endMs": 45137,
-			"timestampMs": 45050,
+			"startMs": 41757,
+			"endMs": 41908,
+			"timestampMs": 41833,
 			"confidence": 1
 		},
 		{
 			"text": " fest.",
-			"startMs": 45195,
-			"endMs": 46101,
-			"timestampMs": 45648,
+			"startMs": 41954,
+			"endMs": 42802,
+			"timestampMs": 42378,
 			"confidence": 1
 		},
 		{
 			"text": " Innenminister",
-			"startMs": 46501,
-			"endMs": 47198,
-			"timestampMs": 46850,
+			"startMs": 43202,
+			"endMs": 43782,
+			"timestampMs": 43492,
 			"confidence": 1
 		},
 		{
 			"text": " Roman",
-			"startMs": 47244,
-			"endMs": 47534,
-			"timestampMs": 47389,
+			"startMs": 43817,
+			"endMs": 44084,
+			"timestampMs": 43951,
 			"confidence": 1
 		},
 		{
 			"text": " Poseck",
-			"startMs": 47604,
-			"endMs": 48103,
-			"timestampMs": 47854,
+			"startMs": 44142,
+			"endMs": 44595,
+			"timestampMs": 44369,
 			"confidence": 1
 		},
 		{
 			"text": " kündigt",
-			"startMs": 48242,
-			"endMs": 48660,
-			"timestampMs": 48451,
+			"startMs": 44723,
+			"endMs": 45094,
+			"timestampMs": 44909,
 			"confidence": 1
 		},
 		{
 			"text": " mehr",
-			"startMs": 48742,
-			"endMs": 48927,
-			"timestampMs": 48835,
+			"startMs": 45176,
+			"endMs": 45350,
+			"timestampMs": 45263,
 			"confidence": 1
 		},
 		{
 			"text": " Polizei",
-			"startMs": 48986,
-			"endMs": 49543,
-			"timestampMs": 49265,
+			"startMs": 45396,
+			"endMs": 45919,
+			"timestampMs": 45658,
 			"confidence": 1
 		},
 		{
 			"text": " an",
-			"startMs": 49624,
-			"endMs": 49833,
-			"timestampMs": 49729,
+			"startMs": 46000,
+			"endMs": 46197,
+			"timestampMs": 46099,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 49938,
-			"endMs": 50077,
-			"timestampMs": 50008,
+			"startMs": 46302,
+			"endMs": 46418,
+			"timestampMs": 46360,
 			"confidence": 1
 		},
 		{
 			"text": " bringt",
-			"startMs": 50123,
-			"endMs": 50390,
-			"timestampMs": 50257,
+			"startMs": 46453,
+			"endMs": 46673,
+			"timestampMs": 46563,
 			"confidence": 1
 		},
 		{
 			"text": " ein",
-			"startMs": 50437,
-			"endMs": 50530,
-			"timestampMs": 50484,
+			"startMs": 46708,
+			"endMs": 46801,
+			"timestampMs": 46755,
 			"confidence": 1
 		},
 		{
 			"text": " Demonstrationsverbot",
-			"startMs": 50588,
-			"endMs": 51749,
-			"timestampMs": 51169,
+			"startMs": 46848,
+			"endMs": 47846,
+			"timestampMs": 47347,
 			"confidence": 1
 		},
 		{
 			"text": " ins",
-			"startMs": 51807,
-			"endMs": 51934,
-			"timestampMs": 51871,
+			"startMs": 47892,
+			"endMs": 47997,
+			"timestampMs": 47945,
 			"confidence": 1
 		},
 		{
 			"text": " Gespräch.",
-			"startMs": 51993,
-			"endMs": 52956,
-			"timestampMs": 52475,
+			"startMs": 48043,
+			"endMs": 48914,
+			"timestampMs": 48479,
 			"confidence": 1
 		},
 		{
 			"text": " Eine",
-			"startMs": 53156,
-			"endMs": 53365,
-			"timestampMs": 53261,
+			"startMs": 49114,
+			"endMs": 49311,
+			"timestampMs": 49213,
 			"confidence": 1
 		},
 		{
 			"text": " Entscheidung",
-			"startMs": 53400,
-			"endMs": 53876,
-			"timestampMs": 53638,
+			"startMs": 49346,
+			"endMs": 49787,
+			"timestampMs": 49567,
 			"confidence": 1
 		},
 		{
 			"text": " dazu",
-			"startMs": 53922,
-			"endMs": 54224,
-			"timestampMs": 54073,
+			"startMs": 49822,
+			"endMs": 50112,
+			"timestampMs": 49967,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 54294,
-			"endMs": 54398,
-			"timestampMs": 54346,
+			"startMs": 50171,
+			"endMs": 50275,
+			"timestampMs": 50223,
 			"confidence": 1
 		},
 		{
 			"text": " bislang",
-			"startMs": 54445,
-			"endMs": 54805,
-			"timestampMs": 54625,
+			"startMs": 50310,
+			"endMs": 50623,
+			"timestampMs": 50467,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 54863,
-			"endMs": 55060,
-			"timestampMs": 54962,
+			"startMs": 50670,
+			"endMs": 50844,
+			"timestampMs": 50757,
 			"confidence": 1
 		},
 		{
 			"text": " bekannt.",
-			"startMs": 55118,
-			"endMs": 55803,
-			"timestampMs": 55461,
+			"startMs": 50890,
+			"endMs": 51529,
+			"timestampMs": 51210,
 			"confidence": 1
 		},
 		{
 			"text": " Rechtlich",
-			"startMs": 56203,
-			"endMs": 56830,
-			"timestampMs": 56517,
+			"startMs": 51929,
+			"endMs": 52498,
+			"timestampMs": 52214,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 57051,
-			"endMs": 57260,
-			"timestampMs": 57156,
+			"startMs": 52707,
+			"endMs": 52904,
+			"timestampMs": 52806,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 57283,
-			"endMs": 57399,
-			"timestampMs": 57341,
+			"startMs": 52927,
+			"endMs": 53032,
+			"timestampMs": 52980,
 			"confidence": 1
 		},
 		{
 			"text": " Hürden",
-			"startMs": 57457,
-			"endMs": 57782,
-			"timestampMs": 57620,
+			"startMs": 53078,
+			"endMs": 53357,
+			"timestampMs": 53218,
 			"confidence": 1
 		},
 		{
 			"text": " hoch:",
-			"startMs": 57840,
-			"endMs": 58339,
-			"timestampMs": 58090,
+			"startMs": 53403,
+			"endMs": 53868,
+			"timestampMs": 53636,
 			"confidence": 1
 		},
 		{
 			"text": " Artikel",
-			"startMs": 58746,
-			"endMs": 59187,
-			"timestampMs": 58967,
+			"startMs": 54251,
+			"endMs": 54681,
+			"timestampMs": 54466,
 			"confidence": 1
 		},
 		{
 			"text": " 8",
-			"startMs": 59256,
-			"endMs": 59454,
-			"timestampMs": 59355,
+			"startMs": 54750,
+			"endMs": 54936,
+			"timestampMs": 54843,
 			"confidence": 1
 		},
 		{
 			"text": " des",
-			"startMs": 59477,
-			"endMs": 59593,
-			"timestampMs": 59535,
+			"startMs": 54959,
+			"endMs": 55064,
+			"timestampMs": 55012,
 			"confidence": 1
 		},
 		{
 			"text": " Grundgesetzes",
-			"startMs": 59651,
-			"endMs": 60452,
-			"timestampMs": 60052,
+			"startMs": 55110,
+			"endMs": 55842,
+			"timestampMs": 55476,
 			"confidence": 1
 		},
 		{
 			"text": " schützt",
-			"startMs": 60499,
-			"endMs": 60824,
-			"timestampMs": 60662,
+			"startMs": 55876,
+			"endMs": 56155,
+			"timestampMs": 56016,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 60847,
-			"endMs": 60951,
-			"timestampMs": 60899,
+			"startMs": 56178,
+			"endMs": 56283,
+			"timestampMs": 56231,
 			"confidence": 1
 		},
 		{
 			"text": " Versammlungsfreiheit.",
-			"startMs": 60998,
-			"endMs": 62612,
-			"timestampMs": 61805,
+			"startMs": 56318,
+			"endMs": 57780,
+			"timestampMs": 57049,
 			"confidence": 1
 		},
 		{
 			"text": " Ein",
-			"startMs": 62812,
-			"endMs": 62975,
-			"timestampMs": 62894,
+			"startMs": 57980,
+			"endMs": 58108,
+			"timestampMs": 58044,
 			"confidence": 1
 		},
 		{
 			"text": " Verbot",
-			"startMs": 63033,
-			"endMs": 63416,
-			"timestampMs": 63225,
+			"startMs": 58154,
+			"endMs": 58491,
+			"timestampMs": 58323,
 			"confidence": 1
 		},
 		{
 			"text": " wäre",
-			"startMs": 63462,
-			"endMs": 63671,
-			"timestampMs": 63567,
+			"startMs": 58526,
+			"endMs": 58723,
+			"timestampMs": 58625,
 			"confidence": 1
 		},
 		{
 			"text": " nur",
-			"startMs": 63718,
-			"endMs": 63845,
-			"timestampMs": 63782,
+			"startMs": 58758,
+			"endMs": 58874,
+			"timestampMs": 58816,
 			"confidence": 1
 		},
 		{
 			"text": " das",
-			"startMs": 63869,
-			"endMs": 63973,
-			"timestampMs": 63921,
+			"startMs": 58897,
+			"endMs": 58990,
+			"timestampMs": 58944,
 			"confidence": 1
 		},
 		{
 			"text": " letzte",
-			"startMs": 64043,
-			"endMs": 64345,
-			"timestampMs": 64194,
+			"startMs": 59048,
+			"endMs": 59304,
+			"timestampMs": 59176,
 			"confidence": 1
 		},
 		{
 			"text": " Mittel –",
-			"startMs": 64414,
-			"endMs": 64913,
-			"timestampMs": 64664,
+			"startMs": 59362,
+			"endMs": 59803,
+			"timestampMs": 59583,
 			"confidence": 1
 		},
 		{
 			"text": " Auflagen",
-			"startMs": 64983,
-			"endMs": 65598,
-			"timestampMs": 65291,
+			"startMs": 59872,
+			"endMs": 60441,
+			"timestampMs": 60157,
 			"confidence": 1
 		},
 		{
 			"text": " gehen",
-			"startMs": 65633,
-			"endMs": 65865,
-			"timestampMs": 65749,
+			"startMs": 60476,
+			"endMs": 60685,
+			"timestampMs": 60581,
 			"confidence": 1
 		},
 		{
 			"text": " vor,",
-			"startMs": 65935,
-			"endMs": 66365,
-			"timestampMs": 66150,
+			"startMs": 60755,
+			"endMs": 61150,
+			"timestampMs": 60953,
 			"confidence": 1
 		},
 		{
 			"text": " sagt",
-			"startMs": 66446,
-			"endMs": 66713,
-			"timestampMs": 66580,
+			"startMs": 61231,
+			"endMs": 61486,
+			"timestampMs": 61359,
 			"confidence": 1
 		},
 		{
 			"text": " Rechtsprofessor",
-			"startMs": 66783,
-			"endMs": 67607,
-			"timestampMs": 67195,
+			"startMs": 61544,
+			"endMs": 62252,
+			"timestampMs": 61898,
 			"confidence": 1
 		},
 		{
 			"text": " Matthias",
-			"startMs": 67665,
-			"endMs": 68118,
-			"timestampMs": 67892,
+			"startMs": 62299,
+			"endMs": 62728,
+			"timestampMs": 62514,
 			"confidence": 1
 		},
 		{
 			"text": " Jahn.",
-			"startMs": 68199,
-			"endMs": 69081,
-			"timestampMs": 68640,
+			"startMs": 62810,
+			"endMs": 63646,
+			"timestampMs": 63228,
 			"confidence": 1
 		},
 		{
 			"text": " Stand",
-			"startMs": 69481,
-			"endMs": 69760,
-			"timestampMs": 69621,
+			"startMs": 64046,
+			"endMs": 64313,
+			"timestampMs": 64180,
 			"confidence": 1
 		},
 		{
 			"text": " 4.",
-			"startMs": 69806,
-			"endMs": 70073,
-			"timestampMs": 69940,
+			"startMs": 64348,
+			"endMs": 64580,
+			"timestampMs": 64464,
 			"confidence": 1
 		},
 		{
 			"text": " November:",
-			"startMs": 70120,
-			"endMs": 70735,
-			"timestampMs": 70428,
+			"startMs": 64615,
+			"endMs": 65137,
+			"timestampMs": 64876,
 			"confidence": 1
 		},
 		{
 			"text": " Der",
-			"startMs": 71095,
-			"endMs": 71246,
-			"timestampMs": 71171,
+			"startMs": 65462,
+			"endMs": 65590,
+			"timestampMs": 65526,
 			"confidence": 1
 		},
 		{
 			"text": " 14.",
-			"startMs": 71292,
-			"endMs": 71768,
-			"timestampMs": 71530,
+			"startMs": 65625,
+			"endMs": 66043,
+			"timestampMs": 65834,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 71826,
-			"endMs": 71931,
-			"timestampMs": 71879,
+			"startMs": 66089,
+			"endMs": 66182,
+			"timestampMs": 66136,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 71966,
-			"endMs": 72047,
-			"timestampMs": 72007,
+			"startMs": 66217,
+			"endMs": 66298,
+			"timestampMs": 66258,
 			"confidence": 1
 		},
 		{
 			"text": " 21.",
-			"startMs": 72116,
-			"endMs": 73034,
-			"timestampMs": 72575,
+			"startMs": 66356,
+			"endMs": 67111,
+			"timestampMs": 66734,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 73103,
-			"endMs": 73266,
-			"timestampMs": 73185,
+			"startMs": 67169,
+			"endMs": 67332,
+			"timestampMs": 67251,
 			"confidence": 1
 		},
 		{
 			"text": " für",
-			"startMs": 73324,
-			"endMs": 73486,
-			"timestampMs": 73405,
+			"startMs": 67378,
+			"endMs": 67506,
+			"timestampMs": 67442,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurt",
-			"startMs": 73521,
-			"endMs": 73986,
-			"timestampMs": 73754,
+			"startMs": 67541,
+			"endMs": 67924,
+			"timestampMs": 67733,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 74055,
-			"endMs": 74288,
-			"timestampMs": 74172,
+			"startMs": 67982,
+			"endMs": 68168,
+			"timestampMs": 68075,
 			"confidence": 1
 		},
 		{
 			"text": " bestätigt.",
-			"startMs": 74357,
-			"endMs": 75704,
-			"timestampMs": 75031,
+			"startMs": 68237,
+			"endMs": 69526,
+			"timestampMs": 68882,
 			"confidence": 1
 		},
 		{
 			"text": " Für",
-			"startMs": 75904,
-			"endMs": 76078,
-			"timestampMs": 75991,
+			"startMs": 69726,
+			"endMs": 69854,
+			"timestampMs": 69790,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 76101,
-			"endMs": 76206,
-			"timestampMs": 76154,
+			"startMs": 69877,
+			"endMs": 69970,
+			"timestampMs": 69924,
 			"confidence": 1
 		},
 		{
 			"text": " 20.",
-			"startMs": 76252,
-			"endMs": 76775,
-			"timestampMs": 76514,
+			"startMs": 70005,
+			"endMs": 70434,
+			"timestampMs": 70220,
 			"confidence": 1
 		},
 		{
 			"text": " gibt",
-			"startMs": 76821,
-			"endMs": 76995,
-			"timestampMs": 76908,
+			"startMs": 70469,
+			"endMs": 70608,
+			"timestampMs": 70539,
 			"confidence": 1
 		},
 		{
 			"text": " es",
-			"startMs": 77030,
-			"endMs": 77088,
-			"timestampMs": 77059,
+			"startMs": 70643,
+			"endMs": 70701,
+			"timestampMs": 70672,
 			"confidence": 1
 		},
 		{
 			"text": " einen",
-			"startMs": 77158,
-			"endMs": 77390,
-			"timestampMs": 77274,
+			"startMs": 70759,
+			"endMs": 70945,
+			"timestampMs": 70852,
 			"confidence": 1
 		},
 		{
 			"text": " Aufruf –",
-			"startMs": 77460,
-			"endMs": 78145,
-			"timestampMs": 77803,
+			"startMs": 71015,
+			"endMs": 71665,
+			"timestampMs": 71340,
 			"confidence": 1
 		},
 		{
 			"text": " ob",
-			"startMs": 78505,
-			"endMs": 78656,
-			"timestampMs": 78581,
+			"startMs": 71990,
+			"endMs": 72129,
+			"timestampMs": 72060,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 78714,
-			"endMs": 78806,
-			"timestampMs": 78760,
+			"startMs": 72176,
+			"endMs": 72257,
+			"timestampMs": 72217,
 			"confidence": 1
 		},
 		{
 			"text": " Demo",
-			"startMs": 78865,
-			"endMs": 79132,
-			"timestampMs": 78999,
+			"startMs": 72303,
+			"endMs": 72547,
+			"timestampMs": 72425,
 			"confidence": 1
 		},
 		{
 			"text": " stattfindet,",
-			"startMs": 79178,
-			"endMs": 79933,
-			"timestampMs": 79556,
+			"startMs": 72582,
+			"endMs": 73255,
+			"timestampMs": 72919,
 			"confidence": 1
 		},
 		{
 			"text": " bleibt",
-			"startMs": 80235,
-			"endMs": 80594,
-			"timestampMs": 80415,
+			"startMs": 73534,
+			"endMs": 73836,
+			"timestampMs": 73685,
 			"confidence": 1
 		},
 		{
 			"text": " offen.",
-			"startMs": 80664,
-			"endMs": 81430,
-			"timestampMs": 81047,
+			"startMs": 73894,
+			"endMs": 74602,
+			"timestampMs": 74248,
 			"confidence": 1
 		},
 		{
 			"text": " Danke",
-			"startMs": 82130,
-			"endMs": 82467,
-			"timestampMs": 82299,
+			"startMs": 75302,
+			"endMs": 75615,
+			"timestampMs": 75459,
 			"confidence": 1
 		},
 		{
 			"text": " fürs",
-			"startMs": 82513,
-			"endMs": 82699,
-			"timestampMs": 82606,
+			"startMs": 75650,
+			"endMs": 75813,
+			"timestampMs": 75732,
 			"confidence": 1
 		},
 		{
 			"text": " Zusehen –",
-			"startMs": 82769,
-			"endMs": 83512,
-			"timestampMs": 83141,
+			"startMs": 75882,
+			"endMs": 76544,
+			"timestampMs": 76213,
 			"confidence": 1
 		},
 		{
 			"text": " Plus",
-			"startMs": 83616,
-			"endMs": 83860,
-			"timestampMs": 83738,
+			"startMs": 76649,
+			"endMs": 76881,
+			"timestampMs": 76765,
 			"confidence": 1
 		},
 		{
 			"text": " wegmachen",
-			"startMs": 83918,
-			"endMs": 84371,
-			"timestampMs": 84145,
+			"startMs": 76927,
+			"endMs": 77322,
+			"timestampMs": 77125,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 84394,
-			"endMs": 84568,
-			"timestampMs": 84481,
+			"startMs": 77345,
+			"endMs": 77508,
+			"timestampMs": 77427,
 			"confidence": 1
 		},
 		{
 			"text": " vergessen!",
-			"startMs": 84603,
-			"endMs": 85288,
-			"timestampMs": 84946,
+			"startMs": 77543,
+			"endMs": 78181,
+			"timestampMs": 77862,
 			"confidence": 1
 		}
 	],
 	"captionsSource": "elevenlabs-alignment",
-	"generatedAt": "2026-11-04T21:33:55.632Z",
+	"generatedAt": "2026-11-04T22:00:17.102Z",
 	"voice": {
 		"provider": "elevenlabs",
 		"name": "Adam - Dominant, Firm",
@@ -1302,10 +1302,10 @@
 			"similarity_boost": 0.8,
 			"style": 0.2,
 			"use_speaker_boost": true,
-			"speed": 1.08
+			"speed": 1.16
 		},
 		"seed": 20261104,
 		"characters": 1229
 	},
-	"measuredLufsBeforeMaster": -14.01
+	"measuredLufsBeforeMaster": -13.85
 }
