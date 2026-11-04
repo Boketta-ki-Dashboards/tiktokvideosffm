@@ -132,9 +132,15 @@ const main = async () => {
 		}
 
 		log(`✔ Stimme bestätigt: „${voiceInfo.name}“ · ID ${voiceInfo.voice_id} · Kategorie ${voiceInfo.category}`);
-		const model = modelSupportsGerman(await client.getModels(), cfg.modelId);
-		if (!model.ok) throw new ElevenLabsError(model.reason, {code: 'model'});
-		log(`✔ Modell ${cfg.modelId}: Text-to-Speech mit Deutsch verfügbar`);
+		try {
+			const model = modelSupportsGerman(await client.getModels(), cfg.modelId);
+			if (!model.ok) throw new ElevenLabsError(model.reason, {code: 'model'});
+			log(`✔ Modell ${cfg.modelId}: Text-to-Speech mit Deutsch verfügbar`);
+		} catch (e) {
+			// Eingeschränkte Keys dürfen die Modellliste oft nicht lesen (models_read) – dann prüft die Erzeugung selbst
+			if (e.code !== 'missing_permissions' && e.status !== 401 && e.status !== 403) throw e;
+			log(`  (Modellliste nicht abrufbar – Key ohne „models_read“; ${cfg.modelId} wird bei der Erzeugung geprüft)`);
+		}
 		try {
 			const sub = await client.getSubscription();
 			const left = Number(sub.character_limit ?? 0) - Number(sub.character_count ?? 0);
