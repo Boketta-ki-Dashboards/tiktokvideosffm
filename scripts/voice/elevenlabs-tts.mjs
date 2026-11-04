@@ -233,8 +233,9 @@ const main = async () => {
 		} else {
 			// Alte Fassung einer anderen Engine aufbewahren (nicht überschreiben)
 			const current = manifestPath(videoId);
-			if (existsSync(current)) {
-				const old = JSON.parse(readFileSync(current, 'utf8'));
+			const previous = existsSync(current) ? JSON.parse(readFileSync(current, 'utf8')) : null;
+			if (previous) {
+				const old = previous;
 				const engine = String(old.source ?? 'alt').split(':')[0].split('-')[0] || 'alt';
 				const archive = current.replace(/\.json$/, `.${engine}.json`);
 				if (engine !== 'elevenlabs' && !existsSync(archive)) {
@@ -267,6 +268,13 @@ const main = async () => {
 					return all;
 				},
 			});
+			// Unverändert (nur Wiederverwendung)? Dann alten Zeitstempel behalten → kein überflüssiger Commit
+			const strip = (m) => JSON.stringify({...m, generatedAt: null});
+			if (previous && strip(previous) === strip(manifest)) {
+				writeFileSync(current, `${JSON.stringify({...manifest, generatedAt: previous.generatedAt}, null, '\t')}\n`);
+				log('  Sprecherspur unverändert (alles aus dem Cache) – Manifest bleibt gleich.');
+			}
+
 			log(`✔ Sprecherspur: ${path.relative(ROOT, outFile)} (${(manifest.durationMs / 1000).toFixed(2)} s) · Untertitel aus ElevenLabs-Zeitstempeln (${manifest.captions.length} Wörter)`);
 			log(`✔ Manifest: ${path.relative(ROOT, manifestPath(videoId))}`);
 			if (args.check) whisperCheck(path.join(ROOT, 'public', manifest.audioFile), manifest, tmp);
