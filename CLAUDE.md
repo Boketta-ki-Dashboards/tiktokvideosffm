@@ -102,7 +102,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
 - Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`) oder CC0 mit Nachweis in `references/` (siehe `references/musik.md`).
-- Sprechtempo: Adam `speed` 1.05–1.12 in `config/voice.json` (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
+- Sprechtempo: Adam `speed` 1.16 (vom Kanalbetreiber gewünscht, zulässig bis 1.2) in `config/voice.json` (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
 - Adam-Lautschrift: Zahlen/Daten ausschreiben (`{14. November|vierzehnte November}`), `{Gen Z|Dschen Zett}`; nach jeder Erzeugung
   `node scripts/voice/check-sync.mjs` (läuft im Workflow) und, falls lokal vorhanden, Whisper-Gegenprobe (`--check`).
 - Chatterbox-Lautschrift (Fallback): englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
