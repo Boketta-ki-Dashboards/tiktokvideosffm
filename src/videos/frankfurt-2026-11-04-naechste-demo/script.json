@@ -1,0 +1,97 @@
+{
+	"videoId": "frankfurt-2026-11-04-naechste-demo",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 90000,
+	"voice": {
+		"engine": "chatterbox",
+		"chatterbox": {
+			"reference": "voices/thorsten-cc0-ref.flac",
+			"exaggeration": 0.7,
+			"cfgWeight": 0.3,
+			"temperature": 0.8,
+			"tempo": 1.15,
+			"seed": 7,
+			"prefix": "Also."
+		},
+		"piperModel": "de_DE-thorsten-high",
+		"lengthScale": 0.8
+	},
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Frankfurt am Main. Wann geht es nach dem {31. Oktober|einunddreißigsten Oktober} weiter?",
+			"pauseAfterMs": 200
+		},
+		{
+			"id": "hook2",
+			"text": "Am {14.|vierzehnten} oder am {21. November|einundzwanzigsten November}?",
+			"pauseAfterMs": 200
+		},
+		{
+			"id": "hook3",
+			"text": "Im Netz kursieren verschiedene Termine. Doch was stimmt wirklich?",
+			"pauseAfterMs": 400
+		},
+		{
+			"id": "d14",
+			"text": "Laut Medien stand der {14. November|vierzehnte November} kurz im {Telegram|Telegramm}-Kanal der Initiative – dann wurde der Beitrag gelöscht.",
+			"pauseAfterMs": 800,
+			"seed": 41
+		},
+		{
+			"id": "d21",
+			"text": "Für den {21. November|einundzwanzigsten November} finden wir keine Quelle – weder vom Veranstalter noch von Behörden.",
+			"pauseAfterMs": 400
+		},
+		{
+			"id": "d20a",
+			"text": "Konkret: Freitag, der {20. November|zwanzigste November}. Ab {14 Uhr|vierzehn Uhr} ruft die Initiative in {34|vierunddreißig} Städten zum Protest auf – auch in Frankfurt.",
+			"pauseAfterMs": 200,
+			"seed": 43
+		},
+		{
+			"id": "d20b",
+			"text": "Es ist zugleich ein europaweiter Jugendstreiktag. Der Frankfurter Treffpunkt steht noch nicht fest.",
+			"pauseAfterMs": 400
+		},
+		{
+			"id": "pol1",
+			"text": "Innenminister Roman {Poseck|Posek} kündigt mehr Polizei an und bringt ein Demonstrationsverbot ins Gespräch.",
+			"pauseAfterMs": 200
+		},
+		{
+			"id": "pol2",
+			"text": "Eine Entscheidung dazu ist bislang nicht bekannt.",
+			"pauseAfterMs": 400
+		},
+		{
+			"id": "law1",
+			"text": "Rechtlich sind die Hürden hoch: {Artikel 8|Artikel acht} des Grundgesetzes schützt die Versammlungsfreiheit.",
+			"pauseAfterMs": 200
+		},
+		{
+			"id": "law2",
+			"text": "Ein Verbot wäre nur das letzte Mittel – Auflagen gehen vor, sagt Rechtsprofessor Matthias Jahn.",
+			"pauseAfterMs": 400,
+			"seed": 33
+		},
+		{
+			"id": "sum1",
+			"text": "Stand {4. November|vierter November}: Der {14.|vierzehnte} und der {21.|einundzwanzigste} sind für Frankfurt nicht bestätigt.",
+			"pauseAfterMs": 200,
+			"seed": 24
+		},
+		{
+			"id": "sum2",
+			"text": "Für den {20.|zwanzigsten} gibt es einen Aufruf – ob die Demo stattfindet, bleibt offen.",
+			"pauseAfterMs": 700
+		},
+		{
+			"id": "outro",
+			"text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!",
+			"pauseAfterMs": 0
+		}
+	]
+}

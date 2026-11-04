@@ -20,6 +20,8 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
    - Umstrittene Einzelbehauptungen (z. B. Herkunft von Tatverdächtigen) nur mit sorgfältiger Einordnung – im
      Zweifel weglassen und in `sources.md` unter „Bewusst NICHT verwendet“ begründen.
    - Platzhalter (Showcase) klar als „Beispiel/Platzhalter“ kennzeichnen.
+   - **Terminmeldungen** (Demos, Verbote): Stufen trennen – Gerücht · Ankündigung (Veranstalter) · Anmeldung · behördliche Entscheidung (siehe
+     `references/frankfurt-2026-11-04-naechste-demo/sources.md`). Nie als „angekündigt/beschlossen“ ausgeben, was nur als Gerücht oder politische Äußerung belegt ist; Stand-Datum im Video nennen.
    - Eigene Beobachtung des Kanalbetreibers vor Ort ist ein Beleg (`"art": "augenzeuge"`), wenn sie im Video offen als solche
      benannt wird („wir haben es vor Ort gesehen“). Sie wird nie als Polizei- oder Medienangabe ausgegeben.
    - Referenzvideos **vollständig** Bild für Bild auswerten (Kontaktbogen mit 2 fps, verdächtige Stellen mit 5–10 fps), nicht nur Ausschnitte.
@@ -87,7 +89,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   `npm run voice:import -- --file …` (fertige MP3/WAV,
   auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
-- Soundeffekte nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`) oder CC0 mit Nachweis in `references/`.
+- Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`) oder CC0 mit Nachweis in `references/` (siehe `references/musik.md`).
 - Sprechtempo: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88 (TikTok-typisch zügig).
 - Chatterbox-Lautschrift: englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
   Abkürzungen buchstabieren (`{AFP|A F P}`). Nach jeder Erzeugung `--check` (Whisper-Gegenprobe) lesen.
@@ -100,7 +102,8 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 | Komposition | Ordner | Inhalt |
 |---|---|---|
 | `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1: Demo, Nacht, internationale Schlagzeilen |
-| `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2: Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
+| `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
+| `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |
 
 ## Projektstruktur
 

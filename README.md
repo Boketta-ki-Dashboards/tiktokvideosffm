@@ -16,6 +16,12 @@ Daten: [`src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json`](src/videos
 Tabelle & Quellen: [`references/frankfurt-2026-10-31-geschaefte/sources.md`](references/frankfurt-2026-10-31-geschaefte/sources.md) ·
 Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md) · Medienrechte: [`medienrechte.md`](references/frankfurt-2026-10-31-geschaefte/medienrechte.md)
 
+**Folge 3 – „Frankfurt Part 2 – 14. oder 21. November? Wann geht es wirklich weiter?“** (Komposition `FrankfurtNextDemo`, ≈ 76 s):
+Kalenderkarten, Deutschlandkarte mit den 34 angekündigten Städten, Polizei-/Verbotsdebatte und Rechtslage (Art. 8 GG). Stand 04.11.2026.
+Daten: [`src/videos/frankfurt-2026-11-04-naechste-demo/data/termine.json`](src/videos/frankfurt-2026-11-04-naechste-demo/data/termine.json) ·
+Quellen: [`references/frankfurt-2026-11-04-naechste-demo/sources.md`](references/frankfurt-2026-11-04-naechste-demo/sources.md) ·
+Drehbuch: [`drehbuch.md`](references/frankfurt-2026-11-04-naechste-demo/drehbuch.md) · Musik: [`musik.md`](references/musik.md)
+
 ---
 
 ## Video herunterladen (GitHub Actions)
@@ -23,8 +29,8 @@ Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md
 1. Im Repository oben auf **Actions** klicken.
 2. Links den Workflow **„Video rendern“** wählen.
 3. Rechts **„Run workflow“** → Branch wählen → Eingaben prüfen:
-   - `composition`: `FrankfurtHeadlines` (Folge 1) oder `FrankfurtShops` (Folge 2)
-   - `video_id`: `frankfurt-2026-10-31` bzw. `frankfurt-2026-10-31-geschaefte` (nur für Stimme neu erzeugen/importieren)
+   - `composition`: `FrankfurtHeadlines` (Folge 1), `FrankfurtShops` (Folge 2) oder `FrankfurtNextDemo` (Folge 3)
+   - `video_id`: `frankfurt-2026-10-31`, `frankfurt-2026-10-31-geschaefte` bzw. `frankfurt-2026-11-04-naechste-demo` (nur für Stimme neu erzeugen/importieren)
    - `voice`: `repo` (vorhandene Sprecherspur), `chatterbox` (natürliche Stimme neu erzeugen, ≈ 10–20 min),
      `import` (deine Datei aus `voice-input/`), `piper` (schnelle Roboterstimme) oder `none` (stumm)
    - `crf`: `18` (Qualität)
@@ -33,7 +39,7 @@ Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md
    → ZIP herunterladen. Darin: `<Komposition>.mp4`, `<Komposition>-cover.png` (Titelbild) und der Prüfbericht.
 
 Vor dem Merge (der Knopf „Run workflow“ erscheint erst, wenn der Workflow auf `main` liegt): Ändert ein Pull Request
-`render-video.yml`, rendert der Workflow automatisch **beide Folgen** – die Artefakte hängen am jeweiligen Lauf im PR.
+`render-video.yml`, rendert der Workflow automatisch **alle drei Folgen** – die Artefakte hängen am jeweiligen Lauf im PR.
 
 Auf dem iPhone: ZIP in der Dateien-App öffnen → MP4 antippen → Teilen → „Video sichern“ → in TikTok hochladen.
 Der Prüfbericht steht zusätzlich in der Zusammenfassung des Workflow-Laufs.
@@ -47,6 +53,9 @@ Der Prüfbericht steht zusätzlich in der Zusammenfassung des Workflow-Laufs.
 | Weltkarte | `WorldMap` (Natural Earth 1:50 Mio., Kamerafahrten, Länder-Highlights, animierte Verbindungsbögen, Pins mit Flaggen-Labels), `PLACES`, `COUNTRY_IDS` |
 | Stadtplan | `CityStreetMap` (echte OpenStreetMap-Geometrie, Kamerafahrt, Marker mit Info-Karten, Straßen-Sweeps, Brennpunkte, Abfolge-Linie); Daten per `scripts/maps/build-osm-map.mjs` |
 | Abspann | `FollowCta` (Finger tippt auf das Folgen-Plus, Plus → Haken, Kommentar-Aufforderung); Account & Profilbild aus `src/theme/brand.ts` (**@frankfurtred3**, „S“) |
+| Kalender & Termine | `CalendarCard` (Abreißkalender-Karte mit Status), `MonthGrid` (Monatsansicht mit Kamerafahrt auf einen Tag) |
+| Deutschlandkarte | `GermanyMap` (Natural Earth, Städtepunkte mit Pop-in, Hervorhebung einer Stadt) |
+| Recht & Politik | `ArticleCard` (Gesetzestext), `LawScale` (Waage), `HurdleLadder` (Voraussetzungen), `PressRelease`, `DecisionTrack` (Ankündigung ≠ Entscheidung), `PoliceCar`, `ChatMock` (nachgestellte Nachricht) |
 | Schadenskarte | `DamagePins` (Status-Pins rot/orange/grau, Cluster statt Überlappung, kollisionsfreie Schilder, Verbindungslinien), `ShopCard`, `StorefrontIllustration`; automatische Straßennamen in `CityStreetMap` |
 | Flaggen, Medien, Quellen | `Flag` (17 Länder + Fallback), `MediaBadge` (neutrale Wortmarke, optional lizenziertes Logo), `HeadlineCard` (Original-Schlagzeile + Übersetzung), `SourceCredit` |
 | Statistiken & Infografiken | `AnimatedNumber` (deutsches Zahlenformat), `StatCard`, `ComparisonBars`, `ProgressRing`, `Timeline` |

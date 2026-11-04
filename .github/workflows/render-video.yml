@@ -2,7 +2,7 @@ name: Video rendern
 
 # Manuell starten: GitHub → Actions → „Video rendern“ → „Run workflow“.
 # Ergebnis: MP4 (+ Cover-Bild + Prüfbericht) als herunterladbares Artefakt.
-# Selbsttest: Ändert ein Pull Request diesen Workflow, werden alle Folgen mit der Sprecherspur aus dem Repository gerendert.
+# Selbsttest: Ändert ein Pull Request diesen Workflow, werden alle Folgen (1–3) mit der Sprecherspur aus dem Repository gerendert.
 
 on:
   pull_request:
@@ -58,7 +58,7 @@ jobs:
       fail-fast: false
       # Manuell: genau die eingegebene Komposition · PR-Selbsttest: alle Folgen
       matrix:
-        include: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '[{"composition":"","video_id":""}]' || '[{"composition":"FrankfurtHeadlines","video_id":"frankfurt-2026-10-31"},{"composition":"FrankfurtShops","video_id":"frankfurt-2026-10-31-geschaefte"}]') }}
+        include: ${{ fromJSON(github.event_name == 'workflow_dispatch' && '[{"composition":"","video_id":""}]' || '[{"composition":"FrankfurtHeadlines","video_id":"frankfurt-2026-10-31"},{"composition":"FrankfurtShops","video_id":"frankfurt-2026-10-31-geschaefte"},{"composition":"FrankfurtNextDemo","video_id":"frankfurt-2026-11-04-naechste-demo"}]') }}
     env:
       COMPOSITION: ${{ inputs.composition || matrix.composition }}
       VOICE_MODE: ${{ inputs.voice || 'repo' }}

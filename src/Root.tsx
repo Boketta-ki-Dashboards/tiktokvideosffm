@@ -16,6 +16,13 @@ import {
 	shopsSchema,
 } from './videos/frankfurt-2026-10-31-geschaefte/FrankfurtShops';
 import {FrankfurtShopsCover} from './videos/frankfurt-2026-10-31-geschaefte/FrankfurtShopsCover';
+import {
+	calculateNextDemoMetadata,
+	FrankfurtNextDemo,
+	nextDemoDefaultProps,
+	nextDemoSchema,
+} from './videos/frankfurt-2026-11-04-naechste-demo/FrankfurtNextDemo';
+import {FrankfurtNextDemoCover} from './videos/frankfurt-2026-11-04-naechste-demo/FrankfurtNextDemoCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -46,6 +53,19 @@ export const RemotionRoot: React.FC = () => {
 					calculateMetadata={calculateShopsMetadata}
 				/>
 				<Still id="FrankfurtShops-Cover" component={FrankfurtShopsCover} width={VIDEO.width} height={VIDEO.height} />
+				{/* Folge 3: Wann geht es in Frankfurt weiter? (14./20./21. November) */}
+				<Composition
+					id="FrankfurtNextDemo"
+					component={FrankfurtNextDemo}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1900}
+					schema={nextDemoSchema}
+					defaultProps={nextDemoDefaultProps}
+					calculateMetadata={calculateNextDemoMetadata}
+				/>
+				<Still id="FrankfurtNextDemo-Cover" component={FrankfurtNextDemoCover} width={VIDEO.width} height={VIDEO.height} />
 			</Folder>
 			<Folder name="Bibliothek">
 				<Composition

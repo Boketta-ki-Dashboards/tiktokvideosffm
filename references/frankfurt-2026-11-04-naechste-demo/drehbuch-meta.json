@@ -1,0 +1,16 @@
+{
+	"hook1": {"bild": "Hook – Frankfurter Skyline bei Nacht, Kamera fährt auf die Innenstadt zu, Titel „FRANKFURT PART 2?“", "beleg": "–"},
+	"hook2": {"bild": "Hook – Kalenderkarten 14. und 21. fliegen ein (mit „?“)", "beleg": "–"},
+	"hook3": {"bild": "Hook – Karte 20. fliegt ein, Pille „WANN GEHT ES WEITER?“", "beleg": "–"},
+	"d14": {"bild": "14. November – nachgestellte Kanal-Nachricht „Am 14.11. geht es weiter!“ zerfällt; Medien-Karten; Stempel „NICHT BESTÄTIGT“", "beleg": "Apollo News 01.11.; dpa/lsw 02.11.; Website 04.11. (nur 20.11.)"},
+	"d21": {"bild": "21. November – Kalender, Quellen-Check ohne Treffer, Banner „KEINE BESTÄTIGTE FRANKFURTER DEMO“", "beleg": "Website, Telegram, hessenschau, taz, Innenministerium: kein Treffer (04.11.)"},
+	"d20a": {"bild": "20. November – Kalender schwenkt auf Freitag, dann Deutschlandkarte mit 34 Städten, Frankfurt hervorgehoben", "beleg": "genz-regelt.de 04.11. („20. November 2026 ab 14 Uhr in 34 Städten“); hessenschau 02.11."},
+	"d20b": {"bild": "20. November – Pille „INTERNATIONALER JUGENDSTREIKTAG“, Karte „Frankfurt: Protest angekündigt“, Standort folgt", "beleg": "taz 01.11., hessenschau 02.11., junge Welt 02.11.; Website: „Standort folgt“"},
+	"pol1": {"bild": "Polizei – Wache, Streifenwagen, Pressemitteilung mit Zitaten, Pillen „MEHR POLIZEIPRÄSENZ“ / „MÖGLICHES DEMONSTRATIONSVERBOT?“", "beleg": "Innenministerium Hessen, PM 02.11.; ARD-Tagesthemen 01.11. (hessenschau)"},
+	"pol2": {"bild": "Polizei – Stufen „Ankündigung ≠ Entscheidung“: Ankündigung ✓, Anmeldung ?, behördliche Entscheidung ?", "beleg": "hessenschau-Themenseite 04.11., taz, Innenministerium: keine Verfügung bekannt"},
+	"law1": {"bild": "Recht – Karte „Artikel 8 Grundgesetz“ (Wortlaut), Waage Freiheit/Beschränkung", "beleg": "Grundgesetz Art. 8 Abs. 1"},
+	"law2": {"bild": "Recht – Treppe: konkrete Gefahr → Auflagen reichen nicht → letztes Mittel → Verbot; Karte Prof. Matthias Jahn", "beleg": "hessenschau 02.11., 19:07 (Prof. Jahn)"},
+	"sum1": {"bild": "Zusammenfassung – Karten 14. und 21. „UNBESTÄTIGT“", "beleg": "siehe sources.md"},
+	"sum2": {"bild": "Zusammenfassung – Karte 20. „ANGEKÜNDIGT“, Banner „DURCHFÜHRUNG IN FRANKFURT NOCH OFFEN“", "beleg": "Stand 04.11.2026"},
+	"outro": {"bild": "Outro @frankfurtred3 (wie Folge 2)", "beleg": "–"}
+}
