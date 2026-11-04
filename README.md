@@ -16,7 +16,7 @@ Daten: [`src/videos/frankfurt-2026-10-31-geschaefte/data/shops.json`](src/videos
 Tabelle & Quellen: [`references/frankfurt-2026-10-31-geschaefte/sources.md`](references/frankfurt-2026-10-31-geschaefte/sources.md) ·
 Drehbuch: [`drehbuch.md`](references/frankfurt-2026-10-31-geschaefte/drehbuch.md) · Medienrechte: [`medienrechte.md`](references/frankfurt-2026-10-31-geschaefte/medienrechte.md)
 
-**Folge 3 – „Frankfurt Part 2 – 14. oder 21. November? Wann geht es wirklich weiter?“** (Komposition `FrankfurtNextDemo`, ≈ 86 s, Stimme ElevenLabs Adam):
+**Folge 3 – „Frankfurt Part 2 – 14. oder 21. November? Wann geht es wirklich weiter?“** (Komposition `FrankfurtNextDemo`, ≈ 79 s, Stimme ElevenLabs Adam):
 Kalenderkarten, Deutschlandkarte mit den 34 angekündigten Städten, Polizei-/Verbotsdebatte und Rechtslage (Art. 8 GG). Stand 04.11.2026.
 Daten: [`src/videos/frankfurt-2026-11-04-naechste-demo/data/termine.json`](src/videos/frankfurt-2026-11-04-naechste-demo/data/termine.json) ·
 Quellen: [`references/frankfurt-2026-11-04-naechste-demo/sources.md`](references/frankfurt-2026-11-04-naechste-demo/sources.md) ·
