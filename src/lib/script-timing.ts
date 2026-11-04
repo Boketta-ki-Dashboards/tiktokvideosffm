@@ -68,8 +68,10 @@ export type VoiceoverManifest = {
 	durationMs: number;
 	segments: SegmentTiming[];
 	captions: Caption[];
-	captionsSource: 'script-estimate' | 'whisper' | 'none';
+	captionsSource: 'script-estimate' | 'whisper' | 'elevenlabs-alignment' | 'none';
 	generatedAt: string;
+	/** Nur bei ElevenLabs: Stimme, Modell und Einstellungen der Aufnahme. */
+	voice?: Record<string, unknown>;
 };
 
 export type ParsedWord = {

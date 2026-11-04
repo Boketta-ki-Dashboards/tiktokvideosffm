@@ -1,0 +1,204 @@
+name: Video produzieren (ElevenLabs Adam)
+
+# Komplette Produktion eines FrankfurtRed3-Videos mit der Standardstimme ElevenLabs „Adam“:
+#   Sprechertext laden → Adam (Cache wiederverwenden oder neu erzeugen) → Zeitstempel → Untertitel
+#   → Remotion-Render → technische Prüfung → MP4 + Sprecher-MP3 als Artefakt.
+#
+# Start:
+#   • nach dem Merge auf main: Actions → „Video produzieren (ElevenLabs Adam)“ → Run workflow
+#   • vorher (oder jederzeit): voice-jobs/auftrag.json ändern und pushen (siehe voice-jobs/README.md)
+#
+# Sicherheit: Der API-Key steht nur im Secret ELEVENLABS_API_KEY und wird ausschließlich dem
+# Sprach-Schritt als Umgebungsvariable übergeben. Er wird nie ausgegeben oder gespeichert.
+# Das Video wird NICHT veröffentlicht – nur als Artefakt zum Ansehen bereitgestellt.
+
+on:
+  workflow_dispatch:
+    inputs:
+      video:
+        description: Video (Komposition)
+        required: true
+        default: FrankfurtNextDemo
+        type: choice
+        options:
+          - FrankfurtNextDemo
+          - FrankfurtShops
+          - FrankfurtHeadlines
+      aktion:
+        description: "video = Stimme + Video · nur-stimme = nur Sprecherspur · hoerprobe = ≈ 10-s-Probe"
+        required: true
+        default: video
+        type: choice
+        options:
+          - video
+          - nur-stimme
+          - hoerprobe
+      stimme:
+        description: "wiederverwenden = vorhandene Adam-Sätze nutzen (keine Credits, nur Fehlendes neu) · neu-erzeugen = alles neu (kostet Credits)"
+        required: true
+        default: wiederverwenden
+        type: choice
+        options:
+          - wiederverwenden
+          - neu-erzeugen
+      audio_speichern:
+        description: Neu erzeugte Adam-Audiodateien ins Repository committen (spart künftig Credits)
+        required: true
+        default: true
+        type: boolean
+  push:
+    paths:
+      - voice-jobs/auftrag.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: produce-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    name: Produktion
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+
+      - name: Auftrag bestimmen
+        id: job
+        env:
+          IN_VIDEO: ${{ inputs.video }}
+          IN_AKTION: ${{ inputs.aktion }}
+          IN_STIMME: ${{ inputs.stimme }}
+          IN_SPEICHERN: ${{ inputs.audio_speichern }}
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            VIDEO="$IN_VIDEO"; AKTION="$IN_AKTION"; STIMME="$IN_STIMME"; SPEICHERN="$IN_SPEICHERN"
+          else
+            VIDEO=$(jq -r '.video // "FrankfurtNextDemo"' voice-jobs/auftrag.json)
+            AKTION=$(jq -r '.aktion // "video"' voice-jobs/auftrag.json)
+            STIMME=$(jq -r '.stimme // "wiederverwenden"' voice-jobs/auftrag.json)
+            SPEICHERN=$(jq -r 'if has("audio_speichern") then .audio_speichern else true end' voice-jobs/auftrag.json)
+          fi
+          [[ "$AKTION" =~ ^(video|nur-stimme|hoerprobe)$ ]] || { echo "::error::Unbekannte aktion: $AKTION"; exit 1; }
+          [[ "$STIMME" =~ ^(wiederverwenden|neu-erzeugen)$ ]] || { echo "::error::Unbekannte stimme: $STIMME"; exit 1; }
+          VIDEO_ID=$(jq -r --arg v "$VIDEO" '.[$v].videoId // empty' config/videos.json)
+          OUT=$(jq -r --arg v "$VIDEO" '.[$v].outputName // empty' config/videos.json)
+          [ -n "$VIDEO_ID" ] || { echo "::error::Video „$VIDEO“ fehlt in config/videos.json"; exit 1; }
+          {
+            echo "video=$VIDEO"; echo "video_id=$VIDEO_ID"; echo "out=$OUT"
+            echo "aktion=$AKTION"; echo "stimme=$STIMME"; echo "speichern=$SPEICHERN"
+          } >> "$GITHUB_OUTPUT"
+          echo "### Auftrag: $VIDEO ($VIDEO_ID) · $AKTION · Stimme: $STIMME" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: FFmpeg installieren
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          ffmpeg -version | head -1
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      # ---------- Stimme: ElevenLabs Adam ----------
+      - name: Adam-Hörprobe erzeugen
+        if: steps.job.outputs.aktion == 'hoerprobe'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
+        run: node scripts/voice/elevenlabs-tts.mjs --sample $FORCE
+
+      - name: Sprecherspur mit Adam erzeugen bzw. wiederverwenden
+        if: steps.job.outputs.aktion != 'hoerprobe'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
+        run: node scripts/voice/elevenlabs-tts.mjs --video "${{ steps.job.outputs.video_id }}" $FORCE
+
+      - name: Neue Adam-Audiodateien ins Repository übernehmen
+        if: steps.job.outputs.speichern == 'true'
+        run: |
+          git add -A voice-cache public/voiceover "src/videos/${{ steps.job.outputs.video_id }}"
+          if git diff --cached --quiet; then
+            echo "Keine neuen Audiodateien (alles aus dem Cache)."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Stimme: ElevenLabs Adam für ${{ steps.job.outputs.video }} (${{ steps.job.outputs.aktion }}) [skip ci]"
+          for i in 1 2 3; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 5))
+          done
+          echo "✔ Audio committet: $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Hörprobe als Artefakt bereitstellen
+        if: steps.job.outputs.aktion == 'hoerprobe'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Adam-Hoerprobe-run${{ github.run_number }}
+          path: |
+            public/voiceover/samples/adam-hoerprobe.mp3
+            public/voiceover/samples/adam-hoerprobe.json
+          if-no-files-found: error
+          retention-days: 30
+
+      # ---------- Video ----------
+      - name: Chrome Headless Shell für Remotion bereitstellen
+        if: steps.job.outputs.aktion == 'video'
+        run: npx remotion browser ensure
+
+      - name: TypeScript, Lint und Tests
+        if: steps.job.outputs.aktion == 'video'
+        run: npm run check
+
+      - name: Video rendern (H.264, 1080×1920, 30 fps)
+        if: steps.job.outputs.aktion == 'video'
+        run: |
+          node scripts/render.mjs "${{ steps.job.outputs.video }}" \
+            --out "output/${{ steps.job.outputs.out }}.mp4" \
+            --json "output/${{ steps.job.outputs.out }}.report.json"
+
+      - name: Cover-Bild rendern
+        if: steps.job.outputs.aktion == 'video'
+        run: |
+          if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-Cover "; then
+            npx remotion still src/index.ts "${{ steps.job.outputs.video }}-Cover" "output/${{ steps.job.outputs.out }}-cover.png"
+          fi
+
+      - name: Technische Qualitätskontrolle
+        if: steps.job.outputs.aktion == 'video'
+        run: |
+          node scripts/verify-video.mjs "output/${{ steps.job.outputs.out }}.mp4"
+          node scripts/voice/check-sync.mjs --video "${{ steps.job.outputs.video_id }}" --mp4 "output/${{ steps.job.outputs.out }}.mp4"
+
+      - name: Video als Artefakt bereitstellen
+        if: steps.job.outputs.aktion == 'video'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.job.outputs.out }}-run${{ github.run_number }}
+          path: |
+            output/${{ steps.job.outputs.out }}.mp4
+            output/${{ steps.job.outputs.out }}-cover.png
+            output/${{ steps.job.outputs.out }}.report.json
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Adam-Sprecherspur als Artefakt bereitstellen
+        if: steps.job.outputs.aktion != 'hoerprobe'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.job.outputs.out }}-Sprecher-Adam-run${{ github.run_number }}
+          path: |
+            public/voiceover/${{ steps.job.outputs.video_id }}/voiceover-adam.mp3
+            src/videos/${{ steps.job.outputs.video_id }}/voiceover.json
+          if-no-files-found: error
+          retention-days: 30

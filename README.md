@@ -24,6 +24,22 @@ Drehbuch: [`drehbuch.md`](references/frankfurt-2026-11-04-naechste-demo/drehbuch
 
 ---
 
+## Video produzieren mit der Standardstimme ElevenLabs Adam
+
+Alle FrankfurtRed3-Videos werden mit **ElevenLabs „Adam“** vertont (zentral in [`config/voice.json`](config/voice.json)).
+Der API-Key liegt nur als GitHub-Secret `ELEVENLABS_API_KEY` vor und wird ausschließlich im Workflow genutzt.
+
+1. **Actions → „Video produzieren (ElevenLabs Adam)“ → Run workflow** (nach dem Merge auf `main` sichtbar)
+2. `video` wählen (z. B. `FrankfurtNextDemo`), `aktion`: `hoerprobe` · `nur-stimme` · `video`
+3. `stimme`: `wiederverwenden` (Standard, keine Credits für unveränderte Sätze) oder `neu-erzeugen`
+4. Nach dem Lauf unter **Artifacts**: `FrankfurtRed3_Folge3_ADAM_FINAL-run<N>` (MP4 + Titelbild + Prüfbericht) und
+   `…-Sprecher-Adam-run<N>` (MP3 der Stimme). Das Video wird **nicht** automatisch veröffentlicht.
+
+Vor dem Merge funktioniert dasselbe über die Auftragsdatei [`voice-jobs/auftrag.json`](voice-jobs/README.md) (ändern und pushen).
+Der Workflow prüft die Stimme über die API (nur die originale Adam-Stimme), das Modell und das Guthaben, erzeugt nur fehlende
+Sätze, schneidet sie an den ElevenLabs-Zeitstempeln, baut daraus wortgenaue Untertitel und prüft am Ende die Synchronität
+(`scripts/voice/check-sync.mjs`). Bei einem API-Fehler bricht er mit Erklärung ab – ohne heimlich auf eine andere Stimme zu wechseln.
+
 ## Video herunterladen (GitHub Actions)
 
 1. Im Repository oben auf **Actions** klicken.
@@ -73,7 +89,8 @@ Jede Variante erzeugt `public/voiceover/<video>/voiceover.mp3` + `src/videos/<vi
 
 | Weg | Befehl | Wann |
 |---|---|---|
-| **Chatterbox** (natürlich, kostenlos, lokal; MIT-Modell + CC0-Stimmvorlage) | `npm run voice:setup-chatterbox` → `npm run voice:chatterbox -- --video frankfurt-2026-10-31 --check` | **Standard**, auch im Workflow (`voice: chatterbox`) |
+| **ElevenLabs Adam** (Standard, bezahlt, Secret `ELEVENLABS_API_KEY`) | Workflow „Video produzieren (ElevenLabs Adam)“ bzw. `node scripts/voice/elevenlabs-tts.mjs --video <id>` | **Standard für alle Folgen** |
+| Chatterbox (lokal, kostenlos; Fallback) | `npm run voice:setup-chatterbox` → `npm run voice:chatterbox -- --video frankfurt-2026-10-31 --check` | nur manuell |
 | **Piper** (sehr schnell, aber künstlich) | `npm run voice:setup-piper` → `npm run voice:piper -- --video frankfurt-2026-10-31` | schnelle Vorschau |
 | **Fertige MP3/WAV importieren** | `npm run voice:import -- --video frankfurt-2026-10-31 --file voice-input/sprecher.mp3` | eigene Aufnahme oder Datei aus einer TTS-App deiner Wahl |
 | Wortgenaue Untertitel (Whisper, lokal) | `npm run captions:whisper -- --video frankfurt-2026-10-31` | nach einem Import, wenn die Schätzung nicht reicht |

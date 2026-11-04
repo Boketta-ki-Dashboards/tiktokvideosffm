@@ -16,8 +16,25 @@ import {ensureDir, ROOT, writeManifest} from './project.mjs';
  * @param {Array<{id: string, file: string}>} o.segments  getrimmte WAVs (gleiche Abtastrate, mono)
  * @param {number} o.sampleRate
  * @param {string} o.source            z. B. "chatterbox:thorsten-cc0-ref"
+ * @param {string} [o.outFileName]     Dateiname unter public/voiceover/<video>/ (Standard voiceover.mp3)
+ * @param {(timings: Array<{id: string, startMs: number, endMs: number}>) => Array} [o.buildCaptions]
+ *        echte Wort-Untertitel (z. B. aus ElevenLabs-Zeitstempeln); Standard: Schätzung aus dem Skript
+ * @param {string} [o.captionsSource]
+ * @param {object} [o.masterOptions]   an masterVoice() weitergereicht
+ * @param {object} [o.extra]           zusätzliche Manifest-Felder (z. B. Stimmdaten)
  */
-export const assembleVoiceTrack = ({videoId, script, segments, sampleRate, source}) => {
+export const assembleVoiceTrack = ({
+	videoId,
+	script,
+	segments,
+	sampleRate,
+	source,
+	outFileName = 'voiceover.mp3',
+	buildCaptions,
+	captionsSource = 'script-estimate',
+	masterOptions,
+	extra = {},
+}) => {
 	const tmp = mkdtempSync(path.join(os.tmpdir(), 'voice-build-'));
 	try {
 		const silence = (ms, name) => {
@@ -39,7 +56,7 @@ export const assembleVoiceTrack = ({videoId, script, segments, sampleRate, sourc
 			const normalized = path.join(tmp, `${i}.wav`);
 			ffmpeg(['-i', seg.file, '-ar', String(sampleRate), '-ac', '1', '-c:a', 'pcm_s16le', normalized]);
 			const ms = Math.round(durationSeconds(normalized) * 1000);
-			timings.push({id: segment.id, startMs: cursorMs, endMs: cursorMs + ms});
+			timings.push({id: segment.id, startMs: cursorMs, endMs: cursorMs + ms, ...(seg.meta ?? {})});
 			parts.push(normalized);
 			cursorMs += ms;
 			const pause = i < script.segments.length - 1 ? (segment.pauseAfterMs ?? 200) : 0;
@@ -55,19 +72,21 @@ export const assembleVoiceTrack = ({videoId, script, segments, sampleRate, sourc
 		ffmpeg(['-f', 'concat', '-safe', '0', '-i', list, '-c:a', 'pcm_s16le', joined]);
 
 		const outDir = ensureDir(path.join(ROOT, 'public', 'voiceover', videoId));
-		const outFile = path.join(outDir, 'voiceover.mp3');
-		masterVoice(joined, outFile);
+		const outFile = path.join(outDir, outFileName);
+		const mastered = masterVoice(joined, outFile, masterOptions);
 
 		const manifest = {
 			version: 1,
 			videoId,
 			source,
-			audioFile: `voiceover/${videoId}/voiceover.mp3`,
+			audioFile: `voiceover/${videoId}/${outFileName}`,
 			durationMs: timings[timings.length - 1].endMs,
 			segments: timings,
-			captions: estimateCaptionsForSegments(script, timings),
-			captionsSource: 'script-estimate',
+			captions: buildCaptions ? buildCaptions(timings) : estimateCaptionsForSegments(script, timings),
+			captionsSource,
 			generatedAt: new Date().toISOString(),
+			...extra,
+			measuredLufsBeforeMaster: mastered?.measuredLufs,
 		};
 		const manifestFile = writeManifest(videoId, manifest);
 		return {outFile, manifestFile, manifest};

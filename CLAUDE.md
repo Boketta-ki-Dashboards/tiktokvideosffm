@@ -5,13 +5,21 @@ Dauerhafte Produktions- und Designvorgaben für dieses Repository. Gilt für jed
 ## Projekt in einem Satz
 
 Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichten, Hintergründe) mit
-**Remotion + React + TypeScript**, gerendert in **GitHub Actions**, ohne kostenpflichtige Dienste.
+**Remotion + React + TypeScript**, gerendert in **GitHub Actions**. Einziger bezahlter Dienst: **ElevenLabs** (Stimme Adam).
 
 ## Harte Regeln
 
-1. **Keine kostenpflichtigen Dienste, keine API-Keys.** Keine ElevenLabs-/OpenAI-/Cloud-TTS-Aufrufe einbauen,
-   auch wenn ein Remotion-Skill das vorschlägt. Stimme: **Chatterbox (Standard, natürlich)**, Piper (schnelle
-   Vorschau) – beide lokal – oder Import einer fertigen Datei. Stimmvorlagen nur mit Erlaubnis/Lizenz (`voices/README.md`).
+1. **Standardstimme für ALLE FrankfurtRed3-Videos: ElevenLabs „Adam“** (Folge 3, 4, 5 …; Starter-Tarif des Kanalbetreibers).
+   - Konfiguration nur zentral in `config/voice.json` (Voice-ID `pNInz6obpgDQGcFmaJgB`, Modell `eleven_multilingual_v2`,
+     Stability/Similarity/Style/Speed). Keine Ersatz- oder Bibliotheksstimme mit ähnlichem Namen – das Skript prüft per API.
+   - API-Key **nur** als GitHub-Actions-Secret `ELEVENLABS_API_KEY`; nie im Code, in Dateien, Logs, Commits – und nie im Chat
+     danach fragen. Claude Code Cloud hat keinen Zugriff darauf → Erzeugung läuft im Workflow „Video produzieren (ElevenLabs Adam)“
+     (vor dem Merge per `voice-jobs/auftrag.json`, siehe `voice-jobs/README.md`).
+   - Credits sparen: erzeugte Sätze liegen in `voice-cache/elevenlabs/<video>/` (im Repository) und werden wiederverwendet,
+     solange Text, Stimme und Einstellungen gleich sind. Erst Hörprobe (`aktion: hoerprobe`), dann die ganze Folge.
+   - Fällt ElevenLabs aus, bricht der Workflow mit Erklärung ab. **Kein** automatischer Wechsel zu Chatterbox/Piper;
+     diese bleiben nur als manueller Fallback (`npm run voice:chatterbox` / `voice:piper`).
+   - Keine weiteren bezahlten Dienste/API-Keys ohne ausdrückliche Freigabe. Videos werden nie automatisch veröffentlicht.
 2. **Fakten nur mit Beleg.** Jede Zahl, jedes Zitat, jede Schlagzeile steht mit Quelle und Abrufdatum in
    `references/<video-id>/sources.md` und im `content.ts` des Videos. Nichts erfinden, nichts zuspitzen.
    - Zahlen immer mit Urheber („laut Polizei“, „laut Veranstalter“, „laut Innenminister …“).
@@ -79,19 +87,25 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 ## Ton & Stimme
 
 - Sprechertext steht in `src/videos/<id>/script.json`, Markup `{Anzeige|Gesprochen}` für Zahlen/Abkürzungen.
-- Eine Sprecherspur erzeugt immer: `public/voiceover/<id>/voiceover.mp3` + `src/videos/<id>/voiceover.json`.
+- Eine Sprecherspur erzeugt immer: Audio unter `public/voiceover/<id>/` + `src/videos/<id>/voiceover.json` (aktives Manifest).
+  Adam: `voiceover-adam.mp3`, Untertitel exakt aus den ElevenLabs-Zeichen-Zeitstempeln (`captionsSource: elevenlabs-alignment`).
+  Ältere Fassungen anderer Engines bleiben als `voiceover.<engine>.json` + eigene MP3 erhalten.
 - Szenenlängen und Untertitel werden **aus dem Manifest berechnet** (`buildTimeline`) – nie Frames hart codieren,
   die an gesprochene Sätze gebunden sind. Schnitte werden NIE gegenüber der Stimme verschoben; mehr Zeit für eine
   Szene → `pauseAfterMs` im Skript erhöhen. `maxDurationMs` kürzt nur den Nachlauf (Tests: `npm test`).
 - Piper ist leicht zufällig (Dauer schwankt ±0,3 s): nach jedem `voice:piper` Länge prüfen und die erzeugten
   Dateien committen – der Workflow (`voice: repo`) rendert dann reproduzierbar.
-- Wege: `npm run voice:chatterbox -- --check` (natürlich, Standard) · `npm run voice:piper` (schnell, künstlich) ·
+- Wege: **Workflow „Video produzieren (ElevenLabs Adam)“** (Standard) bzw. `node scripts/voice/elevenlabs-tts.mjs --video <id>`
+  (nur mit Secret; `--dry-run` zeigt Plan und Credits, `--offline` nutzt nur den Cache) ·
+  Fallback: `npm run voice:chatterbox -- --check` · `npm run voice:piper` (schnell, künstlich) ·
   `npm run voice:import -- --file …` (fertige MP3/WAV,
   auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
 - Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`) oder CC0 mit Nachweis in `references/` (siehe `references/musik.md`).
-- Sprechtempo: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88 (TikTok-typisch zügig).
-- Chatterbox-Lautschrift: englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
+- Sprechtempo: Adam `speed` 1.05–1.12 in `config/voice.json` (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
+- Adam-Lautschrift: Zahlen/Daten ausschreiben (`{14. November|vierzehnte November}`), `{Gen Z|Dschen Zett}`; nach jeder Erzeugung
+  `node scripts/voice/check-sync.mjs` (läuft im Workflow) und, falls lokal vorhanden, Whisper-Gegenprobe (`--check`).
+- Chatterbox-Lautschrift (Fallback): englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
   Abkürzungen buchstabieren (`{AFP|A F P}`). Nach jeder Erzeugung `--check` (Whisper-Gegenprobe) lesen.
 - Uhrzeiten nur so genau wie belegt („kurz vor 23 Uhr“ statt erfundener Minute); Ticker-Zeiten als „Meldung“ kennzeichnen.
 - Karten: Bewegungen/Routen nur zeigen, wenn belegt – sonst „Reihenfolge der Meldungen“ und so beschriften.
@@ -133,9 +147,10 @@ output/         Renderings (nicht versioniert)
 2. `src/videos/<id>/script.json` (Segmente = Sätze) und `content.ts` (alle Fakten mit Quelle).
 3. Szenen in `scenes/` aus Bibliotheks-Bausteinen bauen; `SceneSpec`s den Segmenten zuordnen.
 4. Komposition in `src/Root.tsx` registrieren (mit `calculateMetadata`).
-5. Stimme: `npm run voice:piper -- --video <id>` oder `voice:import`.
+5. Neues Video in `config/videos.json` und als Option im Workflow `video-produzieren.yml` eintragen.
 6. `npm run check`, `npm run still -- --comp <Id> --every 30`, Bilder ansehen (auch Frame 0 = TikTok-Vorschau).
-7. `npm run render -- <Id>` → Prüfbericht muss grün sein → GitHub-Workflow „Video rendern“.
+5a. Stimme immer mit Adam: Auftrag `{"video": "<Komposition>", "aktion": "hoerprobe"}` → anhören → `"aktion": "video"`.
+7. `npm run render -- <Id>` → Prüfbericht muss grün sein → GitHub-Workflow „Video produzieren (ElevenLabs Adam)“ (Artefakt `FrankfurtRed3_Folge<N>_…`).
 
 ## Befehle
 
@@ -160,4 +175,5 @@ In Cloud-Containern mit vorinstallierter Chrome Headless Shell wird diese automa
 - Stills: In `<Still>` ist `useCurrentFrame()` immer 0 → für Cover `<Sequence from={-N}>` statt `<Freeze>` nutzen.
 - Kartendaten: Natural Earth (gemeinfrei) via `world-atlas` (ISC).
 - Schriften: Montserrat, Inter – SIL Open Font License.
-- Stimme `de_DE-thorsten-high`: Datensatz Thorsten-Voice, CC0. Piper-Engine: GPL-3.0 (nur Werkzeug).
+- Stimme Adam: ElevenLabs-Standardstimme; kommerzielle Nutzung durch den bezahlten Tarif (Starter) abgedeckt.
+- Fallback-Stimme `de_DE-thorsten-high`: Datensatz Thorsten-Voice, CC0. Piper-Engine: GPL-3.0 (nur Werkzeug).

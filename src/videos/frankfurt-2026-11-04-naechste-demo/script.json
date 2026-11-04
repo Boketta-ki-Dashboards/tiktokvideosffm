@@ -36,9 +36,8 @@
 		},
 		{
 			"id": "d14",
-			"text": "Laut Medien stand der {14. November|vierzehnte November} kurz im {Telegram|Telegramm}-Kanal der Initiative – dann wurde der Beitrag gelöscht.",
-			"pauseAfterMs": 800,
-			"seed": 41
+			"text": "Laut Medien stand der {14. November|vierzehnte November} kurz im Telegram-Kanal von {Gen Z|Dschen Zett} regelt – dann wurde der Beitrag gelöscht.",
+			"pauseAfterMs": 800
 		},
 		{
 			"id": "d21",
@@ -47,9 +46,8 @@
 		},
 		{
 			"id": "d20a",
-			"text": "Konkret: Freitag, der {20. November|zwanzigste November}. Ab {14 Uhr|vierzehn Uhr} ruft die Initiative in {34|vierunddreißig} Städten zum Protest auf – auch in Frankfurt.",
-			"pauseAfterMs": 200,
-			"seed": 43
+			"text": "Konkret: Freitag, der {20. November|zwanzigste November}. Ab {14 Uhr|vierzehn Uhr} ruft {Gen Z|Dschen Zett} regelt in {34|vierunddreißig} Städten zum Protest auf – auch in Frankfurt.",
+			"pauseAfterMs": 200
 		},
 		{
 			"id": "d20b",
@@ -58,7 +56,7 @@
 		},
 		{
 			"id": "pol1",
-			"text": "Innenminister Roman {Poseck|Posek} kündigt mehr Polizei an und bringt ein Demonstrationsverbot ins Gespräch.",
+			"text": "Innenminister Roman Poseck kündigt mehr Polizei an und bringt ein Demonstrationsverbot ins Gespräch.",
 			"pauseAfterMs": 200
 		},
 		{
@@ -74,14 +72,12 @@
 		{
 			"id": "law2",
 			"text": "Ein Verbot wäre nur das letzte Mittel – Auflagen gehen vor, sagt Rechtsprofessor Matthias Jahn.",
-			"pauseAfterMs": 400,
-			"seed": 33
+			"pauseAfterMs": 400
 		},
 		{
 			"id": "sum1",
 			"text": "Stand {4. November|vierter November}: Der {14.|vierzehnte} und der {21.|einundzwanzigste} sind für Frankfurt nicht bestätigt.",
-			"pauseAfterMs": 200,
-			"seed": 24
+			"pauseAfterMs": 200
 		},
 		{
 			"id": "sum2",

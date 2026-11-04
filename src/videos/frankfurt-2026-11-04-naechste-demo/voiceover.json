@@ -2,7 +2,7 @@
 	"version": 1,
 	"videoId": "frankfurt-2026-11-04-naechste-demo",
 	"source": "chatterbox-multilingual:thorsten-cc0-ref.flac (ex 0.7, cfg 0.3, tempo 1.15)",
-	"audioFile": "voiceover/frankfurt-2026-11-04-naechste-demo/voiceover.mp3",
+	"audioFile": "voiceover/frankfurt-2026-11-04-naechste-demo/voiceover-chatterbox.mp3",
 	"durationMs": 75511,
 	"segments": [
 		{

@@ -83,8 +83,13 @@ export const VOICE_MASTER_FILTER = `${VOICE_EQ_FILTER},loudnorm=I=-14:TP=-1.5:LR
  * Wichtig: Die Stimme wird VOR der Messung auf Stereo (Doppel-Mono) gelegt – so wird sie im Video
  * abgespielt. Eine Mono-Messung wäre im fertigen Stereo-Video 3 dB zu laut.
  */
-export const masterVoice = (input, output, {extraFilter = '', codecArgs = ['-c:a', 'libmp3lame', '-b:a', '128k', '-joint_stereo', '1']} = {}) => {
-	const pre = ['pan=stereo|c0=c0|c1=c0', VOICE_EQ_FILTER, extraFilter].filter(Boolean).join(',');
+export const masterVoice = (
+	input,
+	output,
+	{extraFilter = '', toneFilter = VOICE_EQ_FILTER, codecArgs = ['-c:a', 'libmp3lame', '-b:a', '128k', '-joint_stereo', '1']} = {},
+) => {
+	// toneFilter: Klangformung vor der Lautheitsmessung (Standard: EQ + Kompressor für lokale TTS; für Studio-Stimmen wie ElevenLabs schonender)
+	const pre = ['pan=stereo|c0=c0|c1=c0', toneFilter, extraFilter].filter(Boolean).join(',');
 	const res = spawnSync(
 		bin('ffmpeg'),
 		['-hide_banner', '-nostdin', '-i', input, '-af', `${pre},loudnorm=I=-14:TP=-1.5:LRA=7:print_format=json`, '-f', 'null', '-'],

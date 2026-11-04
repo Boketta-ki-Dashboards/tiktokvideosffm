@@ -16,12 +16,13 @@ on:
         default: FrankfurtHeadlines
         type: string
       voice:
-        description: "Sprecherspur: repo = vorhandene Spur · chatterbox = natürliche Stimme neu erzeugen (≈ 10–20 min) · import = voice-input/<video_id>.mp3|wav|m4a · piper = schnelle Roboterstimme · none = stumm"
+        description: "Sprecherspur: repo = vorhandene Spur · elevenlabs = Standardstimme Adam (fehlende Sätze erzeugen, Secret nötig) · chatterbox/piper = lokaler Fallback · import = voice-input/<video_id>.mp3|wav|m4a · none = stumm"
         required: true
         default: repo
         type: choice
         options:
           - repo
+          - elevenlabs
           - chatterbox
           - import
           - piper
@@ -98,6 +99,12 @@ jobs:
         run: npm run typecheck
 
       # ---------- Stimme ----------
+      - name: Standardstimme ElevenLabs Adam (Cache wiederverwenden, fehlende Sätze erzeugen)
+        if: env.VOICE_MODE == 'elevenlabs'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/voice/elevenlabs-tts.mjs --video "$VIDEO_ID"
+
       - name: Python für Sprachsynthese einrichten
         if: env.VOICE_MODE == 'piper' || env.VOICE_MODE == 'chatterbox'
         uses: actions/setup-python@v5
@@ -165,8 +172,9 @@ jobs:
           AUDIO_FLAG=""
           [ "$VOICE_MODE" = "none" ] && AUDIO_FLAG="--allow-no-audio"
           # Neu erzeugte Sprecherspur mitliefern (zum Übernehmen ins Repository)
-          if [ "$VOICE_MODE" = "chatterbox" ] || [ "$VOICE_MODE" = "piper" ] || [ "$VOICE_MODE" = "import" ]; then
-            cp "public/voiceover/${VIDEO_ID}/voiceover.mp3" "output/${VIDEO_ID}-voiceover.mp3" || true
+          if [ "$VOICE_MODE" = "chatterbox" ] || [ "$VOICE_MODE" = "piper" ] || [ "$VOICE_MODE" = "import" ] || [ "$VOICE_MODE" = "elevenlabs" ]; then
+            AUDIO=$(node -p "require('./src/videos/${VIDEO_ID}/voiceover.json').audioFile ?? ''")
+            [ -n "$AUDIO" ] && cp "public/${AUDIO}" "output/${VIDEO_ID}-$(basename "$AUDIO")" || true
             cp "src/videos/${VIDEO_ID}/voiceover.json" "output/${VIDEO_ID}-voiceover.json" || true
           fi
           node scripts/render.mjs "$COMPOSITION" \
