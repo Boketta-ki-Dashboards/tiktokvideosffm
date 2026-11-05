@@ -66,15 +66,13 @@ const StatTile: React.FC<{s: Stat; delay: number; size?: number}> = ({s, delay, 
 /** Szene 3: Die Bilanz laut Polizei/Innenministerium – Kacheln rasten im Takt der Stimme ein. */
 export const NumbersScene: React.FC<SceneProps> = ({cues}) => {
 	const frame = useCurrentFrame();
-	const n1 = cue(cues, 'num1', 6);
-	const n2 = cue(cues, 'num2', n1.to + 6);
+	const n1 = cue(cues, 'num1b', 6);
 	const at17 = wordFrame(cues, '17', n1.from + 14);
 	const at5 = wordFrame(cues, 'fünf', at17 + 30);
-	const at54 = wordFrame(cues, '54', n2.from);
-	const at100 = wordFrame(cues, 'mindestens', at54 + 25);
-	const at87 = wordFrame(cues, '87', at100 + 30);
-	const [shops, arrests, injured, reports, removals, checks] = STATS;
-	const restAt = at87 + 6;
+	const at100 = wordFrame(cues, 'mindestens', at5 + 25);
+	const [shops, arrests, injured, reports, removals] = STATS;
+	// Nicht gesprochene Zusatzzahlen erscheinen kurz nach der letzten gesprochenen Zahl
+	const restAt = at100 + 22;
 
 	return (
 		<AbsoluteFill>
@@ -111,15 +109,13 @@ export const NumbersScene: React.FC<SceneProps> = ({cues}) => {
 				</div>
 
 				<div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 14, marginTop: 18}}>
-					<StatTile s={arrests} delay={at54 - 3} />
 					<StatTile s={injured} delay={at100 - 3} />
-					<StatTile s={reports} delay={at87 - 3} />
-					<StatTile s={removals} delay={restAt} size={60} />
+					<StatTile s={arrests} delay={restAt} />
 				</div>
-				<div style={{marginTop: 14, display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}>
+				<div style={{marginTop: 14}}>
 					<PopIn delay={restAt + 8}>
 						<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 30, color: COLORS.textMuted}}>
-							+ {checks.value} {checks.label}
+							+ {reports.value} {reports.label} · {removals.value.toLocaleString('de-DE')} {removals.label}
 						</span>
 					</PopIn>
 				</div>
@@ -130,9 +126,7 @@ export const NumbersScene: React.FC<SceneProps> = ({cues}) => {
 
 			<Sfx name="softImpact" at={at17} />
 			<Sfx name="stamp" at={at5 + 2} volume={0.7} />
-			<Sfx name="softImpact" at={at54} />
 			<Sfx name="softImpact" at={at100} />
-			<Sfx name="softImpact" at={at87} />
 			<Sfx name="click" at={restAt} />
 			<Sfx name="click" at={restAt + 8} />
 		</AbsoluteFill>

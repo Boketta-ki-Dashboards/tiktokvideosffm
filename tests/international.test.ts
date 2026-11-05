@@ -57,6 +57,22 @@ test('im Ton genannte Länder sind durch gezählte Berichte belegt', () => {
 	}
 });
 
+test('Meme-Teil: Fokus auf das „3 linke Schuhe“-Meme, keine Verkaufs-/Kleinanzeigen-Behauptungen', () => {
+	const text = script.segments.map((s: {text: string}) => display(s.text)).join(' ');
+	assert.match(text, /drei linken Schuhen/);
+	assert.doesNotMatch(text, /Kleinanzeige|eBay|verkauft|Verkaufsanzeige/i);
+	assert.match(text, /nicht alles, was viral geht, ist echt/);
+});
+
+test('@ichbinyounes nur als Selbstdarstellung – keine Festnahme-, Täter- oder Vorwurfsbegriffe', () => {
+	const seg = script.segments.find((s: {text: string}) => s.text.includes('@ichbinyounes'));
+	assert.ok(seg, 'Account-Bezug fehlt');
+	assert.match(seg.text, /zeigt sich/);
+	assert.doesNotMatch(seg.text, /festgenommen|verhaftet|abgeführt|Landfriedensbruch|Täter|Plünder|Randal/i);
+	const content = read(`${dir}content.ts`);
+	assert.match(content, /nicht unabhängig bestätigt/);
+});
+
 test('kein „Folge 1“ im neuen Video', () => {
 	const all = read(`${dir}script.json`) + read(`${dir}content.ts`);
 	assert.doesNotMatch(all, /Folge\s*1/i);

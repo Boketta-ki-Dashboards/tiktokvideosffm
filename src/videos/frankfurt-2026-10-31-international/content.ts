@@ -81,13 +81,10 @@ export const NIGHT = {
 	},
 	clock: [
 		{id: 'demo', label: 'Sa, 31.10.', note: 'Halloween · Demo laut Polizei ~8.000 Menschen'},
-		{id: 'aufloesung', label: '18:20', note: 'Polizei löst die Versammlung auf'},
-		{id: 'nacht', label: 'Nacht', note: 'Krawalle rund um Hauptwache, Zeil, Konstablerwache'},
-		{id: 'ruhe', label: '~3 Uhr', note: 'laut Polizei weitgehend unter Kontrolle'},
+		{id: 'abend', label: 'Am Abend', note: 'Ausschreitungen rund um Hauptwache, Zeil, Konstablerwache'},
 	],
 	groups: [
 		{id: 'demo', title: 'Demo', text: 'große Mehrheit friedlich', color: '#34D399'},
-		{id: 'ende', title: 'Demo-Ende', text: 'kleinere Gruppe gewalttätig', color: '#FFB020'},
 		{id: 'spaeter', title: 'Spätere Krawalle', text: 'laut Polizei andere Personengruppe', color: '#FF4D5E'},
 		{id: 'halloween', title: 'Halloween', text: 'viele verkleidet unterwegs', color: '#8B5CF6'},
 	],
@@ -118,30 +115,49 @@ export const STATS_SOURCE = ['Polizei / Innenministerium Hessen', 'hessenschau.d
 export const BATMAN = {
 	kicker: 'VIRALE BILDER',
 	agencies: ['AP', 'Reuters'],
-	caption: 'Agenturfotos: AP · Reuters – hier als Illustration',
 	media: ['independent', 'fpj', 'albeu'],
-	question: 'Demonstrant oder Halloween-Gast?',
-	answer: 'nicht bekannt',
 	sources: ['The Independent, 01.11.2026 (Bildunterschriften: AP, Reuters)', 'Free Press Journal, 01.11.2026'],
+	moment: 'SOCIAL-MEDIA-MOMENT DER NACHT',
+};
+
+/**
+ * TikTok-Account, der sich selbst als „Batman“ der Nacht zeigt – NUR Selbstdarstellung, Stand Screenshot des
+ * Kanalbetreibers (November 2026). Nicht unabhängig bestätigt, ob er die Person auf den Agenturfotos ist.
+ * Bewusst NICHT verwendet: Gesicht, Klarname, Festnahme-/Vorwurfs-Inhalte, Videotitel (siehe sources.md).
+ */
+export const BATMAN_ACCOUNT = {
+	platform: 'TikTok',
+	handle: '@ichbinyounes',
+	followers: '238.747',
+	likes: '51,2 Mio.',
+	/** Aufrufe einzelner Batman-Clips laut Profilansicht. */
+	clipViews: ['474.192', '290.700', '80.059'],
+	stand: 'laut Profil · Screenshot, November 2026',
+	note: 'Nachgebaute Ansicht · Selbstdarstellung des Accounts – nicht unabhängig bestätigt, ob er auf den Agenturfotos zu sehen ist',
 };
 
 export const SHOES = {
-	kicker: 'DIE SCHUH-MEMES',
-	claim: 'Kleinanzeige: einzelner linker Schuh',
-	/** Stilisierte Beiträge OHNE erfundenen Wortlaut (Platzhalterzeilen), Plattformen laut CORRECTIV. */
-	posts: [
-		{id: 'p1', platform: 'TikTok', rotate: -6},
-		{id: 'p2', platform: 'Instagram', rotate: 4},
-		{id: 'p3', platform: 'TikTok', rotate: -2},
+	kicker: 'DAS MEME DER NACHT',
+	title: '3 LINKE SCHUHE',
+	/** Echte, belegte Meme-Spuren (Wortlaut), keine erfundenen Beiträge. */
+	memes: [
+		{
+			id: 'post',
+			kind: 'TikTok-Fotopost',
+			text: '„Bro braucht kein Talent, um weltberühmt zu werden. Ihm reichten 3 linke Schuhe …“',
+			badge: 'LEGENDE',
+			aiLabel: 'Enthält KI-generierte Medien',
+			rotate: -4,
+		},
+		{id: 'hashtag', kind: 'Hashtag', text: '#3LinkeSchuhe', rotate: 3},
+		{id: 'street', kind: 'Passant laut t-online', text: '„Hier sind die also eingebrochen, um sich drei linke Schuhe zu klauen.“', rotate: -2},
 	],
-	reenactment: 'Nachstellung · keine echten Beiträge',
-	real: 'Echt: viele einzelne linke Schuhe aus Schaufenstern gestohlen',
-	realSource: 'Snipes laut CORRECTIV',
-	fake: 'Diese Verkaufsanzeigen gab es nie',
-	fakeSource: 'Kleinanzeigen laut CORRECTIV',
-	verdict: 'FALSCH',
-	factchecker: 'CORRECTIV',
-	date: '03.11.2026',
+	labels: ['WURDE SELBST ZUM MEME', 'VIRAL IN SOCIAL MEDIA'],
+	real: 'Echt: viele einzelne linke Schuhe gestohlen',
+	realSource: 'Snipes laut CORRECTIV, 03.11.2026',
+	warning: 'NICHT ALLES, WAS VIRAL GEHT, IST ECHT',
+	figureNote: 'Illustration · keine reale Person',
+	sources: ['TikTok-Post (Screenshot, Nov. 2026)', 't-online 03.11.2026', 'CORRECTIV 03.11.2026'],
 };
 
 // ---------------------------------------------------------------------------------------------

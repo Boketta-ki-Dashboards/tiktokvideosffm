@@ -1,61 +1,69 @@
 # Quellen & Faktencheck – „Wie Frankfurt weltweit Schlagzeilen machte“
 
-Komposition `FrankfurtWorldwide` · Video-ID `frankfurt-2026-10-31-international`.
+Komposition `FrankfurtWorldwide` · Video-ID `frankfurt-2026-10-31-international` · **Fassung V2** (Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4`).
+V2 (05.11.2026, Wunsch des Kanalbetreibers): Mittelteil gekürzt, Batman mit Bezug auf den TikTok-Account @ichbinyounes (nur Selbstdarstellung),
+Meme-Teil neu auf „3 linke Schuhe“ ausgerichtet, Kleinanzeigen-Faktencheck nur noch als Fußnote. V1 = Commit `ebbb96a` / Artefakt Lauf 7.
 Recherche- und Abrufdatum: **05.11.2026** (ältere Belege aus `references/frankfurt-2026-10-31/sources.md`, Abruf 03.11.2026,
 sind markiert). Die Überarbeitung ersetzt die unveröffentlichte Folge 1 (`FrankfurtHeadlines` bleibt als Sicherung erhalten).
 Zahlen nennen wir **immer mit Urheber**. Medien erscheinen nur als neutrale Wortmarke (keine Logos), Bilder sind eigene Illustrationen.
 
-## 1. Ablauf und offizielle Zahlen
+## 1. Ablauf und offizielle Zahlen (V2: kurz, ohne Chronologie)
 
 | Aussage im Video | Beleg | Quelle |
 |---|---|---|
 | Halloween, 31.10.2026: laut Polizei rund 8.000 Teilnehmende, „zunächst friedlich“ | Polizei: am Nachmittag 8.000 Teilnehmende; dpa: Demos „zunächst über weite Strecken friedlich verlaufen“ | [hessenschau 31.10.][hr-demo], [dpa via web.de][dpa-web], AFP/[France 24][f24] |
-| „Gegen 18:20 Uhr löst die Polizei die Demo auf“ | „Gegen 18.20 Uhr informierte die Polizei die Teilnehmenden über Lautsprecher, dass die Versammlung aufgelöst werde“ / „Um 18.21 Uhr löste die Polizei die Versammlung schließlich auf“ | [hessenschau 31.10.][hr-demo], [t-online 02.11.][tonline], [Osthessen-Zeitung][ohz] |
-| „Danach eskaliert es rund um die Zeil“; Karte: Hauptwache, Konstablerwache, Zeil | Polizei (Zeugenaufruf): Ausschreitungen „im Bereich der Hauptwache, der Konstablerwache, der Zeil und angrenzender Straßen“ | [Polizei Hessen][pol], [hessenschau-Ticker][hr-ticker] |
-| „Die späteren Krawalle ordnet die Polizei einer anderen Personengruppe zu“ | Einsatzleiter Erik Hessenmüller (indirekt): gegen Ende der Demo sei eine kleinere Gruppe gewalttätig geworden, die späteren Ausschreitungen ordnet die Polizei „einer anderen Personengruppe“ zu; Polizeipräsident Müller: Gruppen „erlebnisorientiert“, politisches Motiv „nicht erkennbar“ | [hessenschau Bilanz 01.11.][hr-bilanz] |
-| Bildzeile „Die große Mehrheit demonstrierte friedlich“ | Hessenmüller: „Die große Mehrheit habe friedlich demonstriert“ | [hessenschau Bilanz][hr-bilanz] |
-| Bildzeile „Halloween: viele verkleidet unterwegs“ | Vorab: Poseck warnte davor, „Halloween-Masken zur Vermummung zu missbrauchen“ (28.10.); AFP: Kostüme „ranging from dinosaurs to Batman“ (bundesweit) | [hessenschau 28.10.][hr-halloween], [The Local/AFP][local] |
-| „Erst gegen 3 Uhr ist die Lage weitgehend unter Kontrolle“ | „Gegen 3 Uhr war die Lage in der Innenstadt nach Angaben der Polizei wieder weitgehend unter Kontrolle“; dpa: „Erst am frühen Morgen hatte sich die Lage beruhigt“ | [Osthessen-Zeitung 02.11.][ohz], [dpa via web.de][dpa-web] |
-| „17 Geschäfte beschädigt, fünf davon geplündert“ (Innenministerium) | dpa: „17 Geschäfte seien beschädigt und fünf geplündert worden“ (Poseck); die 5 sind Teil der 17 | [dpa via web.de][dpa-web], [hessenschau Bilanz][hr-bilanz] |
-| „54 Festnahmen“ | 54 Personen zwischen 13 und 29 Jahren (Poseck) | [hessenschau Bilanz][hr-bilanz], [dpa via web.de][dpa-web], [CNN Brasil/Reuters][cnnbr] |
-| „mindestens 100 verletzte Polizisten“ | hessenschau: 100 (einer schwer); dpa/ORF/Reuters: „mehr als 100“ → vorsichtig **„mindestens 100“** | [hessenschau Bilanz][hr-bilanz], [dpa via web.de][dpa-web], [ORF][orf] |
-| „87 Strafanzeigen“; Bild: 1.225 Platzverweise, 366 Personenkontrollen | Bilanz der Polizei | [hessenschau Bilanz][hr-bilanz], [dpa via web.de][dpa-web] |
+| „Nach der Demo eskaliert es rund um die Zeil“; Karte: Hauptwache, Konstablerwache, Zeil | Eskalation nach Auflösung der Versammlung (~18:20 Uhr); Polizei: Ausschreitungen „im Bereich der Hauptwache, der Konstablerwache, der Zeil und angrenzender Straßen“ | [hessenschau 31.10.][hr-demo], [Polizei Hessen][pol] |
+| Bildchips „Demo – große Mehrheit friedlich“, „Spätere Krawalle – laut Polizei andere Personengruppe“, „Halloween – viele verkleidet“ | Hessenmüller (indirekt): Mehrheit friedlich; spätere Ausschreitungen „einer anderen Personengruppe“ zugeordnet; Poseck vorab zu Halloween-Masken | [hessenschau Bilanz 01.11.][hr-bilanz], [hessenschau 28.10.][hr-halloween] |
+| „Laut Innenministerium 17 Geschäfte beschädigt, fünf davon geplündert – und mindestens 100 Polizisten verletzt“ | dpa: „17 Geschäfte seien beschädigt und fünf geplündert worden“ (Poseck); hessenschau: 100 verletzt, dpa/ORF: „mehr als 100“ → „mindestens“ | [dpa via web.de][dpa-web], [hessenschau Bilanz][hr-bilanz], [ORF][orf] |
+| Bild (nicht gesprochen): 54 Festnahmen (13–29 J.), 87 Strafanzeigen, 1.225 Platzverweise | Bilanz der Polizei | [hessenschau Bilanz][hr-bilanz], [dpa via web.de][dpa-web] |
 
-## 2. Virale Szenen
+V1 nannte zusätzlich 18:20 Uhr (Auflösung) und „gegen 3 Uhr weitgehend unter Kontrolle“ ([Osthessen-Zeitung][ohz]) – belegt, in V2 bewusst weggelassen (keine Chronologie).
 
-### A) Batman-Kostüm – verwendet
+## 2. Virale Bilder (V2)
 
-- **Agenturfotos:** Bildunterschriften in *The Independent* (01.11.2026): „A protester dressed as Batman was spotted in Frankfurt (**AP**)“
-  und „Police detain a demonstrator dressed as Batman during a nationwide protest by campaign group Gen Z regelt (**Reuters**)“.
-  Reuters-Foto laut Suchindex/Tagesspiegel-dpa-Galerie: „A person in a Batman costume gestures as a fire burns in a street …“.
-- **Medien:** The Independent (GB), Free Press Journal (IN, „Who Needs Gotham? …“, Bild „X“), Albeu (AL), Yahoo News Singapur (Übernahme
-  Independent); im Suchindex außerdem India Today Global (X-Beitrag, „#InPhotos“, nicht abrufbar) und Daily Jagran (IN).
-- **Reaktionen (nur wie berichtet):** FPJ: „The unusual sighting caught attention as visuals from the protests began circulating on social media“;
-  „reminded many of scenes straight out of Gotham City“. **Keine** Abruf-, Like- oder View-Zahlen bekannt → keine genannt.
-- **Im Video:** eigene stilisierte Silhouette (Fledermaus-Umriss, Flammen als Lichtschein, keine Person erkennbar), Text „Agenturfotos: AP · Reuters“.
-- **Bewusst offen gelassen:** Ob die Person demonstrierte oder Halloween feierte, ist nicht belegt („ist nicht bekannt“).
-  Die Festnahme wird nur von The Independent/Reuters-Bildunterschrift berichtet → im Ton nicht behauptet.
-  Batman-Kostüme gab es am selben Tag auch in **Lyon** (AFP/Getty) – nicht verwechseln.
+### Referenzen des Kanalbetreibers (Screenshots, 05.11.2026 – nicht im Repository, enthalten erkennbare Personen)
+
+| Referenz | Inhalt (beschrieben, nicht übernommen) | Verwendung im Video |
+|---|---|---|
+| TikTok-Profil **@ichbinyounes** (Screenshot 17:41) | Profilbild: Person im Batman-Kostüm vor Feuer; 238.747 Follower, 51,2 Mio. Likes; Clips im Batman-Kostüm/-Maske mit 474.192, 290.700 und 80.059 Aufrufen (weitere Clips ohne Bezug); Bio mit Twitch-Kanal | Nachgebaute, neutrale Profilansicht mit eigener Illustration (kein Gesicht, kein Plattform-Logo), Handle, Follower/Likes, drei Aufrufzahlen „laut Profil, Screenshot November 2026“ |
+| TikTok-Fotopost „3 linke Schuhe“ (Screenshot 17:42, „vor 3 T.“) | Text: „Bro braucht kein Talent, um weltberühmt zu werden. Ihm reichten 3 linke Schuhe 😂😂😂“, Einblendung „LEGENDE“, Hashtags u. a. #Frankfurt #3LinkeSchuhe #Meme; TikTok-Label **„Enthält KI-generierte Medien“**; Bild zeigt eine Person mit weißen Sneakern in einem verwüsteten Laden | Wortlaut (ohne Emojis, ohne Nutzernamen) als Meme-Karte, Badge „LEGENDE“, Hashtag-Karte, Hinweis auf das KI-Label. Das Bild selbst wird NICHT gezeigt → anonyme Figur mit drei Schuhen („Illustration · keine reale Person“) |
+| Straßenszene mit Feuer | Enge Gasse, Laternen, brennender Container, Person im Batman-Kostüm daneben, viele Umstehende filmen mit Handys | Atmosphäre-Vorlage für die eigene Illustration (Gasse, Container, Laternen, Silhouetten mit leuchtenden Handys) |
+
+### A) Batman – verwendet
+
+- **Agenturfotos:** Bildunterschriften in *The Independent* (01.11.2026): „A protester dressed as Batman was spotted in Frankfurt (**AP**)“,
+  „Police detain a demonstrator dressed as Batman during a nationwide protest by campaign group Gen Z regelt (**Reuters**)“; Reuters: „A person in a Batman
+  costume gestures as a fire burns in a street …“ → im Ton: „Batman vor einem Feuer. AP und Reuters fotografieren ihn“.
+- **Medien:** The Independent (GB), Free Press Journal (IN), Albeu (AL) → „Medien von Großbritannien bis Indien zeigen das Bild“.
+- **@ichbinyounes (V2):** Im Ton nur: „Auf TikTok zeigt sich der Account @ichbinyounes selbst im Batman-Kostüm – Clips mit Hunderttausenden Aufrufen.“
+  Beleg: Screenshot des Kanalbetreibers (Profilbild, Clips im Kostüm, 474.192 / 290.700 Aufrufe). Eine eigene Websuche (05.11.2026) fand **keine** unabhängige
+  Quelle, die den Account mit der Person auf den Agenturfotos verbindet → im Bild: „Selbstdarstellung des Accounts – nicht unabhängig bestätigt, ob er auf den
+  Agenturfotos zu sehen ist“. Die TikTok-Seite selbst ist per Abruf nicht lesbar (nur „TikTok – Make Your Day“).
+- **Bewusst NICHT verwendet (Persönlichkeitsrecht/Unschuldsvermutung):** Gesicht, Klarname, Festnahme-Berichte über „Batman“ (heute.at/Reuters-Bild „abgeführt“,
+  Independent „detained“) in Verbindung mit dem Account, Videotitel des Accounts zu Strafvorwürfen und „#freebatman“, Spekulationen über Herkunft (u. a. X-Beitrag
+  mit ethnischer Zuschreibung).
 
 ### B) „Power Rangers“-Kostüme – NICHT verwendet
 
-Mehrere gezielte Suchen (deutsch/englisch, „Power Rangers Frankfurt Zeil Halloween“, „Gen Z regelt“) ergaben **keinen** Bericht, kein
-Agenturfoto und keine nachprüfbare Quelle für Power-Rangers-Kostüme am 31.10.2026 in Frankfurt. → Nicht im Video, nicht als bestätigt dargestellt.
+Keine Quelle, kein Agenturfoto für Power-Rangers-Kostüme am 31.10.2026 in Frankfurt (mehrere Suchen) → nicht im Video.
 
-### C) Linke Schuhe / Sneaker-Memes – verwendet
+### C) „3 linke Schuhe“ – verwendet (V2: Meme im Mittelpunkt)
 
-- **CORRECTIV-Faktencheck** (Steffen Kutzner, 03.11.2026), Bewertung **„Falsch“**: „Nach Gen-Z-Protesten: Massenhafte Kleinanzeigen zu einzelnen Schuhen gab es nicht“.
-  - Snipes (Deichmann-Gruppe): „Es ist richtig, dass einzelne Kleidungsstücke und zahlreiche einzelne linke Schuhe aus den Schaufenstern entwendet wurden.“
-  - Kleinanzeigen: Die gezeigten Anzeigen „hat es nie gegeben“; eine Nius-Version war von Dritten verändert und stammte von Anfang Oktober.
-  - Verbreitung laut CORRECTIV auf TikTok und Instagram (u. a. Nius-Autor Julius Böhm). **Keine** View-Zahlen genannt.
-- **Im Video:** Sneaker-Symbol → linker Schuh hervorgehoben → stilisierte, anonyme Social-Karten („Nachstellung“, keine echten Accounts/Namen)
-  → Faktencheck-Stempel „CORRECTIV: Falsch“ mit Snipes-Bestätigung.
-
-### D) Weitere authentische Bilder
-
-- Euronews (01.11.2026), Bildunterschrift: „A person wearing a clown mask uses a traffic sign to smash a store window in Frankfurt on Saturday, Oct. 31, 2026.“
-  → im Video nur als Textzeile/Symbol (Clownsmaske), keine Gewaltdarstellung.
-- Keine weiteren Clips mit klarer Herkunft gefunden; Videos auf YouTube mit reißerischen Titeln (z. B. Nius-Live) werden **nicht** verwendet.
+- **Meme-Spuren (belegt):**
+  - TikTok-Fotopost (Referenz-Screenshot): Wortlaut s. o., Label „Enthält KI-generierte Medien“.
+  - Hashtag #3LinkeSchuhe (im selben Post).
+  - t-online, 03.11.2026 (Oscar Fuchs): Passant am Snipes-Laden: „Hier sind die also eingebrochen, um sich drei linke Schuhe zu klauen.“
+    <https://frankfurt.t-online.de/region/frankfurt-am-main/id_101509144/frankfurt-randale-haendler-raeumen-auf-ich-stehe-unter-schock-.html>
+  - Suchindex (nicht einzeln abgerufen): YouTube „Frankfurt-Plünderer mit drei linken Schuhen“ (Nius), Streamer-Reaktionsvideos, X-Beitrag „Der Typ hat drei
+    linke Schuhe aus dem Schaufenster geklaut“, TikTok @mazdakyt („klaut einfach 3 linke Schuhe beim snipes … wird mit einem 4k Schnappschuss viral“).
+- **Im Ton:** „Ein Bild aus dem geplünderten Sneakerladen – angeblich mit drei linken Schuhen – wird zu Edits, Witzen und Memes.“ („angeblich“, weil der Inhalt
+  des Ursprungsbildes nicht unabhängig geprüft ist.)
+- **Echt:** CORRECTIV (03.11.2026, Snipes/Deichmann): „Es ist richtig, dass einzelne Kleidungsstücke und zahlreiche einzelne linke Schuhe aus den Schaufenstern
+  entwendet wurden.“ → „Viele einzelne linke Schuhe wurden laut Snipes tatsächlich gestohlen.“
+- **Nicht alles echt:** KI-Label des Referenz-Posts; CORRECTIV: ein TikTok-Beitrag als KI markiert, die viralen Kleinanzeigen-Screenshots gab es nie (Bewertung
+  „Falsch“) → nur Fußnote/Quelle, nicht mehr Schwerpunkt.
+- **Bewusst NICHT verwendet:** das Bild der Person (erkennbar, evtl. KI-bearbeitet, Vorwurf einer Straftat), Hautfarbe/Herkunft, Nutzername des Posters,
+  Behauptungen über „massenhafte Verkäufe“ oder „tausende Anzeigen“.
 
 ## 3. Internationale Medien (Hauptteil)
 

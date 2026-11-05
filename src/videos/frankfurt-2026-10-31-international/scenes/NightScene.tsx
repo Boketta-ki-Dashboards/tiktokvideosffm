@@ -42,36 +42,33 @@ const Clock: React.FC<{steps: Array<{frame: number; label: string; note: string}
 };
 
 /**
- * Szene 2: Was geschah – kleine Übersichtskarte (Hauptwache, Zeil, Konstablerwache),
- * belegte Zeitpunkte und die Unterscheidung der Gruppen laut Polizei.
+ * Szene 2: Was geschah (kurz) – kleine Übersichtskarte (Hauptwache, Zeil, Konstablerwache),
+ * keine Chronologie, nur Demo → Abend; Unterscheidung der Gruppen laut Polizei.
  */
 export const NightScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const e1 = cue(cues, 'ev1', 6);
-	const e2 = cue(cues, 'ev2', e1.to + 6);
-	const e3 = cue(cues, 'ev3', e2.to + 6);
-	const e4 = cue(cues, 'ev4', e3.to + 6);
-	const at1820 = wordFrame(cues, '18:20', e2.from + 4);
+	const e2 = cue(cues, 'ev2b', e1.to + 6);
+	const atPeaceful = wordFrame(cues, 'friedlich', e1.to - 20);
+	const atEsc = wordFrame(cues, 'eskaliert', e2.from + 8);
 	const atZeil = wordFrame(cues, 'Zeil', e2.from + Math.round((e2.to - e2.from) * 0.8));
-	const at3 = wordFrame(cues, '3', e4.from + 6);
 	const p = NIGHT.places;
-	const [c0, c1, c2, c3] = NIGHT.clock;
+	const [c0, c1] = NIGHT.clock;
 	const steps = [
 		{frame: 0, label: c0.label, note: c0.note},
-		{frame: at1820, label: c1.label, note: c1.note},
-		{frame: atZeil, label: c2.label, note: c2.note},
-		{frame: at3, label: c3.label, note: c3.note},
+		{frame: atEsc, label: c1.label, note: c1.note},
 	];
 
 	const camera = increasing([
 		{frame: 0, center: p.center, zoom: 0.62},
 		{frame: e2.from, center: p.center, zoom: 0.7},
 		{frame: atZeil + 10, center: p.zeil, zoom: 0.95},
-		{frame: e4.from, center: p.zeil, zoom: 0.92},
-		{frame: durationInFrames, center: p.center, zoom: 0.72},
+		{frame: durationInFrames, center: p.center, zoom: 0.8},
 	]);
-	const calm = interpolate(frame, [at3, at3 + 30], [0, 1], clamp);
-	const groupsAt = e3.from + 4;
+	const calm = 0;
+	// Gruppen: friedliche Demo zuerst, dann (mit „eskaliert“) spätere Krawalle + Halloween
+	const groupAt = [atPeaceful, atEsc + 2, atEsc + 10];
+	const groupsAt = atPeaceful;
 
 	return (
 		<AbsoluteFill>
@@ -103,7 +100,7 @@ export const NightScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			{/* Gruppen laut Polizei + Halloween */}
 			<div style={{position: 'absolute', left: 64, width: 866, top: 990, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12}}>
 				{NIGHT.groups.map((g, i) => (
-					<PopIn key={g.id} delay={groupsAt + i * 7} from={i % 2 === 0 ? 'left' : 'right'}>
+					<PopIn key={g.id} delay={groupAt[i] ?? groupsAt} from={i % 2 === 0 ? 'left' : 'right'}>
 						<div
 							style={{
 								padding: '12px 16px',
@@ -125,13 +122,12 @@ export const NightScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				<SourceCredit sources={NIGHT.sources} />
 			</div>
 
-			{/* Ton: Uhr-Klicks, Gruppen-Chips, Blaulicht-Akzent */}
-			<Sfx name="click" at={at1820} />
+			{/* Ton: Chip-Klicks, Blaulicht-Akzent an der Zeil */}
+			<Sfx name="click" at={atEsc} />
 			<Sfx name="softImpact" at={atZeil + 2} volume={0.8} />
 			{NIGHT.groups.map((g, i) => (
-				<Sfx key={`g-${g.id}`} name="click" at={groupsAt + i * 7} volume={0.8} />
+				<Sfx key={`g-${g.id}`} name="click" at={groupAt[i] ?? groupsAt} volume={0.8} />
 			))}
-			<Sfx name="click" at={at3} />
 		</AbsoluteFill>
 	);
 };
