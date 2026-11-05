@@ -1,21 +1,74 @@
 {
-	"hook1": {"bild": "Hook – Frankfurter Skyline bei Nacht, Titel „WIE FRANKFURT WELTWEIT SCHLAGZEILEN MACHTE“ (ab Frame 0 lesbar)", "beleg": "–"},
-	"hook2": {"bild": "Hook – 8 Wortmarken mit Flaggen ploppen auf (CBS, Independent, ORF, Al Jazeera, Korea Times, La Nación, ABC, Business Today); SFX pop/click, notify bei „Welt“", "beleg": "data/medien.json"},
-	"ev1": {"bild": "Was geschah – Übersichtskarte Innenstadt (OSM), Uhr „Sa, 31.10. · Halloween · Demo laut Polizei ~8.000“", "beleg": "hessenschau 31.10.; dpa (web.de) 01.11."},
-	"ev2": {"bild": "Uhr springt auf „18:20 – Polizei löst die Versammlung auf“ (click); Zeil leuchtet rot, Glühen Hauptwache/Konstablerwache (softImpact)", "beleg": "hessenschau 31.10. (18.20/18.21 Uhr); Polizei Hessen (Orte)"},
-	"ev3": {"bild": "Vier Chips: Demo – große Mehrheit friedlich · Demo-Ende – kleinere Gruppe gewalttätig · Spätere Krawalle – andere Personengruppe · Halloween – viele verkleidet (clicks)", "beleg": "hessenschau Bilanz 01.11. (Hessenmüller, Müller); hessenschau 28.10. (Halloween)"},
-	"ev4": {"bild": "Uhr „~3 Uhr – laut Polizei weitgehend unter Kontrolle“, Blaulicht klingt ab", "beleg": "Osthessen-Zeitung 02.11. (laut Polizei); dpa: „am frühen Morgen“"},
-	"num1": {"bild": "Bilanz – 17 Ladensymbole, 5 davon rot „davon 5 geplündert“ (die 5 sind Teil der 17); softImpact, stamp", "beleg": "dpa (web.de) 01.11.; hessenschau Bilanz"},
-	"num2": {"bild": "Kacheln 54 Festnahmen (13–29 J.), mind. 100 verletzte Polizisten, 87 Strafanzeigen, 1.225 Platzverweise, + 366 Personenkontrollen", "beleg": "hessenschau Bilanz 01.11.; dpa; ORF („mehr als 100“) → „mindestens“"},
-	"mem1": {"bild": "Virale Bilder – Straße mit Feuerschein, Glut-Partikel, riser", "beleg": "–"},
-	"mem2": {"bild": "Stilisierte Kostüm-Silhouette (Illustration, kein Emblem); Foto-Rahmen „Agenturfoto AP/Reuters – Illustration“ mit Blitz; Karten The Independent (GB) und Free Press Journal (IN)", "beleg": "The Independent 01.11. (Bildunterschriften AP, Reuters); FPJ 01.11."},
-	"mem3": {"bild": "Pille „Demonstrant oder Halloween-Gast?“ → Stempel „NICHT BEKANNT“", "beleg": "keine Quelle zur Person → offen gelassen"},
-	"mem4": {"bild": "Sneaker-Paar, linker Schuh leuchtet „LINKS“; grüne Karte „Echt: viele einzelne linke Schuhe gestohlen – Snipes laut CORRECTIV“", "beleg": "CORRECTIV 03.11. (Snipes/Deichmann)"},
-	"mem5": {"bild": "Drei nachgestellte Beiträge (TikTok/Instagram, Platzhalterzeilen, „Nachstellung“) → Stempel „FALSCH – CORRECTIV-Faktencheck 03.11.2026“", "beleg": "CORRECTIV 03.11. (Kleinanzeigen: Anzeigen „hat es nie gegeben“)"},
-	"w1": {"bild": "Weltkarte: Start über Frankfurt, Reuters-Karte mit Wortlaut + DE (typewriter), Zoom auf Europa", "beleg": "Reuters 31.10. (Korea Times, Arab News, Yahoo)"},
-	"w2": {"bild": "Zoom auf die Welt; Bögen zu Südkorea, Saudi-Arabien, Australien (cyan = Agentur) und Österreich, Polen, USA (gelb = eigener Bericht), dazwischen alle weiteren 18 Länder; Liste oben; blips", "beleg": "data/medien.json (24 Länder)"},
-	"w3": {"bild": "Schlagzeilen nach Regionen: Europa (Interia) · Amerika (Excélsior, „ahora en Alemania“ markiert) · Nahost (Daily Sabah) · Asien/Ozeanien/Afrika (ABC, „riots spread to Germany“ markiert); paper/typewriter", "beleg": "ABC 02.11., Excélsior 01.11., Interia, Daily Sabah 01.11."},
-	"w4": {"bild": "„MINDESTENS 26 MEDIEN · 24 LÄNDER“, 24 Flaggen, „NUR EINE STICHPROBE“; riser + boom (ElevenLabs-Premium)", "beleg": "data/medien.json; tests/international.test.ts"},
-	"end1": {"bild": "Fazit – Weltkarte zoomt zurück auf Frankfurt, Überblendung zur Skyline; + AUSSCHREITUNGEN + VIRALE BILDER + MEMES = WELTNACHRICHT", "beleg": "–"},
-	"outro": {"bild": "Outro @frankfurtred3 (wie Folge 2/3): Plus antippen, „Welches Thema als Nächstes?“", "beleg": "src/theme/brand.ts"}
+	"hook1": {
+		"bild": "Hook – Frankfurter Skyline bei Nacht, Titel „WIE FRANKFURT WELTWEIT SCHLAGZEILEN MACHTE“ (ab Frame 0 lesbar)",
+		"beleg": "–"
+	},
+	"hook2": {
+		"bild": "Hook – 8 Wortmarken mit Flaggen ploppen auf (CBS, Independent, ORF, Al Jazeera, Korea Times, La Nación, ABC, Business Today); SFX pop/click, notify bei „Welt“",
+		"beleg": "data/medien.json"
+	},
+	"ev1": {
+		"bild": "Was geschah – Übersichtskarte Innenstadt (OSM), Chip „Sa, 31.10. · Halloween · Demo laut Polizei ~8.000“; bei „friedlich“ Chip „Demo – große Mehrheit friedlich“",
+		"beleg": "hessenschau 31.10.; dpa (web.de) 01.11."
+	},
+	"ev2b": {
+		"bild": "Chip springt auf „Am Abend – Ausschreitungen rund um Hauptwache, Zeil, Konstablerwache“; Zeil leuchtet rot; Chips „Spätere Krawalle – andere Personengruppe“, „Halloween – viele verkleidet“",
+		"beleg": "hessenschau 31.10./01.11. (Bilanz); Polizei Hessen (Orte)"
+	},
+	"num1b": {
+		"bild": "Bilanz – 17 Ladensymbole, 5 davon rot „davon 5 geplündert“; Kachel „mind. 100 verletzte Polizisten“; danach 54 Festnahmen, + 87 Strafanzeigen · 1.225 Platzverweise",
+		"beleg": "dpa (web.de) 01.11.; hessenschau Bilanz; ORF"
+	},
+	"viral1": {
+		"bild": "Virale Bilder – enge Gasse bei Nacht (nach Atmosphäre-Referenz), brennender Container, Silhouetten heben leuchtende Handys (clicks)",
+		"beleg": "Referenz-Screenshot Straßenszene (nur Atmosphäre)"
+	},
+	"bat1": {
+		"bild": "Kostüm-Silhouette erscheint neben dem Feuer; Foto-Rahmen „Agenturfoto AP/Reuters – Illustration“ mit Blitz; Karte The Independent (GB), Chips Free Press Journal (IN), Albeu (AL)",
+		"beleg": "The Independent 01.11. (Bildunterschriften AP, Reuters); FPJ 01.11.; Albeu 01.11."
+	},
+	"bat2": {
+		"bild": "Nachgebaute Profilansicht: Feuer-Batman-Illustration als Profilbild, „@ichbinyounes“, 238.747 Follower · 51,2 Mio. Likes, drei Clip-Kacheln mit 474.192 / 290.700 / 80.059 Aufrufen; Hinweis „Selbstdarstellung – nicht unabhängig bestätigt“",
+		"beleg": "Screenshot des Kanalbetreibers (TikTok-Profil, Nov. 2026)"
+	},
+	"bat3": {
+		"bild": "Pille „SOCIAL-MEDIA-MOMENT DER NACHT“ (notify)",
+		"beleg": "–"
+	},
+	"shoe1": {
+		"bild": "„3 LINKE SCHUHE“, anonyme Figur in Daunenjacke, drei gelbe Sneaker mit „L“ ploppen auf; „Illustration · keine reale Person“",
+		"beleg": "t-online 03.11.; Suchindex (YouTube/X/TikTok)"
+	},
+	"shoe2": {
+		"bild": "Meme-Karten fliegen ein: TikTok-Fotopost-Zitat mit „LEGENDE“, #3LinkeSchuhe, Passant laut t-online; Pillen „WURDE SELBST ZUM MEME“ / „VIRAL IN SOCIAL MEDIA“",
+		"beleg": "Referenz-Screenshot TikTok-Post; t-online 03.11."
+	},
+	"shoe3": {
+		"bild": "Grüne Karte „Echt: viele einzelne linke Schuhe gestohlen – Snipes laut CORRECTIV“; am Post erscheint „TikTok-Label: Enthält KI-generierte Medien“ (stamp); Pille „NICHT ALLES, WAS VIRAL GEHT, IST ECHT“",
+		"beleg": "CORRECTIV 03.11. (Snipes); Referenz-Screenshot (KI-Label)"
+	},
+	"w1": {
+		"bild": "Weltkarte: Start über Frankfurt, Reuters-Karte mit Wortlaut + DE (typewriter), Zoom auf Europa",
+		"beleg": "Reuters 31.10. (Korea Times, Arab News, Yahoo)"
+	},
+	"w2": {
+		"bild": "Zoom auf die Welt; Bögen zu Südkorea, Saudi-Arabien, Australien (cyan = Agentur) und Österreich, Polen, USA (gelb = eigener Bericht), dazwischen alle weiteren 18 Länder; Liste oben; blips",
+		"beleg": "data/medien.json (24 Länder)"
+	},
+	"w3": {
+		"bild": "Schlagzeilen nach Regionen: Europa (Interia) · Amerika (Excélsior, „ahora en Alemania“ markiert) · Nahost (Daily Sabah) · Asien/Ozeanien/Afrika (ABC, „riots spread to Germany“ markiert); paper/typewriter",
+		"beleg": "ABC 02.11., Excélsior 01.11., Interia, Daily Sabah 01.11."
+	},
+	"w4": {
+		"bild": "„MINDESTENS 26 MEDIEN · 24 LÄNDER“, 24 Flaggen, „NUR EINE STICHPROBE“; riser + boom (ElevenLabs-Premium)",
+		"beleg": "data/medien.json; tests/international.test.ts"
+	},
+	"end1": {
+		"bild": "Fazit – Weltkarte zoomt zurück auf Frankfurt, Überblendung zur Skyline; + AUSSCHREITUNGEN + VIRALE BILDER + MEMES = WELTNACHRICHT",
+		"beleg": "–"
+	},
+	"outro": {
+		"bild": "Outro @frankfurtred3 (wie Folge 2/3): Plus antippen, „Welches Thema als Nächstes?“",
+		"beleg": "src/theme/brand.ts"
+	}
 }

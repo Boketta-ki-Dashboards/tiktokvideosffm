@@ -131,7 +131,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
-| `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): Ablauf, Bilanz, virale Bilder (Batman, Schuh-Memes/CORRECTIV), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL.mp4` |
+| `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): **V2:** kurzer Ablauf + Bilanz, virale Bilder (Batman mit Selbstdarstellung des Accounts @ichbinyounes – nie als Festgenommener/Täter, kein Gesicht; Meme „3 linke Schuhe“ als anonyme Illustration), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4` |
 | `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1 (Sicherung, unveröffentlicht): Demo, Nacht, internationale Schlagzeilen |
 | `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
 | `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |

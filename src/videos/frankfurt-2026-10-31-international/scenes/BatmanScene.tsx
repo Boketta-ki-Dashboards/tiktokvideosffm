@@ -294,7 +294,7 @@ export const BatmanScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const atTikTok = wordFrame(cues, 'TikTok', b2.from + 2);
 	const atViews = wordFrame(cues, 'Hunderttausenden', b2.from + Math.round((b2.to - b2.from) * 0.7));
 	const atMoment = wordFrame(cues, 'wiedererkennbarer', b3.from + 10);
-	const toProfile = interpolate(frame, [atTikTok - 10, atTikTok + 4], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const toProfile = interpolate(frame, [atTikTok - 14, atTikTok - 2], [0, 1], {...clamp, easing: EASE_IN_OUT});
 	const flash = [atAP, atReuters].reduce((acc, f) => Math.max(acc, interpolate(frame, [f, f + 2, f + 8], [0, 0.4, 0], clamp)), 0);
 
 	return (
@@ -338,7 +338,7 @@ export const BatmanScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 
 			{/* TikTok: Selbstdarstellung des Accounts */}
-			<ProfileMock at={atTikTok - 6} viewsAt={atViews - 4} />
+			<ProfileMock at={atTikTok} viewsAt={atViews - 4} />
 			<div style={{position: 'absolute', left: 64, width: 866, top: 1170, opacity: interpolate(frame, [atTikTok + 6, atTikTok + 16], [0, 1], clamp)}}>
 				<div style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 22, color: COLORS.textMuted, lineHeight: 1.3}}>{BATMAN_ACCOUNT.note}</div>
 			</div>

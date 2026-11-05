@@ -10,8 +10,8 @@ animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
 **„Wie Frankfurt weltweit Schlagzeilen machte“** (Komposition `FrankfurtWorldwide`, Neufassung der unveröffentlichten Folge 1, Stimme ElevenLabs Adam,
-Export `FrankfurtRed3_International_ADAM_FINAL.mp4`): Ablauf der Nacht mit Übersichtskarte, offizielle Bilanz, virale Bilder (Batman-Kostüm laut
-AP/Reuters-Bildunterschriften, Schuh-Memes mit CORRECTIV-Faktencheck), Weltkarte mit Bögen in 24 Länder und Schlagzeilen nach Regionen –
+Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4`): kurzer Ablauf mit Übersichtskarte und Bilanz, virale Bilder (Batman laut AP/Reuters,
+Selbstdarstellung des TikTok-Accounts @ichbinyounes; Meme „3 linke Schuhe“), Weltkarte mit Bögen in 24 Länder und Schlagzeilen nach Regionen –
 mindestens 26 Medien als Stichprobe. Neues SFX-System (`src/lib/sfx.ts`).
 Daten: [`src/videos/frankfurt-2026-10-31-international/data/medien.json`](src/videos/frankfurt-2026-10-31-international/data/medien.json) ·
 Quellen: [`references/frankfurt-2026-10-31-international/sources.md`](references/frankfurt-2026-10-31-international/sources.md)
