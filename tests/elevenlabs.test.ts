@@ -34,7 +34,7 @@ test('zentrale Konfiguration: Standard ist ElevenLabs Adam mit eleven_multilingu
 	for (const [comp, v] of Object.entries<{videoId: string; outputName: string}>(videos)) {
 		if (comp.startsWith('$')) continue;
 		read(`../src/videos/${v.videoId}/script.json`);
-		assert.match(v.outputName, /^FrankfurtRed3_Folge\d/);
+		assert.match(v.outputName, /^FrankfurtRed3_[A-Za-z0-9_]+$/);
 	}
 });
 

@@ -1,0 +1,32 @@
+{
+	"videoId": "frankfurt-2026-10-31-international",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 110000,
+	"voice": {
+		"engine": "elevenlabs",
+		"$comment": "Stimme Adam – Einstellungen ausschließlich zentral in config/voice.json (speed 1.16, zuletzt akzeptiert)."
+	},
+	"segments": [
+		{"id": "hook1", "text": "Eine Nacht in Frankfurt.", "pauseAfterMs": 250},
+		{"id": "hook2", "text": "Und plötzlich berichten Medien auf der ganzen Welt.", "pauseAfterMs": 500},
+		{"id": "ev1", "text": "Halloween, {31. Oktober|einunddreißigster Oktober}. Laut Polizei demonstrieren rund {8.000|achttausend} Menschen – zunächst friedlich.", "pauseAfterMs": 250},
+		{"id": "ev2", "text": "Gegen {18:20 Uhr|achtzehn Uhr zwanzig} löst die Polizei die Demo auf. Danach eskaliert es rund um die Zeil.", "pauseAfterMs": 250},
+		{"id": "ev3", "text": "Die späteren Krawalle ordnet die Polizei einer anderen Personengruppe zu.", "pauseAfterMs": 250},
+		{"id": "ev4", "text": "Erst gegen {3 Uhr|drei Uhr} ist die Lage weitgehend unter Kontrolle.", "pauseAfterMs": 500},
+		{"id": "num1", "text": "Die Bilanz laut Innenministerium: {17|siebzehn} Geschäfte beschädigt, fünf davon geplündert.", "pauseAfterMs": 250},
+		{"id": "num2", "text": "{54|Vierundfünfzig} Festnahmen, mindestens {100|hundert} verletzte Polizisten, {87|siebenundachtzig} Strafanzeigen.", "pauseAfterMs": 500},
+		{"id": "mem1", "text": "Um die Welt gingen aber andere Bilder.", "pauseAfterMs": 250},
+		{"id": "mem2", "text": "Ein Mensch im Batman-Kostüm vor einem Feuer: Agenturfotos von {AP|A P} und {Reuters|Roiters}, aufgegriffen von Großbritannien bis Indien.", "pauseAfterMs": 200},
+		{"id": "mem3", "text": "Ob Demonstrant oder Halloween-Gast, ist nicht bekannt.", "pauseAfterMs": 400},
+		{"id": "mem4", "text": "Dann die Schuh-Memes: Aus Schaufenstern wurden viele einzelne linke Schuhe gestohlen – das bestätigt Snipes.", "pauseAfterMs": 250},
+		{"id": "mem5", "text": "Die viralen Verkaufsanzeigen dazu gab es aber nie, so der Faktencheck von {CORRECTIV|Korrektiv}.", "pauseAfterMs": 500},
+		{"id": "w1", "text": "Noch in der Nacht meldet {Reuters|Roiters}: Randalierer plündern Geschäfte in Frankfurt.", "pauseAfterMs": 250},
+		{"id": "w2", "text": "Die Agenturmeldung landet in Südkorea, Saudi-Arabien und Australien. Eigene Berichte gibt es etwa in Österreich, Polen und den {USA|U S A}.", "pauseAfterMs": 250},
+		{"id": "w3", "text": "Mehrere Berichte vergleichen mit Frankreich: Die Krawalle greifen auf Deutschland über, Frankfurt als Brennpunkt.", "pauseAfterMs": 250},
+		{"id": "w4", "text": "Wir zählen mindestens {26|sechsundzwanzig} Medien in {24|vierundzwanzig} Ländern – und das ist nur eine Stichprobe.", "pauseAfterMs": 500},
+		{"id": "end1", "text": "Aus einer Nacht voller Ausschreitungen, ungewöhnlicher Bilder und viraler Memes wurde eine Nachricht, die weit über Deutschland hinausging.", "pauseAfterMs": 700},
+		{"id": "outro", "text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!", "pauseAfterMs": 0}
+	]
+}

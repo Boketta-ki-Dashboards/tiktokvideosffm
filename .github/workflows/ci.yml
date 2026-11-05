@@ -41,6 +41,8 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtHeadlines --frames 30,330,560,960,1250,1650 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtShops --frames 60,300,560,1250,1900,2150,2300 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtNextDemo --frames 60,200,420,700,1000,1350,1650,1900 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtWorldwide --frames 0,100,400,850,1200,1500,1800,2100,2400 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtWorldwide-Cover --scale 0.5
 
       - name: Testbilder hochladen
         uses: actions/upload-artifact@v4

@@ -18,9 +18,10 @@ on:
       video:
         description: Video (Komposition)
         required: true
-        default: FrankfurtNextDemo
+        default: FrankfurtWorldwide
         type: choice
         options:
+          - FrankfurtWorldwide
           - FrankfurtNextDemo
           - FrankfurtShops
           - FrankfurtHeadlines
@@ -123,17 +124,25 @@ jobs:
           FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
         run: node scripts/voice/elevenlabs-tts.mjs --video "${{ steps.job.outputs.video_id }}" $FORCE
 
+      # Optional: wenige Premium-Soundeffekte (einmalig, danach Cache). Fehlt die Berechtigung,
+      # erklärt das Skript es in der Zusammenfassung und es bleiben die selbst erzeugten Effekte (Exit 0).
+      - name: Premium-Soundeffekte (ElevenLabs) erzeugen bzw. wiederverwenden
+        if: steps.job.outputs.aktion == 'video'
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+        run: node scripts/audio/elevenlabs-sfx.mjs
+
       - name: Neue Adam-Audiodateien ins Repository übernehmen
         if: steps.job.outputs.speichern == 'true'
         run: |
-          git add -A voice-cache public/voiceover "src/videos/${{ steps.job.outputs.video_id }}"
+          git add -A voice-cache public/voiceover public/sfx src/lib/sfx-premium.ts "src/videos/${{ steps.job.outputs.video_id }}"
           if git diff --cached --quiet; then
             echo "Keine neuen Audiodateien (alles aus dem Cache)."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -q -m "Stimme: ElevenLabs Adam für ${{ steps.job.outputs.video }} (${{ steps.job.outputs.aktion }}) [skip ci]"
+          git commit -q -m "Stimme/SFX: ElevenLabs für ${{ steps.job.outputs.video }} (${{ steps.job.outputs.aktion }}) [skip ci]"
           for i in 1 2 3; do
             git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
             sleep $((i * 5))

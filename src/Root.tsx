@@ -23,11 +23,32 @@ import {
 	nextDemoSchema,
 } from './videos/frankfurt-2026-11-04-naechste-demo/FrankfurtNextDemo';
 import {FrankfurtNextDemoCover} from './videos/frankfurt-2026-11-04-naechste-demo/FrankfurtNextDemoCover';
+import {
+	calculateWorldwideMetadata,
+	FrankfurtWorldwide,
+	worldwideDefaultProps,
+	worldwideSchema,
+} from './videos/frankfurt-2026-10-31-international/FrankfurtWorldwide';
+import {FrankfurtWorldwideCover} from './videos/frankfurt-2026-10-31-international/FrankfurtWorldwideCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Neufassung der unveröffentlichten Folge 1: Wie Frankfurt weltweit Schlagzeilen machte */}
+				<Composition
+					id="FrankfurtWorldwide"
+					component={FrankfurtWorldwide}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={3000}
+					schema={worldwideSchema}
+					defaultProps={worldwideDefaultProps}
+					calculateMetadata={calculateWorldwideMetadata}
+				/>
+				<Still id="FrankfurtWorldwide-Cover" component={FrankfurtWorldwideCover} width={VIDEO.width} height={VIDEO.height} />
+				{/* Folge 1 (Sicherung, unveröffentlicht) */}
 				<Composition
 					id="FrankfurtHeadlines"
 					component={FrankfurtHeadlines}

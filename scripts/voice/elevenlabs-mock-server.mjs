@@ -46,5 +46,26 @@ createServer((req, res) => {
 		return undefined;
 	}
 
+	if (req.method === 'POST' && url.pathname === '/v1/sound-generation') {
+		// MOCK_SFX_DENY=1 simuliert einen Key ohne Sound-Effects-Berechtigung
+		if (process.env.MOCK_SFX_DENY === '1') {
+			return send(res, 401, {detail: {status: 'missing_permissions', message: 'The API key you used is missing the permission sound_generation to execute this operation.'}});
+		}
+
+		let raw = '';
+		req.on('data', (c) => (raw += c));
+		req.on('end', () => {
+			const body = JSON.parse(raw);
+			const tmp = mkdtempSync(path.join(os.tmpdir(), 'mock-sfx-'));
+			const file = path.join(tmp, 's.mp3');
+			ffmpeg(['-f', 'lavfi', '-i', `anoisesrc=d=${body.duration_seconds ?? 1}:c=pink:a=0.5:r=44100`, '-af', 'afade=t=out:st=0:d=1', '-c:a', 'libmp3lame', '-b:a', '128k', file]);
+			const audio = readFileSync(file);
+			rmSync(tmp, {recursive: true, force: true});
+			res.writeHead(200, {'Content-Type': 'audio/mpeg', 'request-id': `mock-sfx-${Date.now()}`});
+			res.end(audio);
+		});
+		return undefined;
+	}
+
 	return send(res, 404, {detail: {status: 'not_found', message: url.pathname}});
 }).listen(port, '127.0.0.1', () => console.log(`Mock-ElevenLabs auf http://127.0.0.1:${port}`));

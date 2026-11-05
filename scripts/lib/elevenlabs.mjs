@@ -50,7 +50,7 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 		);
 	}
 
-	const request = async (method, path, {json, query, retries = 4} = {}) => {
+	const request = async (method, path, {json, query, retries = 4, binary = false} = {}) => {
 		const url = new URL(base + path);
 		for (const [k, v] of Object.entries(query ?? {})) if (v !== undefined && v !== null) url.searchParams.set(k, String(v));
 		for (let attempt = 0; ; attempt++) {
@@ -58,7 +58,7 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 			try {
 				res = await fetchImpl(url, {
 					method,
-					headers: {'xi-api-key': apiKey, Accept: 'application/json', ...(json ? {'Content-Type': 'application/json'} : {})},
+					headers: {'xi-api-key': apiKey, Accept: binary ? 'audio/mpeg' : 'application/json', ...(json ? {'Content-Type': 'application/json'} : {})},
 					body: json ? JSON.stringify(json) : undefined,
 				});
 			} catch (e) {
@@ -72,7 +72,7 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 			}
 
 			if (res.ok) {
-				return {body: await res.json(), headers: res.headers};
+				return {body: binary ? Buffer.from(await res.arrayBuffer()) : await res.json(), headers: res.headers};
 			}
 
 			let body = null;
@@ -124,8 +124,33 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 				requestId: headers.get('request-id') ?? headers.get('x-request-id') ?? null,
 			};
 		},
+		/** Soundeffekt aus Text (POST /v1/sound-generation) → {audio: Buffer, requestId} */
+		soundGeneration: async ({text, modelId, durationSeconds, promptInfluence, loop = false, outputFormat}) => {
+			const {body, headers} = await request('POST', '/v1/sound-generation', {
+				binary: true,
+				retries: 2,
+				query: {output_format: outputFormat},
+				json: {text, model_id: modelId, duration_seconds: durationSeconds, prompt_influence: promptInfluence, loop},
+			});
+			if (!body?.length) {
+				throw new ElevenLabsError('ElevenLabs lieferte keine Audiodaten für den Soundeffekt.', {code: 'no_audio'});
+			}
+
+			return {audio: body, requestId: headers.get('request-id') ?? headers.get('x-request-id') ?? null};
+		},
 	};
 };
+
+/** Cache-Schlüssel eines Soundeffekts (Prompt + Modell + Parameter). */
+export const sfxCacheKey = ({modelId, outputFormat, text, durationSeconds, promptInfluence, loop = false}) =>
+	createHash('sha256')
+		.update(JSON.stringify({modelId, outputFormat, text, durationSeconds, promptInfluence, loop}))
+		.digest('hex')
+		.slice(0, 24);
+
+/** Fehlt dem Key eine Berechtigung (oder ist er für diesen Endpunkt nicht freigeschaltet)? */
+export const isPermissionError = (err) =>
+	err?.code === 'missing_permissions' || err?.status === 401 || err?.status === 403;
 
 // ---------------------------------------------------------------------------------------------
 // Reine Hilfsfunktionen

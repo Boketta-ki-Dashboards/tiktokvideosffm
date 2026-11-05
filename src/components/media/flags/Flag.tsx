@@ -23,7 +23,15 @@ export type FlagCode =
 	| 'UA'
 	| 'IE'
 	| 'JP'
-	| 'CH';
+	| 'CH'
+	| 'CZ'
+	| 'TR'
+	| 'QA'
+	| 'NG'
+	| 'KW'
+	| 'IL'
+	| 'AR'
+	| 'PK';
 
 export type FlagProps = {
 	code: FlagCode | string;
@@ -107,6 +115,82 @@ const FlagArt: React.FC<{code: string; clipId: string}> = ({code, clipId}) => {
 					<rect width={90} height={60} fill="#DA291C" />
 					<rect x={39} y={12} width={12} height={36} fill="#FFFFFF" />
 					<rect x={27} y={24} width={36} height={12} fill="#FFFFFF" />
+				</>
+			);
+		case 'CZ':
+			return (
+				<>
+					<Horizontal colors={['#FFFFFF', '#D7141A']} />
+					<polygon points="0,0 45,30 0,60" fill="#11457E" />
+				</>
+			);
+		case 'NG':
+			return <Vertical colors={['#008751', '#FFFFFF', '#008751']} />;
+		case 'KW':
+			return (
+				<>
+					<Horizontal colors={['#007A3D', '#FFFFFF', '#CE1126']} />
+					<polygon points="0,0 22.5,15 22.5,45 0,60" fill="#000000" />
+				</>
+			);
+		case 'TR':
+			// Proportionen nach Türk Bayrağı Kanunu (G = Höhe 60)
+			return (
+				<>
+					<rect width={90} height={60} fill="#E30A17" />
+					<circle cx={30} cy={30} r={15} fill="#FFFFFF" />
+					<circle cx={33.75} cy={30} r={12} fill="#E30A17" />
+					<polygon points={star(47.6, 30, 7.5, 3.0, 5, Math.PI)} fill="#FFFFFF" />
+				</>
+			);
+		case 'QA': {
+			// Weißes Band mit 9 Zacken, Weinrot
+			const teeth: string[] = ['0,0', '24,0'];
+			for (let i = 0; i < 9; i++) {
+				teeth.push(`${33},${(i * 60) / 9 + 60 / 18}`, `${24},${((i + 1) * 60) / 9}`);
+			}
+
+			teeth.push('0,60');
+			return (
+				<>
+					<rect width={90} height={60} fill="#8A1538" />
+					<polygon points={teeth.join(' ')} fill="#FFFFFF" />
+				</>
+			);
+		}
+
+		case 'IL':
+			return (
+				<>
+					<rect width={90} height={60} fill="#FFFFFF" />
+					<rect y={5.6} width={90} height={9.4} fill="#0038B8" />
+					<rect y={45} width={90} height={9.4} fill="#0038B8" />
+					<g fill="none" stroke="#0038B8" strokeWidth={2.2}>
+						<polygon points="45,18.5 55,35.75 35,35.75" />
+						<polygon points="45,41.5 55,24.25 35,24.25" />
+					</g>
+				</>
+			);
+		case 'AR':
+			return (
+				<>
+					<Horizontal colors={['#74ACDF', '#FFFFFF', '#74ACDF']} />
+					<g transform="translate(45 30)">
+						{new Array(16).fill(true).map((_, i) => (
+							<line key={i} x1={0} y1={-5.5} x2={0} y2={-9} stroke="#F6B40E" strokeWidth={1.4} transform={`rotate(${i * 22.5})`} />
+						))}
+						<circle r={5.2} fill="#F6B40E" stroke="#85340A" strokeWidth={0.5} />
+					</g>
+				</>
+			);
+		case 'PK':
+			return (
+				<>
+					<rect width={90} height={60} fill="#01411C" />
+					<rect width={22.5} height={60} fill="#FFFFFF" />
+					<circle cx={56} cy={30} r={16.5} fill="#FFFFFF" />
+					<circle cx={60.5} cy={26} r={14.5} fill="#01411C" />
+					<polygon points={star(65.5, 21.5, 5.5, 2.2, 5, -Math.PI / 4)} fill="#FFFFFF" />
 				</>
 			);
 		case 'GB':

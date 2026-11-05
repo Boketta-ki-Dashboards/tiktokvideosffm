@@ -16,6 +16,7 @@ export type Client = {
 	getModels(): Promise<Array<Record<string, unknown>>>;
 	getSubscription(): Promise<Record<string, unknown>>;
 	ttsWithTimestamps(o: Record<string, unknown>): Promise<{audio: Buffer; alignment: Alignment | null; normalizedAlignment: Alignment | null; requestId: string | null}>;
+	soundGeneration(o: {text: string; modelId: string; durationSeconds?: number; promptInfluence?: number; loop?: boolean; outputFormat?: string}): Promise<{audio: Buffer; requestId: string | null}>;
 };
 export function createClient(o?: {apiKey?: string; fetchImpl?: typeof fetch; base?: string; log?: (s: string) => void}): Client;
 export function segmentCacheKey(o: {voiceId: string; modelId: string; outputFormat: string; voiceSettings: Record<string, unknown>; seed?: number; text: string}): string;
@@ -25,3 +26,5 @@ export function tokenizeForAlignment(text: string): {spoken: string; tokens: Arr
 export function speechWindow(alignment: Alignment): {first: number; last: number};
 export function captionsFromAlignment(o: {text: string; alignment: Alignment; offsetMs: number; cutStartSec: number; first?: boolean}): {captions: Caption[]; exact: boolean};
 export function estimateCredits(texts: string[]): number;
+export function sfxCacheKey(o: {modelId: string; outputFormat: string; text: string; durationSeconds?: number; promptInfluence?: number; loop?: boolean}): string;
+export function isPermissionError(err: unknown): boolean;
