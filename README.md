@@ -9,6 +9,13 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Wie Frankfurt weltweit Schlagzeilen machte“** (Komposition `FrankfurtWorldwide`, Neufassung der unveröffentlichten Folge 1, Stimme ElevenLabs Adam,
+Export `FrankfurtRed3_International_ADAM_FINAL.mp4`): Ablauf der Nacht mit Übersichtskarte, offizielle Bilanz, virale Bilder (Batman-Kostüm laut
+AP/Reuters-Bildunterschriften, Schuh-Memes mit CORRECTIV-Faktencheck), Weltkarte mit Bögen in 24 Länder und Schlagzeilen nach Regionen –
+mindestens 26 Medien als Stichprobe. Neues SFX-System (`src/lib/sfx.ts`).
+Daten: [`src/videos/frankfurt-2026-10-31-international/data/medien.json`](src/videos/frankfurt-2026-10-31-international/data/medien.json) ·
+Quellen: [`references/frankfurt-2026-10-31-international/sources.md`](references/frankfurt-2026-10-31-international/sources.md)
+
 **Folge 2 – „Welche Läden hat es getroffen?“** (Komposition `FrankfurtShops`, ≈ 77,5 s): animierte Schadenskarte der
 Innenstadt mit allen recherchierten Geschäften (rot = Diebstahl belegt, orange = Sachschaden, grau = ungeklärt),
 Infokarten mit Fotos/Illustrationen, Schadenshöhe, Gesamtbilanz (offiziell vs. Recherche) und Outro @frankfurtred3.
@@ -45,7 +52,7 @@ Sätze, schneidet sie an den ElevenLabs-Zeitstempeln, baut daraus wortgenaue Unt
 1. Im Repository oben auf **Actions** klicken.
 2. Links den Workflow **„Video rendern“** wählen.
 3. Rechts **„Run workflow“** → Branch wählen → Eingaben prüfen:
-   - `composition`: `FrankfurtHeadlines` (Folge 1), `FrankfurtShops` (Folge 2) oder `FrankfurtNextDemo` (Folge 3)
+   - `composition`: `FrankfurtWorldwide` (international), `FrankfurtHeadlines` (Folge 1, Sicherung), `FrankfurtShops` (Folge 2) oder `FrankfurtNextDemo` (Folge 3)
    - `video_id`: `frankfurt-2026-10-31`, `frankfurt-2026-10-31-geschaefte` bzw. `frankfurt-2026-11-04-naechste-demo` (nur für Stimme neu erzeugen/importieren)
    - `voice`: `repo` (vorhandene Sprecherspur), `chatterbox` (natürliche Stimme neu erzeugen, ≈ 10–20 min),
      `import` (deine Datei aus `voice-input/`), `piper` (schnelle Roboterstimme) oder `none` (stumm)

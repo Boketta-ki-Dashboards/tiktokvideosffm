@@ -81,7 +81,7 @@ const publish = () => {
 
 	const before = existsSync(manifestFile) ? readFileSync(manifestFile, 'utf8') : '';
 	const text =
-		'/* eslint-disable */\n// Automatisch geschrieben von scripts/audio/elevenlabs-sfx.mjs – nicht von Hand ändern.\n' +
+		'// Automatisch geschrieben von scripts/audio/elevenlabs-sfx.mjs – nicht von Hand ändern.\n' +
 		'// Leer = nur selbst erzeugte Effekte (public/sfx/*.wav). Einträge ersetzen den gleichnamigen Effekt in src/lib/sfx.ts.\n' +
 		`export const PREMIUM_SFX: Record<string, {file: string; prompt: string; model: string; cacheKey: string}> = ${JSON.stringify(effects, null, '\t')};\n`;
 	if (text !== before) writeFileSync(manifestFile, text);

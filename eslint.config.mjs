@@ -11,6 +11,6 @@ export default [
 		},
 	},
 	{
-		ignores: ['node_modules/**', 'output/**', '.claude/**', '.cache/**'],
+		ignores: ['node_modules/**', 'output/**', '.claude/**', '.cache/**', 'src/lib/sfx-premium.ts'],
 	},
 ];

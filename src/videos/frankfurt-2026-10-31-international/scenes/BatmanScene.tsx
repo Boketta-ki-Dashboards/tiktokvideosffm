@@ -123,8 +123,8 @@ export const BatmanScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				<div style={{marginTop: 12, fontFamily: FONTS.body, fontWeight: 600, fontSize: 24, color: COLORS.textMuted}}>Illustration · keine Originalfotos</div>
 			</SafeArea>
 
-			<PhotoFrame label="AP" at={atAP} rotate={-7} x={70} y={340} />
-			<PhotoFrame label="REUTERS" at={atReuters} rotate={6} x={600} y={380} />
+			<PhotoFrame label="AP" at={atAP} rotate={-7} x={70} y={372} />
+			<PhotoFrame label="REUTERS" at={atReuters} rotate={6} x={600} y={400} />
 
 			{/* Medien, die das Bild aufgriffen */}
 			<div style={{position: 'absolute', left: 64, width: 866, top: 850, display: 'flex', flexDirection: 'column', gap: 12, opacity: cardsOut}}>
@@ -147,7 +147,8 @@ export const BatmanScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				) : null}
 				<Stamp text="NICHT BEKANNT" at={atNo} color={COLORS.signal} rotate={-5} size={70} />
 			</div>
-			<div style={{position: 'absolute', left: 64, top: 1225, opacity: interpolate(frame, [atGB, atGB + 10], [0, 1], clamp) * (1 - interpolate(frame, [atQ - 6, atQ], [0, 1], clamp))}}>
+			{/* Quelle oben unter der Kennzeichnung – unten liegen die Medienkarten */}
+			<div style={{position: 'absolute', left: 64, width: 866, top: 296, opacity: interpolate(frame, [atAP, atAP + 10], [0, 1], clamp)}}>
 				<SourceCredit sources={BATMAN.sources} />
 			</div>
 

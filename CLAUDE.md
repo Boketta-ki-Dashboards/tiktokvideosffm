@@ -33,6 +33,10 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
    - Eigene Beobachtung des Kanalbetreibers vor Ort ist ein Beleg (`"art": "augenzeuge"`), wenn sie im Video offen als solche
      benannt wird („wir haben es vor Ort gesehen“). Sie wird nie als Polizei- oder Medienangabe ausgegeben.
    - Referenzvideos **vollständig** Bild für Bild auswerten (Kontaktbogen mit 2 fps, verdächtige Stellen mit 5–10 fps), nicht nur Ausschnitte.
+   - **Medienzählungen** („X Medien in Y Ländern“): nur selbst abgerufene Berichte mit wörtlich geprüfter Schlagzeile zählen; Agentur-Übernahme
+     (Reuters/AFP/AP/dpa …) und eigener Bericht getrennt kennzeichnen; immer „mindestens“ + „Stichprobe“, nie als weltweite Gesamtzahl.
+     Zahl im Ton muss aus den Daten folgen (Test). Virale Inhalte nur mit Herkunft (Agentur/Medium); keine View-/Like-Zahlen ohne Beleg;
+     Nicht-Verifizierbares (z. B. „Power Rangers“) weglassen und unter „Bewusst NICHT verwendet“ begründen.
 3. **Keine fremden Logos/Marken nachbauen.** Medien erscheinen als neutrale Wortmarke (`MediaBadge`).
    Echte Logos nur mit Nutzungsrecht als Datei in `public/` (`logoFile`-Prop).
 4. **Keine realen Personen darstellen.** Figuren sind anonyme, stilisierte Vektorfiguren. Gewalt nicht
@@ -101,8 +105,20 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   `npm run voice:import -- --file …` (fertige MP3/WAV,
   auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
-- Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`) oder CC0 mit Nachweis in `references/` (siehe `references/musik.md`).
-- Sprechtempo: Adam `speed` 1.16 (vom Kanalbetreiber gewünscht, zulässig bis 1.2) in `config/voice.json` (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
+- Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`), CC0 mit Nachweis in `references/` (siehe `references/musik.md`)
+  oder als ElevenLabs-Premium-Effekt (s. u.).
+- **SFX-System (ab `FrankfurtWorldwide` für alle neuen Videos):** Effekte nur über `src/lib/sfx.ts` (semantische Namen, dezente Grundlautstärken ≤ 0,4)
+  und `<Sfx name="…" at={frame} />` direkt in der Szene neben der auslösenden Animation (bildgenau, an Stimm-Cues). Komposition umschließt alles mit
+  `<SfxProvider enabled={sfx}>`. Zuordnung: Text/Kalender/Chips → `click`/`pop` · Social-Karten → `notify` · Statistik → `softImpact` · Karte/Land → `blip`,
+  Schwenk → `whoosh` · Schlagzeilen → `typewriter`/`paper` · Faktencheck → `stamp` · Weltkarten-Finale → `riser` + `boom`.
+  `generate-sfx.mjs` überschreibt vorhandene Dateien nie (fertige Folgen klingen gleich), `--force` nur bewusst.
+- **ElevenLabs Sound Effects** (`POST /v1/sound-generation`, `eleven_text_to_sound_v3`): wenige kurze Effekte in `config/sfx-elevenlabs.json`, einmal erzeugt
+  (`scripts/audio/elevenlabs-sfx.mjs`, Workflow-Schritt bei `aktion: video`), Cache `voice-cache/elevenlabs-sfx/`, Ausgabe `public/sfx/premium/` + `src/lib/sfx-premium.ts`
+  (ersetzt gleichnamige Synth-Effekte automatisch, für alle Folgen wiederverwendet). Fehlt dem Key die Berechtigung: genau EINE Probe-Anfrage, Erklärung in der
+  Zusammenfassung, Fallback auf Synth-Effekte – nie umgehen, nie nach dem Key fragen.
+- **Sprechtempo: Adam `speed` 1.16 – zuletzt erfolgreich verwendet und vom Kanalbetreiber akzeptiert (Folge 3, Commit d99eacd); gilt fest für ALLE Folgen.**
+  Übrige Adam-Werte ebenso fest: stability 0.45, similarity_boost 0.8, style 0.2, use_speaker_boost true, seed 20261104, `mp3_44100_128`.
+  Nie automatisch zwischen Folgen ändern; nur auf ausdrücklichen Wunsch in `config/voice.json` (dann Hörprobe). (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
 - Adam-Lautschrift: Zahlen/Daten ausschreiben (`{14. November|vierzehnte November}`), `{Gen Z|Dschen Zett}`; nach jeder Erzeugung
   `node scripts/voice/check-sync.mjs` (läuft im Workflow) und, falls lokal vorhanden, Whisper-Gegenprobe (`--check`).
 - Chatterbox-Lautschrift (Fallback): englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
@@ -115,7 +131,8 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
-| `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1: Demo, Nacht, internationale Schlagzeilen |
+| `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): Ablauf, Bilanz, virale Bilder (Batman, Schuh-Memes/CORRECTIV), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL.mp4` |
+| `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1 (Sicherung, unveröffentlicht): Demo, Nacht, internationale Schlagzeilen |
 | `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
 | `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |
 

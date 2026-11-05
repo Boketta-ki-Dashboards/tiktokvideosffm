@@ -122,7 +122,7 @@ export const BATMAN = {
 	media: ['independent', 'fpj', 'albeu'],
 	question: 'Demonstrant oder Halloween-Gast?',
 	answer: 'nicht bekannt',
-	sources: ['The Independent 01.11.2026 (Bildunterschriften AP, Reuters)', 'Free Press Journal 01.11.2026'],
+	sources: ['The Independent, 01.11.2026 (Bildunterschriften: AP, Reuters)', 'Free Press Journal, 01.11.2026'],
 };
 
 export const SHOES = {

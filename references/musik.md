@@ -7,3 +7,11 @@
 
 Einsatz: `MusicBed` (Folge 3) spielt das Bett sehr leise (Lautstärke 0,5) und senkt es automatisch unter der Sprecherstimme (Ducking auf 0,2).
 Gemessen: Bett allein −23,7 LUFS; im fertigen Video liegt es deutlich unter der Stimme (−14 LUFS). Ein-/Ausschalten per Prop `music`.
+
+## Soundeffekte (ab „Wie Frankfurt weltweit Schlagzeilen machte“)
+
+- **Selbst erzeugt** (`scripts/audio/generate-sfx.mjs`, reine FFmpeg-Synthese, keine Samples Dritter): `public/sfx/*.wav`
+  – whoosh, impact, pop (Bestand), click, notify, blip, typewriter, paper, soft-impact, boom, riser, stamp (neu, Spitzenpegel −3 dBFS).
+- **ElevenLabs Sound Effects** (`eleven_text_to_sound_v3`, erzeugt am 05.11.2026 im Workflow „Video produzieren“, Lauf 6, mit dem
+  bezahlten Tarif des Kanalbetreibers): `public/sfx/premium/{boom,typewriter,notify,blip}.mp3`, Prompts in `config/sfx-elevenlabs.json`,
+  Rohdateien + Metadaten in `voice-cache/elevenlabs-sfx/`. Ersetzen die gleichnamigen Synth-Effekte über `src/lib/sfx-premium.ts`.
