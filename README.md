@@ -15,6 +15,13 @@ Läden und Plot-Twist; jede Aussage als FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FI
 Quellen: [`references/frankfurt-2026-11-20-ausblick/sources.md`](references/frankfurt-2026-11-20-ausblick/sources.md) ·
 TikTok-Texte: [`tiktok-text.md`](references/frankfurt-2026-11-20-ausblick/tiktok-text.md)
 
+**PREMIUM-Fassung** (Komposition `FrankfurtNov20ForecastPremium`, Export `FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL.mp4`):
+dieselbe Folge mit komplett neu gezeichneter Bildebene (mehrschichtige Nacht-Skyline mit Parallaxe, Fallblatt-Datum, Straßenszene
+Halloween ↔ November mit Schieberegler, Nachrichten-Infografik Polizei, detailreiche Ladenfront mit montierten Holzplatten,
+2,5D-Fazitkarten, Handwerker-Plot-Twist). Ton, Sprechertext, Timing, Untertitel und Outro sind unverändert: die Original-Komposition
+läuft unsichtbar als Tonquelle mit (Tests: `tests/nov20-premium.test.ts`, Sperrdatei `premium/lock.json`).
+Änderungsliste und Prüfbericht: [`references/frankfurt-2026-11-20-ausblick/premium.md`](references/frankfurt-2026-11-20-ausblick/premium.md)
+
 **„Wie Frankfurt weltweit Schlagzeilen machte“** (Komposition `FrankfurtWorldwide`, Neufassung der unveröffentlichten Folge 1, Stimme ElevenLabs Adam,
 Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4`): kurzer Ablauf mit Übersichtskarte und Bilanz, virale Bilder (Batman laut AP/Reuters,
 Selbstdarstellung des TikTok-Accounts @ichbinyounes; Meme „3 linke Schuhe“), Weltkarte mit Bögen in 24 Länder und Schlagzeilen nach Regionen –

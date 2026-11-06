@@ -22,6 +22,7 @@ on:
         type: choice
         options:
           - FrankfurtNov20Forecast
+          - FrankfurtNov20ForecastPremium
           - FrankfurtWorldwide
           - FrankfurtNextDemo
           - FrankfurtShops
@@ -36,13 +37,14 @@ on:
           - nur-stimme
           - hoerprobe
       stimme:
-        description: "wiederverwenden = vorhandene Adam-Sätze nutzen (keine Credits, nur Fehlendes neu) · neu-erzeugen = alles neu (kostet Credits)"
+        description: "wiederverwenden = vorhandene Adam-Sätze nutzen (keine Credits, nur Fehlendes neu) · neu-erzeugen = alles neu (kostet Credits) · vorhanden = fertige Spur aus dem Repository, KEIN ElevenLabs-Aufruf"
         required: true
         default: wiederverwenden
         type: choice
         options:
           - wiederverwenden
           - neu-erzeugen
+          - vorhanden
       audio_speichern:
         description: Neu erzeugte Adam-Audiodateien ins Repository committen (spart künftig Credits)
         required: true
@@ -85,13 +87,18 @@ jobs:
             SPEICHERN=$(jq -r 'if has("audio_speichern") then .audio_speichern else true end' voice-jobs/auftrag.json)
           fi
           [[ "$AKTION" =~ ^(video|nur-stimme|hoerprobe)$ ]] || { echo "::error::Unbekannte aktion: $AKTION"; exit 1; }
-          [[ "$STIMME" =~ ^(wiederverwenden|neu-erzeugen)$ ]] || { echo "::error::Unbekannte stimme: $STIMME"; exit 1; }
+          [[ "$STIMME" =~ ^(wiederverwenden|neu-erzeugen|vorhanden)$ ]] || { echo "::error::Unbekannte stimme: $STIMME"; exit 1; }
           VIDEO_ID=$(jq -r --arg v "$VIDEO" '.[$v].videoId // empty' config/videos.json)
           OUT=$(jq -r --arg v "$VIDEO" '.[$v].outputName // empty' config/videos.json)
           [ -n "$VIDEO_ID" ] || { echo "::error::Video „$VIDEO“ fehlt in config/videos.json"; exit 1; }
+          # Optional: Vorher-Nachher-Vergleich mit einer anderen Komposition (z. B. Premium ↔ Original)
+          VGL=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.mit // empty' config/videos.json)
+          VGL_PLAN=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.plan // empty' config/videos.json)
+          VGL_EXPORT=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.export // empty' config/videos.json)
           {
             echo "video=$VIDEO"; echo "video_id=$VIDEO_ID"; echo "out=$OUT"
             echo "aktion=$AKTION"; echo "stimme=$STIMME"; echo "speichern=$SPEICHERN"
+            echo "vergleich=$VGL"; echo "vergleich_plan=$VGL_PLAN"; echo "vergleich_export=$VGL_EXPORT"
           } >> "$GITHUB_OUTPUT"
           echo "### Auftrag: $VIDEO ($VIDEO_ID) · $AKTION · Stimme: $STIMME" >> "$GITHUB_STEP_SUMMARY"
 
@@ -111,15 +118,30 @@ jobs:
         run: npm ci
 
       # ---------- Stimme: ElevenLabs Adam ----------
+      - name: Vorhandene Adam-Spur verwenden (kein ElevenLabs-Aufruf)
+        if: steps.job.outputs.stimme == 'vorhanden'
+        run: |
+          MP3="public/voiceover/${{ steps.job.outputs.video_id }}/voiceover-adam.mp3"
+          MAN="src/videos/${{ steps.job.outputs.video_id }}/voiceover.json"
+          [ -f "$MP3" ] && [ -f "$MAN" ] || { echo "::error::Keine fertige Adam-Spur im Repository ($MP3 / $MAN) – stimme: vorhanden nicht möglich."; exit 1; }
+          WANT=$(jq -r '.elevenlabs.voiceId' config/voice.json)
+          jq -e --arg id "$WANT" '.voice.provider == "elevenlabs" and .voice.voiceId == $id and .captionsSource == "elevenlabs-alignment"' "$MAN" > /dev/null \
+            || { echo "::error::$MAN ist keine Adam-Fassung (Voice-ID $WANT erwartet)."; exit 1; }
+          {
+            echo "### Stimme: vorhandene Adam-Spur (kein API-Aufruf, keine Credits)"
+            echo "- \`$MP3\` · SHA-256 \`$(sha256sum "$MP3" | cut -c1-16)…\` · $(ffprobe -v error -show_entries format=duration -of csv=p=0 "$MP3") s"
+            echo "- \`$MAN\` · SHA-256 \`$(sha256sum "$MAN" | cut -c1-16)…\`"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Adam-Hörprobe erzeugen
-        if: steps.job.outputs.aktion == 'hoerprobe'
+        if: steps.job.outputs.aktion == 'hoerprobe' && steps.job.outputs.stimme != 'vorhanden'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
         run: node scripts/voice/elevenlabs-tts.mjs --sample $FORCE
 
       - name: Sprecherspur mit Adam erzeugen bzw. wiederverwenden
-        if: steps.job.outputs.aktion != 'hoerprobe'
+        if: steps.job.outputs.aktion != 'hoerprobe' && steps.job.outputs.stimme != 'vorhanden'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
@@ -128,13 +150,13 @@ jobs:
       # Optional: wenige Premium-Soundeffekte (einmalig, danach Cache). Fehlt die Berechtigung,
       # erklärt das Skript es in der Zusammenfassung und es bleiben die selbst erzeugten Effekte (Exit 0).
       - name: Premium-Soundeffekte (ElevenLabs) erzeugen bzw. wiederverwenden
-        if: steps.job.outputs.aktion == 'video'
+        if: steps.job.outputs.aktion == 'video' && steps.job.outputs.stimme != 'vorhanden'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: node scripts/audio/elevenlabs-sfx.mjs
 
       - name: Neue Adam-Audiodateien ins Repository übernehmen
-        if: steps.job.outputs.speichern == 'true'
+        if: steps.job.outputs.speichern == 'true' && steps.job.outputs.stimme != 'vorhanden'
         run: |
           git add -A voice-cache public/voiceover public/sfx src/lib/sfx-premium.ts "src/videos/${{ steps.job.outputs.video_id }}"
           if git diff --cached --quiet; then
@@ -190,6 +212,34 @@ jobs:
           node scripts/verify-video.mjs "output/${{ steps.job.outputs.out }}.mp4"
           node scripts/voice/check-sync.mjs --video "${{ steps.job.outputs.video_id }}" --mp4 "output/${{ steps.job.outputs.out }}.mp4"
 
+      # Ton-Referenz für den Identitätsvergleich: nur die Tonspur der Vergleichs-Komposition (schnell, keine Bilder)
+      - name: Original-Tonspur zum Vergleich rendern
+        if: steps.job.outputs.aktion == 'video' && steps.job.outputs.vergleich != ''
+        run: |
+          npx remotion render src/index.ts "${{ steps.job.outputs.vergleich }}" "output/${{ steps.job.outputs.vergleich }}.ton.m4a" \
+            --codec=aac --audio-bitrate=192k --overwrite \
+            --browser-executable="$(node -e "import('./scripts/lib/remotion.mjs').then(m=>process.stdout.write(m.findBrowserExecutable()??''))")"
+
+      # Strenger Prüfbericht direkt aus FFprobe am fertigen File: bricht ab, wenn nicht 1080×1920 / 30 fps / H.264 / yuv420p / AAC / Faststart
+      # (und bei Vergleich: wenn die Tonspur nicht Sample für Sample mit dem Original übereinstimmt).
+      - name: Technischer Prüfbericht (FFprobe, streng)
+        if: steps.job.outputs.aktion == 'video'
+        run: |
+          REF=""
+          if [ -n "${{ steps.job.outputs.vergleich }}" ]; then REF="--audio-ref output/${{ steps.job.outputs.vergleich }}.ton.m4a"; fi
+          node scripts/tech-report.mjs "output/${{ steps.job.outputs.out }}.mp4" $REF \
+            --voice "public/voiceover/${{ steps.job.outputs.video_id }}/voiceover-adam.mp3" \
+            --title "${{ steps.job.outputs.out }}" \
+            --md "output/${{ steps.job.outputs.out }}.technik.md" --json "output/${{ steps.job.outputs.out }}.technik.json"
+          cat "output/${{ steps.job.outputs.out }}.technik.md" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Vorher-Nachher-Kontaktbogen (gleiche Frames, beide Fassungen)
+        if: steps.job.outputs.aktion == 'video' && steps.job.outputs.vergleich != ''
+        run: |
+          node scripts/compare-scenes.mjs --video "${{ steps.job.outputs.video_id }}" \
+            --plan "${{ steps.job.outputs.vergleich_plan }}" --export "${{ steps.job.outputs.vergleich_export }}" \
+            --a "${{ steps.job.outputs.vergleich }}" --b "${{ steps.job.outputs.video }}" --out output/vergleich
+
       - name: Video als Artefakt bereitstellen
         if: steps.job.outputs.aktion == 'video'
         uses: actions/upload-artifact@v4
@@ -200,6 +250,30 @@ jobs:
             output/${{ steps.job.outputs.out }}-cover.png
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
+          retention-days: 30
+
+      - name: Technischen Prüfbericht als Artefakt bereitstellen
+        if: always() && steps.job.outputs.aktion == 'video'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.job.outputs.out }}-Technikbericht-run${{ github.run_number }}
+          path: |
+            output/${{ steps.job.outputs.out }}.technik.md
+            output/${{ steps.job.outputs.out }}.technik.json
+            output/${{ steps.job.outputs.out }}.report.json
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Vorher-Nachher-Bogen als Artefakt bereitstellen
+        if: always() && steps.job.outputs.aktion == 'video' && steps.job.outputs.vergleich != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.job.outputs.out }}-Vorher-Nachher-run${{ github.run_number }}
+          path: |
+            output/vergleich/vergleich-gesamt.jpg
+            output/vergleich/vergleich-*.png
+            output/vergleich/frames.json
+          if-no-files-found: warn
           retention-days: 30
 
       - name: Adam-Sprecherspur als Artefakt bereitstellen

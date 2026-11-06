@@ -37,6 +37,8 @@ import {
 	nov20Schema,
 } from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20Forecast';
 import {FrankfurtNov20Cover} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20Cover';
+import {FrankfurtNov20ForecastPremium} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20ForecastPremium';
+import {FrankfurtNov20PremiumCover} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20PremiumCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
@@ -55,6 +57,19 @@ export const RemotionRoot: React.FC = () => {
 					calculateMetadata={calculateNov20Metadata}
 				/>
 				<Still id="FrankfurtNov20Forecast-Cover" component={FrankfurtNov20Cover} width={VIDEO.width} height={VIDEO.height} />
+				{/* PREMIUM-Fassung: neue Bildebene, Ton/Timing/Untertitel unverändert aus FrankfurtNov20Forecast */}
+				<Composition
+					id="FrankfurtNov20ForecastPremium"
+					component={FrankfurtNov20ForecastPremium}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={3300}
+					schema={nov20Schema}
+					defaultProps={nov20DefaultProps}
+					calculateMetadata={calculateNov20Metadata}
+				/>
+				<Still id="FrankfurtNov20ForecastPremium-Cover" component={FrankfurtNov20PremiumCover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Neufassung der unveröffentlichten Folge 1: Wie Frankfurt weltweit Schlagzeilen machte */}
 				<Composition
 					id="FrankfurtWorldwide"

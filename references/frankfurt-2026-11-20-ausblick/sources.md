@@ -38,12 +38,28 @@ Hinweis: Die Telegram-Meldung „Auf behördliche Anordnung müssen die Versamml
 | „Frankfurt Fenster-Schutz GmbH“, Handwerker, Münzen, Kassen-Sound | FIKTION | ausdrücklich im Bild „FIKTION · Erfundene Firma – nur ein Witz“; keine echte Firma, keine Beträge |
 | „20.11. – Was glaubt ihr?“ mit „Deutlich ruhiger“ / „Wieder Eskalation?“ | Kommentar-Impuls | keine echte Abstimmung |
 
+## PREMIUM-Fassung (`FrankfurtNov20ForecastPremium`) – zusätzliche Bildtexte
+
+Sprechertext, Status-Kennzeichnung und alle Aussagen sind identisch mit dem Original. Neu sind nur diese Bildelemente:
+
+| Im Bild (Premium) | Status | Beleg / Begründung |
+|---|---|---|
+| Balken „31.10. Großaufgebot“ | FAKT | hessenschau 29./30.10.2026: „Tausende Teilnehmer und ein Polizei-Großaufgebot“ (Link unten) – Balken ohne Zahl/Skala |
+| Balken „20.11. „noch stärker“ – angekündigt, ohne Zahl“ (gestrichelte Verlängerung mit „?“) | ANGEKÜNDIGT | Innenministerium 02.11.2026 (Zitat wie im Original); Umfang nicht genannt → bewusst ohne Länge/Zahl |
+| „Stärkeres Aufgebot angekündigt – Umfang offen“ | ANGEKÜNDIGT | ebd. |
+| Entscheidungs-Spur „DISKUTIERT → ENTSCHIEDEN?“ | FAKT + OFFEN | s. Tabelle oben (Verbot diskutiert, nicht entschieden, Stand 06.11.2026) |
+| „FREITAG“ unter dem Datum 20.11.2026 | FAKT | Kalender (20.11.2026 ist ein Freitag) |
+| Pressemitteilungs-Karte „02.11.2026“ mit wörtlichem Zitat | FAKT | [Innenministerium, 02.11.2026][hmdis] |
+| Sprechblasen „Verbot?“, „Demo?“, „Polizei?“ im Plot-Twist | Illustration | Stimmungsbild zu „Während Frankfurt diskutiert“ – keine Zitate, keine Personen |
+| Straßenszenen, Kostümfiguren, Ladenfronten, Einsatzfahrzeuge, Handwerker | Illustration | eigene Vektorzeichnungen, keine realen Personen/Fassaden/Marken; Fahrzeuge nur mit Gattungswort „POLIZEI“ |
+| „Frankfurt Fenster-Schutz GmbH“ | FIKTION | unverändert wie im Original, im Bild als FIKTION gekennzeichnet |
+
 ## Bewusst NICHT verwendet
 
 - Behauptungen, Randalierer hätten sich gezielt mit Kostümen getarnt, oder die Polizei erkenne Täter an Kleidung.
 - „Die Demo ist verboten“ / „Verbot beschlossen“ – nicht belegt.
 - Konkrete Schutzpläne von Snipes, 11teamsports oder anderen Händlern – nicht belegt.
-- Zahlen zur Polizeistärke am 20.11. – nicht angekündigt.
+- Zahlen zur Polizeistärke am 20.11. – nicht angekündigt. Premium: auch keine Zahl für den 31.10. im Balken (nur „Großaufgebot“), damit kein Größenvergleich vorgetäuscht wird.
 - Herkunft/„migrantisch“ (Poseck/Dobrindt), report24/Tichy-Einordnungen – umstritten bzw. parteiisch.
 - Fotos/Clips aus Medien oder Social Media – nur eigene Illustrationen.
 

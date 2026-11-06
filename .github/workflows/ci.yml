@@ -45,6 +45,8 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtWorldwide-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtNov20Forecast --frames 0,150,500,1000,1600,2200,2700,3000 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtNov20Forecast-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium --frames 0,150,500,1000,1600,2200,2700,3000 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium-Cover --scale 0.5
 
       - name: Testbilder hochladen
         uses: actions/upload-artifact@v4

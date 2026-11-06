@@ -109,6 +109,10 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
 - Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`), CC0 mit Nachweis in `references/` (siehe `references/musik.md`)
   oder als ElevenLabs-Premium-Effekt (s. u.).
+- **Reine Bild-Überarbeitungen (Premium-Fassungen):** neue Komposition, die die Original-Komposition unsichtbar (`display: none`, Untertitel aus) als
+  einzige Tonquelle mountet; gleiche Timeline/Übergänge/Cue-Formeln; Premium-Szenen erzeugen keinen eigenen Ton. Workflow mit `stimme: vorhanden`
+  (kein ElevenLabs-Aufruf), Eintrag `vergleich` in `config/videos.json` → Ton-Identitätsprüfung, FFprobe-Bericht (`scripts/tech-report.mjs`) und
+  Vorher-Nachher-Bogen (`scripts/compare-scenes.mjs`). Die Original-Fassung bleibt unverändert erhalten.
 - **SFX-System (ab `FrankfurtWorldwide` für alle neuen Videos):** Effekte nur über `src/lib/sfx.ts` (semantische Namen, dezente Grundlautstärken ≤ 0,4)
   und `<Sfx name="…" at={frame} />` direkt in der Szene neben der auslösenden Animation (bildgenau, an Stimm-Cues). Komposition umschließt alles mit
   `<SfxProvider enabled={sfx}>`. Zuordnung: Text/Kalender/Chips → `click`/`pop` · Social-Karten → `notify` · Statistik → `softImpact` · Karte/Land → `blip`,
@@ -135,6 +139,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 |---|---|---|
 | `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): **V2:** kurzer Ablauf + Bilanz, virale Bilder (Batman mit Selbstdarstellung des Accounts @ichbinyounes – nie als Festgenommener/Täter, kein Gesicht; Meme „3 linke Schuhe“ als anonyme Illustration), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4` |
 | `FrankfurtNov20Forecast` | `src/videos/frankfurt-2026-11-20-ausblick/` | Ausblick „20. November – wieder Eskalation?“: Halloween-Faktor, Polizei (angekündigt), Läden (möglich), Fazit als Einschätzung, Plot-Twist mit erfundener Firma (als FIKTION markiert), Kommentarfrage; jede Aussage mit Status FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FIKTION (Tests: `tests/nov20.test.ts`), Export `FrankfurtRed3_20November_Ausblick_ADAM_FINAL.mp4` |
+| `FrankfurtNov20ForecastPremium` | `src/videos/frankfurt-2026-11-20-ausblick/` (`premium/`, `FrankfurtNov20ForecastPremium.tsx`) | PREMIUM-Bildfassung des Ausblicks: neue Szenen in `premium/scenes/`, Designsystem `premium/kit.tsx`, Illustrationen (NightCity, Storefront, Person, PoliceVan, Craftsman). Ton/Timing/Untertitel/Outro unverändert – Original-Komposition läuft unsichtbar als Tonquelle; Sperrdatei `premium/lock.json` (SHA-256 von Skript, Manifest, Adam-MP3, Musik, voice.json), Tests `tests/nov20-premium.test.ts`; Export `FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL.mp4` (Workflow mit `stimme: vorhanden`) |
 | `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1 (Sicherung, unveröffentlicht): Demo, Nacht, internationale Schlagzeilen |
 | `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
 | `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |
