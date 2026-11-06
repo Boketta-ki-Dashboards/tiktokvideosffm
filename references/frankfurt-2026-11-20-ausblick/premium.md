@@ -41,3 +41,23 @@ Die Kompositionen sind mit `VIDEO.width/height` = 1080 × 1920 registriert, `scr
 Weitergabe-Kopie (z. B. App-Vorschau oder Messenger, die Videos verkleinert). Für TikTok immer die MP4 aus dem Artefakt (ZIP) hochladen.
 Zusätzlich prüft jetzt `scripts/tech-report.mjs` die fertige Datei direkt mit FFprobe und bricht den Workflow ab, wenn sie nicht
 1080 × 1920 / 30 fps / H.264 / yuv420p / AAC / Faststart ist; der Bericht liegt als eigenes Artefakt bei.
+
+## Qualitätsprüfung (lokaler Render, 06.11.2026)
+
+Vorgehen: Referenzbilder des Originals an 32 festen Frames (je Szene: Anfang · 33 % · 66 % · Ende, aus der echten Timeline,
+`scripts/compare-scenes.mjs`) → Premium-Szenen gebaut → dieselben Frames gerendert → nebeneinander verglichen → korrigiert
+(u. a. Mond entfernt, da er unter der Titel-Abdunkelung grau wirkte und Titel überlagerte; Zustandsetikett verdeckte das Ladenschild;
+Optionskarten sprangen beim Erscheinen der dritten Karte; Halloween-Chips umbrachen; leere Bühne im Plot-Twist → Siegertreppchen) →
+erneuter Vergleich.
+
+| Prüfung | Ergebnis |
+|---|---|
+| FFprobe Premium-MP4 | 1080 × 1920 · 30/1 fps · 3228 Frames · H.264 High · yuv420p · BT.709 · AAC LC 48 kHz Stereo ≈ 189 kbit/s · Faststart · 107,61 s |
+| Dauer vs. Original | identisch (3228 Frames, 107,61 s) |
+| Tonspur vs. Original-MP4 | **identisch** – 10.330.112 PCM-Samples verglichen, 0 abweichend, 0 Längenunterschied; sogar der AAC-Bitstrom ist gleich (MD5 `f3fec6ef…`) |
+| Tonspur vs. reiner Original-Ton-Render (wie im Workflow) | identisch (0 abweichende Samples, gleicher AAC-MD5) |
+| Lautheit | −14,4 LUFS integriert, True Peak −1,1 dBTP (unverändert gegenüber dem Original) |
+| `npm run check` | TypeScript, ESLint, 53 Tests grün (davon 8 Premium-Tests) |
+
+Im Workflow (`stimme: vorhanden`) wird dasselbe automatisch wiederholt und als Artefakte abgelegt:
+`…_PREMIUM_FINAL-run<N>` (MP4, Cover, Prüfbericht) · `…-Technikbericht-run<N>` · `…-Vorher-Nachher-run<N>` · Sprecherspur.
