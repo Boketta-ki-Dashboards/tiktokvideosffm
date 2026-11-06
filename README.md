@@ -9,6 +9,12 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt am 20. November – wieder Eskalation?“** (Komposition `FrankfurtNov20Forecast`, Stimme ElevenLabs Adam,
+Export `FrankfurtRed3_20November_Ausblick_ADAM_FINAL.mp4`): Ausblick mit Halloween-Faktor, angekündigtem Polizeiaufgebot,
+Läden und Plot-Twist; jede Aussage als FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FIKTION gekennzeichnet.
+Quellen: [`references/frankfurt-2026-11-20-ausblick/sources.md`](references/frankfurt-2026-11-20-ausblick/sources.md) ·
+TikTok-Texte: [`tiktok-text.md`](references/frankfurt-2026-11-20-ausblick/tiktok-text.md)
+
 **„Wie Frankfurt weltweit Schlagzeilen machte“** (Komposition `FrankfurtWorldwide`, Neufassung der unveröffentlichten Folge 1, Stimme ElevenLabs Adam,
 Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4`): kurzer Ablauf mit Übersichtskarte und Bilanz, virale Bilder (Batman laut AP/Reuters,
 Selbstdarstellung des TikTok-Accounts @ichbinyounes; Meme „3 linke Schuhe“), Weltkarte mit Bögen in 24 Länder und Schlagzeilen nach Regionen –
