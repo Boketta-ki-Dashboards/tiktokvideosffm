@@ -21,7 +21,8 @@ export type SfxName =
 	| 'softImpact'
 	| 'boom'
 	| 'riser'
-	| 'stamp';
+	| 'stamp'
+	| 'cash';
 
 export type SfxDefinition = {
 	file: string;
@@ -44,6 +45,7 @@ export const SFX_LIBRARY: Record<SfxName, SfxDefinition> = {
 	boom: {file: 'sfx/boom.wav', volume: 0.32, use: 'cineastischer Akzent (Finale Weltkarte)'},
 	riser: {file: 'sfx/riser.wav', volume: 0.14, use: 'Spannungsaufbau vor dem Finale'},
 	stamp: {file: 'sfx/stamp.wav', volume: 0.22, use: 'Faktencheck-Stempel'},
+	cash: {file: 'sfx/cash.wav', volume: 0.18, use: 'humorvoller Kassen-Akzent (Pointe)'},
 };
 
 type PremiumEntry = {file: string; gain?: number};

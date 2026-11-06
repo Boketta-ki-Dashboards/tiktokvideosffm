@@ -18,9 +18,10 @@ on:
       video:
         description: Video (Komposition)
         required: true
-        default: FrankfurtWorldwide
+        default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtNov20Forecast
           - FrankfurtWorldwide
           - FrankfurtNextDemo
           - FrankfurtShops

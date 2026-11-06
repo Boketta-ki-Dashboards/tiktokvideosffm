@@ -30,11 +30,31 @@ import {
 	worldwideSchema,
 } from './videos/frankfurt-2026-10-31-international/FrankfurtWorldwide';
 import {FrankfurtWorldwideCover} from './videos/frankfurt-2026-10-31-international/FrankfurtWorldwideCover';
+import {
+	calculateNov20Metadata,
+	FrankfurtNov20Forecast,
+	nov20DefaultProps,
+	nov20Schema,
+} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20Forecast';
+import {FrankfurtNov20Cover} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20Cover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Ausblick: Frankfurt am 20. November – wieder Eskalation? */}
+				<Composition
+					id="FrankfurtNov20Forecast"
+					component={FrankfurtNov20Forecast}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={3300}
+					schema={nov20Schema}
+					defaultProps={nov20DefaultProps}
+					calculateMetadata={calculateNov20Metadata}
+				/>
+				<Still id="FrankfurtNov20Forecast-Cover" component={FrankfurtNov20Cover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Neufassung der unveröffentlichten Folge 1: Wie Frankfurt weltweit Schlagzeilen machte */}
 				<Composition
 					id="FrankfurtWorldwide"

@@ -108,6 +108,12 @@ const effects = {
 		'-f', 'lavfi', '-i', `anoisesrc=d=1.4:c=pink:a=0.6:r=${R}:seed=31`,
 		'-filter_complex', `[1]highpass=f=900,afade=t=in:d=1.3:curve=exp,volume=0.45[n];[0][n]amix=inputs=2:normalize=0,afade=t=out:st=1.32:d=0.08,alimiter=limit=0.8,${mono2stereo}`,
 	],
+	// Kassen-„Ka-Ching“ (humorvoller Akzent, z. B. Unternehmer-Pointe)
+	'cash.wav': [
+		'-f', 'lavfi', '-i', `anoisesrc=d=0.06:c=white:a=0.8:r=${R}:seed=41`,
+		'-f', 'lavfi', '-i', `aevalsrc=exprs='0.5*sin(2*PI*2093*t)*exp(-t*5)+0.35*sin(2*PI*3136*t)*exp(-t*6)+0.2*sin(2*PI*4186*t)*exp(-t*8)':d=0.9:s=${R}`,
+		'-filter_complex', `[0]bandpass=f=3000:w=2500,afade=t=out:st=0.005:d=0.05:curve=exp,volume=0.7[k];[1]adelay=70|70[b];[k][b]amix=inputs=2:normalize=0,alimiter=limit=0.85,${mono2stereo}`,
+	],
 	// Stempel (Faktencheck „Falsch“)
 	'stamp.wav': [
 		'-f', 'lavfi', '-i', `aevalsrc=exprs='0.8*sin(2*PI*(150*t-60*t*t))*exp(-t*22)':d=0.3:s=${R}`,
