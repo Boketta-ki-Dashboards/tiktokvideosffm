@@ -39,11 +39,31 @@ import {
 import {FrankfurtNov20Cover} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20Cover';
 import {FrankfurtNov20ForecastPremium} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20ForecastPremium';
 import {FrankfurtNov20PremiumCover} from './videos/frankfurt-2026-11-20-ausblick/FrankfurtNov20PremiumCover';
+import {
+	calculatePoliceRightsMetadata,
+	FrankfurtPoliceRights,
+	policeRightsDefaultProps,
+	policeRightsSchema,
+} from './videos/frankfurt-2026-11-polizeikontrollen/FrankfurtPoliceRights';
+import {FrankfurtPoliceRightsCover} from './videos/frankfurt-2026-11-polizeikontrollen/FrankfurtPoliceRightsCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Polizeikontrollen auf der Zeil – musst du dein Handy zeigen? */}
+				<Composition
+					id="FrankfurtPoliceRights"
+					component={FrankfurtPoliceRights}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={3900}
+					schema={policeRightsSchema}
+					defaultProps={policeRightsDefaultProps}
+					calculateMetadata={calculatePoliceRightsMetadata}
+				/>
+				<Still id="FrankfurtPoliceRights-Cover" component={FrankfurtPoliceRightsCover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Ausblick: Frankfurt am 20. November – wieder Eskalation? */}
 				<Composition
 					id="FrankfurtNov20Forecast"

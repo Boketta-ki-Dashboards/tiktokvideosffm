@@ -9,6 +9,12 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Polizei will deine Galerie sehen – musst du das?“** (Komposition `FrankfurtPoliceRights`, Stimme ElevenLabs Adam,
+Export `FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL.mp4`, 123 s): verstärkte Kontrollen auf der Zeil, warum Fotos/Videos für Ermittlungen
+wichtig sind, Zeugenaufruf ≠ Pflicht, freiwillige Bitte vs. angeordnete Maßnahme, PIN vs. Fingerabdruck (BGH 2025) und Sätze für eine ruhige Kontrolle.
+Quellen & Rechtsgrundlagen: [`references/frankfurt-2026-11-polizeikontrollen/sources.md`](references/frankfurt-2026-11-polizeikontrollen/sources.md) ·
+TikTok-Texte: [`tiktok-text.md`](references/frankfurt-2026-11-polizeikontrollen/tiktok-text.md)
+
 **„Frankfurt am 20. November – wieder Eskalation?“** (Komposition `FrankfurtNov20Forecast`, Stimme ElevenLabs Adam,
 Export `FrankfurtRed3_20November_Ausblick_ADAM_FINAL.mp4`): Ausblick mit Halloween-Faktor, angekündigtem Polizeiaufgebot,
 Läden und Plot-Twist; jede Aussage als FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FIKTION gekennzeichnet.
