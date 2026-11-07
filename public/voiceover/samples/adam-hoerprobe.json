@@ -1,5 +1,5 @@
 {
-	"text": "Ewa, Frankfurt. Seit Halloween wird auf der Zeil ordentlich kontrolliert. Und jetzt kommt der wichtige Punkt, Bruder: Musst du einfach deine ganze Galerie zeigen? Checkt mal.",
+	"text": "Ewa, Frankfurt! Seit Halloween wird auf der Zeil verstärkt kontrolliert. Ewa, jetzt wisst ihr Bescheid.",
 	"sampleFrom": "frankfurt-2026-11-polizeikontrollen",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
@@ -14,7 +14,7 @@
 		"speed": 1.16
 	},
 	"seed": 20261104,
-	"characters": 174,
-	"cacheKey": "87773ba6f9dce75828bf",
-	"durationSeconds": 10.344
+	"characters": 103,
+	"cacheKey": "5a33bd308cd6bec1b4cd",
+	"durationSeconds": 5.424
 }
