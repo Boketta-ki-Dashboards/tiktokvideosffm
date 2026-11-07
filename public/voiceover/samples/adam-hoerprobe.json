@@ -1,5 +1,6 @@
 {
-	"text": "Frankfurt am Main. Wann geht es nach den Ausschreitungen wirklich weiter? Am vierzehnten, zwanzigsten oder einundzwanzigsten November? Hier sind die bestätigten Informationen.",
+	"text": "Ewa, Frankfurt. Seit Halloween wird auf der Zeil ordentlich kontrolliert. Und jetzt kommt der wichtige Punkt, Bruder: Musst du einfach deine ganze Galerie zeigen? Checkt mal.",
+	"sampleFrom": "frankfurt-2026-11-polizeikontrollen",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -10,10 +11,10 @@
 		"similarity_boost": 0.8,
 		"style": 0.2,
 		"use_speaker_boost": true,
-		"speed": 1.08
+		"speed": 1.16
 	},
 	"seed": 20261104,
-	"characters": 175,
-	"cacheKey": "5ce02ab15f3424277281",
-	"durationSeconds": 10.2
+	"characters": 174,
+	"cacheKey": "87773ba6f9dce75828bf",
+	"durationSeconds": 10.344
 }
