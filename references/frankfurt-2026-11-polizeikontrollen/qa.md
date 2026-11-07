@@ -26,3 +26,14 @@ Erster Kontaktbogen (32 Frames, je Szene Anfang/33 %/66 %/Ende) → Korrekturen:
 - Zeil zu dunkel, nahe Baumkronen im Titelbereich → hellere Fassaden/Boden, nahe Bäume ausgeblendet.
 - Hook: Galerie startete leer → von Anfang an gefüllt (Vorschaubild Frame 0).
 - Mützenschirm der Einsatzkraft wirkte wie Sonnenbrille → höher gesetzt.
+
+## Finaler Render (GitHub Actions, Lauf #15, `stimme: vorhanden` – kein ElevenLabs-Aufruf)
+
+| Prüfung | Ergebnis |
+|---|---|
+| FFprobe (am fertigen File) | 1080 × 1920 · 30/1 fps · 3703 Frames · H.264 High · yuv420p · BT.709 · AAC LC 48 kHz Stereo ≈ 189 kbit/s · Faststart · 123,4 s · 27 MB |
+| Lautheit | −14,5 LUFS integriert · True Peak −1,2 dBTP |
+| `verify-video.mjs` + `check-sync.mjs` (Workflow) | bestanden |
+| Whisper-Gegenprobe (medium, lokal, auf der fertigen MP4) | kompletter Sprechertext wortgetreu erkannt, inkl. „Bruder“, „Checkt mal“, „Ewa“ (als „Eva“ = Ä-wa); keine fehlenden Sätze |
+| Kontaktbogen aus der MP4 (alle 3 s) | alle 7 Szenen + Outro, Untertitel synchron, keine abgeschnittenen Texte, Figuren unter der Untertitelzone, Texte in den Sicherheitszonen |
+| `npm run check` | TypeScript, ESLint, 64 Tests grün (davon 11 für dieses Video) |
