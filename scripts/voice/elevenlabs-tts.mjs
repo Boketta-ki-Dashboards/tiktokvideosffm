@@ -4,6 +4,7 @@
  * Konfiguration zentral in config/voice.json – der API-Key kommt NUR aus ELEVENLABS_API_KEY (GitHub-Secret).
  *
  *   node scripts/voice/elevenlabs-tts.mjs --sample                     # ≈ 10-s-Hörprobe → public/voiceover/samples/
+ *   node scripts/voice/elevenlabs-tts.mjs --sample --sample-from <id>  # Hörprobe mit „sampleText“ aus src/videos/<id>/script.json
  *   node scripts/voice/elevenlabs-tts.mjs --video <video-id>           # komplette Sprecherspur + Manifest
  *   Optionen: --force (alle Sätze neu, kostet Credits) · --dry-run (nur Plan/Credits, kein API-Aufruf)
  *             --check (Whisper-Gegenprobe, falls lokal installiert) · --offline (nie API, nur Cache)
@@ -43,6 +44,8 @@ if (!videoId) {
 }
 
 const script = sampleMode ? null : readScript(videoId);
+// Hörprobe optional mit dem Probesatz eines Videos (z. B. neue Slang-Sätze), ohne config/voice.json zu ändern
+const sampleScript = sampleMode && args['sample-from'] ? readScript(String(args['sample-from'])) : null;
 const cfg = {...voiceConfig.elevenlabs, ...(script?.voice?.elevenlabs ?? {})};
 cfg.voiceSettings = {...voiceConfig.elevenlabs.voiceSettings, ...(script?.voice?.elevenlabs?.voiceSettings ?? {})};
 const SAMPLE_RATE = 44100;
@@ -53,7 +56,7 @@ const log = (s = '') => {
 };
 
 const targets = sampleMode
-	? [{id: 'hoerprobe', text: cfg.sampleText, pauseAfterMs: 0}]
+	? [{id: 'hoerprobe', text: sampleScript?.sampleText ?? cfg.sampleText, pauseAfterMs: 0}]
 	: script.segments.map((s) => ({id: s.id, text: s.text, pauseAfterMs: s.pauseAfterMs}));
 for (const t of targets) t.spoken = tokenizeForAlignment(t.text).spoken;
 
@@ -228,7 +231,7 @@ const main = async () => {
 			const out = path.join(ROOT, 'public', cfg.sampleFile);
 			ensureDir(path.dirname(out));
 			masterVoice(pieces[0].file, out, {toneFilter: 'highpass=f=60'});
-			writeFileSync(out.replace(/\.mp3$/, '.json'), `${JSON.stringify({text: cfg.sampleText, ...voiceMeta, cacheKey: pieces[0].key, durationSeconds: durationSeconds(out)}, null, '\t')}\n`);
+			writeFileSync(out.replace(/\.mp3$/, '.json'), `${JSON.stringify({text: targets[0].text, sampleFrom: sampleScript ? String(args['sample-from']) : null, ...voiceMeta, cacheKey: pieces[0].key, durationSeconds: durationSeconds(out)}, null, '\t')}\n`);
 			log(`✔ Hörprobe: public/${cfg.sampleFile} (${durationSeconds(out).toFixed(2)} s) – Stimme „${voice.name}“ (${voice.id})`);
 		} else {
 			// Alte Fassung einer anderen Engine aufbewahren (nicht überschreiben)

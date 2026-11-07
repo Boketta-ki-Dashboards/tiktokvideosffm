@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtPoliceRights
           - FrankfurtNov20Forecast
           - FrankfurtNov20ForecastPremium
           - FrankfurtWorldwide
@@ -138,7 +139,8 @@ jobs:
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           FORCE: ${{ steps.job.outputs.stimme == 'neu-erzeugen' && '--force' || '' }}
-        run: node scripts/voice/elevenlabs-tts.mjs --sample $FORCE
+        # Probesatz: „sampleText“ aus dem Skript des gewählten Videos, sonst der Standardsatz aus config/voice.json
+        run: node scripts/voice/elevenlabs-tts.mjs --sample --sample-from "${{ steps.job.outputs.video_id }}" $FORCE
 
       - name: Sprecherspur mit Adam erzeugen bzw. wiederverwenden
         if: steps.job.outputs.aktion != 'hoerprobe' && steps.job.outputs.stimme != 'vorhanden'

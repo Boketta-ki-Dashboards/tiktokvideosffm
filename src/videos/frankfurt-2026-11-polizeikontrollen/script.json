@@ -1,0 +1,33 @@
+{
+	"videoId": "frankfurt-2026-11-polizeikontrollen",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 134000,
+	"voice": {
+		"engine": "elevenlabs",
+		"$comment": "Stimme Adam – Einstellungen ausschließlich zentral in config/voice.json (speed 1.16, zuletzt akzeptiert). Frankfurt-Charakter nur über die Wortwahl (≈ 4 Slang-Ausdrücke), kein Akzent."
+	},
+	"sampleText": "Ewa, Frankfurt. Seit Halloween wird auf der Zeil ordentlich kontrolliert. Und jetzt kommt der wichtige Punkt, Bruder: Musst du einfach deine ganze Galerie zeigen? Checkt mal.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt.", "pauseAfterMs": 150},
+		{"id": "hook2", "text": "Seit Halloween wird auf der Zeil verstärkt kontrolliert.", "pauseAfterMs": 150},
+		{"id": "hook3", "text": "Aber was, wenn die Polizei dein Handy sehen will – musst du deine Galerie zeigen?", "pauseAfterMs": 350},
+		{"id": "why1", "text": "Am {31. Oktober|einunddreißigsten Oktober} gab es nach einer Demo Ausschreitungen: Plünderungen, Angriffe auf Polizisten.", "pauseAfterMs": 150},
+		{"id": "why2", "text": "Seitdem kontrolliert die Polizei auf der Zeil verstärkt, berichtet die hessenschau – viele Jugendliche fühlen sich unter Pauschalverdacht.", "pauseAfterMs": 350},
+		{"id": "pho1", "text": "Ein Stadtverordneter berichtet sogar: Beamte hätten Handys von Jugendlichen durchgeschaut – „freiwillig“, um sich zu entlasten.", "pauseAfterMs": 150},
+		{"id": "pho2", "text": "Öffentlich bestätigt hat die Polizei das bisher nicht.", "pauseAfterMs": 250},
+		{"id": "pho3", "text": "Warum Fotos? Sie können helfen, Tatverdächtige zu identifizieren. Die Polizei bittet Zeugen deshalb, Videos freiwillig hochzuladen.", "pauseAfterMs": 150},
+		{"id": "pho4", "text": "Ein Zeugenaufruf heißt aber nicht, dass du bei einer Kontrolle deine Galerie öffnen musst.", "pauseAfterMs": 350},
+		{"id": "law1", "text": "Jetzt der wichtige Punkt, Bruder: Bei einer Identitätskontrolle musst du deine Personalien angeben – dein Handy durchsuchen erlaubt das nicht automatisch.", "pauseAfterMs": 150},
+		{"id": "law2", "text": "Fragt die Polizei nur, ob du freiwillig Bilder zeigst, kannst du grundsätzlich Nein sagen.", "pauseAfterMs": 250},
+		{"id": "law3", "text": "Bei Tatverdacht kann dein Handy aber als Beweismittel sichergestellt werden, auch gegen deinen Willen – angeordnet grundsätzlich vom Gericht, in Eilfällen auch von Staatsanwaltschaft oder Polizei.", "pauseAfterMs": 150},
+		{"id": "law4", "text": "Deine PIN musst du als Beschuldigter nicht verraten. Per Fingerabdruck darf ein Handy unter strengen Voraussetzungen aber entsperrt werden – sagt der Bundesgerichtshof.", "pauseAfterMs": 350},
+		{"id": "tip1", "text": "Was sagst du also? Checkt mal: Bleib ruhig und frag: „Weshalb werde ich kontrolliert?“ Und: „Ist das freiwillig oder angeordnet?“", "pauseAfterMs": 150},
+		{"id": "tip2", "text": "Ist es freiwillig, reicht: „Dann möchte ich meine Bilder nicht zeigen.“", "pauseAfterMs": 150},
+		{"id": "tip3", "text": "Keine Beleidigung, keine Gegenwehr, nichts löschen. Hältst du etwas für falsch, lass es später prüfen – etwa mit einem Anwalt.", "pauseAfterMs": 350},
+		{"id": "bal1", "text": "Klar, die Polizei soll Straftaten aufklären. Aber auch junge Leute haben Rechte – und nicht jeder mit seinen Jungs auf der Zeil hat was mit Halloween zu tun.", "pauseAfterMs": 350},
+		{"id": "end1", "text": "Ewa, jetzt wisst ihr Bescheid. Mehr Sicherheit oder zu viel Kontrolle? Schreibt's in die Kommentare!", "pauseAfterMs": 600},
+		{"id": "outro", "text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!", "pauseAfterMs": 0}
+	]
+}
