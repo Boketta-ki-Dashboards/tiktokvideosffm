@@ -8,9 +8,9 @@
 		"engine": "elevenlabs",
 		"$comment": "Stimme Adam – Einstellungen ausschließlich zentral in config/voice.json (speed 1.16, zuletzt akzeptiert). Frankfurt-Charakter nur über die Wortwahl (≈ 4 Slang-Ausdrücke), kein Akzent."
 	},
-	"sampleText": "Ewa, Frankfurt. Seit Halloween wird auf der Zeil ordentlich kontrolliert. Und jetzt kommt der wichtige Punkt, Bruder: Musst du einfach deine ganze Galerie zeigen? Checkt mal.",
+	"sampleText": "Ewa, Frankfurt! Seit Halloween wird auf der Zeil verstärkt kontrolliert. Ewa, jetzt wisst ihr Bescheid.",
 	"segments": [
-		{"id": "hook1", "text": "Ewa, Frankfurt.", "pauseAfterMs": 150},
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 150},
 		{"id": "hook2", "text": "Seit Halloween wird auf der Zeil verstärkt kontrolliert.", "pauseAfterMs": 150},
 		{"id": "hook3", "text": "Aber was, wenn die Polizei dein Handy sehen will – musst du deine Galerie zeigen?", "pauseAfterMs": 350},
 		{"id": "why1", "text": "Am {31. Oktober|einunddreißigsten Oktober} gab es nach einer Demo Ausschreitungen: Plünderungen, Angriffe auf Polizisten.", "pauseAfterMs": 150},
