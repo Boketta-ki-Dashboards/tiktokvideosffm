@@ -1,0 +1,80 @@
+{
+	"videoId": "frankfurt-2026-10-31",
+	"language": "de-DE",
+	"leadInMs": 250,
+	"tailMs": 1800,
+	"maxDurationMs": 60000,
+	"voice": {
+		"engine": "chatterbox",
+		"chatterbox": {
+			"reference": "voices/thorsten-cc0-ref.flac",
+			"exaggeration": 0.7,
+			"cfgWeight": 0.3,
+			"temperature": 0.8,
+			"tempo": 1.08,
+			"seed": 7,
+			"prefix": "Also."
+		},
+		"piperModel": "de_DE-thorsten-high",
+		"lengthScale": 0.8,
+		"noiseScale": 0.6,
+		"noiseWScale": 0.6
+	},
+	"segments": [
+		{
+			"id": "intro",
+			"text": "Frankfurt, {31. Oktober|einunddreißigster Oktober}.",
+			"pauseAfterMs": 350
+		},
+		{
+			"id": "protest",
+			"text": "Tausende junge Menschen demonstrieren – laut Polizei rund {8.000|achttausend}.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "escalation",
+			"text": "Am Abend eskaliert die Lage.",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "shop1",
+			"text": "Gegen {21:40 Uhr|einundzwanzig Uhr vierzig} wird {Snipes|Snaips} auf der Zeil geplündert.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "shop2",
+			"text": "Bis kurz nach halb elf trifft es auch ein Parfümgeschäft und ein Waffengeschäft.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "shop3",
+			"text": "Kurz vor elf: Einbruch beim Frankfurter Laufshop.",
+			"pauseAfterMs": 250
+		},
+		{
+			"id": "shop4",
+			"text": "Dann verlagern sich die Krawalle Richtung Eschenheimer Tor – auch der Schuhladen {43einhalb|dreiundvierzigeinhalb} wird getroffen.",
+			"pauseAfterMs": 2300
+		},
+		{
+			"id": "bilanz",
+			"text": "Bilanz: {54|vierundfünfzig} Festnahmen, rund {100|hundert} verletzte Polizisten.",
+			"pauseAfterMs": 350
+		},
+		{
+			"id": "media1",
+			"text": "Noch in der Nacht berichten {Reuters|Roiters} und {AFP|Ah Eff Peh},",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "media2",
+			"text": "bis Sonntagabend Medien von Indien bis Australien.",
+			"pauseAfterMs": 2600
+		},
+		{
+			"id": "outro",
+			"text": "Danke fürs Zusehen! Vergesst nicht, das Plus wegzumachen – und schreibt in die Kommentare, über welches Thema wir als Nächstes sprechen sollen.",
+			"pauseAfterMs": 0
+		}
+	]
+}

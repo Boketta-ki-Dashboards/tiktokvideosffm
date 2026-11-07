@@ -1,0 +1,20 @@
+{
+	"text": "Ewa, Frankfurt! Seit Halloween wird auf der Zeil verstärkt kontrolliert. Ewa, jetzt wisst ihr Bescheid.",
+	"sampleFrom": "frankfurt-2026-11-polizeikontrollen",
+	"provider": "elevenlabs",
+	"name": "Adam - Dominant, Firm",
+	"voiceId": "pNInz6obpgDQGcFmaJgB",
+	"category": "premade",
+	"modelId": "eleven_multilingual_v2",
+	"voiceSettings": {
+		"stability": 0.45,
+		"similarity_boost": 0.8,
+		"style": 0.2,
+		"use_speaker_boost": true,
+		"speed": 1.16
+	},
+	"seed": 20261104,
+	"characters": 103,
+	"cacheKey": "5a33bd308cd6bec1b4cd",
+	"durationSeconds": 5.424
+}

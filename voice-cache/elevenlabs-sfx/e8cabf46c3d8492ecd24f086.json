@@ -1,0 +1,9 @@
+{
+	"name": "blip",
+	"text": "Short soft electronic data blip for a digital map marker appearing, futuristic UI sound, no voice",
+	"model": "eleven_text_to_sound_v3",
+	"durationSeconds": 0.6,
+	"promptInfluence": 0.6,
+	"requestId": null,
+	"generatedAt": "2026-11-05T01:19:57.188Z"
+}

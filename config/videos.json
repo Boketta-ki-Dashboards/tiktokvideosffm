@@ -1,0 +1,10 @@
+{
+	"$comment": "Auswählbare Videos für den Workflow „Video produzieren“: Komposition → Video-Ordner und Name der fertigen MP4.",
+	"FrankfurtPoliceRights": {"videoId": "frankfurt-2026-11-polizeikontrollen", "folge": null, "outputName": "FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL"},
+	"FrankfurtNov20ForecastPremium": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL", "vergleich": {"mit": "FrankfurtNov20Forecast", "plan": "plan.ts", "export": "NOV20_SCENES"}},
+	"FrankfurtNov20Forecast": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_FINAL"},
+	"FrankfurtWorldwide": {"videoId": "frankfurt-2026-10-31-international", "folge": null, "outputName": "FrankfurtRed3_International_ADAM_FINAL_V2"},
+	"FrankfurtNextDemo": {"videoId": "frankfurt-2026-11-04-naechste-demo", "folge": 3, "outputName": "FrankfurtRed3_Folge3_ADAM_FINAL"},
+	"FrankfurtShops": {"videoId": "frankfurt-2026-10-31-geschaefte", "folge": 2, "outputName": "FrankfurtRed3_Folge2_ADAM"},
+	"FrankfurtHeadlines": {"videoId": "frankfurt-2026-10-31", "folge": 1, "outputName": "FrankfurtRed3_Folge1_ADAM"}
+}

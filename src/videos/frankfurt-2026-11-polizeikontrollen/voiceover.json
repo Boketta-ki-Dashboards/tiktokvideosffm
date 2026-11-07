@@ -1,0 +1,2188 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-2026-11-polizeikontrollen",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-2026-11-polizeikontrollen/voiceover-adam.mp3",
+	"durationMs": 122940,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 200,
+			"endMs": 1779,
+			"hash": "80a90f276d3b471b6cad"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1929,
+			"endMs": 4390,
+			"hash": "fa5883c521bd63f84c59"
+		},
+		{
+			"id": "hook3",
+			"startMs": 4540,
+			"endMs": 9277,
+			"hash": "86edd374784861af2378"
+		},
+		{
+			"id": "why1",
+			"startMs": 9627,
+			"endMs": 16361,
+			"hash": "258160a2e1b8923714dd"
+		},
+		{
+			"id": "why2",
+			"startMs": 16511,
+			"endMs": 24359,
+			"hash": "19ca31f7c8febec6e590"
+		},
+		{
+			"id": "pho1",
+			"startMs": 24709,
+			"endMs": 32464,
+			"hash": "92a99b273a7514847786"
+		},
+		{
+			"id": "pho2",
+			"startMs": 32614,
+			"endMs": 35586,
+			"hash": "27aee53147d317aeedd0"
+		},
+		{
+			"id": "pho3",
+			"startMs": 35836,
+			"endMs": 44242,
+			"hash": "3614c30ed76b05a1ac62"
+		},
+		{
+			"id": "pho4",
+			"startMs": 44392,
+			"endMs": 48711,
+			"hash": "9dda1f5cd8ed4306f596"
+		},
+		{
+			"id": "law1",
+			"startMs": 49061,
+			"endMs": 57420,
+			"hash": "6d69495e810d0d3a702d"
+		},
+		{
+			"id": "law2",
+			"startMs": 57570,
+			"endMs": 62214,
+			"hash": "a12edc262fdb48caf576"
+		},
+		{
+			"id": "law3",
+			"startMs": 62464,
+			"endMs": 73331,
+			"hash": "bc17b437ef37b5dba8ba"
+		},
+		{
+			"id": "law4",
+			"startMs": 73481,
+			"endMs": 85230,
+			"hash": "7659f971013941ed5a6c"
+		},
+		{
+			"id": "tip1",
+			"startMs": 85580,
+			"endMs": 95286,
+			"hash": "545daeba44e6e2a773e5"
+		},
+		{
+			"id": "tip2",
+			"startMs": 95436,
+			"endMs": 99105,
+			"hash": "1ae89d1c291c05cdc9a7"
+		},
+		{
+			"id": "tip3",
+			"startMs": 99255,
+			"endMs": 106825,
+			"hash": "7107c57a028c8eaf433a"
+		},
+		{
+			"id": "bal1",
+			"startMs": 107175,
+			"endMs": 115070,
+			"hash": "844a49158c78a56e96d7"
+		},
+		{
+			"id": "end1",
+			"startMs": 115420,
+			"endMs": 119739,
+			"hash": "ef6919c8516a999302fa"
+		},
+		{
+			"id": "outro",
+			"startMs": 120339,
+			"endMs": 122940,
+			"hash": "530f2a31176c5e1b1901"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 200,
+			"endMs": 630,
+			"timestampMs": 415,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 699,
+			"endMs": 1779,
+			"timestampMs": 1239,
+			"confidence": 1
+		},
+		{
+			"text": " Seit",
+			"startMs": 1929,
+			"endMs": 2161,
+			"timestampMs": 2045,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween",
+			"startMs": 2196,
+			"endMs": 2591,
+			"timestampMs": 2394,
+			"confidence": 1
+		},
+		{
+			"text": " wird",
+			"startMs": 2626,
+			"endMs": 2742,
+			"timestampMs": 2684,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 2777,
+			"endMs": 2858,
+			"timestampMs": 2818,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 2893,
+			"endMs": 2986,
+			"timestampMs": 2940,
+			"confidence": 1
+		},
+		{
+			"text": " Zeil",
+			"startMs": 3044,
+			"endMs": 3264,
+			"timestampMs": 3154,
+			"confidence": 1
+		},
+		{
+			"text": " verstärkt",
+			"startMs": 3299,
+			"endMs": 3682,
+			"timestampMs": 3491,
+			"confidence": 1
+		},
+		{
+			"text": " kontrolliert.",
+			"startMs": 3717,
+			"endMs": 4390,
+			"timestampMs": 4054,
+			"confidence": 1
+		},
+		{
+			"text": " Aber",
+			"startMs": 4540,
+			"endMs": 4772,
+			"timestampMs": 4656,
+			"confidence": 1
+		},
+		{
+			"text": " was,",
+			"startMs": 4807,
+			"endMs": 5062,
+			"timestampMs": 4935,
+			"confidence": 1
+		},
+		{
+			"text": " wenn",
+			"startMs": 5097,
+			"endMs": 5225,
+			"timestampMs": 5161,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 5260,
+			"endMs": 5353,
+			"timestampMs": 5307,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 5388,
+			"endMs": 5829,
+			"timestampMs": 5609,
+			"confidence": 1
+		},
+		{
+			"text": " dein",
+			"startMs": 5864,
+			"endMs": 6014,
+			"timestampMs": 5939,
+			"confidence": 1
+		},
+		{
+			"text": " Handy",
+			"startMs": 6073,
+			"endMs": 6340,
+			"timestampMs": 6207,
+			"confidence": 1
+		},
+		{
+			"text": " sehen",
+			"startMs": 6398,
+			"endMs": 6607,
+			"timestampMs": 6503,
+			"confidence": 1
+		},
+		{
+			"text": " will –",
+			"startMs": 6665,
+			"endMs": 7048,
+			"timestampMs": 6857,
+			"confidence": 1
+		},
+		{
+			"text": " musst",
+			"startMs": 7373,
+			"endMs": 7582,
+			"timestampMs": 7478,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 7605,
+			"endMs": 7686,
+			"timestampMs": 7646,
+			"confidence": 1
+		},
+		{
+			"text": " deine",
+			"startMs": 7744,
+			"endMs": 7919,
+			"timestampMs": 7832,
+			"confidence": 1
+		},
+		{
+			"text": " Galerie",
+			"startMs": 7953,
+			"endMs": 8267,
+			"timestampMs": 8110,
+			"confidence": 1
+		},
+		{
+			"text": " zeigen?",
+			"startMs": 8336,
+			"endMs": 9277,
+			"timestampMs": 8807,
+			"confidence": 1
+		},
+		{
+			"text": " Am",
+			"startMs": 9627,
+			"endMs": 9790,
+			"timestampMs": 9709,
+			"confidence": 1
+		},
+		{
+			"text": " 31.",
+			"startMs": 9859,
+			"endMs": 10544,
+			"timestampMs": 10202,
+			"confidence": 1
+		},
+		{
+			"text": " Oktober",
+			"startMs": 10591,
+			"endMs": 11090,
+			"timestampMs": 10841,
+			"confidence": 1
+		},
+		{
+			"text": " gab",
+			"startMs": 11160,
+			"endMs": 11380,
+			"timestampMs": 11270,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 11427,
+			"endMs": 11485,
+			"timestampMs": 11456,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 11531,
+			"endMs": 11682,
+			"timestampMs": 11607,
+			"confidence": 1
+		},
+		{
+			"text": " einer",
+			"startMs": 11740,
+			"endMs": 11937,
+			"timestampMs": 11839,
+			"confidence": 1
+		},
+		{
+			"text": " Demo",
+			"startMs": 12042,
+			"endMs": 12413,
+			"timestampMs": 12228,
+			"confidence": 1
+		},
+		{
+			"text": " Ausschreitungen:",
+			"startMs": 12483,
+			"endMs": 13365,
+			"timestampMs": 12924,
+			"confidence": 1
+		},
+		{
+			"text": " Plünderungen,",
+			"startMs": 13609,
+			"endMs": 14364,
+			"timestampMs": 13987,
+			"confidence": 1
+		},
+		{
+			"text": " Angriffe",
+			"startMs": 14468,
+			"endMs": 15060,
+			"timestampMs": 14764,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 15107,
+			"endMs": 15223,
+			"timestampMs": 15165,
+			"confidence": 1
+		},
+		{
+			"text": " Polizisten.",
+			"startMs": 15281,
+			"endMs": 16361,
+			"timestampMs": 15821,
+			"confidence": 1
+		},
+		{
+			"text": " Seitdem",
+			"startMs": 16511,
+			"endMs": 16859,
+			"timestampMs": 16685,
+			"confidence": 1
+		},
+		{
+			"text": " kontrolliert",
+			"startMs": 16929,
+			"endMs": 17417,
+			"timestampMs": 17173,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 17440,
+			"endMs": 17521,
+			"timestampMs": 17481,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 17556,
+			"endMs": 18020,
+			"timestampMs": 17788,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 18055,
+			"endMs": 18160,
+			"timestampMs": 18108,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 18206,
+			"endMs": 18299,
+			"timestampMs": 18253,
+			"confidence": 1
+		},
+		{
+			"text": " Zeil",
+			"startMs": 18357,
+			"endMs": 18624,
+			"timestampMs": 18491,
+			"confidence": 1
+		},
+		{
+			"text": " verstärkt,",
+			"startMs": 18670,
+			"endMs": 19332,
+			"timestampMs": 19001,
+			"confidence": 1
+		},
+		{
+			"text": " berichtet",
+			"startMs": 19437,
+			"endMs": 19797,
+			"timestampMs": 19617,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 19831,
+			"endMs": 19936,
+			"timestampMs": 19884,
+			"confidence": 1
+		},
+		{
+			"text": " hessenschau –",
+			"startMs": 19971,
+			"endMs": 20876,
+			"timestampMs": 20424,
+			"confidence": 1
+		},
+		{
+			"text": " manche",
+			"startMs": 21004,
+			"endMs": 21213,
+			"timestampMs": 21109,
+			"confidence": 1
+		},
+		{
+			"text": " Jugendliche",
+			"startMs": 21259,
+			"endMs": 21759,
+			"timestampMs": 21509,
+			"confidence": 1
+		},
+		{
+			"text": " fühlen",
+			"startMs": 21805,
+			"endMs": 22049,
+			"timestampMs": 21927,
+			"confidence": 1
+		},
+		{
+			"text": " sich",
+			"startMs": 22084,
+			"endMs": 22211,
+			"timestampMs": 22148,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 22281,
+			"endMs": 22490,
+			"timestampMs": 22386,
+			"confidence": 1
+		},
+		{
+			"text": " Pauschalverdacht.",
+			"startMs": 22560,
+			"endMs": 24359,
+			"timestampMs": 23460,
+			"confidence": 1
+		},
+		{
+			"text": " Ein",
+			"startMs": 24709,
+			"endMs": 24883,
+			"timestampMs": 24796,
+			"confidence": 1
+		},
+		{
+			"text": " Stadtverordneter",
+			"startMs": 24930,
+			"endMs": 25731,
+			"timestampMs": 25331,
+			"confidence": 1
+		},
+		{
+			"text": " berichtet",
+			"startMs": 25766,
+			"endMs": 26125,
+			"timestampMs": 25946,
+			"confidence": 1
+		},
+		{
+			"text": " sogar:",
+			"startMs": 26160,
+			"endMs": 26671,
+			"timestampMs": 26416,
+			"confidence": 1
+		},
+		{
+			"text": " Beamte",
+			"startMs": 26776,
+			"endMs": 27228,
+			"timestampMs": 27002,
+			"confidence": 1
+		},
+		{
+			"text": " hätten",
+			"startMs": 27263,
+			"endMs": 27472,
+			"timestampMs": 27368,
+			"confidence": 1
+		},
+		{
+			"text": " Handys",
+			"startMs": 27507,
+			"endMs": 27774,
+			"timestampMs": 27641,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 27820,
+			"endMs": 27948,
+			"timestampMs": 27884,
+			"confidence": 1
+		},
+		{
+			"text": " Jugendlichen",
+			"startMs": 27995,
+			"endMs": 28529,
+			"timestampMs": 28262,
+			"confidence": 1
+		},
+		{
+			"text": " durchgeschaut –",
+			"startMs": 28564,
+			"endMs": 29411,
+			"timestampMs": 28988,
+			"confidence": 1
+		},
+		{
+			"text": " „freiwillig“,",
+			"startMs": 29469,
+			"endMs": 30456,
+			"timestampMs": 29963,
+			"confidence": 1
+		},
+		{
+			"text": " um",
+			"startMs": 30642,
+			"endMs": 30793,
+			"timestampMs": 30718,
+			"confidence": 1
+		},
+		{
+			"text": " sich",
+			"startMs": 30851,
+			"endMs": 30990,
+			"timestampMs": 30921,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 31060,
+			"endMs": 31141,
+			"timestampMs": 31101,
+			"confidence": 1
+		},
+		{
+			"text": " entlasten.",
+			"startMs": 31199,
+			"endMs": 32464,
+			"timestampMs": 31832,
+			"confidence": 1
+		},
+		{
+			"text": " Öffentlich",
+			"startMs": 32614,
+			"endMs": 33020,
+			"timestampMs": 32817,
+			"confidence": 1
+		},
+		{
+			"text": " bestätigt",
+			"startMs": 33055,
+			"endMs": 33554,
+			"timestampMs": 33305,
+			"confidence": 1
+		},
+		{
+			"text": " hat",
+			"startMs": 33589,
+			"endMs": 33694,
+			"timestampMs": 33642,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 33729,
+			"endMs": 33810,
+			"timestampMs": 33770,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 33856,
+			"endMs": 34251,
+			"timestampMs": 34054,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 34286,
+			"endMs": 34390,
+			"timestampMs": 34338,
+			"confidence": 1
+		},
+		{
+			"text": " bisher",
+			"startMs": 34437,
+			"endMs": 34704,
+			"timestampMs": 34571,
+			"confidence": 1
+		},
+		{
+			"text": " nicht.",
+			"startMs": 34750,
+			"endMs": 35586,
+			"timestampMs": 35168,
+			"confidence": 1
+		},
+		{
+			"text": " Warum",
+			"startMs": 35836,
+			"endMs": 36335,
+			"timestampMs": 36086,
+			"confidence": 1
+		},
+		{
+			"text": " Fotos?",
+			"startMs": 36405,
+			"endMs": 37148,
+			"timestampMs": 36777,
+			"confidence": 1
+		},
+		{
+			"text": " Sie",
+			"startMs": 37392,
+			"endMs": 37496,
+			"timestampMs": 37444,
+			"confidence": 1
+		},
+		{
+			"text": " können",
+			"startMs": 37531,
+			"endMs": 37752,
+			"timestampMs": 37642,
+			"confidence": 1
+		},
+		{
+			"text": " helfen,",
+			"startMs": 37798,
+			"endMs": 38065,
+			"timestampMs": 37932,
+			"confidence": 1
+		},
+		{
+			"text": " Tatverdächtige",
+			"startMs": 38088,
+			"endMs": 38750,
+			"timestampMs": 38419,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 38797,
+			"endMs": 38866,
+			"timestampMs": 38832,
+			"confidence": 1
+		},
+		{
+			"text": " identifizieren.",
+			"startMs": 38924,
+			"endMs": 39899,
+			"timestampMs": 39412,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 40178,
+			"endMs": 40283,
+			"timestampMs": 40231,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 40317,
+			"endMs": 40724,
+			"timestampMs": 40521,
+			"confidence": 1
+		},
+		{
+			"text": " bittet",
+			"startMs": 40770,
+			"endMs": 41014,
+			"timestampMs": 40892,
+			"confidence": 1
+		},
+		{
+			"text": " Zeugen",
+			"startMs": 41049,
+			"endMs": 41374,
+			"timestampMs": 41212,
+			"confidence": 1
+		},
+		{
+			"text": " deshalb,",
+			"startMs": 41409,
+			"endMs": 41745,
+			"timestampMs": 41577,
+			"confidence": 1
+		},
+		{
+			"text": " Fotos",
+			"startMs": 41769,
+			"endMs": 42187,
+			"timestampMs": 41978,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 42245,
+			"endMs": 42338,
+			"timestampMs": 42292,
+			"confidence": 1
+		},
+		{
+			"text": " Videos",
+			"startMs": 42384,
+			"endMs": 42779,
+			"timestampMs": 42582,
+			"confidence": 1
+		},
+		{
+			"text": " freiwillig",
+			"startMs": 42825,
+			"endMs": 43197,
+			"timestampMs": 43011,
+			"confidence": 1
+		},
+		{
+			"text": " hochzuladen.",
+			"startMs": 43232,
+			"endMs": 44242,
+			"timestampMs": 43737,
+			"confidence": 1
+		},
+		{
+			"text": " Ein",
+			"startMs": 44392,
+			"endMs": 44566,
+			"timestampMs": 44479,
+			"confidence": 1
+		},
+		{
+			"text": " Zeugenaufruf",
+			"startMs": 44613,
+			"endMs": 45298,
+			"timestampMs": 44956,
+			"confidence": 1
+		},
+		{
+			"text": " heißt",
+			"startMs": 45332,
+			"endMs": 45518,
+			"timestampMs": 45425,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 45553,
+			"endMs": 45692,
+			"timestampMs": 45623,
+			"confidence": 1
+		},
+		{
+			"text": " nicht,",
+			"startMs": 45727,
+			"endMs": 45925,
+			"timestampMs": 45826,
+			"confidence": 1
+		},
+		{
+			"text": " dass",
+			"startMs": 45948,
+			"endMs": 46087,
+			"timestampMs": 46018,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 46122,
+			"endMs": 46192,
+			"timestampMs": 46157,
+			"confidence": 1
+		},
+		{
+			"text": " bei",
+			"startMs": 46238,
+			"endMs": 46366,
+			"timestampMs": 46302,
+			"confidence": 1
+		},
+		{
+			"text": " einer",
+			"startMs": 46401,
+			"endMs": 46563,
+			"timestampMs": 46482,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrolle",
+			"startMs": 46598,
+			"endMs": 46993,
+			"timestampMs": 46796,
+			"confidence": 1
+		},
+		{
+			"text": " deine",
+			"startMs": 47027,
+			"endMs": 47213,
+			"timestampMs": 47120,
+			"confidence": 1
+		},
+		{
+			"text": " Galerie",
+			"startMs": 47248,
+			"endMs": 47585,
+			"timestampMs": 47417,
+			"confidence": 1
+		},
+		{
+			"text": " öffnen",
+			"startMs": 47620,
+			"endMs": 47933,
+			"timestampMs": 47777,
+			"confidence": 1
+		},
+		{
+			"text": " musst.",
+			"startMs": 47968,
+			"endMs": 48711,
+			"timestampMs": 48340,
+			"confidence": 1
+		},
+		{
+			"text": " Jetzt",
+			"startMs": 49061,
+			"endMs": 49363,
+			"timestampMs": 49212,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 49386,
+			"endMs": 49467,
+			"timestampMs": 49427,
+			"confidence": 1
+		},
+		{
+			"text": " wichtige",
+			"startMs": 49514,
+			"endMs": 49804,
+			"timestampMs": 49659,
+			"confidence": 1
+		},
+		{
+			"text": " Punkt,",
+			"startMs": 49839,
+			"endMs": 50118,
+			"timestampMs": 49979,
+			"confidence": 1
+		},
+		{
+			"text": " Bruder:",
+			"startMs": 50141,
+			"endMs": 50570,
+			"timestampMs": 50356,
+			"confidence": 1
+		},
+		{
+			"text": " Bei",
+			"startMs": 50953,
+			"endMs": 51081,
+			"timestampMs": 51017,
+			"confidence": 1
+		},
+		{
+			"text": " einer",
+			"startMs": 51128,
+			"endMs": 51302,
+			"timestampMs": 51215,
+			"confidence": 1
+		},
+		{
+			"text": " Identitätskontrolle",
+			"startMs": 51348,
+			"endMs": 52428,
+			"timestampMs": 51888,
+			"confidence": 1
+		},
+		{
+			"text": " musst",
+			"startMs": 52474,
+			"endMs": 52648,
+			"timestampMs": 52561,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 52672,
+			"endMs": 52741,
+			"timestampMs": 52707,
+			"confidence": 1
+		},
+		{
+			"text": " deine",
+			"startMs": 52788,
+			"endMs": 52974,
+			"timestampMs": 52881,
+			"confidence": 1
+		},
+		{
+			"text": " Personalien",
+			"startMs": 53008,
+			"endMs": 53647,
+			"timestampMs": 53328,
+			"confidence": 1
+		},
+		{
+			"text": " angeben –",
+			"startMs": 53717,
+			"endMs": 54344,
+			"timestampMs": 54031,
+			"confidence": 1
+		},
+		{
+			"text": " dein",
+			"startMs": 54471,
+			"endMs": 54622,
+			"timestampMs": 54547,
+			"confidence": 1
+		},
+		{
+			"text": " Handy",
+			"startMs": 54680,
+			"endMs": 54924,
+			"timestampMs": 54802,
+			"confidence": 1
+		},
+		{
+			"text": " durchsuchen",
+			"startMs": 54959,
+			"endMs": 55551,
+			"timestampMs": 55255,
+			"confidence": 1
+		},
+		{
+			"text": " erlaubt",
+			"startMs": 55621,
+			"endMs": 55876,
+			"timestampMs": 55749,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 55899,
+			"endMs": 56015,
+			"timestampMs": 55957,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 56062,
+			"endMs": 56224,
+			"timestampMs": 56143,
+			"confidence": 1
+		},
+		{
+			"text": " automatisch.",
+			"startMs": 56271,
+			"endMs": 57420,
+			"timestampMs": 56846,
+			"confidence": 1
+		},
+		{
+			"text": " Fragt",
+			"startMs": 57570,
+			"endMs": 57802,
+			"timestampMs": 57686,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 57825,
+			"endMs": 57895,
+			"timestampMs": 57860,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 57930,
+			"endMs": 58336,
+			"timestampMs": 58133,
+			"confidence": 1
+		},
+		{
+			"text": " nur,",
+			"startMs": 58383,
+			"endMs": 58545,
+			"timestampMs": 58464,
+			"confidence": 1
+		},
+		{
+			"text": " ob",
+			"startMs": 58568,
+			"endMs": 58661,
+			"timestampMs": 58615,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 58719,
+			"endMs": 58789,
+			"timestampMs": 58754,
+			"confidence": 1
+		},
+		{
+			"text": " freiwillig",
+			"startMs": 58847,
+			"endMs": 59253,
+			"timestampMs": 59050,
+			"confidence": 1
+		},
+		{
+			"text": " Bilder",
+			"startMs": 59300,
+			"endMs": 59555,
+			"timestampMs": 59428,
+			"confidence": 1
+		},
+		{
+			"text": " zeigst,",
+			"startMs": 59613,
+			"endMs": 60043,
+			"timestampMs": 59828,
+			"confidence": 1
+		},
+		{
+			"text": " kannst",
+			"startMs": 60113,
+			"endMs": 60356,
+			"timestampMs": 60235,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 60380,
+			"endMs": 60449,
+			"timestampMs": 60415,
+			"confidence": 1
+		},
+		{
+			"text": " grundsätzlich",
+			"startMs": 60519,
+			"endMs": 61099,
+			"timestampMs": 60809,
+			"confidence": 1
+		},
+		{
+			"text": " Nein",
+			"startMs": 61181,
+			"endMs": 61425,
+			"timestampMs": 61303,
+			"confidence": 1
+		},
+		{
+			"text": " sagen.",
+			"startMs": 61494,
+			"endMs": 62214,
+			"timestampMs": 61854,
+			"confidence": 1
+		},
+		{
+			"text": " Bei",
+			"startMs": 62464,
+			"endMs": 62592,
+			"timestampMs": 62528,
+			"confidence": 1
+		},
+		{
+			"text": " Tatverdacht",
+			"startMs": 62627,
+			"endMs": 63149,
+			"timestampMs": 62888,
+			"confidence": 1
+		},
+		{
+			"text": " kann",
+			"startMs": 63195,
+			"endMs": 63335,
+			"timestampMs": 63265,
+			"confidence": 1
+		},
+		{
+			"text": " dein",
+			"startMs": 63370,
+			"endMs": 63532,
+			"timestampMs": 63451,
+			"confidence": 1
+		},
+		{
+			"text": " Handy",
+			"startMs": 63579,
+			"endMs": 63811,
+			"timestampMs": 63695,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 63869,
+			"endMs": 64043,
+			"timestampMs": 63956,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 64078,
+			"endMs": 64229,
+			"timestampMs": 64154,
+			"confidence": 1
+		},
+		{
+			"text": " Beweismittel",
+			"startMs": 64275,
+			"endMs": 64890,
+			"timestampMs": 64583,
+			"confidence": 1
+		},
+		{
+			"text": " sichergestellt",
+			"startMs": 64925,
+			"endMs": 65494,
+			"timestampMs": 65210,
+			"confidence": 1
+		},
+		{
+			"text": " werden,",
+			"startMs": 65529,
+			"endMs": 65901,
+			"timestampMs": 65715,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 66005,
+			"endMs": 66226,
+			"timestampMs": 66116,
+			"confidence": 1
+		},
+		{
+			"text": " gegen",
+			"startMs": 66272,
+			"endMs": 66574,
+			"timestampMs": 66423,
+			"confidence": 1
+		},
+		{
+			"text": " deinen",
+			"startMs": 66620,
+			"endMs": 66922,
+			"timestampMs": 66771,
+			"confidence": 1
+		},
+		{
+			"text": " Willen –",
+			"startMs": 66980,
+			"endMs": 67572,
+			"timestampMs": 67276,
+			"confidence": 1
+		},
+		{
+			"text": " angeordnet",
+			"startMs": 67816,
+			"endMs": 68385,
+			"timestampMs": 68101,
+			"confidence": 1
+		},
+		{
+			"text": " grundsätzlich",
+			"startMs": 68420,
+			"endMs": 69024,
+			"timestampMs": 68722,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 69058,
+			"endMs": 69198,
+			"timestampMs": 69128,
+			"confidence": 1
+		},
+		{
+			"text": " Gericht,",
+			"startMs": 69256,
+			"endMs": 69790,
+			"timestampMs": 69523,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 70069,
+			"endMs": 70161,
+			"timestampMs": 70115,
+			"confidence": 1
+		},
+		{
+			"text": " Eilfällen",
+			"startMs": 70243,
+			"endMs": 70823,
+			"timestampMs": 70533,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 70893,
+			"endMs": 71055,
+			"timestampMs": 70974,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 71090,
+			"endMs": 71230,
+			"timestampMs": 71160,
+			"confidence": 1
+		},
+		{
+			"text": " Staatsanwaltschaft",
+			"startMs": 71264,
+			"endMs": 72100,
+			"timestampMs": 71682,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 72135,
+			"endMs": 72286,
+			"timestampMs": 72211,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei.",
+			"startMs": 72321,
+			"endMs": 73331,
+			"timestampMs": 72826,
+			"confidence": 1
+		},
+		{
+			"text": " Deine",
+			"startMs": 73481,
+			"endMs": 73725,
+			"timestampMs": 73603,
+			"confidence": 1
+		},
+		{
+			"text": " PIN",
+			"startMs": 73760,
+			"endMs": 73922,
+			"timestampMs": 73841,
+			"confidence": 1
+		},
+		{
+			"text": " musst",
+			"startMs": 73969,
+			"endMs": 74154,
+			"timestampMs": 74062,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 74178,
+			"endMs": 74247,
+			"timestampMs": 74213,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 74305,
+			"endMs": 74410,
+			"timestampMs": 74358,
+			"confidence": 1
+		},
+		{
+			"text": " Beschuldigter",
+			"startMs": 74445,
+			"endMs": 74955,
+			"timestampMs": 74700,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 74990,
+			"endMs": 75164,
+			"timestampMs": 75077,
+			"confidence": 1
+		},
+		{
+			"text": " verraten.",
+			"startMs": 75199,
+			"endMs": 75838,
+			"timestampMs": 75519,
+			"confidence": 1
+		},
+		{
+			"text": " Per",
+			"startMs": 76221,
+			"endMs": 76372,
+			"timestampMs": 76297,
+			"confidence": 1
+		},
+		{
+			"text": " Fingerabdruck",
+			"startMs": 76418,
+			"endMs": 77138,
+			"timestampMs": 76778,
+			"confidence": 1
+		},
+		{
+			"text": " darf",
+			"startMs": 77347,
+			"endMs": 77614,
+			"timestampMs": 77481,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 77649,
+			"endMs": 77719,
+			"timestampMs": 77684,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 77800,
+			"endMs": 78009,
+			"timestampMs": 77905,
+			"confidence": 1
+		},
+		{
+			"text": " strengen",
+			"startMs": 78044,
+			"endMs": 78369,
+			"timestampMs": 78207,
+			"confidence": 1
+		},
+		{
+			"text": " Voraussetzungen",
+			"startMs": 78427,
+			"endMs": 79228,
+			"timestampMs": 78828,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 79298,
+			"endMs": 79530,
+			"timestampMs": 79414,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 79588,
+			"endMs": 79936,
+			"timestampMs": 79762,
+			"confidence": 1
+		},
+		{
+			"text": " gegen",
+			"startMs": 80215,
+			"endMs": 80470,
+			"timestampMs": 80343,
+			"confidence": 1
+		},
+		{
+			"text": " deinen",
+			"startMs": 80517,
+			"endMs": 80842,
+			"timestampMs": 80680,
+			"confidence": 1
+		},
+		{
+			"text": " Willen",
+			"startMs": 80900,
+			"endMs": 81190,
+			"timestampMs": 81045,
+			"confidence": 1
+		},
+		{
+			"text": " entsperrt",
+			"startMs": 81260,
+			"endMs": 81840,
+			"timestampMs": 81550,
+			"confidence": 1
+		},
+		{
+			"text": " werden –",
+			"startMs": 81910,
+			"endMs": 82734,
+			"timestampMs": 82322,
+			"confidence": 1
+		},
+		{
+			"text": " sagt",
+			"startMs": 83117,
+			"endMs": 83361,
+			"timestampMs": 83239,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 83384,
+			"endMs": 83477,
+			"timestampMs": 83431,
+			"confidence": 1
+		},
+		{
+			"text": " Bundesgerichtshof.",
+			"startMs": 83524,
+			"endMs": 85230,
+			"timestampMs": 84377,
+			"confidence": 1
+		},
+		{
+			"text": " Was",
+			"startMs": 85580,
+			"endMs": 85766,
+			"timestampMs": 85673,
+			"confidence": 1
+		},
+		{
+			"text": " sagst",
+			"startMs": 85789,
+			"endMs": 86033,
+			"timestampMs": 85911,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 86056,
+			"endMs": 86207,
+			"timestampMs": 86132,
+			"confidence": 1
+		},
+		{
+			"text": " also?",
+			"startMs": 86335,
+			"endMs": 86764,
+			"timestampMs": 86550,
+			"confidence": 1
+		},
+		{
+			"text": " Checkt",
+			"startMs": 87043,
+			"endMs": 87298,
+			"timestampMs": 87171,
+			"confidence": 1
+		},
+		{
+			"text": " mal:",
+			"startMs": 87356,
+			"endMs": 87798,
+			"timestampMs": 87577,
+			"confidence": 1
+		},
+		{
+			"text": " Bleib",
+			"startMs": 88123,
+			"endMs": 88355,
+			"timestampMs": 88239,
+			"confidence": 1
+		},
+		{
+			"text": " ruhig",
+			"startMs": 88401,
+			"endMs": 88691,
+			"timestampMs": 88546,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 88750,
+			"endMs": 88854,
+			"timestampMs": 88802,
+			"confidence": 1
+		},
+		{
+			"text": " frag:",
+			"startMs": 88900,
+			"endMs": 89446,
+			"timestampMs": 89173,
+			"confidence": 1
+		},
+		{
+			"text": " „Weshalb",
+			"startMs": 89655,
+			"endMs": 90120,
+			"timestampMs": 89888,
+			"confidence": 1
+		},
+		{
+			"text": " werde",
+			"startMs": 90154,
+			"endMs": 90363,
+			"timestampMs": 90259,
+			"confidence": 1
+		},
+		{
+			"text": " ich",
+			"startMs": 90398,
+			"endMs": 90479,
+			"timestampMs": 90439,
+			"confidence": 1
+		},
+		{
+			"text": " kontrolliert?“",
+			"startMs": 90526,
+			"endMs": 91397,
+			"timestampMs": 90962,
+			"confidence": 1
+		},
+		{
+			"text": " Und:",
+			"startMs": 91640,
+			"endMs": 92116,
+			"timestampMs": 91878,
+			"confidence": 1
+		},
+		{
+			"text": " „Ist",
+			"startMs": 92558,
+			"endMs": 92859,
+			"timestampMs": 92709,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 92883,
+			"endMs": 93022,
+			"timestampMs": 92953,
+			"confidence": 1
+		},
+		{
+			"text": " freiwillig",
+			"startMs": 93080,
+			"endMs": 93695,
+			"timestampMs": 93388,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 93753,
+			"endMs": 93974,
+			"timestampMs": 93864,
+			"confidence": 1
+		},
+		{
+			"text": " angeordnet?“",
+			"startMs": 94020,
+			"endMs": 95286,
+			"timestampMs": 94653,
+			"confidence": 1
+		},
+		{
+			"text": " Ist",
+			"startMs": 95436,
+			"endMs": 95668,
+			"timestampMs": 95552,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 95715,
+			"endMs": 95773,
+			"timestampMs": 95744,
+			"confidence": 1
+		},
+		{
+			"text": " freiwillig,",
+			"startMs": 95819,
+			"endMs": 96318,
+			"timestampMs": 96069,
+			"confidence": 1
+		},
+		{
+			"text": " reicht:",
+			"startMs": 96353,
+			"endMs": 96829,
+			"timestampMs": 96591,
+			"confidence": 1
+		},
+		{
+			"text": " „Dann",
+			"startMs": 96980,
+			"endMs": 97236,
+			"timestampMs": 97108,
+			"confidence": 1
+		},
+		{
+			"text": " möchte",
+			"startMs": 97282,
+			"endMs": 97549,
+			"timestampMs": 97416,
+			"confidence": 1
+		},
+		{
+			"text": " ich",
+			"startMs": 97584,
+			"endMs": 97665,
+			"timestampMs": 97625,
+			"confidence": 1
+		},
+		{
+			"text": " meine",
+			"startMs": 97712,
+			"endMs": 97909,
+			"timestampMs": 97811,
+			"confidence": 1
+		},
+		{
+			"text": " Bilder",
+			"startMs": 97944,
+			"endMs": 98188,
+			"timestampMs": 98066,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 98222,
+			"endMs": 98397,
+			"timestampMs": 98310,
+			"confidence": 1
+		},
+		{
+			"text": " zeigen.“",
+			"startMs": 98431,
+			"endMs": 99105,
+			"timestampMs": 98768,
+			"confidence": 1
+		},
+		{
+			"text": " Keine",
+			"startMs": 99255,
+			"endMs": 99487,
+			"timestampMs": 99371,
+			"confidence": 1
+		},
+		{
+			"text": " Beleidigung,",
+			"startMs": 99522,
+			"endMs": 100149,
+			"timestampMs": 99836,
+			"confidence": 1
+		},
+		{
+			"text": " keine",
+			"startMs": 100300,
+			"endMs": 100497,
+			"timestampMs": 100399,
+			"confidence": 1
+		},
+		{
+			"text": " Gegenwehr,",
+			"startMs": 100544,
+			"endMs": 101182,
+			"timestampMs": 100863,
+			"confidence": 1
+		},
+		{
+			"text": " nichts",
+			"startMs": 101287,
+			"endMs": 101519,
+			"timestampMs": 101403,
+			"confidence": 1
+		},
+		{
+			"text": " löschen.",
+			"startMs": 101565,
+			"endMs": 101960,
+			"timestampMs": 101763,
+			"confidence": 1
+		},
+		{
+			"text": " Hältst",
+			"startMs": 102343,
+			"endMs": 102564,
+			"timestampMs": 102454,
+			"confidence": 1
+		},
+		{
+			"text": " du",
+			"startMs": 102587,
+			"endMs": 102634,
+			"timestampMs": 102611,
+			"confidence": 1
+		},
+		{
+			"text": " etwas",
+			"startMs": 102680,
+			"endMs": 102854,
+			"timestampMs": 102767,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 102889,
+			"endMs": 102993,
+			"timestampMs": 102941,
+			"confidence": 1
+		},
+		{
+			"text": " falsch,",
+			"startMs": 103040,
+			"endMs": 103516,
+			"timestampMs": 103278,
+			"confidence": 1
+		},
+		{
+			"text": " lass",
+			"startMs": 103841,
+			"endMs": 103980,
+			"timestampMs": 103911,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 104015,
+			"endMs": 104073,
+			"timestampMs": 104044,
+			"confidence": 1
+		},
+		{
+			"text": " später",
+			"startMs": 104096,
+			"endMs": 104421,
+			"timestampMs": 104259,
+			"confidence": 1
+		},
+		{
+			"text": " prüfen –",
+			"startMs": 104456,
+			"endMs": 104921,
+			"timestampMs": 104689,
+			"confidence": 1
+		},
+		{
+			"text": " etwa",
+			"startMs": 105362,
+			"endMs": 105571,
+			"timestampMs": 105467,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 105606,
+			"endMs": 105699,
+			"timestampMs": 105653,
+			"confidence": 1
+		},
+		{
+			"text": " einem",
+			"startMs": 105745,
+			"endMs": 105919,
+			"timestampMs": 105832,
+			"confidence": 1
+		},
+		{
+			"text": " Anwalt.",
+			"startMs": 105989,
+			"endMs": 106825,
+			"timestampMs": 106407,
+			"confidence": 1
+		},
+		{
+			"text": " Klar,",
+			"startMs": 107175,
+			"endMs": 107628,
+			"timestampMs": 107402,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 107663,
+			"endMs": 107755,
+			"timestampMs": 107709,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 107790,
+			"endMs": 108139,
+			"timestampMs": 107965,
+			"confidence": 1
+		},
+		{
+			"text": " soll",
+			"startMs": 108173,
+			"endMs": 108290,
+			"timestampMs": 108232,
+			"confidence": 1
+		},
+		{
+			"text": " Straftaten",
+			"startMs": 108324,
+			"endMs": 108858,
+			"timestampMs": 108591,
+			"confidence": 1
+		},
+		{
+			"text": " aufklären.",
+			"startMs": 108916,
+			"endMs": 109462,
+			"timestampMs": 109189,
+			"confidence": 1
+		},
+		{
+			"text": " Aber",
+			"startMs": 109648,
+			"endMs": 109857,
+			"timestampMs": 109753,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 109892,
+			"endMs": 110043,
+			"timestampMs": 109968,
+			"confidence": 1
+		},
+		{
+			"text": " junge",
+			"startMs": 110124,
+			"endMs": 110345,
+			"timestampMs": 110235,
+			"confidence": 1
+		},
+		{
+			"text": " Leute",
+			"startMs": 110379,
+			"endMs": 110658,
+			"timestampMs": 110519,
+			"confidence": 1
+		},
+		{
+			"text": " haben",
+			"startMs": 110693,
+			"endMs": 110902,
+			"timestampMs": 110798,
+			"confidence": 1
+		},
+		{
+			"text": " Rechte –",
+			"startMs": 110937,
+			"endMs": 111436,
+			"timestampMs": 111187,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 111540,
+			"endMs": 111656,
+			"timestampMs": 111598,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 111691,
+			"endMs": 111854,
+			"timestampMs": 111773,
+			"confidence": 1
+		},
+		{
+			"text": " jeder",
+			"startMs": 111900,
+			"endMs": 112063,
+			"timestampMs": 111982,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 112098,
+			"endMs": 112202,
+			"timestampMs": 112150,
+			"confidence": 1
+		},
+		{
+			"text": " seinen",
+			"startMs": 112237,
+			"endMs": 112481,
+			"timestampMs": 112359,
+			"confidence": 1
+		},
+		{
+			"text": " Jungs",
+			"startMs": 112516,
+			"endMs": 112725,
+			"timestampMs": 112621,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 112771,
+			"endMs": 112852,
+			"timestampMs": 112812,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 112887,
+			"endMs": 112980,
+			"timestampMs": 112934,
+			"confidence": 1
+		},
+		{
+			"text": " Zeil",
+			"startMs": 113038,
+			"endMs": 113410,
+			"timestampMs": 113224,
+			"confidence": 1
+		},
+		{
+			"text": " hat",
+			"startMs": 113619,
+			"endMs": 113758,
+			"timestampMs": 113689,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 113793,
+			"endMs": 113909,
+			"timestampMs": 113851,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 113944,
+			"endMs": 114036,
+			"timestampMs": 113990,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween",
+			"startMs": 114071,
+			"endMs": 114396,
+			"timestampMs": 114234,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 114443,
+			"endMs": 114524,
+			"timestampMs": 114484,
+			"confidence": 1
+		},
+		{
+			"text": " tun.",
+			"startMs": 114571,
+			"endMs": 115070,
+			"timestampMs": 114821,
+			"confidence": 1
+		},
+		{
+			"text": " Ewa,",
+			"startMs": 115420,
+			"endMs": 115675,
+			"timestampMs": 115548,
+			"confidence": 1
+		},
+		{
+			"text": " jetzt",
+			"startMs": 115710,
+			"endMs": 115873,
+			"timestampMs": 115792,
+			"confidence": 1
+		},
+		{
+			"text": " wisst",
+			"startMs": 115896,
+			"endMs": 116070,
+			"timestampMs": 115983,
+			"confidence": 1
+		},
+		{
+			"text": " ihr",
+			"startMs": 116105,
+			"endMs": 116186,
+			"timestampMs": 116146,
+			"confidence": 1
+		},
+		{
+			"text": " Bescheid.",
+			"startMs": 116221,
+			"endMs": 116720,
+			"timestampMs": 116471,
+			"confidence": 1
+		},
+		{
+			"text": " Mehr",
+			"startMs": 116871,
+			"endMs": 117057,
+			"timestampMs": 116964,
+			"confidence": 1
+		},
+		{
+			"text": " Sicherheit",
+			"startMs": 117092,
+			"endMs": 117510,
+			"timestampMs": 117301,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 117556,
+			"endMs": 117672,
+			"timestampMs": 117614,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 117719,
+			"endMs": 117800,
+			"timestampMs": 117760,
+			"confidence": 1
+		},
+		{
+			"text": " viel",
+			"startMs": 117858,
+			"endMs": 117974,
+			"timestampMs": 117916,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrolle?",
+			"startMs": 118009,
+			"endMs": 118485,
+			"timestampMs": 118247,
+			"confidence": 1
+		},
+		{
+			"text": " Schreibt's",
+			"startMs": 118613,
+			"endMs": 118926,
+			"timestampMs": 118770,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 118961,
+			"endMs": 119007,
+			"timestampMs": 118984,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 119042,
+			"endMs": 119112,
+			"timestampMs": 119077,
+			"confidence": 1
+		},
+		{
+			"text": " Kommentare!",
+			"startMs": 119147,
+			"endMs": 119739,
+			"timestampMs": 119443,
+			"confidence": 1
+		},
+		{
+			"text": " Danke",
+			"startMs": 120339,
+			"endMs": 120676,
+			"timestampMs": 120508,
+			"confidence": 1
+		},
+		{
+			"text": " fürs",
+			"startMs": 120711,
+			"endMs": 120861,
+			"timestampMs": 120786,
+			"confidence": 1
+		},
+		{
+			"text": " Zusehen –",
+			"startMs": 120919,
+			"endMs": 121430,
+			"timestampMs": 121175,
+			"confidence": 1
+		},
+		{
+			"text": " Plus",
+			"startMs": 121465,
+			"endMs": 121674,
+			"timestampMs": 121570,
+			"confidence": 1
+		},
+		{
+			"text": " wegmachen",
+			"startMs": 121721,
+			"endMs": 122104,
+			"timestampMs": 121913,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 122139,
+			"endMs": 122313,
+			"timestampMs": 122226,
+			"confidence": 1
+		},
+		{
+			"text": " vergessen!",
+			"startMs": 122348,
+			"endMs": 122940,
+			"timestampMs": 122644,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-07T11:45:42.409Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.16
+		},
+		"seed": 20261104,
+		"characters": 2071
+	},
+	"measuredLufsBeforeMaster": -13.69
+}
