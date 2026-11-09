@@ -3,23 +3,23 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 200,
-	"tailMs": 400,
+	"tailMs": 250,
 	"maxDurationMs": 60000,
 	"voice": {
 		"engine": "elevenlabs",
-		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro, 1–2 Slang-Ausdrücke („Ewa, Frankfurt!“ – Aussprache in Hörprobe #13 geprüft). Erste Vertonung 62,8 s → Nummerierung nur im Bild, Pausen gekürzt (Format-Grenze 60 s)."
+		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro, 1–2 Slang-Ausdrücke („Ewa, Frankfurt!“ – Aussprache in Hörprobe #13 geprüft). Erste Vertonung 62,8 s → Nummerierung nur im Bild, Pausen gekürzt; zweite 56,7 s → Atempausen an den Szenenschnitten (nur Stille, keine neuen Credits) → ≈ 59 s."
 	},
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 80},
-		{"id": "hook2", "text": "Du filmst nur auf einer Demo – plötzlich fliegen Flaschen. Kriegst du jetzt Stress?", "pauseAfterMs": 150},
-		{"id": "demo1", "text": "Friedlich demonstrieren ist dein Recht.", "pauseAfterMs": 60},
-		{"id": "demo2", "text": "Randaliert jemand neben dir, bist du nicht automatisch strafbar. Für Landfriedensbruch zählt, ob du mitmachst, unterstützt oder anstachelst.", "pauseAfterMs": 150},
-		{"id": "film1", "text": "Auf einer öffentlichen Demo filmen ist grundsätzlich erlaubt, auch Polizeieinsätze – aber behinder niemanden.", "pauseAfterMs": 60},
-		{"id": "film2", "text": "Beim Hochladen aufpassen: Erkennbare Leute und private Gespräche können problematisch sein.", "pauseAfterMs": 150},
-		{"id": "pol1", "text": "Die Polizei kann dich unter gesetzlichen Voraussetzungen kontrollieren, auch als Zeuge.", "pauseAfterMs": 60},
-		{"id": "pol2", "text": "Deine Videos können Beweise sein, unter Umständen wird dein Handy sichergestellt – das erlaubt aber nicht automatisch, deine ganze Galerie zu durchsuchen.", "pauseAfterMs": 150},
-		{"id": "end1", "text": "Wird die Versammlung aufgelöst, musst du dich unverzüglich entfernen.", "pauseAfterMs": 150},
-		{"id": "fazit", "text": "Fazit: Bleib ruhig, halt Abstand zur Gewalt und frag sachlich nach dem Kontrollgrund.", "pauseAfterMs": 120},
+		{"id": "hook2", "text": "Du filmst nur auf einer Demo – plötzlich fliegen Flaschen. Kriegst du jetzt Stress?", "pauseAfterMs": 450},
+		{"id": "demo1", "text": "Friedlich demonstrieren ist dein Recht.", "pauseAfterMs": 160},
+		{"id": "demo2", "text": "Randaliert jemand neben dir, bist du nicht automatisch strafbar. Für Landfriedensbruch zählt, ob du mitmachst, unterstützt oder anstachelst.", "pauseAfterMs": 400},
+		{"id": "film1", "text": "Auf einer öffentlichen Demo filmen ist grundsätzlich erlaubt, auch Polizeieinsätze – aber behinder niemanden.", "pauseAfterMs": 160},
+		{"id": "film2", "text": "Beim Hochladen aufpassen: Erkennbare Leute und private Gespräche können problematisch sein.", "pauseAfterMs": 400},
+		{"id": "pol1", "text": "Die Polizei kann dich unter gesetzlichen Voraussetzungen kontrollieren, auch als Zeuge.", "pauseAfterMs": 200},
+		{"id": "pol2", "text": "Deine Videos können Beweise sein, unter Umständen wird dein Handy sichergestellt – das erlaubt aber nicht automatisch, deine ganze Galerie zu durchsuchen.", "pauseAfterMs": 450},
+		{"id": "end1", "text": "Wird die Versammlung aufgelöst, musst du dich unverzüglich entfernen.", "pauseAfterMs": 450},
+		{"id": "fazit", "text": "Fazit: Bleib ruhig, halt Abstand zur Gewalt und frag sachlich nach dem Kontrollgrund.", "pauseAfterMs": 350},
 		{"id": "outro", "text": "Frankfurt erklärt in {60|sechzig} Sekunden – folgt für mehr!", "pauseAfterMs": 0}
 	]
 }

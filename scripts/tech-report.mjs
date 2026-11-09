@@ -127,6 +127,12 @@ const checks = [
 	['Audio-Codec AAC', r.audio?.codec === 'aac', r.audio ? `${r.audio.codec} ${r.audio.sampleRate} Hz, ${r.audio.channels} ch, ${r.audio.bitrateKbps} kbit/s` : 'keine Tonspur'],
 	['Faststart (moov vor mdat)', r.faststart, boxes.join(' → ')],
 ];
+// Formatgrenze (z. B. „Frankfurt erklärt in 60 Sekunden“): Datei darf nicht länger sein – inkl. Intro und Outro
+if (args['max-seconds'] !== undefined) {
+	const max = Number(args['max-seconds']);
+	r.maxSeconds = max;
+	checks.push([`Länge ≤ ${max} s (Formatgrenze, inkl. Intro/Outro)`, r.durationSeconds <= max && r.video.frames <= max * 30, `${r.durationSeconds} s · ${r.video.frames} Frames (max. ${max * 30})`]);
+}
 if (r.audioIdentity) {
 	checks.push(['Tonspur identisch mit Original (PCM, Sample für Sample)', r.audioIdentity.identical, r.audioIdentity.identical ? '0 abweichende Samples' : `${r.audioIdentity.differingSamples} Samples abweichend, max |Δ| ${r.audioIdentity.maxAbsDifference}, RMS Δ ${r.audioIdentity.rmsDifferenceDbfs} dBFS`]);
 }

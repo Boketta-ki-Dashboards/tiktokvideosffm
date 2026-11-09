@@ -9,6 +9,14 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**Neues Format „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN“ – #01 „Nur gefilmt – trotzdem Ärger?“** (Komposition `FrankfurtErklaertDemoFilmen`,
+Stimme ElevenLabs Adam, Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4`, 58,9 s ≤ 60 s): was gilt, wenn du auf einer Demo nur mitläufst
+und filmst – Art. 8 GG, § 125 StGB, Filmen vs. Posten (§§ 22, 23 KUG, § 201 StGB), Kontrolle/Beweismittel/Galerie (§§ 94, 98, 110, 163b StPO),
+Auflösung (§ 14 HVersFG). Wiederverwendbares Formatsystem in `src/formats/frankfurt-erklaert/`, 60-s-Grenze wird in Timeline, Tests und Workflow geprüft.
+Quellen: [`references/frankfurt-erklaert-01-demo-filmen/sources.md`](references/frankfurt-erklaert-01-demo-filmen/sources.md) ·
+Drehbuch: [`drehbuch.md`](references/frankfurt-erklaert-01-demo-filmen/drehbuch.md) ·
+TikTok-Texte: [`tiktok-text.md`](references/frankfurt-erklaert-01-demo-filmen/tiktok-text.md)
+
 **„Polizei will deine Galerie sehen – musst du das?“** (Komposition `FrankfurtPoliceRights`, Stimme ElevenLabs Adam,
 Export `FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL.mp4`, 123 s): verstärkte Kontrollen auf der Zeil, warum Fotos/Videos für Ermittlungen
 wichtig sind, Zeugenaufruf ≠ Pflicht, freiwillige Bitte vs. angeordnete Maßnahme, PIN vs. Fingerabdruck (BGH 2025) und Sätze für eine ruhige Kontrolle.

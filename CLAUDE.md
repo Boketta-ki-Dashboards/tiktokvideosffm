@@ -142,6 +142,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
+| `FrankfurtErklaertDemoFilmen` | `src/videos/frankfurt-erklaert-01-demo-filmen/` (+ Formatsystem `src/formats/frankfurt-erklaert/`) | **Format B** „Frankfurt erklärt in 60 Sekunden“ #01 „Nur gefilmt – trotzdem Ärger?“: Art. 8 GG, § 125 StGB (eigene Beteiligung), Filmen grundsätzlich erlaubt vs. Veröffentlichen (§§ 22, 23 KUG, § 201 StGB), Kontrolle auch als Zeuge (§ 163b Abs. 2 StPO), Beweismittel/Sicherstellung (§§ 94, 98 StPO) ≠ automatische Galerie-Durchsicht (§ 110 StPO), Auflösung → unverzüglich entfernen (§ 14 Abs. 7 HVersFG); VG Frankfurt 2025 nicht verifizierbar → nicht verwendet; 58,9 s (1.768 Frames); Tests `tests/erklaert-demo-filmen.test.ts` + `tests/erklaert-format.test.ts`; Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4` |
 | `FrankfurtPoliceRights` | `src/videos/frankfurt-2026-11-polizeikontrollen/` | „Polizei will deine Galerie sehen – musst du das?“: verstärkte Kontrollen auf der Zeil (hessenschau), Schilderung eines Stadtverordneten (nicht bestätigt), Zeugenaufruf ≠ Pflicht, freiwillige Bitte vs. angeordnete Maßnahme (§ 18 HSOG, §§ 94, 98, 110, 163b StPO, BGH 2 StR 232/24), Tipps für Kontrollen; Kategorien OFFIZIELL · BERICHT · SCHILDERUNG · RECHT · TIPP; leichter Frankfurter Slang (≈ 4 Ausdrücke, nur Wortwahl); 2,5D-Zeil (`visuals/ZeilStreet`), Smartphone-UI, Figuren; Tests `tests/polizeirechte.test.ts`; Export `FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL.mp4` |
 | `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): **V2:** kurzer Ablauf + Bilanz, virale Bilder (Batman mit Selbstdarstellung des Accounts @ichbinyounes – nie als Festgenommener/Täter, kein Gesicht; Meme „3 linke Schuhe“ als anonyme Illustration), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4` |
 | `FrankfurtNov20Forecast` | `src/videos/frankfurt-2026-11-20-ausblick/` | Ausblick „20. November – wieder Eskalation?“: Halloween-Faktor, Polizei (angekündigt), Läden (möglich), Fazit als Einschätzung, Plot-Twist mit erfundener Firma (als FIKTION markiert), Kommentarfrage; jede Aussage mit Status FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FIKTION (Tests: `tests/nov20.test.ts`), Export `FrankfurtRed3_20November_Ausblick_ADAM_FINAL.mp4` |
@@ -150,6 +151,32 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 | `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
 | `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |
 
+## Formate (dauerhaft)
+
+- **Format A – Hintergrund/News (bisherige Folgen):** 20–130 s, Thema/Ereignis im Mittelpunkt, freie Szenenzahl, Kategorien-Chips je Video,
+  Outro aus Folge 2. Bisherige Folgen werden nicht nachträglich verändert (neue Fassungen nur als eigene Komposition).
+- **Format B – „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN“** (Marke FrankfurtRed3, `src/formats/frankfurt-erklaert/`):
+  - Eine Frage pro Folge; **max. 60 s = 1.800 Frames bei 30 fps inkl. Intro und Outro**, Ziel 56–59,5 s.
+  - Eintrag in `config/videos.json` mit `"format": "frankfurt-erklaert-60", "maxSeconds": 60`.
+  - Aufbau: Format-Intro (`IntroSting`, unter „Ewa, Frankfurt!“) → Hook mit Frage-Plakette → 3–4 Kapitel mit Nummer im Bild (`ChapterTitle`;
+    Nummerierung NICHT im Ton) → Fazit → `ShortOutro` (≤ 95 Frames).
+  - Durchgehend `FormatBadge` (60-s-Ring), Untertitel, leises Musikbett, Whoosh an Schnitten.
+  - Bausteine:
+    - Rahmen und Kurzkarten: `ErklaertFrame`, `InfoCard`, `LawChip`, `Equation` (≠ / =, `layout="compact"`), `SourceBar`, `Pop`.
+    - Bildszenen: `CameraPhone`/`CameraOverlay` (Aufnehmen vs. Veröffentlichen), `DemoStreet` (2,5D-Demo, Hervorhebung, abstrakte Konfliktzone, Auseinandergehen),
+      `IsoCity` (erhöhte Stadtansicht, allgemeine Pfeile).
+  - Eine Folge liefert nur `content.ts`, `plan.ts`, `scenes/`, eine `ErklaertEpisode` + Cover.
+  - Höchstens 1–2 Slang-Ausdrücke. Bei Rechtsthemen „Allgemeine Info, keine Rechtsberatung · Stand“ im Bild; Szenen als „ILLUSTRATION“ kennzeichnen.
+  - Gewalt nur abstrakt (Lichtschein, Flugbahnen); keine Taktiken, Fluchtwege oder Absperrungen; nie Widerstand gegen Maßnahmen nahelegen.
+  - **60-s-Grenze vierfach geprüft:**
+    1. `enforceMaxFrames` (`src/formats/frankfurt-erklaert/timeline.ts`) kürzt automatisch den stummen Nachlauf bzw. bricht ab, wenn schon die Stimme
+       zu lang ist (mit Angabe, um wie viel gekürzt werden muss).
+    2. `tests/erklaert-format.test.ts` gilt für jede Folge mit `maxSeconds`.
+    3. Workflow: `render.mjs --max` (verify).
+    4. Workflow: `tech-report.mjs --max-seconds` (FFprobe am fertigen MP4).
+  - Korrektur bei Überlänge: Sprechertext kürzen (nur geänderte Sätze werden neu vertont). Reine Pausen-Änderungen offline aus dem Cache:
+    `node scripts/voice/elevenlabs-tts.mjs --video <id> --offline` (0 Credits).
+
 ## Projektstruktur
 
 ```
@@ -157,6 +184,7 @@ src/
   components/   wiederverwendbare Bausteine (backgrounds, characters, map, media, infographics,
                 camera, transitions, text, subtitles, audio, layout)
   lib/          Animation, Farben, Format, Skript-Timing, Szenenplan
+  formats/      Formatsysteme (z. B. frankfurt-erklaert = Format B „in 60 Sekunden“: Rahmen, Branding, Karten, Visuals)
   theme/        Design-Tokens, Schriften
   videos/<id>/  ein Ordner pro Video: script.json, voiceover.json, content.ts, scenes/, Komposition
   showcase/     Vorschau aller Bausteine (Platzhalter)

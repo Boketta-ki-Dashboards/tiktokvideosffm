@@ -46,11 +46,31 @@ import {
 	policeRightsSchema,
 } from './videos/frankfurt-2026-11-polizeikontrollen/FrankfurtPoliceRights';
 import {FrankfurtPoliceRightsCover} from './videos/frankfurt-2026-11-polizeikontrollen/FrankfurtPoliceRightsCover';
+import {
+	calculateErklaertDemoFilmenMetadata,
+	erklaertDemoFilmenDefaultProps,
+	erklaertDemoFilmenSchema,
+	FrankfurtErklaertDemoFilmen,
+} from './videos/frankfurt-erklaert-01-demo-filmen/FrankfurtErklaertDemoFilmen';
+import {FrankfurtErklaertDemoFilmenCover} from './videos/frankfurt-erklaert-01-demo-filmen/FrankfurtErklaertDemoFilmenCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B „Frankfurt erklärt in 60 Sekunden“ #01 – Nur gefilmt – trotzdem Ärger? (max. 1.800 Frames) */}
+				<Composition
+					id="FrankfurtErklaertDemoFilmen"
+					component={FrankfurtErklaertDemoFilmen}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertDemoFilmenSchema}
+					defaultProps={erklaertDemoFilmenDefaultProps}
+					calculateMetadata={calculateErklaertDemoFilmenMetadata}
+				/>
+				<Still id="FrankfurtErklaertDemoFilmen-Cover" component={FrankfurtErklaertDemoFilmenCover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Polizeikontrollen auf der Zeil – musst du dein Handy zeigen? */}
 				<Composition
 					id="FrankfurtPoliceRights"

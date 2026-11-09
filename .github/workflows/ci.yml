@@ -47,6 +47,8 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtNov20Forecast-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium --frames 0,150,500,1000,1600,2200,2700,3000 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertDemoFilmen --frames 0,180,400,520,700,880,1100,1290,1420,1580,1720 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertDemoFilmen-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtPoliceRights --frames 0,200,600,1100,1800,2300,2800,3300,3550 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtPoliceRights-Cover --scale 0.5
 

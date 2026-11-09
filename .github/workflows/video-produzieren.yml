@@ -97,7 +97,10 @@ jobs:
           VGL=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.mit // empty' config/videos.json)
           VGL_PLAN=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.plan // empty' config/videos.json)
           VGL_EXPORT=$(jq -r --arg v "$VIDEO" '.[$v].vergleich.export // empty' config/videos.json)
+          # Formatgrenze (z. B. „Frankfurt erklärt in 60 Sekunden“): wird vor dem Rendern (Test/Timeline) und am fertigen MP4 geprüft
+          MAXS=$(jq -r --arg v "$VIDEO" '.[$v].maxSeconds // empty' config/videos.json)
           {
+            echo "max_seconds=$MAXS"
             echo "video=$VIDEO"; echo "video_id=$VIDEO_ID"; echo "out=$OUT"
             echo "aktion=$AKTION"; echo "stimme=$STIMME"; echo "speichern=$SPEICHERN"
             echo "vergleich=$VGL"; echo "vergleich_plan=$VGL_PLAN"; echo "vergleich_export=$VGL_EXPORT"
@@ -200,7 +203,8 @@ jobs:
         run: |
           node scripts/render.mjs "${{ steps.job.outputs.video }}" \
             --out "output/${{ steps.job.outputs.out }}.mp4" \
-            --json "output/${{ steps.job.outputs.out }}.report.json"
+            --json "output/${{ steps.job.outputs.out }}.report.json" \
+            ${{ steps.job.outputs.max_seconds != '' && format('--max {0}', steps.job.outputs.max_seconds) || '' }}
 
       - name: Cover-Bild rendern
         if: steps.job.outputs.aktion == 'video'
@@ -230,6 +234,7 @@ jobs:
         run: |
           REF=""
           if [ -n "${{ steps.job.outputs.vergleich }}" ]; then REF="--audio-ref output/${{ steps.job.outputs.vergleich }}.ton.m4a"; fi
+          if [ -n "${{ steps.job.outputs.max_seconds }}" ]; then REF="$REF --max-seconds ${{ steps.job.outputs.max_seconds }}"; fi
           node scripts/tech-report.mjs "output/${{ steps.job.outputs.out }}.mp4" $REF \
             --voice "public/voiceover/${{ steps.job.outputs.video_id }}/voiceover-adam.mp3" \
             --title "${{ steps.job.outputs.out }}" \
