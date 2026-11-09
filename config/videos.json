@@ -1,5 +1,6 @@
 {
 	"$comment": "Auswählbare Videos für den Workflow „Video produzieren“: Komposition → Video-Ordner und Name der fertigen MP4.",
+	"FrankfurtErklaertDemoFilmen": {"videoId": "frankfurt-erklaert-01-demo-filmen", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "outputName": "FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL"},
 	"FrankfurtPoliceRights": {"videoId": "frankfurt-2026-11-polizeikontrollen", "folge": null, "outputName": "FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL"},
 	"FrankfurtNov20ForecastPremium": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL", "vergleich": {"mit": "FrankfurtNov20Forecast", "plan": "plan.ts", "export": "NOV20_SCENES"}},
 	"FrankfurtNov20Forecast": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_FINAL"},

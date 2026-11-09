@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaertDemoFilmen
           - FrankfurtPoliceRights
           - FrankfurtNov20Forecast
           - FrankfurtNov20ForecastPremium
