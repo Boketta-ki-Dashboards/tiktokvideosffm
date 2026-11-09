@@ -6,7 +6,9 @@
 |---|---|---|
 | #16 (`nur-stimme`) | 11 Sätze, 965 Zeichen | **62,8 s – über der Formatgrenze.** Ursache: gesprochene Nummerierung („Erstens/Zweitens/Drittens“, „Wichtig:“) + Pausen. |
 | #17 (`nur-stimme`) | Nummerierung nur noch im Bild (Kapitelnummern), Pausen gekürzt → 4 Sätze neu (≈ 304 Credits), 7 aus dem Cache | 56,7 s |
-| lokal, `--offline` (0 Credits) | Atempausen an den Szenenschnitten (nur Stille aus dem Cache neu zusammengesetzt), Nachlauf 250 ms | **58,70 s Sprechzeit → 1.768 Frames = 58,93 s** inkl. Intro/Outro (Grenze 1.800) |
+| lokal, `--offline` (0 Credits) | Atempausen an den Szenenschnitten (nur Stille aus dem Cache neu zusammengesetzt) | **58,70 s Sprechzeit** |
+| #18 (`video`, `stimme: vorhanden`) | Render mit Nachlauf 250 ms → 58,94 s | Render + verify-video grün, aber **check-sync rot**: „Stimme vollständig im Video“ verlangt Video ≥ Sprecher-MP3 (58,73 s) + 0,3 s – nur 0,21 s. |
+| Korrektur | Nachlauf 400 ms (Test `erklaert-format` prüft künftig ≥ 350 ms), Outro-Grenze 100 Frames | **1.773 Frames = 59,10 s** inkl. Intro/Outro (Grenze 1.800) |
 
 - Adam `pNInz6obpgDQGcFmaJgB`, speed 1.16, stability 0.45, similarity 0.8, style 0.2, seed 20261104 – unverändert (Test).
 - Slang: nur „Ewa, Frankfurt!“ (+ umgangssprachlich „Stress“) – Aussprache bereits in Hörprobe #13 geprüft (fallende Grußmelodie mit Ausrufezeichen),

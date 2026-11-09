@@ -9,8 +9,8 @@ export const FORMAT = {
 	fps: 30,
 	maxSeconds: 60,
 	maxFrames: 1800,
-	/** Outro-Länge (Format-Outro, max. ≈ 3 s). */
-	outroMaxFrames: 95,
+	/** Outro-Länge ab Schnitt (≈ 3,3 s = Schluss-Satz ≈ 2,8 s + Ausklang ≥ 0,3 s, den check-sync nach der Stimme verlangt). */
+	outroMaxFrames: 100,
 } as const;
 
 /** Akzentfarben des Formats (konsistent über alle Folgen). */

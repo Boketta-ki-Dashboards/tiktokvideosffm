@@ -22,6 +22,8 @@ for (const [comp, v] of limited) {
 		const dir = `../src/videos/${v.videoId}/`;
 		const script = JSON.parse(read(`${dir}script.json`));
 		assert.ok(script.maxDurationMs <= FORMAT.maxSeconds * 1000, 'maxDurationMs über der Formatgrenze');
+		// check-sync verlangt: Video ≥ Sprecher-MP3 + 0,3 s (MP3 ist ≈ 30 ms länger als das Manifest) → Nachlauf ≥ 350 ms
+		assert.ok(script.tailMs >= 350, `tailMs ${script.tailMs} < 350 – check-sync würde „Stimme abgeschnitten“ melden`);
 		if (!existsSync(new URL(`${dir}voiceover.json`, import.meta.url))) return;
 		const manifest = JSON.parse(read(`${dir}voiceover.json`));
 		const over = manifest.durationMs + 100 - FORMAT.maxSeconds * 1000;

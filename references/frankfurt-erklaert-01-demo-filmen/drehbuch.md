@@ -1,6 +1,6 @@
 # Drehbuch (final) – „Frankfurt erklärt in 60 Sekunden“ #01: Nur gefilmt – trotzdem Ärger?
 
-Komposition `FrankfurtErklaertDemoFilmen` · Stimme ElevenLabs **Adam** (unverändert, speed 1.16) · 1.768 Frames = **58,93 s** inkl. Intro und Outro
+Komposition `FrankfurtErklaertDemoFilmen` · Stimme ElevenLabs **Adam** (unverändert, speed 1.16) · 1.773 Frames = **59,10 s** inkl. Intro und Outro
 (Grenze 1.800 Frames). Zeiten = echte Adam-Zeitstempel (`voiceover.json`); Schnitte 120 ms vor dem ersten Satz der Szene.
 
 | Szene | Satz | Zeit | Sprechertext (Adam) |
@@ -35,7 +35,7 @@ Komposition `FrankfurtErklaertDemoFilmen` · Stimme ElevenLabs **Adam** (unverä
    weg vom Platz (keine Wege/Taktiken/Absperrungen) → „AUFLÖSUNG = ENTFERNEN“, „§ 14 Abs. 7 HVersFG“.
 6. **Fazit (49,3–55,8 s):** Skyline zieht zurück, drei Karten im Takt der Stimme (RUHIG BLEIBEN · ABSTAND ZUR GEWALT · SACHLICH NACHFRAGEN) →
    „DEINE RECHTE KENNEN.“, Hinweis „keine Rechtsberatung · Stand“.
-7. **Outro (≈ 3,2 s):** „FRANKFURT ERKLÄRT / IN 60 SEKUNDEN / @frankfurtred3“ mit Profilbild „S“.
+7. **Outro (≈ 3,3 s):** „FRANKFURT ERKLÄRT / IN 60 SEKUNDEN / @frankfurtred3“ mit Profilbild „S“.
 
 Durchgehend: Format-Badge oben links mit ablaufendem 60-s-Ring, TikTok-Untertitel (aktives Wort gelb), leises Musikbett, Whoosh an jedem Schnitt,
 Klicks/Pops an den Bildelementen (dezent, unter der Stimme).

@@ -3,11 +3,11 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 200,
-	"tailMs": 250,
+	"tailMs": 400,
 	"maxDurationMs": 60000,
 	"voice": {
 		"engine": "elevenlabs",
-		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro, 1–2 Slang-Ausdrücke („Ewa, Frankfurt!“ – Aussprache in Hörprobe #13 geprüft). Erste Vertonung 62,8 s → Nummerierung nur im Bild, Pausen gekürzt; zweite 56,7 s → Atempausen an den Szenenschnitten (nur Stille, keine neuen Credits) → ≈ 59 s."
+		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro, 1–2 Slang-Ausdrücke („Ewa, Frankfurt!“ – Aussprache in Hörprobe #13 geprüft). Erste Vertonung 62,8 s → Nummerierung nur im Bild, Pausen gekürzt; zweite 56,7 s → Atempausen an den Szenenschnitten (nur Stille, keine neuen Credits); Nachlauf 400 ms (check-sync: Video ≥ Stimme + 0,3 s) → 59,1 s."
 	},
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 80},
