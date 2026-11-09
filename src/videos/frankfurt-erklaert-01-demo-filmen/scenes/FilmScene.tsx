@@ -54,17 +54,17 @@ export const FilmScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 
 			{/* Karten rechts */}
-			<div style={{position: 'absolute', left: 462, width: 468, top: 430, opacity: firstOut}}>
+			<div style={{position: 'absolute', left: 452, width: 478, top: 430, opacity: firstOut}}>
 				{firstOut > 0 ? <InfoCard icon="camera" title={FILM.record.title} text={FILM.record.text} color={ACCENT.yes} at={atOk - 2} /> : null}
 			</div>
-			<div style={{position: 'absolute', left: 462, width: 468, top: 700, opacity: firstOut}}>
+			<div style={{position: 'absolute', left: 452, width: 478, top: 700, opacity: firstOut}}>
 				{firstOut > 0 ? <InfoCard icon="hand" title={FILM.distance.title} text={FILM.distance.text} color={ACCENT.signal} at={atObstruct - 2} /> : null}
 			</div>
-			<div style={{position: 'absolute', left: 462, width: 468, top: 430, opacity: dim}}>
-				{post > 0 ? <InfoCard icon="person" title={FILM.publish.title} text={FILM.publish.text} law={FILM.publish.law} color={ACCENT.no} at={atUpload + 4} /> : null}
+			<div style={{position: 'absolute', left: 452, width: 478, top: 430, opacity: dim}}>
+				{post > 0 ? <InfoCard icon="person" title={FILM.publish.title} text={FILM.publish.text} law={FILM.publish.law} color={ACCENT.no} at={atUpload + 4} titleSize={29} /> : null}
 			</div>
-			<div style={{position: 'absolute', left: 462, width: 468, top: 720, opacity: dim}}>
-				{post > 0 ? <InfoCard icon="chat" title={FILM.speech.title} text={FILM.speech.text} law={FILM.speech.law} color={ACCENT.law} at={atPrivate - 2} /> : null}
+			<div style={{position: 'absolute', left: 452, width: 478, top: 720, opacity: dim}}>
+				{post > 0 ? <InfoCard icon="chat" title={FILM.speech.title} text={FILM.speech.text} law={FILM.speech.law} color={ACCENT.law} at={atPrivate - 2} titleSize={29} /> : null}
 			</div>
 
 			{/* Handy: Start im Kamerabild, dann Rückzug */}

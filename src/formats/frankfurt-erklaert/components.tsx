@@ -105,7 +105,17 @@ export const Equation: React.FC<{left: string; right: string; op?: '≠' | '='; 
 };
 
 /** Info-Karte mit großem Icon, Titel, Text und Paragraf. */
-export const InfoCard: React.FC<{icon: PIconName; title: string; text?: string; law?: string; color: string; at: number; compact?: boolean; style?: React.CSSProperties}> = ({icon, title, text, law, color, at, compact = false, style}) => {
+export const InfoCard: React.FC<{icon: PIconName; title: string; text?: string; law?: string; color: string; at: number; compact?: boolean; titleSize?: number; style?: React.CSSProperties}> = ({
+	icon,
+	title,
+	text,
+	law,
+	color,
+	at,
+	compact = false,
+	titleSize,
+	style,
+}) => {
 	const frame = useCurrentFrame();
 	const sweep = interpolate(frame, [at + 4, at + 24], [-30, 130], {...clamp, easing: EASE_OUT});
 	return (
@@ -116,7 +126,7 @@ export const InfoCard: React.FC<{icon: PIconName; title: string; text?: string; 
 						<PIcon name={icon} size={compact ? 54 : 46} color={color} stroke={2.1} />
 					</div>
 					<div style={{display: 'flex', flexDirection: 'column', gap: 6, alignItems: compact ? 'center' : 'flex-start'}}>
-						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: compact ? 28 : 34, lineHeight: 1.05, color: COLORS.text}}>{title}</span>
+						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: titleSize ?? (compact ? 28 : 34), lineHeight: 1.05, color: COLORS.text}}>{title}</span>
 						{text ? <span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 27, lineHeight: 1.2, color: COLORS.textMuted}}>{text}</span> : null}
 						{law ? <span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 22, color}}>{law}</span> : null}
 					</div>

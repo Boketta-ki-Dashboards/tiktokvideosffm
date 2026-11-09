@@ -58,7 +58,7 @@ export const DemoScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			{/* Phase C: § 125 StGB – eigene Beteiligung */}
 			{frame >= atLaw - 4 ? (
 				<div style={{position: 'absolute', left: 64, top: 720 - 320 * phaseC, width: 866, display: 'flex', justifyContent: 'center', opacity: interpolate(frame, [atLaw - 4, atLaw + 6], [0, 1], clamp)}}>
-					<LawChip text={DEMO.law} size={32} color={ACCENT.law} />
+					<LawChip text={DEMO.law} size={32} color={ACCENT.law} style={{background: 'rgba(14,12,40,0.96)'}} />
 				</div>
 			) : null}
 			{phaseC > 0 ? (

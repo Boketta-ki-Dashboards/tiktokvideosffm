@@ -34,6 +34,12 @@ Gefundene Schwächen → Korrekturen:
 - Szene 5: Menge auf dem Platz von vorderen Häusern verdeckt, Pfeile zu klein → vordere Blöcke flach, größere Figuren und Pfeile.
 - Schriftgrößen an die Mindestwerte angepasst (Kapiteltitel 58 px, Badge/Quellen ≥ 22 px).
 
+## Prüfung der fertigen MP4 aus Lauf #19 (alle Checks grün)
+
+Kontaktbogen aus der MP4 (alle 2 s, 30 Bilder) und Einzelbilder in voller Größe → zwei Schönheitsfehler, danach neu gerendert:
+- 13,5–15 s: der Chip „§ 125 StGB Landfriedensbruch“ war halbtransparent, der Tag „DU: FRIEDLICH“ schien durch → deckender Hintergrund.
+- 25–31 s: „VERÖFFENTLICHEN“ stieß rechts an den Kartenrand → Kartenspalte breiter, Kartentitel 29 px.
+
 ## Finaler Render
 
-Wird nach dem GitHub-Lauf ergänzt (FFprobe, Lautheit, Whisper-Gegenprobe, Kontaktbogen aus der MP4).
+Wird nach dem letzten GitHub-Lauf ergänzt.
