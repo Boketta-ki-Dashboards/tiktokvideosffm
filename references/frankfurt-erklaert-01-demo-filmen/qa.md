@@ -40,6 +40,14 @@ Kontaktbogen aus der MP4 (alle 2 s, 30 Bilder) und Einzelbilder in voller Größ
 - 13,5–15 s: der Chip „§ 125 StGB Landfriedensbruch“ war halbtransparent, der Tag „DU: FRIEDLICH“ schien durch → deckender Hintergrund.
 - 25–31 s: „VERÖFFENTLICHEN“ stieß rechts an den Kartenrand → Kartenspalte breiter, Kartentitel 29 px.
 
-## Finaler Render
+## Finaler Render (GitHub Actions, Lauf #20, `stimme: vorhanden` – kein ElevenLabs-Aufruf)
 
-Wird nach dem letzten GitHub-Lauf ergänzt.
+| Prüfung | Ergebnis |
+|---|---|
+| FFprobe (am fertigen File, strenger Prüfbericht) | 1080 × 1920 · 30/1 fps · **1.773 Frames = 59,115 s ≤ 60 s** · H.264 High · yuv420p · BT.709 · AAC LC 48 kHz Stereo ≈ 189 kbit/s · Faststart · 18,8 MB → **BESTANDEN** (inkl. neuer Prüfung „Länge ≤ 60 s“) |
+| Lautheit | −14,6 LUFS integriert · LRA 2,8 LU · True Peak −1,6 dBTP |
+| `verify-video.mjs --max 60` + `check-sync.mjs` | bestanden (Versatz Stimme ↔ Video 0 ms, Stimme vollständig, 124 Untertitel-Wörter innerhalb ihrer Sätze) |
+| Tonspur Lauf #19 ↔ #20 | identisch (MD5 der AAC-Pakete gleich) – nur das Bild wurde korrigiert |
+| Whisper-Gegenprobe (medium, lokal, auf der fertigen MP4) | alle 11 Sätze vollständig erkannt; „Ewa, Frankfurt!“ als „Eva! Frankfurt!“ (= „Ä-wa“, fallende Grußmelodie). **Hinweis:** „Demo filmen ist“ hören medium und small als „Demo-Film ist“ – Adam verschleift die Endung („film'n“); das Wort hat laut ElevenLabs-Zeitstempeln die volle Länge (0,42 s), der Untertitel zeigt „filmen“. Nicht neu vertont (keine unnötigen Credits) – beim Anhören prüfen; Alternative bei Bedarf: „Auf einer öffentlichen Demo darfst du grundsätzlich filmen …“ (≈ 110 Credits, nur dieser Satz). |
+| Kontaktbogen aus der MP4 (alle 2 s, 30 Bilder) | `kontaktbogen-run20.jpg`: alle 6 Szenen + Outro, Format-Badge mit 60-s-Ring durchgehend, Untertitel synchron, keine abgeschnittenen Texte, Texte in den Sicherheitszonen, „ILLUSTRATION“ und „keine Rechtsberatung · Stand“ sichtbar |
+| `npm run check` | TypeScript, ESLint, 75 Tests grün (davon 11 für Format/Folge) |
