@@ -212,6 +212,9 @@ jobs:
         run: |
           if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-Cover "; then
             npx remotion still src/index.ts "${{ steps.job.outputs.video }}-Cover" "output/${{ steps.job.outputs.out }}-cover.png"
+            # Optional eigener Dateiname fürs Titelbild (config/videos.json: thumbnailName)
+            THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
+            if [ -n "$THUMB" ]; then cp "output/${{ steps.job.outputs.out }}-cover.png" "output/$THUMB.png"; fi
           fi
 
       - name: Technische Qualitätskontrolle
@@ -257,6 +260,7 @@ jobs:
           path: |
             output/${{ steps.job.outputs.out }}.mp4
             output/${{ steps.job.outputs.out }}-cover.png
+            output/*_THUMBNAIL.png
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
           retention-days: 30

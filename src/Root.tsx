@@ -53,11 +53,31 @@ import {
 	FrankfurtErklaertDemoFilmen,
 } from './videos/frankfurt-erklaert-01-demo-filmen/FrankfurtErklaertDemoFilmen';
 import {FrankfurtErklaertDemoFilmenCover} from './videos/frankfurt-erklaert-01-demo-filmen/FrankfurtErklaertDemoFilmenCover';
+import {
+	calculateErklaert76Metadata,
+	erklaert76DefaultProps,
+	erklaert76Schema,
+	FrankfurtErklaert76Fragen,
+} from './videos/frankfurt-erklaert-76-fragen-landtag/FrankfurtErklaert76Fragen';
+import {FrankfurtErklaert76FragenCover} from './videos/frankfurt-erklaert-76-fragen-landtag/FrankfurtErklaert76FragenCover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #02 – 76 Fragen nach der Krawallnacht (Innenausschuss 10.11.2026), max. 1.800 Frames */}
+				<Composition
+					id="FrankfurtErklaert76Fragen"
+					component={FrankfurtErklaert76Fragen}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaert76Schema}
+					defaultProps={erklaert76DefaultProps}
+					calculateMetadata={calculateErklaert76Metadata}
+				/>
+				<Still id="FrankfurtErklaert76Fragen-Cover" component={FrankfurtErklaert76FragenCover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Format B „Frankfurt erklärt in 60 Sekunden“ #01 – Nur gefilmt – trotzdem Ärger? (max. 1.800 Frames) */}
 				<Composition
 					id="FrankfurtErklaertDemoFilmen"

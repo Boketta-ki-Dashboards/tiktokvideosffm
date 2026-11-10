@@ -9,6 +9,11 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #02 – „76 Fragen nach der Krawallnacht“ (Teil 1)** (Komposition `FrankfurtErklaert76Fragen`, 57,1 s): was Grüne (21 Fragen)
+und FDP (55 Fragen) am 10.11.2026 im Innenausschuss von der Landesregierung wissen wollen – nur Fragen, keine Antworten.
+Quellen: [`references/frankfurt-erklaert-76-fragen-landtag/sources.md`](references/frankfurt-erklaert-76-fragen-landtag/sources.md) ·
+TikTok-Texte: [`tiktok-text.md`](references/frankfurt-erklaert-76-fragen-landtag/tiktok-text.md) · Teil 2: [`teil2-notiz.md`](references/frankfurt-erklaert-76-fragen-landtag/teil2-notiz.md)
+
 **Neues Format „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN“ – #01 „Nur gefilmt – trotzdem Ärger?“** (Komposition `FrankfurtErklaertDemoFilmen`,
 Stimme ElevenLabs Adam, Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4`, 59,1 s ≤ 60 s): was gilt, wenn du auf einer Demo nur mitläufst
 und filmst – Art. 8 GG, § 125 StGB, Filmen vs. Posten (§§ 22, 23 KUG, § 201 StGB), Kontrolle/Beweismittel/Galerie (§§ 94, 98, 110, 163b StPO),

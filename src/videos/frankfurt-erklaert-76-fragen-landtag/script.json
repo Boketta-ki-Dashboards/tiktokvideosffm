@@ -7,19 +7,19 @@
 	"maxDurationMs": 60000,
 	"voice": {
 		"engine": "elevenlabs",
-		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro. Nummerierung 01–04 nur im Bild. Slang nur „Ewa, Frankfurt!“ (Hörprobe #13). Markenname nicht gesprochen (Handle im Bild)."
+		"$comment": "Adam unverändert (config/voice.json, speed 1.16). Format B: max. 60 s inkl. Outro. Nummerierung 01–04 nur im Bild. Slang nur „Ewa, Frankfurt!“ (Hörprobe #13). Markenname nicht gesprochen (Handle im Bild). Erste Spur 47,2 s → Pausen nach den Fragen (Zeit für die Animationen) offline aus dem Cache, 0 Credits."
 	},
 	"segments": [
-		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 80},
-		{"id": "hook2", "text": "Nach der Krawallnacht an Halloween landen {76|sechsundsiebzig} Fragen im Hessischen Landtag.", "pauseAfterMs": 150},
-		{"id": "docs1", "text": "Die Grünen und die FDP wollen wissen, was am {31. Oktober|einunddreißigsten Oktober} genau passiert ist.", "pauseAfterMs": 80},
-		{"id": "docs2", "text": "Vier Punkte sind besonders spannend.", "pauseAfterMs": 150},
-		{"id": "q1", "text": "Was wusste die Polizei vorher über mögliche Gewalttäter?", "pauseAfterMs": 150},
-		{"id": "q2", "text": "Warum konnten Geschäfte geplündert werden, obwohl ein Schutzkonzept angekündigt war?", "pauseAfterMs": 150},
-		{"id": "q3", "text": "Welche Rolle spielte TikTok – nur Demo-Aufrufe oder auch mögliche Absprachen zu Straftaten?", "pauseAfterMs": 150},
-		{"id": "q4", "text": "Und was passiert mit den Tatverdächtigen, wie werden geschädigte Läden unterstützt, welche Konsequenzen folgen?", "pauseAfterMs": 150},
-		{"id": "sess", "text": "Heute Abend soll die Landesregierung im Innenausschuss in Wiesbaden berichten – angesetzt für {20 Uhr|zwanzig Uhr}.", "pauseAfterMs": 100},
-		{"id": "note", "text": "Wichtig: Das sind bisher Fragen, noch keine Antworten.", "pauseAfterMs": 150},
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 120},
+		{"id": "hook2", "text": "Nach der Krawallnacht an Halloween landen {76|sechsundsiebzig} Fragen im Hessischen Landtag.", "pauseAfterMs": 1000},
+		{"id": "docs1", "text": "Die Grünen und die FDP wollen wissen, was am {31. Oktober|einunddreißigsten Oktober} genau passiert ist.", "pauseAfterMs": 250},
+		{"id": "docs2", "text": "Vier Punkte sind besonders spannend.", "pauseAfterMs": 700},
+		{"id": "q1", "text": "Was wusste die Polizei vorher über mögliche Gewalttäter?", "pauseAfterMs": 1700},
+		{"id": "q2", "text": "Warum konnten Geschäfte geplündert werden, obwohl ein Schutzkonzept angekündigt war?", "pauseAfterMs": 1700},
+		{"id": "q3", "text": "Welche Rolle spielte TikTok – nur Demo-Aufrufe oder auch mögliche Absprachen zu Straftaten?", "pauseAfterMs": 1700},
+		{"id": "q4", "text": "Und was passiert mit den Tatverdächtigen, wie werden geschädigte Läden unterstützt, welche Konsequenzen folgen?", "pauseAfterMs": 1700},
+		{"id": "sess", "text": "Heute Abend soll die Landesregierung im Innenausschuss in Wiesbaden berichten – angesetzt für {20 Uhr|zwanzig Uhr}.", "pauseAfterMs": 1100},
+		{"id": "note", "text": "Wichtig: Das sind bisher Fragen, noch keine Antworten.", "pauseAfterMs": 900},
 		{"id": "outro", "text": "Was wirklich beantwortet wird, zeigen wir in Teil zwei – folgt uns!", "pauseAfterMs": 0}
 	]
 }
