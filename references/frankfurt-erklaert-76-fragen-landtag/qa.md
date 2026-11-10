@@ -30,6 +30,17 @@
 - Zweiter Durchgang (Einzelbilder in voller Größe): Sitzungskarte zeigte Raum/Ort erst nach „20 Uhr“ → von Beginn an vollständig; Plaketten in
   Frage 02 und 04 verdeckten die Quellenzeile → höher gesetzt; Quellenzeile der Sitzungsszene einzeilig.
 
-## Finaler Render
+## Finaler Render (GitHub Actions, Lauf #23, `stimme: vorhanden` – kein ElevenLabs-Aufruf)
 
-Wird nach dem GitHub-Lauf ergänzt.
+| Prüfung | Ergebnis |
+|---|---|
+| FFprobe (strenger Prüfbericht) | 1080 × 1920 · 30/1 fps · **1.713 Frames = 57,109 s ≤ 60 s** · H.264 High · yuv420p · AAC LC 48 kHz Stereo ≈ 189 kbit/s · Faststart · 16,8 MB → **BESTANDEN** |
+| Dekodierung | `ffmpeg -i … -f null -` ohne Fehler |
+| Lautheit | −14,7 LUFS integriert · LRA 5,5 LU · True Peak **−1,1 dBTP** (Norm −1,5 dBTP – knapp darüber, wird vom Bericht nicht erzwungen; für TikTok unkritisch) |
+| verify-video + check-sync | bestanden (Versatz 0 ms, Stimme vollständig, Untertitel innerhalb ihrer Sätze) |
+| Titelbild | `FrankfurtRed3_76Fragen_THUMBNAIL.png`, 1080 × 1920, im Video-Artefakt |
+| Whisper-Gegenprobe (medium, lokal, Adam-Spur) | alle 11 Sätze wortgetreu: „Eva, Frankfurt“ (= Ä-wa), „FDP“, „TikTok“, „76“, „Innenausschuss in Wiesbaden“, „20 Uhr“ |
+| Kontaktbogen der MP4 (alle 2 s) | `kontaktbogen-run23.jpg`: alle 9 Szenen, Fragen 01–04 farblich und grafisch unterscheidbar, keine abgeschnittenen Texte |
+| `npm run check` | TypeScript, ESLint, 83 Tests grün |
+
+Lauf #22 (vor dem Feinschliff) war ebenfalls grün; Lauf #23 ist die finale Fassung.
