@@ -16,7 +16,7 @@ export const SESSION = {
 	room: 'Sitzungsraum 501 A',
 	place: 'Hessischer Landtag, Wiesbaden',
 	agenda: 'Tagesordnung: 2 dringliche Berichtsanträge',
-	source: 'hessischer-landtag.de · Termine · Innenausschuss 51. Sitzung',
+	source: 'hessischer-landtag.de · Tagesordnung INA, 51. Sitzung',
 };
 
 /** Die beiden Berichtsanträge (Drucksachen) – Fragen gezählt aus den Original-PDFs. */

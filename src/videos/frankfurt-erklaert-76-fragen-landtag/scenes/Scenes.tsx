@@ -290,8 +290,8 @@ export const Q2Scene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			{frame >= atShield + 22 ? (
 				<div style={{position: 'absolute', left: 540, top: 760, translate: '-50% -50%', width: 190, height: 190, borderRadius: 95, background: ACCENT.no, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 150, color: '#FFFFFF', boxShadow: `0 0 60px ${withAlpha(ACCENT.no, 0.7)}`, scale: String(q), rotate: `${(1 - q) * -60}deg`}}>?</div>
 			) : null}
-			<div style={{position: 'absolute', left: 64, width: 866, top: 1040, display: 'flex', justifyContent: 'center'}}>
-				<Plaque lines={[QUESTIONS[1].plaque]} at={atShield + 30} color={ACCENT.no} size={58} />
+			<div style={{position: 'absolute', left: 64, width: 866, top: 1010, display: 'flex', justifyContent: 'center'}}>
+				<Plaque lines={['TROTZ', 'SCHUTZKONZEPT?']} at={atShield + 30} color={ACCENT.no} size={58} />
 			</div>
 			<Sfx name="click" at={atLoot} volume={0.6} />
 			<Sfx name="pop" at={atShield - 6} volume={0.6} />
@@ -348,9 +348,9 @@ export const Q4Scene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const c = cue(cues, 'q4', 4);
 	const at = [wordFrame(cues, 'Tatverdächtigen', c.from + 26), wordFrame(cues, 'Läden', c.from + 80), wordFrame(cues, 'Konsequenzen', c.from + 125)];
 	const P = [
-		{x: 290, y: 600},
-		{x: 790, y: 720},
-		{x: 330, y: 900},
+		{x: 290, y: 570},
+		{x: 790, y: 670},
+		{x: 330, y: 840},
 	];
 	const line = (a: number, b: number, from: number) => {
 		const t = interpolate(frame, [from, from + 14], [0, 1], {...clamp, easing: EASE_OUT});
@@ -388,8 +388,8 @@ export const Q4Scene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</div>
 				) : null}
 			</div>
-			<div style={{position: 'absolute', left: 64, width: 866, top: 1080, display: 'flex', justifyContent: 'center'}}>
-				<Plaque lines={[QUESTIONS[3].plaque]} at={at[2] + 26} color={ACCENT.brand} size={52} />
+			<div style={{position: 'absolute', left: 64, width: 866, top: 1030, display: 'flex', justifyContent: 'center'}}>
+				<Plaque lines={['WAS PASSIERT', 'ALS NÄCHSTES?']} at={at[2] + 26} color={ACCENT.brand} size={52} />
 			</div>
 			{at.map((f, i) => (
 				<Sfx key={i} name="pop" at={f - 4} volume={0.6} />
@@ -428,8 +428,8 @@ export const SessionScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 					</div>
 					{row(`${SESSION.body} · ${SESSION.number}`, atAusschuss - 4, 46, ACCENT.info)}
 					{row(SESSION.time, atTime - 4, 64, ACCENT.signal)}
-					{row(`${SESSION.after} · ${SESSION.room}`, atTime + 6, 27, COLORS.textMuted, 700, FONTS.body)}
-					{row(SESSION.place, atTime + 10, 27, COLORS.textMuted, 700, FONTS.body)}
+					{row(`${SESSION.after} · ${SESSION.room}`, Math.min(atTime + 6, c.from + 40), 27, COLORS.textMuted, 700, FONTS.body)}
+					{row(SESSION.place, Math.min(atTime + 10, c.from + 46), 27, COLORS.textMuted, 700, FONTS.body)}
 				</div>
 				<div style={{marginTop: 18}}>
 					<Pop at={atAusschuss + 10} dy={20}>
@@ -440,7 +440,7 @@ export const SessionScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 					</Pop>
 				</div>
 			</div>
-			<SourceBar text={`${SESSION.source} · ${STAND}`} at={c.from + 10} />
+			<SourceBar text={`${SESSION.source} · Abruf 10.11.2026`} at={c.from + 10} />
 			<Sfx name="whoosh" at={0} volume={0.6} />
 			<Sfx name="click" at={atAusschuss - 4} volume={0.6} />
 			<Sfx name="click" at={atTime - 4} volume={0.7} />

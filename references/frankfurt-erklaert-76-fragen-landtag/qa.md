@@ -27,6 +27,8 @@
 - Kleine Fragennummer (01–04) klebte am Titel → kleiner, Titel weiter rechts.
 - „FOLGT FÜR TEIL 2“ brach in zwei Zeilen um → einzeilig (74 px).
 - Titelbild: Landtag war von der Skyline verdeckt → Landtag als hintere Ebene sichtbar hinter der 76, Skyline vorne unten.
+- Zweiter Durchgang (Einzelbilder in voller Größe): Sitzungskarte zeigte Raum/Ort erst nach „20 Uhr“ → von Beginn an vollständig; Plaketten in
+  Frage 02 und 04 verdeckten die Quellenzeile → höher gesetzt; Quellenzeile der Sitzungsszene einzeilig.
 
 ## Finaler Render
 
