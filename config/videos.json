@@ -1,5 +1,6 @@
 {
 	"$comment": "Auswählbare Videos für den Workflow „Video produzieren“: Komposition → Video-Ordner und Name der fertigen MP4.",
+	"FrankfurtErklaert76FragenTeil3": {"videoId": "frankfurt-erklaert-76-fragen-teil3", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_Teil3_THUMBNAIL"},
 	"FrankfurtErklaert76FragenTeil2": {"videoId": "frankfurt-erklaert-76-fragen-teil2", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_Teil2_THUMBNAIL"},
 	"FrankfurtErklaert76Fragen": {"videoId": "frankfurt-erklaert-76-fragen-landtag", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "outputName": "FrankfurtRed3_76Fragen_Innenausschuss_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_THUMBNAIL"},
 	"FrankfurtErklaertDemoFilmen": {"videoId": "frankfurt-erklaert-01-demo-filmen", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "outputName": "FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL"},
