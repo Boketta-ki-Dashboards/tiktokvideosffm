@@ -37,3 +37,8 @@ Korrigiert: Zahl „8.000–9.000“ umbrach in zwei Zeilen · Faktor-Plakette �
 
 - Lauf #29 (Hörprobe): zweimal > 8 min im apt-Schritt „FFmpeg installieren“ hängen geblieben, abgebrochen – noch vor jedem ElevenLabs-Aufruf
   (0 Credits). Workflow: apt jetzt mit Zeitlimit (4 min je Versuch, 3 Versuche) statt unbegrenzt.
+- Lauf #30: wieder > 7 min im apt-Schritt (Standardquellen) → abgebrochen, 0 Credits.
+- Lauf #31: apt-Versuche alle gescheitert („Temporary failure resolving 'archive.ubuntu.com'“ – Ubuntu-Paketquellen vom Runner aus
+  nicht erreichbar). Fehler im Workflow: `ffmpeg -version | head -1` ließ den Schritt trotz fehlendem FFmpeg grün enden → die Hörprobe wurde
+  erzeugt (188 Zeichen) und ging beim nächsten Schritt (ffprobe fehlt) verloren. Behoben: Schritt bricht ohne ffmpeg/ffprobe VOR jedem
+  ElevenLabs-Aufruf ab (`pipefail` + `command -v`), und ein neuer Schritt sichert bei jedem späteren Fehler die bereits erzeugten Sätze im Cache.

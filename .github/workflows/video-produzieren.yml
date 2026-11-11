@@ -119,19 +119,25 @@ jobs:
       - name: FFmpeg installieren
         timeout-minutes: 15
         run: |
-          # apt-Spiegel hängen gelegentlich minutenlang → je Versuch Zeitlimit, bis zu 3 Versuche, dann klarer Abbruch
-          # Versuch 1: Standard-Quellen des Runners. Versuche 2–3: nur das offizielle Ubuntu-Archiv (andere Paketquellen ausgeblendet).
+          # apt-Spiegel bzw. deren DNS fallen gelegentlich aus (Lauf #29–#31: Hänger bzw. „Temporary failure resolving
+          # archive.ubuntu.com“). Je Versuch Zeitlimit; Versuch 2 nur das offizielle Ubuntu-Archiv; danach KLARER ABBRUCH –
+          # vor jedem ElevenLabs-Aufruf, damit keine Credits für eine Spur verloren gehen, die ohne FFmpeg nicht fertig wird.
+          set -o pipefail
           . /etc/os-release
           printf 'deb http://archive.ubuntu.com/ubuntu %s main universe\ndeb http://archive.ubuntu.com/ubuntu %s-updates main universe\ndeb http://security.ubuntu.com/ubuntu %s-security main universe\n' "$VERSION_CODENAME" "$VERSION_CODENAME" "$VERSION_CODENAME" > /tmp/ubuntu-only.list
           ONLY="-o Dir::Etc::sourcelist=/tmp/ubuntu-only.list -o Dir::Etc::sourceparts=-"
           for i in 1 2 3; do
-            OPTS="-o Acquire::Retries=3"; [ "$i" -gt 1 ] && OPTS="$OPTS $ONLY"
-            if timeout 240 bash -c "sudo apt-get update -qq $OPTS && sudo apt-get install -y -qq --no-install-recommends $OPTS ffmpeg"; then
+            OPTS="-o Acquire::Retries=3"; [ "$i" -eq 2 ] && OPTS="$OPTS $ONLY"
+            if timeout 180 bash -c "sudo apt-get update -qq $OPTS && sudo apt-get install -y -qq --no-install-recommends $OPTS ffmpeg"; then
               break
             fi
-            echo "::warning::FFmpeg-Installation Versuch $i nicht fertig – neuer Versuch (nur Ubuntu-Archiv)"
-            sleep 10
+            echo "::warning::FFmpeg-Installation Versuch $i fehlgeschlagen – neuer Versuch"
+            sleep 20
           done
+          if ! command -v ffmpeg >/dev/null || ! command -v ffprobe >/dev/null; then
+            echo "::error::FFmpeg ließ sich nicht installieren (Ubuntu-Paketquellen vom Runner aus nicht erreichbar). Abbruch VOR jedem ElevenLabs-Aufruf – 0 Credits verbraucht. Später erneut starten."
+            exit 1
+          fi
           ffmpeg -version | head -1
 
       - name: Abhängigkeiten installieren
@@ -192,6 +198,21 @@ jobs:
             sleep $((i * 5))
           done
           echo "✔ Audio committet: $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Bereits erzeugte Adam-Sätze sichern (auch wenn ein späterer Schritt scheitert)
+        if: failure() && steps.job.outputs.stimme != 'vorhanden'
+        run: |
+          # Nur der Satz-Cache (Text + Stimme + Einstellungen als Schlüssel) – so gehen bezahlte Credits nicht verloren.
+          git add -A voice-cache || true
+          if git diff --cached --quiet; then echo "Nichts zu sichern."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -q -m "Stimme: erzeugte Adam-Sätze für ${{ steps.job.outputs.video }} gesichert (Lauf fehlgeschlagen) [skip ci]"
+          for i in 1 2 3; do
+            git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+            sleep $((i * 5))
+          done
+          echo "⚠ Lauf fehlgeschlagen – bereits erzeugte Adam-Sätze im Cache gesichert: $(git rev-parse --short HEAD)" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Hörprobe als Artefakt bereitstellen
         if: steps.job.outputs.aktion == 'hoerprobe'
