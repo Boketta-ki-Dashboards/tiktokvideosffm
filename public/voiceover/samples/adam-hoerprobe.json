@@ -1,6 +1,6 @@
 {
-	"text": "Ewa, Frankfurt! Seit Halloween wird auf der Zeil verstärkt kontrolliert. Ewa, jetzt wisst ihr Bescheid.",
-	"sampleFrom": "frankfurt-2026-11-polizeikontrollen",
+	"text": "{Ewa|Eywa}, Frankfurt! Neue Zahlen laut Poseck: {181|hunderteinundachtzig} verletzte Polizisten, {73|dreiundsiebzig} Tatverdächtige, rund {1.300|dreizehnhundert} Einsatzkräfte. Für den {20. November|zwanzigsten November}: mögliche Auflagen und präventiver Gewahrsam.",
+	"sampleFrom": "frankfurt-erklaert-76-fragen-teil2",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -11,10 +11,10 @@
 		"similarity_boost": 0.8,
 		"style": 0.2,
 		"use_speaker_boost": true,
-		"speed": 1.16
+		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 103,
-	"cacheKey": "5a33bd308cd6bec1b4cd",
-	"durationSeconds": 5.424
+	"characters": 226,
+	"cacheKey": "480125dd675763106774",
+	"durationSeconds": 12.816
 }
