@@ -78,3 +78,9 @@ URLs:
 - **„Die Stadt zahlt“ / „Hilfsprogramm beschlossen“** – nicht belegt; nur Prüfung angeboten (Stand 11.11.2026). Hilfe des Landes (Ministerpräsident Rhein sagte laut Handelsverband Gespräche zu) ohne Details → nur Caption.
 - **Uhrzeit der Auflösung** – Angaben weichen ab (gegen 18.00 vs. gegen 18.20 Uhr).
 - **Echte Fassaden, Logos, Fotos** – Ladenfront ist eine generische Illustration („ILLUSTRATION“ im Bild), keine Personen erkennbar, keine Kinder dargestellt.
+
+## Letzte Prüfung vor dem finalen Render
+
+11.11.2026, ≈ 19:35 Uhr: erneute Suche nach neuen offiziellen Angaben zu Teilnehmerprognose (Begründung), Schadenssumme, beschlossenen
+Hilfen von Stadt/Land und Maßnahmen zu den zwei Kindern – nichts Neues gefunden (nur bekannte Berichte vom 1.–3.11., u. a. Zusage
+„rascher und unbürokratischer Hilfe“ durch Ministerpräsident Rhein ohne Programm/Summe). Sprechertext bleibt unverändert.

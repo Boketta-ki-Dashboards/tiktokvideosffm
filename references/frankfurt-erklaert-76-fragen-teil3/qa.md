@@ -46,3 +46,35 @@ Korrigiert: Zahl „8.000–9.000“ umbrach in zwei Zeilen · Faktor-Plakette �
   Whisper (medium): „Ava, Frankfurt. Gekommen sind 8 bis 9.000, insgesamt 181. Sie sind strafunmündig, aber Schadenersatz kann möglich sein.
   Zuerst sind die Versicherungen gefragt.“ → Zahlen und Fachbegriffe verständlich; „Ewa“ wird als Gleitlaut gesprochen (Whisper kennt
   „Eywa“ nicht und schreibt „Ava“, wie bei Teil 2 „Eva“) – bitte selbst anhören. Tempo 1.20 bleibt (Verständlichkeit gegeben).
+- Lauf #33 (Vollvertonung + Video): 17 Sätze erzeugt und committet (58,06 s). Pausenprüfung lokal: „offen. | Erstens:“ 421 ms > 400 ms →
+  Lauf vor der QA abgebrochen (das Video wäre am Pausen-Check gescheitert). Korrektur offline aus dem Cache (0 Credits): `pauseAfterMs` nach dem
+  Hook 120 → 60 ms → 58,00 s, längste Pause 391 ms. Whisper (medium) über die ganze Spur: alle Sätze wortgetreu, Begrüßung als „Ey war
+  Frankfurt!“ (= Eywa-Gleitlaut).
+- Visuelle Prüfung mit echten Adam-Zeiten (alle 40 Frames): Karte in Frage 1 wirkte vor „2.000“ ≈ 1,3 s leer → Platzhalter-Punkte ab Frame 0,
+  Zahl rollt ab „erwartete“.
+
+## 6. Finaler Render
+
+Lauf **#34** (Run-ID 43087591069, Commit 01f7aa0, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL-run34` (MP4, Thumbnail, Titelbild-Prüfbogen, ID 13886404308),
+`…-Technikbericht-run34` (ID 13886419380), `…-Sprecher-Adam-run34` (ID 13886923479).
+
+Nachprüfung am heruntergeladenen Artefakt (11.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL.mp4`, 14,02 MB, SHA-256 `1f96b1afd6248359af0f645a76d499dce3786d247b34965e77c4cfae13f0fc1c` |
+| Länge | 58,368 s · 1.751 Frames (Grenze 1.800) ✅ |
+| Video | H.264 High, 1080 × 1920 (echte Pixel), 30/1 fps konstant, yuv420p, Faststart ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,6 LUFS integriert · LRA 2,1 LU · True Peak −1,6 dBTP ✅ |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ (Sprecherspur: längste Pause 391 ms, `check-pauses` grün) |
+| Sync | `check-sync` grün (Untertitel innerhalb ihrer Sätze, Video ≥ Stimme + 0,3 s) |
+| Thumbnail | `FrankfurtRed3_76Fragen_Teil3_THUMBNAIL.png` 1080 × 1920, identisch mit dem Cover-Still |
+| Titelbild-Prüfbogen | `FrankfurtRed3_76Fragen_Teil3_COVER_VORSCHAU.png` 2420 × 1240 (verkleinert: `cover-vorschau-run34.jpg`): Serientitel, 76, TEIL 3, „4 FRAGEN BLEIBEN“ in 9:16, 3:4, Profilraster und Videoframe vollständig; Teil 1/2 im Raster oben angeschnitten |
+| Prüfbericht | `render.mjs --max`, `tech-report.mjs --max-seconds 60`: **BESTANDEN** |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 30 Bilder): `kontaktbogen-run34.jpg` – Frame 0 = vollständiges Titelbild, ab „Nach den 76“
+zerfällt die 76 in die vier Fragen-Kacheln; jede Einblendung (2.000, 8.000–9.000, ≈ 4×, Planungsakte, 6/181, friedlich, 14/strafunmündig,
+Jugendamt/Schadenersatz/Eltern, Versicherung/Prüfung/keine feste Zusage, Gesamtschaden offen, Fazit) steht spätestens mit ihrem Satz im Bild.
