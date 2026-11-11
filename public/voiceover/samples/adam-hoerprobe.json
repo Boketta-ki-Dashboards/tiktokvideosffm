@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Neue Zahlen laut Poseck: {181|hunderteinundachtzig} verletzte Polizisten, {73|dreiundsiebzig} Tatverdächtige, rund {1.300|dreizehnhundert} Einsatzkräfte. Für den {20. November|zwanzigsten November}: mögliche Auflagen und präventiver Gewahrsam.",
-	"sampleFrom": "frankfurt-erklaert-76-fragen-teil2",
+	"text": "{Ewa|Eywa}, Frankfurt! Gekommen sind {8.000 bis 9.000|acht- bis neuntausend} – insgesamt {181|hunderteinundachtzig}. Sie sind strafunmündig, aber Schadenersatz kann möglich sein. Zuerst sind die Versicherungen gefragt.",
+	"sampleFrom": "frankfurt-erklaert-76-fragen-teil3",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 226,
-	"cacheKey": "480125dd675763106774",
-	"durationSeconds": 12.816
+	"characters": 188,
+	"cacheKey": "2c70eb9a283a69c32ede",
+	"durationSeconds": 10.248
 }
