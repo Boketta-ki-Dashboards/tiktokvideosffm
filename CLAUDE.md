@@ -145,6 +145,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
+| `FrankfurtErklaert76FragenTeil3` | `src/videos/frankfurt-erklaert-76-fragen-teil3/` | **Format B** #04 „76 Fragen – Teil 3: Was ist immer noch offen?“ (12.11.2026): vier Fragen ohne Wiederholung von Teil 2 – Teilnehmerprognose (Polizei ≈ 2.000 vs. 8.000–9.000, Ursache offen), Gewalt schon bis zur Auflösung (6 von insgesamt 181 laut Innenminister, Mehrheit friedlich), zwei Tatverdächtige unter 14 (§ 19 StGB, Jugendamt § 27 SGB VIII, § 828/§ 832 BGB – Eltern nicht automatisch, keine Rechtsberatung), Schäden (Versicherung zuerst, Stadt prüft ohne feste Zusage, Gesamtschaden nicht beziffert); erstes Cover nach `COVER_ZONE` + Prüfbogen `-CoverVorschau`; Tests `tests/erklaert-76-teil3.test.ts`; Export `FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
 | `FrankfurtErklaert76FragenTeil2` | `src/videos/frankfurt-erklaert-76-fragen-teil2/` | **Format B** #03 „76 Fragen – Teil 2: erste Antworten“ (11.11.2026): Angaben des Innenministers im Innenausschuss laut hr/dpa (181 verletzte Polizisten, 13 bislang nicht dienstfähig, 73 Tatverdächtige: ≈ 2/3 unter 21, > 1/2 polizeibekannt, ≈ 1/4 aus Frankfurt; ≈ 1.300 Kräfte über den Abend), offene Fragen (Plünderungen, TikTok), Maßnahmenbündel 20.11. (angekündigt, kein Verbot), Kontroverse als POSITION; Titelbild = erste Szene; Kurzformat-Stimme 1.20, Pausen ≤ 400 ms; Tests `tests/erklaert-76-teil2.test.ts`; Export `FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_Teil2_THUMBNAIL.png` |
 | `FrankfurtErklaert76Fragen` | `src/videos/frankfurt-erklaert-76-fragen-landtag/` | **Format B** #02 „76 Fragen nach der Krawallnacht“ (Teil 1, 10.11.2026): Innenausschuss 51. Sitzung (20 Uhr geplant, Wiesbaden), Drs. 21/5450 (Grüne, 21 Fragen) + 21/5459 (FDP, 55 Fragen) = 76; vier Themen als FRAGEN (Gefahrenprognose I.1–8, Schutzkonzept V.6, TikTok I.8, Konsequenzen) – keine Antworten/Ergebnisse; 57,1 s; Politik-Bausteine `formats/frankfurt-erklaert/visuals/Politics.tsx` (Landtag, BigCount, QuestionNumber, Dossier, CalendarSheet, FeedPhone) für Teil 2 (`references/…/teil2-notiz.md`); Tests `tests/erklaert-76-fragen.test.ts`; Export `FrankfurtRed3_76Fragen_Innenausschuss_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_THUMBNAIL.png` |
 | `FrankfurtErklaertDemoFilmen` | `src/videos/frankfurt-erklaert-01-demo-filmen/` (+ Formatsystem `src/formats/frankfurt-erklaert/`) | **Format B** „Frankfurt erklärt in 60 Sekunden“ #01 „Nur gefilmt – trotzdem Ärger?“: Art. 8 GG, § 125 StGB (eigene Beteiligung), Filmen grundsätzlich erlaubt vs. Veröffentlichen (§§ 22, 23 KUG, § 201 StGB), Kontrolle auch als Zeuge (§ 163b Abs. 2 StPO), Beweismittel/Sicherstellung (§§ 94, 98 StPO) ≠ automatische Galerie-Durchsicht (§ 110 StPO), Auflösung → unverzüglich entfernen (§ 14 Abs. 7 HVersFG); VG Frankfurt 2025 nicht verifizierbar → nicht verwendet; 59,1 s (1.773 Frames); Tests `tests/erklaert-demo-filmen.test.ts` + `tests/erklaert-format.test.ts`; Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4` |
@@ -185,6 +186,18 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
     - **Titelbild im Video:** die erste Szene IST das Titelbild (vollständiger Titel ab Frame 0, ≈ 1–1,5 s stehend), danach Verwandlung in die
       erste Inhaltsszene ohne Schwarzblende; dieselbe Komponente rendert das PNG (`<Name>-Cover`, Workflow `thumbnailName`);
       `ErklaertEpisode.badgeFrom` blendet das Format-Badge erst danach ein.
+    - **Titelbild-Position (dauerhaft ab Teil 3 der „76 Fragen“, 12.11.2026):** Beim Upload von Teil 2 wurden Serientitel und Zahl im
+      Profilraster (mittiger 3:4-Ausschnitt) oben angeschnitten, unten blieb Fläche frei. Deshalb gilt `COVER_ZONE`
+      (`src/formats/frankfurt-erklaert/theme.ts`): Serientitel, große Zahl, Hauptgrafik, Themenkarte, Untertitelzeile in der Kernzone
+      **y 330–1450**, alles Wesentliche im **3:4-Ausschnitt y 240–1680**, Serientitel nicht über ≈ y 390, Themenkarte nicht in der oberen
+      Hälfte, Seitenrand ≥ 90 px, rechts ab x ≈ 930 / y ≈ 1000 liegen die App-Knöpfe. Im Video enden die Coverelemente über dem
+      Untertitel-Band (≤ y 1300); das PNG darf dieses Band zusätzlich nutzen (z. B. Themenzeile). Oberer Bildteil = dekorativer Himmel.
+      Layout-Werte als eigene `.ts`-Konstante (z. B. `cover-layout.ts`) und per Test gegen `COVER_ZONE` prüfen.
+    - **Titelbild-Prüfbogen vor jedem Export:** Komposition `<Name>-CoverVorschau` (`CoverPreviewSheet`): 9:16 mit Zonen, 3:4-Ausschnitt,
+      nachgebautes Profilraster neben den Vorgänger-Covern, Videoframe mit Untertitel und neutral nachgezeichneten App-Elementen (keine
+      Logos). Der Workflow legt ihn als `*_COVER_VORSCHAU.png` ins Artefakt (nicht zur Veröffentlichung). Hauptüberschrift und Teil-Kennung
+      müssen in allen vier Ansichten vollständig lesbar sein; sonst Layout verschieben/verkleinern und erneut prüfen.
+      Bereits veröffentlichte Cover werden nicht nachträglich geändert.
   - **60-s-Grenze vierfach geprüft:**
     1. `enforceMaxFrames` (`src/formats/frankfurt-erklaert/timeline.ts`) kürzt automatisch den stummen Nachlauf bzw. bricht ab, wenn schon die Stimme
        zu lang ist (mit Angabe, um wie viel gekürzt werden muss).

@@ -14,6 +14,7 @@ import {blendMood, MOODS, NightCity} from '../../frankfurt-2026-11-20-ausblick/p
 import {Person} from '../../frankfurt-2026-11-20-ausblick/premium/Person';
 import {Storefront} from '../../frankfurt-2026-11-20-ausblick/premium/Storefront';
 import {cue, type SceneProps, wordFrame} from '../../frankfurt-2026-10-31/cues';
+import {TEIL3_COVER_LAYOUT} from '../cover-layout';
 import {COVER, CTA, DAMAGE, FORECAST, PHASES, QUESTIONS, STAND, STATUS, UNDER14} from '../content';
 
 /** Farben der vier Fragen (Serienfarben). */
@@ -21,31 +22,6 @@ export const QCOLOR = {'01': ACCENT.info, '02': ACCENT.no, '03': ACCENT.law, '04
 type QNum = keyof typeof QCOLOR;
 const de = (n: number) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
-/**
- * Titelbild-Layout Teil 3 (y in px bei 1080 × 1920) – bewusst tiefer als Teil 2, alles in der Kernzone
- * (COVER_ZONE: 330–1450, im Video über den Untertiteln ≤ 1300) und im 3:4-Profilausschnitt (240–1680).
- * Wird von tests/erklaert-76-teil3.test.ts gegen COVER_ZONE geprüft.
- */
-export const TEIL3_COVER_LAYOUT = {
-	brandTop: 420,
-	brandBottom: 528,
-	numberTop: 520,
-	numberSize: 360,
-	numberBottom: 844,
-	partTop: 576,
-	partRight: 930,
-	landtagTop: 756,
-	landtagWidth: 780,
-	kickerTop: 992,
-	cardTop: 1060,
-	subTop: 1184,
-	metaTop: 1244,
-	metaBottom: 1296,
-	/** nur im PNG: Themenzeile im Band, in dem im Video die Untertitel stehen (≈ 1.320–1.440) */
-	chipsTop: 1344,
-	chipsBottom: 1420,
-	sideMin: 96,
-} as const;
 
 /* ------------------------------------------------------------------ Bausteine */
 
@@ -452,8 +428,8 @@ export const ForecastScene: React.FC<SceneProps> = ({cues, durationInFrames}) =>
 				</Card>
 				{/* Faktor-Plakette */}
 				{frame >= atFactor - 5 ? (
-					<div style={{position: 'absolute', left: 84, top: 214, width: 170, height: 170, borderRadius: 85, background: `radial-gradient(circle at 35% 30%, #FFE680, ${COLORS.signal} 60%, #E0A800)`, boxShadow: `0 0 50px ${withAlpha(COLORS.signal, 0.6)}, 0 20px 40px rgba(0,0,0,0.5)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: Math.min(1, factor * 2), scale: String(0.3 + 0.7 * factor), rotate: `${(1 - factor) * -30 - 8}deg`}}>
-						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 58, lineHeight: 1, color: ACCENT.ink}}>{FORECAST.factor}</span>
+					<div style={{position: 'absolute', left: 96, top: 240, width: 150, height: 150, borderRadius: 75, background: `radial-gradient(circle at 35% 30%, #FFE680, ${COLORS.signal} 60%, #E0A800)`, boxShadow: `0 0 50px ${withAlpha(COLORS.signal, 0.6)}, 0 20px 40px rgba(0,0,0,0.5)`, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', opacity: Math.min(1, factor * 2), scale: String(0.3 + 0.7 * factor), rotate: `${(1 - factor) * -30 - 8}deg`}}>
+						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, lineHeight: 1, color: ACCENT.ink}}>{FORECAST.factor}</span>
 						<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 22, color: ACCENT.ink}}>so viele</span>
 					</div>
 				) : null}

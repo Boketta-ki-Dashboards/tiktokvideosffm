@@ -71,7 +71,7 @@ export const UNDER14 = {
 	headline: 'UNTER 14',
 	stamp: 'STRAFUNMÜNDIG',
 	law: '§ 19 StGB: „Schuldunfähig ist, wer bei Begehung der Tat noch nicht vierzehn Jahre alt ist.“',
-	noPunish: {title: 'KEINE STRAFE', text: 'keine Bestrafung, keine Verurteilung'},
+	noPunish: {title: 'KEINE STRAFE', text: 'keine Verurteilung'},
 	other: {title: 'ANDERE FOLGEN MÖGLICH', text: 'je nach Einzelfall'},
 	items: [
 		{icon: 'family', title: 'JUGENDAMT', text: 'Hilfen zur Erziehung', law: '§ 27 SGB VIII'},
