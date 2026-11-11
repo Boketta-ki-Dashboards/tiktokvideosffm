@@ -223,6 +223,9 @@ jobs:
         run: |
           node scripts/verify-video.mjs "output/${{ steps.job.outputs.out }}.mp4"
           node scripts/voice/check-sync.mjs --video "${{ steps.job.outputs.video_id }}" --mp4 "output/${{ steps.job.outputs.out }}.mp4"
+          # Kurzformat-Regel: keine Leerlauf-Pausen in der Sprecherspur (config/videos.json → maxPauseMs)
+          MAXP=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].maxPauseMs // empty' config/videos.json)
+          if [ -n "$MAXP" ]; then node scripts/voice/check-pauses.mjs --video "${{ steps.job.outputs.video_id }}" --max "$MAXP"; fi
 
       # Ton-Referenz für den Identitätsvergleich: nur die Tonspur der Vergleichs-Komposition (schnell, keine Bilder)
       - name: Original-Tonspur zum Vergleich rendern

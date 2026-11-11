@@ -45,6 +45,8 @@ export type ErklaertEpisode = {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	transitions: Record<string, TransitionPresentation<any>>;
 	script: {tailMs: number; maxDurationMs?: number};
+	/** Ab welchem Frame das Format-Badge erscheint (Standard 2; später, wenn das Titelbild im Video liegt). */
+	badgeFrom?: number;
 };
 
 /** Timeline einer Kurzfolge – nie länger als 60 s (Formatgrenze, siehe ./timeline.ts). */
@@ -80,7 +82,7 @@ export const ErklaertFrame: React.FC<ErklaertProps & {ep: ErklaertEpisode}> = ({
 					})}
 				</TransitionSeries>
 
-				<FormatBadge episode={ep.episode} totalFrames={tl.durationInFrames} hideFrom={outro ? outro.cutFrame - 4 : undefined} />
+				<FormatBadge episode={ep.episode} totalFrames={tl.durationInFrames} hideFrom={outro ? outro.cutFrame - 4 : undefined} showFrom={ep.badgeFrom} />
 				<GrainOverlay opacity={0.04} vignette={0.38} />
 				{subtitles ? <TikTokSubtitles captions={voiceover.captions} bottom={480} /> : null}
 				<Voiceover manifest={voiceover} volume={voiceVolume} />

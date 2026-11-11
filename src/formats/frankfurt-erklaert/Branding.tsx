@@ -33,10 +33,10 @@ export const BrandAvatar: React.FC<{size: number; ring?: number}> = ({size, ring
  * Format-Badge oben links (in jeder Folge gleich): „FRANKFURT ERKLÄRT #01“ mit 60-Sekunden-Ring,
  * der über die Folge abläuft – das Wiedererkennungsmerkmal des Kurzformats.
  */
-export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFrom?: number}> = ({episode, totalFrames, hideFrom}) => {
+export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFrom?: number; showFrom?: number}> = ({episode, totalFrames, hideFrom, showFrom = 2}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const appear = springIn({frame, fps, delay: 2, damping: 16, stiffness: 160});
+	const appear = springIn({frame, fps, delay: showFrom, damping: 16, stiffness: 160});
 	const out = hideFrom !== undefined ? interpolate(frame, [hideFrom, hideFrom + 8], [1, 0], clamp) : 1;
 	const p = Math.min(1, frame / Math.max(1, totalFrames));
 	const secondsLeft = Math.max(0, Math.ceil(FORMAT.maxSeconds - frame / fps));
