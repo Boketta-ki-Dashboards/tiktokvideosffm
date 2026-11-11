@@ -95,7 +95,7 @@
 		{
 			"text": " Frankfurt!",
 			"startMs": 445,
-			"endMs": 1653,
+			"endMs": 1055,
 			"timestampMs": 1049,
 			"confidence": 1
 		},
@@ -172,7 +172,7 @@
 		{
 			"text": " Antworten.",
 			"startMs": 4480,
-			"endMs": 5327,
+			"endMs": 5206,
 			"timestampMs": 4904,
 			"confidence": 1
 		},
@@ -284,7 +284,7 @@
 		{
 			"text": " Ort.",
 			"startMs": 10801,
-			"endMs": 11381,
+			"endMs": 11271,
 			"timestampMs": 11091,
 			"confidence": 1
 		},
@@ -340,7 +340,7 @@
 		{
 			"text": " geklärt.",
 			"startMs": 13363,
-			"endMs": 14257,
+			"endMs": 14030,
 			"timestampMs": 13810,
 			"confidence": 1
 		},
@@ -424,7 +424,7 @@
 		{
 			"text": " dienstfähig.",
 			"startMs": 20391,
-			"endMs": 21831,
+			"endMs": 21570,
 			"timestampMs": 21111,
 			"confidence": 1
 		},
@@ -522,7 +522,7 @@
 		{
 			"text": " polizeibekannt.",
 			"startMs": 27226,
-			"endMs": 28782,
+			"endMs": 28288,
 			"timestampMs": 28004,
 			"confidence": 1
 		},
@@ -571,7 +571,7 @@
 		{
 			"text": " Frankfurt.",
 			"startMs": 29695,
-			"endMs": 30391,
+			"endMs": 30339,
 			"timestampMs": 30043,
 			"confidence": 1
 		},
@@ -655,7 +655,7 @@
 		{
 			"text": " belegt.",
 			"startMs": 34215,
-			"endMs": 34958,
+			"endMs": 34871,
 			"timestampMs": 34587,
 			"confidence": 1
 		},
@@ -753,7 +753,7 @@
 		{
 			"text": " Gewahrsam.",
 			"startMs": 39967,
-			"endMs": 41070,
+			"endMs": 40785,
 			"timestampMs": 40519,
 			"confidence": 1
 		},
@@ -795,7 +795,7 @@
 		{
 			"text": " nicht.",
 			"startMs": 42389,
-			"endMs": 43167,
+			"endMs": 42825,
 			"timestampMs": 42778,
 			"confidence": 1
 		},
@@ -879,7 +879,7 @@
 		{
 			"text": " Minister.",
 			"startMs": 47183,
-			"endMs": 47961,
+			"endMs": 47804,
 			"timestampMs": 47572,
 			"confidence": 1
 		},
@@ -956,7 +956,7 @@
 		{
 			"text": " friedlich.",
 			"startMs": 52173,
-			"endMs": 53218,
+			"endMs": 52934,
 			"timestampMs": 52696,
 			"confidence": 1
 		},
@@ -1012,13 +1012,13 @@
 		{
 			"text": " Antworten?",
 			"startMs": 55631,
-			"endMs": 56305,
+			"endMs": 56276,
 			"timestampMs": 55968,
 			"confidence": 1
 		}
 	],
 	"captionsSource": "elevenlabs-alignment",
-	"generatedAt": "2026-11-11T10:17:33.357Z",
+	"generatedAt": "2026-11-11T10:35:48.825Z",
 	"voice": {
 		"provider": "elevenlabs",
 		"name": "Adam - Dominant, Firm",

@@ -233,11 +233,11 @@ const main = async () => {
 				if (parts.length === 1) copyFileSync(parts[0], file);
 				else ffmpeg([...parts.flatMap((pf) => ['-i', pf]), '-filter_complex', `${parts.map((_, k) => `[${k}:a]`).join('')}concat=n=${parts.length}:v=0:a=1[o]`, '-map', '[o]', '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', file]);
 				if (c.removedSec > 0.01) log(`  ✂ ${t.id.padEnd(10)} Pausen im Satz gekürzt: −${(c.removedSec * 1000).toFixed(0)} ms`);
-				return {id: t.id, file, key, meta, alignment: c.alignment, cutStart, target: t};
+				return {id: t.id, file, key, meta, alignment: c.alignment, cutStart, target: t, tight};
 			}
 
 			ffmpeg(['-i', raw, '-ss', cutStart.toFixed(3), '-to', cutEnd.toFixed(3), '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', file]);
-			return {id: t.id, file, key, meta, alignment: meta.alignment, cutStart, target: t};
+			return {id: t.id, file, key, meta, alignment: meta.alignment, cutStart, target: t, tight};
 		});
 		const voice = pieces[0].meta.voice;
 		if (pieces.some((p) => p.meta.voice.id !== voice.id)) throw new ElevenLabsError('Sätze stammen von unterschiedlichen Stimmen – mit --force neu erzeugen.', {code: 'mixed'});
@@ -294,7 +294,8 @@ const main = async () => {
 						const p = byId.get(tm.id);
 						const {captions, exact} = captionsFromAlignment({text: p.target.text, alignment: p.alignment, offsetMs: tm.startMs, cutStartSec: p.cutStart, first: i === 0});
 						if (!exact) inexact++;
-						all.push(...captions);
+						// Kurzformat-Schnitt: das abgeschnittene Satzzeichen verlängert sonst das letzte Wort über das Satzende hinaus
+						all.push(...(p.tight ? captions.map((c) => ({...c, startMs: Math.max(c.startMs, tm.startMs), endMs: Math.min(c.endMs, tm.endMs)})) : captions));
 					});
 					if (inexact > 0) log(`  ⚠ ${inexact} Satz/Sätze mit abweichender Zeichenfolge – Untertitel proportional zugeordnet`);
 					return all;

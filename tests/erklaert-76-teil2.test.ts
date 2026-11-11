@@ -92,6 +92,8 @@ test('Timing: Lücken zwischen Sätzen ≤ 400 ms, Länge 55–60 s, Szenen schl
 		assert.ok(gap <= 400, `${manifest.segments[i].id}: ${gap} ms Lücke`);
 	}
 	for (const s of script.segments) assert.ok(s.pauseAfterMs <= 150, `${s.id}: pauseAfterMs ${s.pauseAfterMs}`);
+	// wie check-sync: jedes Untertitel-Wort liegt in seinem Satz (Kurzformat-Schnitt kürzt das letzte Wort am Satzende)
+	for (const c of manifest.captions) assert.ok(manifest.segments.some((sg) => c.startMs >= sg.startMs - 5 && c.endMs <= sg.endMs + 5), `Untertitel „${c.text}“ außerhalb`);
 	assert.ok(tl.durationInFrames <= 1800 && tl.durationInFrames >= 1650, `${tl.durationInFrames} Frames`);
 	for (const [i, scene] of tl.scenes.entries()) {
 		const first = manifest.segments.find((s) => s.id === TEIL2_SCENES[i].segmentIds[0]);

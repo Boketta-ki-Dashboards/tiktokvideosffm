@@ -35,6 +35,12 @@
 - Kompakte 181-Zeile überlappte den Hinweis „13 bislang nicht dienstfähig“ → versetzt.
 - Chip „Die meisten … friedlich“ erschien erst im letzten Frame der Szene → mit der Gleichung; deckender Hintergrund.
 
-## 5. Finaler Render
+## 5. Renderläufe
+
+| Lauf | Ergebnis |
+|---|---|
+| [#26](https://github.com/Boketta-ki-Dashboards/tiktokvideosffm/actions/runs/43003326012) | Render + verify-video grün (56,68 s, 1080×1920), Sync-Versatz 0 ms, Lautheit −14,6 LUFS – aber **check-sync rot**: „13 Untertitel außerhalb ihrer Sätze“. Ursache: Nach dem Buchstaben-Schnitt trug das letzte Wort jedes Satzes noch die Endzeit des abgeschnittenen Satzzeichens. Korrektur: im Kurzformat-Schnitt werden Untertitel auf ihr Satzende begrenzt (Ton unverändert); neuer Test spiegelt die check-sync-Regel. |
+
+## 6. Finaler Render
 
 Wird nach dem GitHub-Lauf ergänzt.

@@ -1,8 +1,8 @@
 # Quellen – „Frankfurt erklärt in 60 Sekunden“ #03: 76 Fragen – Teil 2 (erste Antworten)
 
 Komposition `FrankfurtErklaert76FragenTeil2` · Video-ID `frankfurt-erklaert-76-fragen-teil2` · Format B (max. 60 s)
-Recherche-Stichtag **11.11.2026, 11:00 Uhr** (alle Seiten selbst abgerufen). Letzte Prüfung vor dem Render: keine neue Pressemitteilung des
-Innenministeriums zur Sitzung (Liste innen.hessen.de/presse, jüngste Einträge 10.11.: Bürokratieabbau, Reichspogromnacht), kein Beschlussprotokoll
+Recherche-Stichtag **11.11.2026, 11:00 Uhr** (alle Seiten selbst abgerufen). Letzte Prüfung vor dem Render (11.11.2026, 11:25 Uhr): keine neue Pressemitteilung des
+Innenministeriums zur Sitzung (innen.hessen.de/presse: 11.11. „Haushalt 2027 – Rund 1,9 Milliarden Euro für ein Höchstmaß an Sicherheit“ ohne Bezug zu den Ausschreitungen; 10.11.: Bürokratieabbau, Reichspogromnacht), kein Beschlussprotokoll
 auf der Terminseite des Landtags (nur „Einladung 51. Sitzung INA“).
 
 Kategorien im Video: **OFFIZIELL** = Angabe des Innenministers/Ministeriums (über hr/dpa berichtet) · **BERICHT** = journalistische Angabe ·
