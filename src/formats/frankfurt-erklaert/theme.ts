@@ -34,3 +34,24 @@ export const LAYOUT = {
 	contentBottom: 1250,
 	sourceTop: 1196,
 } as const;
+
+/**
+ * Titelbild-Zonen (dauerhaft ab „76 Fragen – Teil 3“, für alle NEUEN Format-B-Folgen; y in px bei 1080 × 1920).
+ * Anlass: Beim Upload von Teil 2 saßen Serientitel und große Zahl zu weit oben und wurden im TikTok-Profilraster
+ * (mittiger 3:4-Ausschnitt) angeschnitten, unten blieb Fläche ungenutzt.
+ * - Kernzone: Serientitel, große Zahl, Hauptgrafik, Themenkarte, Untertitelzeile.
+ * - 3:4-Ausschnitt: was im Profilraster sichtbar bleibt (1080 × 1440, mittig).
+ * - Im Video stehen ab ≈ 1.320 die TikTok-Untertitel → Coverelemente enden darüber (`videoBottom`).
+ * - Seitenrand: wichtige Texte mindestens `side` px vom Rand (rechts zusätzlich TikTok-Knöpfe ab ≈ x 930, y 1.000).
+ * Die Vorschau-Komposition `<Name>-CoverVorschau` (CoverPreviewSheet) prüft das vor jedem Export sichtbar.
+ */
+export const COVER_ZONE = {
+	coreTop: 330,
+	coreBottom: 1450,
+	crop34Top: 240,
+	crop34Bottom: 1680,
+	videoBottom: 1300,
+	side: 90,
+	rightButtonsX: 930,
+	rightButtonsTop: 1000,
+} as const;

@@ -117,9 +117,16 @@ jobs:
           cache: npm
 
       - name: FFmpeg installieren
+        timeout-minutes: 15
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq --no-install-recommends ffmpeg
+          # apt-Spiegel hängen gelegentlich minutenlang → je Versuch Zeitlimit, bis zu 3 Versuche, dann klarer Abbruch
+          for i in 1 2 3; do
+            if timeout 240 bash -c 'sudo apt-get update -qq -o Acquire::Retries=3 && sudo apt-get install -y -qq --no-install-recommends -o Acquire::Retries=3 ffmpeg'; then
+              break
+            fi
+            echo "::warning::FFmpeg-Installation Versuch $i nicht fertig – neuer Versuch"
+            sleep 10
+          done
           ffmpeg -version | head -1
 
       - name: Abhängigkeiten installieren
@@ -218,6 +225,12 @@ jobs:
             THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
             if [ -n "$THUMB" ]; then cp "output/${{ steps.job.outputs.out }}-cover.png" "output/$THUMB.png"; fi
           fi
+          # Prüfbogen fürs Titelbild (9:16, 3:4-Ausschnitt, Profilraster, Videoframe mit App-Elementen) – nicht zur Veröffentlichung
+          if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-CoverVorschau "; then
+            THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
+            PREVIEW="${THUMB%_THUMBNAIL}"; PREVIEW="${PREVIEW:-${{ steps.job.outputs.out }}}_COVER_VORSCHAU"
+            npx remotion still src/index.ts "${{ steps.job.outputs.video }}-CoverVorschau" "output/$PREVIEW.png"
+          fi
 
       - name: Technische Qualitätskontrolle
         if: steps.job.outputs.aktion == 'video'
@@ -266,6 +279,7 @@ jobs:
             output/${{ steps.job.outputs.out }}.mp4
             output/${{ steps.job.outputs.out }}-cover.png
             output/*_THUMBNAIL.png
+            output/*_COVER_VORSCHAU.png
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
           retention-days: 30

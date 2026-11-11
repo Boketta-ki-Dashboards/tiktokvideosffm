@@ -67,11 +67,35 @@ import {
 	FrankfurtErklaert76FragenTeil2,
 } from './videos/frankfurt-erklaert-76-fragen-teil2/FrankfurtErklaert76FragenTeil2';
 import {FrankfurtErklaert76FragenTeil2Cover} from './videos/frankfurt-erklaert-76-fragen-teil2/FrankfurtErklaert76FragenTeil2Cover';
+import {
+	calculateErklaert76Teil3Metadata,
+	erklaert76Teil3DefaultProps,
+	erklaert76Teil3Schema,
+	FrankfurtErklaert76FragenTeil3,
+} from './videos/frankfurt-erklaert-76-fragen-teil3/FrankfurtErklaert76FragenTeil3';
+import {FrankfurtErklaert76FragenTeil3Cover} from './videos/frankfurt-erklaert-76-fragen-teil3/FrankfurtErklaert76FragenTeil3Cover';
+import {FrankfurtErklaert76FragenTeil3CoverVorschau} from './videos/frankfurt-erklaert-76-fragen-teil3/FrankfurtErklaert76FragenTeil3CoverVorschau';
+import {COVER_PREVIEW_SIZE} from './formats/frankfurt-erklaert/CoverPreview';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #04 – 76 Fragen, Teil 3: Was ist immer noch offen? (12.11.2026), Titelbild tiefer (COVER_ZONE), max. 1.800 Frames */}
+				<Composition
+					id="FrankfurtErklaert76FragenTeil3"
+					component={FrankfurtErklaert76FragenTeil3}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaert76Teil3Schema}
+					defaultProps={erklaert76Teil3DefaultProps}
+					calculateMetadata={calculateErklaert76Teil3Metadata}
+				/>
+				<Still id="FrankfurtErklaert76FragenTeil3-Cover" component={FrankfurtErklaert76FragenTeil3Cover} width={VIDEO.width} height={VIDEO.height} />
+				{/* Prüfbogen Titelbild (eigene Komposition mit 30 fps, damit der eingebettete Videoframe echte Federn/Timings hat) */}
+				<Composition id="FrankfurtErklaert76FragenTeil3-CoverVorschau" component={FrankfurtErklaert76FragenTeil3CoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #03 – 76 Fragen, Teil 2: erste Antworten (11.11.2026), Titelbild im Video, max. 1.800 Frames */}
 				<Composition
 					id="FrankfurtErklaert76FragenTeil2"
