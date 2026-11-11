@@ -42,3 +42,7 @@ Korrigiert: Zahl „8.000–9.000“ umbrach in zwei Zeilen · Faktor-Plakette �
   nicht erreichbar). Fehler im Workflow: `ffmpeg -version | head -1` ließ den Schritt trotz fehlendem FFmpeg grün enden → die Hörprobe wurde
   erzeugt (188 Zeichen) und ging beim nächsten Schritt (ffprobe fehlt) verloren. Behoben: Schritt bricht ohne ffmpeg/ffprobe VOR jedem
   ElevenLabs-Aufruf ab (`pipefail` + `command -v`), und ein neuer Schritt sichert bei jedem späteren Fehler die bereits erzeugten Sätze im Cache.
+- Lauf #32 (Hörprobe, [Artefakt `Adam-Hoerprobe-run32`]): grün, FFmpeg wieder normal installierbar. 188 Zeichen = 10,25 s (ungekürzt, ≈ 18,3 Zeichen/s).
+  Whisper (medium): „Ava, Frankfurt. Gekommen sind 8 bis 9.000, insgesamt 181. Sie sind strafunmündig, aber Schadenersatz kann möglich sein.
+  Zuerst sind die Versicherungen gefragt.“ → Zahlen und Fachbegriffe verständlich; „Ewa“ wird als Gleitlaut gesprochen (Whisper kennt
+  „Eywa“ nicht und schreibt „Ava“, wie bei Teil 2 „Eva“) – bitte selbst anhören. Tempo 1.20 bleibt (Verständlichkeit gegeben).
