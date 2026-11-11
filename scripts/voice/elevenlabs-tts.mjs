@@ -33,6 +33,7 @@ import {
 import {durationSeconds, ffmpeg, masterVoice} from '../lib/ffmpeg.mjs';
 import {ensureDir, manifestPath, parseArgs, readScript, ROOT} from '../lib/project.mjs';
 import {assembleVoiceTrack} from '../lib/voice-build.mjs';
+import {applyAussprache, ausspracheFor, voiceSettingsFor} from '../lib/aussprache.mjs';
 
 const args = parseArgs(process.argv.slice(2));
 const voiceConfig = JSON.parse(readFileSync(path.join(ROOT, 'config', 'voice.json'), 'utf8'));
@@ -46,8 +47,12 @@ if (!videoId) {
 const script = sampleMode ? null : readScript(videoId);
 // Hörprobe optional mit dem Probesatz eines Videos (z. B. neue Slang-Sätze), ohne config/voice.json zu ändern
 const sampleScript = sampleMode && args['sample-from'] ? readScript(String(args['sample-from'])) : null;
-const cfg = {...voiceConfig.elevenlabs, ...(script?.voice?.elevenlabs ?? {})};
-cfg.voiceSettings = {...voiceConfig.elevenlabs.voiceSettings, ...(script?.voice?.elevenlabs?.voiceSettings ?? {})};
+const settingsScript = script ?? sampleScript;
+const cfg = {...voiceConfig.elevenlabs, ...(settingsScript?.voice?.elevenlabs ?? {})};
+// Stimmprofil (z. B. kurzformat-60 → speed 1.20) nur, wenn das Skript es ausdrücklich nennt
+cfg.voiceSettings = voiceSettingsFor(voiceConfig, settingsScript);
+// Dauerhafte Ausspracheregeln (z. B. „Ewa“ → gesprochen „Eywa“), außer für bereits fertige Videos
+const aussprache = ausspracheFor(voiceConfig, sampleMode ? String(args['sample-from'] ?? '_samples') : videoId);
 const SAMPLE_RATE = 44100;
 const summary = [];
 const log = (s = '') => {
@@ -58,7 +63,10 @@ const log = (s = '') => {
 const targets = sampleMode
 	? [{id: 'hoerprobe', text: sampleScript?.sampleText ?? cfg.sampleText, pauseAfterMs: 0}]
 	: script.segments.map((s) => ({id: s.id, text: s.text, pauseAfterMs: s.pauseAfterMs}));
-for (const t of targets) t.spoken = tokenizeForAlignment(t.text).spoken;
+for (const t of targets) {
+	t.text = applyAussprache(t.text, aussprache);
+	t.spoken = tokenizeForAlignment(t.text).spoken;
+}
 
 const cacheDir = ensureDir(path.join(ROOT, 'voice-cache', 'elevenlabs', videoId));
 const keyOf = (t, voiceId) =>
