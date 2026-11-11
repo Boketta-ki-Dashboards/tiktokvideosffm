@@ -45,4 +45,29 @@
 
 ## 6. Finaler Render
 
-Wird nach dem GitHub-Lauf ergänzt.
+Lauf **#28** (Workflow „Video produzieren (ElevenLabs Adam)“, Run-ID 43006380625, Commit 0324f73, `stimme: vorhanden`-Pfad aus dem Cache – 0 neue Credits) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL-run28` (MP4 + Thumbnail, ID 13849465428), `…-Technikbericht-run28` (ID 13848707252),
+`…-Sprecher-Adam-run28` (ID 13848517577).
+
+Nachprüfung am heruntergeladenen Artefakt (11.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL.mp4`, 14,13 MB, SHA-256 `43b15517f2e4eaf8d3874b18bd04b32729f62ee696ebc250dbede587f9037320` |
+| Länge | 56,683 s · 1.700 Frames (Grenze 1.800) ✅ |
+| Video | H.264 High, 1080 × 1920, 30/1 fps konstant, yuv420p, Faststart (moov vor mdat) ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,6 LUFS integriert · LRA 1,8 LU · True Peak −1,5 dBTP ✅ |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ (Sprecherspur: längste Pause 385 ms, `check-pauses` im Workflow grün) |
+| Sync | `check-sync` grün (alle Untertitel innerhalb ihres Satzes, Video ≥ Stimme + 0,3 s) |
+| Thumbnail | `FrankfurtRed3_76Fragen_Teil2_THUMBNAIL.png` 1080 × 1920, byte-gleich mit dem Cover-Still (MD5 24f48946…) |
+| Prüfbericht | `render.mjs --max` und `tech-report.mjs --max-seconds 60`: **BESTANDEN** |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 29 Bilder): `kontaktbogen-run28.jpg`. Frame 0 = vollständiges Titelbild
+(„76 FRAGEN – ERSTE ANTWORTEN“, TEIL 2, Datum, Landtag); ab „Krawallnacht“ verwandelt sich die 76 in die Karten 181/73;
+alle Kernaussagen (OFFEN-Plakette, Stempel „BISHER NICHT ÖFFENTLICH BELEGT“, „KEIN PAUSCHALES DEMO-VERBOT“, VERDACHT ≠ VERURTEILUNG,
+„friedlich“, Status-Raster + CTA) stehen spätestens mit dem zugehörigen Satz im Bild.
+
+Offene Hörprüfung durch den Kanalbetreiber: „Ewa“ → „Eywa“ (Whisper kann den Diphthong nicht sicher unterscheiden, transkribiert „Eva“;
+Spektrogramm zeigt einen Gleitlaut) – bitte in der Hörprobe (Lauf #24, Artefakt `Adam-Hoerprobe-run24`) bzw. im Video anhören.
