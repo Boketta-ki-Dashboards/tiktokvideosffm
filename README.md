@@ -9,6 +9,10 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #03 – „76 Fragen – Teil 2: erste Antworten“** (Komposition `FrankfurtErklaert76FragenTeil2`, 56,7 s): neue Zahlen des
+Innenministers aus dem Innenausschuss (181 verletzte Polizisten, 73 Tatverdächtige), offene Fragen, Maßnahmen für den 20.11., Kontroverse –
+schneller (Adam-Kurzformat 1.20, Pausen ≤ 400 ms), Titelbild als erste Szene. Quellen: [`sources.md`](references/frankfurt-erklaert-76-fragen-teil2/sources.md)
+
 **„Frankfurt erklärt“ #02 – „76 Fragen nach der Krawallnacht“ (Teil 1)** (Komposition `FrankfurtErklaert76Fragen`, 57,1 s): was Grüne (21 Fragen)
 und FDP (55 Fragen) am 10.11.2026 im Innenausschuss von der Landesregierung wissen wollen – nur Fragen, keine Antworten.
 Quellen: [`references/frankfurt-erklaert-76-fragen-landtag/sources.md`](references/frankfurt-erklaert-76-fragen-landtag/sources.md) ·

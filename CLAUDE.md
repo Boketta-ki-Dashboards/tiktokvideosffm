@@ -127,6 +127,9 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   (`scripts/audio/elevenlabs-sfx.mjs`, Workflow-Schritt bei `aktion: video`), Cache `voice-cache/elevenlabs-sfx/`, Ausgabe `public/sfx/premium/` + `src/lib/sfx-premium.ts`
   (ersetzt gleichnamige Synth-Effekte automatisch, für alle Folgen wiederverwendet). Fehlt dem Key die Berechtigung: genau EINE Probe-Anfrage, Erklärung in der
   Zusammenfassung, Fallback auf Synth-Effekte – nie umgehen, nie nach dem Key fragen.
+- **Aussprache (dauerhaft, alle neuen FrankfurtRed3-Videos):** „Ewa“ wird immer **Ewa** geschrieben/angezeigt und **„Eywa“** gesprochen.
+  Zentral in `config/voice-regeln.json → aussprache.regeln` (`{"Ewa": "Eywa"}`), automatisch als `{Ewa|Eywa}` angewandt (`scripts/lib/aussprache.mjs`);
+  Untertitel zeigen nie „Eywa“ (Test). Bereits fertige Videos stehen in `aussprache.ausnahmen` (byte-gleiche Spur aus dem Cache).
 - **Sprechtempo: Adam `speed` 1.16 – zuletzt erfolgreich verwendet und vom Kanalbetreiber akzeptiert (Folge 3, Commit d99eacd); gilt fest für ALLE Folgen.**
   Übrige Adam-Werte ebenso fest: stability 0.45, similarity_boost 0.8, style 0.2, use_speaker_boost true, seed 20261104, `mp3_44100_128`.
   Nie automatisch zwischen Folgen ändern; nur auf ausdrücklichen Wunsch in `config/voice.json` (dann Hörprobe). (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
@@ -142,6 +145,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
+| `FrankfurtErklaert76FragenTeil2` | `src/videos/frankfurt-erklaert-76-fragen-teil2/` | **Format B** #03 „76 Fragen – Teil 2: erste Antworten“ (11.11.2026): Angaben des Innenministers im Innenausschuss laut hr/dpa (181 verletzte Polizisten, 13 bislang nicht dienstfähig, 73 Tatverdächtige: ≈ 2/3 unter 21, > 1/2 polizeibekannt, ≈ 1/4 aus Frankfurt; ≈ 1.300 Kräfte über den Abend), offene Fragen (Plünderungen, TikTok), Maßnahmenbündel 20.11. (angekündigt, kein Verbot), Kontroverse als POSITION; Titelbild = erste Szene; Kurzformat-Stimme 1.20, Pausen ≤ 400 ms; Tests `tests/erklaert-76-teil2.test.ts`; Export `FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_Teil2_THUMBNAIL.png` |
 | `FrankfurtErklaert76Fragen` | `src/videos/frankfurt-erklaert-76-fragen-landtag/` | **Format B** #02 „76 Fragen nach der Krawallnacht“ (Teil 1, 10.11.2026): Innenausschuss 51. Sitzung (20 Uhr geplant, Wiesbaden), Drs. 21/5450 (Grüne, 21 Fragen) + 21/5459 (FDP, 55 Fragen) = 76; vier Themen als FRAGEN (Gefahrenprognose I.1–8, Schutzkonzept V.6, TikTok I.8, Konsequenzen) – keine Antworten/Ergebnisse; 57,1 s; Politik-Bausteine `formats/frankfurt-erklaert/visuals/Politics.tsx` (Landtag, BigCount, QuestionNumber, Dossier, CalendarSheet, FeedPhone) für Teil 2 (`references/…/teil2-notiz.md`); Tests `tests/erklaert-76-fragen.test.ts`; Export `FrankfurtRed3_76Fragen_Innenausschuss_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_THUMBNAIL.png` |
 | `FrankfurtErklaertDemoFilmen` | `src/videos/frankfurt-erklaert-01-demo-filmen/` (+ Formatsystem `src/formats/frankfurt-erklaert/`) | **Format B** „Frankfurt erklärt in 60 Sekunden“ #01 „Nur gefilmt – trotzdem Ärger?“: Art. 8 GG, § 125 StGB (eigene Beteiligung), Filmen grundsätzlich erlaubt vs. Veröffentlichen (§§ 22, 23 KUG, § 201 StGB), Kontrolle auch als Zeuge (§ 163b Abs. 2 StPO), Beweismittel/Sicherstellung (§§ 94, 98 StPO) ≠ automatische Galerie-Durchsicht (§ 110 StPO), Auflösung → unverzüglich entfernen (§ 14 Abs. 7 HVersFG); VG Frankfurt 2025 nicht verifizierbar → nicht verwendet; 59,1 s (1.773 Frames); Tests `tests/erklaert-demo-filmen.test.ts` + `tests/erklaert-format.test.ts`; Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4` |
 | `FrankfurtPoliceRights` | `src/videos/frankfurt-2026-11-polizeikontrollen/` | „Polizei will deine Galerie sehen – musst du das?“: verstärkte Kontrollen auf der Zeil (hessenschau), Schilderung eines Stadtverordneten (nicht bestätigt), Zeugenaufruf ≠ Pflicht, freiwillige Bitte vs. angeordnete Maßnahme (§ 18 HSOG, §§ 94, 98, 110, 163b StPO, BGH 2 StR 232/24), Tipps für Kontrollen; Kategorien OFFIZIELL · BERICHT · SCHILDERUNG · RECHT · TIPP; leichter Frankfurter Slang (≈ 4 Ausdrücke, nur Wortwahl); 2,5D-Zeil (`visuals/ZeilStreet`), Smartphone-UI, Figuren; Tests `tests/polizeirechte.test.ts`; Export `FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL.mp4` |
@@ -169,6 +173,18 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   - Eine Folge liefert nur `content.ts`, `plan.ts`, `scenes/`, eine `ErklaertEpisode` + Cover.
   - Höchstens 1–2 Slang-Ausdrücke. Bei Rechtsthemen „Allgemeine Info, keine Rechtsberatung · Stand“ im Bild; Szenen als „ILLUSTRATION“ kennzeichnen.
   - Gewalt nur abstrakt (Lichtschein, Flugbahnen); keine Taktiken, Fluchtwege oder Absperrungen; nie Widerstand gegen Maßnahmen nahelegen.
+  - **Kurzformat-Regeln ab Teil 2 der „76 Fragen“ (11.11.2026, für alle NEUEN Format-B-Folgen):**
+    - Stimme: `script.json → "voice": {"profile": "kurzformat-60"}` → Adam mit speed **1.20** (`config/voice-regeln.json → profiles`; `config/voice.json` selbst bleibt unverändert), alle anderen
+      Werte unverändert; längere Videos und bereits fertige Folgen bleiben bei 1.16. Bei unnatürlichem Klang hat Verständlichkeit Vorrang (Hörprobe).
+    - Timing: `"trim": {"mode": "letters", "maxInnerGapMs": 320}` (Schnitt am letzten Buchstaben statt am Satzzeichen, Pausen im Satz ≤ 320 ms),
+      `pauseAfterMs` 0–60 ms zwischen Sätzen, ≈ 120 ms zwischen Themen, **keine Füllpausen** (lieber 55 s ohne Leerlauf als 60 s mit);
+      `"maxPauseMs": 400` in Skript und `config/videos.json` → `scripts/voice/check-pauses.mjs` prüft die Spur (auch im Workflow).
+    - Szenen: Übergänge ≤ 10 Frames; neue Grafik spätestens mit dem neuen Satz; Schlüsselwort-Cues für jede Einblendung; kein Element erst
+      am Szenenende; keine leeren Szenenanfänge (erste Information ab Frame 0–6).
+    - Inhalt: hohe Informationsdichte, Zahlen immer mit Urheber, Kategorien OFFIZIELL · BERICHT · POSITION · OFFEN · ANGEKÜNDIGT im Bild.
+    - **Titelbild im Video:** die erste Szene IST das Titelbild (vollständiger Titel ab Frame 0, ≈ 1–1,5 s stehend), danach Verwandlung in die
+      erste Inhaltsszene ohne Schwarzblende; dieselbe Komponente rendert das PNG (`<Name>-Cover`, Workflow `thumbnailName`);
+      `ErklaertEpisode.badgeFrom` blendet das Format-Badge erst danach ein.
   - **60-s-Grenze vierfach geprüft:**
     1. `enforceMaxFrames` (`src/formats/frankfurt-erklaert/timeline.ts`) kürzt automatisch den stummen Nachlauf bzw. bricht ab, wenn schon die Stimme
        zu lang ist (mit Angabe, um wie viel gekürzt werden muss).

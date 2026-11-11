@@ -23,18 +23,6 @@
 		"sampleText": "Frankfurt am Main. Wann geht es nach den Ausschreitungen wirklich weiter? Am vierzehnten, zwanzigsten oder einundzwanzigsten November? Hier sind die bestätigten Informationen.",
 		"sampleFile": "voiceover/samples/adam-hoerprobe.mp3"
 	},
-	"profiles": {
-		"$comment": "Stimmprofile pro Format. Gelten NUR, wenn script.json \"voice\": {\"profile\": …} setzt – längere Videos bleiben bei den Grundwerten.",
-		"kurzformat-60": {
-			"$comment": "„Frankfurt erklärt in 60 Sekunden“ ab Teil 2 der 76 Fragen (11.11.2026): schneller (ElevenLabs-Obergrenze 1.20), sonst alles wie Adam-Standard.",
-			"voiceSettings": {"speed": 1.2}
-		}
-	},
-	"aussprache": {
-		"$comment": "Dauerhafte Ausspracheregeln für alle FrankfurtRed3-Videos: geschrieben/angezeigt links, gesprochen rechts. Fertige Videos in „ausnahmen“ bleiben unverändert (byte-gleiche Sprecherspur aus dem Cache).",
-		"regeln": {"Ewa": "Eywa"},
-		"ausnahmen": ["frankfurt-2026-11-polizeikontrollen", "frankfurt-erklaert-01-demo-filmen", "frankfurt-erklaert-76-fragen-landtag"]
-	},
 	"fallback": {
 		"$comment": "Nur manuell nutzbar (npm run voice:chatterbox / voice:piper). Wird nie automatisch verwendet.",
 		"engines": ["chatterbox", "piper", "import"]

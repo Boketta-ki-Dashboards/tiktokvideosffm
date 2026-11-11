@@ -60,11 +60,31 @@ import {
 	FrankfurtErklaert76Fragen,
 } from './videos/frankfurt-erklaert-76-fragen-landtag/FrankfurtErklaert76Fragen';
 import {FrankfurtErklaert76FragenCover} from './videos/frankfurt-erklaert-76-fragen-landtag/FrankfurtErklaert76FragenCover';
+import {
+	calculateErklaert76Teil2Metadata,
+	erklaert76Teil2DefaultProps,
+	erklaert76Teil2Schema,
+	FrankfurtErklaert76FragenTeil2,
+} from './videos/frankfurt-erklaert-76-fragen-teil2/FrankfurtErklaert76FragenTeil2';
+import {FrankfurtErklaert76FragenTeil2Cover} from './videos/frankfurt-erklaert-76-fragen-teil2/FrankfurtErklaert76FragenTeil2Cover';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #03 – 76 Fragen, Teil 2: erste Antworten (11.11.2026), Titelbild im Video, max. 1.800 Frames */}
+				<Composition
+					id="FrankfurtErklaert76FragenTeil2"
+					component={FrankfurtErklaert76FragenTeil2}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaert76Teil2Schema}
+					defaultProps={erklaert76Teil2DefaultProps}
+					calculateMetadata={calculateErklaert76Teil2Metadata}
+				/>
+				<Still id="FrankfurtErklaert76FragenTeil2-Cover" component={FrankfurtErklaert76FragenTeil2Cover} width={VIDEO.width} height={VIDEO.height} />
 				{/* Format B #02 – 76 Fragen nach der Krawallnacht (Innenausschuss 10.11.2026), max. 1.800 Frames */}
 				<Composition
 					id="FrankfurtErklaert76Fragen"

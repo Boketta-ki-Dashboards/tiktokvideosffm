@@ -34,9 +34,14 @@ import {durationSeconds, ffmpeg, masterVoice} from '../lib/ffmpeg.mjs';
 import {ensureDir, manifestPath, parseArgs, readScript, ROOT} from '../lib/project.mjs';
 import {assembleVoiceTrack} from '../lib/voice-build.mjs';
 import {applyAussprache, ausspracheFor, voiceSettingsFor} from '../lib/aussprache.mjs';
+import {compressGaps, letterWindow} from '../lib/tight-trim.mjs';
 
 const args = parseArgs(process.argv.slice(2));
-const voiceConfig = JSON.parse(readFileSync(path.join(ROOT, 'config', 'voice.json'), 'utf8'));
+const voiceConfig = {
+	...JSON.parse(readFileSync(path.join(ROOT, 'config', 'voice.json'), 'utf8')),
+	// Stimmprofile (Kurzformat) und Ausspracheregeln (Ewa → Eywa) – eigene Datei, voice.json bleibt unverändert
+	...JSON.parse(readFileSync(path.join(ROOT, 'config', 'voice-regeln.json'), 'utf8')),
+};
 const sampleMode = Boolean(args.sample);
 const videoId = sampleMode ? '_samples' : args.video;
 if (!videoId) {
@@ -211,12 +216,28 @@ const main = async () => {
 			const meta = JSON.parse(readFileSync(path.join(cacheDir, `${key}.json`), 'utf8'));
 			const raw = path.join(cacheDir, `${key}.mp3`);
 			const dur = durationSeconds(raw);
-			const w = speechWindow(meta.alignment);
+			// Kurzformat (opt-in): Schnitt an Buchstaben statt Satzzeichen, lange Pausen im Satz kürzen
+			const tight = script?.voice?.trim?.mode === 'letters';
+			const w = tight ? letterWindow(meta.alignment) : speechWindow(meta.alignment);
 			const cutStart = Math.max(0, w.first - cfg.trim.leadSeconds);
 			const cutEnd = Math.min(dur, w.last + cfg.trim.tailSeconds);
 			const file = path.join(tmp, `${t.id}.wav`);
+			const maxGap = tight ? Number(script.voice.trim.maxInnerGapMs ?? 0) / 1000 : 0;
+			if (maxGap > 0) {
+				const c = compressGaps(meta.alignment, cutStart, cutEnd, maxGap);
+				const parts = c.ranges.map(([rs, re], k) => {
+					const pf = path.join(tmp, `${t.id}-${k}.wav`);
+					ffmpeg(['-i', raw, '-ss', rs.toFixed(3), '-to', re.toFixed(3), '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', pf]);
+					return pf;
+				});
+				if (parts.length === 1) copyFileSync(parts[0], file);
+				else ffmpeg([...parts.flatMap((pf) => ['-i', pf]), '-filter_complex', `${parts.map((_, k) => `[${k}:a]`).join('')}concat=n=${parts.length}:v=0:a=1[o]`, '-map', '[o]', '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', file]);
+				if (c.removedSec > 0.01) log(`  ✂ ${t.id.padEnd(10)} Pausen im Satz gekürzt: −${(c.removedSec * 1000).toFixed(0)} ms`);
+				return {id: t.id, file, key, meta, alignment: c.alignment, cutStart, target: t};
+			}
+
 			ffmpeg(['-i', raw, '-ss', cutStart.toFixed(3), '-to', cutEnd.toFixed(3), '-ar', String(SAMPLE_RATE), '-ac', '1', '-c:a', 'pcm_s16le', file]);
-			return {id: t.id, file, key, meta, cutStart, target: t};
+			return {id: t.id, file, key, meta, alignment: meta.alignment, cutStart, target: t};
 		});
 		const voice = pieces[0].meta.voice;
 		if (pieces.some((p) => p.meta.voice.id !== voice.id)) throw new ElevenLabsError('Sätze stammen von unterschiedlichen Stimmen – mit --force neu erzeugen.', {code: 'mixed'});
@@ -271,7 +292,7 @@ const main = async () => {
 					let inexact = 0;
 					timings.forEach((tm, i) => {
 						const p = byId.get(tm.id);
-						const {captions, exact} = captionsFromAlignment({text: p.target.text, alignment: p.meta.alignment, offsetMs: tm.startMs, cutStartSec: p.cutStart, first: i === 0});
+						const {captions, exact} = captionsFromAlignment({text: p.target.text, alignment: p.alignment, offsetMs: tm.startMs, cutStartSec: p.cutStart, first: i === 0});
 						if (!exact) inexact++;
 						all.push(...captions);
 					});
