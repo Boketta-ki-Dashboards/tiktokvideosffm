@@ -9,6 +9,11 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #04 – „76 Fragen – Teil 3: Was ist immer noch offen?“** (Komposition `FrankfurtErklaert76FragenTeil3`): vier Fragen –
+Teilnehmerprognose (≈ 2.000 erwartet, 8.000–9.000 gekommen), Gewalt schon bis zur Auflösung, Tatverdächtige unter 14 (§ 19 StGB, §§ 828/832 BGB),
+Schäden der Geschäfte (Versicherung zuerst, Stadt prüft). Erstes Titelbild nach der neuen Positionsregel (`COVER_ZONE`) mit Prüfbogen
+`FrankfurtErklaert76FragenTeil3-CoverVorschau`. Quellen: [`sources.md`](references/frankfurt-erklaert-76-fragen-teil3/sources.md)
+
 **„Frankfurt erklärt“ #03 – „76 Fragen – Teil 2: erste Antworten“** (Komposition `FrankfurtErklaert76FragenTeil2`, 56,7 s): neue Zahlen des
 Innenministers aus dem Innenausschuss (181 verletzte Polizisten, 73 Tatverdächtige), offene Fragen, Maßnahmen für den 20.11., Kontroverse –
 schneller (Adam-Kurzformat 1.20, Pausen ≤ 400 ms), Titelbild als erste Szene. Quellen: [`sources.md`](references/frankfurt-erklaert-76-fragen-teil2/sources.md)

@@ -120,11 +120,16 @@ jobs:
         timeout-minutes: 15
         run: |
           # apt-Spiegel hängen gelegentlich minutenlang → je Versuch Zeitlimit, bis zu 3 Versuche, dann klarer Abbruch
+          # Versuch 1: Standard-Quellen des Runners. Versuche 2–3: nur das offizielle Ubuntu-Archiv (andere Paketquellen ausgeblendet).
+          . /etc/os-release
+          printf 'deb http://archive.ubuntu.com/ubuntu %s main universe\ndeb http://archive.ubuntu.com/ubuntu %s-updates main universe\ndeb http://security.ubuntu.com/ubuntu %s-security main universe\n' "$VERSION_CODENAME" "$VERSION_CODENAME" "$VERSION_CODENAME" > /tmp/ubuntu-only.list
+          ONLY="-o Dir::Etc::sourcelist=/tmp/ubuntu-only.list -o Dir::Etc::sourceparts=-"
           for i in 1 2 3; do
-            if timeout 240 bash -c 'sudo apt-get update -qq -o Acquire::Retries=3 && sudo apt-get install -y -qq --no-install-recommends -o Acquire::Retries=3 ffmpeg'; then
+            OPTS="-o Acquire::Retries=3"; [ "$i" -gt 1 ] && OPTS="$OPTS $ONLY"
+            if timeout 240 bash -c "sudo apt-get update -qq $OPTS && sudo apt-get install -y -qq --no-install-recommends $OPTS ffmpeg"; then
               break
             fi
-            echo "::warning::FFmpeg-Installation Versuch $i nicht fertig – neuer Versuch"
+            echo "::warning::FFmpeg-Installation Versuch $i nicht fertig – neuer Versuch (nur Ubuntu-Archiv)"
             sleep 10
           done
           ffmpeg -version | head -1
