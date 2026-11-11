@@ -364,7 +364,7 @@ export const TikTokScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const {fps} = useVideoConfig();
 	const c = cue(cues, 'tiktok', 4);
 	const atDeal = wordFrame(cues, 'Straftaten', c.from + 30);
-	const atProof = wordFrame(cues, 'belegt', c.from + 90);
+	const atProof = Math.min(wordFrame(cues, 'belegt', c.from + 90), wordFrame(cues, 'bisher', c.from + 80));
 	const stamp = springIn({frame, fps, delay: atProof - 10, damping: 9, stiffness: 220});
 	const card = (title: string, text: string, color: string, icon: IconName, at: number) => (
 		<Pop at={at} dy={30}>
@@ -420,7 +420,7 @@ export const Nov20Scene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const atMeasures = wordFrame(cues, 'Maßnahmen', n1.from + 50);
 	const atAuflagen = wordFrame(cues, 'Auflagen', n1.from + 100);
 	const atGewahrsam = wordFrame(cues, 'präventiver', n1.from + 130);
-	const atBan = wordFrame(cues, 'Demo-Verbot', n2.from + 20);
+	const atBan = Math.min(wordFrame(cues, 'Demo-Verbot', n2.from + 20), n2.from + 4);
 	const glow = 0.5 + 0.5 * Math.sin(frame / 8);
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
@@ -529,7 +529,7 @@ export const EndScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const c = cue(cues, 'end', 4);
-	const atAsk = wordFrame(cues, 'reichen', c.from + 50);
+	const atAsk = Math.min(wordFrame(cues, 'reichen', c.from + 50), c.from + 26);
 	const ask = springIn({frame, fps, delay: atAsk - 6, damping: 13, stiffness: 180});
 	const pull = interpolate(frame, [0, durationInFrames], [0, 1], {...clamp, easing: EASE_OUT});
 	return (

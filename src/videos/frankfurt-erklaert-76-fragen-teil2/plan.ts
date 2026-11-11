@@ -18,7 +18,7 @@ export const TEIL2_KEYWORDS: Record<string, string[]> = {
 	cover: ['Ewa', '76', 'Landtag', 'Antworten'],
 	police: ['Polizei', 'Poseck', '1.300', 'geplündert', 'geklärt'],
 	numbers: ['Zahlen', '181', '13', '73', 'zwei', 'Hälfte', 'Viertel'],
-	tiktok: ['TikTok', 'Straftaten', 'belegt'],
+	tiktok: ['TikTok', 'Straftaten', 'bisher', 'belegt'],
 	nov20: ['20', 'Maßnahmen', 'Auflagen', 'präventiver', 'Demo-Verbot'],
 	contro: ['umstrittene', 'migrantisch', 'Minister', 'Verdächtige', 'friedlich'],
 	outro: ['offen', 'reichen'],

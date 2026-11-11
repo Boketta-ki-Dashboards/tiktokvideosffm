@@ -41,6 +41,8 @@
 |---|---|
 | [#26](https://github.com/Boketta-ki-Dashboards/tiktokvideosffm/actions/runs/43003326012) | Render + verify-video grün (56,68 s, 1080×1920), Sync-Versatz 0 ms, Lautheit −14,6 LUFS – aber **check-sync rot**: „13 Untertitel außerhalb ihrer Sätze“. Ursache: Nach dem Buchstaben-Schnitt trug das letzte Wort jedes Satzes noch die Endzeit des abgeschnittenen Satzzeichens. Korrektur: im Kurzformat-Schnitt werden Untertitel auf ihr Satzende begrenzt (Ton unverändert); neuer Test spiegelt die check-sync-Regel. |
 
+| [#27](https://github.com/Boketta-ki-Dashboards/tiktokvideosffm/actions/runs/43005027681) | komplett grün (56,683 s, 1.700 Frames, −14,6 LUFS, True Peak −1,5 dBTP, keine Stille ≥ 400 ms). Kontaktbogen der MP4: drei Kernaussagen erschienen erst beim letzten Wort und standen nur 1–1,5 s („BISHER NICHT ÖFFENTLICH BELEGT“, „KEIN PAUSCHALES DEMO-VERBOT“, „REICHEN EUCH DIESE ANTWORTEN?“) → jeweils zum Satzanfang vorgezogen, neu gerendert. |
+
 ## 6. Finaler Render
 
 Wird nach dem GitHub-Lauf ergänzt.
