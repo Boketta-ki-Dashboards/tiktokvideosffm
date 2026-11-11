@@ -25,7 +25,7 @@ const teil2 = JSON.parse(read('../src/videos/frankfurt-erklaert-76-fragen-teil2/
 const display = (t: string) => t.replace(/\{([^|}]*)\|[^}]*\}/g, '$1');
 const seg = (id: string) => display(script.segments.find((s: {id: string}) => s.id === id).text);
 const all = script.segments.map((s: {text: string}) => display(s.text)).join(' ');
-const isAdam = manifest.source === 'elevenlabs';
+const isAdam = String(manifest.source).startsWith('elevenlabs');
 
 test('Alle vier Fragen kommen vor – in Reihenfolge, je mit eigener Szene', () => {
 	assert.match(seg('q1a'), /^Erstens:/);
@@ -137,7 +137,7 @@ test('Timing: kurze Pausen, Schnitt am letzten Buchstaben, ≤ 60 s, Übergänge
 		const segs = manifest.segments;
 		for (let i = 1; i < segs.length; i++) assert.ok(segs[i].startMs - segs[i - 1].endMs <= 400, `Pause vor ${segs[i].id}: ${segs[i].startMs - segs[i - 1].endMs} ms`);
 		for (const c of manifest.captions) {
-			const s = segs.find((x) => c.startMs >= x.startMs - 1 && c.startMs <= x.endMs + 1);
+			const s = segs.find((x) => c.startMs >= x.startMs - 1 && c.startMs < x.endMs);
 			assert.ok(s && c.endMs <= s.endMs + 1, `Untertitel „${c.text}“ außerhalb seines Satzes`);
 		}
 	}

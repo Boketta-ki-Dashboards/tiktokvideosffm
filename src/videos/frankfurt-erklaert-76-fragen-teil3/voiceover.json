@@ -3,7 +3,7 @@
 	"videoId": "frankfurt-erklaert-76-fragen-teil3",
 	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
 	"audioFile": "voiceover/frankfurt-erklaert-76-fragen-teil3/voiceover-adam.mp3",
-	"durationMs": 58056,
+	"durationMs": 57996,
 	"segments": [
 		{
 			"id": "hook1",
@@ -19,92 +19,92 @@
 		},
 		{
 			"id": "q1a",
-			"startMs": 3543,
-			"endMs": 7596,
+			"startMs": 3483,
+			"endMs": 7536,
 			"hash": "edb631a43e8bebf6ff5f"
 		},
 		{
 			"id": "q1b",
-			"startMs": 7636,
-			"endMs": 10788,
+			"startMs": 7576,
+			"endMs": 10728,
 			"hash": "9069046a2cd273e39006"
 		},
 		{
 			"id": "q1c",
-			"startMs": 10828,
-			"endMs": 15803,
+			"startMs": 10768,
+			"endMs": 15743,
 			"hash": "7cd87a48169c41a9efee"
 		},
 		{
 			"id": "q2a",
-			"startMs": 15923,
-			"endMs": 19697,
+			"startMs": 15863,
+			"endMs": 19637,
 			"hash": "aabd36acabd34f9ce5de"
 		},
 		{
 			"id": "q2b",
-			"startMs": 19737,
-			"endMs": 25195,
+			"startMs": 19677,
+			"endMs": 25135,
 			"hash": "692db83be445cfc98d54"
 		},
 		{
 			"id": "q2c",
-			"startMs": 25235,
-			"endMs": 27551,
+			"startMs": 25175,
+			"endMs": 27491,
 			"hash": "8260c9ef92d4ff492b5c"
 		},
 		{
 			"id": "q3a",
-			"startMs": 27671,
-			"endMs": 31294,
+			"startMs": 27611,
+			"endMs": 31234,
 			"hash": "8d6c6f5d45ddf3a27cf9"
 		},
 		{
 			"id": "q3b",
-			"startMs": 31334,
-			"endMs": 34289,
+			"startMs": 31274,
+			"endMs": 34229,
 			"hash": "e6166adc4b4dd4345b37"
 		},
 		{
 			"id": "q3c",
-			"startMs": 34329,
-			"endMs": 38642,
+			"startMs": 34269,
+			"endMs": 38582,
 			"hash": "607506405226d404f30a"
 		},
 		{
 			"id": "q3d",
-			"startMs": 38682,
-			"endMs": 40534,
+			"startMs": 38622,
+			"endMs": 40474,
 			"hash": "a91a6bd99f6308762911"
 		},
 		{
 			"id": "q4a",
-			"startMs": 40654,
-			"endMs": 43383,
+			"startMs": 40594,
+			"endMs": 43323,
 			"hash": "7634f77d491db85b9450"
 		},
 		{
 			"id": "q4b",
-			"startMs": 43423,
-			"endMs": 47139,
+			"startMs": 43363,
+			"endMs": 47079,
 			"hash": "78f6af430b61a878593f"
 		},
 		{
 			"id": "q4c",
-			"startMs": 47179,
-			"endMs": 51202,
+			"startMs": 47119,
+			"endMs": 51142,
 			"hash": "910c3a577b7640720daa"
 		},
 		{
 			"id": "q4d",
-			"startMs": 51242,
-			"endMs": 53895,
+			"startMs": 51182,
+			"endMs": 53835,
 			"hash": "6ddec93f48bf7e9f36fe"
 		},
 		{
 			"id": "end",
-			"startMs": 54015,
-			"endMs": 58056,
+			"startMs": 53955,
+			"endMs": 57996,
 			"hash": "ce00574751dc08b7d727"
 		}
 	],
@@ -181,973 +181,973 @@
 		},
 		{
 			"text": " Erstens:",
-			"startMs": 3543,
-			"endMs": 4307,
-			"timestampMs": 3925,
+			"startMs": 3483,
+			"endMs": 4247,
+			"timestampMs": 3865,
 			"confidence": 1
 		},
 		{
 			"text": " Die",
-			"startMs": 4467,
-			"endMs": 4571,
-			"timestampMs": 4519,
+			"startMs": 4407,
+			"endMs": 4511,
+			"timestampMs": 4459,
 			"confidence": 1
 		},
 		{
 			"text": " Polizei",
-			"startMs": 4606,
-			"endMs": 5001,
-			"timestampMs": 4804,
+			"startMs": 4546,
+			"endMs": 4941,
+			"timestampMs": 4744,
 			"confidence": 1
 		},
 		{
 			"text": " erwartete",
-			"startMs": 5047,
-			"endMs": 5535,
-			"timestampMs": 5291,
+			"startMs": 4987,
+			"endMs": 5475,
+			"timestampMs": 5231,
 			"confidence": 1
 		},
 		{
 			"text": " rund",
-			"startMs": 5582,
-			"endMs": 5756,
-			"timestampMs": 5669,
+			"startMs": 5522,
+			"endMs": 5696,
+			"timestampMs": 5609,
 			"confidence": 1
 		},
 		{
 			"text": " 2.000",
-			"startMs": 5814,
-			"endMs": 6510,
-			"timestampMs": 6162,
+			"startMs": 5754,
+			"endMs": 6450,
+			"timestampMs": 6102,
 			"confidence": 1
 		},
 		{
 			"text": " Demonstrierende.",
-			"startMs": 6557,
-			"endMs": 7596,
-			"timestampMs": 7161,
+			"startMs": 6497,
+			"endMs": 7536,
+			"timestampMs": 7101,
 			"confidence": 1
 		},
 		{
 			"text": " Gekommen",
-			"startMs": 7636,
-			"endMs": 7984,
-			"timestampMs": 7810,
+			"startMs": 7576,
+			"endMs": 7924,
+			"timestampMs": 7750,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 8008,
-			"endMs": 8124,
-			"timestampMs": 8066,
+			"startMs": 7948,
+			"endMs": 8064,
+			"timestampMs": 8006,
 			"confidence": 1
 		},
 		{
 			"text": " 8.000",
-			"startMs": 8193,
-			"endMs": 8379,
-			"timestampMs": 8286,
+			"startMs": 8133,
+			"endMs": 8319,
+			"timestampMs": 8226,
 			"confidence": 1
 		},
 		{
 			"text": " bis",
-			"startMs": 8402,
-			"endMs": 8507,
-			"timestampMs": 8455,
+			"startMs": 8342,
+			"endMs": 8447,
+			"timestampMs": 8395,
 			"confidence": 1
 		},
 		{
 			"text": " 9.000 –",
-			"startMs": 8565,
-			"endMs": 9180,
-			"timestampMs": 8873,
+			"startMs": 8505,
+			"endMs": 9120,
+			"timestampMs": 8813,
 			"confidence": 1
 		},
 		{
 			"text": " etwa",
-			"startMs": 9203,
-			"endMs": 9447,
-			"timestampMs": 9325,
+			"startMs": 9143,
+			"endMs": 9387,
+			"timestampMs": 9265,
 			"confidence": 1
 		},
 		{
 			"text": " viermal",
-			"startMs": 9505,
-			"endMs": 9958,
-			"timestampMs": 9732,
+			"startMs": 9445,
+			"endMs": 9898,
+			"timestampMs": 9672,
 			"confidence": 1
 		},
 		{
 			"text": " so",
-			"startMs": 10016,
-			"endMs": 10179,
-			"timestampMs": 10098,
+			"startMs": 9956,
+			"endMs": 10119,
+			"timestampMs": 10038,
 			"confidence": 1
 		},
 		{
 			"text": " viele.",
-			"startMs": 10248,
-			"endMs": 10788,
-			"timestampMs": 10591,
+			"startMs": 10188,
+			"endMs": 10728,
+			"timestampMs": 10531,
 			"confidence": 1
 		},
 		{
 			"text": " Warum",
-			"startMs": 10828,
-			"endMs": 11176,
-			"timestampMs": 11002,
+			"startMs": 10768,
+			"endMs": 11116,
+			"timestampMs": 10942,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 11223,
-			"endMs": 11292,
-			"timestampMs": 11258,
+			"startMs": 11163,
+			"endMs": 11232,
+			"timestampMs": 11198,
 			"confidence": 1
 		},
 		{
 			"text": " Prognose",
-			"startMs": 11327,
-			"endMs": 11873,
-			"timestampMs": 11600,
+			"startMs": 11267,
+			"endMs": 11813,
+			"timestampMs": 11540,
 			"confidence": 1
 		},
 		{
 			"text": " so",
-			"startMs": 11919,
-			"endMs": 12024,
-			"timestampMs": 11972,
+			"startMs": 11859,
+			"endMs": 11964,
+			"timestampMs": 11912,
 			"confidence": 1
 		},
 		{
 			"text": " niedrig",
-			"startMs": 12093,
-			"endMs": 12453,
-			"timestampMs": 12273,
+			"startMs": 12033,
+			"endMs": 12393,
+			"timestampMs": 12213,
 			"confidence": 1
 		},
 		{
 			"text": " lag",
-			"startMs": 12523,
-			"endMs": 12802,
-			"timestampMs": 12663,
+			"startMs": 12463,
+			"endMs": 12742,
+			"timestampMs": 12603,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 13011,
-			"endMs": 13138,
-			"timestampMs": 13075,
+			"startMs": 12951,
+			"endMs": 13078,
+			"timestampMs": 13015,
 			"confidence": 1
 		},
 		{
 			"text": " was",
-			"startMs": 13185,
-			"endMs": 13301,
-			"timestampMs": 13243,
+			"startMs": 13125,
+			"endMs": 13241,
+			"timestampMs": 13183,
 			"confidence": 1
 		},
 		{
 			"text": " das",
-			"startMs": 13347,
-			"endMs": 13440,
-			"timestampMs": 13394,
+			"startMs": 13287,
+			"endMs": 13380,
+			"timestampMs": 13334,
 			"confidence": 1
 		},
 		{
 			"text": " für",
-			"startMs": 13475,
-			"endMs": 13568,
-			"timestampMs": 13522,
+			"startMs": 13415,
+			"endMs": 13508,
+			"timestampMs": 13462,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 13591,
-			"endMs": 13696,
-			"timestampMs": 13644,
+			"startMs": 13531,
+			"endMs": 13636,
+			"timestampMs": 13584,
 			"confidence": 1
 		},
 		{
 			"text": " Einsatz",
-			"startMs": 13789,
-			"endMs": 14172,
-			"timestampMs": 13981,
+			"startMs": 13729,
+			"endMs": 14112,
+			"timestampMs": 13921,
 			"confidence": 1
 		},
 		{
 			"text": " hieß,",
-			"startMs": 14207,
-			"endMs": 14415,
-			"timestampMs": 14311,
+			"startMs": 14147,
+			"endMs": 14355,
+			"timestampMs": 14251,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 14439,
-			"endMs": 14601,
-			"timestampMs": 14520,
+			"startMs": 14379,
+			"endMs": 14541,
+			"timestampMs": 14460,
 			"confidence": 1
 		},
 		{
 			"text": " bisher",
-			"startMs": 14671,
-			"endMs": 14973,
-			"timestampMs": 14822,
+			"startMs": 14611,
+			"endMs": 14913,
+			"timestampMs": 14762,
 			"confidence": 1
 		},
 		{
 			"text": " unklar.",
-			"startMs": 15054,
-			"endMs": 15803,
-			"timestampMs": 15565,
+			"startMs": 14994,
+			"endMs": 15743,
+			"timestampMs": 15505,
 			"confidence": 1
 		},
 		{
 			"text": " Zweitens:",
-			"startMs": 15923,
-			"endMs": 16562,
-			"timestampMs": 16243,
+			"startMs": 15863,
+			"endMs": 16502,
+			"timestampMs": 16183,
 			"confidence": 1
 		},
 		{
 			"text": " Laut",
-			"startMs": 16742,
-			"endMs": 16928,
-			"timestampMs": 16835,
+			"startMs": 16682,
+			"endMs": 16868,
+			"timestampMs": 16775,
 			"confidence": 1
 		},
 		{
 			"text": " Innenminister",
-			"startMs": 16986,
-			"endMs": 17566,
-			"timestampMs": 17276,
+			"startMs": 16926,
+			"endMs": 17506,
+			"timestampMs": 17216,
 			"confidence": 1
 		},
 		{
 			"text": " begann",
-			"startMs": 17613,
-			"endMs": 17857,
-			"timestampMs": 17735,
+			"startMs": 17553,
+			"endMs": 17797,
+			"timestampMs": 17675,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 17880,
-			"endMs": 17950,
-			"timestampMs": 17915,
+			"startMs": 17820,
+			"endMs": 17890,
+			"timestampMs": 17855,
 			"confidence": 1
 		},
 		{
 			"text": " Gewalt",
-			"startMs": 17984,
-			"endMs": 18263,
-			"timestampMs": 18124,
+			"startMs": 17924,
+			"endMs": 18203,
+			"timestampMs": 18064,
 			"confidence": 1
 		},
 		{
 			"text": " schon",
-			"startMs": 18286,
-			"endMs": 18495,
-			"timestampMs": 18391,
+			"startMs": 18226,
+			"endMs": 18435,
+			"timestampMs": 18331,
 			"confidence": 1
 		},
 		{
 			"text": " vor",
-			"startMs": 18553,
-			"endMs": 18727,
-			"timestampMs": 18640,
+			"startMs": 18493,
+			"endMs": 18667,
+			"timestampMs": 18580,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 18762,
-			"endMs": 18855,
-			"timestampMs": 18809,
+			"startMs": 18702,
+			"endMs": 18795,
+			"timestampMs": 18749,
 			"confidence": 1
 		},
 		{
 			"text": " Auflösung.",
-			"startMs": 18890,
-			"endMs": 19697,
-			"timestampMs": 19442,
+			"startMs": 18830,
+			"endMs": 19637,
+			"timestampMs": 19382,
 			"confidence": 1
 		},
 		{
 			"text": " Bis",
-			"startMs": 19737,
-			"endMs": 19958,
-			"timestampMs": 19848,
+			"startMs": 19677,
+			"endMs": 19898,
+			"timestampMs": 19788,
 			"confidence": 1
 		},
 		{
 			"text": " dahin",
-			"startMs": 20004,
-			"endMs": 20271,
-			"timestampMs": 20138,
+			"startMs": 19944,
+			"endMs": 20211,
+			"timestampMs": 20078,
 			"confidence": 1
 		},
 		{
 			"text": " wurden",
-			"startMs": 20317,
-			"endMs": 20538,
-			"timestampMs": 20428,
+			"startMs": 20257,
+			"endMs": 20478,
+			"timestampMs": 20368,
 			"confidence": 1
 		},
 		{
 			"text": " sechs",
-			"startMs": 20573,
-			"endMs": 20724,
-			"timestampMs": 20649,
+			"startMs": 20513,
+			"endMs": 20664,
+			"timestampMs": 20589,
 			"confidence": 1
 		},
 		{
 			"text": " Polizisten",
-			"startMs": 20759,
-			"endMs": 21258,
-			"timestampMs": 21009,
+			"startMs": 20699,
+			"endMs": 21198,
+			"timestampMs": 20949,
 			"confidence": 1
 		},
 		{
 			"text": " verletzt,",
-			"startMs": 21304,
-			"endMs": 21722,
-			"timestampMs": 21513,
+			"startMs": 21244,
+			"endMs": 21662,
+			"timestampMs": 21453,
 			"confidence": 1
 		},
 		{
 			"text": " einer",
-			"startMs": 21746,
-			"endMs": 22001,
-			"timestampMs": 21874,
+			"startMs": 21686,
+			"endMs": 21941,
+			"timestampMs": 21814,
 			"confidence": 1
 		},
 		{
 			"text": " schwer –",
-			"startMs": 22036,
-			"endMs": 22556,
-			"timestampMs": 22296,
+			"startMs": 21976,
+			"endMs": 22496,
+			"timestampMs": 22236,
 			"confidence": 1
 		},
 		{
 			"text": " insgesamt",
-			"startMs": 22716,
-			"endMs": 23215,
-			"timestampMs": 22966,
+			"startMs": 22656,
+			"endMs": 23155,
+			"timestampMs": 22906,
 			"confidence": 1
 		},
 		{
 			"text": " waren",
-			"startMs": 23250,
-			"endMs": 23494,
-			"timestampMs": 23372,
+			"startMs": 23190,
+			"endMs": 23434,
+			"timestampMs": 23312,
 			"confidence": 1
 		},
 		{
 			"text": " es",
-			"startMs": 23541,
-			"endMs": 23610,
-			"timestampMs": 23576,
+			"startMs": 23481,
+			"endMs": 23550,
+			"timestampMs": 23516,
 			"confidence": 1
 		},
 		{
 			"text": " 181.",
-			"startMs": 23668,
-			"endMs": 25195,
-			"timestampMs": 24551,
+			"startMs": 23608,
+			"endMs": 25135,
+			"timestampMs": 24491,
 			"confidence": 1
 		},
 		{
 			"text": " Die",
-			"startMs": 25235,
-			"endMs": 25374,
-			"timestampMs": 25305,
+			"startMs": 25175,
+			"endMs": 25314,
+			"timestampMs": 25245,
 			"confidence": 1
 		},
 		{
 			"text": " große",
-			"startMs": 25409,
-			"endMs": 25699,
-			"timestampMs": 25554,
+			"startMs": 25349,
+			"endMs": 25639,
+			"timestampMs": 25494,
 			"confidence": 1
 		},
 		{
 			"text": " Mehrheit",
-			"startMs": 25757,
-			"endMs": 26199,
-			"timestampMs": 25978,
+			"startMs": 25697,
+			"endMs": 26139,
+			"timestampMs": 25918,
 			"confidence": 1
 		},
 		{
 			"text": " blieb",
-			"startMs": 26222,
-			"endMs": 26396,
-			"timestampMs": 26309,
+			"startMs": 26162,
+			"endMs": 26336,
+			"timestampMs": 26249,
 			"confidence": 1
 		},
 		{
 			"text": " trotzdem",
-			"startMs": 26466,
-			"endMs": 26860,
-			"timestampMs": 26663,
+			"startMs": 26406,
+			"endMs": 26800,
+			"timestampMs": 26603,
 			"confidence": 1
 		},
 		{
 			"text": " friedlich.",
-			"startMs": 26930,
-			"endMs": 27551,
-			"timestampMs": 27453,
+			"startMs": 26870,
+			"endMs": 27491,
+			"timestampMs": 27393,
 			"confidence": 1
 		},
 		{
 			"text": " Drittens:",
-			"startMs": 27671,
-			"endMs": 28251,
-			"timestampMs": 27961,
+			"startMs": 27611,
+			"endMs": 28191,
+			"timestampMs": 27901,
 			"confidence": 1
 		},
 		{
 			"text": " Zwei",
-			"startMs": 28444,
-			"endMs": 28687,
-			"timestampMs": 28566,
+			"startMs": 28384,
+			"endMs": 28627,
+			"timestampMs": 28506,
 			"confidence": 1
 		},
 		{
 			"text": " Tatverdächtige",
-			"startMs": 28745,
-			"endMs": 29372,
-			"timestampMs": 29059,
+			"startMs": 28685,
+			"endMs": 29312,
+			"timestampMs": 28999,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 29407,
-			"endMs": 29535,
-			"timestampMs": 29471,
+			"startMs": 29347,
+			"endMs": 29475,
+			"timestampMs": 29411,
 			"confidence": 1
 		},
 		{
 			"text": " laut",
-			"startMs": 29616,
-			"endMs": 29779,
-			"timestampMs": 29698,
+			"startMs": 29556,
+			"endMs": 29719,
+			"timestampMs": 29638,
 			"confidence": 1
 		},
 		{
 			"text": " Minister",
-			"startMs": 29825,
-			"endMs": 30243,
-			"timestampMs": 30034,
+			"startMs": 29765,
+			"endMs": 30183,
+			"timestampMs": 29974,
 			"confidence": 1
 		},
 		{
 			"text": " unter",
-			"startMs": 30324,
-			"endMs": 30557,
-			"timestampMs": 30441,
+			"startMs": 30264,
+			"endMs": 30497,
+			"timestampMs": 30381,
 			"confidence": 1
 		},
 		{
 			"text": " 14.",
-			"startMs": 30603,
-			"endMs": 31294,
-			"timestampMs": 30981,
+			"startMs": 30543,
+			"endMs": 31234,
+			"timestampMs": 30921,
 			"confidence": 1
 		},
 		{
 			"text": " Sie",
-			"startMs": 31334,
-			"endMs": 31485,
-			"timestampMs": 31410,
+			"startMs": 31274,
+			"endMs": 31425,
+			"timestampMs": 31350,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 31520,
-			"endMs": 31647,
-			"timestampMs": 31584,
+			"startMs": 31460,
+			"endMs": 31587,
+			"timestampMs": 31524,
 			"confidence": 1
 		},
 		{
 			"text": " strafunmündig –",
-			"startMs": 31671,
-			"endMs": 32553,
-			"timestampMs": 32112,
+			"startMs": 31611,
+			"endMs": 32493,
+			"timestampMs": 32052,
 			"confidence": 1
 		},
 		{
 			"text": " bestraft",
-			"startMs": 32646,
-			"endMs": 33017,
-			"timestampMs": 32832,
+			"startMs": 32586,
+			"endMs": 32957,
+			"timestampMs": 32772,
 			"confidence": 1
 		},
 		{
 			"text": " werden",
-			"startMs": 33041,
-			"endMs": 33261,
-			"timestampMs": 33151,
+			"startMs": 32981,
+			"endMs": 33201,
+			"timestampMs": 33091,
 			"confidence": 1
 		},
 		{
 			"text": " können",
-			"startMs": 33319,
-			"endMs": 33563,
-			"timestampMs": 33441,
+			"startMs": 33259,
+			"endMs": 33503,
+			"timestampMs": 33381,
 			"confidence": 1
 		},
 		{
 			"text": " sie",
-			"startMs": 33610,
-			"endMs": 33691,
-			"timestampMs": 33651,
+			"startMs": 33550,
+			"endMs": 33631,
+			"timestampMs": 33591,
 			"confidence": 1
 		},
 		{
 			"text": " nicht.",
-			"startMs": 33772,
-			"endMs": 34289,
-			"timestampMs": 34109,
+			"startMs": 33712,
+			"endMs": 34229,
+			"timestampMs": 34049,
 			"confidence": 1
 		},
 		{
 			"text": " Aber",
-			"startMs": 34329,
-			"endMs": 34550,
-			"timestampMs": 34440,
+			"startMs": 34269,
+			"endMs": 34490,
+			"timestampMs": 34380,
 			"confidence": 1
 		},
 		{
 			"text": " das",
-			"startMs": 34573,
-			"endMs": 34666,
-			"timestampMs": 34620,
+			"startMs": 34513,
+			"endMs": 34606,
+			"timestampMs": 34560,
 			"confidence": 1
 		},
 		{
 			"text": " Jugendamt",
-			"startMs": 34712,
-			"endMs": 35153,
-			"timestampMs": 34933,
+			"startMs": 34652,
+			"endMs": 35093,
+			"timestampMs": 34873,
 			"confidence": 1
 		},
 		{
 			"text": " kann",
-			"startMs": 35177,
-			"endMs": 35304,
-			"timestampMs": 35241,
+			"startMs": 35117,
+			"endMs": 35244,
+			"timestampMs": 35181,
 			"confidence": 1
 		},
 		{
 			"text": " eingebunden",
-			"startMs": 35374,
-			"endMs": 35908,
-			"timestampMs": 35641,
+			"startMs": 35314,
+			"endMs": 35848,
+			"timestampMs": 35581,
 			"confidence": 1
 		},
 		{
 			"text": " werden,",
-			"startMs": 35954,
-			"endMs": 36396,
-			"timestampMs": 36175,
+			"startMs": 35894,
+			"endMs": 36336,
+			"timestampMs": 36115,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 36488,
-			"endMs": 36628,
-			"timestampMs": 36558,
+			"startMs": 36428,
+			"endMs": 36568,
+			"timestampMs": 36498,
 			"confidence": 1
 		},
 		{
 			"text": " Schadenersatz",
-			"startMs": 36651,
-			"endMs": 37417,
-			"timestampMs": 37034,
+			"startMs": 36591,
+			"endMs": 37357,
+			"timestampMs": 36974,
 			"confidence": 1
 		},
 		{
 			"text": " kann",
-			"startMs": 37557,
-			"endMs": 37742,
-			"timestampMs": 37650,
+			"startMs": 37497,
+			"endMs": 37682,
+			"timestampMs": 37590,
 			"confidence": 1
 		},
 		{
 			"text": " möglich",
-			"startMs": 37789,
-			"endMs": 38102,
-			"timestampMs": 37946,
+			"startMs": 37729,
+			"endMs": 38042,
+			"timestampMs": 37886,
 			"confidence": 1
 		},
 		{
 			"text": " sein.",
-			"startMs": 38137,
-			"endMs": 38642,
-			"timestampMs": 38509,
+			"startMs": 38077,
+			"endMs": 38582,
+			"timestampMs": 38449,
 			"confidence": 1
 		},
 		{
 			"text": " Eltern",
-			"startMs": 38682,
-			"endMs": 39123,
-			"timestampMs": 38903,
+			"startMs": 38622,
+			"endMs": 39063,
+			"timestampMs": 38843,
 			"confidence": 1
 		},
 		{
 			"text": " haften",
-			"startMs": 39181,
-			"endMs": 39506,
-			"timestampMs": 39344,
+			"startMs": 39121,
+			"endMs": 39446,
+			"timestampMs": 39284,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 39530,
-			"endMs": 39680,
-			"timestampMs": 39605,
+			"startMs": 39470,
+			"endMs": 39620,
+			"timestampMs": 39545,
 			"confidence": 1
 		},
 		{
 			"text": " automatisch.",
-			"startMs": 39727,
-			"endMs": 40534,
-			"timestampMs": 40273,
+			"startMs": 39667,
+			"endMs": 40474,
+			"timestampMs": 40213,
 			"confidence": 1
 		},
 		{
 			"text": " Viertens:",
-			"startMs": 40654,
-			"endMs": 41234,
-			"timestampMs": 40944,
+			"startMs": 40594,
+			"endMs": 41174,
+			"timestampMs": 40884,
 			"confidence": 1
 		},
 		{
 			"text": " Wer",
-			"startMs": 41462,
-			"endMs": 41636,
-			"timestampMs": 41549,
+			"startMs": 41402,
+			"endMs": 41576,
+			"timestampMs": 41489,
 			"confidence": 1
 		},
 		{
 			"text": " zahlt",
-			"startMs": 41705,
-			"endMs": 41972,
-			"timestampMs": 41839,
+			"startMs": 41645,
+			"endMs": 41912,
+			"timestampMs": 41779,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 41996,
-			"endMs": 42077,
-			"timestampMs": 42037,
+			"startMs": 41936,
+			"endMs": 42017,
+			"timestampMs": 41977,
 			"confidence": 1
 		},
 		{
 			"text": " Schäden",
-			"startMs": 42123,
-			"endMs": 42518,
-			"timestampMs": 42321,
+			"startMs": 42063,
+			"endMs": 42458,
+			"timestampMs": 42261,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 42576,
-			"endMs": 42669,
-			"timestampMs": 42623,
+			"startMs": 42516,
+			"endMs": 42609,
+			"timestampMs": 42563,
 			"confidence": 1
 		},
 		{
 			"text": " Geschäfte?",
-			"startMs": 42715,
-			"endMs": 43383,
-			"timestampMs": 43151,
+			"startMs": 42655,
+			"endMs": 43323,
+			"timestampMs": 43091,
 			"confidence": 1
 		},
 		{
 			"text": " Die",
-			"startMs": 43423,
-			"endMs": 43586,
-			"timestampMs": 43505,
+			"startMs": 43363,
+			"endMs": 43526,
+			"timestampMs": 43445,
 			"confidence": 1
 		},
 		{
 			"text": " Stadt",
-			"startMs": 43609,
-			"endMs": 43829,
-			"timestampMs": 43719,
+			"startMs": 43549,
+			"endMs": 43769,
+			"timestampMs": 43659,
 			"confidence": 1
 		},
 		{
 			"text": " hat",
-			"startMs": 43864,
-			"endMs": 43969,
-			"timestampMs": 43917,
+			"startMs": 43804,
+			"endMs": 43909,
+			"timestampMs": 43857,
 			"confidence": 1
 		},
 		{
 			"text": " mit",
-			"startMs": 44015,
-			"endMs": 44108,
-			"timestampMs": 44062,
+			"startMs": 43955,
+			"endMs": 44048,
+			"timestampMs": 44002,
 			"confidence": 1
 		},
 		{
 			"text": " Händlern",
-			"startMs": 44143,
-			"endMs": 44410,
-			"timestampMs": 44277,
+			"startMs": 44083,
+			"endMs": 44350,
+			"timestampMs": 44217,
 			"confidence": 1
 		},
 		{
 			"text": " gesprochen:",
-			"startMs": 44445,
-			"endMs": 44967,
-			"timestampMs": 44706,
+			"startMs": 44385,
+			"endMs": 44907,
+			"timestampMs": 44646,
 			"confidence": 1
 		},
 		{
 			"text": " Zuerst",
-			"startMs": 45217,
-			"endMs": 45612,
-			"timestampMs": 45415,
+			"startMs": 45157,
+			"endMs": 45552,
+			"timestampMs": 45355,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 45647,
-			"endMs": 45786,
-			"timestampMs": 45717,
+			"startMs": 45587,
+			"endMs": 45726,
+			"timestampMs": 45657,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 45809,
-			"endMs": 45879,
-			"timestampMs": 45844,
+			"startMs": 45749,
+			"endMs": 45819,
+			"timestampMs": 45784,
 			"confidence": 1
 		},
 		{
 			"text": " Versicherungen",
-			"startMs": 45914,
-			"endMs": 46448,
-			"timestampMs": 46181,
+			"startMs": 45854,
+			"endMs": 46388,
+			"timestampMs": 46121,
 			"confidence": 1
 		},
 		{
 			"text": " gefragt.",
-			"startMs": 46494,
-			"endMs": 47139,
-			"timestampMs": 46901,
+			"startMs": 46434,
+			"endMs": 47079,
+			"timestampMs": 46841,
 			"confidence": 1
 		},
 		{
 			"text": " Reicht",
-			"startMs": 47179,
-			"endMs": 47434,
-			"timestampMs": 47307,
+			"startMs": 47119,
+			"endMs": 47374,
+			"timestampMs": 47247,
 			"confidence": 1
 		},
 		{
 			"text": " das",
-			"startMs": 47458,
-			"endMs": 47562,
-			"timestampMs": 47510,
+			"startMs": 47398,
+			"endMs": 47502,
+			"timestampMs": 47450,
 			"confidence": 1
 		},
 		{
 			"text": " nicht,",
-			"startMs": 47632,
-			"endMs": 47922,
-			"timestampMs": 47777,
+			"startMs": 47572,
+			"endMs": 47862,
+			"timestampMs": 47717,
 			"confidence": 1
 		},
 		{
 			"text": " prüft",
-			"startMs": 48015,
-			"endMs": 48305,
-			"timestampMs": 48160,
+			"startMs": 47955,
+			"endMs": 48245,
+			"timestampMs": 48100,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 48328,
-			"endMs": 48398,
-			"timestampMs": 48363,
+			"startMs": 48268,
+			"endMs": 48338,
+			"timestampMs": 48303,
 			"confidence": 1
 		},
 		{
 			"text": " Stadt",
-			"startMs": 48421,
-			"endMs": 48619,
-			"timestampMs": 48520,
+			"startMs": 48361,
+			"endMs": 48559,
+			"timestampMs": 48460,
 			"confidence": 1
 		},
 		{
 			"text": " finanzielle",
-			"startMs": 48653,
-			"endMs": 49164,
-			"timestampMs": 48909,
+			"startMs": 48593,
+			"endMs": 49104,
+			"timestampMs": 48849,
 			"confidence": 1
 		},
 		{
 			"text": " Hilfe –",
-			"startMs": 49211,
-			"endMs": 49640,
-			"timestampMs": 49426,
+			"startMs": 49151,
+			"endMs": 49580,
+			"timestampMs": 49366,
 			"confidence": 1
 		},
 		{
 			"text": " ohne",
-			"startMs": 49768,
-			"endMs": 50058,
-			"timestampMs": 49913,
+			"startMs": 49708,
+			"endMs": 49998,
+			"timestampMs": 49853,
 			"confidence": 1
 		},
 		{
 			"text": " feste",
-			"startMs": 50105,
-			"endMs": 50383,
-			"timestampMs": 50244,
+			"startMs": 50045,
+			"endMs": 50323,
+			"timestampMs": 50184,
 			"confidence": 1
 		},
 		{
 			"text": " Zusage.",
-			"startMs": 50441,
-			"endMs": 51202,
-			"timestampMs": 50923,
+			"startMs": 50381,
+			"endMs": 51142,
+			"timestampMs": 50863,
 			"confidence": 1
 		},
 		{
 			"text": " Der",
-			"startMs": 51242,
-			"endMs": 51393,
-			"timestampMs": 51318,
+			"startMs": 51182,
+			"endMs": 51333,
+			"timestampMs": 51258,
 			"confidence": 1
 		},
 		{
 			"text": " Gesamtschaden",
-			"startMs": 51428,
-			"endMs": 52078,
-			"timestampMs": 51753,
+			"startMs": 51368,
+			"endMs": 52018,
+			"timestampMs": 51693,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 52148,
-			"endMs": 52240,
-			"timestampMs": 52194,
+			"startMs": 52088,
+			"endMs": 52180,
+			"timestampMs": 52134,
 			"confidence": 1
 		},
 		{
 			"text": " bisher",
-			"startMs": 52287,
-			"endMs": 52554,
-			"timestampMs": 52421,
+			"startMs": 52227,
+			"endMs": 52494,
+			"timestampMs": 52361,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 52612,
-			"endMs": 52751,
-			"timestampMs": 52682,
+			"startMs": 52552,
+			"endMs": 52691,
+			"timestampMs": 52622,
 			"confidence": 1
 		},
 		{
 			"text": " offiziell",
-			"startMs": 52798,
-			"endMs": 53192,
-			"timestampMs": 52995,
+			"startMs": 52738,
+			"endMs": 53132,
+			"timestampMs": 52935,
 			"confidence": 1
 		},
 		{
 			"text": " beziffert.",
-			"startMs": 53227,
-			"endMs": 53895,
-			"timestampMs": 53698,
+			"startMs": 53167,
+			"endMs": 53835,
+			"timestampMs": 53638,
 			"confidence": 1
 		},
 		{
 			"text": " Einiges",
-			"startMs": 54015,
-			"endMs": 54468,
-			"timestampMs": 54242,
+			"startMs": 53955,
+			"endMs": 54408,
+			"timestampMs": 54182,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 54514,
-			"endMs": 54619,
-			"timestampMs": 54567,
+			"startMs": 54454,
+			"endMs": 54559,
+			"timestampMs": 54507,
 			"confidence": 1
 		},
 		{
 			"text": " geklärt,",
-			"startMs": 54665,
-			"endMs": 55211,
-			"timestampMs": 54938,
+			"startMs": 54605,
+			"endMs": 55151,
+			"timestampMs": 54878,
 			"confidence": 1
 		},
 		{
 			"text": " vieles",
-			"startMs": 55280,
-			"endMs": 55629,
-			"timestampMs": 55455,
+			"startMs": 55220,
+			"endMs": 55569,
+			"timestampMs": 55395,
 			"confidence": 1
 		},
 		{
 			"text": " offen.",
-			"startMs": 55698,
-			"endMs": 56024,
-			"timestampMs": 55861,
+			"startMs": 55638,
+			"endMs": 55964,
+			"timestampMs": 55801,
 			"confidence": 1
 		},
 		{
 			"text": " Welche",
-			"startMs": 56274,
-			"endMs": 56483,
-			"timestampMs": 56379,
+			"startMs": 56214,
+			"endMs": 56423,
+			"timestampMs": 56319,
 			"confidence": 1
 		},
 		{
 			"text": " Frage",
-			"startMs": 56529,
-			"endMs": 56889,
-			"timestampMs": 56709,
+			"startMs": 56469,
+			"endMs": 56829,
+			"timestampMs": 56649,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 56912,
-			"endMs": 57017,
-			"timestampMs": 56965,
+			"startMs": 56852,
+			"endMs": 56957,
+			"timestampMs": 56905,
 			"confidence": 1
 		},
 		{
 			"text": " euch",
-			"startMs": 57051,
-			"endMs": 57202,
-			"timestampMs": 57127,
+			"startMs": 56991,
+			"endMs": 57142,
+			"timestampMs": 57067,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 57237,
-			"endMs": 57307,
-			"timestampMs": 57272,
+			"startMs": 57177,
+			"endMs": 57247,
+			"timestampMs": 57212,
 			"confidence": 1
 		},
 		{
 			"text": " wichtigsten?",
-			"startMs": 57353,
-			"endMs": 58056,
-			"timestampMs": 57719,
+			"startMs": 57293,
+			"endMs": 57996,
+			"timestampMs": 57659,
 			"confidence": 1
 		}
 	],
 	"captionsSource": "elevenlabs-alignment",
-	"generatedAt": "2026-11-11T19:21:13.153Z",
+	"generatedAt": "2026-11-11T19:24:44.411Z",
 	"voice": {
 		"provider": "elevenlabs",
 		"name": "Adam - Dominant, Firm",
@@ -1164,5 +1164,5 @@
 		"seed": 20261104,
 		"characters": 1055
 	},
-	"measuredLufsBeforeMaster": -14.13
+	"measuredLufsBeforeMaster": -14.17
 }

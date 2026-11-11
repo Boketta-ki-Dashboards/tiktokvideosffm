@@ -25,7 +25,7 @@
 		{
 			"id": "hook2",
 			"text": "Nach den {76|sechsundsiebzig} Fragen bleiben vier Punkte offen.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "q1a",

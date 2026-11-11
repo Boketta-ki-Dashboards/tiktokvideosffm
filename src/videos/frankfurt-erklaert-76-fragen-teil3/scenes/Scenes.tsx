@@ -346,6 +346,9 @@ const DotGrid: React.FC<{count: number; soft?: number; cols: number; dot: number
 				const a = interpolate(frame, [at + d, at + d + 8], [0, 1], {...clamp, easing: EASE_OUT});
 				const isSoft = i >= count;
 				const bob = Math.sin(frame / 9 + i * 0.7) * 1.5 * a;
+				if (a <= 0.01) {
+					return <div key={i} style={{width: dot, height: dot, borderRadius: dot / 2, border: '2px solid rgba(255,255,255,0.12)'}} />;
+				}
 				return (
 					<div
 						key={i}
@@ -374,7 +377,7 @@ export const ForecastScene: React.FC<SceneProps> = ({cues, durationInFrames}) =>
 	const a = cue(cues, 'q1a', 4);
 	const b = cue(cues, 'q1b', 80);
 	const c = cue(cues, 'q1c', 150);
-	const atExpected = Math.min(wordFrame(cues, '2.000', a.from + 40), a.from + 46);
+	const atExpected = Math.min(wordFrame(cues, '2.000', a.from + 40), wordFrame(cues, 'erwartete', a.from + 20) + 10, a.from + 46);
 	const atActual = wordFrame(cues, 'Gekommen', b.from);
 	const atFactor = wordFrame(cues, 'viermal', b.from + 40);
 	const atWhy = c.from;
@@ -423,7 +426,7 @@ export const ForecastScene: React.FC<SceneProps> = ({cues, durationInFrames}) =>
 						</div>
 						<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted, opacity: interpolate(frame, [atActual + 6, atActual + 14], [0, 1], clamp)}}>{FORECAST.actualNote}</div>
 						<div style={{flex: 1}} />
-						{frame >= atActual - 6 ? <DotGrid count={FORECAST.actualFrom / FORECAST.perDot} soft={(FORECAST.actualTo - FORECAST.actualFrom) / FORECAST.perDot} cols={10} dot={28} gap={7} color={COLORS.signal} at={atActual - 4} /> : <div style={{height: 308}} />}
+						<DotGrid count={FORECAST.actualFrom / FORECAST.perDot} soft={(FORECAST.actualTo - FORECAST.actualFrom) / FORECAST.perDot} cols={10} dot={28} gap={7} color={COLORS.signal} at={atActual - 4} />
 					</div>
 				</Card>
 				{/* Faktor-Plakette */}
