@@ -76,11 +76,33 @@ import {
 import {FrankfurtErklaert76FragenTeil3Cover} from './videos/frankfurt-erklaert-76-fragen-teil3/FrankfurtErklaert76FragenTeil3Cover';
 import {FrankfurtErklaert76FragenTeil3CoverVorschau} from './videos/frankfurt-erklaert-76-fragen-teil3/FrankfurtErklaert76FragenTeil3CoverVorschau';
 import {COVER_PREVIEW_SIZE} from './formats/frankfurt-erklaert/CoverPreview';
+import {
+	calculateErklaert76Teil4Metadata,
+	erklaert76Teil4DefaultProps,
+	erklaert76Teil4Schema,
+	FrankfurtErklaert76FragenTeil4,
+} from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4';
+import {FrankfurtErklaert76FragenTeil4Cover} from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4Cover';
+import {FrankfurtErklaert76FragenTeil4CoverVorschau} from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4CoverVorschau';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #05 – 76 Fragen, Teil 4: vier weitere Antworten; begründete Längen-Ausnahme (Info ≤ 61,5 s + Abo-Aufruf, ≤ 66 s) */}
+				<Composition
+					id="FrankfurtErklaert76FragenTeil4"
+					component={FrankfurtErklaert76FragenTeil4}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaert76Teil4Schema}
+					defaultProps={erklaert76Teil4DefaultProps}
+					calculateMetadata={calculateErklaert76Teil4Metadata}
+				/>
+				<Still id="FrankfurtErklaert76FragenTeil4-Cover" component={FrankfurtErklaert76FragenTeil4Cover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert76FragenTeil4-CoverVorschau" component={FrankfurtErklaert76FragenTeil4CoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #04 – 76 Fragen, Teil 3: Was ist immer noch offen? (12.11.2026), Titelbild tiefer (COVER_ZONE), max. 1.800 Frames */}
 				<Composition
 					id="FrankfurtErklaert76FragenTeil3"
