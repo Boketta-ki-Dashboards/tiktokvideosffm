@@ -57,7 +57,7 @@ const Guides: React.FC<{scale: number}> = ({scale}) => {
 };
 
 /** Neutrale Nachzeichnung typischer Bedienelemente einer Kurzvideo-App (keine Logos, keine Marken). */
-const AppOverlay: React.FC = () => {
+const AppOverlay: React.FC<{caption: string}> = ({caption}) => {
 	const icon = (y: number, d: React.ReactNode, count: string) => (
 		<div style={{position: 'absolute', left: 950, top: y, width: 110, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4}}>
 			<svg width={84} height={84} viewBox="0 0 24 24" style={{filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'}}>
@@ -85,7 +85,7 @@ const AppOverlay: React.FC = () => {
 			{/* unten links: Account, Beschreibung, Ton */}
 			<div style={{position: 'absolute', left: 32, top: 1590, width: 860, display: 'flex', flexDirection: 'column', gap: 10, textShadow: '0 2px 6px rgba(0,0,0,0.8)'}}>
 				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, color: '#FFFFFF'}}>{handleWithAt()}</span>
-				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 30, color: '#FFFFFF'}}>76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr</span>
+				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 30, color: '#FFFFFF'}}>{caption}</span>
 				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 28, color: 'rgba(255,255,255,0.85)'}}>♫ Originalton – {handleWithAt()}</span>
 			</div>
 			{/* untere Navigationsleiste */}
@@ -137,7 +137,9 @@ export const CoverPreviewSheet: React.FC<{
 	videoFrame: React.ReactNode;
 	/** Vorgänger-Cover für das Profilraster (neueste zuerst) */
 	previous?: {node: React.ReactNode; label: string}[];
-}> = ({title, cover, videoFrame, previous = []}) => {
+	/** Beschreibungszeile im App-Overlay (TikTok-Titel, gekürzt; Standard = Teil 3) */
+	caption?: string;
+}> = ({title, cover, videoFrame, previous = [], caption = '76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr'}) => {
 	const s = 0.5;
 	return (
 		<AbsoluteFill style={{background: '#0A0C1C', padding: '30px 40px'}}>
@@ -174,7 +176,7 @@ export const CoverPreviewSheet: React.FC<{
 					<Label n="4" title="Video + App" sub="Frame 15 mit Untertitel" />
 					<Window width={W * s}>
 						{videoFrame}
-						<AppOverlay />
+						<AppOverlay caption={caption} />
 					</Window>
 				</div>
 			</div>

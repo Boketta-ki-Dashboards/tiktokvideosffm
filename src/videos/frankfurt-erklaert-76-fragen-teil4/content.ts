@@ -33,12 +33,12 @@ export const SPOTS = {
 	factors: [
 		{icon: 'alley', title: 'GASSEN & INNENHÖFE', text: 'viele Straßen, schwer zu überblicken'},
 		{icon: 'crowd', title: 'VIELE RANDALIERER', text: 'große Zahl laut Polizei'},
-		{icon: 'shift', title: 'VERLAGERUNG', text: 'u. a. zum Eschenheimer Tor (Polizeimeldung 23:27)'},
+		{icon: 'shift', title: 'VERLAGERUNG', text: 'u. a. zum Eschenheimer Tor (Polizei, 23:27)'},
 	] as const,
 	verdict: ['ERKLÄRUNG', 'BEWERTUNG'] as const,
 	open: 'Ob alles richtig lief: Aufarbeitung läuft',
 	positions: 'Poseck: Einsatz „überwiegend erfolgreich“ · FDP: ergebnisoffen aufarbeiten (Landtag, 11.11.)',
-	legend: 'Punkte = Auswahl belegter Schadensorte (FrankfurtRed3-Recherche) · Linien symbolisch, keine Einsatzwege',
+	legend: 'Punkte: belegte Schadensorte (Auswahl) · Schilde/Linien symbolisch',
 	/** belegte Orte (Folge 2: data/shops.json + Plätze) */
 	points: [
 		{id: 'hauptwache', at: [50.1138071, 8.6791483] as LatLon},
@@ -101,15 +101,16 @@ export const SUMMARY = [
 export const CTA = {title: 'FOLGT FÜR MEHR', sub: 'FRANKFURT ERKLÄRT'};
 
 export const SOURCES = [
-	{id: 'hs-pk', text: 'hessenschau: „Bilanz der Ausschreitungen in Frankfurt: Festnahmen und verletzte Polizisten“, 01.11.2026', url: 'https://www.hessenschau.de/panorama/polizei-zieht-bilanz-100-verletzte-polizisten-und-54-festnahmen-bei-krawallen-in-frankfurt-v1,bilanz-frankfurt-100.html'},
+	{id: 'hs-pk', text: 'hessenschau: „Bilanz der Ausschreitungen in Frankfurt: Festnahmen und verletzte Polizisten“, 01.11.2026', url: 'https://www.hessenschau.de/panorama/bilanz-der-ausschreitungen-in-frankfurt-festnahmen-und-verletzte-polizisten-v1,bilanz-frankfurt-100.html'},
 	{id: 'hr-ticker', text: 'hessenschau-Liveticker 31.10./01.11.2026', url: 'https://www.hessenschau.de/panorama/eskalation-nach-gen-z-protesten-in-frankfurt-aktuelle-meldungen-im-ticker,gen-z-demo-frankfurt-100.html'},
 	{id: 'im', text: 'Hessisches Innenministerium, PM 02.11.2026', url: 'https://innen.hessen.de/presse/erste-einordnung-nach-gewaltausbruechen-waehrend-und-nach-der-versammlung-der-generation-z'},
 	{id: 'wk', text: 'Wiesbadener Kurier: „Nach Krawallen kündigt Minister Poseck „härtere Gangart“ an“, 11.11.2026 (Bezahlinhalt)', url: 'https://www.wiesbadener-kurier.de/politik/politik-hessen/nach-krawallen-kuendigt-minister-poseck-haertere-gangart-an-6752727'},
 	{id: 'wk-landtag', text: 'Wiesbadener Kurier (dpa): „Landtag streitet über Aufarbeitung der Krawalle in Frankfurt“, 12.11.2026', url: 'https://www.wiesbadener-kurier.de/lokales/hessen/landtag-streitet-ueber-aufarbeitung-der-krawalle-in-frankfurt-6805055'},
 	{id: 'wk-53', text: 'Wiesbadener Kurier (dpa): „Polizei: Gewaltbereite Männer bei Ausschreitungen beteiligt“, 09.11.2026', url: 'https://www.wiesbadener-kurier.de/lokales/hessen/polizei-gewaltbereite-maenner-bei-ausschreitungen-beteiligt-6771553'},
+	{id: 'wk-waffe', text: 'Wiesbadener Kurier (dpa): „Festnahmen nach Attacke auf Waffengeschäft in Frankfurt“, 31.10.2026', url: 'https://www.wiesbadener-kurier.de/lokales/hessen/festnahmen-nach-attacke-auf-waffengeschaeft-in-frankfurt-6647997'},
 	{id: 'hs-uhaft', text: 'hessenschau: „Krawalle in Frankfurt werden „keine drakonischen Strafen“ nach sich ziehen“, 03.11.2026', url: 'https://www.hessenschau.de/gesellschaft/krawalle-in-frankfurt-werden-keine-drakonischen-strafen-nach-sich-ziehen-v1,strafrechtliche-konsequenzen-krawall-frankfurt-100.html'},
-	{id: 'on-uhaft', text: 'osthessen-news (PM Justizministerium): „18-Jähriger in U-Haft“, 03.11.2026', url: 'https://osthessen-news.de/n11802469/gen-z-demo-in-frankfurt-18-jahriger-syrer-in-u-haft.html'},
-	{id: 'apollo', text: 'Apollo News (Antwort Polizeipräsidium Frankfurt): 110 Strafanzeigen, 53 Festnahmen, 09.11.2026', url: 'https://apollo-news.net/frankfurter-krawallnacht-unter-auslndischen-festgenommenen-dominieren-afghanen-und-syrer/'},
-	{id: 'tichy', text: 'Tichys Einblick (Antwort Innenministerium): 110 Strafanzeigen, 12.11.2026', url: 'https://www.tichyseinblick.de/daili-es-sentials/frankfurt-110-strafanzeigen'},
+	{id: 'on-uhaft', text: 'osthessen-news (PM Justizministerium): „Gen-Z-Demo in Frankfurt: 18-jähriger Syrer in U-Haft“, 03.11.2026', url: 'https://osthessen-news.de/n11802469/gen-z-demo-in-frankfurt-18-jahriger-syrer-in-u-haft.html'},
+	{id: 'apollo', text: 'Apollo News: „Frankfurter Krawallnacht: Unter ausländischen Festgenommenen dominieren Afghanen und Marokkaner“ (Antwort Polizeipräsidium Frankfurt, Stand 9.11.), 09.11.2026', url: 'https://apollo-news.net/frankfurter-krawallnacht-unter-auslndischen-festgenommenen-dominieren-afghanen-und-syrer/'},
+	{id: 'tichy', text: 'Tichys Einblick: „Unruhen in Frankfurt: 110 Strafanzeigen, Täter aus elf Nationen“ (Antwort Innenministerium), 12.11.2026', url: 'https://www.tichyseinblick.de/daili-es-sentials/frankfurt-110-strafanzeigen'},
 	{id: 'hs-ina', text: 'hessenschau (dpa/lhe): „Nach Gen Z-Krawallen: Poseck verteidigt Aussagen zu Migrationshintergrund“, 10./11.11.2026', url: 'https://www.hessenschau.de/politik/nach-gen-z-krawallen-poseck-verteidigt-aussagen-zu-migrationshintergrund--v2,poseck-innenausschuss-100.html'},
 ];

@@ -15,6 +15,9 @@ export const TEIL4_COVER_LAYOUT = {
 	landtagWidth: 760,
 	kickerTop: 1006,
 	cardTop: 1072,
+	/** rote Karte „4 WEITERE ANTWORTEN“: Schrift 53 px, Breite ≤ 744 px mittig → rechte Kante ≤ 912 (App-Knöpfe ab x 930) */
+	cardFont: 53,
+	cardMaxWidth: 744,
 	subTop: 1192,
 	metaTop: 1250,
 	metaBottom: 1300,

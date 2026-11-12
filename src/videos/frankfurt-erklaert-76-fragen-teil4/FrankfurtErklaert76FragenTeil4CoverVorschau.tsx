@@ -15,6 +15,7 @@ ensureFontsLoaded();
 export const FrankfurtErklaert76FragenTeil4CoverVorschau: React.FC = () => (
 	<CoverPreviewSheet
 		title="76 Fragen – Teil 4"
+		caption="76 FRAGEN – 4 WEITERE ANTWORTEN! … mehr"
 		cover={<Teil4Cover morph={0} thumbnail />}
 		videoFrame={
 			<Sequence from={-15}>

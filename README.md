@@ -9,6 +9,12 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #05 – „76 Fragen – Teil 4: 4 weitere Antworten“** (Komposition `FrankfurtErklaert76FragenTeil4`, ≈ 62,8 s): warum die Polizei
+nicht überall gleichzeitig war (bis zu 30 Einsatzorte, OSM-Karte mit belegten Schadensorten), Schaden (Anfangsbilanz 17/5 → laut Wiesbadener
+Kurier 35/6 + sechsstellig), Waffengeschäft (Schreckschusswaffen sichergestellt, 18-Jähriger in U-Haft ≠ Urteil), Strafverfolgung (110 Anzeigen,
+53 Festnahmen, 73 Tatverdächtige ≠ verurteilt). Erste Folge mit begründeter Längen-Ausnahme: Informationsteil ≤ 61,5 s + Abo-Aufruf.
+Quellen: [`sources.md`](references/frankfurt-erklaert-76-fragen-teil4/sources.md)
+
 **„Frankfurt erklärt“ #04 – „76 Fragen – Teil 3: Was ist immer noch offen?“** (Komposition `FrankfurtErklaert76FragenTeil3`): vier Fragen –
 Teilnehmerprognose (≈ 2.000 erwartet, 8.000–9.000 gekommen), Gewalt schon bis zur Auflösung, Tatverdächtige unter 14 (§ 19 StGB, §§ 828/832 BGB),
 Schäden der Geschäfte (Versicherung zuerst, Stadt prüft). Erstes Titelbild nach der neuen Positionsregel (`COVER_ZONE`) mit Prüfbogen

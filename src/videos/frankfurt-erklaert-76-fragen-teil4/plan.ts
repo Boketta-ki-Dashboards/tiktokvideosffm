@@ -16,7 +16,7 @@ export const TEIL4_SCENES: SceneSpec[] = [
 /** Schlüsselwörter für bildgenaue Einblendungen (Zahlen exakt, Wörter per Wortanfang). */
 export const TEIL4_KEYWORDS: Record<string, string[]> = {
 	cover: ['Ewa', 'Antworten', 'vier', 'Erkenntnisse'],
-	spots: ['Erstens', 'Polizei', '30', 'Einsatzorte', 'verteilt', 'Straßen', 'Gassen', 'Innenhöfe', 'Randalierer', 'verlagerten', 'erklärt', 'richtig', 'beantwortet'],
+	spots: ['Erstens', 'Polizei', 'überall', 'gleichzeitig', '30', 'Einsatzorte', 'verteilt', 'Straßen', 'Gassen', 'Innenhöfe', 'Randalierer', 'verlagerten', 'erklärt', 'richtig', 'beantwortet'],
 	damage: ['Zweitens', 'Anfangsbilanz', '17', '5', 'Wiesbadener', 'Poseck', '35', '6', 'sechsstelligen'],
 	weapons: ['Drittens', 'Waffengeschäft', 'Polizei', 'Schreckschusswaffen', 'sichergestellt', '18-Jähriger', 'Untersuchungshaft', 'Vorwurf', 'Verurteilung'],
 	justice: ['Viertens', '110', 'Strafanzeigen', '53', 'Festnahmen', 'Minister', '73', 'Tatverdächtige', 'verdächtig', 'verurteilt'],

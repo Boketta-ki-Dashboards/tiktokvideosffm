@@ -4,7 +4,7 @@ import {clamp, springIn} from '../../../lib/animation';
 import {withAlpha} from '../../../lib/color';
 import {useSvgId} from '../../../lib/svg';
 
-export type Motif = 'shoe' | 'sports' | 'fashion';
+export type Motif = 'shoe' | 'sports' | 'fashion' | 'boxes';
 
 const VB_W = 800;
 const VB_H = 880;
@@ -14,6 +14,30 @@ const SHOP_BOTTOM = 820;
 /** Generische Auslage (keine Marken): Schuhe, Trikots oder Schaufensterpuppen. */
 const Display: React.FC<{x: number; w: number; motif: Motif; seed: string}> = ({x, w, motif, seed}) => {
 	const shelves = [SHOP_TOP + 110, SHOP_TOP + 200, SHOP_TOP + 290];
+	if (motif === 'boxes') {
+		// neutrale Regale mit schlichten Kartons (z. B. Fachgeschäft) – keine Waren erkennbar
+		return (
+			<g>
+				{shelves.map((y) => (
+					<g key={y}>
+						<rect x={x + 10} y={y} width={w - 20} height={6} rx={2} fill="#C9CEDF" opacity={0.85} />
+						{[0, 1, 2].map((k) => {
+							const bw = (w - 44) / 3 - 8;
+							const bh = 26 + random(`${seed}-b-${y}-${k}`) * 26;
+							const bx = x + 22 + k * ((w - 44) / 3);
+							const c = ['#5B6A9A', '#7A6A55', '#4D6B5E', '#6B5B7A'][Math.floor(random(`${seed}-bc-${y}-${k}`) * 4)];
+							return (
+								<g key={k}>
+									<rect x={bx} y={y - bh} width={bw} height={bh} rx={3} fill={c} />
+									<rect x={bx + 6} y={y - bh + 6} width={bw * 0.5} height={5} rx={2} fill="#FFFFFF" opacity={0.35} />
+								</g>
+							);
+						})}
+					</g>
+				))}
+			</g>
+		);
+	}
 	if (motif === 'shoe') {
 		return (
 			<g>

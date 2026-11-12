@@ -257,7 +257,7 @@ export const Teil4Cover: React.FC<{morph?: number; morphAt?: number; thumbnail?:
 				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 58, lineHeight: 1, color: COLORS.text, textShadow: '0 8px 30px rgba(0,0,0,0.85)'}}>{COVER.kicker}</div>
 			</div>
 			<div style={{position: 'absolute', left: L.sideMin - 30, right: L.sideMin - 30, top: L.cardTop, display: 'flex', justifyContent: 'center'}}>
-				<div style={{padding: '10px 26px 14px', borderRadius: 24, background: 'linear-gradient(160deg, #FF6A78 0%, #FF4D5E 50%, #D93448 100%)', boxShadow: '0 5px 0 #B32A3C, 0 10px 0 #8E1F2E, 0 40px 70px rgba(0,0,0,0.6)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 62, lineHeight: 1.05, color: '#FFFFFF', whiteSpace: 'nowrap'}}>{COVER.card}</div>
+				<div style={{padding: '10px 22px 14px', borderRadius: 22, background: 'linear-gradient(160deg, #FF6A78 0%, #FF4D5E 50%, #D93448 100%)', boxShadow: '0 5px 0 #B32A3C, 0 10px 0 #8E1F2E, 0 40px 70px rgba(0,0,0,0.6)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: L.cardFont, maxWidth: L.cardMaxWidth, lineHeight: 1.05, color: '#FFFFFF', whiteSpace: 'nowrap'}}>{COVER.card}</div>
 			</div>
 			<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.subTop, textAlign: 'center', fontFamily: FONTS.heading, fontWeight: 800, fontSize: 34, color: COLORS.text, textShadow: '0 6px 24px rgba(0,0,0,0.9)'}}>{COVER.sub}</div>
 			<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.metaTop, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14, opacity: 1 - m}}>
@@ -312,6 +312,8 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const atRiot = wordFrame(cues, 'Randalierer', c.from + 60);
 	const atShift = wordFrame(cues, 'verlagerten', c.from + 100);
 	const atVerdict = d.from;
+	// Frage-Phase: Einsatzkräfte stehen gebündelt, ab „überall“ leuchten die Brennpunkte nacheinander auf (bis „30“)
+	const atQ = Math.min(wordFrame(cues, 'überall', a.from + 34), at30 - 30);
 	const camera: CityCameraKeyframe[] = [
 		{frame: 0, center: SPOTS.center, zoom: 0.6},
 		{frame: Math.max(1, b.from), center: SPOTS.center, zoom: 0.66},
@@ -322,14 +324,18 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const anchor: [number, number] = [540, 960];
 	const {toScreen, zoom} = useCityCamera(MAP, camera, anchor, frame);
 	const base = toScreen([50.1149, 8.6868]);
-	const pts = SPOTS.points.map((p, i) => ({...p, xy: toScreen(p.at), appear: at30 - 6 + i * 3}));
+	const step = Math.max(2, (at30 - 4 - atQ) / SPOTS.points.length);
+	const pts = SPOTS.points.map((p, i) => ({...p, xy: toScreen(p.at), appear: Math.round(atQ + i * step)}));
+	const unitsIn = interpolate(frame, [4, 14], [0, 1], clamp);
 	const units = [0, 1, 2, 3, 4].map((i) => {
 		const target = pts[[2, 5, 9, 0, 8][i]];
 		const t = interpolate(frame, [atSpread - 4 + i * 5, atSpread + 18 + i * 5], [0, 1], {...clamp, easing: EASE_IN_OUT});
 		const second = pts[[3, 6, 10, 4, 1][i]];
 		const t2 = interpolate(frame, [atShift + i * 4, atShift + 22 + i * 4], [0, 1], {...clamp, easing: EASE_IN_OUT});
-		const x1 = base[0] + (target.xy[0] - base[0]) * t;
-		const y1 = base[1] + (target.xy[1] - base[1]) * t;
+		const ox = Math.cos(i * 1.26) * 30 * (1 - t);
+		const oy = Math.sin(i * 1.26) * 30 * (1 - t);
+		const x1 = base[0] + ox + (target.xy[0] - base[0]) * t;
+		const y1 = base[1] + oy + (target.xy[1] - base[1]) * t;
 		return {i, t, x: x1 + (second.xy[0] - target.xy[0]) * t2, y: y1 + (second.xy[1] - target.xy[1]) * t2};
 	});
 	const counter = springIn({frame, fps, delay: at30 - 8, damping: 14, stiffness: 170});
@@ -342,7 +348,7 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const pulse = (k: number) => 0.5 + 0.5 * Math.sin(frame / 5 + k);
 	return (
 		<AbsoluteFill style={{backgroundColor: '#090D20', overflow: 'hidden'}}>
-			<CityStreetMap map={MAP} camera={camera} anchor={anchor} highlights={[{name: 'Zeil', color: withAlpha(ACCENT.no, 0.55), fromFrame: at30, width: 14, sweepFrames: 26}]} streetLabels={[{text: 'Zeil', at: SPOTS.zeil, rotate: -2, size: 30}, {text: 'Eschenheimer Tor', at: [50.11705, 8.6801], size: 24}, {text: 'Hauptwache', at: [50.1133, 8.6787], size: 24}]} labelOpacity={interpolate(frame, [b.from, b.from + 15], [0, 0.9], clamp)} />
+			<CityStreetMap map={MAP} camera={camera} anchor={anchor} highlights={[{name: 'Zeil', color: withAlpha(ACCENT.no, 0.55), fromFrame: at30, width: 14, sweepFrames: 26}]} streetLabels={[{text: 'Zeil', at: SPOTS.zeil, rotate: -2, size: 30}, {text: 'Eschenheimer Tor', at: [50.11705, 8.6801], size: 24}, {text: 'Hauptwache', at: [50.1133, 8.6787], size: 24}]} labelOpacity={interpolate(frame, [0, 15], [0, 0.9], clamp)} />
 			{/* Brennpunkte, Einsatzkräfte (symbolisch), Verlagerung */}
 			<svg width={1080} height={1920} style={{position: 'absolute', left: 0, top: 0}}>
 				{units.map((u) => (u.t > 0 ? <line key={`l-${u.i}`} x1={base[0]} y1={base[1]} x2={u.x} y2={u.y} stroke={withAlpha(ACCENT.info, 0.55)} strokeWidth={3} strokeDasharray="8 9" strokeDashoffset={-frame * 1.5} /> : null))}
@@ -365,8 +371,8 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</g>
 				) : null}
 				{units.map((u) =>
-					u.t > 0 ? (
-						<g key={`u-${u.i}`} transform={`translate(${u.x} ${u.y})`}>
+					unitsIn > 0 ? (
+						<g key={`u-${u.i}`} transform={`translate(${u.x} ${u.y})`} opacity={unitsIn}>
 							<circle r={24} fill={withAlpha(ACCENT.info, 0.25)} />
 							<path d="M0 -16 L13 -10 L13 1 Q13 11 0 17 Q-13 11 -13 1 L-13 -10 Z" fill={ACCENT.info} stroke="#FFFFFF" strokeWidth={2.5} />
 						</g>
@@ -382,7 +388,7 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 			{/* Zähler */}
 			{frame >= at30 - 8 ? (
-				<div style={{position: 'absolute', right: 150, top: 300, opacity: Math.min(1, counter * 2), scale: String(0.7 + 0.3 * counter), transformOrigin: '100% 0%'}}>
+				<div style={{position: 'absolute', right: 150, top: 486, opacity: Math.min(1, counter * 2) * (1 - interpolate(frame, [atVerdict - 6, atVerdict + 6], [0, 0.35], clamp)), scale: String(0.7 + 0.3 * counter), transformOrigin: '100% 0%'}}>
 					<Card color={COLORS.signal} style={{padding: '12px 18px 12px', display: 'flex', flexDirection: 'column', alignItems: 'flex-end'}} glow={0.3}>
 						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 26, letterSpacing: 2, color: COLORS.textMuted}}>{SPOTS.labelPre}</span>
 						<RollNumber from={0} to={SPOTS.max} at={at30 - 8} dur={20} size={130} color={COLORS.signal} />
@@ -392,11 +398,11 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				</div>
 			) : null}
 			{/* Gründe */}
-			<div style={{position: 'absolute', left: 64, width: 866, top: 1000, display: 'flex', flexDirection: 'column', gap: 10, opacity: fadeFactors}}>
+			<div style={{position: 'absolute', left: 64, width: 866, top: 912, display: 'flex', flexDirection: 'column', gap: 8, opacity: fadeFactors}}>
 				{SPOTS.factors.map((f, i) => (
 					<Pop key={f.title} at={factorAt[i]} dx={-60} dy={0}>
-						<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '8px 16px', borderRadius: 18, background: 'rgba(8,10,28,0.92)', border: `2px solid ${withAlpha(i === 2 ? COLORS.signal : ACCENT.info, 0.8)}`}}>
-							<IconOrb name={f.icon as T4IconName} color={i === 2 ? COLORS.signal : ACCENT.info} size={50} />
+						<div style={{display: 'flex', alignItems: 'center', gap: 12, padding: '6px 14px', borderRadius: 16, background: 'rgba(8,10,28,0.93)', border: `2px solid ${withAlpha(i === 2 ? COLORS.signal : ACCENT.info, 0.8)}`}}>
+							<IconOrb name={f.icon as T4IconName} color={i === 2 ? COLORS.signal : ACCENT.info} size={44} />
 							<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 28, color: COLORS.text, whiteSpace: 'nowrap'}}>{f.title}</span>
 							<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 21, color: COLORS.textMuted}}>{f.text}</span>
 						</div>
@@ -405,7 +411,7 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 			{/* Erklärung ≠ Bewertung */}
 			{frame >= atVerdict - 6 ? (
-				<div style={{position: 'absolute', left: 64, width: 866, top: 960, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14}}>
+				<div style={{position: 'absolute', left: 64, width: 866, top: 880, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12}}>
 					<Equation left={SPOTS.verdict[0]} right={SPOTS.verdict[1]} at={atVerdict - 6} size={50} layout="compact" leftColor={ACCENT.info} rightColor={ACCENT.no} />
 					<Pop at={atVerdict + 8} dy={14}>
 						<div style={{display: 'flex', alignItems: 'center', gap: 10}}>
@@ -421,7 +427,7 @@ export const SpotsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</Pop>
 				</div>
 			) : null}
-			<div style={{position: 'absolute', left: 64, width: 866, top: 1160, opacity: interpolate(frame, [at30, at30 + 12], [0, 1], clamp), display: 'flex', alignItems: 'center', gap: 10}}>
+			<div style={{position: 'absolute', left: 64, width: 866, top: 1150, opacity: interpolate(frame, [8, 20], [0, 1], clamp) * interpolate(frame, [atVerdict - 6, atVerdict + 4], [1, 0], clamp), display: 'flex', alignItems: 'center', gap: 10, whiteSpace: 'nowrap'}}>
 				<Status kind="SYMBOLISCH" size={16} />
 				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 19, color: COLORS.textMuted, textShadow: '0 2px 8px rgba(0,0,0,0.95)'}}>{SPOTS.legend}</span>
 			</div>
@@ -590,7 +596,7 @@ export const WeaponsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 			{/* Ladenfront (Illustration) */}
 			<div style={{position: 'absolute', left: 140, top: 470 - toCards * 40, scale: String(1 + (1 - toCards) * dolly * 0.06 - toCards * 0.22), transformOrigin: '50% 0%', opacity: 1 - toCards * 0.7, filter: toCards > 0 ? `blur(${toCards * 5}px)` : undefined}}>
 				<div style={{position: 'relative'}}>
-					<Storefront width={800} label={WEAPONS.shop} motif="sports" panes={3} upper={false} light={0.75} seed="t4-weapons" />
+					<Storefront width={800} label={WEAPONS.shop} motif="boxes" panes={3} upper={false} light={0.75} seed="t4-weapons" />
 					<Cracks width={800} amount={crack} />
 					<div style={{position: 'absolute', right: 12, top: 12, padding: '4px 10px', borderRadius: 8, background: 'rgba(8,10,28,0.85)', fontFamily: FONTS.body, fontWeight: 800, fontSize: 19, letterSpacing: 1.5, color: COLORS.textMuted}}>ILLUSTRATION</div>
 				</div>
@@ -602,9 +608,9 @@ export const WeaponsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 			<div style={{position: 'absolute', left: 64, width: 866, top: 350}}>
 				<Headline lines={ANSWERS[2].title} color={ACCENT.no} />
 			</div>
-			<div style={{position: 'absolute', left: 64, top: 492, opacity: 1 - toCards}}>
+			<div style={{position: 'absolute', left: 140, width: 800, top: 948, display: 'flex', justifyContent: 'center', opacity: 1 - toCards}}>
 				<Pop at={a.from + 6} dy={14}>
-					<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>{WEAPONS.shopNote}</span>
+					<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.text, padding: '6px 16px', borderRadius: 12, background: 'rgba(8,10,28,0.85)'}}>{WEAPONS.shopNote}</span>
 				</Pop>
 			</div>
 			{/* sichergestellt */}
@@ -709,7 +715,7 @@ export const JusticeScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 				))}
 			</div>
 			<div style={{position: 'absolute', left: 64, width: 866, top: 880, display: 'flex', justifyContent: 'center', opacity: interpolate(frame, [at[2] + 4, at[2] + 14], [0, 1], clamp)}}>
-				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>verschiedene Zählungen – nicht dieselben Personen, kein Trichter</span>
+				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>verschiedene Zählungen – nicht einfach addieren</span>
 			</div>
 			{frame >= atEq - 8 ? (
 				<div style={{position: 'absolute', left: 64, width: 866, top: 950, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12}}>
@@ -772,7 +778,7 @@ export const OutroScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 						</div>
 					</div>
 					<span style={{marginTop: 12, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, color: COLORS.text}}>{handleWithAt()}</span>
-					<div style={{padding: '12px 30px 14px', borderRadius: 20, background: ACCENT.brand, boxShadow: '0 20px 50px rgba(255,59,78,0.35)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: '#FFFFFF'}}>{CTA.title}</div>
+					<div style={{padding: '12px 30px 14px', borderRadius: 20, background: ACCENT.brand, boxShadow: '0 20px 50px rgba(255,59,78,0.35)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: '#FFFFFF', scale: String(followed ? 1 + 0.035 * Math.sin((frame - atCta - 30) / 5) : 1)}}>{CTA.title}</div>
 					<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, letterSpacing: 2.5, color: COLORS.signal}}>
 						{CTA.sub} · {FORMAT.sub}
 					</span>

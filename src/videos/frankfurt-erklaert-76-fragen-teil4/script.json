@@ -3,7 +3,7 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
-	"tailMs": 400,
+	"tailMs": 1500,
 	"maxDurationMs": 66000,
 	"maxPauseMs": 400,
 	"voice": {
