@@ -1,0 +1,20 @@
+{
+	"text": "{Ewa|Eywa}, Frankfurt! Laut Wiesbadener Kurier ein sechsstelliger Schaden. Schreckschusswaffen sichergestellt, ein {18-Jähriger|Achtzehnjähriger} in Untersuchungshaft. Folgt {FrankfurtRed3|Frankfurt Red Drei} für mehr.",
+	"sampleFrom": "frankfurt-erklaert-76-fragen-teil4",
+	"provider": "elevenlabs",
+	"name": "Adam - Dominant, Firm",
+	"voiceId": "pNInz6obpgDQGcFmaJgB",
+	"category": "premade",
+	"modelId": "eleven_multilingual_v2",
+	"voiceSettings": {
+		"stability": 0.45,
+		"similarity_boost": 0.8,
+		"style": 0.2,
+		"use_speaker_boost": true,
+		"speed": 1.2
+	},
+	"seed": 20261104,
+	"characters": 182,
+	"cacheKey": "b8b39339c8a828336a3a",
+	"durationSeconds": 11.04
+}

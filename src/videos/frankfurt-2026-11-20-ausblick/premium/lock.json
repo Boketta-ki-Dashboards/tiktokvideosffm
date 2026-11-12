@@ -1,0 +1,14 @@
+{
+	"$comment": "Premium-Fassung: Ton, Text und Timing sind an das Original gebunden. Ändert sich eine dieser Dateien, schlägt tests/nov20-premium.test.ts fehl (Original-Ton darf nicht neu erzeugt werden).",
+	"durationInFrames": 3228,
+	"fps": 30,
+	"width": 1080,
+	"height": 1920,
+	"sha256": {
+		"src/videos/frankfurt-2026-11-20-ausblick/script.json": "1b17b32045f815b2081ddaa0632b81b5a4d7f8a4572e941aa61764f24e71cf81",
+		"src/videos/frankfurt-2026-11-20-ausblick/voiceover.json": "fed6d4b53d1cbeb88b6d66084478488c6746a05d35a3c4269d772f2544115260",
+		"public/voiceover/frankfurt-2026-11-20-ausblick/voiceover-adam.mp3": "c79ee0a3c87c494769d650a10b9253ee46437fb72ef828bd7a11d435367d4053",
+		"public/music/ambient-bed.mp3": "b832b7fafa715d8c99e741cd536d23f1c6d4b543fa64aee8eb7236fed4b1b2ce",
+		"config/voice.json": "ad9995fd4cff96c19f54415b57c5a898dd61b90cc66da8cf00e892146b201604"
+	}
+}

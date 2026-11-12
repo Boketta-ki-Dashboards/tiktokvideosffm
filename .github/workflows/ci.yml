@@ -1,0 +1,70 @@
+name: CI
+
+# Schnelle Qualitätsprüfung bei jedem Push/PR: Typen, Lint, Bundle + Testbilder.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Abhängigkeiten installieren
+        run: npm ci
+
+      - name: TypeScript
+        run: npm run typecheck
+
+      - name: ESLint
+        run: npm run lint
+
+      - name: Unit-Tests (Timing Stimme ↔ Szenen)
+        run: npm test
+
+      - name: Chrome Headless Shell
+        run: npx remotion browser ensure
+
+      - name: Testbilder rendern (Smoke-Test)
+        run: |
+          node scripts/render-still.mjs --comp FrankfurtHeadlines --frames 30,330,560,960,1250,1650 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtShops --frames 60,300,560,1250,1900,2150,2300 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNextDemo --frames 60,200,420,700,1000,1350,1650,1900 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtWorldwide --frames 0,100,400,850,1200,1500,1800,2100,2400 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtWorldwide-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20Forecast --frames 0,150,500,1000,1600,2200,2700,3000 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20Forecast-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium --frames 0,150,500,1000,1600,2200,2700,3000 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtNov20ForecastPremium-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil2 --frames 0,60,250,500,700,950,1150,1400,1650 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil2-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil3 --frames 0,60,250,500,800,1050,1300,1550 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil3-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil3-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4 --frames 0,60,300,600,900,1200,1500,1800 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76Fragen --frames 0,150,300,500,650,850,1100,1300,1480,1650 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert76Fragen-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertDemoFilmen --frames 0,180,400,520,700,880,1100,1290,1420,1580,1720 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertDemoFilmen-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtPoliceRights --frames 0,200,600,1100,1800,2300,2800,3300,3550 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtPoliceRights-Cover --scale 0.5
+
+      - name: Testbilder hochladen
+        uses: actions/upload-artifact@v4
+        with:
+          name: preview-stills
+          path: output/stills/*.png
+          retention-days: 7

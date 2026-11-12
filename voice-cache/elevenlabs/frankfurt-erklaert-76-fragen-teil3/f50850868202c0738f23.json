@@ -1,0 +1,77 @@
+{
+	"segmentId": "hook1",
+	"text": "Eywa, Frankfurt!",
+	"voice": {
+		"id": "pNInz6obpgDQGcFmaJgB",
+		"name": "Adam - Dominant, Firm",
+		"category": "premade"
+	},
+	"modelId": "eleven_multilingual_v2",
+	"voiceSettings": {
+		"stability": 0.45,
+		"similarity_boost": 0.8,
+		"style": 0.2,
+		"use_speaker_boost": true,
+		"speed": 1.2
+	},
+	"seed": 20261104,
+	"outputFormat": "mp3_44100_128",
+	"requestId": "RmR51tAsFB4gJhyDyMUl",
+	"createdAt": "2026-11-11T19:20:54.244Z",
+	"alignment": {
+		"characters": [
+			"E",
+			"y",
+			"w",
+			"a",
+			",",
+			" ",
+			"F",
+			"r",
+			"a",
+			"n",
+			"k",
+			"f",
+			"u",
+			"r",
+			"t",
+			"!"
+		],
+		"character_start_times_seconds": [
+			0,
+			0.081,
+			0.163,
+			0.209,
+			0.279,
+			0.302,
+			0.325,
+			0.372,
+			0.406,
+			0.43,
+			0.464,
+			0.511,
+			0.546,
+			0.627,
+			0.673,
+			0.755
+		],
+		"character_end_times_seconds": [
+			0.081,
+			0.163,
+			0.209,
+			0.279,
+			0.302,
+			0.325,
+			0.372,
+			0.406,
+			0.43,
+			0.464,
+			0.511,
+			0.546,
+			0.627,
+			0.673,
+			0.755,
+			0.929
+		]
+	}
+}

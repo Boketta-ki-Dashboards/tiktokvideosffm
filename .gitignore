@@ -1,0 +1,35 @@
+# Abhängigkeiten
+node_modules/
+
+# Render-Ausgaben & temporäre Dateien (große Videodateien NIE committen)
+output/*
+!output/.gitkeep
+out/
+*.mp4
+*.mov
+*.webm
+*.mkv
+*.avi
+*.m4v
+!public/**/*.keep.mp4
+
+# Remotion / Build
+.remotion/
+build/
+dist/
+*.tsbuildinfo
+
+# Lokale Caches (Piper-Venv, Stimmmodelle, Whisper)
+.cache/
+whisper.cpp/
+
+# Rohdateien in references/
+references/**/*.raw.*
+
+# System
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.env
+.env.*

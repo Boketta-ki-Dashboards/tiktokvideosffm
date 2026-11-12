@@ -1,0 +1,31 @@
+{
+	"videoId": "frankfurt-erklaert-76-fragen-teil2",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 400,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {"mode": "letters", "maxInnerGapMs": 320},
+		"$comment": "Adam (Voice-ID, Modell, Stability, Similarity, Style, Speaker Boost unverändert) mit Kurzformat-Profil speed 1.20. „Ewa“ wird automatisch „Eywa“ gesprochen (config/voice.json → aussprache). Pausen kurz: Schnitt am letzten Buchstaben (nicht am Satzzeichen), Pausen im Satz ≤ 320 ms, zwischen Sätzen 60 ms, zwischen Themen 120 ms."
+	},
+	"sampleText": "Ewa, Frankfurt! Neue Zahlen laut Poseck: {181|hunderteinundachtzig} verletzte Polizisten, {73|dreiundsiebzig} Tatverdächtige, rund {1.300|dreizehnhundert} Einsatzkräfte. Für den {20. November|zwanzigsten November}: mögliche Auflagen und präventiver Gewahrsam.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 0},
+		{"id": "hook2", "text": "Die {76|sechsundsiebzig} Fragen zur Krawallnacht – gestern gab's im Landtag erste Antworten.", "pauseAfterMs": 120},
+		{"id": "pol1", "text": "War die Polizei vorbereitet? Laut Poseck waren über den Abend verteilt rund {1.300|dreizehnhundert} Einsatzkräfte vor Ort.", "pauseAfterMs": 60},
+		{"id": "pol2", "text": "Warum trotzdem geplündert wurde, ist damit nicht geklärt.", "pauseAfterMs": 120},
+		{"id": "num1", "text": "Neue Zahlen laut Poseck: {181|hunderteinundachtzig} verletzte Polizisten, {13|dreizehn} davon bislang nicht dienstfähig.", "pauseAfterMs": 60},
+		{"id": "num2", "text": "Dazu {73|dreiundsiebzig} Tatverdächtige – rund zwei Drittel unter {21|einundzwanzig}, mehr als die Hälfte schon polizeibekannt.", "pauseAfterMs": 60},
+		{"id": "num3", "text": "Nur etwa ein Viertel wohnt in Frankfurt.", "pauseAfterMs": 120},
+		{"id": "tiktok", "text": "Und TikTok? Dass dort Straftaten abgesprochen wurden, ist bisher nicht öffentlich belegt.", "pauseAfterMs": 120},
+		{"id": "nov1", "text": "Für den {20. November|zwanzigsten November} kündigte Poseck Maßnahmen an – möglich sind Auflagen und präventiver Gewahrsam.", "pauseAfterMs": 60},
+		{"id": "nov2", "text": "Ein pauschales Demo-Verbot ist das nicht.", "pauseAfterMs": 120},
+		{"id": "contro", "text": "Seine umstrittene Aussage, die Täter seien überwiegend migrantisch geprägt, verteidigte der Minister.", "pauseAfterMs": 60},
+		{"id": "note", "text": "Aber: Verdächtige sind nicht verurteilt – und die meisten Demonstrierenden waren friedlich.", "pauseAfterMs": 120},
+		{"id": "end", "text": "Viele Detailfragen bleiben offen – reichen euch diese Antworten?", "pauseAfterMs": 0}
+	]
+}

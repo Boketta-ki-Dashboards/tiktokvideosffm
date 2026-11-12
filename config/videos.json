@@ -1,0 +1,15 @@
+{
+	"$comment": "Auswählbare Videos für den Workflow „Video produzieren“: Komposition → Video-Ordner und Name der fertigen MP4.",
+	"FrankfurtErklaert76FragenTeil4": {"videoId": "frankfurt-erklaert-76-fragen-teil4", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 66, "infoMaxSeconds": 61.5, "ausnahme": "Teil 4 auf Wunsch des Kanalbetreibers (12.11.2026): Informationsteil ≤ 61,5 s, danach kurzer Abo-Aufruf (Segment cta), gesamt ≤ 66 s", "maxPauseMs": 400, "outputName": "FrankfurtRed3_76Fragen_Teil4_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_Teil4_THUMBNAIL"},
+	"FrankfurtErklaert76FragenTeil3": {"videoId": "frankfurt-erklaert-76-fragen-teil3", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_Teil3_THUMBNAIL"},
+	"FrankfurtErklaert76FragenTeil2": {"videoId": "frankfurt-erklaert-76-fragen-teil2", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_Teil2_THUMBNAIL"},
+	"FrankfurtErklaert76Fragen": {"videoId": "frankfurt-erklaert-76-fragen-landtag", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "outputName": "FrankfurtRed3_76Fragen_Innenausschuss_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_76Fragen_THUMBNAIL"},
+	"FrankfurtErklaertDemoFilmen": {"videoId": "frankfurt-erklaert-01-demo-filmen", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "outputName": "FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL"},
+	"FrankfurtPoliceRights": {"videoId": "frankfurt-2026-11-polizeikontrollen", "folge": null, "outputName": "FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL"},
+	"FrankfurtNov20ForecastPremium": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL", "vergleich": {"mit": "FrankfurtNov20Forecast", "plan": "plan.ts", "export": "NOV20_SCENES"}},
+	"FrankfurtNov20Forecast": {"videoId": "frankfurt-2026-11-20-ausblick", "folge": null, "outputName": "FrankfurtRed3_20November_Ausblick_ADAM_FINAL"},
+	"FrankfurtWorldwide": {"videoId": "frankfurt-2026-10-31-international", "folge": null, "outputName": "FrankfurtRed3_International_ADAM_FINAL_V2"},
+	"FrankfurtNextDemo": {"videoId": "frankfurt-2026-11-04-naechste-demo", "folge": 3, "outputName": "FrankfurtRed3_Folge3_ADAM_FINAL"},
+	"FrankfurtShops": {"videoId": "frankfurt-2026-10-31-geschaefte", "folge": 2, "outputName": "FrankfurtRed3_Folge2_ADAM"},
+	"FrankfurtHeadlines": {"videoId": "frankfurt-2026-10-31", "folge": 1, "outputName": "FrankfurtRed3_Folge1_ADAM"}
+}
