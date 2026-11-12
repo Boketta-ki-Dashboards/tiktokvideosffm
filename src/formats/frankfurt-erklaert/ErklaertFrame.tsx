@@ -47,10 +47,12 @@ export type ErklaertEpisode = {
 	script: {tailMs: number; maxDurationMs?: number};
 	/** Ab welchem Frame das Format-Badge erscheint (Standard 2; später, wenn das Titelbild im Video liegt). */
 	badgeFrom?: number;
+	/** Nur mit begründeter Ausnahme in config/videos.json (Informationsteil + Abo-Aufruf): Gesamtgrenze bis 66 s. */
+	maxSeconds?: number;
 };
 
 /** Timeline einer Kurzfolge – nie länger als 60 s (Formatgrenze, siehe ./timeline.ts). */
-export const erklaertTimeline = (ep: ErklaertEpisode, manifest: VoiceoverManifest, fps: number) => erklaertTimelineFor(ep.scenes, ep.script, manifest, fps);
+export const erklaertTimeline = (ep: ErklaertEpisode, manifest: VoiceoverManifest, fps: number) => erklaertTimelineFor(ep.scenes, ep.script, manifest, fps, ep.maxSeconds);
 
 /**
  * Rahmen jeder „Frankfurt erklärt“-Folge: Szenen mit Übergängen an den Stimm-Schnitten, Format-Badge mit 60-s-Ring,

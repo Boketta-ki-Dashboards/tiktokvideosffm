@@ -22,11 +22,16 @@ export const enforceMaxFrames = (tl: Timeline, manifest: VoiceoverManifest, fps:
 	return {scenes, durationInFrames: maxFrames};
 };
 
-/** Timeline einer Kurzfolge – nie länger als 60 s (1.800 Frames bei 30 fps). */
-export const erklaertTimelineFor = (scenes: SceneSpec[], script: {tailMs: number; maxDurationMs?: number}, manifest: VoiceoverManifest, fps: number) =>
-	enforceMaxFrames(
-		buildTimeline({scenes, manifest, fps, tailMs: script.tailMs, maxDurationMs: Math.min(script.maxDurationMs ?? FORMAT.maxSeconds * 1000, FORMAT.maxSeconds * 1000)}),
+/**
+ * Timeline einer Kurzfolge – nie länger als 60 s (1.800 Frames bei 30 fps). Nur Folgen mit begründeter Ausnahme
+ * (Informationsteil + Abo-Aufruf, siehe FORMAT.extendedMaxSeconds) übergeben `maxSeconds` bis 66.
+ */
+export const erklaertTimelineFor = (scenes: SceneSpec[], script: {tailMs: number; maxDurationMs?: number}, manifest: VoiceoverManifest, fps: number, maxSeconds: number = FORMAT.maxSeconds) => {
+	const max = Math.min(maxSeconds, FORMAT.extendedMaxSeconds);
+	return enforceMaxFrames(
+		buildTimeline({scenes, manifest, fps, tailMs: script.tailMs, maxDurationMs: Math.min(script.maxDurationMs ?? max * 1000, max * 1000)}),
 		manifest,
 		fps,
-		Math.round(FORMAT.maxSeconds * fps),
+		Math.round(max * fps),
 	);
+};

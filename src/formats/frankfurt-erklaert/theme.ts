@@ -11,6 +11,12 @@ export const FORMAT = {
 	maxFrames: 1800,
 	/** Outro-Länge ab Schnitt (≈ 3,3 s = Schluss-Satz ≈ 2,8 s + Ausklang ≥ 0,3 s, den check-sync nach der Stimme verlangt). */
 	outroMaxFrames: 100,
+	/**
+	 * Ausnahme (nur mit Begründung `ausnahme` in config/videos.json, ab Teil 4 der „76 Fragen“): Informationsteil bis
+	 * `infoMaxSeconds` (≤ 61,5 s), danach ein kurzer Abo-Aufruf (Segment-ID `cta`); gesamt höchstens `extendedMaxSeconds`.
+	 */
+	extendedMaxSeconds: 66,
+	infoMaxSeconds: 61.5,
 } as const;
 
 /** Akzentfarben des Formats (konsistent über alle Folgen). */
