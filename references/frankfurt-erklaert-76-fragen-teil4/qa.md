@@ -54,4 +54,29 @@ Korrigiert:
 
 ## 6. Finaler Render
 
-(wird nach dem Lauf ergänzt)
+Lauf **#37** (Run-ID 43269843173, Commit ab52ae7, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_76Fragen_Teil4_ADAM_FINAL-run37` (MP4, Thumbnail, Titelbild-Prüfbogen, ID 13968696552),
+`…-Technikbericht-run37` (ID 13968566653), `…-Sprecher-Adam-run37` (ID 13968566657).
+(Lauf #36 hatte dieselbe Spur bereits einmal mit dem älteren Layout gerendert – Zwischenstand, nicht zur Veröffentlichung.)
+
+Nachprüfung am heruntergeladenen Artefakt (12.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_76Fragen_Teil4_ADAM_FINAL.mp4`, 19,47 MB, SHA-256 `b9a0bc520baf4bb8674032b281d498cbecf218ce64d33066f2673a4bf6560fc9` |
+| Länge | 62,848 s · 1.885 Frames (Ausnahme-Grenze 66 s = 1.980 Frames) ✅ · Informationsteil bis 59,38 s, Abo-Phase 3,35 s |
+| Video | H.264 High, 1080 × 1920 (echte Pixel), 30/1 fps konstant, yuv420p, BT.709, Faststart ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,5 LUFS integriert · LRA 2,2 LU · True Peak **−1,4 dBTP** – Sprecherspur selbst −1,5 dBTP; die 0,1 dB entstehen im Mix, wo Effekte auf der Stimme liegen (≈ 9,5 s Aufprall bei „30“, ≈ 37 s Schnitt zu Antwort 3). Unhörbar, Prüfbericht bestanden (Teil 1 lag bei −1,1 dBTP). |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ (Sprecherspur: längste Pause 371 ms) |
+| Sync | `check-sync` und `check-pauses` im Workflow grün |
+| Thumbnail | `FrankfurtRed3_76Fragen_Teil4_THUMBNAIL.png` 1080 × 1920, byte-gleich mit dem Cover-Still |
+| Titelbild-Prüfbogen | `FrankfurtRed3_76Fragen_Teil4_COVER_VORSCHAU.png` 2420 × 1240 (verkleinert: `cover-vorschau-run37.jpg`): Serientitel, 76, TEIL 4 und „4 WEITERE ANTWORTEN“ in 9:16, 3:4, Profilraster und Videoframe vollständig; rote Karte frei von der App-Knopfleiste; Beschreibungszeile mit Teil-4-Titel |
+| Prüfbericht | `render.mjs --max`, `tech-report.mjs --max-seconds 66`: **BESTANDEN** |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 32 Bilder): `kontaktbogen-run37.jpg` – Frame 0 = vollständiges Titelbild, ab „Nach den ersten“
+werden aus der 76 die vier Antwort-Kacheln; Karte mit Schilden ab Szenenbeginn, Brennpunkte ab „überall“, Zähler „bis zu 30“, Gründe,
+Verlagerungsbogen, „Erklärung ≠ Bewertung“; Anfangsbilanz 17/5 (OFFIZIELL) → 35/6 (BERICHT, Zahlen rollen hoch) + „sechsstellig“;
+Waffengeschäft (Illustration) → Schreckschusswaffen/SICHERGESTELLT → 18 · Untersuchungshaft; 110 → 53 → 73 je an ihrer Zahl, VERDÄCHTIG ≠
+VERURTEILT; Zusammenfassung, Abo-Aufruf mit Haken.
