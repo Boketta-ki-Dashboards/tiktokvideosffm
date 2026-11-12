@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Gekommen sind {8.000 bis 9.000|acht- bis neuntausend} – insgesamt {181|hunderteinundachtzig}. Sie sind strafunmündig, aber Schadenersatz kann möglich sein. Zuerst sind die Versicherungen gefragt.",
-	"sampleFrom": "frankfurt-erklaert-76-fragen-teil3",
+	"text": "{Ewa|Eywa}, Frankfurt! Laut Wiesbadener Kurier ein sechsstelliger Schaden. Schreckschusswaffen sichergestellt, ein {18-Jähriger|Achtzehnjähriger} in Untersuchungshaft. Folgt {FrankfurtRed3|Frankfurt Red Drei} für mehr.",
+	"sampleFrom": "frankfurt-erklaert-76-fragen-teil4",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 188,
-	"cacheKey": "2c70eb9a283a69c32ede",
-	"durationSeconds": 10.248
+	"characters": 182,
+	"cacheKey": "b8b39339c8a828336a3a",
+	"durationSeconds": 11.04
 }
