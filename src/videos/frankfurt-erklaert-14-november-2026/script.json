@@ -1,0 +1,101 @@
+{
+	"videoId": "frankfurt-erklaert-14-november-2026",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 700,
+	"maxDurationMs": 66000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20. „Ewa“ automatisch „Eywa“. Pausen 40 ms im Thema, 120 ms zwischen Themen. Längen-Ausnahme (Wunsch Kanalbetreiber 14.11.2026): Informationsteil ≤ 61,5 s, danach Abo-Aufruf (Segment „cta“), gesamt ≤ 66 s."
+	},
+	"sampleText": "Ewa, Frankfurt! Eine {Gen-Z|Dschen-Zett}-Kundgebung an der Hauptwache, eine Kundgebung an der Bockenheimer Warte, ein Aufzug ab dem Goetheplatz zum Irankonflikt. Motto: {Phase 2|Phase zwei}. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "hook2",
+			"text": "Der {14.|Vierzehnte} war doch gestrichen – warum stand heute trotzdem eine {Gen-Z|Dschen-Zett}-Kundgebung an?",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "w1",
+			"text": "Nach Halloween stand der {14. November|vierzehnte November} kurz auf der Website von {Gen Z|Dschen Zett} regelt.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w2",
+			"text": "Dann war das Datum weg – nur noch: bald.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w3",
+			"text": "Als Nächstes galt der {20. November|zwanzigste November}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w4",
+			"text": "Inzwischen ruft die Initiative für heute doch zum Aktionstag auf – Motto: {Phase 2|Phase zwei}.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "f1",
+			"text": "Laut Polizei war dafür in Frankfurt eine Kundgebung an der Hauptwache angekündigt, von {12:30 bis 15 Uhr|halb eins bis drei}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "f2",
+			"text": "Eine Bilanz dazu gab es bei Redaktionsschluss noch nicht.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "m1",
+			"text": "Dazu kommen eine Kundgebung an der Bockenheimer Warte und der größte Aufzug ab dem Goetheplatz.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "m2",
+			"text": "Rund {1.000|tausend} Erwartete – laut Polizei zum Irankonflikt, also keine {Gen-Z|Dschen-Zett}-Demo.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p1",
+			"text": "Die Polizei setzt mehr Kräfte ein als an Halloween, mit Verstärkung aus anderen Präsidien.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p2",
+			"text": "Bei Bedarf kann sie alle Zugänge zur Zeil kontrollieren, Absperrgitter liegen bereit.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p3",
+			"text": "Konkrete Hinweise auf geplante Ausschreitungen gab es laut Polizei aber nicht.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "n1",
+			"text": "Und der {20. November|zwanzigste November}? Da sind in Frankfurt Schulstreik, {Gen-Z|Dschen-Zett}-Demo und Gewerkschaftsjugend angekündigt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "q1",
+			"text": "Wie habt ihr den Tag erlebt?",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
+			"pauseAfterMs": 0
+		}
+	]
+}
