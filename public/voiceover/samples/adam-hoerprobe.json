@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Laut Wiesbadener Kurier ein sechsstelliger Schaden. Schreckschusswaffen sichergestellt, ein {18-Jähriger|Achtzehnjähriger} in Untersuchungshaft. Folgt {FrankfurtRed3|Frankfurt Red Drei} für mehr.",
-	"sampleFrom": "frankfurt-erklaert-76-fragen-teil4",
+	"text": "{Ewa|Eywa}, Frankfurt! Eine {Gen-Z|Dschen-Zett}-Kundgebung an der Hauptwache, eine Kundgebung an der Bockenheimer Warte, ein Aufzug ab dem Goetheplatz zum Irankonflikt. Motto: {Phase 2|Phase zwei}. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
+	"sampleFrom": "frankfurt-erklaert-14-november-2026",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 182,
-	"cacheKey": "b8b39339c8a828336a3a",
-	"durationSeconds": 11.04
+	"characters": 231,
+	"cacheKey": "f21c591cf3eb2d577349",
+	"durationSeconds": 12.768
 }
