@@ -3,7 +3,7 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
-	"tailMs": 700,
+	"tailMs": 1100,
 	"maxDurationMs": 66000,
 	"maxPauseMs": 400,
 	"voice": {
@@ -65,7 +65,7 @@
 		{
 			"id": "m2",
 			"text": "Rund {1.000|tausend} Erwartete – laut Polizei zum Irankonflikt, also keine {Gen-Z-Demo|Dschen Zett Demo}.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "p1",
@@ -80,7 +80,7 @@
 		{
 			"id": "p3",
 			"text": "Konkrete Hinweise auf geplante Ausschreitungen gab es laut Polizei aber nicht.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "n1",

@@ -12,9 +12,9 @@ export const NOV14_COVER_LAYOUT = {
 	dateTop: 930,
 	dateSize: 96,
 	cardTop: 1046,
-	/** rote Karte „DOCH EINE GEN-Z-DEMO?“: Breite ≤ 760 mittig → rechte Kante ≤ 920 (App-Knöpfe ab x 930) */
-	cardFont: 54,
-	cardMaxWidth: 760,
+	/** rote Karte „DOCH EINE GEN-Z-DEMO?“: Breite ≤ 720 mittig → rechte Kante ≤ 900 (App-Knöpfe ab x 930) */
+	cardFont: 50,
+	cardMaxWidth: 720,
 	subTop: 1160,
 	metaTop: 1236,
 	metaBottom: 1290,

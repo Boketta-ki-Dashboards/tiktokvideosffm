@@ -2,6 +2,7 @@
 
 | Datei | Gebiet | Quelle | Lizenz | Abruf |
 |---|---|---|---|---|
+| `frankfurt-innenstadt-west.json` | Innenstadt bis Bockenheimer Warte (bbox 8.6490,50.1080 – 8.6915,50.1210; zwei API-Kacheln zusammengeführt, da die API max. 50.000 Knoten liefert) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 14.11.2026 |
 | `frankfurt-innenstadt.json` | Frankfurt Innenstadt (bbox 8.6700,50.1085 – 8.6915,50.1185) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 03.11.2026 |
 
 Erzeugt mit `node scripts/maps/build-osm-map.mjs --bbox <minLon,minLat,maxLon,maxLat> --out <datei>`.

@@ -9,6 +9,12 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #06 – Sondervideo „14.11. – doch eine Gen-Z-Demo in Frankfurt?“** (Komposition `FrankfurtErklaert14November`, ≈ 61,3 s):
+14.11. kurz auf der Website von „Gen Z regelt“ genannt und wieder entfernt, inzwischen doch Aktionstag „Phase 2“; laut Polizei Kundgebung an der
+Hauptwache (12:30–15:00), getrennt davon Bockenheimer Warte und Aufzug zum Irankonflikt ab Goetheplatz; mehr Einsatzkräfte, Zugangskontrollen
+zur Zeil nur im Bedarfsfall, keine konkreten Hinweise auf Ausschreitungen; Ausblick 20.11. laut GEW Hessen.
+Quellen: [`sources.md`](references/frankfurt-erklaert-14-november-2026/sources.md)
+
 **„Frankfurt erklärt“ #05 – „76 Fragen – Teil 4: 4 weitere Antworten“** (Komposition `FrankfurtErklaert76FragenTeil4`, ≈ 62,8 s): warum die Polizei
 nicht überall gleichzeitig war (bis zu 30 Einsatzorte, OSM-Karte mit belegten Schadensorten), Schaden (Anfangsbilanz 17/5 → laut Wiesbadener
 Kurier 35/6 + sechsstellig), Waffengeschäft (Schreckschusswaffen sichergestellt, 18-Jähriger in U-Haft ≠ Urteil), Strafverfolgung (110 Anzeigen,

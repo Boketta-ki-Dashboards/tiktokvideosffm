@@ -55,6 +55,9 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4 --frames 0,60,300,600,900,1200,1500,1800 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert14November --frames 0,90,300,650,950,1300,1600,1800 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert14November-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert14November-CoverVorschau --frames 0 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76Fragen --frames 0,150,300,500,650,850,1100,1300,1480,1650 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76Fragen-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaertDemoFilmen --frames 0,180,400,520,700,880,1100,1290,1420,1580,1720 --scale 0.5

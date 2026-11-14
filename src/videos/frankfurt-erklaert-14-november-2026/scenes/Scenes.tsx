@@ -438,6 +438,7 @@ export const HauptwacheScene: React.FC<SceneProps> = ({cues, durationInFrames}) 
 				</div>
 			) : null}
 			<div style={{position: 'absolute', right: 150, top: 740, padding: '3px 10px', borderRadius: 8, background: 'rgba(8,10,28,0.8)', fontFamily: FONTS.body, fontWeight: 800, fontSize: 18, letterSpacing: 1.5, color: COLORS.textMuted}}>ILLUSTRATION</div>
+			<div style={{position: 'absolute', left: 0, right: 0, top: 1180, height: 74, background: 'linear-gradient(rgba(4,6,20,0), rgba(4,6,20,0.82) 30%, rgba(4,6,20,0.82) 70%, rgba(4,6,20,0))'}} />
 			<SourceBar text={HAUPTWACHE.source} at={10} />
 			<Sfx name="whoosh" at={0} volume={0.5} />
 			<Sfx name="softImpact" at={atPlace} volume={0.6} />
@@ -663,7 +664,7 @@ export const NextScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			<div style={{position: 'absolute', left: 120 - swap * 40, top: 420 + swap * 90, scale: String(1 - swap * 0.45), opacity: 1 - swap * 0.45, transformOrigin: '0% 0%'}}>
 				<CalendarBlock day="14" month="NOVEMBER" weekday="HEUTE" width={260} accent={ACCENT.brand} tilt={-6} />
 			</div>
-			<div style={{position: 'absolute', left: 380 - (1 - swap) * 160, top: 380 + (1 - swap) * 120, scale: String(0.55 + swap * 0.45), opacity: Math.min(1, 0.4 + swap), transformOrigin: '50% 0%'}}>
+			<div style={{position: 'absolute', left: 380 + (1 - swap) * 420, top: 380 + (1 - swap) * 60, scale: String(0.7 + swap * 0.3), opacity: Math.min(1, swap * 1.8), rotate: `${(1 - swap) * 18}deg`, transformOrigin: '50% 0%'}}>
 				<CalendarBlock day="20" month="NOVEMBER" weekday="FREITAG" width={320} accent={COLORS.signal} tilt={4} />
 			</div>
 			<div style={{position: 'absolute', left: 64, width: 866, top: 800, opacity: swap, translate: `0 ${(1 - swap) * 30}px`}}>
