@@ -53,4 +53,29 @@ schwer lesbar → dunkles Band · 14/20-Kalender überlappten beim Wechsel → 2
 
 ## 6. Finaler Render
 
-(wird nach dem Lauf ergänzt)
+Lauf **#40** (Run-ID 43615382394, Commit c46e2e9, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_14November_ADAM_FINAL-run40` (MP4, Thumbnail, Titelbild-Prüfbogen, ID 14122680867),
+`…-Technikbericht-run40` (ID 14122775563), `…-Sprecher-Adam-run40` (ID 14122441469).
+
+Nachprüfung am heruntergeladenen Artefakt (14.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_14November_ADAM_FINAL.mp4`, 15,45 MB, SHA-256 `f9964cc35bdf96eb085067617facda316ed3180e2c70c6bbbcc4c0dcd4afe35b` |
+| Länge | 61,333 s · 1.840 Frames (Ausnahme-Grenze 66 s) ✅ · Informationsteil bis 58,08 s, Abo-Phase 3,1 s |
+| Video | H.264 High, 1080 × 1920 (echte Pixel, direkt in Zielauflösung gerendert), 30/1 fps konstant, yuv420p, BT.709, Faststart ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,6 LUFS integriert · LRA 3,1 LU · True Peak −1,7 dBTP ✅ |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ |
+| Sync | `check-sync`/`check-pauses` im Workflow grün; Untertitel aus den ElevenLabs-Zeitstempeln, jeder innerhalb seines Satzes (Test) |
+| Thumbnail | `FrankfurtRed3_14November_THUMBNAIL.png` 1080 × 1920, byte-gleich mit dem Cover-Still |
+| Titelbild-Prüfbogen | `FrankfurtRed3_14November_COVER_VORSCHAU.png` 2420 × 1240 (verkleinert: `cover-vorschau-run40.jpg`) – alle vier Ansichten vollständig lesbar |
+| Prüfbericht | `render.mjs --max`, `tech-report.mjs --max-seconds 66`: **BESTANDEN** |
+| Tests | `npm run check`: 124 Tests grün (davon 9 neu in `tests/erklaert-14-november.test.ts`) |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 31 Bilder): `kontaktbogen-run40.jpg`.
+
+**Zeitbezug:** Das Video gibt den Stand 14.11.2026, 17:15–17:22 Uhr wieder (Verlauf der Hauptwache-Kundgebung offen). Erscheint vor der
+Veröffentlichung eine Polizeibilanz, sollte der Satz „Eine Bilanz dazu gab es bei Redaktionsschluss noch nicht.“ (Segment `f2`) ersetzt werden –
+nur dieser Satz wird neu vertont.
