@@ -15,7 +15,7 @@
 		},
 		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20. „Ewa“ automatisch „Eywa“. Pausen 40 ms im Thema, 120 ms zwischen Themen. Längen-Ausnahme (Wunsch Kanalbetreiber 14.11.2026): Informationsteil ≤ 61,5 s, danach Abo-Aufruf (Segment „cta“), gesamt ≤ 66 s."
 	},
-	"sampleText": "Ewa, Frankfurt! Eine {Gen-Z|Dschen-Zett}-Kundgebung an der Hauptwache, eine Kundgebung an der Bockenheimer Warte, ein Aufzug ab dem Goetheplatz zum Irankonflikt. Motto: {Phase 2|Phase zwei}. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
+	"sampleText": "Ewa, Frankfurt! Eine {Gen-Z-Kundgebung|Dschen Zett Kundgebung} an der Hauptwache, eine Kundgebung an der Bockenheimer Warte, ein Aufzug ab dem Goetheplatz zum Irankonflikt. Motto: {Phase 2|Phase zwei}. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
 	"segments": [
 		{
 			"id": "hook1",
@@ -24,7 +24,7 @@
 		},
 		{
 			"id": "hook2",
-			"text": "Der {14.|Vierzehnte} war doch gestrichen – warum stand heute trotzdem eine {Gen-Z|Dschen-Zett}-Kundgebung an?",
+			"text": "Der {14.|Vierzehnte} war doch gestrichen – warum stand heute trotzdem eine {Gen-Z-Kundgebung|Dschen Zett Kundgebung} an?",
 			"pauseAfterMs": 120
 		},
 		{
@@ -64,7 +64,7 @@
 		},
 		{
 			"id": "m2",
-			"text": "Rund {1.000|tausend} Erwartete – laut Polizei zum Irankonflikt, also keine {Gen-Z|Dschen-Zett}-Demo.",
+			"text": "Rund {1.000|tausend} Erwartete – laut Polizei zum Irankonflikt, also keine {Gen-Z-Demo|Dschen Zett Demo}.",
 			"pauseAfterMs": 120
 		},
 		{
@@ -84,7 +84,7 @@
 		},
 		{
 			"id": "n1",
-			"text": "Und der {20. November|zwanzigste November}? Da sind in Frankfurt Schulstreik, {Gen-Z|Dschen-Zett}-Demo und Gewerkschaftsjugend angekündigt.",
+			"text": "Und der {20. November|zwanzigste November}? Da sind in Frankfurt Schulstreik, {Gen-Z-Demo|Dschen Zett Demo} und Gewerkschaftsjugend angekündigt.",
 			"pauseAfterMs": 120
 		},
 		{

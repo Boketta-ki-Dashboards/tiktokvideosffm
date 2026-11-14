@@ -84,11 +84,33 @@ import {
 } from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4';
 import {FrankfurtErklaert76FragenTeil4Cover} from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4Cover';
 import {FrankfurtErklaert76FragenTeil4CoverVorschau} from './videos/frankfurt-erklaert-76-fragen-teil4/FrankfurtErklaert76FragenTeil4CoverVorschau';
+import {
+	calculateErklaert14NovemberMetadata,
+	erklaert14NovemberDefaultProps,
+	erklaert14NovemberSchema,
+	FrankfurtErklaert14November,
+} from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14November';
+import {FrankfurtErklaert14NovemberCover} from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14NovemberCover';
+import {FrankfurtErklaert14NovemberCoverVorschau} from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14NovemberCoverVorschau';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B – Sondervideo 14.11.2026: Doch eine Gen-Z-Demo? Längen-Ausnahme (Info ≤ 61,5 s + Abo-Aufruf, ≤ 66 s) */}
+				<Composition
+					id="FrankfurtErklaert14November"
+					component={FrankfurtErklaert14November}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaert14NovemberSchema}
+					defaultProps={erklaert14NovemberDefaultProps}
+					calculateMetadata={calculateErklaert14NovemberMetadata}
+				/>
+				<Still id="FrankfurtErklaert14November-Cover" component={FrankfurtErklaert14NovemberCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert14November-CoverVorschau" component={FrankfurtErklaert14NovemberCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #05 – 76 Fragen, Teil 4: vier weitere Antworten; begründete Längen-Ausnahme (Info ≤ 61,5 s + Abo-Aufruf, ≤ 66 s) */}
 				<Composition
 					id="FrankfurtErklaert76FragenTeil4"
