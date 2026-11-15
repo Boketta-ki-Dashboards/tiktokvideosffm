@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaertGenZPhase2
           - FrankfurtErklaert14November
           - FrankfurtErklaert76FragenTeil4
           - FrankfurtErklaert76FragenTeil3

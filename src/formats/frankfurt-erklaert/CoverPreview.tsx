@@ -57,7 +57,7 @@ const Guides: React.FC<{scale: number}> = ({scale}) => {
 };
 
 /** Neutrale Nachzeichnung typischer Bedienelemente einer Kurzvideo-App (keine Logos, keine Marken). */
-const AppOverlay: React.FC<{caption: string}> = ({caption}) => {
+const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => React.ReactNode}> = ({caption, avatar}) => {
 	const icon = (y: number, d: React.ReactNode, count: string) => (
 		<div style={{position: 'absolute', left: 950, top: y, width: 110, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4}}>
 			<svg width={84} height={84} viewBox="0 0 24 24" style={{filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'}}>
@@ -76,7 +76,7 @@ const AppOverlay: React.FC<{caption: string}> = ({caption}) => {
 			<div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 560, background: 'linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.55))'}} />
 			{/* rechte Knopfleiste */}
 			<div style={{position: 'absolute', left: 962, top: 1000, width: 92, height: 92, borderRadius: 46, overflow: 'hidden', border: '3px solid #FFFFFF'}}>
-				<BrandAvatar size={86} />
+				{avatar ? avatar(86) : <BrandAvatar size={86} />}
 			</div>
 			{icon(1150, <path d="M12 21s-7-4.4-9.3-9C1 8.6 3.4 5 6.9 5c2 0 3.4 1 5.1 3 1.7-2 3.1-3 5.1-3 3.5 0 5.9 3.6 4.2 7-2.3 4.6-9.3 9-9.3 9z" fill="#FFFFFF" />, '12,3K')}
 			{icon(1300, <path d="M4 5h16v11H9l-5 4V5z" fill="#FFFFFF" />, '845')}
@@ -101,13 +101,13 @@ const AppOverlay: React.FC<{caption: string}> = ({caption}) => {
 };
 
 /** Nachgebautes Profil mit 3-Spalten-Raster (Kacheln 3:4, mittig beschnitten). */
-const ProfileGrid: React.FC<{tiles: {node: React.ReactNode; label?: string; views: string; pinned?: boolean; mark?: string}[]; width: number}> = ({tiles, width}) => {
+const ProfileGrid: React.FC<{tiles: {node: React.ReactNode; label?: string; views: string; pinned?: boolean; mark?: string}[]; width: number; avatar?: (size: number) => React.ReactNode}> = ({tiles, width, avatar}) => {
 	const gap = 4;
 	const tw = (width - 2 * gap) / 3;
 	return (
 		<div style={{width, borderRadius: 36, background: '#0E0E12', border: '3px solid #2A2A35', overflow: 'hidden', paddingBottom: 12}}>
 			<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '26px 0 18px'}}>
-				<BrandAvatar size={96} />
+				{avatar ? avatar(96) : <BrandAvatar size={96} />}
 				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 26, color: '#FFFFFF'}}>{handleWithAt()}</span>
 				<div style={{display: 'flex', gap: 30, fontFamily: FONTS.body, fontWeight: 700, fontSize: 18, color: 'rgba(255,255,255,0.7)'}}>
 					<span>Gefolgt</span>
@@ -139,7 +139,9 @@ export const CoverPreviewSheet: React.FC<{
 	previous?: {node: React.ReactNode; label: string}[];
 	/** Beschreibungszeile im App-Overlay (TikTok-Titel, gekürzt; Standard = Teil 3) */
 	caption?: string;
-}> = ({title, cover, videoFrame, previous = [], caption = '76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr'}) => {
+	/** Profilbild im Profilraster und in der App-Knopfleiste (Standard: altes „S“ – neue Folgen übergeben `<BrandLogo>`) */
+	avatar?: (size: number) => React.ReactNode;
+}> = ({title, cover, videoFrame, previous = [], caption = '76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr', avatar}) => {
 	const s = 0.5;
 	return (
 		<AbsoluteFill style={{background: '#0A0C1C', padding: '30px 40px'}}>
@@ -165,6 +167,7 @@ export const CoverPreviewSheet: React.FC<{
 					<Label n="3" title="Profilraster" sub="Kachel ≈ Handygröße ×2" />
 					<ProfileGrid
 						width={600}
+						avatar={avatar}
 						tiles={[
 							{node: cover, views: '0', pinned: true, mark: 'NEU'},
 							...previous.map((p) => ({node: p.node, views: '–', mark: p.label})),
@@ -176,7 +179,7 @@ export const CoverPreviewSheet: React.FC<{
 					<Label n="4" title="Video + App" sub="Frame 15 mit Untertitel" />
 					<Window width={W * s}>
 						{videoFrame}
-						<AppOverlay caption={caption} />
+						<AppOverlay caption={caption} avatar={avatar} />
 					</Window>
 				</div>
 			</div>
