@@ -9,6 +9,13 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #07 – „Gen Z regelt – Phase 2: friedliche Demos, aber 20 Festnahmen in Berlin“** (Komposition `FrankfurtErklaertGenZPhase2`,
+≈ 59,0 s, hartes Limit 60 s inkl. Abo-Aufruf): Proteste vom 14.11. – Bremen (bis zu 670, friedlich), Karlsruhe (rund 220, weitgehend friedlich),
+Stuttgart (mehrere Hundert, Aufzug untersagt) auf einer 2,5D-Deutschlandkarte; Berlin (100 angemeldet, laut Polizei rund 1.200, 700 Kräfte) auf
+einer perspektivischen OSM-Karte mit der belegten Strecke Savignyplatz → Ku'damm → S Halensee; Zwischenfälle laut Polizei (stilisiert), Bilanz
+Stand 15.11.: 20 vorläufige Festnahmen, 28 Strafanzeigen, 3 verletzte Polizisten; Festnahme ≠ Verurteilung; 20.11. angekündigt. Erste Folge mit
+dem offiziellen FrankfurtRed-Logo (`public/brand/frankfurtred-logo.webp`). Quellen: [`sources.md`](references/frankfurt-erklaert-genz-phase2-2026-11-14/sources.md)
+
 **„Frankfurt erklärt“ #06 – Sondervideo „14.11. – doch eine Gen-Z-Demo in Frankfurt?“** (Komposition `FrankfurtErklaert14November`, ≈ 61,3 s):
 14.11. kurz auf der Website von „Gen Z regelt“ genannt und wieder entfernt, inzwischen doch Aktionstag „Phase 2“; laut Polizei Kundgebung an der
 Hauptwache (12:30–15:00), getrennt davon Bockenheimer Warte und Aufzug zum Irankonflikt ab Goetheplatz; mehr Einsatzkräfte, Zugangskontrollen

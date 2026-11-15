@@ -92,11 +92,33 @@ import {
 } from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14November';
 import {FrankfurtErklaert14NovemberCover} from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14NovemberCover';
 import {FrankfurtErklaert14NovemberCoverVorschau} from './videos/frankfurt-erklaert-14-november-2026/FrankfurtErklaert14NovemberCoverVorschau';
+import {
+	calculateErklaertGenZPhase2Metadata,
+	erklaertGenZPhase2DefaultProps,
+	erklaertGenZPhase2Schema,
+	FrankfurtErklaertGenZPhase2,
+} from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2';
+import {FrankfurtErklaertGenZPhase2Cover} from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2Cover';
+import {FrankfurtErklaertGenZPhase2CoverVorschau} from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2CoverVorschau';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #07 – Gen Z regelt, Phase 2 (Proteste 14.11.2026, Stand 15.11.): hartes Limit 60 s inkl. Abo-Aufruf */}
+				<Composition
+					id="FrankfurtErklaertGenZPhase2"
+					component={FrankfurtErklaertGenZPhase2}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertGenZPhase2Schema}
+					defaultProps={erklaertGenZPhase2DefaultProps}
+					calculateMetadata={calculateErklaertGenZPhase2Metadata}
+				/>
+				<Still id="FrankfurtErklaertGenZPhase2-Cover" component={FrankfurtErklaertGenZPhase2Cover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaertGenZPhase2-CoverVorschau" component={FrankfurtErklaertGenZPhase2CoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B – Sondervideo 14.11.2026: Doch eine Gen-Z-Demo? Längen-Ausnahme (Info ≤ 61,5 s + Abo-Aufruf, ≤ 66 s) */}
 				<Composition
 					id="FrankfurtErklaert14November"

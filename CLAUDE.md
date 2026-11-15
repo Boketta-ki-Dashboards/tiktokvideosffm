@@ -28,6 +28,10 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
    - Umstrittene Einzelbehauptungen (z. B. Herkunft von Tatverdächtigen) nur mit sorgfältiger Einordnung – im
      Zweifel weglassen und in `sources.md` unter „Bewusst NICHT verwendet“ begründen.
    - Platzhalter (Showcase) klar als „Beispiel/Platzhalter“ kennzeichnen.
+   - **Neuester überprüfbarer Meldestand (dauerhaft):** vor der Vertonung erneut recherchieren; Zahlen aus der jüngsten belegten Meldung
+     (Uhrzeit der Aktualisierung in `sources.md`, Stand-Datum im Bild/in der Quellenzeile). Frühere oder abweichende Zwischenstände
+     (z. B. Samstagabend-Zahlen) nie als aktuelle Bilanz – höchstens als „zuerst genannt“; nicht abrufbare Quellen unter „Bewusst NICHT
+     verwendet“. Titelbild-Aussagen müssen ebenso stimmen (z. B. nicht „Proteste in 4 Städten“, wenn es mehr gab).
    - **Terminmeldungen** (Demos, Verbote): Stufen trennen – Gerücht · Ankündigung (Veranstalter) · Anmeldung · behördliche Entscheidung (siehe
      `references/frankfurt-2026-11-04-naechste-demo/sources.md`). Nie als „angekündigt/beschlossen“ ausgeben, was nur als Gerücht oder politische Äußerung belegt ist; Stand-Datum im Video nennen.
    - Eigene Beobachtung des Kanalbetreibers vor Ort ist ein Beleg (`"art": "augenzeuge"`), wenn sie im Video offen als solche
@@ -50,7 +54,12 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
    explizit zeigen – Lichtstimmung, Symbole, Zahlen.
 5. **Keine großen Binärdateien committen.** MP4/MOV/WebM sind per `.gitignore` ausgeschlossen; Renderings
    landen in `output/` (ignoriert) bzw. als GitHub-Artefakt. Erlaubt: Sprecher-MP3 (128 kbit/s, ≈ 1 MB pro Minute), kurze SFX-WAVs, kleine Standbilder (< 200 KB).
-6. **Branding nur aus `src/theme/brand.ts`** (TikTok: **@frankfurtred3**, Profilbild „S“). Nie Accountnamen hart codieren.
+6. **Branding nur aus `src/theme/brand.ts`** (TikTok: **@frankfurtred3**). Nie Accountnamen hart codieren.
+   - **Offizielles Logo (dauerhaft ab „Gen Z regelt – Phase 2“, 15.11.2026):** `public/brand/frankfurtred-logo.webp` (768 × 768, vom Kanalbetreiber
+     gestellt, nur skaliert – nie neu generieren, nachzeichnen oder verändern), zentral `BRAND.logoFile`, Komponente
+     `src/components/brand/BrandLogo.tsx`. Alle NEUEN Outros, Abo-Aufrufe, Profilhinweise und Titelbilder nutzen das Logo; im Prüfbogen
+     `CoverPreviewSheet avatar={(s) => <BrandLogo size={s} border={false} />}`. Das alte „S“ (`BrandAvatar`) bleibt nur in fertigen Folgen und
+     ist kein Ersatz; fertige MP4s werden nicht geändert. Fehlt die Datei, abbrechen statt Platzhalter zeigen.
 7. **Schadensangaben dreistufig trennen:** sichtbarer Sachschaden · dokumentiertes Eindringen · nachgewiesene Entwendung.
    „Geplündert“ nur bei belegter Entwendung. Offizielle Zahlen (17 beschädigt / 5 davon geplündert) nie mit eigener
    Recherche-Zählung vermischen; die 5 sind Teil der 17. Keine erfundenen Schadenssummen.
@@ -82,6 +91,12 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   Texte, Zahlen, Quellen immer innerhalb (`<SafeArea>`). Untertitel sitzen ~550 px über dem unteren Rand.
 - Mindestschriftgrößen: Titel ≥ 58 px, Fließtext ≥ 27 px, Quellen ≥ 22 px.
 - Jede Szene hat Bewegung (Kamera-Drift, Parallaxe, Partikel) – kein statisches Standbild länger als 1 s.
+- **Motion-Graphics-Qualität (dauerhaft, alle neuen Videos):** Karten bevorzugt als 2,5D-Ebene (`src/components/map/TiltedPlane.tsx`: CSS-3D mit
+  gestapelten Schichten für Extrusion, Kamerafahrten über `interpolateCamera`, weicher Kartenrand per `mask`); Beschriftungen/Ortsmarken NICHT im
+  3D-Kontext, sondern per `projectPlanePoint` als 2D-Ebene darüber (Chrome schneidet aufrechte 3D-Elemente sonst am Ebenenrand ab).
+  Keine leeren Szenenanfänge, Zähler laufen vom Erscheinen bis zum gesprochenen Wert (kein stehendes „0“), Hervorhebungen an Wort-Cues,
+  Illustrationen (Figuren, Polizei, Pyrotechnik) stilisiert und als ILLUSTRATION gekennzeichnet. Vor jedem Render Standbilder mit echten
+  Adam-Zeiten (`--every 45`) ansehen.
 - Untertitel: TikTok-Stil, 1–3 Wörter pro Seite, aktives Wort gelb, dicker schwarzer Rand.
 
 ## Animationsregeln (Remotion)
@@ -130,6 +145,11 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 - **Aussprache (dauerhaft, alle neuen FrankfurtRed3-Videos):** „Ewa“ wird immer **Ewa** geschrieben/angezeigt und **„Eywa“** gesprochen.
   Zentral in `config/voice-regeln.json → aussprache.regeln` (`{"Ewa": "Eywa"}`), automatisch als `{Ewa|Eywa}` angewandt (`scripts/lib/aussprache.mjs`);
   Untertitel zeigen nie „Eywa“ (Test). Bereits fertige Videos stehen in `aussprache.ausnahmen` (byte-gleiche Spur aus dem Cache).
+- **Kurzvideos (dauerhaft, alle neuen FrankfurtRed3-Kurzvideos ≤ 66 s):** Adam mit Profil `kurzformat-60` (speed 1.20), „Ewa“ → „Eywa“,
+  keine Pause > 400 ms (`check-pauses`), 2–3 milde Slang-Ausdrücke nur über die Wortwahl. Längen-Schätzung (`estimate-manifest`) ist zu
+  optimistisch: Adam spricht ≈ 17,5–18 Zeichen/s inkl. Pausen → für 60 s inkl. Abo-Aufruf höchstens ≈ 1.020 gesprochene Zeichen planen.
+  Nach jeder Erzeugung Whisper-Gegenprobe der Begrüßung: hört Whisper „Eva“ statt „Ey, war“, die bereits geprüfte Fassung mit identischem
+  Cache-Schlüssel aus einer früheren Folge übernehmen (`voice-cache/elevenlabs/<id>/<key>.mp3|json`).
 - **Sprechtempo: Adam `speed` 1.16 – zuletzt erfolgreich verwendet und vom Kanalbetreiber akzeptiert (Folge 3, Commit d99eacd); gilt fest für ALLE Folgen.**
   Übrige Adam-Werte ebenso fest: stability 0.45, similarity_boost 0.8, style 0.2, use_speaker_boost true, seed 20261104, `mp3_44100_128`.
   Nie automatisch zwischen Folgen ändern; nur auf ausdrücklichen Wunsch in `config/voice.json` (dann Hörprobe). (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
@@ -145,6 +165,7 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
 
 | Komposition | Ordner | Inhalt |
 |---|---|---|
+| `FrankfurtErklaertGenZPhase2` | `src/videos/frankfurt-erklaert-genz-phase2-2026-11-14/` | **Format B** #07 „Gen Z regelt – Phase 2: friedliche Demos, aber 20 Festnahmen in Berlin“ (Proteste 14.11., Meldestand 15.11.2026, 13 Uhr): 2,5D-Deutschlandkarte (`visuals/GermanyPlane.tsx`, Natural Earth) mit Bremen (bis zu 670, friedlich) · Karlsruhe (rund 220, weitgehend friedlich) · Stuttgart (mehrere Hundert, Aufzug untersagt) + Hinweis Düsseldorf/Wuppertal (WDR); Berlin perspektivisch (`visuals/BerlinPlane.tsx`, OSM `berlin-charlottenburg.json`): 100 angemeldet / laut Polizei rund 1.200, 700 Kräfte, Strecke Savignyplatz → Ku'damm → S Halensee (rbb24; Verbindung zum Ku'damm schematisch); Zwischenfälle laut Polizei als Illustration (`visuals/IncidentStreet.tsx`); Bilanz Stand 15.11.: 20 vorläufige Festnahmen (zuerst 22), 28 Strafanzeigen, 3 verletzte Polizisten, Festnahme ≠ Verurteilung; 20.11. angekündigt; erstes Video mit offiziellem Logo; hartes Limit 60 s (≈ 59,0 s inkl. Abo-Aufruf); Tests `tests/erklaert-genz-phase2.test.ts`; Export `FrankfurtRed3_GenZPhase2_15November_ADAM_FINAL.mp4` + `FrankfurtRed3_GenZPhase2_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
 | `FrankfurtErklaert14November` | `src/videos/frankfurt-erklaert-14-november-2026/` | **Format B** #06 Sondervideo „14.11. – doch eine Gen-Z-Demo in Frankfurt?“ (14.11.2026): Datum erst kurz auf der Website von „Gen Z regelt“ genannt, dann entfernt („bald“, tagesschau 01.11.), inzwischen doch Aktionstag „Phase 2“; Polizei-PM 13.11.: Kundgebung Hauptwache 12:30–15:00 (Gen Z regelt zugerechnet) · Bockenheimer Warte 17–19 (Veranstalter nicht genannt) · Aufzug Goetheplatz zum Irankonflikt (1.000 erwartet, keine Gen-Z-Demo), mehr Kräfte als am 31.10., Zugangskontrollen zur Zeil nur im Bedarfsfall, keine konkreten Hinweise auf Ausschreitungen; Verlauf bei Redaktionsschluss offen (Stand im Bild); 20.11. laut GEW Hessen; Hauptwache-Illustration (`visuals/Hauptwache.tsx`), OSM-Karte `frankfurt-innenstadt-west.json`; Längen-Ausnahme (Info 58,1 s + Abo-Aufruf, 61,3 s); Tests `tests/erklaert-14-november.test.ts`; Export `FrankfurtRed3_14November_ADAM_FINAL.mp4` + `FrankfurtRed3_14November_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
 | `FrankfurtErklaert76FragenTeil4` | `src/videos/frankfurt-erklaert-76-fragen-teil4/` | **Format B** #05 „76 Fragen – Teil 4: 4 weitere Antworten“ (12.11.2026): bis zu 30 Einsatzorte gleichzeitig (Polizei 1.11., OSM-Karte mit 11 belegten Schadensorten, Schilde/Linien symbolisch, Erklärung ≠ Bewertung), Schaden 17/5 (offiziell) → 35/6 + sechsstellig nur als BERICHT des Wiesbadener Kurier (Bezahlinhalt, nicht selbst einsehbar), Waffengeschäft (Schreckschusswaffen sichergestellt, 18-Jähriger in U-Haft ≠ Verurteilung), Strafverfolgung 110/53/73 (nicht addieren, verdächtig ≠ verurteilt); „160 Durchsuchungen“, „vollständig/nicht schussfähig“ ohne Beleg → nicht verwendet; erste Folge mit Längen-Ausnahme (Info 59,4 s + Abo-Aufruf, 62,8 s); Tests `tests/erklaert-76-teil4.test.ts`; Export `FrankfurtRed3_76Fragen_Teil4_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
 | `FrankfurtErklaert76FragenTeil3` | `src/videos/frankfurt-erklaert-76-fragen-teil3/` | **Format B** #04 „76 Fragen – Teil 3: Was ist immer noch offen?“ (12.11.2026): vier Fragen ohne Wiederholung von Teil 2 – Teilnehmerprognose (Polizei ≈ 2.000 vs. 8.000–9.000, Ursache offen), Gewalt schon bis zur Auflösung (6 von insgesamt 181 laut Innenminister, Mehrheit friedlich), zwei Tatverdächtige unter 14 (§ 19 StGB, Jugendamt § 27 SGB VIII, § 828/§ 832 BGB – Eltern nicht automatisch, keine Rechtsberatung), Schäden (Versicherung zuerst, Stadt prüft ohne feste Zusage, Gesamtschaden nicht beziffert); erstes Cover nach `COVER_ZONE` + Prüfbogen `-CoverVorschau`; Tests `tests/erklaert-76-teil3.test.ts`; Export `FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
