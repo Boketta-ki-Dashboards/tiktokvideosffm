@@ -57,4 +57,28 @@ Frame 0–6 · Stuttgart-Einordnung erschien erst kurz vor dem Schnitt → ab �
 
 ## 6. Finaler Render
 
-(folgt nach dem Workflow-Lauf)
+Lauf **#44** (Run-ID 43740446411, Commit 526333b, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_GenZPhase2_15November_ADAM_FINAL-run44` (MP4, Thumbnail, Titelbild-Prüfbogen, ID 14172198924),
+`…-Technikbericht-run44` (ID 14172363407), `…-Sprecher-Adam-run44` (ID 14172457823). CI-Lauf #59 (Standbilder inkl. Cover/Prüfbogen) grün.
+
+Nachprüfung am heruntergeladenen Artefakt (15.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_GenZPhase2_15November_ADAM_FINAL.mp4`, **19,93 MB** (< 30 MB, ohne Auflösungs- oder Bitratenreduktion), SHA-256 `dea9a12b215f2f96c4c00928a783b5bcd304066d11c26c46f8be9e528ec5d44e` |
+| Länge | **58,987 s · 1.769 Frames** (hartes Limit 60,0 s / 1.800 Frames inkl. Abo-Aufruf) ✅ |
+| Video | H.264 High, 1080 × 1920 (echte Pixel), 30/1 fps konstant, yuv420p, BT.709, ≈ 2,6 Mbit/s, Faststart (ftyp → moov → free → mdat) ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,6 LUFS integriert · LRA 2,6 LU · True Peak −1,5 dBTP ✅ |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ |
+| Sync | `check-sync`/`check-pauses` im Workflow grün; Untertitel aus den ElevenLabs-Zeitstempeln, jeder innerhalb seines Satzes (Test) |
+| Thumbnail | `FrankfurtRed3_GenZPhase2_THUMBNAIL.png` 1080 × 1920, byte-gleich mit dem Cover-Still |
+| Titelbild-Prüfbogen | `FrankfurtRed3_GenZPhase2_COVER_VORSCHAU.png` 2420 × 1240 (verkleinert: `cover-vorschau-run44.jpg`) – alle vier Ansichten lesbar, Profilbild = offizielles Logo |
+| Prüfbericht | `render.mjs --max`, `tech-report.mjs --max-seconds 60`: **BESTANDEN** |
+| Tests | `npm run check`: 136 Tests grün (davon 11 neu in `tests/erklaert-genz-phase2.test.ts`) |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 29 Bilder): `kontaktbogen-run44.jpg`.
+
+**Zeitbezug:** Das Video gibt den Stand 15.11.2026, 13 Uhr wieder (Polizei: Angaben vorläufig). Ändert die Polizei Berlin die Bilanz vor der
+Veröffentlichung, nur Segment `stats` (und ggf. `STATS` in `content.ts`) anpassen – nur dieser Satz wird neu vertont.
