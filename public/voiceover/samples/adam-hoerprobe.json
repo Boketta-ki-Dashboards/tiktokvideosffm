@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Eine {Gen-Z|Dschen-Zett}-Kundgebung an der Hauptwache, eine Kundgebung an der Bockenheimer Warte, ein Aufzug ab dem Goetheplatz zum Irankonflikt. Motto: {Phase 2|Phase zwei}. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für die nächsten Entwicklungen!",
-	"sampleFrom": "frankfurt-erklaert-14-november-2026",
+	"text": "{Ewa|Eywa}, Frankfurt! {Gen-Z-Proteste|Dschen Zett Proteste} in Bremen, Karlsruhe und Stuttgart. In Berlin vom Savignyplatz – Sawinjiplatz – über den Ku'damm bis Halensee. {20|Zwanzig} vorläufige Festnahmen, {28|achtundzwanzig} Strafanzeigen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleFrom": "frankfurt-erklaert-genz-phase2-2026-11-14",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 231,
-	"cacheKey": "f21c591cf3eb2d577349",
-	"durationSeconds": 12.768
+	"characters": 245,
+	"cacheKey": "f8c11f14a8f107b5d3d9",
+	"durationSeconds": 14.952
 }
