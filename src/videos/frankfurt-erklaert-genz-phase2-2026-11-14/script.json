@@ -3,7 +3,7 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
-	"tailMs": 600,
+	"tailMs": 900,
 	"maxDurationMs": 60000,
 	"maxPauseMs": 400,
 	"voice": {
@@ -13,7 +13,7 @@
 			"mode": "letters",
 			"maxInnerGapMs": 320
 		},
-		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“. Pausen 40 ms im Thema, 120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf (keine Längen-Ausnahme)."
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“. Pausen 40 ms im Thema, 60–120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf (keine Längen-Ausnahme)."
 	},
 	"sampleText": "Ewa, Frankfurt! {Gen-Z-Proteste|Dschen Zett Proteste} in Bremen, Karlsruhe und Stuttgart. In Berlin vom Savignyplatz – Sawinjiplatz – über den Ku'damm bis Halensee. {20|Zwanzig} vorläufige Festnahmen, {28|achtundzwanzig} Strafanzeigen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
 	"segments": [
@@ -25,11 +25,11 @@
 		{
 			"id": "hook2",
 			"text": "Gestern gab's wieder {Gen-Z-Proteste|Dschen Zett Proteste} in mehreren Städten – Phase {2|zwei}.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "bremen",
-			"text": "In Bremen laut Polizei bis zu {670|sechshundertsiebzig} Leute – alles friedlich.",
+			"text": "Bremen: laut Polizei bis zu {670|sechshundertsiebzig} Leute, friedlich.",
 			"pauseAfterMs": 40
 		},
 		{
@@ -39,12 +39,12 @@
 		},
 		{
 			"id": "stuttgart",
-			"text": "Stuttgart: mehrere Hundert auf dem Schlossplatz – der Demozug selbst wurde untersagt.",
-			"pauseAfterMs": 120
+			"text": "Stuttgart: mehrere Hundert – der Demozug wurde untersagt.",
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "berlin1",
-			"text": "Und Berlin? Krasser Unterschied: Angemeldet waren {100|hundert}, gekommen sind laut Polizei rund {1.200|zwölfhundert}.",
+			"text": "Und Berlin? Krass: Angemeldet waren {100|hundert}, gekommen sind laut Polizei rund {1.200|zwölfhundert}.",
 			"pauseAfterMs": 40
 		},
 		{
