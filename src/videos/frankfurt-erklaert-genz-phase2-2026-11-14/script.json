@@ -49,12 +49,12 @@
 		},
 		{
 			"id": "berlin2",
-			"text": "{700|Siebenhundert} Polizisten waren im Einsatz, der Zug lief vom Savignyplatz über den Ku'damm bis Halensee.",
+			"text": "{700|Siebenhundert} Polizisten waren im Einsatz, der Zug lief vom {Savignyplatz|Sawinjiplatz} über den Ku'damm bis Halensee.",
 			"pauseAfterMs": 120
 		},
 		{
 			"id": "inc1",
-			"text": "Laut Polizei versuchten Einzelne, eine Polizeikette zu durchbrechen.",
+			"text": "Laut Polizei versuchten einige Teilnehmende, die Polizeikette zu durchbrechen.",
 			"pauseAfterMs": 40
 		},
 		{
@@ -74,7 +74,7 @@
 		},
 		{
 			"id": "context",
-			"text": "Das betrifft Einzelne, nicht alle Demonstrierenden – und festgenommen heißt nicht verurteilt.",
+			"text": "Das betrifft einzelne Vorfälle, nicht alle Demonstrierenden – und festgenommen heißt nicht verurteilt.",
 			"pauseAfterMs": 120
 		},
 		{
