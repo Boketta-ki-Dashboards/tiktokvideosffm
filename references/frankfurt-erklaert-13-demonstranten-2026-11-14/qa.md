@@ -49,4 +49,28 @@ Stempel „ZEIL BLIEB RUHIG“ erst kurz vor dem Schnitt → ab „Zeil“ · We
 
 ## 6. Finaler Render
 
-(folgt nach dem Workflow-Lauf)
+Lauf **#48** (Run-ID 43882109714, Commit 09e9e00, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_13Demonstranten_ADAM_FINAL-run48` (MP4, Thumbnail, Titelbild-Prüfbogen, ID 14232972946),
+`…-Technikbericht-run48` (ID 14232898179), `…-Sprecher-Adam-run48` (ID 14233866166). CI-Lauf #62 (inkl. Standbilder Cover/Prüfbogen) grün.
+
+Nachprüfung am heruntergeladenen Artefakt (16.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_13Demonstranten_ADAM_FINAL.mp4`, **17,63 MB** (< 30 MB, keine zusätzliche Fassung nötig), SHA-256 `eff59d9fd59b70dc43c31043cc795636f0f043378f775944043db074a1baae98` |
+| Länge | **60,011 s · 1.800 Frames** (Ausnahme ≤ 64 s) ✅ · Informationsteil bis 56,24 s, Abo-Phase 3,7 s |
+| Video | H.264 High, 1080 × 1920 (echte Pixel), 30/1 fps konstant, yuv420p, BT.709, ≈ 2,3 Mbit/s, Faststart (ftyp → moov → free → mdat) ✅ |
+| Audio | AAC LC 48 kHz Stereo ≈ 189 kbit/s ✅ |
+| Lautheit | −14,5 LUFS integriert · LRA 2,6 LU · True Peak −1,2 dBTP (0,3 dB über dem Ziel −1,5 dBTP; Prüfbericht grün, wie bei früheren Folgen dokumentiert statt neu gerendert) |
+| Dekodierung | `ffmpeg -f null` ohne Fehler ✅ |
+| Stille im MP4 | keine Stelle ≥ 400 ms unter −45 dB ✅ |
+| Sync | `check-sync`/`check-pauses` im Workflow grün; Untertitel aus den ElevenLabs-Zeitstempeln, jeder innerhalb seines Satzes (Test) |
+| Thumbnail | `FrankfurtRed3_13Demonstranten_THUMBNAIL.png` 1080 × 1920, byte-gleich mit dem Cover-Still |
+| Titelbild-Prüfbogen | `FrankfurtRed3_13Demonstranten_COVER_VORSCHAU.png` 2420 × 1240 (verkleinert: `cover-vorschau-run48.jpg`) – alle vier Ansichten lesbar, Profilbild = offizielles Logo |
+| Prüfbericht | `render.mjs --max`, `tech-report.mjs --max-seconds 64`: **BESTANDEN** |
+| Tests | `npm run check`: 148 Tests grün (davon 11 neu in `tests/erklaert-13-demonstranten.test.ts`) |
+
+Kontaktbogen des fertigen MP4 (alle 2 s, 30 Bilder): `kontaktbogen-run48.jpg`.
+
+**Zeitbezug:** Stand 16.11.2026 (FNP 13:06 Uhr; keine Polizeimeldung zum Verlauf bis 13:42 Uhr). Veröffentlicht die Polizei vor dem Upload eigene
+Teilnehmerzahlen, die abweichen, sollten `hook3`, `hw1`, `bw1` angepasst werden (nur diese Sätze neu vertonen).
