@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! {Gen-Z-Proteste|Dschen Zett Proteste} in Bremen, Karlsruhe und Stuttgart. In Berlin vom Savignyplatz – Sawinjiplatz – über den Ku'damm bis Halensee. {20|Zwanzig} vorläufige Festnahmen, {28|achtundzwanzig} Strafanzeigen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
-	"sampleFrom": "frankfurt-erklaert-genz-phase2-2026-11-14",
+	"text": "{Ewa|Eywa}, Frankfurt! Sechzehn Mannschaftswagen – aber zu zwei {Gen-Z-Kundgebungen|Dschen Zett Kundgebungen} kamen gerade mal dreizehn Leute. An der Bockenheimer Warte kam nicht mal der Anmelder. Nach Halloween stand der Vierzehnte kurz auf der Website. Was meint ihr: Terminchaos oder nur 'ne kleine Werbeaktion? Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleFrom": "frankfurt-erklaert-13-demonstranten-2026-11-14",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 245,
-	"cacheKey": "f8c11f14a8f107b5d3d9",
-	"durationSeconds": 14.952
+	"characters": 323,
+	"cacheKey": "36c2da0380f2684ee59a",
+	"durationSeconds": 17.184
 }
