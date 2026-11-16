@@ -29,7 +29,7 @@
 		},
 		{
 			"id": "hook3",
-			"text": "Aber zu zwei Kundgebungen der {Gen Z|Dschen Zett} kamen zusammen gerade mal {13|dreizehn} Leute!",
+			"text": "Aber zu zwei Kundgebungen von {Gen Z regelt|Dschen Zett regelt} kamen zusammen gerade mal {13|dreizehn} Leute!",
 			"pauseAfterMs": 120
 		},
 		{
@@ -80,7 +80,7 @@
 		{
 			"id": "p2",
 			"text": "Absperrgitter standen bereit, nötig waren sie laut dem Bericht nicht. Die Zeil blieb ruhig.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 60
 		},
 		{
 			"id": "n1",
