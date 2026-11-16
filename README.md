@@ -9,6 +9,12 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #08 – „Nur 13 Demonstranten? – Warum war bei der Gen-Z-Demo kaum jemand?“** (Komposition `FrankfurtErklaert13Demonstranten`,
+60,0 s inkl. Abo-Aufruf): Frankfurt am 14.11. laut FNP – zwei Kundgebungen mit zusammen rund 13 Demonstrierenden (Hauptwache rund 10,
+Bockenheimer Warte 3, Anmelder laut Polizeisprecher nicht erschienen), 16 Mannschaftswagen in Bereitschaft vor der Matthäuskirche; perspektivische
+OSM-Karte (`CityPlane`), animierter Novemberkalender zum Datumschaos (nur mögliche Erklärung), Vorbereitung vs. Verlauf auf der Zeil, Ausblick 20.11.
+Quellen: [`sources.md`](references/frankfurt-erklaert-13-demonstranten-2026-11-14/sources.md)
+
 **„Frankfurt erklärt“ #07 – „Gen Z regelt – Phase 2: friedliche Demos, aber 20 Festnahmen in Berlin“** (Komposition `FrankfurtErklaertGenZPhase2`,
 ≈ 59,0 s, hartes Limit 60 s inkl. Abo-Aufruf): Proteste vom 14.11. – Bremen (bis zu 670, friedlich), Karlsruhe (rund 220, weitgehend friedlich),
 Stuttgart (mehrere Hundert, Aufzug untersagt) auf einer 2,5D-Deutschlandkarte; Berlin (100 angemeldet, laut Polizei rund 1.200, 700 Kräfte) auf

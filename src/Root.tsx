@@ -100,11 +100,33 @@ import {
 } from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2';
 import {FrankfurtErklaertGenZPhase2Cover} from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2Cover';
 import {FrankfurtErklaertGenZPhase2CoverVorschau} from './videos/frankfurt-erklaert-genz-phase2-2026-11-14/FrankfurtErklaertGenZPhase2CoverVorschau';
+import {
+	calculateErklaert13DemonstrantenMetadata,
+	erklaert13DemonstrantenDefaultProps,
+	erklaert13DemonstrantenSchema,
+	FrankfurtErklaert13Demonstranten,
+} from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13Demonstranten';
+import {FrankfurtErklaert13DemonstrantenCover} from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13DemonstrantenCover';
+import {FrankfurtErklaert13DemonstrantenCoverVorschau} from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13DemonstrantenCoverVorschau';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #08 – Nur 13 Demonstranten? (Frankfurt 14.11.2026, Stand 16.11.): Längen-Ausnahme Info ≤ 61,5 s + Abo-Aufruf, ≤ 64 s */}
+				<Composition
+					id="FrankfurtErklaert13Demonstranten"
+					component={FrankfurtErklaert13Demonstranten}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1920}
+					schema={erklaert13DemonstrantenSchema}
+					defaultProps={erklaert13DemonstrantenDefaultProps}
+					calculateMetadata={calculateErklaert13DemonstrantenMetadata}
+				/>
+				<Still id="FrankfurtErklaert13Demonstranten-Cover" component={FrankfurtErklaert13DemonstrantenCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert13Demonstranten-CoverVorschau" component={FrankfurtErklaert13DemonstrantenCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #07 – Gen Z regelt, Phase 2 (Proteste 14.11.2026, Stand 15.11.): hartes Limit 60 s inkl. Abo-Aufruf */}
 				<Composition
 					id="FrankfurtErklaertGenZPhase2"
