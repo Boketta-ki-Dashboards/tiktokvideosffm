@@ -3,7 +3,7 @@
 	"videoId": "frankfurt-erklaert-20nov-drei-proteste",
 	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
 	"audioFile": "voiceover/frankfurt-erklaert-20nov-drei-proteste/voiceover-adam.mp3",
-	"durationMs": 62838,
+	"durationMs": 70286,
 	"segments": [
 		{
 			"id": "hook1",
@@ -74,25 +74,37 @@
 		{
 			"id": "b1",
 			"startMs": 50028,
-			"endMs": 53837,
-			"hash": "cba9be43716c86418354"
+			"endMs": 51590,
+			"hash": "4a174f165817c53a6e1d"
 		},
 		{
 			"id": "b2",
-			"startMs": 53877,
-			"endMs": 58701,
-			"hash": "718d6c49a81d3e235109"
+			"startMs": 51650,
+			"endMs": 54512,
+			"hash": "f134345b1fe5edeb71f3"
 		},
 		{
 			"id": "b3",
-			"startMs": 58761,
-			"endMs": 60764,
-			"hash": "c1190966df258607e521"
+			"startMs": 54552,
+			"endMs": 60509,
+			"hash": "08e17d2e3dac47f5fdf0"
+		},
+		{
+			"id": "b4",
+			"startMs": 60569,
+			"endMs": 63925,
+			"hash": "360032255f8ccd3bdf04"
+		},
+		{
+			"id": "b5",
+			"startMs": 63985,
+			"endMs": 68212,
+			"hash": "20854524275feec5a378"
 		},
 		{
 			"id": "cta",
-			"startMs": 60824,
-			"endMs": 62838,
+			"startMs": 68272,
+			"endMs": 70286,
 			"hash": "61e51d89dc2c0f05aaa7"
 		}
 	],
@@ -1066,286 +1078,419 @@
 		{
 			"text": " Und",
 			"startMs": 50028,
-			"endMs": 50202,
-			"timestampMs": 50115,
+			"endMs": 50179,
+			"timestampMs": 50104,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 50202,
+			"endMs": 50295,
+			"timestampMs": 50249,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 50341,
+			"endMs": 50423,
+			"timestampMs": 50382,
+			"confidence": 1
+		},
+		{
+			"text": " eigentlich",
+			"startMs": 50481,
+			"endMs": 50806,
+			"timestampMs": 50644,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 50841,
+			"endMs": 50922,
+			"timestampMs": 50882,
 			"confidence": 1
 		},
 		{
 			"text": " Batman?",
-			"startMs": 50260,
-			"endMs": 50841,
-			"timestampMs": 50551,
+			"startMs": 50968,
+			"endMs": 51590,
+			"timestampMs": 51357,
 			"confidence": 1
 		},
 		{
 			"text": " Der",
-			"startMs": 51033,
-			"endMs": 51242,
-			"timestampMs": 51138,
+			"startMs": 51650,
+			"endMs": 51813,
+			"timestampMs": 51732,
 			"confidence": 1
 		},
 		{
-			"text": " erzählt",
-			"startMs": 51300,
-			"endMs": 51683,
-			"timestampMs": 51492,
+			"text": " Batman",
+			"startMs": 51859,
+			"endMs": 52138,
+			"timestampMs": 51999,
 			"confidence": 1
 		},
 		{
-			"text": " auf",
-			"startMs": 51718,
-			"endMs": 51799,
-			"timestampMs": 51759,
+			"text": " von",
+			"startMs": 52172,
+			"endMs": 52289,
+			"timestampMs": 52231,
 			"confidence": 1
 		},
 		{
-			"text": " TikTok,",
-			"startMs": 51858,
-			"endMs": 52206,
-			"timestampMs": 52032,
+			"text": " Halloween",
+			"startMs": 52323,
+			"endMs": 52707,
+			"timestampMs": 52515,
 			"confidence": 1
 		},
 		{
-			"text": " die",
-			"startMs": 52229,
-			"endMs": 52299,
-			"timestampMs": 52264,
-			"confidence": 1
-		},
-		{
-			"text": " Polizei",
-			"startMs": 52322,
-			"endMs": 52693,
-			"timestampMs": 52508,
-			"confidence": 1
-		},
-		{
-			"text": " habe",
-			"startMs": 52728,
-			"endMs": 52891,
-			"timestampMs": 52810,
-			"confidence": 1
-		},
-		{
-			"text": " bei",
-			"startMs": 52926,
-			"endMs": 53019,
-			"timestampMs": 52973,
-			"confidence": 1
-		},
-		{
-			"text": " ihm",
-			"startMs": 53065,
-			"endMs": 53158,
-			"timestampMs": 53112,
-			"confidence": 1
-		},
-		{
-			"text": " geklingelt.",
-			"startMs": 53204,
-			"endMs": 53837,
-			"timestampMs": 53698,
-			"confidence": 1
-		},
-		{
-			"text": " Am",
-			"startMs": 53877,
-			"endMs": 54040,
-			"timestampMs": 53959,
-			"confidence": 1
-		},
-		{
-			"text": " 20.",
-			"startMs": 54086,
-			"endMs": 54678,
-			"timestampMs": 54382,
-			"confidence": 1
-		},
-		{
-			"text": " dürfe",
-			"startMs": 54748,
-			"endMs": 55015,
-			"timestampMs": 54882,
-			"confidence": 1
-		},
-		{
-			"text": " er",
-			"startMs": 55061,
-			"endMs": 55142,
-			"timestampMs": 55102,
-			"confidence": 1
-		},
-		{
-			"text": " nicht",
-			"startMs": 55212,
-			"endMs": 55421,
-			"timestampMs": 55317,
-			"confidence": 1
-		},
-		{
-			"text": " in",
-			"startMs": 55479,
-			"endMs": 55526,
-			"timestampMs": 55503,
-			"confidence": 1
-		},
-		{
-			"text": " die",
-			"startMs": 55560,
-			"endMs": 55630,
-			"timestampMs": 55595,
-			"confidence": 1
-		},
-		{
-			"text": " Innenstadt",
-			"startMs": 55677,
-			"endMs": 56199,
-			"timestampMs": 55938,
-			"confidence": 1
-		},
-		{
-			"text": " und",
-			"startMs": 56257,
-			"endMs": 56327,
-			"timestampMs": 56292,
-			"confidence": 1
-		},
-		{
-			"text": " müsse",
-			"startMs": 56362,
-			"endMs": 56524,
-			"timestampMs": 56443,
+			"text": " hat",
+			"startMs": 52765,
+			"endMs": 52846,
+			"timestampMs": 52806,
 			"confidence": 1
 		},
 		{
 			"text": " sich",
-			"startMs": 56547,
-			"endMs": 56663,
-			"timestampMs": 56605,
+			"startMs": 52881,
+			"endMs": 53008,
+			"timestampMs": 52945,
 			"confidence": 1
 		},
 		{
-			"text": " abends",
-			"startMs": 56745,
-			"endMs": 57058,
-			"timestampMs": 56902,
+			"text": " selbst",
+			"startMs": 53032,
+			"endMs": 53299,
+			"timestampMs": 53166,
 			"confidence": 1
 		},
 		{
-			"text": " zweimal",
-			"startMs": 57128,
-			"endMs": 57499,
-			"timestampMs": 57314,
+			"text": " auf",
+			"startMs": 53345,
+			"endMs": 53426,
+			"timestampMs": 53386,
 			"confidence": 1
 		},
 		{
-			"text": " bei",
-			"startMs": 57546,
-			"endMs": 57627,
-			"timestampMs": 57587,
+			"text": " TikTok",
+			"startMs": 53473,
+			"endMs": 53786,
+			"timestampMs": 53630,
 			"confidence": 1
 		},
 		{
-			"text": " der",
-			"startMs": 57650,
-			"endMs": 57720,
-			"timestampMs": 57685,
+			"text": " gemeldet.",
+			"startMs": 53809,
+			"endMs": 54512,
+			"timestampMs": 54239,
+			"confidence": 1
+		},
+		{
+			"text": " Younes",
+			"startMs": 54552,
+			"endMs": 54889,
+			"timestampMs": 54721,
+			"confidence": 1
+		},
+		{
+			"text": " erzählt,",
+			"startMs": 54958,
+			"endMs": 55318,
+			"timestampMs": 55138,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 55341,
+			"endMs": 55423,
+			"timestampMs": 55382,
 			"confidence": 1
 		},
 		{
 			"text": " Polizei",
-			"startMs": 57755,
-			"endMs": 58126,
-			"timestampMs": 57941,
+			"startMs": 55458,
+			"endMs": 55841,
+			"timestampMs": 55650,
+			"confidence": 1
+		},
+		{
+			"text": " habe",
+			"startMs": 55876,
+			"endMs": 56073,
+			"timestampMs": 55975,
+			"confidence": 1
+		},
+		{
+			"text": " bei",
+			"startMs": 56108,
+			"endMs": 56212,
+			"timestampMs": 56160,
+			"confidence": 1
+		},
+		{
+			"text": " ihm",
+			"startMs": 56259,
+			"endMs": 56340,
+			"timestampMs": 56300,
+			"confidence": 1
+		},
+		{
+			"text": " geklingelt:",
+			"startMs": 56375,
+			"endMs": 56990,
+			"timestampMs": 56683,
+			"confidence": 1
+		},
+		{
+			"text": " Am",
+			"startMs": 57171,
+			"endMs": 57287,
+			"timestampMs": 57229,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 57322,
+			"endMs": 57786,
+			"timestampMs": 57554,
+			"confidence": 1
+		},
+		{
+			"text": " dürfe",
+			"startMs": 57845,
+			"endMs": 58053,
+			"timestampMs": 57949,
+			"confidence": 1
+		},
+		{
+			"text": " er",
+			"startMs": 58088,
+			"endMs": 58158,
+			"timestampMs": 58123,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 58204,
+			"endMs": 58367,
+			"timestampMs": 58286,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 58413,
+			"endMs": 58541,
+			"timestampMs": 58477,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 58564,
+			"endMs": 58994,
+			"timestampMs": 58779,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 59052,
+			"endMs": 59133,
+			"timestampMs": 59093,
+			"confidence": 1
+		},
+		{
+			"text": " müsse",
+			"startMs": 59180,
+			"endMs": 59377,
+			"timestampMs": 59279,
+			"confidence": 1
+		},
+		{
+			"text": " sich",
+			"startMs": 59412,
+			"endMs": 59528,
+			"timestampMs": 59470,
+			"confidence": 1
+		},
+		{
+			"text": " zweimal",
+			"startMs": 59574,
+			"endMs": 59923,
+			"timestampMs": 59749,
 			"confidence": 1
 		},
 		{
 			"text": " melden.",
-			"startMs": 58184,
-			"endMs": 58701,
-			"timestampMs": 58492,
+			"startMs": 59969,
+			"endMs": 60509,
+			"timestampMs": 60399,
 			"confidence": 1
 		},
 		{
-			"text": " Also",
-			"startMs": 58761,
-			"endMs": 59040,
-			"timestampMs": 58901,
+			"text": " Sein",
+			"startMs": 60569,
+			"endMs": 60755,
+			"timestampMs": 60662,
 			"confidence": 1
 		},
 		{
-			"text": " eher",
-			"startMs": 59109,
-			"endMs": 59272,
-			"timestampMs": 59191,
+			"text": " neues",
+			"startMs": 60790,
+			"endMs": 61010,
+			"timestampMs": 60900,
 			"confidence": 1
 		},
 		{
-			"text": " kein",
-			"startMs": 59330,
-			"endMs": 59504,
-			"timestampMs": 59417,
+			"text": " Video",
+			"startMs": 61068,
+			"endMs": 61382,
+			"timestampMs": 61225,
 			"confidence": 1
 		},
 		{
-			"text": " Batman –",
-			"startMs": 59585,
-			"endMs": 59968,
-			"timestampMs": 59777,
+			"text": " heißt:",
+			"startMs": 61440,
+			"endMs": 61823,
+			"timestampMs": 61632,
 			"confidence": 1
 		},
 		{
-			"text": " aber",
-			"startMs": 59992,
-			"endMs": 60154,
-			"timestampMs": 60073,
+			"text": " „20.11",
+			"startMs": 62050,
+			"endMs": 62665,
+			"timestampMs": 62358,
 			"confidence": 1
 		},
 		{
-			"text": " wer",
-			"startMs": 60177,
-			"endMs": 60294,
-			"timestampMs": 60236,
+			"text": " Hausarrest“.",
+			"startMs": 62665,
+			"endMs": 63925,
+			"timestampMs": 63455,
 			"confidence": 1
 		},
 		{
-			"text": " weiß.",
-			"startMs": 60340,
-			"endMs": 60764,
-			"timestampMs": 60596,
+			"text": " Batman",
+			"startMs": 63985,
+			"endMs": 64345,
+			"timestampMs": 64165,
+			"confidence": 1
+		},
+		{
+			"text": " am",
+			"startMs": 64380,
+			"endMs": 64438,
+			"timestampMs": 64409,
+			"confidence": 1
+		},
+		{
+			"text": " Freitag",
+			"startMs": 64484,
+			"endMs": 64763,
+			"timestampMs": 64624,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 64809,
+			"endMs": 64856,
+			"timestampMs": 64833,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt?",
+			"startMs": 64902,
+			"endMs": 65367,
+			"timestampMs": 65135,
+			"confidence": 1
+		},
+		{
+			"text": " Sieht",
+			"startMs": 65617,
+			"endMs": 65814,
+			"timestampMs": 65716,
+			"confidence": 1
+		},
+		{
+			"text": " schlecht",
+			"startMs": 65838,
+			"endMs": 66082,
+			"timestampMs": 65960,
+			"confidence": 1
+		},
+		{
+			"text": " aus,",
+			"startMs": 66140,
+			"endMs": 66267,
+			"timestampMs": 66204,
+			"confidence": 1
+		},
+		{
+			"text": " Bras –",
+			"startMs": 66290,
+			"endMs": 66743,
+			"timestampMs": 66517,
+			"confidence": 1
+		},
+		{
+			"text": " diesmal",
+			"startMs": 66825,
+			"endMs": 67092,
+			"timestampMs": 66959,
+			"confidence": 1
+		},
+		{
+			"text": " wohl",
+			"startMs": 67115,
+			"endMs": 67231,
+			"timestampMs": 67173,
+			"confidence": 1
+		},
+		{
+			"text": " ohne",
+			"startMs": 67301,
+			"endMs": 67533,
+			"timestampMs": 67417,
+			"confidence": 1
+		},
+		{
+			"text": " Batman!",
+			"startMs": 67579,
+			"endMs": 68212,
+			"timestampMs": 68021,
 			"confidence": 1
 		},
 		{
 			"text": " Folgt",
-			"startMs": 60824,
-			"endMs": 61126,
-			"timestampMs": 60975,
+			"startMs": 68272,
+			"endMs": 68574,
+			"timestampMs": 68423,
 			"confidence": 1
 		},
 		{
 			"text": " FrankfurtRed3",
-			"startMs": 61161,
-			"endMs": 62171,
-			"timestampMs": 61666,
+			"startMs": 68609,
+			"endMs": 69619,
+			"timestampMs": 69114,
 			"confidence": 1
 		},
 		{
 			"text": " für",
-			"startMs": 62240,
-			"endMs": 62368,
-			"timestampMs": 62304,
+			"startMs": 69688,
+			"endMs": 69816,
+			"timestampMs": 69752,
 			"confidence": 1
 		},
 		{
 			"text": " mehr!",
-			"startMs": 62403,
-			"endMs": 62838,
-			"timestampMs": 62635,
+			"startMs": 69851,
+			"endMs": 70286,
+			"timestampMs": 70083,
 			"confidence": 1
 		}
 	],
 	"captionsSource": "elevenlabs-alignment",
-	"generatedAt": "2026-11-17T14:53:57.626Z",
+	"generatedAt": "2026-11-17T17:44:02.977Z",
 	"voice": {
 		"provider": "elevenlabs",
 		"name": "Adam - Dominant, Firm",
@@ -1360,7 +1505,7 @@
 			"speed": 1.2
 		},
 		"seed": 20261104,
-		"characters": 1200
+		"characters": 1352
 	},
-	"measuredLufsBeforeMaster": -14.2
+	"measuredLufsBeforeMaster": -14.09
 }
