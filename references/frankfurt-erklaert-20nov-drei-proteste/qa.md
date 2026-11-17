@@ -1,75 +1,81 @@
-# QA – „4 Proteste – 1 Freitag! Was passiert am 20.11. in Frankfurt?“ (Frankfurt erklärt #09)
+# QA – „4 Proteste – 1 Freitag! Was passiert am 20.11. in Frankfurt?“ (Frankfurt erklärt #09, überarbeitete Fassung)
 
-## 1. Faktenprüfung (Details und Wortlaute: `sources.md`, Abruf 17.11.2026)
+Aktuelle Fassung: **`FrankfurtRed3_20November_3Proteste_BATMAN_UPDATED.mp4`** aus Lauf **#54** (17.11.2026). Die erste Fassung (Lauf #51,
+`…_ADAM_FINAL.mp4`, 58,1 s) ist unten in Abschnitt 7 dokumentiert und durch diese Fassung ersetzt.
 
-| Prüfpunkt | Ergebnis |
+## 1. Überarbeitung auf Wunsch des Kanalbetreibers (17.11.2026)
+
+| Wunsch | Umsetzung |
 |---|---|
-| Wie viele Versammlungen? | ⚠️ Auftrag „3 Proteste“ → laut Stadt (t-online, 17.11., 13:27 Uhr) **vier** registriert → Titel, Titelbild und Timeline „4 PROTESTE“ (10:00 · 11:00 · 14:00 · 17:30) |
-| Reihenfolge im Video | ✅ Ton: Schulstreik (10/11 Uhr) → Gewerkschaftsjugend (17:30) → Gen Z (14 Uhr, längster Teil, ≈ 17,9 s Sprache); Orientierungsleiste immer chronologisch |
-| Schulstreik 10 Uhr | ✅ laut Stadt ver.di-Jugend, 10–15 Uhr, bis zu 1.200, Willy-Brandt-Platz → Café Koz am Campus Westend; Themen „laut Aufruf“ (Frankfurter Info: „gegen Sozialkürzungen Wehrpflicht und Krieg“) |
-| Kleiner Zug 11 Uhr | ✅ laut Stadt Internationaler Jugendverband, 11–13:30 Uhr, 75, Adorno-Platz → Gisèle-Freund-Platz |
-| Gen Z regelt 14 Uhr | ✅ laut Stadt Weseler Werft, 14–16:30 Uhr, stationär statt Demozug, vor Einbruch der Dunkelheit, bis zu 4.000 erwartet; Website weiterhin „Standort folgt“ (im Bild genannt), Lage „schematisch“ am Nordufer |
-| Gewerkschaftsjugend 17:30 | ✅ Bockenheimer **Depot** (GEW; nicht die Warte – Test), laut Stadt ver.di-Jugend, 17:30–21:30, bis zu 500, Motto wörtlich, **Route wird geprüft** → OFFEN |
-| Organisatoren | ✅ keine Aussage „unterschiedliche Organisatoren“ (10:00 und 17:30 laut Stadt beide ver.di-Jugend); kein gemeinsamer Zug, keine Routenlinien (Test) |
-| Forderungen | ✅ wörtlich nach genz-regelt.de („Was wir fordern“): Bildung/Gesundheit (Suchthilfe, Psychotherapie), bezahlbares Leben, Nein zur Wehrpflicht, Kürzungen „auf unseren Rücken“ (Zitat-Test) |
-| Auflagen | ✅ laut Stadt für alle vier: Pyrotechnik, Abbrennen/Verbrennen, Hunde, Alkohol, Glasflaschen verboten, Vermummungsverbot, Transparente an ≤ 2 m Stangen; **kein Verbot** der Versammlungen |
-| Batman | ✅ Türklopfen unbelegt → Pointe auf Reuters-Bildunterschrift („Police detain a demonstrator dressed as Batman …“) und heute.at („"Gen Z regelt"? Am Ende wird sogar Batman abgeführt“); GAG + ILLUSTRATION, „abgeführt ≠ schuldig“, keine Person/Accounts |
-| Neuester Stand | t-online 17.11., 13:27 Uhr; Websuche am Nachmittag ohne neueren Bericht; Pressekonferenz 18.11. angekündigt (im Abo-Aufruf als Hinweis, Stand im Bild) |
-| Bewusst nicht verwendet | Indymedia-Aufruf (Echtheit unbestätigt), Sicherheitsbedenken vorab, Teilnehmerprognosen, „Verbot“ (nur politisch ins Spiel gebracht) |
+| Overlay etwas höher, linke Box auf gleicher Linie, dauerhaft symmetrisch | Overlay y 304 → **272**; neue Szenen-Box `TopTag` mit gleicher Oberkante und Höhe (70 px) → Kopfzeile y 272–342; Regel in CLAUDE.md + Test |
+| Vier Versammlungen, aber nur drei erklärt | 11-Uhr-Zug als **eigener Punkt** mit eigener Szene: perspektivische OSM-Karte Campus Westend, Start Adorno-Platz → Ziel Gisèle-Freund-Platz (laut Anmeldung, Verlauf schematisch), 75 angemeldet, Internationaler Jugendverband, „quer über den Campus“, laut Stadt im Zusammenhang mit dem Schulstreik |
+| Timeline springt hin und her | Reihenfolge **chronologisch** 10 → 11 → 14 → 17:30; Leiste läuft nur vorwärts, erledigte Termine mit grünem Haken; Gen Z bleibt der längste Protest-Teil (14,0 s Sprache) |
+| Kurze Pause nach der Begrüßung | 60 ms → **339 ms** nach „Ewa, Frankfurt!“ (Grenze 400 ms) |
+| Batman-Sequenz nach Younes' eigenem TikTok (verbindliches Briefing) | siehe Abschnitt 2 |
+| Thumbnail, großes Intro, Typografie, Farbpalette unverändert | Thumbnail **byte-gleich** mit Lauf #51 (`cmp`), Titelbild-Komponente unverändert (11-Uhr-Markierung behält dort ihre alte Farbe) |
 
-## 2. Stimme (Adam, Profil kurzformat-60)
+## 2. Batman-Sequenz – Prüfliste aus dem Briefing
 
-- Lauf #49 (Hörprobe, 316 Zeichen, 17,83 s): „Weseler Werft … Campus West End … Bockenheimer Depot … Folgt Frankfurt Rett drei für mehr!“ korrekt;
-  Begrüßung vorab aus dem geprüften Cache (`f50850868202c0738f23`, „Ey wa“).
-- Lauf #50 (Vollvertonung): Whisper (medium) wortgetreu – „Ey wa, Frankfurt! Am Freitag ist nicht nur Gen Z regelt unterwegs. Laut Stadt sind vier
-  getrennte Versammlungen angemeldet. Um 10 startet am Willy-Brandt-Platz der Schulstreik …“ · Mittelteil „… Kundgebung an der Weseler Werft bis halb fünf.
-  Erwartet werden bis zu 4.000 …“ · z3 einzeln „… und gegen Wehrpflicht und Sparkurs.“ · Ende „… dass es diesmal ohne Batman sein muss. Folgt Frankfurt Rett 3 für mehr.“ ✅
-- Pausen: längste 364 ms (Grenze 400 ms), keine Nachbearbeitung nötig ✅.
-- ElevenLabs-Verbrauch: Hörprobe 316 + Vollvertonung ≈ 1.100 Zeichen (Begrüßung aus dem Cache) ≈ 1.420 Zeichen; keine Soundeffekte erzeugt
-  (neuer Effekt `tick` ist eine kostenlose FFmpeg-Synthese).
+| # | Prüfpunkt | Ergebnis |
+|---|---|---|
+| 1 | Younes korrekt als Quelle seiner Erzählung genannt? | ✅ „Der Batman von Halloween hat sich selbst auf TikTok gemeldet. Younes erzählt …“; Quellenkarte @ichbinyounes · BATMAN VON HALLOWEEN; Quellenzeile „Quelle: TikTok @ichbinyounes – eigener Bericht zum 20.11.“ |
+| 2 | Sichtbarer Originaltitel „20.11 Hausarrest“ korrekt? | ✅ wörtlich im Ton („Sein neues Video heißt: „20.11 Hausarrest““), auf dem stilisierten Smartphone und als Titelkarte; Stempel „„HAUSARREST““ in Anführungszeichen = sein Videotitel, kein angeordneter Hausarrest |
+| 3 | Nur belegte Aussagen? | ✅ Tonspur lokal mit Whisper `medium` transkribiert (84,2 s, vollständig, `younes-transkript.md`): geklingelt (00:00), am 20.11. nicht nach Frankfurt (00:07), zweimal melden (00:18), bis 5.1. nicht in die Innenstadt (00:30), Zitat „Batman steht für Kriminalität oder steht er für Gerechtigkeit?“ (01:12) |
+| 4 | Verständlicher und unterhaltsamer als vorher? | ✅ kleine Geschichte in fünf Phasen (Symbol → Quellenkarte → Tür → Smartphone → Kalender + Pointe), Ton locker („Sieht schlecht aus, Bras – diesmal wohl ohne Batman!“) |
+| 5 | Keine zusätzlichen polizeilichen Maßnahmen erfunden? | ✅ nur seine drei Aussagen (LAUT YOUNES); keine Begründungen („Gefahr für die Gesellschaft“, „kriminell“ bewusst weggelassen), keine Beamtenzahl, keine Rechtsbegriffe; zwei stilisierte Figuren = Illustration |
+| 6 | Tür-Animation hochwertig? | ✅ 2,5D-Wohnungstür (Rahmen mit gestapelter Tiefe, Kassetten, Spion, Griff, Deckenlicht, Fußmatte), Klingel leuchtet mit Wellen, „DING-DONG!“ + Klingelton; **Hinweis:** Younes sagt „geklingelt“, nicht „geklopft“ → Klingeln statt Klopfen |
+| 7 | Quellenkarte gut lesbar? | ✅ Handle 40 px, Unterzeilen 30/24 px, Aussagen 31 px (Screenshots `batman-sequenz-run54.jpg`) |
+| 8 | Passt zum FrankfurtRed3-Design? | ✅ gleiche Karten, Chips, Farben (Violett/Orange-Akzente aus der Palette), Skyline, Kopfzeile; eigenes Masken-Symbol statt Fledermaus-Logo |
+| 9 | Stimme, Untertitel, Animation synchron? | ✅ Einblendungen an Wort-Cues (geklingelt, 20, zweimal, Hausarrest, Freitag, ohne); `check-sync` im Workflow grün; Whisper: „Younes erzählt, die Polizei habe bei ihm geklingelt. Am 20. dürfe er nicht nach Frankfurt und müsse sich zweimal melden. Sein neues Video heißt 20.11. – Hausarrest – Batman am Freitag in Frankfurt? Sieht schlecht aus, Bras. Diesmal wohl ohne Batman.“ |
+| 10 | Drei bzw. vier Protestveranstaltungen vollständig erklärt? | ✅ alle vier mit Uhrzeit, Ort, Zahl, Anmeldung; keine Sachaussage gestrichen |
+| 11 | Follow-Outro funktioniert? | ✅ Abo-Aufruf 68,27–70,29 s + 1,5 s Ausklang, Plus → Haken |
+| 12 | Echtes Markenlogo sichtbar? | ✅ `public/brand/frankfurtred-logo.webp` (BrandLogo 250 px), kein „S“ |
+| 13 | Neue Dauer technisch geprüft? | ✅ 2.153 Frames = **71,787 s** (Sonderausnahme ≤ 75 s, Informationsteil 68,21 s ≤ 69 s); Batman-Sequenz 18,2 s (b1–b5) |
+| 14 | Echte 1080 × 1920 bei 30 fps? | ✅ ffprobe: 1080 × 1920, 30/1, H.264 High, yuv420p, BT.709 |
+| 15 | GitHub-Actions-Export funktioniert? | ✅ Lauf #54 grün, Artefakte siehe Abschnitt 5 |
 
-## 3. Länge
+## 3. Stimme (Adam, Profil kurzformat-60, speed 1.20 – Werte unverändert)
 
-Sprache 0,12–56,65 s (Informationsteil bis 54,57 s, Abo-Aufruf 54,63–56,65 s) + 1,5 s Ausklang → **58,13 s = 1.744 Frames** (≤ 64 s) ✅ ·
-Abo-Phase 3,5 s. Szenen: Titelbild 6,0 · Schulstreik 14,0 · Gewerkschaft 8,0 · Gen Z 8,4 · Forderungen 6,2 · Auflagen 4,2 · Batman 9,5 · Abo 3,8 s.
+- Lauf #52 (nur geänderte Sätze): s2, c1 und eine erste Batman-Fassung; Lauf #53: die fünf finalen Batman-Sätze (b1–b5). Alle übrigen Sätze aus dem Cache.
+- Whisper (medium): Begrüßung „Ey wa, Frankfurt!“ ✅ · c1 „Dort zieht um 11 der Internationale Jugendverband mit 75 Leuten quer über den Campus. Laut Stadt im
+  Zusammenhang mit dem Schulstreik.“ ✅ · Batman wortgetreu ✅ („Bras“ korrekt erkannt).
+- Pausen: längste 385 ms, nach der Begrüßung 339 ms (`check-pauses` grün).
+- ElevenLabs-Verbrauch der Überarbeitung: Lauf #52 ≈ 420 Zeichen (davon ≈ 210 für die später ersetzte Batman-Fassung), Lauf #53 ≈ 360 Zeichen;
+  keine Soundeffekte erzeugt.
 
-## 4. Visuelle Prüfung (lokal, echte Adam-Zeiten, alle 45 Frames + gezielte Frames)
+## 4. Visuelle Prüfung (lokal mit echten Adam-Zeiten, danach am fertigen MP4)
 
-Korrigiert: Euro-Skulptur hinter Karten und Schildern verdeckt → Karten höher, Skulptur rechts, Gruppe kleiner · Gen-Z-Skyline zu dunkel/klein →
-eigene Skyline-Ebene (Main Tower, Commerzbank Tower) mit Nachmittagslicht, Sonne sinkt bei „16:30“ · Ortsmarke zuerst am falschen (Süd-)Ufer gedacht →
-Nordufer, östlich, „Lage schematisch“ · Ortslabel überdeckte die 4.000-Karte → schmaler, zweizeilig · rosa Fläche unter dem Main → Wasser bis zum Rand ·
-Quelle am Bockenheimer Depot auf Backstein schlecht lesbar → dunkles Band · Batman: Fragezeichen-Szene blieb nach dem Wechsel halb sichtbar → ganz
-ausgeblendet; Figuren größer; Reuters-Karte vor dem Pointe-Stempel ausgeblendet · Zitat „auf unserem Rücken“ ungenau → wörtlich „auf unseren Rücken“.
+Korrigiert während der Überarbeitung: Aussagen-Karte hatte vor den Aussagen leere Fläche → Karte wächst mit · Polizeifiguren zu klein/dunkel → größer,
+heller, seitlich neben der Tür (Tür bleibt sichtbar) · „DING-DONG“ zu blass → kräftiger, über der Tür · Zitat stand nur ≈ 0,5 s → ab Beginn des
+Smartphone-Teils · Kalender-Phase erst ab „Freitag“, damit die Frage noch beim Smartphone steht.
+Overlay-Prüfbogen (`overlay-pruefung.jpg`): Kopfzeile y 272–342 unter der simulierten Suchleiste (Unterkante 238), Box links und Overlay rechts exakt auf
+einer Linie; Gen-Z-Szene mit allen Karten frei.
 
-## 5. Titelbild und Serien-Overlay
+## 5. Finaler Render
 
-- `NOV20_COVER_LAYOUT`: Serientitel ab y 400 (unverändert im etablierten Stil), „4 PROTESTE“ 512 / „1 FREITAG!“ 642 (128 px), Timeline 792–988
-  (rechte Kante 930, endet über y 1000), kleine Zeile 1012, Chip „4 GETRENNTE VERSAMMLUNGEN · LAUT STADT“ 1080, Logo + Account 1236–1290,
-  im PNG Frage „WAS PASSIERT AM 20.11.?“ 1340–1420.
-- Prüfbogen `-CoverVorschau` (lokal): 9:16, 3:4, Profilraster (neben #08 und Phase 2, Profilbild = offizielles Logo), Videoframe mit App-Elementen –
-  Hauptzeilen und Timeline in allen vier Ansichten vollständig lesbar.
-- Serien-Overlay `-OverlayCheck` (`overlay-pruefung.jpg`): 1) Rohframe Schulstreik, 2) derselbe Frame mit simulierter Suchleiste (Unterkante y 238),
-  3) Gen-Z-Szene mit allen Karten + Suchleiste → Countdown, „FRANKFURT ERKLÄRT“, „IN 60 SEKUNDEN · #09“ ab y 304 vollständig frei, rechts 48 px Abstand;
-  großes Intro/Titelbild unverändert; Suchleiste nicht im MP4.
-
-## 6. Finaler Render
-
-Lauf **#51** (Run-ID 44091978672, Commit 669cc51, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
-Artefakte: `FrankfurtRed3_20November_3Proteste_ADAM_FINAL-run51` (MP4, Thumbnail, Titelbild-Prüfbogen, Overlay-Prüfbogen, ID 14332442068),
-`…-Technikbericht-run51` (ID 14332900921), `…-Sprecher-Adam-run51` (ID 14332407184).
-
-Nachprüfung am heruntergeladenen Artefakt (17.11.2026):
+Lauf **#54** (Run-ID 44142431164, Commit 8e92ef9, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_20November_3Proteste_BATMAN_UPDATED-run54` (MP4, Thumbnail, Titelbild- und Overlay-Prüfbogen, ID 14354933348),
+`…-Technikbericht-run54` (ID 14356575121), `…-Sprecher-Adam-run54` (ID 14354519334).
 
 | Prüfung | Ergebnis |
 |---|---|
-| Datei | `FrankfurtRed3_20November_3Proteste_ADAM_FINAL.mp4`, **16,25 MB** (< 30 MB, volle Auflösung), SHA-256 `6c3b5832a908ae77c3c8b827ab0c9cfc28447ce05de36aab4e9c956a223e7ccc` |
-| Video | H.264 High, 1080 × 1920, 30/1 fps, yuv420p, BT.709, **1.744 Frames = 58,133 s**, Faststart (ftyp → moov → free → mdat) |
-| Audio | AAC LC, 48 kHz, Stereo, 189 kbit/s · **−14,5 LUFS**, LRA 2,9 LU, True Peak **−1,7 dBTP** |
-| Dekodierung | vollständig fehlerfrei (`ffmpeg -f null`) |
+| Datei | `FrankfurtRed3_20November_3Proteste_BATMAN_UPDATED.mp4`, **18,88 MiB** (19.793.402 Byte, < 30 MB), SHA-256 `7087872b841c0765b2519a0b779b398e128da6f34d743bb4b0cec9e806e979ef` |
+| Video | H.264 High, 1080 × 1920, 30/1 fps, yuv420p, BT.709, **2.153 Frames = 71,787 s**, Faststart |
+| Audio | AAC LC, 48 kHz, Stereo, 189 kbit/s · **−14,6 LUFS**, LRA 2,4 LU, True Peak **−1,4 dBTP** (Ziel −1,5; Prüfbericht bestanden) |
+| Dekodierung | vollständig fehlerfrei |
 | Stille ≥ 400 ms (−50 dB) | keine |
-| Thumbnail | `FrankfurtRed3_20November_3Proteste_THUMBNAIL.png` byte-gleich mit `…-cover.png` und dem lokal geprüften Titelbild |
-| Prüfbögen | `…_COVER_VORSCHAU.png` (→ `cover-vorschau-run51.jpg`), `…_OVERLAY_PRUEFUNG.png` (→ `overlay-pruefung.jpg`) |
-| Kontaktbogen | `kontaktbogen-run51.jpg` (alle 2 s aus dem MP4): Serien-Overlay ab Sekunde 2 durchgehend oben rechts, Orientierungsleiste in allen Inhaltsszenen, keine leeren Szenenanfänge |
-| Workflow-Prüfungen | `verify-video`, `check-sync`, `check-pauses` (≤ 400 ms), `tech-report --max-seconds 64` – alle grün |
+| Thumbnail | `…_THUMBNAIL.png` byte-gleich mit Lauf #51 (unverändert) |
+| Kontaktbogen | `kontaktbogen-run54.jpg` (alle 2 s aus dem MP4), Batman-Screenshots `batman-sequenz-run54.jpg` (6 Bilder aus dem MP4) |
+| Workflow-Prüfungen | `verify-video`, `check-sync`, `check-pauses`, `tech-report --max-seconds 75` – alle grün |
 
 Nicht automatisch veröffentlicht.
+
+## 6. Fakten (unverändert, Details in `sources.md`)
+
+Stadt Frankfurt laut t-online (17.11., 13:27 Uhr): vier Versammlungen, Auflagen für alle; Weseler Werft, 14–16:30, bis 4.000; Schulstreik 10–15, bis 1.200;
+Internationaler Jugendverband 11–13:30, 75; ver.di-Jugend 17:30–21:30, bis 500, Route wird geprüft. Websuche am Nachmittag ohne neueren Bericht.
+
+## 7. Erste Fassung (ersetzt)
+
+Lauf #51 (Run-ID 44091978672): `FrankfurtRed3_20November_3Proteste_ADAM_FINAL.mp4`, 58,133 s, 16,25 MB, −14,5 LUFS, −1,7 dBTP – Reihenfolge 10 → 11 → 17:30 → 14,
+11-Uhr-Zug nur als Halbsatz, Batman-Pointe über das Agenturfoto der Halloween-Nacht. Kontaktbogen `kontaktbogen-run51.jpg`.
