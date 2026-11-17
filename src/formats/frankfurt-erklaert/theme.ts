@@ -17,6 +17,13 @@ export const FORMAT = {
 	 */
 	extendedMaxSeconds: 66,
 	infoMaxSeconds: 61.5,
+	/**
+	 * Sonderausnahme (nur mit ausdrücklicher Freigabe des Kanalbetreibers je Folge, `sonderausnahme` in config/videos.json; erstmals #09
+	 * „4 Proteste – 1 Freitag“, 17.11.2026: vier Versammlungen als eigene Punkte + längere Batman-Geschichte): Informationsteil bis 69 s,
+	 * gesamt bis 75 s. Alle anderen Folgen bleiben bei 60 s bzw. 66 s.
+	 */
+	specialMaxSeconds: 75,
+	specialInfoMaxSeconds: 69,
 } as const;
 
 /** Akzentfarben des Formats (konsistent über alle Folgen). */
@@ -36,13 +43,14 @@ export const LAYOUT = {
 	width: 866,
 	badgeTop: 196,
 	/**
-	 * Kleines Serien-Overlay (Countdown + „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN · #NN“) ab Folge #09 (20.11.2026, dauerhaft für alle neuen Folgen):
-	 * rechtsbündig UNTER der TikTok-Suchleiste (die in der App oben ≈ y 90–230 liegt und das Overlay oben links verdeckte).
-	 * Oberkante y 304, Abstand zum rechten Rand 48 px; Blockgröße ≈ 430 × 66 px → Szenen halten rechts oben y 290–390 frei.
-	 * Fertige Folgen behalten `top-left` (Standard), damit sie unverändert bleiben.
+	 * Kopfzeile ab Folge #09 (17.11.2026, dauerhaft für alle neuen Folgen): kleines Serien-Overlay (Countdown + „FRANKFURT ERKLÄRT ·
+	 * IN 60 SEKUNDEN · #NN“) rechtsbündig UNTER der TikTok-Suchleiste (in der App ≈ y 90–238), links davon die Szenen-Box (`TopTag`) –
+	 * beide mit gleicher Oberkante `badgeTopRight` (y 272) und gleicher Höhe `topBarHeight` (70 px) → symmetrische Kopfzeile y 272–342.
+	 * Abstand rechts 48 px, links `left` (64 px). Szenen-Inhalte beginnen darunter (≈ y 360+). Fertige Folgen behalten `top-left` (badgeTop).
 	 */
-	badgeTopRight: 304,
+	badgeTopRight: 272,
 	badgeRightInset: 48,
+	topBarHeight: 70,
 	contentTop: 300,
 	/** Unterkante für Inhalt oberhalb der Untertitel (Untertitel ≈ 1.320–1.440). */
 	contentBottom: 1250,

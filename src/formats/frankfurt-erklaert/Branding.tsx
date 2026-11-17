@@ -46,7 +46,7 @@ export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFr
 	const r = 20;
 	const c = 2 * Math.PI * r;
 	return (
-		<div style={{position: 'absolute', ...(placement === 'top-right' ? {right: LAYOUT.badgeRightInset, top: LAYOUT.badgeTopRight} : {left: LAYOUT.left, top: LAYOUT.badgeTop}), opacity: Math.min(1, appear * 2) * out, translate: `${(1 - appear) * (placement === 'top-right' ? 30 : -30)}px 0`, display: 'flex', alignItems: 'center', gap: 10, padding: '8px 16px 8px 8px', borderRadius: 999, background: 'rgba(6,8,22,0.82)', border: '1.5px solid rgba(255,255,255,0.16)', boxShadow: '0 10px 30px rgba(0,0,0,0.45)'}}>
+		<div style={{position: 'absolute', ...(placement === 'top-right' ? {right: LAYOUT.badgeRightInset, top: LAYOUT.badgeTopRight, height: LAYOUT.topBarHeight, boxSizing: 'border-box'} : {left: LAYOUT.left, top: LAYOUT.badgeTop}), opacity: Math.min(1, appear * 2) * out, translate: `${(1 - appear) * (placement === 'top-right' ? 30 : -30)}px 0`, display: 'flex', alignItems: 'center', gap: 10, padding: '8px 16px 8px 8px', borderRadius: 999, background: 'rgba(6,8,22,0.82)', border: '1.5px solid rgba(255,255,255,0.16)', boxShadow: '0 10px 30px rgba(0,0,0,0.45)'}}>
 			<svg width={50} height={50} viewBox="0 0 50 50">
 				<circle cx={25} cy={25} r={r} fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth={5} />
 				<circle cx={25} cy={25} r={r} fill="none" stroke={ACCENT.brand} strokeWidth={5} strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * p} transform="rotate(-90 25 25)" />
@@ -60,6 +60,41 @@ export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFr
 					{FORMAT.sub} · {episode}
 				</span>
 			</div>
+		</div>
+	);
+};
+
+/**
+ * Szenen-Box links oben (Gegenstück zum Serien-Overlay oben rechts, ab #09): gleiche Oberkante (`LAYOUT.badgeTopRight`), gleiche Höhe
+ * (`LAYOUT.topBarHeight`), gleiche Pillenform und Hintergrund wie `FormatBadge` → symmetrische Kopfzeile. Farbiger Kreis (50 px wie der
+ * Countdown-Ring) mit Symbol, daneben kurzer Text in Großbuchstaben. Breite folgt dem Text (rechts bleibt Abstand zum Overlay).
+ */
+export const TopTag: React.FC<{text: string; color: string; icon?: React.ReactNode; showFrom?: number}> = ({text, color, icon, showFrom = 0}) => {
+	const frame = useCurrentFrame();
+	const {fps} = useVideoConfig();
+	const appear = springIn({frame, fps, delay: showFrom, damping: 16, stiffness: 180});
+	return (
+		<div
+			style={{
+				position: 'absolute',
+				left: LAYOUT.left,
+				top: LAYOUT.badgeTopRight,
+				height: LAYOUT.topBarHeight,
+				boxSizing: 'border-box',
+				display: 'flex',
+				alignItems: 'center',
+				gap: 12,
+				padding: '8px 20px 8px 8px',
+				borderRadius: 999,
+				background: 'rgba(6,8,22,0.82)',
+				border: `1.5px solid ${withAlpha(color, 0.75)}`,
+				boxShadow: `0 10px 30px rgba(0,0,0,0.45), 0 0 22px ${withAlpha(color, 0.18)}`,
+				opacity: Math.min(1, appear * 2),
+				translate: `${(1 - appear) * -30}px 0`,
+			}}
+		>
+			<div style={{width: 50, height: 50, borderRadius: 25, background: color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>{icon}</div>
+			<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 25, letterSpacing: 1.6, color: COLORS.text, whiteSpace: 'nowrap'}}>{text}</span>
 		</div>
 	);
 };

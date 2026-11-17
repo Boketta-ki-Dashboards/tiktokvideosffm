@@ -4,7 +4,7 @@
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
 	"tailMs": 1500,
-	"maxDurationMs": 66000,
+	"maxDurationMs": 75000,
 	"maxPauseMs": 400,
 	"voice": {
 		"engine": "elevenlabs",
@@ -13,9 +13,9 @@
 			"mode": "letters",
 			"maxInnerGapMs": 320
 		},
-		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 340 ms Pause (Wunsch Kanalbetreiber, Grenze 400 ms). Chronologisch: 10 → 11 → 14 (Gen Z, längster Teil) → 17:30 → Auflagen → Batman. Längen-Ausnahme: Informationsteil ≤ 61,5 s, danach Abo-Aufruf, gesamt ≤ 66 s."
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 340 ms Pause (Wunsch Kanalbetreiber, Grenze 400 ms). Chronologisch: 10 → 11 → 14 (Gen Z, längster Teil) → 17:30 → Auflagen → Batman (Younes' eigene TikTok-Erzählung, Ton vom 17.11. transkribiert) → Abo-Aufruf. Sonderausnahme Länge (Kanalbetreiber, 17.11.): Informationsteil ≤ 69 s, gesamt ≤ 75 s, Ziel ≈ 72 s."
 	},
-	"sampleText": "Ewa, Frankfurt! Dort zieht um {11|elf} der Internationale Jugendverband mit {75|fünfundsiebzig} Leuten quer über den Campus. Und Batman? Der erzählt auf TikTok, die Polizei habe bei ihm geklingelt. Also eher kein Batman – aber wer weiß. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleText": "Ewa, Frankfurt! Der Batman von Halloween hat sich selbst auf TikTok gemeldet. Sein neues Video heißt: {„20.11 Hausarrest“|Zwanzigster Elfter, Hausarrest}. Batman am Freitag in Frankfurt? Sieht schlecht aus, {Bras|Brahs} – diesmal wohl ohne Batman! Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
 	"segments": [
 		{
 			"id": "hook1",
@@ -74,17 +74,27 @@
 		},
 		{
 			"id": "b1",
-			"text": "Und Batman? Der erzählt auf TikTok, die Polizei habe bei ihm geklingelt.",
-			"pauseAfterMs": 40
-		},
-		{
-			"id": "b2",
-			"text": "Am {20.|Zwanzigsten} dürfe er nicht in die Innenstadt und müsse sich abends zweimal bei der Polizei melden.",
+			"text": "Und was ist eigentlich mit Batman?",
 			"pauseAfterMs": 60
 		},
 		{
+			"id": "b2",
+			"text": "Der Batman von Halloween hat sich selbst auf TikTok gemeldet.",
+			"pauseAfterMs": 40
+		},
+		{
 			"id": "b3",
-			"text": "Also eher kein Batman – aber wer weiß.",
+			"text": "Younes erzählt, die Polizei habe bei ihm geklingelt: Am {20.|Zwanzigsten} dürfe er nicht nach Frankfurt und müsse sich zweimal melden.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "b4",
+			"text": "Sein neues Video heißt: {„20.11 Hausarrest“|Zwanzigster Elfter, Hausarrest}.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "b5",
+			"text": "Batman am Freitag in Frankfurt? Sieht schlecht aus, {Bras|Brahs} – diesmal wohl ohne Batman!",
 			"pauseAfterMs": 60
 		},
 		{
