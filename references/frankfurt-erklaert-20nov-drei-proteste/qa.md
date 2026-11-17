@@ -51,3 +51,25 @@ ausgeblendet; Figuren größer; Reuters-Karte vor dem Pointe-Stempel ausgeblende
 - Serien-Overlay `-OverlayCheck` (`overlay-pruefung.jpg`): 1) Rohframe Schulstreik, 2) derselbe Frame mit simulierter Suchleiste (Unterkante y 238),
   3) Gen-Z-Szene mit allen Karten + Suchleiste → Countdown, „FRANKFURT ERKLÄRT“, „IN 60 SEKUNDEN · #09“ ab y 304 vollständig frei, rechts 48 px Abstand;
   großes Intro/Titelbild unverändert; Suchleiste nicht im MP4.
+
+## 6. Finaler Render
+
+Lauf **#51** (Run-ID 44091978672, Commit 669cc51, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_20November_3Proteste_ADAM_FINAL-run51` (MP4, Thumbnail, Titelbild-Prüfbogen, Overlay-Prüfbogen, ID 14332442068),
+`…-Technikbericht-run51` (ID 14332900921), `…-Sprecher-Adam-run51` (ID 14332407184).
+
+Nachprüfung am heruntergeladenen Artefakt (17.11.2026):
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_20November_3Proteste_ADAM_FINAL.mp4`, **16,25 MB** (< 30 MB, volle Auflösung), SHA-256 `6c3b5832a908ae77c3c8b827ab0c9cfc28447ce05de36aab4e9c956a223e7ccc` |
+| Video | H.264 High, 1080 × 1920, 30/1 fps, yuv420p, BT.709, **1.744 Frames = 58,133 s**, Faststart (ftyp → moov → free → mdat) |
+| Audio | AAC LC, 48 kHz, Stereo, 189 kbit/s · **−14,5 LUFS**, LRA 2,9 LU, True Peak **−1,7 dBTP** |
+| Dekodierung | vollständig fehlerfrei (`ffmpeg -f null`) |
+| Stille ≥ 400 ms (−50 dB) | keine |
+| Thumbnail | `FrankfurtRed3_20November_3Proteste_THUMBNAIL.png` byte-gleich mit `…-cover.png` und dem lokal geprüften Titelbild |
+| Prüfbögen | `…_COVER_VORSCHAU.png` (→ `cover-vorschau-run51.jpg`), `…_OVERLAY_PRUEFUNG.png` (→ `overlay-pruefung.jpg`) |
+| Kontaktbogen | `kontaktbogen-run51.jpg` (alle 2 s aus dem MP4): Serien-Overlay ab Sekunde 2 durchgehend oben rechts, Orientierungsleiste in allen Inhaltsszenen, keine leeren Szenenanfänge |
+| Workflow-Prüfungen | `verify-video`, `check-sync`, `check-pauses` (≤ 400 ms), `tech-report --max-seconds 64` – alle grün |
+
+Nicht automatisch veröffentlicht.
