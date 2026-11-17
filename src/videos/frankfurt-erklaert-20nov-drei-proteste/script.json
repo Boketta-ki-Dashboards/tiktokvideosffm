@@ -4,7 +4,7 @@
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
 	"tailMs": 1500,
-	"maxDurationMs": 64000,
+	"maxDurationMs": 66000,
 	"maxPauseMs": 400,
 	"voice": {
 		"engine": "elevenlabs",
@@ -13,14 +13,14 @@
 			"mode": "letters",
 			"maxInnerGapMs": 320
 		},
-		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung vorab aus dem Cache). Pausen 40–60 ms im Thema, 120 ms zwischen Themen. Längen-Ausnahme: Informationsteil ≤ 61,5 s, danach Abo-Aufruf, gesamt ≤ 64 s."
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 340 ms Pause (Wunsch Kanalbetreiber, Grenze 400 ms). Chronologisch: 10 → 11 → 14 (Gen Z, längster Teil) → 17:30 → Auflagen → Batman. Längen-Ausnahme: Informationsteil ≤ 61,5 s, danach Abo-Aufruf, gesamt ≤ 66 s."
 	},
-	"sampleText": "Ewa, Frankfurt! {Gen Z regelt|Dschen Zett regelt}: Kundgebung an der Weseler Werft bis {16:30 Uhr|halb fünf}. Um {10|zehn} am Willy-Brandt-Platz, Ziel Campus Westend, {75|fünfundsiebzig} Leute. Um {17:30 Uhr|halb sechs} am Bockenheimer Depot. Keine Pyro, kein Alkohol. Aber an Halloween hat ihn die Polizei ja schon mitgenommen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleText": "Ewa, Frankfurt! Dort zieht um {11|elf} der Internationale Jugendverband mit {75|fünfundsiebzig} Leuten quer über den Campus. Und Batman? Der erzählt auf TikTok, die Polizei habe bei ihm geklingelt. Also eher kein Batman – aber wer weiß. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
 	"segments": [
 		{
 			"id": "hook1",
 			"text": "Ewa, Frankfurt!",
-			"pauseAfterMs": 60
+			"pauseAfterMs": 340
 		},
 		{
 			"id": "hook2",
@@ -34,17 +34,12 @@
 		},
 		{
 			"id": "s2",
-			"text": "Bis zu {1.200|zwölfhundert} sind angemeldet, Ziel ist der Campus Westend – dort startet ab {11|elf} noch ein kleiner Zug mit {75|fünfundsiebzig} Leuten.",
+			"text": "Bis zu {1.200|zwölfhundert} sind angemeldet, Ziel ist der Campus Westend.",
 			"pauseAfterMs": 120
 		},
 		{
-			"id": "g1",
-			"text": "Um {17:30 Uhr|halb sechs} folgt die Gewerkschaftsjugend am Bockenheimer Depot – gegen Wehrpflicht, Krieg und soziale Kürzungen.",
-			"pauseAfterMs": 40
-		},
-		{
-			"id": "g2",
-			"text": "Die Route prüft die Stadt noch.",
+			"id": "c1",
+			"text": "Dort zieht um {11|elf} der Internationale Jugendverband mit {75|fünfundsiebzig} Leuten quer über den Campus – laut Stadt im Zusammenhang mit dem Schulstreik.",
 			"pauseAfterMs": 120
 		},
 		{
@@ -60,7 +55,17 @@
 		{
 			"id": "z3",
 			"text": "Die Initiative will für Bildung, Gesundheit und bezahlbares Leben protestieren – und gegen Wehrpflicht und Sparkurs.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "g1",
+			"text": "Um {17:30 Uhr|halb sechs} folgt die Gewerkschaftsjugend am Bockenheimer Depot – gegen Wehrpflicht, Krieg und soziale Kürzungen.",
 			"pauseAfterMs": 40
+		},
+		{
+			"id": "g2",
+			"text": "Die Route prüft die Stadt noch.",
+			"pauseAfterMs": 120
 		},
 		{
 			"id": "z4",
@@ -69,12 +74,17 @@
 		},
 		{
 			"id": "b1",
-			"text": "Ob Batman am {20.|Zwanzigsten} dabei ist, wissen wir leider immer noch nicht.",
+			"text": "Und Batman? Der erzählt auf TikTok, die Polizei habe bei ihm geklingelt.",
 			"pauseAfterMs": 40
 		},
 		{
 			"id": "b2",
-			"text": "Aber an Halloween hat ihn die Polizei ja schon mitgenommen – wir gehen also davon aus, dass es diesmal ohne Batman sein muss.",
+			"text": "Am {20.|Zwanzigsten} dürfe er nicht in die Innenstadt und müsse sich abends zweimal bei der Polizei melden.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "b3",
+			"text": "Also eher kein Batman – aber wer weiß.",
 			"pauseAfterMs": 60
 		},
 		{
