@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Sechzehn Mannschaftswagen – aber zu zwei {Gen-Z-Kundgebungen|Dschen Zett Kundgebungen} kamen gerade mal dreizehn Leute. An der Bockenheimer Warte kam nicht mal der Anmelder. Nach Halloween stand der Vierzehnte kurz auf der Website. Was meint ihr: Terminchaos oder nur 'ne kleine Werbeaktion? Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
-	"sampleFrom": "frankfurt-erklaert-13-demonstranten-2026-11-14",
+	"text": "{Ewa|Eywa}, Frankfurt! {Gen Z regelt|Dschen Zett regelt}: Kundgebung an der Weseler Werft bis {16:30 Uhr|halb fünf}. Um {10|zehn} am Willy-Brandt-Platz, Ziel Campus Westend, {75|fünfundsiebzig} Leute. Um {17:30 Uhr|halb sechs} am Bockenheimer Depot. Keine Pyro, kein Alkohol. Aber an Halloween hat ihn die Polizei ja schon mitgenommen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleFrom": "frankfurt-erklaert-20nov-drei-proteste",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 323,
-	"cacheKey": "36c2da0380f2684ee59a",
-	"durationSeconds": 17.184
+	"characters": 316,
+	"cacheKey": "089253f476e77518ca5f",
+	"durationSeconds": 17.832
 }
