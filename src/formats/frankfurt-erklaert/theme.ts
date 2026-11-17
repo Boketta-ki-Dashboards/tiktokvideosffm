@@ -35,6 +35,14 @@ export const LAYOUT = {
 	left: 64,
 	width: 866,
 	badgeTop: 196,
+	/**
+	 * Kleines Serien-Overlay (Countdown + „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN · #NN“) ab Folge #09 (20.11.2026, dauerhaft für alle neuen Folgen):
+	 * rechtsbündig UNTER der TikTok-Suchleiste (die in der App oben ≈ y 90–230 liegt und das Overlay oben links verdeckte).
+	 * Oberkante y 304, Abstand zum rechten Rand 48 px; Blockgröße ≈ 430 × 66 px → Szenen halten rechts oben y 290–390 frei.
+	 * Fertige Folgen behalten `top-left` (Standard), damit sie unverändert bleiben.
+	 */
+	badgeTopRight: 304,
+	badgeRightInset: 48,
 	contentTop: 300,
 	/** Unterkante für Inhalt oberhalb der Untertitel (Untertitel ≈ 1.320–1.440). */
 	contentBottom: 1250,

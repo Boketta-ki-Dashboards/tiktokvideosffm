@@ -10,7 +10,7 @@ import {TikTokSubtitles} from '../../components/subtitles/TikTokSubtitles';
 import type {VoiceoverManifest} from '../../lib/script-timing';
 import type {SceneSpec, Timeline} from '../../lib/timeline';
 import type {Cues} from '../../videos/frankfurt-2026-10-31/cues';
-import {FormatBadge} from './Branding';
+import {type BadgePlacement, FormatBadge} from './Branding';
 import {cuesForScene} from './cues';
 import {erklaertTimelineFor} from './timeline.ts';
 
@@ -47,6 +47,8 @@ export type ErklaertEpisode = {
 	script: {tailMs: number; maxDurationMs?: number};
 	/** Ab welchem Frame das Format-Badge erscheint (Standard 2; später, wenn das Titelbild im Video liegt). */
 	badgeFrom?: number;
+	/** Position des kleinen Serien-Overlays: fertige Folgen `top-left` (Standard), NEUE Folgen ab #09 `top-right` (unter der TikTok-Suchleiste). */
+	badgePlacement?: BadgePlacement;
 	/** Nur mit begründeter Ausnahme in config/videos.json (Informationsteil + Abo-Aufruf): Gesamtgrenze bis 66 s. */
 	maxSeconds?: number;
 };
@@ -84,7 +86,7 @@ export const ErklaertFrame: React.FC<ErklaertProps & {ep: ErklaertEpisode}> = ({
 					})}
 				</TransitionSeries>
 
-				<FormatBadge episode={ep.episode} totalFrames={tl.durationInFrames} hideFrom={outro ? outro.cutFrame - 4 : undefined} showFrom={ep.badgeFrom} />
+				<FormatBadge episode={ep.episode} totalFrames={tl.durationInFrames} hideFrom={outro ? outro.cutFrame - 4 : undefined} showFrom={ep.badgeFrom} placement={ep.badgePlacement} />
 				<GrainOverlay opacity={0.04} vignette={0.38} />
 				{subtitles ? <TikTokSubtitles captions={voiceover.captions} bottom={480} /> : null}
 				<Voiceover manifest={voiceover} volume={voiceVolume} />

@@ -12,6 +12,7 @@ Gemessen: Bett allein −23,7 LUFS; im fertigen Video liegt es deutlich unter de
 
 - **Selbst erzeugt** (`scripts/audio/generate-sfx.mjs`, reine FFmpeg-Synthese, keine Samples Dritter): `public/sfx/*.wav`
   – whoosh, impact, pop (Bestand), click, notify, blip, typewriter, paper, soft-impact, boom, riser, stamp (neu, Spitzenpegel −3 dBFS).
+  Ab #09 „4 Proteste – 1 Freitag“ zusätzlich `tick` (Uhr-Ticken für Timeline-Markierungen, 50 ms, ebenfalls reine FFmpeg-Synthese).
 - **ElevenLabs Sound Effects** (`eleven_text_to_sound_v3`, erzeugt am 05.11.2026 im Workflow „Video produzieren“, Lauf 6, mit dem
   bezahlten Tarif des Kanalbetreibers): `public/sfx/premium/{boom,typewriter,notify,blip}.mp3`, Prompts in `config/sfx-elevenlabs.json`,
   Rohdateien + Metadaten in `voice-cache/elevenlabs-sfx/`. Ersetzen die gleichnamigen Synth-Effekte über `src/lib/sfx-premium.ts`.

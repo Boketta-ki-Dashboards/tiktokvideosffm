@@ -262,6 +262,12 @@ jobs:
             PREVIEW="${THUMB%_THUMBNAIL}"; PREVIEW="${PREVIEW:-${{ steps.job.outputs.out }}}_COVER_VORSCHAU"
             npx remotion still src/index.ts "${{ steps.job.outputs.video }}-CoverVorschau" "output/$PREVIEW.png"
           fi
+          # Prüfbogen fürs kleine Serien-Overlay (ab #09 oben rechts): Rohframe · Frame + simulierte Suchleiste · volle Szene + Suchleiste
+          if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-OverlayCheck "; then
+            THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
+            CHECK="${THUMB%_THUMBNAIL}"; CHECK="${CHECK:-${{ steps.job.outputs.out }}}_OVERLAY_PRUEFUNG"
+            npx remotion still src/index.ts "${{ steps.job.outputs.video }}-OverlayCheck" "output/$CHECK.png"
+          fi
 
       - name: Technische Qualitätskontrolle
         if: steps.job.outputs.aktion == 'video'
@@ -311,6 +317,7 @@ jobs:
             output/${{ steps.job.outputs.out }}-cover.png
             output/*_THUMBNAIL.png
             output/*_COVER_VORSCHAU.png
+            output/*_OVERLAY_PRUEFUNG.png
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
           retention-days: 30

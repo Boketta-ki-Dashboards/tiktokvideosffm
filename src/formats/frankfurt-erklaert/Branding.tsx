@@ -29,11 +29,14 @@ export const BrandAvatar: React.FC<{size: number; ring?: number}> = ({size, ring
 	</div>
 );
 
+export type BadgePlacement = 'top-left' | 'top-right';
+
 /**
- * Format-Badge oben links (in jeder Folge gleich): „FRANKFURT ERKLÄRT #01“ mit 60-Sekunden-Ring,
- * der über die Folge abläuft – das Wiedererkennungsmerkmal des Kurzformats.
+ * Format-Badge (in jeder Folge gleich): „FRANKFURT ERKLÄRT #01“ mit 60-Sekunden-Ring, der über die Folge abläuft – das
+ * Wiedererkennungsmerkmal des Kurzformats. `placement` verschiebt NUR die Position (Aussehen, Timer, Animation unverändert):
+ * `top-left` = fertige Folgen #01–#08, `top-right` = ab #09 rechtsbündig unter der TikTok-Suchleiste (LAYOUT.badgeTopRight).
  */
-export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFrom?: number; showFrom?: number}> = ({episode, totalFrames, hideFrom, showFrom = 2}) => {
+export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFrom?: number; showFrom?: number; placement?: BadgePlacement}> = ({episode, totalFrames, hideFrom, showFrom = 2, placement = 'top-left'}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
 	const appear = springIn({frame, fps, delay: showFrom, damping: 16, stiffness: 160});
@@ -43,7 +46,7 @@ export const FormatBadge: React.FC<{episode: string; totalFrames: number; hideFr
 	const r = 20;
 	const c = 2 * Math.PI * r;
 	return (
-		<div style={{position: 'absolute', left: LAYOUT.left, top: LAYOUT.badgeTop, opacity: Math.min(1, appear * 2) * out, translate: `${(1 - appear) * -30}px 0`, display: 'flex', alignItems: 'center', gap: 10, padding: '8px 16px 8px 8px', borderRadius: 999, background: 'rgba(6,8,22,0.82)', border: '1.5px solid rgba(255,255,255,0.16)', boxShadow: '0 10px 30px rgba(0,0,0,0.45)'}}>
+		<div style={{position: 'absolute', ...(placement === 'top-right' ? {right: LAYOUT.badgeRightInset, top: LAYOUT.badgeTopRight} : {left: LAYOUT.left, top: LAYOUT.badgeTop}), opacity: Math.min(1, appear * 2) * out, translate: `${(1 - appear) * (placement === 'top-right' ? 30 : -30)}px 0`, display: 'flex', alignItems: 'center', gap: 10, padding: '8px 16px 8px 8px', borderRadius: 999, background: 'rgba(6,8,22,0.82)', border: '1.5px solid rgba(255,255,255,0.16)', boxShadow: '0 10px 30px rgba(0,0,0,0.45)'}}>
 			<svg width={50} height={50} viewBox="0 0 50 50">
 				<circle cx={25} cy={25} r={r} fill="none" stroke="rgba(255,255,255,0.14)" strokeWidth={5} />
 				<circle cx={25} cy={25} r={r} fill="none" stroke={ACCENT.brand} strokeWidth={5} strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * p} transform="rotate(-90 25 25)" />

@@ -108,11 +108,36 @@ import {
 } from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13Demonstranten';
 import {FrankfurtErklaert13DemonstrantenCover} from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13DemonstrantenCover';
 import {FrankfurtErklaert13DemonstrantenCoverVorschau} from './videos/frankfurt-erklaert-13-demonstranten-2026-11-14/FrankfurtErklaert13DemonstrantenCoverVorschau';
+import {
+	calculateErklaert20NovemberMetadata,
+	erklaert20NovemberDefaultProps,
+	erklaert20NovemberSchema,
+	FrankfurtErklaert20NovemberDreiProteste,
+} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProteste';
+import {FrankfurtErklaert20NovemberDreiProtesteCover} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteCover';
+import {FrankfurtErklaert20NovemberDreiProtesteCoverVorschau} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteCoverVorschau';
+import {FrankfurtErklaert20NovemberDreiProtesteOverlayCheck} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteOverlayCheck';
+import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #09 – 4 Proteste, 1 Freitag (Frankfurt 20.11.2026, Stand 17.11.): Serien-Overlay oben rechts; Längen-Ausnahme Info ≤ 61,5 s + Abo-Aufruf, ≤ 64 s */}
+				<Composition
+					id="FrankfurtErklaert20NovemberDreiProteste"
+					component={FrankfurtErklaert20NovemberDreiProteste}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1920}
+					schema={erklaert20NovemberSchema}
+					defaultProps={erklaert20NovemberDefaultProps}
+					calculateMetadata={calculateErklaert20NovemberMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberDreiProteste-Cover" component={FrankfurtErklaert20NovemberDreiProtesteCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberDreiProteste-CoverVorschau" component={FrankfurtErklaert20NovemberDreiProtesteCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberDreiProteste-OverlayCheck" component={FrankfurtErklaert20NovemberDreiProtesteOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #08 – Nur 13 Demonstranten? (Frankfurt 14.11.2026, Stand 16.11.): Längen-Ausnahme Info ≤ 61,5 s + Abo-Aufruf, ≤ 64 s */}
 				<Composition
 					id="FrankfurtErklaert13Demonstranten"

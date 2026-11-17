@@ -22,7 +22,8 @@ export type SfxName =
 	| 'boom'
 	| 'riser'
 	| 'stamp'
-	| 'cash';
+	| 'cash'
+	| 'tick';
 
 export type SfxDefinition = {
 	file: string;
@@ -45,6 +46,7 @@ export const SFX_LIBRARY: Record<SfxName, SfxDefinition> = {
 	boom: {file: 'sfx/boom.wav', volume: 0.32, use: 'cineastischer Akzent (Finale Weltkarte)'},
 	riser: {file: 'sfx/riser.wav', volume: 0.14, use: 'Spannungsaufbau vor dem Finale'},
 	stamp: {file: 'sfx/stamp.wav', volume: 0.22, use: 'Faktencheck-Stempel'},
+	tick: {file: 'sfx/tick.wav', volume: 0.14, use: 'Uhr-Ticken: Timeline-Markierung, Uhrzeit erscheint'},
 	cash: {file: 'sfx/cash.wav', volume: 0.18, use: 'humorvoller Kassen-Akzent (Pointe)'},
 };
 
