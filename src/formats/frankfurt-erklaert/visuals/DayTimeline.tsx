@@ -78,9 +78,11 @@ export type DayTimelineProps = {
 	showPlace?: boolean;
 	/** 0–1: wie stark nicht aktive Termine gedimmt werden. */
 	dim?: number;
+	/** bereits erklärte Termine: grüner Haken am Orb, nur leicht gedimmt (Leiste läuft nur vorwärts). */
+	done?: readonly string[];
 };
 
-export const DayTimeline: React.FC<DayTimelineProps> = ({events, width, variant = 'full', size, draw = 1, reveal, pulse, active = null, highlight = null, showPlace = false, dim = 1}) => {
+export const DayTimeline: React.FC<DayTimelineProps> = ({events, width, variant = 'full', size, draw = 1, reveal, pulse, active = null, highlight = null, showPlace = false, dim = 1, done = []}) => {
 	const frame = useCurrentFrame();
 	const n = events.length;
 	const g = dayTimelineGeometry(variant, size);
@@ -124,10 +126,11 @@ export const DayTimeline: React.FC<DayTimelineProps> = ({events, width, variant 
 				if (r <= 0.001) return null;
 				const isActive = active === e.id;
 				const isHi = highlight === e.id;
-				const dimmed = active !== null && !isActive;
+				const isDone = done.includes(e.id) && !isActive;
+				const dimmed = active !== null && !isActive && !isDone;
 				const bump = pulse ? (pulse[i] ?? 0) : 0;
 				const sc = (0.45 + 0.55 * r) * (isActive ? 1.16 : 1) * (1 + 0.16 * Math.sin(bump * Math.PI));
-				const op = Math.min(1, r * 1.6) * (dimmed ? 1 - 0.55 * dim : 1);
+				const op = Math.min(1, r * 1.6) * (dimmed ? 1 - 0.55 * dim : isDone ? 0.82 : 1);
 				const ring = isActive || isHi ? (frame % 36) / 36 : 0;
 				const timeColor = e.color;
 				return (
@@ -152,6 +155,13 @@ export const DayTimeline: React.FC<DayTimelineProps> = ({events, width, variant 
 							>
 								<DayIcon name={e.icon} size={g.d * 0.56} color={COLORS.night} stroke={strip ? 2.6 : 2.3} />
 							</div>
+							{isDone ? (
+								<div style={{position: 'absolute', right: -g.d * 0.22, top: -g.d * 0.22, width: g.d * 0.58, height: g.d * 0.58, borderRadius: '50%', background: '#3DDC97', border: `${strip ? 2 : 3}px solid #FFFFFF`, boxShadow: '0 4px 12px rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+									<svg width={g.d * 0.36} height={g.d * 0.36} viewBox="0 0 24 24">
+										<path d="m4.5 12.5 5 5 10-11" fill="none" stroke="#0B1029" strokeWidth={3.6} strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+								</div>
+							) : null}
 						</div>
 						{/* Kurztitel (strip: nur der aktive Termin) */}
 						{!strip || isActive ? (

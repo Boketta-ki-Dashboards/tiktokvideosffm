@@ -41,7 +41,7 @@ export const EVENTS = [
 		expected: '75 angemeldet',
 		topic: 'im Zusammenhang mit dem Schulstreik',
 		motto: '',
-		color: '#9AA6CC',
+		color: '#B794F6',
 		icon: 'flag' as const,
 	},
 	{
@@ -127,10 +127,31 @@ export const GENZ = {
 	source: 'Stadt Frankfurt laut t-online 17.11. · genz-regelt.de · GEW Hessen 12.11.',
 };
 
-/** Batman-Gag – humorvoll, aber auf belegter Grundlage (Agenturfotos 31.10.), ohne Namen/Gesicht. */
+/** Kleiner Zug am Campus Westend (11 Uhr): Start/Ziel laut Anmeldung (Stadt über t-online), Koordinaten OSM/Nominatim (Abruf 17.11.2026). */
+export const CAMPUS = {
+	start: {name: 'ADORNO-PLATZ', at: [50.1276924, 8.6666984] as [number, number]},
+	end: {name: 'GISÈLE-FREUND-PLATZ', at: [50.1268066, 8.6707477] as [number, number]},
+	count: 75,
+	by: 'Internationaler Jugendverband',
+	link: 'laut Stadt im Zusammenhang mit dem Schulstreik',
+	mapNote: 'Start und Ziel laut Anmeldung · Verlauf schematisch',
+	source: 'Quelle: Stadt Frankfurt laut t-online (17.11.) · Karte: © OpenStreetMap-Mitwirkende',
+};
+
+/**
+ * Batman-Sequenz (Briefing Kanalbetreiber 17.11.2026): Younes (@ichbinyounes), der in Frankfurt als Batman bekannt gewordene TikTok-Creator,
+ * erzählt in seinem eigenen TikTok (Einblendung „20.11 Hausarrest“, Bildschirmaufnahme 17.11.2026) vom Polizeibesuch. Tonspur per Whisper
+ * transkribiert (references/…/younes-transkript.md). Nur seine eigenen Aussagen, keine Gründe/Vorwürfe, keine Verbindung zu Festnahme-Fotos.
+ */
 export const BATMAN = {
-	label: 'GAG',
-	note: 'Batman-Kostüm an Halloween laut Reuters-Bildunterschrift von der Polizei abgeführt · Illustration',
+	handle: '@ichbinyounes',
+	who: 'BATMAN VON HALLOWEEN',
+	title: '20.11 Hausarrest',
+	headline: 'POLIZEI WAR AN SEINER TÜR',
+	claims: ['20.11.: NICHT NACH FRANKFURT', '2× BEI DER POLIZEI MELDEN', 'BIS 5.1.: NICHT IN DIE INNENSTADT'],
+	quote: '„Batman steht für Kriminalität oder steht er für Gerechtigkeit?“',
+	punch: 'DIESMAL WOHL OHNE BATMAN',
+	source: 'Quelle: TikTok @ichbinyounes – eigener Bericht zum 20.11. (Bildschirmaufnahme 17.11.)',
 };
 
 export const CTA = {title: 'FOLGT FÜR MEHR', sub: 'FRANKFURT ERKLÄRT · IN 60 SEKUNDEN'};
@@ -144,6 +165,8 @@ export const SOURCES = [
 	{id: 'genz', text: 'Initiative „Gen Z regelt“: genz-regelt.de (Frankfurt „Standort folgt“, ab 14 Uhr), Abruf 17.11.2026', url: 'https://genz-regelt.de/'},
 	{id: 'ofi', text: 'Offenbacher FriedensInitiative: „Solidarität ist nötig“, 16.11.2026 (14 Uhr Weseler Werft)', url: 'https://offenbacher-friedensinitiative.de/?p=12968'},
 	{id: 'hr', text: 'tagesschau.de/hessenschau: „Nächste Gen-Z-Demo in Frankfurt: Jurist warnt vor schnellen Verbotsforderungen“, 02./03.11.2026', url: 'https://www.tagesschau.de/inland/regional/hessen/hr-rechtsexperte-warnt-vor-schnellen-verbotsforderungen-nach-gen-z-protest-100.html'},
+	{id: 'younes', text: 'TikTok @ichbinyounes: eigenes Video mit Einblendung „20.11 Hausarrest“ (Bildschirmaufnahme und Tonspur vom Kanalbetreiber, 17.11.2026)', url: 'https://www.tiktok.com/@ichbinyounes'},
+	{id: 'osm', text: 'OpenStreetMap/Nominatim: Theodor-W.-Adorno-Platz (50.12769, 8.66670) und Gisèle-Freund-Platz (50.12681, 8.67075), Abruf 17.11.2026', url: 'https://www.openstreetmap.org/search?query=Gis%C3%A8le-Freund-Platz%20Frankfurt'},
 	{id: 'heute', text: 'heute.at: „"Gen Z regelt"? Am Ende wird sogar Batman abgeführt“, 01.11.2026', url: 'https://www.heute.at/s/gen-z-regelt-am-ende-wird-sogar-batman-abgefuehrt-120275172'},
 	{id: 'independent', text: 'The Independent (via Yahoo): Bildunterschrift Reuters „Police detain a demonstrator dressed as Batman …“, 01.11.2026', url: 'https://sg.news.yahoo.com/protester-batman-costume-arrested-during-105646361.html'},
 ];

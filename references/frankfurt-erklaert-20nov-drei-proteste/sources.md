@@ -12,7 +12,11 @@ deren Ergebnisse sind in diesem Video noch **nicht** enthalten (Stand im Bild: �
    Initiative nennt für Frankfurt weiterhin „Standort folgt“ (Abruf 17.11.) → im Bild genannt.
 3. 10:00-Uhr-Demo **und** 17:30-Uhr-Versammlung sind laut Stadt beide von der **ver.di-Jugend** angemeldet → keine Aussage über „unterschiedliche Organisatoren“.
 4. 17:30 Uhr: **Route wird noch geprüft** (laut Stadt) – also nicht nur eine stationäre Kundgebung; im Video als OFFEN.
-5. Batman-Witz: Das „Türklopfen“ aus dem Auftrag ist **nicht belegbar** → Pointe auf belegter Grundlage (Agenturfoto: Polizei führt Person im Batman-Kostüm ab).
+5. Batman-Sequenz (überarbeitet 17.11., verbindliches Briefing des Kanalbetreibers): Grundlage ist jetzt Younes' **eigenes TikTok** (@ichbinyounes,
+   Einblendung „20.11 Hausarrest“). Die mitgelieferte Tonspur wurde lokal transkribiert (`younes-transkript.md`). Er sagt „geklingelt“ (nicht „geklopft“).
+   Die frühere Pointe über das Agenturfoto der Halloween-Nacht wird nicht mehr verwendet.
+6. Überarbeitung 17.11. (Wunsch Kanalbetreiber): chronologische Reihenfolge 10 → 11 → 14 → 17:30, der 11-Uhr-Zug als eigener Punkt mit Karte
+   (Start/Ziel laut Anmeldung, OSM-Koordinaten), Längen-Sonderausnahme ≈ 72 s.
 
 Kategorien im Bild: **LAUT STADT** (Anmeldung/Auflagen) · **LAUT AUFRUF** · **LAUT INITIATIVE** · **OFFEN** · **ILLUSTRATION** · **GAG**.
 
@@ -27,8 +31,10 @@ Kategorien im Bild: **LAUT STADT** (Anmeldung/Auflagen) · **LAUT AUFRUF** · **
 | [genz] | Initiative „Gen Z regelt“, genz-regelt.de (Standorte, „Was wir fordern“, Erklärung) | Abruf 17.11.2026 |
 | [ofi] | Offenbacher FriedensInitiative: „Solidarität ist nötig“ | 16.11.2026 |
 | [hr] | tagesschau.de/hessenschau: „Nächste Gen-Z-Demo in Frankfurt: Jurist warnt vor schnellen Verbotsforderungen“ | 02./03.11.2026 |
-| [heute] | heute.at: „"Gen Z regelt"? Am Ende wird sogar Batman abgeführt“ | 01.11.2026, 11:20 Uhr |
-| [independent] | The Independent (via Yahoo News), Bildunterschriften der Agenturen Reuters und AP | 01.11.2026 |
+| [younes] | TikTok @ichbinyounes: eigenes Video mit Einblendung „20.11 Hausarrest“ – Bildschirmaufnahme + Tonspur vom Kanalbetreiber; Transkript `younes-transkript.md` | Aufnahme 17.11.2026 |
+| [osm] | OpenStreetMap/Nominatim: Theodor-W.-Adorno-Platz (50.12769, 8.66670), Gisèle-Freund-Platz (50.12681, 8.67075); Karte `src/data/maps/frankfurt-campus-westend.json` (ODbL) | Abruf 17.11.2026 |
+| [heute] | heute.at: „"Gen Z regelt"? Am Ende wird sogar Batman abgeführt“ (nur Hintergrund, nicht mehr im Video) | 01.11.2026, 11:20 Uhr |
+| [independent] | The Independent (via Yahoo News), Bildunterschriften der Agenturen Reuters und AP (nur Hintergrund, nicht mehr im Video) | 01.11.2026 |
 
 URLs:
 - [ton] https://frankfurt.t-online.de/region/frankfurt-am-main/id_101532898/frankfurt-neue-gen-z-demos-schueren-angst-vor-weiteren-ausschreitungen.html
@@ -38,6 +44,8 @@ URLs:
 - [genz] https://genz-regelt.de/
 - [ofi] https://offenbacher-friedensinitiative.de/?p=12968
 - [hr] https://www.tagesschau.de/inland/regional/hessen/hr-rechtsexperte-warnt-vor-schnellen-verbotsforderungen-nach-gen-z-protest-100.html
+- [younes] https://www.tiktok.com/@ichbinyounes (Profil; das einzelne Video war aus der Cloud-Umgebung nicht abrufbar – Grundlage ist die Bildschirmaufnahme)
+- [osm] https://www.openstreetmap.org/search?query=Gis%C3%A8le-Freund-Platz%20Frankfurt
 - [heute] https://www.heute.at/s/gen-z-regelt-am-ende-wird-sogar-batman-abgefuehrt-120275172
 - [independent] https://sg.news.yahoo.com/protester-batman-costume-arrested-during-105646361.html
 
@@ -86,7 +94,15 @@ URLs:
 > 14 Uhr Weseler Werft Frankfurt , GenZ - Demo
 > 17:30 Uhr am Bockenheimer Depot, Frankfurt: Kundgebung der Gewerkschaftsjugend
 
-**[independent]** (Agentur-Bildunterschriften, 01.11.2026; Grundlage des Batman-Gags):
+**[younes]** (eigene Erzählung, Auszug aus `younes-transkript.md`, Whisper medium):
+
+> Wisst ihr, wer grad eben bei mir geklingelt hat? Die Polizei. Die Polizei war grad eben bei mir zu Hause.
+> Ich darf am 20.11. auf gar keinen Fall nach Frankfurt.
+> muss ich mich zweimal bei einer Polizeibehörde melden. Zweimal am 20.11.
+> Zusätzlich bis zum 5.1. darf ich nicht mal nach Frankfurt in die Innenstadt
+> Batman steht für Kriminalität oder steht er für Gerechtigkeit?
+
+**[independent]** (Agentur-Bildunterschriften, 01.11.2026; frühere Fassung des Batman-Gags, nicht mehr verwendet):
 
 > Police detain a demonstrator dressed as Batman during a nationwide protest by campaign group Gen Z regelt (Reuters)
 > DE: Polizisten nehmen bei einem bundesweiten Protest der Kampagne „Gen Z regelt“ einen als Batman verkleideten Demonstranten fest.
@@ -110,17 +126,23 @@ URLs:
 | Website „Standort folgt“ | [genz] | – |
 | Forderungen Bildung, Gesundheit, bezahlbares Leben, gegen Wehrpflicht und Sparkurs | [genz] | LAUT INITIATIVE |
 | „Für alle vier gilt: keine Pyro, kein Alkohol, keine Vermummung“ (+ im Bild: Hunde, Abbrennen, Transparente ≤ 2 m) | [ton] | LAUT STADT |
-| Batman an Halloween „mitgenommen“ | [independent] (Reuters-Bildunterschrift), [heute] | GAG · ILLUSTRATION |
-| Ob Batman am 20.11. kommt: unbekannt | – (Witz, keine Tatsachenbehauptung) | GAG |
+| 11:00–13:30 kleiner Zug, 75 angemeldet, Internationaler Jugendverband, „quer über den Campus“ (Adorno-Platz → Gisèle-Freund-Platz) | [ton], Lage [osm]; Verlauf schematisch | LAUT STADT |
+| „Der Batman von Halloween hat sich selbst auf TikTok gemeldet“ · @ichbinyounes · BATMAN VON HALLOWEEN | [younes] | – |
+| „Younes erzählt, die Polizei habe bei ihm geklingelt: Am 20. dürfe er nicht nach Frankfurt und müsse sich zweimal melden.“ | [younes] 00:00–00:25 | LAUT YOUNES |
+| „BIS 5.1.: NICHT IN DIE INNENSTADT“ (nur Bild) · Zitat „Batman steht für Kriminalität …“ (nur Bild) | [younes] 00:30–00:38, 01:12–01:16 | LAUT YOUNES |
+| „Sein neues Video heißt: „20.11 Hausarrest““ | Einblendung im Video laut Bildschirmaufnahme (Kanalbetreiber) | – |
+| „Batman am Freitag in Frankfurt? Sieht schlecht aus, Bras – diesmal wohl ohne Batman!“ | Pointe aus seiner Schilderung | – |
 | Stand 17.11.; Pressekonferenz am 18.11. angekündigt | [ton] | – |
 
 ## Bewusst NICHT verwendet
 
 - **Anonymer Gewaltaufruf auf „Indymedia“** (t-online 16./17.11.): Echtheit laut t-online „nach bisherigem Stand nicht bestätigt“; anonyme Quelle, Plattform
   mit wiederholt gefälschten Schreiben → nicht im Video, nicht in der Caption.
-- **„Batman hat an der Tür geklopft“** (Auftrag): kein Beleg auffindbar → ersetzt durch die belegte Pointe „an Halloween … mitgenommen“.
-- **Identität der Person im Batman-Kostüm**: kein Name, kein Gesicht, keine Verbindung zu TikTok-Accounts (u. a. @ichbinyounes) – ob es dieselbe Person wie auf
-  anderen Batman-Fotos ist, ist nicht belegt. „Abgeführt/festgenommen“ heißt nicht „schuldig“ (im Bild: „abgeführt ≠ schuldig“).
+- **„Geklopft“** (Briefing): Younes sagt „geklingelt“ → Ton und Animation zeigen Klingeln (Ding-Dong) statt Klopfen.
+- **Behördliche Begründungen, Anzahl der Beamten, rechtliche Einordnung** (Meldeauflage/Aufenthaltsverbot): nicht prüfbar bzw. laut Briefing nicht gewünscht;
+  im Bild nur zwei neutrale, stilisierte Figuren als Illustration seiner Erzählung (keine Zahlenangabe). „Hausarrest“ nur als sein eigener Videotitel.
+- **Agenturfotos der Halloween-Nacht** (Person im Batman-Kostüm abgeführt): keine Verbindung zu Younes hergestellt; kein Gesicht, kein Foto, kein Screenshot.
+- **Hochschulblock / „11 Uhr Kundgebung vor PEG“** (demosphere, 20.11.): Zusammenhang mit dem angemeldeten 11-Uhr-Zug nicht belegt → nicht verwendet.
 - **Weseler Werft nur laut Offenbacher FriedensInitiative** (16.11.): erst nach Bestätigung durch die Stadt ([ton], 17.11.) verwendet; Lage im Bild als
   „schematisch“ gekennzeichnet (Nordufer des Mains, östlich der Innenstadt).
 - **Routen/Wege zwischen den Orten**: keine Linien auf Karten, kein gemeinsamer Zug, kein gemeinsamer Veranstalter. Die Route der 17:30-Uhr-Versammlung

@@ -10,11 +10,12 @@ animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
 **„Frankfurt erklärt“ #09 – „4 Proteste – 1 Freitag! Was passiert am 20.11. in Frankfurt?“** (Komposition `FrankfurtErklaert20NovemberDreiProteste`,
-≈ 58,1 s inkl. Abo-Aufruf, Stand 17.11.2026): laut Stadt vier getrennte Versammlungen am 20.11. – 10:00 Schulstreik ab Willy-Brandt-Platz (bis 1.200),
-11:00 kleiner Zug am Campus Westend (75), 14:00 „Gen Z regelt“ als stationäre Kundgebung an der Weseler Werft (bis 4.000 erwartet), 17:30
-Gewerkschaftsjugend am Bockenheimer Depot (bis 500, Route wird geprüft); Auflagen für alle vier; animierte Tages-Timeline (`DayTimeline`) als Titelbild
-und Orientierungsleiste, Illustrationen Willy-Brandt-Platz, Bockenheimer Depot, Skyline am Main, Batman-Gag. Erste Folge mit dem kleinen
-Serien-Overlay oben rechts unter der TikTok-Suchleiste (Prüfbogen `-OverlayCheck`). Quellen: [`sources.md`](references/frankfurt-erklaert-20nov-drei-proteste/sources.md)
+≈ 71,8 s inkl. Abo-Aufruf, Sonderausnahme, Stand 17.11.2026): laut Stadt vier getrennte Versammlungen am 20.11., chronologisch je ein eigener Punkt –
+10:00 Schulstreik ab Willy-Brandt-Platz (bis 1.200), 11:00 kleiner Zug quer über den Campus Westend (75, OSM-Karte), 14:00 „Gen Z regelt“ als stationäre
+Kundgebung an der Weseler Werft (bis 4.000 erwartet), 17:30 Gewerkschaftsjugend am Bockenheimer Depot (bis 500, Route wird geprüft); Auflagen für alle
+vier; Tages-Timeline (`DayTimeline`) als Titelbild und vorwärts laufende Orientierungsleiste; Batman-Sequenz nach Younes' eigenem TikTok „20.11 Hausarrest“
+(Tür-Animation, Smartphone, Kalender). Erste Folge mit symmetrischer Kopfzeile: Serien-Overlay oben rechts unter der TikTok-Suchleiste + Szenen-Box links
+(`TopTag`, Prüfbogen `-OverlayCheck`). Quellen: [`sources.md`](references/frankfurt-erklaert-20nov-drei-proteste/sources.md)
 
 **„Frankfurt erklärt“ #08 – „Nur 13 Demonstranten? – Warum war bei der Gen-Z-Demo kaum jemand?“** (Komposition `FrankfurtErklaert13Demonstranten`,
 60,0 s inkl. Abo-Aufruf): Frankfurt am 14.11. laut FNP – zwei Kundgebungen mit zusammen rund 13 Demonstrierenden (Hauptwache rund 10,

@@ -10,6 +10,8 @@ import {type PlaneBillboard, type PlaneCamera, TiltedPlane} from './TiltedPlane'
  * `markers` (2D-Ebene über `projectPlanePoint`). Lizenzhinweis „© OpenStreetMap-Mitwirkende“ muss die Szene selbst zeigen.
  */
 export type CityPlaneSpot = {at: LatLon; color: string; radius: number; on: number; pulse?: number};
+/** Schematischer Pfeil am Boden (nur für belegte Start-/Zielpunkte, z. B. laut Anmeldung; Verlauf NICHT der echte Straßenweg). */
+export type CityPlaneArrow = {from: LatLon; to: LatLon; color: string; draw: number; width?: number};
 
 export const cityPlaneSize = (map: CityMapData, k: number) => ({width: Math.round(map.meta.sizeMeters.width * k), height: Math.round(map.meta.sizeMeters.height * k)});
 
@@ -30,7 +32,8 @@ export const CityPlane: React.FC<{
 	highlightStreets?: {name: string; color: string; on: number}[];
 	markers?: PlaneBillboard[];
 	tint?: string;
-}> = ({map, k, camera, anchor, perspective = 1300, floors = 6, spots = [], highlightStreets = [], markers = [], tint = '#2E3C7C'}) => {
+	arrows?: CityPlaneArrow[];
+}> = ({map, k, camera, anchor, perspective = 1300, floors = 6, spots = [], highlightStreets = [], markers = [], tint = '#2E3C7C', arrows = []}) => {
 	const W = map.meta.sizeMeters.width;
 	const H = map.meta.sizeMeters.height;
 	const size = cityPlaneSize(map, k);
@@ -58,6 +61,30 @@ export const CityPlane: React.FC<{
 					{highlightStreets.map((h) =>
 						streets[h.name] ? <path key={h.name} d={streets[h.name]} fill="none" stroke={withAlpha(h.color, 0.55 * h.on)} strokeWidth={26} strokeLinecap="round" strokeLinejoin="round" /> : null,
 					)}
+					{arrows.map((a, i) => {
+						if (a.draw <= 0) return null;
+						const [x1, y1] = projectLatLon(map, a.from);
+						const [x2, y2] = projectLatLon(map, a.to);
+						const t = Math.min(1, a.draw);
+						const ex = x1 + (x2 - x1) * t;
+						const ey = y1 + (y2 - y1) * t;
+						const ang = Math.atan2(y2 - y1, x2 - x1);
+						const w = a.width ?? 9;
+						const head = w * 3.2;
+						return (
+							<g key={`a-${i}`}>
+								<line x1={x1} y1={y1} x2={ex} y2={ey} stroke={withAlpha(a.color, 0.25)} strokeWidth={w * 3} strokeLinecap="round" />
+								<line x1={x1} y1={y1} x2={ex} y2={ey} stroke={a.color} strokeWidth={w} strokeLinecap="round" strokeDasharray={`${w * 2.4} ${w * 1.6}`} />
+								{t > 0.9 ? (
+									<path
+										d={`M${ex} ${ey} L${ex - head * Math.cos(ang - 0.5)} ${ey - head * Math.sin(ang - 0.5)} L${ex - head * Math.cos(ang + 0.5)} ${ey - head * Math.sin(ang + 0.5)} Z`}
+										fill={a.color}
+										opacity={Math.min(1, (t - 0.9) * 10)}
+									/>
+								) : null}
+							</g>
+						);
+					})}
 					{spots.map((s, i) => {
 						const [x, y] = projectLatLon(map, s.at);
 						const p = s.pulse ?? 0;

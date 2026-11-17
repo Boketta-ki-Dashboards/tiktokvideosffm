@@ -7,20 +7,26 @@ import {clamp, EASE_IN_OUT, EASE_OUT, springIn} from '../../../lib/animation';
 import {mix, withAlpha} from '../../../lib/color';
 import {handleWithAt} from '../../../theme/brand';
 import {COLORS, FONTS} from '../../../theme/tokens';
+import {type CityMapData} from '../../../components/map/CityStreetMap';
+import {CityPlane, cityPlaneXY} from '../../../components/map/CityPlane';
+import {interpolateCamera, type PlaneBillboard, type PlaneCamera} from '../../../components/map/TiltedPlane';
+import campusMap from '../../../data/maps/frankfurt-campus-westend.json';
+import {TopTag} from '../../../formats/frankfurt-erklaert/Branding';
 import {SourceBar} from '../../../formats/frankfurt-erklaert/components';
 import {ACCENT, FORMAT, LAYOUT} from '../../../formats/frankfurt-erklaert/theme';
 import {DayTimeline} from '../../../formats/frankfurt-erklaert/visuals/DayTimeline';
 import {blendMood, type Mood, MOODS, NightCity} from '../../frankfurt-2026-11-20-ausblick/premium/NightCity';
-import {PoliceVan} from '../../frankfurt-2026-11-20-ausblick/premium/PoliceVan';
-import {Card, CountUp, IconOrb, P2Icon, type P2IconName, Stars, Tag, useSpring} from '../../frankfurt-erklaert-genz-phase2-2026-11-14/scenes/kit';
+import {CalendarBlock, Card, CountUp, IconOrb, P2Icon, type P2IconName, Stars, useSpring} from '../../frankfurt-erklaert-genz-phase2-2026-11-14/scenes/kit';
 import {cue, type SceneProps, wordFrame} from '../../frankfurt-2026-10-31/cues';
-import {BATMAN, COVER, CTA, DEMANDS, EVENTS, type EventId, GENZ, GEWERK, SCHUL, SOURCES, STAND} from '../content';
+import {BATMAN, CAMPUS, COVER, CTA, DEMANDS, EVENTS, type EventId, GENZ, GEWERK, SCHUL, SOURCES, STAND} from '../content';
 import {NOV20_COVER_LAYOUT} from '../cover-layout';
 import {BockenheimerDepot, CapeFigure, OfficerFigure, WillyBrandtPlatz} from '../visuals/Illustrations';
 
 const RED = ACCENT.brand;
 const BLUE = ACCENT.info;
 const EV = Object.fromEntries(EVENTS.map((e) => [e.id, e])) as Record<EventId, (typeof EVENTS)[number]>;
+/** Titelbild/Thumbnail unverändert lassen: dort behält der 11-Uhr-Zug seine ursprüngliche Farbe (in den Szenen violett). */
+const COVER_EVENTS = EVENTS.map((e) => (e.id === 'campus' ? {...e, color: '#9AA6CC'} : e));
 
 /** Skyline-Farben am Nachmittag (heller als die Nachtpalette). */
 const SKY_DAY = {far: '#3A4A8A', mid: '#2C3A78', near: '#24306A', front: '#1A2250', glass: '#34509A', glassHi: '#6A8CDA', light: '#4E60A6', quay: '#161E44', waterTop: '#2A3A7A', waterBottom: '#0C1236'};
@@ -30,7 +36,7 @@ const AFTERNOON: Mood = {sky: ['#0E1C4A', '#24407E', '#5A78B2', '#D49A82'], glow
 
 /* ------------------------------------------------------------------ Kategorie-Chips */
 
-type Kind = 'LAUT STADT' | 'LAUT AUFRUF' | 'LAUT INITIATIVE' | 'LAUT GEW' | 'OFFEN' | 'ILLUSTRATION' | 'GAG' | 'ANGEKÜNDIGT';
+type Kind = 'LAUT STADT' | 'LAUT AUFRUF' | 'LAUT INITIATIVE' | 'LAUT GEW' | 'OFFEN' | 'ILLUSTRATION' | 'GAG' | 'ANGEKÜNDIGT' | 'LAUT YOUNES';
 const KIND_COLOR: Record<Kind, string> = {
 	'LAUT STADT': BLUE,
 	'LAUT AUFRUF': COLORS.signal,
@@ -40,6 +46,7 @@ const KIND_COLOR: Record<Kind, string> = {
 	OFFEN: ACCENT.no,
 	ILLUSTRATION: '#9AA6CC',
 	GAG: ACCENT.law,
+	'LAUT YOUNES': '#FF8A3D',
 };
 const Chip: React.FC<{kind: Kind; size?: number; style?: React.CSSProperties}> = ({kind, size = 18, style}) => {
 	const c = KIND_COLOR[kind];
@@ -54,17 +61,28 @@ const In: React.FC<{at: number; children: React.ReactNode; dx?: number; dy?: num
 	return <div style={{position: 'absolute', opacity: Math.min(1, s * 1.7) * out, translate: `${(1 - s) * dx}px ${(1 - s) * dy}px`, scale: String(0.92 + 0.08 * s), ...style}}>{children}</div>;
 };
 
-/** Orientierungsleiste (chronologische Tages-Timeline) oben in jeder Inhaltsszene – unter dem Serien-Overlay (y ≥ 400). */
-export const STRIP_TOP = 404;
-const OrientationStrip: React.FC<{active: EventId | null; pulseAll?: number}> = ({active, pulseAll}) => {
+/**
+ * Orientierungsleiste (chronologische Tages-Timeline) oben in jeder Inhaltsszene – unter der Kopfzeile (Overlay + TopTag, y 272–342).
+ * Läuft nur vorwärts: Der gerade erklärte Termin leuchtet, alle früheren tragen einen grünen Haken.
+ */
+export const STRIP_TOP = 376;
+const ORDER: EventId[] = ['schulstreik', 'campus', 'genz', 'gewerkschaft'];
+const OrientationStrip: React.FC<{active: EventId | null; allDone?: boolean}> = ({active, allDone}) => {
 	const frame = useCurrentFrame();
 	const o = interpolate(frame, [0, 6], [0.4, 1], clamp);
+	const idx = active ? ORDER.indexOf(active) : ORDER.length;
+	const done = allDone ? ORDER : ORDER.slice(0, Math.max(0, idx));
 	return (
 		<div style={{position: 'absolute', left: LAYOUT.left - 14, top: STRIP_TOP - 10, width: LAYOUT.width + 28, padding: '10px 14px 4px', boxSizing: 'border-box', borderRadius: 22, background: 'rgba(6,8,24,0.72)', border: '1.5px solid rgba(255,255,255,0.12)', opacity: o}}>
-			<DayTimeline events={EVENTS} width={LAYOUT.width} variant="strip" active={active} pulse={pulseAll !== undefined ? EVENTS.map((_, i) => interpolate(pulseAll, [i * 0.15, i * 0.15 + 0.4], [0, 1], clamp)) : undefined} />
+			<DayTimeline events={EVENTS} width={LAYOUT.width} variant="strip" active={allDone ? null : active} done={done} />
 		</div>
 	);
 };
+
+/** Szenen-Box links oben (gleiche Linie und Höhe wie das Serien-Overlay rechts). */
+const SceneTag: React.FC<{text: string; color: string; icon: P2IconName}> = ({text, color, icon}) => (
+	<TopTag text={text} color={color} icon={<P2Icon name={icon} size={30} color={ACCENT.ink} stroke={2.6} />} />
+);
 
 const TopShade: React.FC<{strength?: number; bottom?: number}> = ({strength = 0.92, bottom = 0.85}) => (
 	<AbsoluteFill style={{background: `linear-gradient(rgba(4,6,20,${strength}) 0%, rgba(4,6,20,${strength * 0.85}) 28%, rgba(4,6,20,${strength * 0.35}) 44%, rgba(4,6,20,0) 54%, rgba(4,6,20,0) 62%, rgba(4,6,20,${bottom * 0.7}) 72%, rgba(4,6,20,${bottom}) 100%)`, pointerEvents: 'none'}} />
@@ -109,7 +127,7 @@ export const Nov20Cover: React.FC<{morph?: number; pulse?: readonly number[]; ch
 					</div>
 				</div>
 				<div style={{position: 'absolute', left: L.timelineLeft, top: L.timelineTop, opacity: Math.max(text, 1 - m * 0.6)}}>
-					<DayTimeline events={EVENTS} width={L.timelineWidth} size={L.timelineOrb} highlight="genz" pulse={pulse} />
+					<DayTimeline events={COVER_EVENTS} width={L.timelineWidth} size={L.timelineOrb} highlight="genz" pulse={pulse} />
 				</div>
 				<div style={{opacity: text}}>
 					<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.smallTop, textAlign: 'center', fontFamily: FONTS.heading, fontWeight: 800, fontSize: 25, letterSpacing: 3, color: withAlpha('#FFFFFF', 0.78)}}>{COVER.small}</div>
@@ -198,7 +216,7 @@ const InfoRow: React.FC<{icon: P2IconName; color: string; title: string; sub?: s
 	</Card>
 );
 
-/* ------------------------------------------------------------------ Szene 2: Schulstreik (10 Uhr) + kleiner Zug (11 Uhr) */
+/* ------------------------------------------------------------------ Szene 2: Schulstreik (10 Uhr) */
 
 export const SchulstreikScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
@@ -208,11 +226,8 @@ export const SchulstreikScene: React.FC<SceneProps> = ({cues, durationInFrames})
 	const atAufruf = wordFrame(cues, 'Aufruf', atWehr + 24);
 	const atCount = Math.max(atAufruf + 20, s2.from - 4);
 	const at1200 = wordFrame(cues, '1.200', atCount + 12);
-	const atZiel = wordFrame(cues, 'Ziel', at1200 + 40);
-	const at11 = wordFrame(cues, '11', s2.to - 70);
-	const at75 = wordFrame(cues, '75', at11 + 36);
-	const swap = interpolate(frame, [at11 - 8, at11 + 6], [0, 1], {...clamp, easing: EASE_IN_OUT});
-	const cam = interpolate(frame, [0, at11 - 8, at11 + 20, durationInFrames], [0, 0.45, 0.9, 1], clamp);
+	const atZiel = wordFrame(cues, 'Ziel', at1200 + 30);
+	const cam = interpolate(frame, [0, durationInFrames], [0, 0.6], clamp);
 	const crowd = interpolate(frame, [0, 40], [0.15, 1], clamp);
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
@@ -220,62 +235,33 @@ export const SchulstreikScene: React.FC<SceneProps> = ({cues, durationInFrames})
 				<WillyBrandtPlatz cam={cam} crowd={crowd} morning={0.35 + cam * 0.4} />
 			</AbsoluteFill>
 			<TopShade />
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 290}}>
-				<Tag text="FREITAG · 10:00 UHR" color={EV.schulstreik.color} icon="clock" />
-			</div>
-			<OrientationStrip active={frame < at11 - 2 ? 'schulstreik' : 'campus'} />
-			{/* Phase A: Schulstreik */}
-			<div style={{position: 'absolute', inset: 0, opacity: 1 - swap, translate: `${-swap * 120}px 0`}}>
-				<EventHeader id="schulstreik" kicker="10:00–15:00" title="SCHULSTREIK" place="WILLY-BRANDT-PLATZ" />
-				<In at={atWehr - 4} dy={30} style={{left: LAYOUT.left, top: 752}}>
-					<InfoRow icon="school" color={EV.schulstreik.color} title={`GEGEN DIE WEHRPFLICHT`} sub={frame >= atAufruf - 4 ? SCHUL.topicCall : ' '} chip={frame >= atAufruf - 4 ? 'LAUT AUFRUF' : undefined} />
-				</In>
-				<In at={atCount} dy={30} style={{left: LAYOUT.left, top: 900}}>
-					<div style={{display: 'flex', gap: 14}}>
-						<Card color={EV.schulstreik.color} style={{padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 14}} glow={0.3}>
-							<P2Icon name="users" size={46} color={EV.schulstreik.color} stroke={2.4} />
-							<div>
-								<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 56, lineHeight: 1, color: COLORS.text}}>
-									BIS ZU <CountUp value={SCHUL.count} at={atCount} dur={Math.max(10, at1200 + 6 - atCount)} />
-								</div>
-								<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, color: COLORS.textMuted}}>ANGEMELDET · LAUT STADT</div>
+			<SceneTag text="FREITAG · 10:00 UHR" color={EV.schulstreik.color} icon="clock" />
+			<OrientationStrip active="schulstreik" />
+			<EventHeader id="schulstreik" kicker="10:00–15:00" title="SCHULSTREIK" place="WILLY-BRANDT-PLATZ" />
+			<In at={atWehr - 4} dy={30} style={{left: LAYOUT.left, top: 752}}>
+				<InfoRow icon="school" color={EV.schulstreik.color} title={`GEGEN DIE WEHRPFLICHT`} sub={frame >= atAufruf - 4 ? SCHUL.topicCall : ' '} chip={frame >= atAufruf - 4 ? 'LAUT AUFRUF' : undefined} />
+			</In>
+			<In at={atCount} dy={30} style={{left: LAYOUT.left, top: 900}}>
+				<div style={{display: 'flex', gap: 14}}>
+					<Card color={EV.schulstreik.color} style={{padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 14}} glow={0.3}>
+						<P2Icon name="users" size={46} color={EV.schulstreik.color} stroke={2.4} />
+						<div>
+							<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 56, lineHeight: 1, color: COLORS.text}}>
+								BIS ZU <CountUp value={SCHUL.count} at={atCount} dur={Math.max(10, at1200 + 6 - atCount)} />
 							</div>
-						</Card>
-						{frame >= atZiel - 4 ? (
-							<In at={atZiel - 4} dx={40} dy={0} style={{position: 'relative'}}>
-								<Card color={COLORS.signal} style={{padding: '12px 18px', height: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} glow={0.25}>
-									<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, color: COLORS.signal}}>ZIEL →</div>
-									<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, lineHeight: 1.05, color: COLORS.text, whiteSpace: 'nowrap'}}>CAMPUS WESTEND</div>
-								</Card>
-							</In>
-						) : null}
-					</div>
-				</In>
-			</div>
-			{/* Phase B: kleiner Zug am Campus (11 Uhr) */}
-			{frame >= at11 - 8 ? (
-				<div style={{position: 'absolute', inset: 0, opacity: swap, translate: `${(1 - swap) * 120}px 0`}}>
-					<EventHeader id="campus" at={at11 - 8} kicker={`${SCHUL.small.time}–13:30`} title="KLEINER ZUG" titleSize={74} place="CAMPUS WESTEND" />
-					<In at={at11 + 4} style={{left: LAYOUT.left, top: 752}}>
-						<Card color={EV.campus.color} style={{width: LAYOUT.width, boxSizing: 'border-box', padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 18}} glow={0.25}>
-							<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 92, lineHeight: 1, color: COLORS.text, minWidth: 128, textAlign: 'center'}}>
-								<CountUp value={SCHUL.small.count} at={at11 + 4} dur={Math.max(10, at75 + 4 - (at11 + 4))} />
-							</div>
-							<div>
-								<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, color: COLORS.text}}>ANGEMELDET · LAUT STADT</div>
-								<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 27, color: COLORS.textMuted}}>{SCHUL.small.route}</div>
-								<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Anmeldung: {SCHUL.small.by}</div>
-							</div>
-						</Card>
-					</In>
-					<In at={at75} dy={20} style={{left: LAYOUT.left, top: 930}}>
-						<div style={{display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', borderRadius: 14, background: 'rgba(8,10,28,0.9)', border: `2px solid ${withAlpha('#FFFFFF', 0.3)}`}}>
-							<P2Icon name="info" size={28} color="#C9CEDF" />
-							<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 26, color: COLORS.text}}>laut Stadt im Zusammenhang mit dem Schulstreik</span>
+							<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, color: COLORS.textMuted}}>ANGEMELDET · LAUT STADT</div>
 						</div>
-					</In>
+					</Card>
+					{frame >= atZiel - 4 ? (
+						<In at={atZiel - 4} dx={40} dy={0} style={{position: 'relative'}}>
+							<Card color={COLORS.signal} style={{padding: '12px 18px', height: '100%', boxSizing: 'border-box', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} glow={0.25}>
+								<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, color: COLORS.signal}}>ZIEL →</div>
+								<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, lineHeight: 1.05, color: COLORS.text, whiteSpace: 'nowrap'}}>CAMPUS WESTEND</div>
+							</Card>
+						</In>
+					) : null}
 				</div>
-			) : null}
+			</In>
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 1128}}>
 				<Chip kind="ILLUSTRATION" size={16} />
 			</div>
@@ -286,9 +272,133 @@ export const SchulstreikScene: React.FC<SceneProps> = ({cues, durationInFrames})
 			<Sfx name="click" at={atAufruf - 4} volume={0.4} />
 			<Sfx name="softImpact" at={at1200 + 4} volume={0.55} />
 			<Sfx name="click" at={atZiel - 4} volume={0.4} />
-			<Sfx name="whoosh" at={at11 - 8} volume={0.35} />
-			<Sfx name="tick" at={at11 - 2} volume={0.6} />
+		</AbsoluteFill>
+	);
+};
+
+/* ------------------------------------------------------------------ Szene 3: kleiner Zug am Campus Westend (11 Uhr) */
+
+const CAMPUS_MAP = campusMap as unknown as CityMapData;
+const CAMPUS_K = 1.25;
+
+const CampusMarker: React.FC<{title: string; sub: string; color: string; on: number}> = ({title, sub, color, on}) => (
+	<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: on, scale: String(0.7 + 0.3 * on), transformOrigin: '50% 100%'}}>
+		<div style={{padding: '6px 14px 8px', borderRadius: 14, background: 'rgba(8,10,28,0.95)', border: `3px solid ${color}`, boxShadow: `0 12px 30px rgba(0,0,0,0.55), 0 0 24px ${withAlpha(color, 0.35)}`, textAlign: 'center', whiteSpace: 'nowrap'}}>
+			<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 22, letterSpacing: 1.5, color}}>{sub}</div>
+			<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 27, color: COLORS.text}}>{title}</div>
+		</div>
+		<div style={{width: 4, height: 36, background: `linear-gradient(${color}, ${withAlpha(color, 0.1)})`}} />
+		<div style={{width: 22, height: 22, borderRadius: 11, marginTop: -6, background: color, border: '3px solid #FFFFFF', boxShadow: `0 0 20px ${withAlpha(color, 0.9)}`}} />
+	</div>
+);
+
+/** Kleine anonyme Gruppe (Punkte mit Schildern) – wandert schematisch vom Start zum Ziel. */
+const MarchDots: React.FC<{color: string}> = ({color}) => {
+	const frame = useCurrentFrame();
+	return (
+		<svg width={120} height={70} viewBox="0 0 120 70" style={{overflow: 'visible'}}>
+			{new Array(9).fill(0).map((_, i) => {
+				const x = 14 + (i % 5) * 22 + (Math.floor(i / 5) % 2) * 11;
+				const y = 40 + Math.floor(i / 5) * 16 + Math.sin(frame / 4 + i) * 1.6;
+				return (
+					<g key={i}>
+						<line x1={x + 4} y1={y - 6} x2={x + 4} y2={y - 22} stroke="#E8E2FF" strokeWidth={2} />
+						<rect x={x - 3} y={y - 32} width={14} height={10} rx={2} fill={i % 3 === 0 ? '#FFE08A' : '#F2EDE2'} />
+						<circle cx={x} cy={y} r={6} fill={color} stroke="#FFFFFF" strokeWidth={1.5} />
+					</g>
+				);
+			})}
+		</svg>
+	);
+};
+
+export const CampusScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
+	const frame = useCurrentFrame();
+	const c1 = cue(cues, 'c1', 0);
+	const at11 = wordFrame(cues, '11', c1.from + 10);
+	const at75 = wordFrame(cues, '75', at11 + 40);
+	const atQuer = wordFrame(cues, 'quer', at75 + 20);
+	const atSchul = wordFrame(cues, 'Schulstreik', c1.to - 30);
+	const color = EV.campus.color;
+	const [sx, sy] = cityPlaneXY(CAMPUS_MAP, CAMPUS_K, CAMPUS.start.at);
+	const [ex, ey] = cityPlaneXY(CAMPUS_MAP, CAMPUS_K, CAMPUS.end.at);
+	const cam = interpolateCamera(
+		frame,
+		[
+			{frame: 0, cam: {x: sx + 40, y: sy + 30, zoom: 1.35, tilt: 52, rotate: 10}},
+			{frame: atQuer - 6, cam: {x: sx + 60, y: sy + 20, zoom: 1.2, tilt: 50, rotate: 6}},
+			{frame: atQuer + 40, cam: {x: (sx + ex) / 2, y: (sy + ey) / 2, zoom: 0.95, tilt: 48, rotate: -4}},
+			{frame: durationInFrames + 10, cam: {x: (sx + ex) / 2 + 30, y: (sy + ey) / 2, zoom: 0.9, tilt: 50, rotate: -8}},
+		],
+		EASE_IN_OUT,
+	);
+	const sOn = interpolate(frame, [2, 12], [0, 1], clamp);
+	const draw = interpolate(frame, [atQuer - 4, atQuer + 36], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const eOn = interpolate(frame, [atQuer + 20, atQuer + 32], [0, 1], clamp);
+	const walk = interpolate(frame, [atQuer, durationInFrames], [0, 0.85], clamp);
+	const wx = sx + (ex - sx) * walk;
+	const wy = sy + (ey - sy) * walk;
+	const pulse = (frame % 40) / 40;
+	const markers: PlaneBillboard[] = [
+		{key: 'start', x: sx, y: sy, node: <CampusMarker title={CAMPUS.start.name} sub="START 11:00" color={color} on={sOn} />},
+		{key: 'end', x: ex, y: ey, node: <CampusMarker title={CAMPUS.end.name} sub="ZIEL" color={color} on={eOn} />},
+		{key: 'march', x: wx, y: wy, node: <div style={{opacity: interpolate(frame, [atQuer - 2, atQuer + 8], [0, 1], clamp)}}><MarchDots color={color} /></div>},
+	];
+	return (
+		<AbsoluteFill style={{backgroundColor: '#080C1F', overflow: 'hidden'}}>
+			<AbsoluteFill style={{translate: '0 180px'}}>
+				<CityPlane
+					map={CAMPUS_MAP}
+					k={CAMPUS_K}
+					camera={cam as PlaneCamera}
+					anchor={[540, 980]}
+					floors={4}
+					tint="#3A2E7C"
+					spots={[
+						{at: CAMPUS.start.at, color, radius: 34, on: sOn, pulse},
+						{at: CAMPUS.end.at, color, radius: 34, on: eOn, pulse},
+					]}
+					arrows={[{from: CAMPUS.start.at, to: CAMPUS.end.at, color, draw, width: 7}]}
+					markers={markers}
+				/>
+			</AbsoluteFill>
+			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.96) 0%, rgba(4,6,20,0.9) 36%, rgba(4,6,20,0.35) 50%, rgba(4,6,20,0) 58%, rgba(4,6,20,0) 74%, rgba(4,6,20,0.75) 86%, rgba(4,6,20,0.92) 100%)', pointerEvents: 'none'}} />
+			<SceneTag text="FREITAG · 11:00 UHR" color={color} icon="clock" />
+			<OrientationStrip active="campus" />
+			<EventHeader id="campus" kicker="11:00–13:30" title="KLEINER ZUG" place="CAMPUS WESTEND" />
+			<In at={Math.max(4, at11 - 4)} dy={24} style={{left: LAYOUT.left, top: 752}}>
+				<Card color={color} style={{width: LAYOUT.width, boxSizing: 'border-box', padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 18}} glow={0.25}>
+					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 84, lineHeight: 1, color: COLORS.text, minWidth: 120, textAlign: 'center'}}>
+						<CountUp value={CAMPUS.count} at={Math.max(4, at11 - 4)} dur={Math.max(10, at75 + 4 - Math.max(4, at11 - 4))} />
+					</div>
+					<div style={{flex: 1}}>
+						<div style={{display: 'flex', alignItems: 'center', gap: 10}}>
+							<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 34, color: COLORS.text}}>ANGEMELDET</span>
+							<Chip kind="LAUT STADT" size={15} />
+						</div>
+						<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 27, color: COLORS.textMuted}}>Anmeldung: {CAMPUS.by}</div>
+						<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, color: COLORS.textMuted}}>Demozug quer über den Campus</div>
+					</div>
+				</Card>
+			</In>
+			<In at={atSchul - 4} dy={18} style={{left: LAYOUT.left, top: 912}}>
+				<div style={{display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 16px', borderRadius: 14, background: 'rgba(8,10,28,0.92)', border: `2px solid ${withAlpha(EV.schulstreik.color, 0.8)}`}}>
+					<P2Icon name="school" size={28} color={EV.schulstreik.color} />
+					<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 26, color: COLORS.text}}>{CAMPUS.link}</span>
+				</div>
+			</In>
+			<div style={{position: 'absolute', left: LAYOUT.left, top: 1150, display: 'flex', alignItems: 'center', gap: 10, padding: '4px 12px', borderRadius: 10, background: 'rgba(8,10,28,0.85)'}}>
+				<P2Icon name="info" size={22} color={COLORS.textMuted} />
+				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>{CAMPUS.mapNote}</span>
+			</div>
+			<SourceBar text={CAMPUS.source} at={6} />
+			<Sfx name="whoosh" at={0} volume={0.35} />
+			<Sfx name="tick" at={2} volume={0.6} />
+			<Sfx name="blip" at={4} volume={0.45} />
 			<Sfx name="softImpact" at={at75 + 2} volume={0.5} />
+			<Sfx name="whoosh" at={atQuer - 4} volume={0.3} />
+			<Sfx name="blip" at={atQuer + 22} volume={0.45} />
+			<Sfx name="click" at={atSchul - 4} volume={0.4} />
 		</AbsoluteFill>
 	);
 };
@@ -311,9 +421,7 @@ export const GewerkschaftScene: React.FC<SceneProps> = ({cues, durationInFrames}
 				<BockenheimerDepot cam={cam} crowd={interpolate(frame, [0, 30], [0.2, 1], clamp)} lights={lights} />
 			</AbsoluteFill>
 			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.95) 0%, rgba(4,6,20,0.88) 24%, rgba(4,6,20,0.25) 38%, rgba(4,6,20,0) 46%, rgba(4,6,20,0) 66%, rgba(4,6,20,0.75) 76%, rgba(4,6,20,0.9) 100%)'}} />
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 290}}>
-				<Tag text="FREITAG · 17:30 UHR" color={EV.gewerkschaft.color} icon="clock" />
-			</div>
+			<SceneTag text="FREITAG · 17:30 UHR" color={EV.gewerkschaft.color} icon="clock" />
 			<OrientationStrip active="gewerkschaft" />
 			<EventHeader id="gewerkschaft" kicker="17:30–21:30" title="GEWERKSCHAFTSJUGEND" titleSize={56} place="AM BOCKENHEIMER DEPOT" />
 			<In at={atWehr - 4} style={{left: LAYOUT.left, top: 1000}}>
@@ -395,9 +503,7 @@ export const GenZScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			{/* unter dem Skyline-Bild: dunkles Wasser bis zum Bildrand */}
 			<div style={{position: 'absolute', left: 0, right: 0, top: skyTop + 1090 * k, bottom: 0, background: 'linear-gradient(#0C1236, #070A20)'}} />
 			<TopShade strength={0.9} bottom={0.55} />
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 290}}>
-				<Tag text="FREITAG · 14:00 UHR" color={RED} icon="clock" />
-			</div>
+			<SceneTag text="FREITAG · 14:00 UHR" color={RED} icon="clock" />
 			<OrientationStrip active="genz" />
 			{/* Titel */}
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 536, opacity: Math.min(1, title * 1.7), translate: `0 ${(1 - title) * 30}px`}}>
@@ -537,9 +643,7 @@ export const DemandsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 				<NightCity mood={blendMood(AFTERNOON, MOODS.dusk, 0.55)} progress={0.55 + drift * 0.2} litRatio={0.3} bokeh={8} showPromenade={false} />
 			</AbsoluteFill>
 			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.95) 0%, rgba(4,6,20,0.85) 30%, rgba(4,6,20,0.7) 60%, rgba(4,6,20,0.92) 100%)'}} />
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 290}}>
-				<Tag text="GEN Z REGELT · WOFÜR?" color={RED} icon="megaphone" />
-			</div>
+			<SceneTag text="GEN Z REGELT · WOFÜR?" color={RED} icon="megaphone" />
 			<OrientationStrip active="genz" />
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 540, display: 'flex', alignItems: 'center', gap: 14}}>
 				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 60, color: COLORS.text, whiteSpace: 'nowrap'}}>DIE FORDERUNGEN</span>
@@ -616,11 +720,9 @@ export const RulesScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					<line key={i} x1={0} y1={i * 84 + drift * 84} x2={1080} y2={i * 84 + drift * 84} stroke="#6A7BD8" strokeWidth={1} />
 				))}
 			</svg>
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 290}}>
-				<Tag text="AUFLAGEN DER STADT" color={BLUE} icon="shield" />
-			</div>
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 410}}>
-				<DayTimeline events={EVENTS} width={LAYOUT.width} size={64} pulse={EVENTS.map((_, i) => interpolate(pulseAll, [i * 0.15, i * 0.15 + 0.4], [0, 1], clamp))} />
+			<SceneTag text="AUFLAGEN DER STADT" color={BLUE} icon="shield" />
+			<div style={{position: 'absolute', left: LAYOUT.left, top: 380}}>
+				<DayTimeline events={EVENTS} width={LAYOUT.width} size={64} done={ORDER} pulse={EVENTS.map((_, i) => interpolate(pulseAll, [i * 0.15, i * 0.15 + 0.4], [0, 1], clamp))} />
 			</div>
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 600, display: 'flex', alignItems: 'center', gap: 14}}>
 				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 58, color: COLORS.text, whiteSpace: 'nowrap'}}>FÜR ALLE VIER GILT:</span>
@@ -655,116 +757,288 @@ export const RulesScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	);
 };
 
-/* ------------------------------------------------------------------ Szene 7: Batman-Gag */
+/* ------------------------------------------------------------------ Szene 8: Batman – Younes' eigene TikTok-Erzählung */
+
+const VIOLET = ACCENT.law;
+const ORANGE = '#FF8A3D';
+
+/** Eigenes kleines Masken-Symbol (Kostüm-Maske mit kurzen Ohren) – bewusst KEIN Fledermaus-Logo. */
+const MaskGlyph: React.FC<{size: number; color?: string}> = ({size, color = '#FFF4C8'}) => (
+	<svg width={size} height={size * 0.62} viewBox="0 0 100 62">
+		<path d="M6 30 Q8 10 24 8 L30 0 L36 10 H64 L70 0 L76 8 Q92 10 94 30 Q92 52 70 54 Q58 54 50 44 Q42 54 30 54 Q8 52 6 30 Z" fill={color} />
+		<path d="M24 28 Q30 22 40 28 Q32 36 24 28 Z M60 28 Q70 22 76 28 Q68 36 60 28 Z" fill="#141A3A" />
+	</svg>
+);
+
+/** Stilisiertes Wohnhaus bei Nacht (Illustration), ein Fenster warm erleuchtet. */
+const ApartmentBlock: React.FC<{lit: number}> = ({lit}) => {
+	const frame = useCurrentFrame();
+	return (
+		<svg width={560} height={760} viewBox="0 0 560 760" style={{overflow: 'visible'}}>
+			<rect x={40} y={60} width={480} height={700} fill="#161C42" />
+			<rect x={40} y={60} width={480} height={18} fill="#232B5C" />
+			<rect x={20} y={44} width={520} height={20} fill="#0E1332" />
+			{new Array(5).fill(0).map((_, r) =>
+				new Array(4).fill(0).map((__, c) => {
+					const key = r * 4 + c;
+					const special = r === 3 && c === 2;
+					const on = special ? lit : ((key * 37) % 7) / 10;
+					return <rect key={key} x={80 + c * 110} y={110 + r * 118} width={70} height={80} rx={4} fill={special ? mix('#2A3366', '#FFD27A', lit * (0.85 + 0.15 * Math.sin(frame / 5))) : mix('#20285A', '#FFE3A0', on > 0.45 ? 0.55 : 0)} />;
+				}),
+			)}
+			<rect x={235} y={640} width={90} height={120} rx={6} fill="#3A2A22" />
+			<rect x={225} y={630} width={110} height={12} fill="#2A3366" />
+			<circle cx={280} cy={620} r={10} fill="#FFE3A0" opacity={0.9} />
+		</svg>
+	);
+};
+
+/** 2,5D-Wohnungstür (Illustration): Rahmen mit Tiefe, Türblatt mit Kassetten, Spion, Klingel, Deckenlicht, Fußmatte. */
+const Door25D: React.FC<{ring: number}> = ({ring}) => {
+	const frame = useCurrentFrame();
+	const press = ring > 0 && ring < 1 ? Math.sin(ring * Math.PI) : 0;
+	return (
+		<div style={{position: 'relative', width: 560, height: 760, perspective: 1400}}>
+			{/* Lichtkegel */}
+			<div style={{position: 'absolute', left: 80, top: -40, width: 400, height: 820, background: 'radial-gradient(ellipse 50% 60% at 50% 0%, rgba(255,226,170,0.32), rgba(255,226,170,0) 70%)'}} />
+			<div style={{position: 'absolute', left: 90, top: 60, width: 380, height: 640, transformStyle: 'preserve-3d', rotate: '0deg', transform: 'rotateY(-16deg)'}}>
+				{/* Rahmen-Tiefe (gestapelte Ebenen) */}
+				{[0, 1, 2, 3].map((i) => (
+					<div key={i} style={{position: 'absolute', inset: -22, borderRadius: 6, background: i === 3 ? '#C9B79A' : '#8E7B62', transform: `translateZ(${-6 - i * 6}px)`, opacity: 0.9}} />
+				))}
+				<div style={{position: 'absolute', inset: -22, borderRadius: 6, background: 'linear-gradient(90deg, #D8C8AA, #BBA886)', transform: 'translateZ(0px)'}} />
+				{/* Türblatt */}
+				<div style={{position: 'absolute', inset: 0, borderRadius: 4, background: 'linear-gradient(100deg, #6A4630 0%, #5A3A26 60%, #4A2E1E 100%)', boxShadow: 'inset 0 0 40px rgba(0,0,0,0.45)', transform: 'translateZ(2px)'}}>
+					{[0, 1].map((r) => (
+						<div key={r} style={{position: 'absolute', left: 44, right: 44, top: 50 + r * 290, height: 240, borderRadius: 6, border: '5px solid #3E2618', boxShadow: 'inset 0 0 18px rgba(0,0,0,0.4), 0 1px 0 rgba(255,255,255,0.08)'}} />
+					))}
+					<div style={{position: 'absolute', left: '50%', top: 130, width: 18, height: 18, marginLeft: -9, borderRadius: 9, background: '#C9C2B0', border: '3px solid #2A1A10'}} />
+					<div style={{position: 'absolute', right: 34, top: 330, width: 64, height: 18, borderRadius: 9, background: 'linear-gradient(#E8D9A8, #B39A5A)', boxShadow: '0 4px 8px rgba(0,0,0,0.5)'}} />
+				</div>
+			</div>
+			{/* Klingel an der Wand rechts */}
+			<div style={{position: 'absolute', left: 498, top: 360, width: 40, height: 70, borderRadius: 8, background: '#2A3150', border: '2px solid #4A5280', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+				<div style={{width: 20, height: 20, borderRadius: 10, background: press > 0 ? '#FFE3A0' : '#9AA6CC', scale: String(1 - 0.2 * press), boxShadow: press > 0 ? `0 0 ${24 * press}px #FFE3A0` : 'none'}} />
+			</div>
+			{/* Klingel-Wellen */}
+			{ring > 0 && ring < 1
+				? [0, 1, 2].map((i) => {
+						const t = (ring * 2 + i * 0.33) % 1;
+						return <div key={i} style={{position: 'absolute', left: 518 - 30 - t * 60, top: 395 - 30 - t * 60, width: 60 + t * 120, height: 60 + t * 120, borderRadius: '50%', border: `3px solid ${withAlpha('#FFE3A0', 0.7 * (1 - t))}`}} />;
+					})
+				: null}
+			{/* Fußmatte */}
+			<div style={{position: 'absolute', left: 150, top: 716, width: 280, height: 34, borderRadius: 6, background: '#3A3A46', transform: 'perspective(400px) rotateX(55deg)', opacity: 0.9}} />
+			<div style={{position: 'absolute', left: 0, right: 0, top: 740 + Math.sin(frame / 30) * 0, height: 30, background: 'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0))'}} />
+		</div>
+	);
+};
+
+/** Stilisiertes Smartphone mit eigener Nachbildung seines Videos (kein Screenshot, keine Logos, kein Gesicht). */
+const PhoneHausarrest: React.FC<{on: number}> = ({on}) => {
+	const frame = useCurrentFrame();
+	const W = 350;
+	const H = 700;
+	return (
+		<div style={{position: 'relative', width: W, height: H, borderRadius: 52, background: '#0A0C16', border: '6px solid #2C3254', boxShadow: '0 40px 90px rgba(0,0,0,0.6), 0 0 40px rgba(183,148,246,0.25)', overflow: 'hidden', opacity: on, translate: `0 ${(1 - on) * 80}px`, rotate: `${(1 - on) * 6}deg`}}>
+			{/* Bildschirm: Zimmer bei Nacht mit Lampe, Umhang-Figur sitzt zu Hause */}
+			<div style={{position: 'absolute', inset: 0, background: 'linear-gradient(#1A1E3C, #2A2240 60%, #161226)'}} />
+			<div style={{position: 'absolute', left: 40, top: 120, width: 120, height: 150, borderRadius: 8, background: 'linear-gradient(#24305E, #141A3A)', border: '4px solid #3A3250'}} />
+			<div style={{position: 'absolute', right: 30, top: 300, width: 180, height: 180, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,214,150,0.35), rgba(255,214,150,0) 70%)'}} />
+			<svg width={W} height={H} style={{position: 'absolute', inset: 0}}>
+				<rect x={30} y={520} width={290} height={70} rx={14} fill="#3A2E4A" />
+				<CapeFigure x={175} y={560} h={250} step={frame / 10} wind={0.2} />
+			</svg>
+			{/* Einblendung wie im Original-Titel */}
+			<div style={{position: 'absolute', left: 0, right: 0, top: 210, display: 'flex', justifyContent: 'center'}}>
+				<span style={{padding: '6px 14px', borderRadius: 8, background: 'rgba(0,0,0,0.55)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: '#FFFFFF', textShadow: '0 3px 0 #000, 0 0 12px rgba(0,0,0,0.9)', whiteSpace: 'nowrap', scale: String(0.9 + 0.1 * on)}}>{BATMAN.title}</span>
+			</div>
+			{/* neutrale App-Elemente rechts (keine Logos) */}
+			{['♥', '💬', '↗'].map((g, i) => (
+				<div key={g} style={{position: 'absolute', right: 14, top: 360 + i * 74, width: 52, height: 52, borderRadius: 26, background: 'rgba(255,255,255,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 26, color: '#FFFFFF'}}>{g}</div>
+			))}
+			<div style={{position: 'absolute', left: 22, bottom: 34, fontFamily: FONTS.heading, fontWeight: 800, fontSize: 24, color: '#FFFFFF', textShadow: '0 2px 6px rgba(0,0,0,0.9)'}}>{BATMAN.handle}</div>
+			<div style={{position: 'absolute', left: '50%', top: 12, width: 110, height: 26, marginLeft: -55, borderRadius: 13, background: '#000'}} />
+		</div>
+	);
+};
 
 export const BatmanScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const {fps} = useVideoConfig();
-	const b2 = cue(cues, 'b2', 100);
-	const atNicht = wordFrame(cues, 'nicht', 80);
-	const atHalloween = wordFrame(cues, 'Halloween', b2.from + 8);
-	const atPolizei = wordFrame(cues, 'Polizei', atHalloween + 30);
-	const atMit = wordFrame(cues, 'mitgenommen', atPolizei + 12);
+	const b2 = cue(cues, 'b2', 60);
+	const b3 = cue(cues, 'b3', 150);
+	const b4 = cue(cues, 'b4', 350);
+	const b5 = cue(cues, 'b5', 430);
+	const atKling = wordFrame(cues, 'geklingelt', b3.from + 50);
+	const at20 = wordFrame(cues, '20', atKling + 20);
+	const atZweimal = wordFrame(cues, 'zweimal', at20 + 40);
+	const atHaus = wordFrame(cues, 'Hausarrest', b4.from + 30);
 	const atOhne = wordFrame(cues, 'ohne', durationInFrames - 50);
-	const back = interpolate(frame, [atHalloween - 8, atHalloween + 10], [0, 1], {...clamp, easing: EASE_IN_OUT});
-	const title = springIn({frame, fps, delay: 0, damping: 14, stiffness: 180});
-	const q = springIn({frame, fps, delay: atNicht - 4, damping: 11, stiffness: 200});
-	// Abführen: Gruppe geht von links zum Wagen, verschwindet bei „mitgenommen“
-	const walk = interpolate(frame, [atHalloween, atMit + 6], [0, 1], clamp);
-	const inVan = interpolate(frame, [atMit + 4, atMit + 14], [1, 0], clamp);
-	const gx = interpolate(walk, [0, 1], [170, 560]);
-	const ohne = springIn({frame, fps, delay: atOhne - 6, damping: 10, stiffness: 220});
-	const beam = Math.sin(frame / 16) * 8;
+	const atFreitag = wordFrame(cues, 'Freitag', b5.from + 20);
+	// Phasen: A Skyline/Symbol → B Quellenkarte → C Tür → D Smartphone → E Kalender + Pointe
+	const toB = interpolate(frame, [b2.from - 8, b2.from + 6], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const toC = interpolate(frame, [b3.from - 8, b3.from + 8], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const toD = interpolate(frame, [b4.from - 8, b4.from + 8], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const toE = interpolate(frame, [atFreitag - 8, atFreitag + 6], [0, 1], {...clamp, easing: EASE_IN_OUT});
+	const dark = interpolate(frame, [0, 20], [0, 1], clamp) * (1 - toE * 0.7);
+	const mask = springIn({frame, fps, delay: 4, damping: 11, stiffness: 190});
+	const title = springIn({frame, fps, delay: 0, damping: 14, stiffness: 190});
+	const card = springIn({frame, fps, delay: b2.from - 4, damping: 14, stiffness: 180});
+	const head = springIn({frame, fps, delay: atKling + 2, damping: 13, stiffness: 200});
+	const ring = interpolate(frame, [atKling - 2, atKling + 26], [0, 1], clamp);
+	const officers = interpolate(frame, [b3.from + 2, b3.from + 16], [0, 1], clamp);
+	const phone = springIn({frame, fps, delay: b4.from - 6, damping: 14, stiffness: 170});
+	const quote = springIn({frame, fps, delay: b4.from + 10, damping: 14, stiffness: 180});
+	const cal = springIn({frame, fps, delay: atFreitag - 4, damping: 12, stiffness: 170});
+	const stamp = springIn({frame, fps, delay: atFreitag + 14, damping: 10, stiffness: 230});
+	const punch = springIn({frame, fps, delay: atOhne - 6, damping: 11, stiffness: 210});
+	const claimAt = [at20 - 4, atZweimal - 4, atZweimal + 22];
+	// Kamera: Fahrt aufs Wohnhaus (A/B), Zoom auf die Tür (C), zurück zur Skyline (E)
+	const camScale = interpolate(frame, [0, b2.from + 10, b3.from + 10], [1, 1.12, 1.3], clamp) * (1 - toE * 0.25);
+	const housePos = interpolate(toB, [0, 1], [180, 0]);
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
-			<AbsoluteFill style={{scale: String(1.08 - back * 0.05), transformOrigin: '50% 60%'}}>
-				<NightCity mood={blendMood(MOODS.calm, MOODS.police, back * 0.6)} progress={0.5 + frame / 900} litRatio={0.38} showMoon bokeh={10} showPromenade={false} />
+			<AbsoluteFill style={{scale: String(camScale), transformOrigin: '50% 70%'}}>
+				<NightCity mood={blendMood(MOODS.dusk, MOODS.calm, 0.6 * dark)} progress={0.5 + frame / 1200} litRatio={0.3 + 0.2 * toE} showMoon bokeh={10} showPromenade={false} />
 			</AbsoluteFill>
-			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.9) 0%, rgba(4,6,20,0.55) 28%, rgba(4,6,20,0.3) 46%, rgba(4,6,20,0.75) 64%, rgba(4,6,20,0.95) 100%)'}} />
-			{/* Suchscheinwerfer mit Fragezeichen (eigene Gestaltung, kein Logo) */}
-			<div style={{position: 'absolute', inset: 0, opacity: 1 - back}}>
-				<svg width={1080} height={1920} style={{position: 'absolute', inset: 0}}>
-					<defs>
-						<linearGradient id="bm-beam" x1={0} x2={0} y1={1} y2={0}>
-							<stop offset={0} stopColor="#FFF4C8" stopOpacity={0.05} />
-							<stop offset={1} stopColor="#FFF4C8" stopOpacity={0.28} />
-						</linearGradient>
-					</defs>
-					<path d={`M500 1240 L${470 + beam} 560 L${730 + beam} 560 L560 1240 Z`} fill="url(#bm-beam)" />
-					<ellipse cx={600 + beam} cy={590} rx={150} ry={92} fill="#FFF4C8" opacity={0.85} />
-					<text x={600 + beam} y={636} textAnchor="middle" fontFamily={FONTS.heading} fontWeight={900} fontSize={120} fill="#141A3A">
-						?
-					</text>
-				</svg>
-				{/* gestrichelte Umhang-Silhouette auf dem Dach: „ob er kommt?“ */}
-				<svg width={1080} height={1920} style={{position: 'absolute', inset: 0, overflow: 'visible', opacity: 0.55 + 0.35 * Math.sin(frame / 7)}}>
-					<rect x={700} y={1150} width={300} height={14} rx={4} fill="#1A2046" />
-					<CapeFigure x={850} y={1150} h={200} step={0} wind={0.4 + 0.3 * Math.sin(frame / 11)} outline />
-				</svg>
-				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 720, opacity: Math.min(1, title * 1.6), translate: `0 ${(1 - title) * 30}px`}}>
-					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 80, lineHeight: 1, color: COLORS.text, textShadow: '0 8px 30px rgba(0,0,0,0.9)', whiteSpace: 'nowrap'}}>BATMAN AM 20.11.?</div>
-					{frame >= atNicht - 5 ? (
-						<div style={{marginTop: 14, display: 'inline-flex', alignItems: 'center', gap: 12, padding: '8px 18px', borderRadius: 14, background: ACCENT.law, scale: String(0.8 + 0.2 * q), opacity: Math.min(1, q * 2)}}>
-							<P2Icon name="info" size={32} color={ACCENT.ink} stroke={2.6} />
-							<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, color: ACCENT.ink}}>WISSEN WIR (NOCH) NICHT</span>
+			<AbsoluteFill style={{background: `rgba(4,6,20,${0.35 + 0.4 * dark})`}} />
+			{/* A: Masken-Symbol am Himmel + Titel */}
+			<div style={{position: 'absolute', left: 0, right: 0, top: 430, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, opacity: (1 - toB) * Math.min(1, mask * 2)}}>
+				<div style={{padding: 26, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,244,200,0.35), rgba(255,244,200,0) 70%)', scale: String(0.6 + 0.4 * mask)}}>
+					<MaskGlyph size={150} />
+				</div>
+				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 84, color: COLORS.text, textShadow: '0 8px 30px rgba(0,0,0,0.9)', opacity: Math.min(1, title * 1.6)}}>UND BATMAN?</div>
+			</div>
+			{/* A/B: Wohnhaus, ein Fenster leuchtet */}
+			<div style={{position: 'absolute', left: 260, top: 760 + housePos, opacity: (1 - toC) * interpolate(frame, [6, 20], [0, 1], clamp), scale: String(0.85 + 0.15 * toB), transformOrigin: '50% 100%'}}>
+				<ApartmentBlock lit={interpolate(frame, [b2.from, b2.from + 20], [0.2, 1], clamp)} />
+			</div>
+			{/* B: Quellenkarte @ichbinyounes */}
+			{frame >= b2.from - 6 ? (
+				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 400, opacity: Math.min(1, card * 1.8) * (1 - toD), translate: `${(1 - card) * -80}px 0`}}>
+					<Card color={VIOLET} style={{padding: '16px 20px', display: 'flex', alignItems: 'center', gap: 18}} glow={0.3}>
+						<div style={{width: 96, height: 96, borderRadius: 48, background: `radial-gradient(circle at 35% 30%, ${VIOLET}, #3A2470)`, border: '4px solid #FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+							<MaskGlyph size={62} color="#141A3A" />
+						</div>
+						<div style={{flex: 1, minWidth: 0}}>
+							<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: COLORS.text}}>{BATMAN.handle}</div>
+							<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, color: VIOLET, letterSpacing: 1}}>{BATMAN.who}</div>
+							<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>hat sich selbst auf TikTok gemeldet</div>
+						</div>
+						<P2Icon name="chat" size={44} color={VIOLET} />
+					</Card>
+					{/* C: zentrale Aussage + Punkte (seine eigene Schilderung) */}
+					{frame >= atKling ? (
+						<div style={{marginTop: 16, opacity: Math.min(1, head * 1.8), translate: `0 ${(1 - head) * 24}px`}}>
+							<Card color={ORANGE} style={{padding: '14px 20px'}} glow={0.25}>
+								<div style={{display: 'flex', alignItems: 'center', gap: 12}}>
+									<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 42, color: COLORS.text, whiteSpace: 'nowrap'}}>{BATMAN.headline}</span>
+								</div>
+								<div style={{marginTop: 6}}>
+									<Chip kind="LAUT YOUNES" size={16} />
+								</div>
+								<div style={{marginTop: 10, display: 'flex', flexDirection: 'column', gap: 8}}>
+									{BATMAN.claims.map((c, i) => {
+										const o = interpolate(frame, [claimAt[i], claimAt[i] + 8], [0, 1], clamp);
+										if (o <= 0) return null;
+										return (
+											<div key={c} style={{display: 'flex', alignItems: 'center', gap: 12, opacity: o, translate: `${(1 - o) * 30}px 0`}}>
+												<div style={{width: 30, height: 30, borderRadius: 8, background: withAlpha(ORANGE, 0.25), border: `2px solid ${ORANGE}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 18, color: ORANGE}}>{i + 1}</div>
+												<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 31, color: COLORS.text}}>{c}</span>
+											</div>
+										);
+									})}
+								</div>
+							</Card>
 						</div>
 					) : null}
 				</div>
-			</div>
-			{/* Rückblick Halloween: Umhang-Figur wird abgeführt (Illustration) */}
-			{frame >= atHalloween - 8 ? (
-				<div style={{position: 'absolute', inset: 0, opacity: back}}>
-					<div style={{position: 'absolute', left: LAYOUT.left, top: 540, display: 'flex', alignItems: 'center', gap: 12}}>
-						<span style={{padding: '6px 14px', borderRadius: 10, background: '#FF8A3D', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, color: ACCENT.ink}}>RÜCKBLICK: HALLOWEEN, 31.10.</span>
-					</div>
-					<div style={{position: 'absolute', left: 0, right: 0, top: 1060, height: 200, background: 'linear-gradient(#1A2042, #0C1030)'}} />
-					<div style={{position: 'absolute', left: 560, top: 905}}>
-						<PoliceVan width={420} phase={frame} lights />
-					</div>
-					<svg width={1080} height={1920} style={{position: 'absolute', inset: 0, overflow: 'visible'}}>
-						<g opacity={inVan}>
-							<OfficerFigure x={gx - 86} y={1160} h={190} step={frame / 6} />
-							<CapeFigure x={gx} y={1160} h={190} step={frame / 6} wind={walk} />
-							<OfficerFigure x={gx + 86} y={1160} h={190} step={frame / 6 + 1} />
-						</g>
+			) : null}
+			{/* C: Tür mit Polizeifiguren (Illustration seiner Erzählung) */}
+			{toC > 0 && toD < 1 ? (
+				<div style={{position: 'absolute', left: 250, top: 800, opacity: toC * (1 - toD), scale: String(0.64 + 0.06 * toC), transformOrigin: '50% 0%'}}>
+					<Door25D ring={ring} />
+					<svg width={560} height={760} style={{position: 'absolute', inset: 0, overflow: 'visible', opacity: officers, filter: 'brightness(1.6) saturate(1.2)'}}>
+						<ellipse cx={280} cy={700} rx={230} ry={30} fill="rgba(255,226,170,0.12)" />
+						<OfficerFigure x={70} y={720} h={380} step={frame / 14} />
+						<OfficerFigure x={500} y={728} h={390} step={frame / 14 + 2} dir={-1} />
 					</svg>
-					<In at={atPolizei - 4} dy={20} style={{left: LAYOUT.left, top: 640, width: LAYOUT.width}} out={interpolate(frame, [atOhne - 8, atOhne], [1, 0], clamp)}>
-						<Card color={ACCENT.law} style={{padding: '12px 18px'}} glow={0.25}>
-							<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, lineHeight: 1.08, color: COLORS.text}}>DEMONSTRIERENDE PERSON IM BATMAN-KOSTÜM VON DER POLIZEI ABGEFÜHRT</div>
-							<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>laut Reuters-Bildunterschrift (31.10.) · abgeführt ≠ schuldig</div>
-						</Card>
-					</In>
+					{ring > 0 && ring < 1 ? (
+						<div style={{position: 'absolute', left: 0, right: 0, top: -10, textAlign: 'center', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 72, color: '#FFE3A0', rotate: '-6deg', textShadow: '0 6px 20px rgba(0,0,0,0.9)', opacity: Math.min(1, Math.sin(ring * Math.PI) * 2.2), scale: String(0.85 + 0.15 * Math.sin(ring * Math.PI))}}>DING-DONG!</div>
+					) : null}
 				</div>
 			) : null}
-			{/* Pointe: diesmal ohne Batman */}
-			{frame >= atOhne - 7 ? (
-				<div style={{position: 'absolute', left: 0, right: 0, top: 690, display: 'flex', justifyContent: 'center', opacity: Math.min(1, ohne * 2), scale: String(1.5 - 0.5 * ohne), rotate: '-5deg'}}>
-					<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '12px 22px', borderRadius: 18, border: `5px solid ${ACCENT.law}`, background: 'rgba(14,8,30,0.92)'}}>
-						<svg width={70} height={110} viewBox="-40 -115 80 120" style={{overflow: 'visible'}}>
-							<CapeFigure x={0} y={0} h={100} outline />
-							<line x1={-34} y1={-4} x2={34} y2={-108} stroke={ACCENT.no} strokeWidth={7} strokeLinecap="round" />
-						</svg>
-						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 50, color: COLORS.text, whiteSpace: 'nowrap'}}>20.11.: OHNE BATMAN?</span>
+			{/* D: sein neues TikTok (stilisiert) + Zitat */}
+			{toD > 0 && toE < 1 ? (
+				<div style={{position: 'absolute', inset: 0, opacity: toD * (1 - toE)}}>
+					<div style={{position: 'absolute', left: LAYOUT.left, top: 410, display: 'flex', alignItems: 'center', gap: 12}}>
+						<span style={{padding: '6px 14px', borderRadius: 10, background: VIOLET, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 28, color: ACCENT.ink}}>SEIN NEUES TIKTOK</span>
+						<Chip kind="ILLUSTRATION" size={15} />
 					</div>
+					<div style={{position: 'absolute', left: 520, top: 480}}>
+						<PhoneHausarrest on={Math.min(1, phone * 1.3)} />
+					</div>
+					<div style={{position: 'absolute', left: LAYOUT.left, width: 430, top: 520, opacity: Math.min(1, phone * 1.6)}}>
+						<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Titel im Video:</div>
+						<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 58, lineHeight: 1.02, color: COLORS.text, textShadow: '0 6px 24px rgba(0,0,0,0.9)'}}>„20.11<br />HAUSARREST“</div>
+					</div>
+					{frame >= b4.from + 8 ? (
+						<div style={{position: 'absolute', left: LAYOUT.left, width: 430, top: 700, opacity: Math.min(1, quote * 1.7), translate: `0 ${(1 - quote) * 20}px`}}>
+							<Card color={ORANGE} style={{padding: '12px 16px'}} glow={0.2}>
+								<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 29, lineHeight: 1.18, color: COLORS.text}}>{BATMAN.quote}</div>
+								<div style={{marginTop: 6, fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>– Younes in seinem Video</div>
+							</Card>
+						</div>
+					) : null}
 				</div>
 			) : null}
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 1130, display: 'flex', gap: 10}}>
-				<Chip kind="GAG" size={17} />
-				<Chip kind="ILLUSTRATION" size={17} />
+			{/* E: Kalender 20.11. + Umhang-Figur mit „Hausarrest“-Stempel + Pointe */}
+			{toE > 0 ? (
+				<div style={{position: 'absolute', inset: 0, opacity: toE}}>
+					<div style={{position: 'absolute', left: 110, top: 430, opacity: Math.min(1, cal * 1.6), scale: String(0.7 + 0.3 * cal), rotate: `${(1 - cal) * 12}deg`, transformOrigin: '50% 0%'}}>
+						<CalendarBlock day="20" month="NOVEMBER" weekday="FREITAG" width={300} accent={RED} tilt={-5} />
+					</div>
+					<div style={{position: 'absolute', left: 520, top: 380}}>
+						<svg width={380} height={520} viewBox="-190 -500 380 520" style={{overflow: 'visible'}}>
+							<ellipse cx={0} cy={0} rx={130} ry={18} fill="rgba(0,0,0,0.45)" />
+							<CapeFigure x={0} y={0} h={440} step={0} wind={0.35 + 0.15 * Math.sin(frame / 9)} />
+						</svg>
+						{frame >= atFreitag + 12 ? (
+							<div style={{position: 'absolute', left: -20, top: 200, padding: '8px 18px', borderRadius: 12, border: `6px solid ${RED}`, background: 'rgba(30,6,12,0.82)', rotate: '-14deg', scale: String(1.8 - 0.8 * stamp), opacity: Math.min(1, stamp * 2), fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, letterSpacing: 2, color: RED, whiteSpace: 'nowrap', boxShadow: `0 0 40px ${withAlpha(RED, 0.4)}`}}>„HAUSARREST“</div>
+						) : null}
+					</div>
+					{frame >= atOhne - 7 ? (
+						<div style={{position: 'absolute', left: 0, right: 0, top: 960, display: 'flex', justifyContent: 'center', opacity: Math.min(1, punch * 2), scale: String(1.4 - 0.4 * punch)}}>
+							<div style={{padding: '12px 26px', borderRadius: 18, background: RED, boxShadow: '0 20px 50px rgba(255,59,78,0.45)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, color: '#FFFFFF', whiteSpace: 'nowrap'}}>{BATMAN.punch}</div>
+						</div>
+					) : null}
+				</div>
+			) : null}
+			<div style={{position: 'absolute', left: LAYOUT.left, top: 1146}}>
+				<Chip kind="ILLUSTRATION" size={16} />
 			</div>
-			<SourceBar text={`${BATMAN.note} (Reuters via The Independent; heute.at)`} at={8} />
-			<Sfx name="whoosh" at={0} volume={0.35} />
-			<Sfx name="blip" at={6} volume={0.4} />
-			<Sfx name="pop" at={atNicht - 4} volume={0.5} />
-			<Sfx name="whoosh" at={atHalloween - 8} volume={0.35} />
-			<Sfx name="paper" at={atPolizei - 4} volume={0.4} />
-			<Sfx name="click" at={atMit + 6} volume={0.45} />
-			<Sfx name="stamp" at={atOhne - 4} volume={0.55} />
+			<SourceBar text={BATMAN.source} at={b2.from} />
+			<Sfx name="whoosh" at={0} volume={0.4} />
+			<Sfx name="blip" at={6} volume={0.45} />
+			<Sfx name="notify" at={b2.from - 4} volume={0.5} />
+			<Sfx name="whoosh" at={b3.from - 6} volume={0.35} />
+			<Sfx name="notify" at={atKling - 2} volume={0.65} />
+			<Sfx name="pop" at={atKling + 2} volume={0.45} />
+			{claimAt.map((c, i) => (
+				<Sfx key={i} name="click" at={c} volume={0.4} />
+			))}
+			<Sfx name="paper" at={b4.from - 6} volume={0.45} />
+			<Sfx name="pop" at={b4.from + 10} volume={0.4} />
+			<Sfx name="click" at={atHaus} volume={0.4} />
+			<Sfx name="whoosh" at={atFreitag - 8} volume={0.35} />
+			<Sfx name="stamp" at={atFreitag + 14} volume={0.6} />
+			<Sfx name="softImpact" at={atOhne - 4} volume={0.6} />
 		</AbsoluteFill>
 	);
 };
 
-/* ------------------------------------------------------------------ Szene 8: Abo-Aufruf (offizielles Logo) */
+/* ------------------------------------------------------------------ Szene 9: Abo-Aufruf (offizielles Logo) */
 
 export const OutroScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();

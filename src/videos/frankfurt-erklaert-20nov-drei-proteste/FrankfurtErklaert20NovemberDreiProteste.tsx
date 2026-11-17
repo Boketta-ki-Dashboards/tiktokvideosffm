@@ -7,7 +7,7 @@ import {ensureFontsLoaded} from '../../theme/fonts';
 import {VIDEO} from '../../theme/tokens';
 import videos from '../../../config/videos.json';
 import {NOV20_KEYWORDS, NOV20_SCENES} from './plan';
-import {BatmanScene, CoverScene, DemandsScene, GenZScene, GewerkschaftScene, OutroScene, RulesScene, SchulstreikScene} from './scenes/Scenes';
+import {BatmanScene, CampusScene, CoverScene, DemandsScene, GenZScene, GewerkschaftScene, OutroScene, RulesScene, SchulstreikScene} from './scenes/Scenes';
 import script from './script.json';
 import voiceoverManifest from './voiceover.json';
 
@@ -16,18 +16,19 @@ ensureFontsLoaded();
 /**
  * Format B #09 „Proteste am 20.11. – 4 Proteste, 1 Freitag“ (Frankfurt, Stand 17.11.2026).
  * Erste Folge mit dem Serien-Overlay oben RECHTS unter der TikTok-Suchleiste (`badgePlacement: 'top-right'`).
- * Begründete Längen-Ausnahme (config/videos.json): Informationsteil ≤ 61,5 s, danach Abo-Aufruf, gesamt ≤ 64 s.
+ * Sonderausnahme Länge (config/videos.json, ausdrücklich vom Kanalbetreiber freigegeben): Informationsteil ≤ 69 s, danach Abo-Aufruf, gesamt ≤ 75 s.
  */
 export const NOV20_EPISODE: ErklaertEpisode = {
 	episode: '#09',
 	scenes: NOV20_SCENES,
 	keywords: NOV20_KEYWORDS,
-	components: {cover: CoverScene, schulstreik: SchulstreikScene, gewerkschaft: GewerkschaftScene, genz: GenZScene, demands: DemandsScene, rules: RulesScene, batman: BatmanScene, outro: OutroScene},
+	components: {cover: CoverScene, schulstreik: SchulstreikScene, campus: CampusScene, genz: GenZScene, demands: DemandsScene, gewerkschaft: GewerkschaftScene, rules: RulesScene, batman: BatmanScene, outro: OutroScene},
 	transitions: {
 		schulstreik: zoomThrough({strength: 0.3, blur: 4}),
-		gewerkschaft: whipPan(),
+		campus: whipPan(),
 		genz: zoomThrough({strength: 0.35, blur: 5}),
 		demands: whipPan(),
+		gewerkschaft: whipPan(),
 		rules: flashCut(),
 		batman: zoomThrough({strength: 0.3, blur: 4}),
 		outro: zoomThrough({strength: 0.3, blur: 4}),

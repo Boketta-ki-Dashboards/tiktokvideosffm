@@ -11,7 +11,7 @@ import {COVER_ZONE, FORMAT, LAYOUT} from '../src/formats/frankfurt-erklaert/them
 import {erklaertTimelineFor} from '../src/formats/frankfurt-erklaert/timeline.ts';
 import {dayTimelineGeometry, dayTimelineX} from '../src/formats/frankfurt-erklaert/visuals/day-timeline-geometry.ts';
 import {type VoiceoverManifest} from '../src/lib/script-timing.ts';
-import {COVER, DEMANDS, EVENTS, GENZ, GEWERK, SCHUL, SOURCES, STAND} from '../src/videos/frankfurt-erklaert-20nov-drei-proteste/content.ts';
+import {BATMAN, CAMPUS, COVER, DEMANDS, EVENTS, GENZ, GEWERK, SCHUL, SOURCES, STAND} from '../src/videos/frankfurt-erklaert-20nov-drei-proteste/content.ts';
 import {NOV20_COVER_LAYOUT as L} from '../src/videos/frankfurt-erklaert-20nov-drei-proteste/cover-layout.ts';
 import {NOV20_KEYWORDS, NOV20_SCENES} from '../src/videos/frankfurt-erklaert-20nov-drei-proteste/plan.ts';
 
@@ -24,6 +24,7 @@ const videos = JSON.parse(read('../config/videos.json'));
 const voice = {...JSON.parse(read('../config/voice.json')), ...JSON.parse(read('../config/voice-regeln.json'))};
 const sources = read(`${ref}sources.md`);
 const tiktok = read(`${ref}tiktok-text.md`);
+const transcript = read(`${ref}younes-transkript.md`);
 const scenesSrc = read(`${dir}scenes/Scenes.tsx`);
 const illuSrc = read(`${dir}visuals/Illustrations.tsx`);
 const compSrc = read(`${dir}FrankfurtErklaert20NovemberDreiProteste.tsx`);
@@ -35,11 +36,17 @@ const isAdam = String(manifest.source).startsWith('elevenlabs');
 const cfg = videos.FrankfurtErklaert20NovemberDreiProteste;
 const flat = (s: string) => s.replace(/\s+/g, ' ');
 
-test('Dramaturgie: Titelbild → Schulstreik (10/11 Uhr) → Gewerkschaftsjugend (17:30) → Gen Z (14 Uhr, längster Teil) → Auflagen → Batman-Gag → Abo-Aufruf', () => {
+test('Dramaturgie chronologisch: Titelbild → 10:00 → 11:00 → 14:00 Gen Z (längster Protest-Teil) → 17:30 → Auflagen → Batman → Abo-Aufruf', () => {
 	assert.deepEqual(
 		NOV20_SCENES.map((s) => s.id),
-		['cover', 'schulstreik', 'gewerkschaft', 'genz', 'demands', 'rules', 'batman', 'outro'],
+		['cover', 'schulstreik', 'campus', 'genz', 'demands', 'gewerkschaft', 'rules', 'batman', 'outro'],
 	);
+	assert.deepEqual(
+		script.segments.map((s: {id: string}) => s.id),
+		['hook1', 'hook2', 's1', 's2', 'c1', 'z1', 'z2', 'z3', 'g1', 'g2', 'z4', 'b1', 'b2', 'b3', 'b4', 'b5', 'cta'],
+	);
+	// kurze Pause nach der Begrüßung (Wunsch Kanalbetreiber), unter der Kurzformat-Grenze
+	assert.equal(script.segments[0].pauseAfterMs, 340);
 	for (const s of NOV20_SCENES) assert.ok(NOV20_KEYWORDS[s.id]?.length, `Schlüsselwörter für ${s.id}`);
 	for (const s of NOV20_SCENES.slice(1)) assert.ok((s.transitionInFrames ?? 0) <= 10);
 	assert.match(STAND, /17\.11\.2026/);
@@ -49,8 +56,10 @@ test('Dramaturgie: Titelbild → Schulstreik (10/11 Uhr) → Gewerkschaftsjugend
 			const s = manifest.segments.find((x) => x.id === id)!;
 			return sum + s.endMs - s.startMs;
 		}, 0);
-		const genz = dur(['z1', 'z2', 'z3', 'z4']);
-		assert.ok(genz > dur(['s1', 's2']) && genz > dur(['g1', 'g2']), 'Gen-Z-Teil ist der längste');
+		const genz = dur(['z1', 'z2', 'z3']);
+		assert.ok(genz > dur(['s1', 's2']) && genz > dur(['c1']) && genz > dur(['g1', 'g2']), 'Gen Z ist der längste der vier Protest-Teile');
+		const pause = manifest.segments[1].startMs - manifest.segments[0].endMs;
+		assert.ok(pause >= 300 && pause <= 400, `Pause nach Begrüßung ${pause} ms`);
 	}
 });
 
@@ -71,16 +80,27 @@ test('Vier getrennte Versammlungen laut Stadt, chronologisch – Titel „4 PROT
 	assert.ok(flat(sources).includes('Die Stadt Frankfurt hat für den 20. November insgesamt vier Versammlungen registriert'));
 });
 
-test('Schulstreik 10 Uhr und kleiner Zug 11 Uhr: Zahlen laut Stadt, Themen „laut Aufruf“', () => {
+test('Schulstreik 10 Uhr und kleiner Zug 11 Uhr als eigener Punkt: Zahlen laut Stadt, Themen „laut Aufruf“, Start/Ziel laut Anmeldung', () => {
 	assert.match(seg('s1'), /^Um 10 startet am Willy-Brandt-Platz der Schulstreik gegen die Wehrpflicht – laut Aufruf auch gegen Krieg und Sozialkürzungen\.$/);
-	assert.match(seg('s2'), /Bis zu 1\.200 sind angemeldet, Ziel ist der Campus Westend – dort startet ab 11 noch ein kleiner Zug mit 75 Leuten\./);
+	assert.equal(seg('s2'), 'Bis zu 1.200 sind angemeldet, Ziel ist der Campus Westend.');
+	assert.equal(seg('c1'), 'Dort zieht um 11 der Internationale Jugendverband mit 75 Leuten quer über den Campus – laut Stadt im Zusammenhang mit dem Schulstreik.');
 	assert.equal(SCHUL.count, 1200);
-	assert.equal(SCHUL.small.count, 75);
+	assert.equal(CAMPUS.count, 75);
+	assert.match(CAMPUS.by, /Internationaler Jugendverband/);
+	assert.match(CAMPUS.mapNote, /Verlauf schematisch/);
+	assert.match(CAMPUS.source, /© OpenStreetMap-Mitwirkende/);
+	// beide Punkte auf dem Campus Westend, rund 300 m auseinander (OSM)
+	const d = Math.hypot((CAMPUS.end.at[1] - CAMPUS.start.at[1]) * 71383, (CAMPUS.end.at[0] - CAMPUS.start.at[0]) * 110574);
+	assert.ok(d > 200 && d < 450, `${d} m`);
+	const map = JSON.parse(read('../src/data/maps/frankfurt-campus-westend.json'));
+	const {minlat, maxlat, minlon, maxlon} = map.meta.bbox;
+	for (const p of [CAMPUS.start, CAMPUS.end]) assert.ok(p.at[0] > minlat && p.at[0] < maxlat && p.at[1] > minlon && p.at[1] < maxlon, p.name);
 	assert.match(SCHUL.small.by, /Internationaler Jugendverband/);
 	assert.match(SCHUL.source, /Stadt Frankfurt laut t-online/);
 	for (const s of ['Die ver.di-Jugend Frankfurt und Region will von 10 bis 15 Uhr mit bis zu 1.200 Menschen vom Willy-Brandt-Platz zum Café Koz am Campus Westend ziehen.', 'Angemeldet sind 75 Teilnehmer.', 'Jugendliche streiken gegen Sozialkürzungen Wehrpflicht und Krieg.']) {
 		assert.ok(flat(sources).includes(s), `sources.md: „${s}“ fehlt`);
 	}
+	assert.ok(flat(sources).includes('Der Internationale Jugendverband plant von 11 bis 13.30 Uhr einen Demonstrationszug vom Theodor-W.-Adorno-Platz zum Gisèle-Freund-Platz.'));
 });
 
 test('Gewerkschaftsjugend 17:30: Bockenheimer DEPOT (nicht Warte), Motto laut Stadt, Route offen', () => {
@@ -113,17 +133,34 @@ test('Gen Z regelt: Weseler Werft laut Stadt, stationär statt Demozug, bis 16:3
 	for (const d of DEMANDS) for (const q of d.sub.match(/„([^“]+)“/g) ?? []) assert.ok(sources.includes(q.slice(1, -1)), q);
 });
 
-test('Batman-Gag: belegte Grundlage (Reuters/heute.at), als GAG/ILLUSTRATION gekennzeichnet, kein Logo, keine Person/Accounts, kein Türklopfen', () => {
-	assert.match(seg('b1'), /^Ob Batman am 20\. dabei ist, wissen wir leider immer noch nicht\.$/);
-	assert.match(seg('b2'), /an Halloween hat ihn die Polizei ja schon mitgenommen/);
-	assert.doesNotMatch(all, /Tür|geklopft|klopf/i);
-	assert.match(scenesSrc, /<Chip kind="GAG"/);
-	assert.match(scenesSrc, /abgeführt ≠ schuldig/);
-	assert.doesNotMatch(scenesSrc + illuSrc + all, /ichbinyounes|Younes|bat-?logo|batsignal/i);
+test('Batman: Younes’ eigene TikTok-Erzählung („20.11 Hausarrest“) – nur belegte Aussagen, als LAUT YOUNES gekennzeichnet, kein Logo, keine Begründungen', () => {
+	assert.equal(seg('b1'), 'Und was ist eigentlich mit Batman?');
+	assert.equal(seg('b2'), 'Der Batman von Halloween hat sich selbst auf TikTok gemeldet.');
+	assert.equal(seg('b3'), 'Younes erzählt, die Polizei habe bei ihm geklingelt: Am 20. dürfe er nicht nach Frankfurt und müsse sich zweimal melden.');
+	assert.equal(seg('b4'), 'Sein neues Video heißt: „20.11 Hausarrest“.');
+	assert.match(seg('b5'), /Sieht schlecht aus, Bras – diesmal wohl ohne Batman!$/);
+	assert.equal(BATMAN.handle, '@ichbinyounes');
+	assert.equal(BATMAN.title, '20.11 Hausarrest');
+	assert.equal(BATMAN.source, 'Quelle: TikTok @ichbinyounes – eigener Bericht zum 20.11. (Bildschirmaufnahme 17.11.)');
+	// jede Aussage steht in seinem eigenen Ton (Transkript)
+	for (const t of ['bei mir geklingelt', 'Ich darf am 20.11. auf gar keinen Fall nach Frankfurt.', 'muss ich mich zweimal bei einer Polizeibehörde melden', 'bis zum 5.1. darf ich nicht mal nach Frankfurt in die Innenstadt', 'Batman steht für Kriminalität oder steht er für Gerechtigkeit?']) {
+		assert.ok(transcript.includes(t), `Transkript: ${t}`);
+	}
+	assert.equal(BATMAN.quote, '„Batman steht für Kriminalität oder steht er für Gerechtigkeit?“');
+	// keine Begründungen/Vorwürfe, keine Beamtenzahl, kein „geklopft“, keine Verbindung zum Halloween-Festnahmefoto
+	assert.doesNotMatch(all + JSON.stringify(BATMAN), /kriminell|Gefahr für die Gesellschaft|Straftat|geklopft|Beamte|drei Polizisten|abgeführt|festgenommen|Reuters/i);
+	assert.match(scenesSrc, /<Chip kind="LAUT YOUNES"/);
+	assert.match(scenesSrc, /KEIN Fledermaus-Logo/);
+	assert.doesNotMatch(scenesSrc + illuSrc, /bat-?logo|batsignal/i);
 	assert.match(illuSrc, /KEIN Fledermaus-Logo/);
-	assert.ok(sources.includes('Police detain a demonstrator dressed as Batman during a nationwide protest by campaign group Gen Z regelt (Reuters)'));
-	assert.ok(sources.includes('"Gen Z regelt"? Am Ende wird sogar Batman abgeführt'));
-	assert.match(sources, /„Batman hat an der Tür geklopft“\*\* \(Auftrag\): kein Beleg/);
+	assert.ok(sources.includes('[younes]'));
+	assert.match(sources, /„Geklopft“\*\* \(Briefing\): Younes sagt „geklingelt“/);
+	// Batman-Sequenz 12–20 s
+	if (isAdam) {
+		const b = manifest.segments.filter((x) => x.id.startsWith('b'));
+		const len = b[b.length - 1].endMs - b[0].startMs;
+		assert.ok(len >= 12000 && len <= 20000, `Batman ${len} ms`);
+	}
 });
 
 test('Stimme: Adam kurzformat-60, Ewa → Eywa, „Gen Z regelt“ getrennt gesprochen, Abo-Aufruf, Untertitel nur Anzeige-Schreibweise', () => {
@@ -139,19 +176,20 @@ test('Stimme: Adam kurzformat-60, Ewa → Eywa, „Gen Z regelt“ getrennt gesp
 	assert.equal(display(cta.text), 'Folgt FrankfurtRed3 für mehr!');
 	assert.equal(spoken(cta.text), 'Folgt Frankfurt Rett Drei für mehr!');
 	assert.ok(!manifest.captions.some((c) => /Eywa|Dschen|Rett|zwölfhundert|viertausend/.test(c.text)), 'Untertitel zeigen nur die Anzeige-Schreibweise');
-	const slang = (all.match(/gibt's|Pyro|Leuten/g) ?? []).length;
+	const slang = (all.match(/gibt's|Pyro|Leuten|Bras/g) ?? []).length;
 	assert.ok(slang >= 2 && slang <= 4, `Slang ${slang}`);
 	if (isAdam) assert.equal((manifest as unknown as {voice: {voiceId: string}}).voice.voiceId, 'pNInz6obpgDQGcFmaJgB');
 });
 
-test('Länge: Informationsteil ≤ 61,5 s, Abo-Aufruf als letztes Segment, gesamt ≤ 64 s; Pausen ≤ 400 ms; Untertitel im Satz', () => {
-	assert.equal(cfg.maxSeconds, 64);
-	assert.equal(cfg.infoMaxSeconds, FORMAT.infoMaxSeconds);
-	assert.ok(cfg.ausnahme.length > 20);
-	assert.equal(cfg.outputName, 'FrankfurtRed3_20November_3Proteste_ADAM_FINAL');
+test('Länge (Sonderausnahme): Informationsteil ≤ 69 s, Abo-Aufruf als letztes Segment, gesamt ≤ 75 s (Ziel ≈ 72 s); Pausen ≤ 400 ms; Untertitel im Satz', () => {
+	assert.equal(cfg.maxSeconds, FORMAT.specialMaxSeconds);
+	assert.equal(cfg.infoMaxSeconds, FORMAT.specialInfoMaxSeconds);
+	assert.ok(cfg.ausnahme.length > 20 && cfg.sonderausnahme.length > 20);
+	assert.equal(cfg.outputName, 'FrankfurtRed3_20November_3Proteste_BATMAN_UPDATED');
 	assert.equal(cfg.thumbnailName, 'FrankfurtRed3_20November_3Proteste_THUMBNAIL');
 	const tl = erklaertTimelineFor(NOV20_SCENES, script, manifest, 30, cfg.maxSeconds);
-	assert.ok(tl.durationInFrames <= 64 * 30, `${tl.durationInFrames} Frames`);
+	assert.ok(tl.durationInFrames <= 75 * 30, `${tl.durationInFrames} Frames`);
+	if (isAdam) assert.ok(tl.durationInFrames <= 73 * 30, `Ziel ≈ 72 s, ist ${tl.durationInFrames / 30} s`);
 	if (isAdam) {
 		const segs = manifest.segments;
 		const infoEnd = Math.max(...segs.filter((s) => s.id !== 'cta').map((s) => s.endMs));
@@ -170,13 +208,20 @@ test('Länge: Informationsteil ≤ 61,5 s, Abo-Aufruf als letztes Segment, gesam
 test('Serien-Overlay ab #09 oben rechts unter der TikTok-Suchleiste; fertige Folgen unverändert oben links', () => {
 	assert.match(compSrc, /badgePlacement: 'top-right'/);
 	assert.match(compSrc, /episode: '#09'/);
-	// unter der Suchleiste (≈ y 90–238), Abstand rechts 40–70 px, Oberkante 300–360
-	assert.ok(LAYOUT.badgeTopRight >= 300 && LAYOUT.badgeTopRight <= 360, `${LAYOUT.badgeTopRight}`);
+	// unter der Suchleiste (≈ y 90–238), Abstand rechts 40–70 px, Oberkante 260–360 (seit Überarbeitung 17.11.: y 272)
+	assert.ok(LAYOUT.badgeTopRight >= 260 && LAYOUT.badgeTopRight <= 360, `${LAYOUT.badgeTopRight}`);
 	assert.ok(LAYOUT.badgeRightInset >= 40 && LAYOUT.badgeRightInset <= 70);
 	assert.equal(LAYOUT.badgeTop, 196, 'Position der fertigen Folgen unverändert');
 	const overlay = read('../src/formats/frankfurt-erklaert/OverlayCheck.tsx');
 	const zone = /TIKTOK_SEARCH_ZONE = \{top: (\d+), bottom: (\d+)\}/.exec(overlay)!;
-	assert.ok(LAYOUT.badgeTopRight >= Number(zone[2]) + 40, 'mindestens 40 px unter der Suchleiste');
+	assert.ok(LAYOUT.badgeTopRight >= Number(zone[2]) + 30, 'mindestens 30 px unter der Suchleiste');
+	// symmetrische Kopfzeile: Szenen-Box links mit gleicher Oberkante und Höhe wie das Overlay rechts
+	const branding = read('../src/formats/frankfurt-erklaert/Branding.tsx');
+	assert.match(branding, /export const TopTag/);
+	assert.match(branding, /top: LAYOUT\.badgeTopRight,\s*height: LAYOUT\.topBarHeight/);
+	assert.match(branding, /top: LAYOUT\.badgeTopRight, height: LAYOUT\.topBarHeight, boxSizing: 'border-box'/);
+	assert.doesNotMatch(scenesSrc, /top: 290\}/, 'keine alten Tags bei y 290');
+	assert.match(scenesSrc, /<SceneTag /);
 	assert.match(read('../src/formats/frankfurt-erklaert/Branding.tsx'), /placement = 'top-left'/);
 	for (const d of readdirSync(new URL('../src/videos/', import.meta.url))) {
 		if (!d.startsWith('frankfurt-erklaert') || d === 'frankfurt-erklaert-20nov-drei-proteste') continue;
@@ -184,10 +229,12 @@ test('Serien-Overlay ab #09 oben rechts unter der TikTok-Suchleiste; fertige Fol
 			assert.doesNotMatch(read(`../src/videos/${d}/${f}`), /badgePlacement/, `${d}/${f} bleibt unverändert`);
 		}
 	}
-	// Orientierungsleiste beginnt unter dem Overlay (Overlay ≈ 66 px hoch)
+	// Orientierungsleiste beginnt unter der Kopfzeile
 	assert.match(scenesSrc, /export const STRIP_TOP = (\d+);/);
 	const stripTop = Number(/export const STRIP_TOP = (\d+);/.exec(scenesSrc)![1]);
-	assert.ok(stripTop - 10 >= LAYOUT.badgeTopRight + 66 + 10, `Leiste ${stripTop}`);
+	assert.ok(stripTop - 10 >= LAYOUT.badgeTopRight + LAYOUT.topBarHeight + 10, `Leiste ${stripTop}`);
+	// Leiste läuft nur vorwärts: Haken für bereits erklärte Termine
+	assert.match(scenesSrc, /const ORDER: EventId\[\] = \['schulstreik', 'campus', 'genz', 'gewerkschaft'\]/);
 	assert.match(read('../src/Root.tsx'), /id="FrankfurtErklaert20NovemberDreiProteste-OverlayCheck"/);
 });
 
@@ -223,9 +270,9 @@ test('TikTok-Text: Titel, Caption ≤ 4.000 Zeichen, genau die 5 vorgegebenen Ha
 	const caption = (tiktok.split('## Caption')[1] ?? '').trim();
 	assert.ok(caption.length >= 2000 && caption.length <= 4000, `Caption ${caption.length}`);
 	assert.deepEqual(caption.match(/#[\wäöüÄÖÜß]+/g), ['#Frankfurt', '#FrankfurtAmMain', '#GenZRegelt', '#20112026', '#FYP']);
-	for (const s of ['vier', 'Willy-Brandt-Platz', 'Campus Westend', 'Weseler Werft', 'Bockenheimer Depot', '4.000', '1.200', '75', '500', 'Route', 'Standort folgt', 'Pressekonferenz', 't-online', 'GEW', 'Stand: 17.11.2026']) {
+	for (const s of ['vier', 'Willy-Brandt-Platz', 'Campus Westend', 'Weseler Werft', 'Bockenheimer Depot', '4.000', '1.200', '75', '500', 'Route', 'Standort folgt', 'Pressekonferenz', 't-online', 'GEW', 'Stand: 17.11.2026', '@ichbinyounes', '20.11 Hausarrest']) {
 		assert.ok(caption.includes(s), `Caption: ${s}`);
 	}
 	assert.match(caption, /\?\s*\n\s*#/);
-	assert.doesNotMatch(caption, /Indymedia|verboten wird|Tür geklopft|ichbinyounes/i);
+	assert.doesNotMatch(caption, /Indymedia|verboten wird|Tür geklopft|kriminell|Gefahr für die Gesellschaft/i);
 });
