@@ -352,7 +352,8 @@ export const ChangeScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const floors = 4;
 	const billboards: PlaneBillboard[] = [
 		{key: 'werft', x: PIN[0], y: PIN[1], z: 20, node: <Marker title="WESELER WERFT" sub="JETZT · KUNDGEBUNG" color={RED} on={interpolate(frame, [atWeseler - 8, atWeseler + 4], [0, 1], clamp)} />},
-		{key: 'main', x: 420, y: RIVER_Y + 34, node: <div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, letterSpacing: 10, color: withAlpha('#BFD8FF', 0.75)}}>MAIN</div>},
+		// Erst nach der Kamerafahrt: in der Totalen läge die Beschriftung auf der Quellenzeile, weiter links am Bildrand.
+		{key: 'main', x: 690, y: RIVER_Y + 34, node: <div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, letterSpacing: 10, color: withAlpha('#BFD8FF', 0.75), opacity: interpolate(frame, [atStation + 12, atStation + 26], [0, 1], clamp)}}>MAIN</div>},
 	];
 	const strike = interpolate(frame, [atStation - 4, atStation + 10], [0, 1], {...clamp, easing: EASE_OUT});
 	const after = useSpring(atStation - 4, 12, 190);
