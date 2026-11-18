@@ -470,7 +470,8 @@ export const WerftScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const markers: PlaneBillboard[] = [
 		{key: 'ezb', x: ezb[0], y: ezb[1], node: <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}><EzbTowers size={230} lit={0.3 + dusk * 0.4} /><span style={{marginTop: 4, padding: '2px 10px', borderRadius: 8, background: 'rgba(8,10,28,0.85)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 22, color: '#BFD0FF'}}>EZB</span></div>},
 		{key: 'floesser', x: pyl[0], y: pyl[1], node: <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}><FloesserPylons size={150} /><span style={{marginTop: 2, padding: '2px 10px', borderRadius: 8, background: 'rgba(8,10,28,0.85)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 22, color: '#D7DDAA'}}>FLÖSSERBRÜCKE</span></div>},
-		{key: 'main', x: mainL[0], y: mainL[1], node: <div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, letterSpacing: 10, color: withAlpha('#CFE2FF', 0.8), textShadow: '0 2px 10px rgba(0,0,0,0.8)'}}>MAIN</div>},
+		// Blendet aus, sobald die 4.000-Karte darüber erscheint (sonst schaut die Beschriftung halb unter der Karte hervor).
+		{key: 'main', x: mainL[0], y: mainL[1], node: <div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, letterSpacing: 10, color: withAlpha('#CFE2FF', 0.8), textShadow: '0 2px 10px rgba(0,0,0,0.8)', opacity: interpolate(frame, [atAngem - 12, atAngem - 2], [1, 0], clamp)}}>MAIN</div>},
 		{key: 'werft', x: wl[0], y: wl[1], z: 6, node: <Marker title={WERFT.name} sub="KUNDGEBUNG · LAUT STADT" color={RED} on={interpolate(frame, [2, 14], [0, 1], clamp)} />},
 	];
 	const sky = blendMood(MOODS.calm, MOODS.dusk, 0.35 + dusk * 0.5);
