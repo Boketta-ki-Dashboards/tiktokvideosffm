@@ -39,7 +39,7 @@
 		},
 		{
 			"id": "w3",
-			"text": "Angemeldet sind {4.000|viertausend} Leute – eine Planungszahl, keine Teilnehmerzahl.",
+			"text": "Erwartet werden bis zu {4.000|viertausend} Leute – eine Prognose, keine Zählung.",
 			"pauseAfterMs": 120
 		},
 		{

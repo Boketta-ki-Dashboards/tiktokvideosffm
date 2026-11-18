@@ -224,7 +224,8 @@ test('Serien-Overlay ab #09 oben rechts unter der TikTok-Suchleiste; fertige Fol
 	assert.match(scenesSrc, /<SceneTag /);
 	assert.match(read('../src/formats/frankfurt-erklaert/Branding.tsx'), /placement = 'top-left'/);
 	for (const d of readdirSync(new URL('../src/videos/', import.meta.url))) {
-		if (!d.startsWith('frankfurt-erklaert') || d === 'frankfurt-erklaert-20nov-drei-proteste') continue;
+		// neue Folgen ab #09 setzen das Overlay oben rechts (CLAUDE.md), fertige Folgen #01–#08 bleiben unverändert
+		if (!d.startsWith('frankfurt-erklaert') || ['frankfurt-erklaert-20nov-drei-proteste', 'frankfurt-erklaert-20nov-demo-update'].includes(d)) continue;
 		for (const f of readdirSync(new URL(`../src/videos/${d}/`, import.meta.url)).filter((x) => x.endsWith('.tsx'))) {
 			assert.doesNotMatch(read(`../src/videos/${d}/${f}`), /badgePlacement/, `${d}/${f} bleibt unverändert`);
 		}

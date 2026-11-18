@@ -9,6 +9,14 @@ Keine kostenpflichtigen Dienste, keine API-Keys, keine lokale Installation nöti
 animiertem Stadtplan der Nacht (Läden, Uhrzeiten) und Folgen-Abspann.
 Alle Fakten sind belegt: [`references/frankfurt-2026-10-31/sources.md`](references/frankfurt-2026-10-31/sources.md).
 
+**„Frankfurt erklärt“ #10 – „Gen-Z-Demo am 20.11. geändert!“** (Komposition `FrankfurtErklaert20NovemberDemoUpdate`, hartes Limit 60 s inkl.
+Abo-Aufruf, Stand 18.11.2026, 16:38 Uhr): laut Stadt stationäre Kundgebung statt Demozug an der Weseler Werft (14–16:30 Uhr, bis zu 4.000 **erwartet** –
+Prognose, keine Zählung), Vorher/Nachher als symbolische Animation (Route nie veröffentlicht), perspektivische OSM-Karte Ostend mit Main, Flößerbrücke,
+EZB und Skyline, Auflagen als Stempel-Karten, laut Innenministerium jetzt fünf Versammlungen (neu: Aufzug „GenZ regelt Bundesbewegung“ 15–17:15 Uhr,
+Kaisersack → Carlo-Schmid-Platz, bis 1.500), Sicherheits-Pressekonferenz als Nachrichtengrafik ohne Personen (über 2.000 statt 1.300 Kräfte,
+49 Aufenthaltsverbote, 36 Meldeauflagen, Zeil bei Bedarf), Fazit „nicht abgesagt – Ablauf geändert“.
+Quellen: [`sources.md`](references/frankfurt-20nov-demo-update-2026-11-18/sources.md)
+
 **„Frankfurt erklärt“ #09 – „4 Proteste – 1 Freitag! Was passiert am 20.11. in Frankfurt?“** (Komposition `FrankfurtErklaert20NovemberDreiProteste`,
 ≈ 71,8 s inkl. Abo-Aufruf, Sonderausnahme, Stand 17.11.2026): laut Stadt vier getrennte Versammlungen am 20.11., chronologisch je ein eigener Punkt –
 10:00 Schulstreik ab Willy-Brandt-Platz (bis 1.200), 11:00 kleiner Zug quer über den Campus Westend (75, OSM-Karte), 14:00 „Gen Z regelt“ als stationäre

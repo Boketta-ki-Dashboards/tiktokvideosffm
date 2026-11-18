@@ -117,12 +117,36 @@ import {
 import {FrankfurtErklaert20NovemberDreiProtesteCover} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteCover';
 import {FrankfurtErklaert20NovemberDreiProtesteCoverVorschau} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteCoverVorschau';
 import {FrankfurtErklaert20NovemberDreiProtesteOverlayCheck} from './videos/frankfurt-erklaert-20nov-drei-proteste/FrankfurtErklaert20NovemberDreiProtesteOverlayCheck';
+import {
+	calculateErklaertDemoUpdateMetadata,
+	erklaertDemoUpdateDefaultProps,
+	erklaertDemoUpdateSchema,
+	FrankfurtErklaert20NovemberDemoUpdate,
+} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdate';
+import {FrankfurtErklaert20NovemberDemoUpdateCover} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateCover';
+import {FrankfurtErklaert20NovemberDemoUpdateCoverVorschau} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateCoverVorschau';
+import {FrankfurtErklaert20NovemberDemoUpdateOverlayCheck} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #10 – Gen-Z-Demo am 20.11. geändert! (Stand 18.11.2026, 15:28 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, Kopfzeile symmetrisch oben */}
+				<Composition
+					id="FrankfurtErklaert20NovemberDemoUpdate"
+					component={FrankfurtErklaert20NovemberDemoUpdate}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertDemoUpdateSchema}
+					defaultProps={erklaertDemoUpdateDefaultProps}
+					calculateMetadata={calculateErklaertDemoUpdateMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberDemoUpdate-Cover" component={FrankfurtErklaert20NovemberDemoUpdateCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberDemoUpdate-CoverVorschau" component={FrankfurtErklaert20NovemberDemoUpdateCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberDemoUpdate-OverlayCheck" component={FrankfurtErklaert20NovemberDemoUpdateOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #09 – 4 Proteste, 1 Freitag (Frankfurt 20.11.2026, Stand 17.11.): Serien-Overlay oben rechts; Längen-Ausnahme Info ≤ 61,5 s + Abo-Aufruf, ≤ 64 s */}
 				<Composition
 					id="FrankfurtErklaert20NovemberDreiProteste"

@@ -20,7 +20,7 @@ export const DEMOUPDATE_SCENES: SceneSpec[] = [
 export const DEMOUPDATE_KEYWORDS: Record<string, string[]> = {
 	cover: ['Ewa', 'Freitag', 'anders', 'geplant'],
 	change: ['Statt', 'Demozug', 'Stadt', 'stationäre', 'Kundgebung', 'Weseler'],
-	werft: ['14', '16:30', 'Dunkelheit', 'Angemeldet', '4.000', 'Planungszahl', 'Teilnehmerzahl'],
+	werft: ['14', '16:30', 'Dunkelheit', 'Erwartet', '4.000', 'Prognose', 'Zählung'],
 	rules: ['Auflagen', 'Pyro', 'Alkohol', 'Glas', 'Hunde', 'Vermummung', 'Transparent', 'zwei'],
 	five: ['Neu', 'Innenministerium', 'fünf', 'Darunter', 'Bundesbewegung', '15', 'Hauptbahnhof', 'Bockenheim', '1.500'],
 	press: ['Polizei', '2.000', 'Halloween', '1.300', '49', 'Aufenthaltsverbote', '36', 'Meldeauflagen', 'Bedarf', 'Zeil'],

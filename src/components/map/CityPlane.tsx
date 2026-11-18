@@ -12,6 +12,8 @@ import {type PlaneBillboard, type PlaneCamera, TiltedPlane} from './TiltedPlane'
 export type CityPlaneSpot = {at: LatLon; color: string; radius: number; on: number; pulse?: number};
 /** Schematischer Pfeil am Boden (nur für belegte Start-/Zielpunkte, z. B. laut Anmeldung; Verlauf NICHT der echte Straßenweg). */
 export type CityPlaneArrow = {from: LatLon; to: LatLon; color: string; draw: number; width?: number};
+/** Optionale Bodenfarben (ab #10, z. B. sichtbares Grün/Wasser am Mainufer). Ohne Angabe bleiben die bisherigen Farben – fertige Folgen unverändert. */
+export type CityPlaneGround = {base?: string; parks?: string; water?: string; squares?: string; pedestrian?: string};
 
 export const cityPlaneSize = (map: CityMapData, k: number) => ({width: Math.round(map.meta.sizeMeters.width * k), height: Math.round(map.meta.sizeMeters.height * k)});
 
@@ -33,7 +35,10 @@ export const CityPlane: React.FC<{
 	markers?: PlaneBillboard[];
 	tint?: string;
 	arrows?: CityPlaneArrow[];
-}> = ({map, k, camera, anchor, perspective = 1300, floors = 6, spots = [], highlightStreets = [], markers = [], tint = '#2E3C7C', arrows = []}) => {
+	ground?: CityPlaneGround;
+	/** zusätzliche Bodenzeichnung im Karten-Koordinatensystem (Meter um den Mittelpunkt, `projectLatLon`), unter Pfeilen und Bodenkreisen */
+	groundExtras?: React.ReactNode;
+}> = ({map, k, camera, anchor, perspective = 1300, floors = 6, spots = [], highlightStreets = [], markers = [], tint = '#2E3C7C', arrows = [], ground = {}, groundExtras = null}) => {
 	const W = map.meta.sizeMeters.width;
 	const H = map.meta.sizeMeters.height;
 	const size = cityPlaneSize(map, k);
@@ -50,17 +55,18 @@ export const CityPlane: React.FC<{
 			z: 0,
 			node: (
 				<Svg>
-					<rect x={-W} y={-H} width={W * 3} height={H * 3} fill="#080C1F" />
-					<path d={L.parks} fill="#0E2A2C" />
-					<path d={L.water} fill="#0C2A50" />
-					<path d={L.squares} fill="#1A2352" />
+					<rect x={-W} y={-H} width={W * 3} height={H * 3} fill={ground.base ?? '#080C1F'} />
+					<path d={L.parks} fill={ground.parks ?? '#0E2A2C'} />
+					<path d={L.water} fill={ground.water ?? '#0C2A50'} />
+					<path d={L.squares} fill={ground.squares ?? '#1A2352'} />
 					<path d={L.rail} fill="none" stroke="#2C3664" strokeWidth={4} strokeDasharray="10 8" />
 					<path d={L.streetsMinor} fill="none" stroke="#2B3568" strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" />
-					<path d={L.pedestrian} fill="none" stroke="#323E78" strokeWidth={6} strokeLinecap="round" />
+					<path d={L.pedestrian} fill="none" stroke={ground.pedestrian ?? '#323E78'} strokeWidth={6} strokeLinecap="round" />
 					<path d={L.streetsMajor} fill="none" stroke="#3E4C8C" strokeWidth={13} strokeLinecap="round" strokeLinejoin="round" />
 					{highlightStreets.map((h) =>
 						streets[h.name] ? <path key={h.name} d={streets[h.name]} fill="none" stroke={withAlpha(h.color, 0.55 * h.on)} strokeWidth={26} strokeLinecap="round" strokeLinejoin="round" /> : null,
 					)}
+					{groundExtras}
 					{arrows.map((a, i) => {
 						if (a.draw <= 0) return null;
 						const [x1, y1] = projectLatLon(map, a.from);
