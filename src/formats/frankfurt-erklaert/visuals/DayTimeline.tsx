@@ -16,7 +16,7 @@ export {dayTimelineGeometry, dayTimelineX} from './day-timeline-geometry';
  * nur die Uhrzeit-Achse. Animation kommt vollständig von außen (`draw`, `reveal`, `pulse`) bzw. aus `useCurrentFrame` (Lichtfunke).
  */
 
-export type DayIconName = 'book' | 'flag' | 'sign' | 'banner';
+export type DayIconName = 'book' | 'flag' | 'sign' | 'banner' | 'march';
 
 export type DayEvent = {
 	id: string;
@@ -42,6 +42,15 @@ export const DayIcon: React.FC<{name: DayIconName; size?: number; color?: string
 				<>
 					<path d="M6 21.5V3" {...p} />
 					<path d="M6 4h12.5l-2.6 4 2.6 4H6" {...p} fill={withAlpha(color, 0.18)} />
+				</>
+			) : name === 'march' ? (
+				<>
+					<path d="M3 17h11" {...p} />
+					<path d="m11 13 4 4-4 4" {...p} />
+					<circle cx={6} cy={6.5} r={2.2} {...p} fill={withAlpha(color, 0.18)} />
+					<circle cx={14} cy={6.5} r={2.2} {...p} fill={withAlpha(color, 0.18)} />
+					<path d="M3.5 13c.4-2.4 1.5-3.6 2.5-3.6s2.1 1.2 2.5 3.6M11.5 13c.4-2.4 1.5-3.6 2.5-3.6s2.1 1.2 2.5 3.6" {...p} />
+					<path d="M19 9.5h2.5M20.2 8.3v2.4" {...p} strokeWidth={stroke * 0.8} />
 				</>
 			) : name === 'sign' ? (
 				<>
