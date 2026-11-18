@@ -335,59 +335,73 @@
 			"confidence": null
 		},
 		{
-			"text": " Angemeldet",
+			"text": " Erwartet",
 			"startMs": 11136,
-			"endMs": 11781,
-			"timestampMs": 11459,
+			"endMs": 11620,
+			"timestampMs": 11378,
 			"confidence": null
 		},
 		{
-			"text": " sind",
-			"startMs": 11781,
+			"text": " werden",
+			"startMs": 11620,
 			"endMs": 11942,
-			"timestampMs": 11862,
+			"timestampMs": 11781,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 11942,
+			"endMs": 12104,
+			"timestampMs": 12023,
+			"confidence": null
+		},
+		{
+			"text": " zu",
+			"startMs": 12104,
+			"endMs": 12265,
+			"timestampMs": 12185,
 			"confidence": null
 		},
 		{
 			"text": " 4.000",
-			"startMs": 11942,
-			"endMs": 12426,
-			"timestampMs": 12184,
+			"startMs": 12265,
+			"endMs": 12749,
+			"timestampMs": 12507,
 			"confidence": null
 		},
 		{
 			"text": " Leute –",
-			"startMs": 12426,
-			"endMs": 12894,
-			"timestampMs": 12660,
+			"startMs": 12749,
+			"endMs": 13217,
+			"timestampMs": 12983,
 			"confidence": null
 		},
 		{
 			"text": " eine",
-			"startMs": 12894,
-			"endMs": 13217,
-			"timestampMs": 13056,
+			"startMs": 13217,
+			"endMs": 13539,
+			"timestampMs": 13378,
 			"confidence": null
 		},
 		{
-			"text": " Planungszahl,",
-			"startMs": 13217,
-			"endMs": 13813,
-			"timestampMs": 13515,
+			"text": " Prognose,",
+			"startMs": 13539,
+			"endMs": 14136,
+			"timestampMs": 13838,
 			"confidence": null
 		},
 		{
 			"text": " keine",
-			"startMs": 13813,
-			"endMs": 14136,
-			"timestampMs": 13975,
+			"startMs": 14136,
+			"endMs": 14459,
+			"timestampMs": 14298,
 			"confidence": null
 		},
 		{
-			"text": " Teilnehmerzahl.",
-			"startMs": 14136,
+			"text": " Zählung.",
+			"startMs": 14459,
 			"endMs": 15007,
-			"timestampMs": 14572,
+			"timestampMs": 14733,
 			"confidence": null
 		},
 		{
@@ -1057,5 +1071,5 @@
 		}
 	],
 	"captionsSource": "script-estimate",
-	"generatedAt": "2026-11-18T16:09:12.827Z"
+	"generatedAt": "2026-11-18T16:26:24.706Z"
 }
