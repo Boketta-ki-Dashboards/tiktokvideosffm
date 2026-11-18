@@ -50,25 +50,31 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 		);
 	}
 
-	const request = async (method, path, {json, query, retries = 4, binary = false} = {}) => {
+	// Zeitgrenze pro Anfrage: Bei Störungen hing eine Verbindung sonst ≈ 5 min (Node-Standard), bevor neu versucht wurde
+	// (Lauf #55/#56, 18.11.2026). Normale Antworten dauern wenige Sekunden. Netzwerkfehler werden öfter wiederholt (max. 20 s Pause).
+	const request = async (method, path, {json, query, retries = 4, networkRetries = 7, binary = false, timeoutMs = method === 'GET' ? 45_000 : 150_000} = {}) => {
 		const url = new URL(base + path);
 		for (const [k, v] of Object.entries(query ?? {})) if (v !== undefined && v !== null) url.searchParams.set(k, String(v));
-		for (let attempt = 0; ; attempt++) {
+		for (let attempt = 0, netAttempt = 0; ; ) {
 			let res;
 			try {
 				res = await fetchImpl(url, {
 					method,
 					headers: {'xi-api-key': apiKey, Accept: binary ? 'audio/mpeg' : 'application/json', ...(json ? {'Content-Type': 'application/json'} : {})},
 					body: json ? JSON.stringify(json) : undefined,
+					signal: AbortSignal.timeout(timeoutMs),
 				});
 			} catch (e) {
-				if (attempt < retries) {
-					log(`  Netzwerkfehler (${e.message}) – neuer Versuch in ${2 ** attempt} s`);
-					await new Promise((r) => setTimeout(r, 1000 * 2 ** attempt));
+				const reason = e?.name === 'TimeoutError' ? `keine Antwort nach ${Math.round(timeoutMs / 1000)} s` : e.message;
+				if (netAttempt < networkRetries) {
+					const wait = Math.min(20, 2 ** netAttempt);
+					netAttempt++;
+					log(`  Netzwerkfehler (${reason}) – neuer Versuch ${netAttempt}/${networkRetries} in ${wait} s`);
+					await new Promise((r) => setTimeout(r, 1000 * wait));
 					continue;
 				}
 
-				throw new ElevenLabsError(`Netzwerkfehler bei ${method} ${path}: ${e.message}`, {code: 'network'});
+				throw new ElevenLabsError(`Netzwerkfehler bei ${method} ${path}: ${reason}`, {code: 'network'});
 			}
 
 			if (res.ok) {
@@ -85,6 +91,7 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 			if ((res.status === 429 || res.status >= 500) && attempt < retries) {
 				log(`  HTTP ${res.status} – neuer Versuch in ${2 ** (attempt + 1)} s`);
 				await new Promise((r) => setTimeout(r, 2000 * 2 ** attempt));
+				attempt++;
 				continue;
 			}
 

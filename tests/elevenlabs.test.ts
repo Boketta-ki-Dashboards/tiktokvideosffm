@@ -114,3 +114,21 @@ test('API-Client: Key nie im Fehlertext, verständliche Meldungen, Wiederholung 
 	assert.equal(calls, 2, 'einmal wiederholt');
 	assert.ok(seenKeys.every((k) => k === 'sk_geheim_123'), 'Key nur im Header');
 });
+
+test('API-Client: Zeitgrenze pro Anfrage, hängende Verbindung wird neu versucht (Störung 18.11.2026)', async () => {
+	let calls = 0;
+	const signals: unknown[] = [];
+	const logs: string[] = [];
+	const fakeFetch = async (_url: URL, init: {signal?: AbortSignal}) => {
+		calls++;
+		signals.push(init.signal);
+		if (calls === 1) throw new DOMException('The operation was aborted due to timeout', 'TimeoutError');
+		return new Response(JSON.stringify({models: []}), {status: 200});
+	};
+	const client = createClient({apiKey: 'sk_geheim_123', fetchImpl: fakeFetch as unknown as typeof fetch, log: (s) => logs.push(s)});
+	await client.getModels();
+	assert.equal(calls, 2, 'nach Zeitüberschreitung einmal neu versucht');
+	assert.ok(signals.every((s) => s instanceof AbortSignal), 'jede Anfrage hat eine Zeitgrenze');
+	assert.match(logs.join('\n'), /keine Antwort nach 45 s/);
+	assert.ok(!logs.join('\n').includes('sk_geheim_123'));
+});
