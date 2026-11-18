@@ -55,7 +55,20 @@ Overlay-Prüfbogen: Kopfzeile unter der simulierten Suchleiste (Unterkante 238),
 
 ## 5. Finaler Render
 
-Lauf #62 läuft (Werte folgen nach Prüfung des Artefakts).
+Lauf **#62** (Run-ID 44377714531, Commit 5e519e8, `stimme: vorhanden` – kein ElevenLabs-Aufruf) – **erfolgreich**.
+Artefakte: `FrankfurtRed3_20November_DemoUpdate_ADAM_FINAL-run62` (MP4, Thumbnail, Titelbild- und Overlay-Prüfbogen, ID 14463515505),
+`…-Technikbericht-run62` (ID 14462710829), `…-Sprecher-Adam-run62` (ID 14463925434).
+
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_20November_DemoUpdate_ADAM_FINAL.mp4`, **15,39 MiB** (16.138.529 Byte, < 30 MB), SHA-256 `df18979d729f0cd873d234a15a3a7b576cb9e2184cafb74601593f5a0f8fdebe` |
+| Video | H.264 High, 1080 × 1920, 30/1 fps, yuv420p, BT.709, **1.743 Frames = 58,112 s** (≤ 1.800), Faststart |
+| Audio | AAC LC, 48 kHz, Stereo, 189 kbit/s · **−14,6 LUFS**, LRA 2,0 LU, True Peak **−1,4 dBTP** (Prüfbericht bestanden) |
+| Dekodierung | vollständig fehlerfrei (ffmpeg, 0 Meldungen) |
+| Stille ≥ 400 ms (−50 dB) | keine |
+| Thumbnail | `FrankfurtRed3_20November_DemoUpdate_THUMBNAIL.png` (byte-gleich mit Lauf #61) |
+| Kontaktbogen | `kontaktbogen-run62.jpg` (alle 2 s aus dem MP4); beide Korrekturen im MP4 kontrolliert (Bild bei 8,0 s und 14,6 s) |
+| Workflow-Prüfungen | `verify-video`, `check-sync`, `check-pauses`, `tech-report --max-seconds 60` – alle grün |
 
 ## 6. Lauf-Historie
 
@@ -66,4 +79,4 @@ Lauf #62 läuft (Werte folgen nach Prüfung des Artefakts).
 | #59 | nur Stimme | ✅ (eine Pause 427 ms, v2 unklar) |
 | #60 | nur Stimme (v2 neu) | ✅ |
 | #61 | Video (`stimme: vorhanden`) | ✅ technisch grün; „MAIN“ halb unter der 4.000-Karte → ersetzt |
-| #62 | Video (`stimme: vorhanden`) | läuft |
+| #62 | Video (`stimme: vorhanden`) | ✅ **finale Fassung** |
