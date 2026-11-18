@@ -1,0 +1,96 @@
+{
+	"videoId": "frankfurt-erklaert-20nov-demo-update",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 900,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 300 ms Pause. Pausen 40 ms im Thema, 120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf (keine Längen-Ausnahme). Stand: Innenministerium 18.11.2026, 15:28 Uhr."
+	},
+	"sampleText": "Ewa, Frankfurt! Die {Gen-Z-Demo|Dschen-Zett-Demo} am Freitag läuft jetzt ganz anders als geplant! Kundgebung an der Weseler Werft. Darunter ein Zug von {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – vom Hauptbahnhof nach Bockenheim. Gegen {49|neunundvierzig} Personen laufen Aufenthaltsverbote. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "hook2",
+			"text": "Die {Gen-Z-Demo|Dschen-Zett-Demo} am Freitag läuft jetzt ganz anders als geplant!",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "w1",
+			"text": "Statt Demozug durch die Stadt gibt's laut Stadt eine stationäre Kundgebung an der Weseler Werft.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w2",
+			"text": "Von {14|vierzehn} bis {16:30 Uhr|halb fünf} – vor Einbruch der Dunkelheit.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w3",
+			"text": "Angemeldet sind {4.000|viertausend} Leute – eine Planungszahl, keine Teilnehmerzahl.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "a1",
+			"text": "Dazu gelten Auflagen: keine Pyro, kein Alkohol, kein Glas, keine Hunde, keine Vermummung.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "a2",
+			"text": "Und Transparent-Stangen: höchstens zwei Meter.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "v1",
+			"text": "Neu seit heute: Laut Innenministerium sind es sogar fünf Versammlungen.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "v2",
+			"text": "Darunter ein Zug von {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – ab {15 Uhr|fünfzehn Uhr} vom Hauptbahnhof nach Bockenheim, bis zu {1.500|fünfzehnhundert} erwartet.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p1",
+			"text": "Die Polizei plant mit über {2.000|zweitausend} Einsatzkräften – an Halloween waren es {1.300|dreizehnhundert}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p2",
+			"text": "Gegen {49|neunundvierzig} Personen laufen Aufenthaltsverbote, gegen {36|sechsunddreißig} Tatverdächtige Meldeauflagen.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p3",
+			"text": "Bei Bedarf werden alle Zugänge zur Zeil kontrolliert.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "f1",
+			"text": "Heißt: Die Kundgebung ist nicht abgesagt – sie läuft nur anders.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q1",
+			"text": "Was haltet ihr von den Änderungen?",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+			"pauseAfterMs": 0
+		}
+	]
+}
