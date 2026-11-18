@@ -40,7 +40,7 @@
 		{
 			"id": "w3",
 			"text": "Erwartet werden bis zu {4.000|viertausend} Leute – eine Prognose, keine Zählung.",
-			"pauseAfterMs": 120
+			"pauseAfterMs": 40
 		},
 		{
 			"id": "a1",
@@ -59,7 +59,7 @@
 		},
 		{
 			"id": "v2",
-			"text": "Darunter ein Zug von {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – ab {15 Uhr|fünfzehn Uhr} vom Hauptbahnhof nach Bockenheim, bis zu {1.500|fünfzehnhundert} erwartet.",
+			"text": "Darunter: {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – ein Zug ab {15 Uhr|fünfzehn Uhr} vom Hauptbahnhof nach Bockenheim, bis zu {1.500|fünfzehnhundert} erwartet.",
 			"pauseAfterMs": 120
 		},
 		{
