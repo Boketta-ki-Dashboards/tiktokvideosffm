@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! {Gen Z regelt|Dschen Zett regelt}: Kundgebung an der Weseler Werft bis {16:30 Uhr|halb fünf}. Um {10|zehn} am Willy-Brandt-Platz, Ziel Campus Westend, {75|fünfundsiebzig} Leute. Um {17:30 Uhr|halb sechs} am Bockenheimer Depot. Keine Pyro, kein Alkohol. Aber an Halloween hat ihn die Polizei ja schon mitgenommen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
-	"sampleFrom": "frankfurt-erklaert-20nov-drei-proteste",
+	"text": "{Ewa|Eywa}, Frankfurt! Die {Gen-Z-Demo|Dschen-Zett-Demo} am Freitag läuft jetzt ganz anders als geplant! Kundgebung an der Weseler Werft. Darunter ein Zug von {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – vom Hauptbahnhof nach Bockenheim. Gegen {49|neunundvierzig} Personen laufen Aufenthaltsverbote. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleFrom": "frankfurt-erklaert-20nov-demo-update",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 316,
-	"cacheKey": "089253f476e77518ca5f",
-	"durationSeconds": 17.832
+	"characters": 302,
+	"cacheKey": "52a9cb367dd42f7810bd",
+	"durationSeconds": 16.944
 }
