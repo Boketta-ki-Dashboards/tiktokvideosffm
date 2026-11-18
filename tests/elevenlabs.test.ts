@@ -129,6 +129,6 @@ test('API-Client: Zeitgrenze pro Anfrage, hängende Verbindung wird neu versucht
 	await client.getModels();
 	assert.equal(calls, 2, 'nach Zeitüberschreitung einmal neu versucht');
 	assert.ok(signals.every((s) => s instanceof AbortSignal), 'jede Anfrage hat eine Zeitgrenze');
-	assert.match(logs.join('\n'), /keine Antwort nach 45 s/);
+	assert.match(logs.join('\n'), /keine Antwort nach 90 s/);
 	assert.ok(!logs.join('\n').includes('sk_geheim_123'));
 });

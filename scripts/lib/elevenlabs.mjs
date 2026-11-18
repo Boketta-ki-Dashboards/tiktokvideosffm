@@ -52,7 +52,7 @@ export const createClient = ({apiKey = process.env.ELEVENLABS_API_KEY, fetchImpl
 
 	// Zeitgrenze pro Anfrage: Bei Störungen hing eine Verbindung sonst ≈ 5 min (Node-Standard), bevor neu versucht wurde
 	// (Lauf #55/#56, 18.11.2026). Normale Antworten dauern wenige Sekunden. Netzwerkfehler werden öfter wiederholt (max. 20 s Pause).
-	const request = async (method, path, {json, query, retries = 4, networkRetries = 7, binary = false, timeoutMs = method === 'GET' ? 45_000 : 150_000} = {}) => {
+	const request = async (method, path, {json, query, retries = 4, networkRetries = 7, binary = false, timeoutMs = method === 'GET' ? 90_000 : 180_000} = {}) => {
 		const url = new URL(base + path);
 		for (const [k, v] of Object.entries(query ?? {})) if (v !== undefined && v !== null) url.searchParams.set(k, String(v));
 		for (let attempt = 0, netAttempt = 0; ; ) {
