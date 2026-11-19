@@ -256,7 +256,7 @@ export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 			{/* Uhr */}
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 418, scale: String(1 + 0.05 * Math.sin(alarm * Math.PI))}}>
-				<BigClock size={236} minutes={minutes} digital={frame >= at9 - 4 ? `AB ${TRAM.time}` : TRAM.time} alarm={alarm} />
+				<BigClock size={236} minutes={minutes} digital={TRAM.time} alarm={alarm} />
 			</div>
 			{/* Linienschilder */}
 			<div style={{position: 'absolute', left: 340, top: 430, display: 'flex', gap: 22}}>
@@ -267,7 +267,7 @@ export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				))}
 			</div>
 			{/* Titelkarte */}
-			<In at={atAlt - 4} dy={30} style={{left: 340, top: 640, width: 676}}>
+			<In at={atAlt - 4} dy={30} style={{left: 372, top: 640, width: 644}}>
 				<div style={{padding: '12px 22px 14px', borderRadius: 20, background: RED, boxShadow: '0 20px 50px rgba(255,59,78,0.4)'}}>
 					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, lineHeight: 1.02, color: '#FFFFFF'}}>
 						ALTSTADTSTRECKE
@@ -460,7 +460,7 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				markers={markers}
 			/>
 			<Shade top={0.96} bottom={0.9} mid={[30, 64]} />
-			<SceneTag text="ALTSTADT · AB 9 UHR" color={RED} icon="route" />
+			<SceneTag text="ALTSTADT · AB 8:30 UHR" color={RED} icon="route" />
 			{/* Titel A: Altstadtstrecke */}
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 372, opacity: 1 - phaseB}}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 12}}>
@@ -705,7 +705,7 @@ export const WhyScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const w1 = cue(cues, 'w1', 0);
 	const atAmt = wordFrame(cues, 'Innenministerium', w1.from + 10);
 	const atFuenf = wordFrame(cues, 'fünf', atAmt + 16);
-	const atVier = wordFrame(cues, 'Versammlungen', atFuenf + 10) + 8;
+	const atVier = atFuenf + 4;
 	const big = useSpring(atFuenf - 4, 10, 200);
 	const reveal = ASSEMBLIES.map((_, i) => interpolate(frame, [4 + i * 4, 14 + i * 4], [0, 1], clamp));
 	const pulse = ASSEMBLIES.map((_, i) => interpolate(frame, [atFuenf + i * 2, atFuenf + 8 + i * 2, atFuenf + 16 + i * 2], [0, 1, 0], clamp));
