@@ -1,6 +1,9 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
 import {COLORS, FONTS} from '../../theme/tokens';
+import {BrandLogo} from '../../components/brand/BrandLogo';
+import {AppOverlay} from './CoverPreview';
+import {sourceLineHeight} from './SourceLine';
 import {ACCENT, LAYOUT} from './theme';
 
 /**
@@ -41,16 +44,42 @@ const SearchBarSim: React.FC = () => (
 	</AbsoluteFill>
 );
 
-export type OverlayCheckPanel = {label: string; sub: string; node: React.ReactNode; search?: boolean};
+/** Hilfslinien für die Quellenzeile unter den Untertiteln (nur Prüfansicht): Untertitel-Unterkante und fester Quellenbereich. */
+const SourceZoneLines: React.FC = () => {
+	const subBottom = 1920 - LAYOUT.subtitleBottomPad;
+	const line = (y: number, color: string, label: string, above = false) => (
+		<div style={{position: 'absolute', left: 0, right: 0, top: y, borderTop: `3px dashed ${color}`}}>
+			<span style={{position: 'absolute', right: 10, top: above ? -34 : 4, padding: '2px 8px', borderRadius: 6, background: color, fontFamily: FONTS.body, fontWeight: 800, fontSize: 22, color: '#111'}}>{label}</span>
+		</div>
+	);
+	return (
+		<AbsoluteFill style={{pointerEvents: 'none'}}>
+			{line(subBottom, 'rgba(255,210,63,0.95)', `Untertitel-Unterkante y=${subBottom}`, true)}
+			{line(LAYOUT.sourceLineTop, 'rgba(79,195,247,0.95)', `Quelle ab y=${LAYOUT.sourceLineTop}`)}
+			{line(LAYOUT.sourceLineTop + sourceLineHeight(2), 'rgba(79,195,247,0.6)', `2 Zeilen bis y=${LAYOUT.sourceLineTop + sourceLineHeight(2)} (max ${LAYOUT.sourceLineMaxBottom})`)}
+		</AbsoluteFill>
+	);
+};
 
-export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPanel[]}> = ({title, panels}) => {
+export type OverlayCheckPanel = {
+	label: string;
+	sub: string;
+	node: React.ReactNode;
+	search?: boolean;
+	/** neutral nachgezeichnete App-Elemente unten (Account, Beschreibung, Knopfleiste) – zeigt, was die Quellenzeile in der App überdeckt */
+	app?: string;
+	/** Hilfslinien Untertitel/Quellenzeile */
+	zones?: boolean;
+};
+
+export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPanel[]; heading?: string; note?: string}> = ({title, panels, heading = 'SERIEN-OVERLAY-PRÜFUNG', note = 'Prüfansicht – Suchleiste nur simuliert, nicht im Video'}) => {
 	const w = 520;
 	const s = w / 1080;
 	return (
 		<AbsoluteFill style={{background: '#0B0E1E', padding: 40, fontFamily: FONTS.body}}>
 			<div style={{display: 'flex', alignItems: 'baseline', gap: 16, marginBottom: 22}}>
-				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: COLORS.text}}>SERIEN-OVERLAY-PRÜFUNG · {title}</span>
-				<span style={{fontWeight: 700, fontSize: 22, color: ACCENT.brand}}>Prüfansicht – Suchleiste nur simuliert, nicht im Video</span>
+				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 40, color: COLORS.text}}>{heading} · {title}</span>
+				<span style={{fontWeight: 700, fontSize: 22, color: ACCENT.brand}}>{note}</span>
 			</div>
 			<div style={{display: 'flex', gap: 40}}>
 				{panels.map((p) => (
@@ -63,6 +92,8 @@ export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPan
 							<div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, scale: String(s), transformOrigin: '0 0'}}>
 								{p.node}
 								{p.search ? <SearchBarSim /> : null}
+								{p.app ? <AppOverlay caption={p.app} avatar={(sz) => <BrandLogo size={sz} border={false} />} /> : null}
+								{p.zones ? <SourceZoneLines /> : null}
 							</div>
 						</div>
 					</div>

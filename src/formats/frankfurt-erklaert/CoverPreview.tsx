@@ -57,7 +57,7 @@ const Guides: React.FC<{scale: number}> = ({scale}) => {
 };
 
 /** Neutrale Nachzeichnung typischer Bedienelemente einer Kurzvideo-App (keine Logos, keine Marken). */
-const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => React.ReactNode}> = ({caption, avatar}) => {
+export const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => React.ReactNode}> = ({caption, avatar}) => {
 	const icon = (y: number, d: React.ReactNode, count: string) => (
 		<div style={{position: 'absolute', left: 950, top: y, width: 110, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4}}>
 			<svg width={84} height={84} viewBox="0 0 24 24" style={{filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'}}>

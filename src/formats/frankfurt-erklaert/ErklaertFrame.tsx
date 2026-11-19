@@ -12,6 +12,8 @@ import type {SceneSpec, Timeline} from '../../lib/timeline';
 import type {Cues} from '../../videos/frankfurt-2026-10-31/cues';
 import {type BadgePlacement, FormatBadge} from './Branding';
 import {cuesForScene} from './cues';
+import {resolveSourceLine, type SourceCue, SourceLine} from './SourceLine';
+import {LAYOUT} from './theme';
 import {erklaertTimelineFor} from './timeline.ts';
 
 export const erklaertSchema = z.object({
@@ -51,6 +53,11 @@ export type ErklaertEpisode = {
 	badgePlacement?: BadgePlacement;
 	/** Nur mit begründeter Ausnahme in config/videos.json (Informationsteil + Abo-Aufruf): Gesamtgrenze bis 66 s. */
 	maxSeconds?: number;
+	/**
+	 * Quellenzeile UNTER den Untertiteln (dauerhaft ab #12 für alle NEUEN Folgen): kurze Quellen-Labels, die jeweils mit dem genannten
+	 * Sprechersegment wechseln (`from` = Segment-ID). Szenen zeichnen dann KEINE eigene `SourceBar` mehr. Fertige Folgen ohne Feld bleiben unverändert.
+	 */
+	sourceLine?: SourceCue[];
 };
 
 /** Timeline einer Kurzfolge – nie länger als 60 s (Formatgrenze, siehe ./timeline.ts). */
@@ -88,7 +95,8 @@ export const ErklaertFrame: React.FC<ErklaertProps & {ep: ErklaertEpisode}> = ({
 
 				<FormatBadge episode={ep.episode} totalFrames={tl.durationInFrames} hideFrom={outro ? outro.cutFrame - 4 : undefined} showFrom={ep.badgeFrom} placement={ep.badgePlacement} />
 				<GrainOverlay opacity={0.04} vignette={0.38} />
-				{subtitles ? <TikTokSubtitles captions={voiceover.captions} bottom={480} /> : null}
+				{subtitles ? <TikTokSubtitles captions={voiceover.captions} bottom={LAYOUT.subtitleBottomPad} /> : null}
+				{ep.sourceLine ? <SourceLine entries={resolveSourceLine(ep.sourceLine, voiceover, fps, {start: ep.badgeFrom ?? 0, end: tl.durationInFrames})} /> : null}
 				<Voiceover manifest={voiceover} volume={voiceVolume} />
 				{music ? <MusicBed src="music/ambient-bed.mp3" segments={voiceover.segments} volume={0.3} duckedVolume={0.09} /> : null}
 				{tl.scenes.slice(1).map((s) => (

@@ -54,7 +54,24 @@ export const LAYOUT = {
 	contentTop: 300,
 	/** Unterkante für Inhalt oberhalb der Untertitel (Untertitel ≈ 1.320–1.440). */
 	contentBottom: 1250,
+	/** Alte Quellenzeile ÜBER den Untertiteln (`SourceBar`, Folgen #01–#11). Neue Folgen: `sourceLine*` (unter den Untertiteln). */
 	sourceTop: 1196,
+	/**
+	 * Untertitel: Abstand der Untertitel-UNTERKANTE vom unteren Bildrand (Unterkante y 1.440). Mehrzeilige Seiten wachsen nach OBEN –
+	 * deshalb bleibt alles darunter (Quellenzeile) bei 1, 2 oder 3 Zeilen an derselben Stelle.
+	 */
+	subtitleBottomPad: 480,
+	/**
+	 * Quellenzeile UNTER den Untertiteln (dauerhaft ab #12, 19.11.2026, für alle NEUEN Folgen – `ErklaertEpisode.sourceLine`):
+	 * konstanter Bereich y 1.512–1.630 (≥ 24 px unter der Untertitel-Unterkante inkl. Kontur), höchstens 2 Zeilen, mittig auf der
+	 * Untertitel-Achse (x 64–930, also links der App-Knöpfe). Liegt bewusst in der TikTok-Beschreibungszone – dass die Beschreibung die
+	 * Quelle in der App teilweise überdeckt, ist vom Kanalbetreiber akzeptiert (Quellen bleiben im Video und beim Pausieren lesbar).
+	 */
+	sourceLineTop: 1512,
+	sourceLineMaxBottom: 1630,
+	sourceLineFont: 24,
+	sourceLineLineHeight: 1.3,
+	sourceLineMaxLines: 2,
 } as const;
 
 /**

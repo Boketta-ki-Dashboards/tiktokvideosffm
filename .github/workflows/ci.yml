@@ -55,6 +55,11 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4 --frames 0,60,300,600,900,1200,1500,1800 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberBundesweit --frames 0,90,200,330,450,600,760,900,1050,1200,1350,1500,1620 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberBundesweit-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberBundesweit-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberBundesweit-OverlayCheck --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberBundesweit-QuellenCheck --frames 0 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberOepnv --frames 0,120,200,300,420,560,700,860,1000,1150,1300,1450,1580 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberOepnv-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert20NovemberOepnv-CoverVorschau --frames 0 --scale 0.5

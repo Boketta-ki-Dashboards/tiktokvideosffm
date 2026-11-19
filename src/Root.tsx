@@ -135,12 +135,41 @@ import {
 import {FrankfurtErklaert20NovemberOepnvCover} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvCover';
 import {FrankfurtErklaert20NovemberOepnvCoverVorschau} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvCoverVorschau';
 import {FrankfurtErklaert20NovemberOepnvOverlayCheck} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvOverlayCheck';
+import {
+	calculateErklaertBundesweitMetadata,
+	erklaertBundesweitDefaultProps,
+	erklaertBundesweitSchema,
+	FrankfurtErklaert20NovemberBundesweit,
+} from './videos/frankfurt-erklaert-20nov-bundesweit/FrankfurtErklaert20NovemberBundesweit';
+import {FrankfurtErklaert20NovemberBundesweitCover} from './videos/frankfurt-erklaert-20nov-bundesweit/FrankfurtErklaert20NovemberBundesweitCover';
+import {FrankfurtErklaert20NovemberBundesweitCoverVorschau} from './videos/frankfurt-erklaert-20nov-bundesweit/FrankfurtErklaert20NovemberBundesweitCoverVorschau';
+import {
+	FrankfurtErklaert20NovemberBundesweitOverlayCheck,
+	FrankfurtErklaert20NovemberBundesweitSourceCheck,
+	SOURCE_CHECK_SIZE,
+} from './videos/frankfurt-erklaert-20nov-bundesweit/FrankfurtErklaert20NovemberBundesweitOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #12 – 73 Städte – ein Protesttag! (Stand 19.11.2026, 14 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, erste Folge mit Quellenzeile UNTER den Untertiteln */}
+				<Composition
+					id="FrankfurtErklaert20NovemberBundesweit"
+					component={FrankfurtErklaert20NovemberBundesweit}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertBundesweitSchema}
+					defaultProps={erklaertBundesweitDefaultProps}
+					calculateMetadata={calculateErklaertBundesweitMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberBundesweit-Cover" component={FrankfurtErklaert20NovemberBundesweitCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberBundesweit-CoverVorschau" component={FrankfurtErklaert20NovemberBundesweitCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberBundesweit-OverlayCheck" component={FrankfurtErklaert20NovemberBundesweitOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberBundesweit-QuellenCheck" component={FrankfurtErklaert20NovemberBundesweitSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #11 – Frankfurt morgen: Diese Bahnen sind betroffen! (Stand VGF 18.11.2026, 14 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, Kopfzeile symmetrisch oben */}
 				<Composition
 					id="FrankfurtErklaert20NovemberOepnv"

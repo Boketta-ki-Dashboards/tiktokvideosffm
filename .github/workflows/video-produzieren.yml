@@ -271,6 +271,12 @@ jobs:
             CHECK="${THUMB%_THUMBNAIL}"; CHECK="${CHECK:-${{ steps.job.outputs.out }}}_OVERLAY_PRUEFUNG"
             npx remotion still src/index.ts "${{ steps.job.outputs.video }}-OverlayCheck" "output/$CHECK.png"
           fi
+          # Prüfbogen für die Quellenzeile UNTER den Untertiteln (ab #12): 1- und 2-zeilige Untertitel, Zahlenvergleich, Karte, simulierte App
+          if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-QuellenCheck "; then
+            THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
+            QCHECK="${THUMB%_THUMBNAIL}"; QCHECK="${QCHECK:-${{ steps.job.outputs.out }}}_QUELLEN_PRUEFUNG"
+            npx remotion still src/index.ts "${{ steps.job.outputs.video }}-QuellenCheck" "output/$QCHECK.png"
+          fi
 
       - name: Technische Qualitätskontrolle
         if: steps.job.outputs.aktion == 'video'
@@ -321,6 +327,7 @@ jobs:
             output/*_THUMBNAIL.png
             output/*_COVER_VORSCHAU.png
             output/*_OVERLAY_PRUEFUNG.png
+            output/*_QUELLEN_PRUEFUNG.png
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
           retention-days: 30
