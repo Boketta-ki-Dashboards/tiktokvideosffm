@@ -1,0 +1,42 @@
+{
+	"$comment": "Zähler „Zusagen“ der Website von Gen Z regelt (öffentliche Schnittstelle api/counts, die die Seite selbst lädt), abgerufen 19.11.2026 – Online-Zusagen, KEINE Teilnehmerzahlen. Laut Website: „Die Zahl zeigt, wie viele zugesagt haben. Sie ist keine Garantie, dass genau so viele Menschen vor Ort teilnehmen.“",
+	"abrufe": [
+		{
+			"zeit": "2026-11-19T13:49:57+01:00",
+			"total": 19994,
+			"frankfurt": 3675,
+			"koeln": 2320,
+			"berlin": 1358,
+			"muenchen": 768
+		},
+		{
+			"zeit": "2026-11-19T13:54:29+01:00",
+			"total": 20001,
+			"frankfurt": 3676,
+			"koeln": 2320,
+			"berlin": 1359,
+			"muenchen": 768
+		},
+		{
+			"zeit": "2026-11-19T14:01:49+01:00",
+			"total": 20010,
+			"frankfurt": 3676,
+			"koeln": 2324,
+			"berlin": 1361,
+			"muenchen": 769
+		}
+	],
+	"letzter": {
+		"total": 20010,
+		"counts": {
+			"frankfurt": 3676,
+			"koeln": 2324,
+			"berlin": 1361,
+			"muenchen": 769,
+			"hamburg": 1632,
+			"goettingen": 1472,
+			"stuttgart": 1002
+		},
+		"zeit": "2026-11-19T14:01:49+01:00"
+	}
+}
