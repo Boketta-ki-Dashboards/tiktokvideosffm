@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Laut {VGF|Vau Geh Eff} können die Linien {11|elf}, {12|zwölf} und {14|vierzehn} ab {9 Uhr|neun Uhr} nicht über die Altstadtstrecke fahren. Möglicherweise trifft's auch die {18|Achtzehn} und die Busse {30|dreißig} und {M36|M sechsunddreißig}. Willy-Brandt-Platz und {Dom/Römer|Dom Römer} bleiben offen – {U4|U vier} und {U5|U fünf} sind die Alternative. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
-	"sampleFrom": "frankfurt-erklaert-20nov-oepnv",
+	"text": "{Ewa|Eywa}, Frankfurt! Morgen ist nicht nur Frankfurt dran: {Gen Z regelt|Dschen Zett regelt} listet {73|dreiundsiebzig} Städte. In Köln rechnen die Anmelderinnen mit {5.000 bis 10.000|fünf- bis zehntausend} – an der Deutzer Werft.",
+	"sampleFrom": "frankfurt-erklaert-20nov-bundesweit",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 338,
-	"cacheKey": "02f99b1e84226b626334",
-	"durationSeconds": 18.984
+	"characters": 186,
+	"cacheKey": "6dc5ba7f8ae63e37b7c1",
+	"durationSeconds": 10.488
 }
