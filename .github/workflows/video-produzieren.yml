@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaert20NovemberBundesweit
           - FrankfurtErklaert20NovemberOepnv
           - FrankfurtErklaert20NovemberDemoUpdate
           - FrankfurtErklaert20NovemberDreiProteste
