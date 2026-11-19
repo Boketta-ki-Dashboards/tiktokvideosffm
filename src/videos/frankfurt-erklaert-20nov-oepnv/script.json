@@ -3,26 +3,26 @@
 	"language": "de-DE",
 	"format": "frankfurt-erklaert-60",
 	"leadInMs": 120,
-	"tailMs": 900,
+	"tailMs": 1500,
 	"maxDurationMs": 60000,
 	"maxPauseMs": 400,
 	"voice": {
 		"engine": "elevenlabs",
 		"profile": "kurzformat-60",
 		"trim": {"mode": "letters", "maxInnerGapMs": 320},
-		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 300 ms Pause. Pausen 40 ms im Thema, 120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf. Stand: VGF 19.11.2026, 9 Uhr (aktualisierte Meldung; zuerst 18.11., 14 Uhr)."
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“ (geprüfte Begrüßung aus dem Cache), danach 300 ms Pause. Pausen 40 ms im Thema, 120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf. Stand: VGF 19.11.2026, 9 Uhr (aktualisierte Meldung; zuerst 18.11., 14 Uhr). Kontingent des API-Keys am 19.11. aufgebraucht: t2 = bereits bezahlte Aufnahme, w1 = bereits bezahlte Aufnahme, nach „Versammlungen“ gekürzt (voice-cache, Feld derivedFrom)."
 	},
 	"sampleText": "Ewa, Frankfurt! Laut {VGF|Vau Geh Eff} können die Linien {11|elf}, {12|zwölf} und {14|vierzehn} ab {9 Uhr|neun Uhr} nicht über die Altstadtstrecke fahren. Möglicherweise trifft's auch die {18|Achtzehn} und die Busse {30|dreißig} und {M36|M sechsunddreißig}. Willy-Brandt-Platz und {Dom/Römer|Dom Römer} bleiben offen – {U4|U vier} und {U5|U fünf} sind die Alternative. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
 		{"id": "hook2", "text": "Morgen fahren einige Straßenbahnen anders – und zwar schon ab {8:30 Uhr|halb neun}!", "pauseAfterMs": 120},
 		{"id": "t1", "text": "Laut {VGF|Vau Geh Eff} fahren die Linien {11|elf}, {12|zwölf} und {14|vierzehn} ab {8:30 Uhr|halb neun} nicht über die Altstadtstrecke.", "pauseAfterMs": 40},
-		{"id": "t2", "text": "Zwischen Börneplatz und Hauptbahnhof fährt dann keine Tram – die drei Linien werden über Sachsenhausen umgeleitet.", "pauseAfterMs": 120},
+		{"id": "t2", "text": "Von einem Komplettausfall ist keine Rede – es geht um die Strecke durch die Altstadt.", "pauseAfterMs": 120},
 		{"id": "m1", "text": "Möglicherweise trifft's auch die {18|Achtzehn} und die Busse {30|dreißig} und {M36|M sechsunddreißig} – auf der Kurt-Schumacher- und Konrad-Adenauer-Straße.", "pauseAfterMs": 120},
 		{"id": "u1", "text": "Die gute Nachricht: {U1|U eins} bis {U5|U fünf} und {U8|U acht} sollen nach bisherigem Stand nach Fahrplan fahren.", "pauseAfterMs": 40},
 		{"id": "u2", "text": "Willy-Brandt-Platz und {Dom/Römer|Dom Römer} bleiben offen – {U4|U vier} und {U5|U fünf} nennt die {VGF|Vau Geh Eff} als Alternative zwischen Hauptbahnhof und Konstablerwache.", "pauseAfterMs": 40},
 		{"id": "u3", "text": "Achtung: Ab Samstagfrüh fallen {U4|U vier} und {U5|U fünf} wegen Testfahrten bis Montag aus.", "pauseAfterMs": 120},
-		{"id": "w1", "text": "Hintergrund: Laut Ordnungsamt sind morgen fünf Veranstaltungen angemeldet – darunter vier Demozüge.", "pauseAfterMs": 120},
+		{"id": "w1", "text": "Hintergrund: Laut Innenministerium gibt's morgen sogar fünf Versammlungen.", "pauseAfterMs": 120},
 		{"id": "c1", "text": "Also: Änderungen sind möglich. Checkt vor der Fahrt die {VGF-Website|Vau Geh Eff Website} oder die Anzeigen an der Haltestelle.", "pauseAfterMs": 40},
 		{"id": "q1", "text": "Welche Linie nehmt ihr morgen?", "pauseAfterMs": 60},
 		{"id": "cta", "text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!", "pauseAfterMs": 0}

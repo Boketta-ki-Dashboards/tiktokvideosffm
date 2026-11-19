@@ -92,7 +92,7 @@ const Marker: React.FC<{title: string; sub?: string; color: string; on: number; 
 
 /* ------------------------------------------------------------------ Szene 1: Titelbild = erste Szene */
 
-/** Grafik im Titelbild: Uhr (9:00) + Straßenbahn – Höhe 150 px. */
+/** Grafik im Titelbild: Uhr (8:30) + Straßenbahn – Höhe 150 px. */
 const CoverViz: React.FC<{width: number; pulse?: number}> = ({width, pulse = 0}) => {
 	const clock = 104;
 	const tramW = 482;
@@ -101,7 +101,7 @@ const CoverViz: React.FC<{width: number; pulse?: number}> = ({width, pulse = 0})
 	return (
 		<div style={{position: 'relative', width, height: 150}}>
 			<div style={{position: 'absolute', left, top: 0, scale: String(1 + 0.08 * Math.sin(pulse * Math.PI))}}>
-				<BigClock size={clock} minutes={540} digital="09:00" alarm={pulse > 0 ? 1 : 0.3} />
+				<BigClock size={clock} minutes={TRAM.minutes} digital={TRAM.time} alarm={pulse > 0 ? 1 : 0.3} />
 			</div>
 			<div style={{position: 'absolute', left: left + clock + gap, top: 0}}>
 				<TramSide width={tramW} line="11" />
@@ -112,7 +112,7 @@ const CoverViz: React.FC<{width: number; pulse?: number}> = ({width, pulse = 0})
 
 /**
  * Titelbild (Video-Frame 0 und PNG, nach COVER_ZONE): Serientitel, „FRANKFURT“, groß „MORGEN!“, rote Karte „DIESE BAHNEN SIND BETROFFEN“,
- * Uhr + Straßenbahn, Linienschilder 11 · 12 · 14 „AB 9 UHR“, Datum, Logo + Account; im PNG zusätzlich die Frage.
+ * Uhr + Straßenbahn, Linienschilder 11 · 12 · 14 „AB 8:30 UHR“, Datum, Logo + Account; im PNG zusätzlich die Frage.
  */
 export const OepnvCover: React.FC<{morph?: number; pulse?: number; thumbnail?: boolean}> = ({morph = 0, pulse = 0, thumbnail = false}) => {
 	const frame = useCurrentFrame();
@@ -157,7 +157,7 @@ export const OepnvCover: React.FC<{morph?: number; pulse?: number; thumbnail?: b
 						{COVER.lines.map((l) => (
 							<LineBadge key={l} line={l} kind="tram" size={58} glow={0.4} />
 						))}
-						<span style={{marginLeft: 6, padding: '6px 14px', borderRadius: 12, background: 'rgba(8,10,28,0.92)', border: `2.5px solid ${COLORS.signal}`, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 32, color: COLORS.signal, whiteSpace: 'nowrap'}}>AB 9 UHR</span>
+						<span style={{marginLeft: 6, padding: '6px 14px', borderRadius: 12, background: 'rgba(8,10,28,0.92)', border: `2.5px solid ${COLORS.signal}`, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 32, color: COLORS.signal, whiteSpace: 'nowrap'}}>{COVER.from}</span>
 					</div>
 					<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.dateTop, textAlign: 'center', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 28, letterSpacing: 2.5, color: COLORS.text, whiteSpace: 'nowrap', textShadow: '0 4px 14px rgba(0,0,0,0.9)'}}>{COVER.small}</div>
 					<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.metaTop, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14}}>
@@ -178,12 +178,12 @@ export const OepnvCover: React.FC<{morph?: number; pulse?: number; thumbnail?: b
 	);
 };
 
-/** Szene 1 – Titelbild im Video (ab Frame 0 vollständig); bei „neun“ pulsiert die Uhr, am Ende Flug in die Uhr. */
+/** Szene 1 – Titelbild im Video (ab Frame 0 vollständig); bei „halb neun“ pulsiert die Uhr, am Ende Flug in die Uhr. */
 export const CoverScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const h2 = cue(cues, 'hook2', 30);
 	const atBahn = wordFrame(cues, 'Straßenbahnen', h2.from + 20);
-	const at9 = wordFrame(cues, '9', h2.from + 60);
+	const at9 = wordFrame(cues, '8:30', h2.from + 60);
 	const pulse = interpolate(frame, [at9 - 2, at9 + 18], [0, 1], clamp);
 	const morph = interpolate(frame, [durationInFrames - 22, durationInFrames - 2], [0, 1], clamp);
 	return (
@@ -197,7 +197,7 @@ export const CoverScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	);
 };
 
-/* ------------------------------------------------------------------ Szene 2: Uhr 9:00 + Linien 11/12/14 + Straßenbahn */
+/* ------------------------------------------------------------------ Szene 2: Uhr 8:30 + Linien 11/12/14 + Straßenbahn */
 
 export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
@@ -206,10 +206,10 @@ export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const at11 = wordFrame(cues, '11', t1.from + 30);
 	const at12 = wordFrame(cues, '12', at11 + 10);
 	const at14 = wordFrame(cues, '14', at12 + 10);
-	const at9 = wordFrame(cues, '9', at14 + 20);
+	const at9 = wordFrame(cues, '8:30', at14 + 20);
 	const atAlt = wordFrame(cues, 'Altstadtstrecke', at9 + 30);
-	// Uhr läuft auf 9:00 und bleibt dort
-	const minutes = interpolate(frame, [0, Math.max(14, at9 - 2)], [528, 540], {...clamp, easing: EASE_OUT});
+	// Uhr läuft auf 8:30 und bleibt dort
+	const minutes = interpolate(frame, [0, Math.max(14, at9 - 2)], [TRAM.minutes - 12, TRAM.minutes], {...clamp, easing: EASE_OUT});
 	const alarm = interpolate(frame, [at9 - 2, at9 + 10], [0, 1], clamp);
 	// Straßenbahn fährt ein und bremst vor der Altstadt
 	const drive = interpolate(frame, [0, Math.max(20, at11 + 6)], [0, 1], {...clamp, easing: EASE_OUT});
@@ -249,14 +249,14 @@ export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				</div>
 			) : null}
 			<Shade top={0.95} bottom={0.88} mid={[38, 62]} />
-			<SceneTag text="FREITAG · AB 9 UHR" color={RED} icon="clock" />
+			<SceneTag text="FREITAG · AB 8:30 UHR" color={RED} icon="clock" />
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 370, display: 'flex', alignItems: 'center', gap: 12, opacity: interpolate(frame, [atVgf - 6, atVgf + 4], [0.35, 1], clamp)}}>
 				<Chip kind="LAUT VGF" size={18} />
-				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Informationsstand 18.11., 14 Uhr</span>
+				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Stand 19.11., 9 Uhr</span>
 			</div>
 			{/* Uhr */}
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 418, scale: String(1 + 0.05 * Math.sin(alarm * Math.PI))}}>
-				<BigClock size={236} minutes={minutes} digital={frame >= at9 - 4 ? 'AB 09:00' : '09:00'} alarm={alarm} />
+				<BigClock size={236} minutes={minutes} digital={frame >= at9 - 4 ? `AB ${TRAM.time}` : TRAM.time} alarm={alarm} />
 			</div>
 			{/* Linienschilder */}
 			<div style={{position: 'absolute', left: 340, top: 430, display: 'flex', gap: 22}}>
@@ -272,7 +272,7 @@ export const TramScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, lineHeight: 1.02, color: '#FFFFFF'}}>
 						ALTSTADTSTRECKE
 						<br />
-						BETROFFEN
+						GESPERRT
 					</div>
 				</div>
 				<div style={{marginTop: 10, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 28, letterSpacing: 1.5, color: COLORS.signal}}>{TRAM.sub}</div>
@@ -308,11 +308,14 @@ const mpx = (x: number, y: number): [number, number] => [(x + MW2) * MAP_K, (y +
 const llpx = (ll: LatLon): [number, number] => cityPlaneXY(OEPNV_MAP, MAP_K, ll);
 const TRAM_D = ['11', '12', '14'].map((r) => ROUTES.routes[r].d).join('');
 /**
- * Ausschnitt der Altstadtstrecke (WGS84): Straßenbahn zwischen Willy-Brandt-Platz und Börneplatz – laut OSM über Weißfrauen-,
- * Bethmann- und Braubachstraße (Halte Karmeliterkloster, Römer/Paulskirche). Test prüft, dass Hbf/Konstablerwache außerhalb liegen.
+ * Gesperrter Abschnitt (WGS84) laut VGF (19.11.): „Zwischen Börneplatz und HBF stellt die VGF den Tram-Betrieb ein“ – Straßenbahn der Linien
+ * 11/12/14 von der Münchener Straße (östlich Halt Hbf/Münchener Straße) über Willy-Brandt-Platz und die Altstadtstrecke (Weißfrauen-, Bethmann-,
+ * Braubachstraße; Halte Karmeliterkloster, Römer/Paulskirche) bis Börneplatz. Test prüft, welche Halte innen/außen liegen.
  */
 export const ALTSTADT_CLIP: readonly LatLon[] = [
-	[50.108691, 8.67416],
+	[50.10643, 8.666596],
+	[50.10738, 8.670238],
+	[50.108556, 8.67416],
 	[50.109957, 8.679202],
 	[50.110952, 8.683405],
 	[50.112037, 8.687607],
@@ -320,18 +323,31 @@ export const ALTSTADT_CLIP: readonly LatLon[] = [
 	[50.111766, 8.683405],
 	[50.110862, 8.679202],
 	[50.109596, 8.67416],
+	[50.108465, 8.670238],
+	[50.107606, 8.666596],
 ];
+/** Umleitung „über Sachsenhausen“ (laut VGF) – genauer Weg nicht veröffentlicht: nur schematischer Bogen südlich des Mains. */
+const DETOUR_LL: readonly LatLon[] = [
+	[50.1069, 8.6662],
+	[50.101, 8.679],
+	[50.1121, 8.69],
+];
+const DETOUR_D = (() => {
+	const [a, c, b] = DETOUR_LL.map((ll) => projectLatLon(OEPNV_MAP, ll).map((v) => Math.round(v * 10) / 10));
+	return `M${a[0]} ${a[1]} Q${c[0]} ${c[1]} ${b[0]} ${b[1]}`;
+})();
 const ALT_CLIP_D = `M${ALTSTADT_CLIP.map((ll) => projectLatLon(OEPNV_MAP, ll).map((v) => Math.round(v * 10) / 10).join(' ')).join(' L')} Z`;
 /** Kamerapunkte und Straßenbeschriftungen (WGS84). */
 const MAP_VIEW = {
-	overview: [50.1103, 8.6798] as LatLon,
-	altstadt: [50.1109, 8.6826] as LatLon,
+	overview: [50.1092, 8.6782] as LatLon,
+	altstadt: [50.1086, 8.6786] as LatLon,
+	sachsenhausen: [50.10505, 8.6795] as LatLon,
 	east: [50.1131, 8.6879] as LatLon,
 	kss: [50.11158, 8.68887] as LatLon,
 	kas: [50.11629, 8.68852] as LatLon,
 };
 
-const TransitGround: React.FC<{alt: number; maybe: number}> = ({alt, maybe}) => {
+const TransitGround: React.FC<{alt: number; detour: number; maybe: number}> = ({alt, detour, maybe}) => {
 	const frame = useCurrentFrame();
 	const pulse = 0.5 + 0.5 * Math.sin(frame / 5);
 	return (
@@ -351,7 +367,15 @@ const TransitGround: React.FC<{alt: number; maybe: number}> = ({alt, maybe}) => 
 				<path d={ROUTES.routes['18'].d} fill="none" stroke={TRAM_COLOR} strokeWidth={8} strokeLinecap="round" strokeLinejoin="round" opacity={0.75} />
 				<path d={ROUTES.routes['30'].d} fill="none" stroke={BUS_COLOR} strokeWidth={7} strokeLinecap="round" strokeLinejoin="round" strokeDasharray="14 8" />
 			</g>
-			{/* Altstadtstrecke: rot markiert */}
+			{/* Umleitung über Sachsenhausen: schematischer Bogen */}
+			{detour > 0 ? (
+				<g>
+					<path d={DETOUR_D} fill="none" stroke={withAlpha(ORANGE, 0.3)} strokeWidth={44} strokeLinecap="round" pathLength={1} strokeDasharray={`${detour} 1`} />
+					<path d={DETOUR_D} fill="none" stroke={ORANGE} strokeWidth={14} strokeLinecap="round" pathLength={1} strokeDasharray={`${detour} 1`} />
+					{detour >= 1 ? <path d={DETOUR_D} fill="none" stroke="#FFFFFF" strokeOpacity={0.7} strokeWidth={6} strokeLinecap="round" strokeDasharray="8 30" strokeDashoffset={-frame * 3} /> : null}
+				</g>
+			) : null}
+			{/* gesperrter Abschnitt: rot markiert */}
 			<g clipPath="url(#oepnvAltstadt)" opacity={alt}>
 				<path d={TRAM_D} fill="none" stroke={withAlpha(RED, 0.4 + 0.2 * pulse)} strokeWidth={60} strokeLinecap="round" strokeLinejoin="round" />
 				<path d={TRAM_D} fill="none" stroke={RED} strokeWidth={17} strokeDasharray="26 16" strokeDashoffset={-frame * 2} strokeLinecap="round" />
@@ -367,8 +391,11 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const t2 = cue(cues, 't2', 0);
 	const m1 = cue(cues, 'm1', 120);
-	const atKomplett = wordFrame(cues, 'Komplettausfall', t2.from + 6);
-	const atAltstadt = wordFrame(cues, 'Altstadt', t2.from + 60);
+	// Sperrung Hbf–Börneplatz ab Szenenbeginn; bei „Komplettausfall“ zeichnet sich die Umleitung über Sachsenhausen (die Linien fahren weiter)
+	const atBoerne = Math.max(2, t2.from + 2);
+	const atHbf = atBoerne + 12;
+	const atKomplett = wordFrame(cues, 'Komplettausfall', t2.from + 20);
+	const atSachs = atKomplett + 4;
 	const atMaybe = wordFrame(cues, 'Möglicherweise', m1.from);
 	const at18 = wordFrame(cues, '18', atMaybe + 20);
 	const at30 = wordFrame(cues, '30', at18 + 20);
@@ -381,15 +408,16 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const cam = interpolateCamera(
 		frame,
 		[
-			{frame: 0, cam: {x: cx0, y: cy0, zoom: 1.05, tilt: 48, rotate: -16}},
-			{frame: Math.max(12, atAltstadt), cam: {x: cx1, y: cy1, zoom: 1.22, tilt: 50, rotate: -12}},
-			{frame: Math.max(atAltstadt + 20, m1.from - 4), cam: {x: cx1 + 30, y: cy1 - 6, zoom: 1.26, tilt: 50, rotate: -11}},
-			{frame: Math.max(atAltstadt + 40, atMaybe + 26), cam: {x: cx2, y: cy2, zoom: 1.34, tilt: 50, rotate: -2}},
+			{frame: 0, cam: {x: cx0, y: cy0, zoom: 1.0, tilt: 48, rotate: -14}},
+			{frame: Math.max(12, atSachs), cam: {x: cx1, y: cy1, zoom: 0.94, tilt: 50, rotate: -10}},
+			{frame: Math.max(atSachs + 20, m1.from - 4), cam: {x: cx1 + 20, y: cy1 - 6, zoom: 0.97, tilt: 50, rotate: -9}},
+			{frame: Math.max(atSachs + 40, atMaybe + 26), cam: {x: cx2, y: cy2, zoom: 1.34, tilt: 50, rotate: -2}},
 			{frame: durationInFrames + 10, cam: {x: cx2, y: cy2 - 16, zoom: 1.4, tilt: 51, rotate: 0}},
 		],
 		EASE_IN_OUT,
 	);
-	const alt = interpolate(frame, [Math.max(2, atKomplett - 10), atKomplett + 8], [0, 1], clamp);
+	const alt = interpolate(frame, [Math.max(2, atBoerne - 8), atHbf + 6], [0, 1], clamp);
+	const detour = interpolate(frame, [atSachs - 10, atSachs + 22], [0, 1], {...clamp, easing: EASE_IN_OUT});
 	const maybe = interpolate(frame, [atMaybe - 6, atMaybe + 10], [0, 1], clamp);
 	const phaseB = interpolate(frame, [m1.from - 8, m1.from + 4], [0, 1], clamp);
 	const pulse = 0.5 + 0.5 * Math.sin(frame / 5);
@@ -401,8 +429,10 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const [hx, hy] = stopPx('Hauptbahnhof');
 	const [ksx, ksy] = llpx(MAP_VIEW.kss);
 	const [kax, kay] = llpx(MAP_VIEW.kas);
+	const [sx, sy] = llpx(MAP_VIEW.sachsenhausen);
 	const markers: PlaneBillboard[] = [
-		{key: 'hbf', x: hx, y: hy, node: <Marker title="HAUPTBAHNHOF" color="#9AA6CC" on={on(4) * (1 - phaseB)} small />},
+		{key: 'hbf', x: hx, y: hy, node: <Marker title="HAUPTBAHNHOF" color={RED} on={on(Math.max(4, atHbf - 4)) * (1 - phaseB)} small />},
+		{key: 'sachs', x: sx, y: sy, node: <Marker title="SACHSENHAUSEN" sub="UMLEITUNG" color={ORANGE} on={on(atSachs + 6) * (1 - phaseB)} small />},
 		{key: 'wbp', x: wx, y: wy, node: <Marker title="WILLY-BRANDT-PLATZ" color={TRAM_COLOR} on={on(6) * (1 - phaseB)} small />},
 		{key: 'roemer', x: rx, y: ry, z: 4, node: <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: on(8) * (1 - phaseB * 0.6)}}><RoemerFacade width={130} lit={0.9} /><span style={{marginTop: 2, padding: '2px 10px', borderRadius: 8, background: 'rgba(8,10,28,0.88)', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 21, color: '#FFC66B'}}>RÖMER</span></div>},
 		{key: 'boerne', x: bx, y: by, node: <Marker title="BÖRNEPLATZ" color={TRAM_COLOR} on={on(10) * (1 - phaseB * 0.85)} small />},
@@ -413,7 +443,7 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	return (
 		<AbsoluteFill style={{backgroundColor: '#070B22', overflow: 'hidden'}}>
 			<AbsoluteFill style={{background: 'linear-gradient(#0A0E2C 0%, #231B4C 22%, #3B2251 30%, #0A0F2A 40%)'}} />
-			<div style={{position: 'absolute', left: 120 - frame * 0.15, top: 300, opacity: 0.45}}>
+			<div style={{position: 'absolute', left: 120 - frame * 0.15, top: 344, opacity: 0.45}}>
 				<FrankfurtSkyline width={860} litRatio={0.4} showRiver={false} showBridge={false} />
 			</div>
 			<CityPlane
@@ -426,7 +456,7 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				tint="#3A4894"
 				ground={{base: '#0E1538', parks: '#1A4638', water: '#1D57A8', pedestrian: '#4E5C9E'}}
 				highlightStreets={MAPTXT.maybeStreets.map((name) => ({name, color: MAYBE_COLOR, on: maybe * (0.55 + 0.45 * pulse)}))}
-				groundExtras={<TransitGround alt={alt} maybe={maybe} />}
+				groundExtras={<TransitGround alt={alt} detour={detour} maybe={maybe} />}
 				markers={markers}
 			/>
 			<Shade top={0.96} bottom={0.9} mid={[30, 64]} />
@@ -435,7 +465,7 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 372, opacity: 1 - phaseB}}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 12}}>
 					<Chip kind="LAUT VGF" size={17} />
-					<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, color: COLORS.textMuted, whiteSpace: 'nowrap'}}>Straßenbahn 11 · 12 · 14 ab 9 Uhr</span>
+					<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, color: COLORS.textMuted, whiteSpace: 'nowrap'}}>Straßenbahn 11 · 12 · 14 ab 8:30 Uhr</span>
 				</div>
 				<div style={{marginTop: 4, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 70, lineHeight: 1, letterSpacing: -1, color: RED, whiteSpace: 'nowrap', textShadow: `0 0 40px ${withAlpha(RED, 0.5)}, 0 8px 28px rgba(0,0,0,0.9)`}}>{MAPTXT.altstadt}</div>
 				<div style={{marginTop: 6, fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, color: COLORS.text, opacity: alt}}>{MAPTXT.altstadtSub}</div>
@@ -473,24 +503,25 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</Card>
 				</div>
 			) : null}
-			{/* Karte A: kein Komplettausfall (unten) */}
-			<In at={atKomplett - 4} dy={40} out={1 - phaseB} style={{left: LAYOUT.left, top: 1010, width: LAYOUT.width}}>
-				<Card color={GREEN} style={{padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 14}} glow={0.3}>
-					<div style={{width: 54, height: 54, borderRadius: 27, background: withAlpha(GREEN, 0.18), border: `3px solid ${GREEN}`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
-						<P2Icon name="info" size={30} color={GREEN} stroke={2.6} />
+			{/* Karte A: Umleitung über Sachsenhausen (unten) */}
+			<In at={atSachs - 4} dy={40} out={1 - phaseB} style={{left: LAYOUT.left, top: 1010, width: LAYOUT.width}}>
+				<Card color={ORANGE} style={{padding: '12px 20px', display: 'flex', alignItems: 'center', gap: 14}} glow={0.35}>
+					<div style={{width: 54, height: 54, borderRadius: 27, background: withAlpha(ORANGE, 0.18), border: `3px solid ${ORANGE}`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0}}>
+						<P2Icon name="route" size={30} color={ORANGE} stroke={2.6} />
 					</div>
 					<div>
-						<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 32, lineHeight: 1.05, color: COLORS.text}}>{TRAM.notTotal}</div>
-						<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted, opacity: frame >= atAltstadt - 6 ? 1 : 0.25}}>betroffen: die Strecke durch die Altstadt</div>
+						<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 32, lineHeight: 1.05, color: COLORS.text}}>{MAPTXT.detour}</div>
+						<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>{MAPTXT.detourSub}</div>
 					</div>
 				</Card>
 			</In>
-			<Hint text="Linien laut OSM · Umleitungswege nicht veröffentlicht" top={1150} kind="SCHEMATISCH" />
+			<Hint text={phaseB > 0.5 || frame < atSachs - 4 ? 'Linien laut OSM · Karte schematisch' : 'Umleitungsweg nicht veröffentlicht – Bogen schematisch'} top={1150} kind="SCHEMATISCH" />
 			<SourceBar text={MAPTXT.source} at={8} />
 			<Sfx name="whoosh" at={0} volume={0.35} />
 			<Sfx name="blip" at={6} volume={0.45} />
-			<Sfx name="softImpact" at={atKomplett - 4} volume={0.45} />
-			<Sfx name="click" at={atAltstadt - 4} volume={0.45} />
+			<Sfx name="softImpact" at={atBoerne - 4} volume={0.45} />
+			<Sfx name="blip" at={atHbf - 3} volume={0.4} />
+			<Sfx name="whoosh" at={atSachs - 6} volume={0.4} />
 			<Sfx name="whoosh" at={atMaybe - 2} volume={0.4} />
 			<Sfx name="pop" at={at18 - 3} volume={0.5} />
 			<Sfx name="pop" at={at30 - 3} volume={0.5} />
@@ -530,7 +561,7 @@ const Underground: React.FC<{trainX: number; trainOn: number; open: number; altO
 			<div style={{position: 'absolute', left: 0, right: 0, top: 350, height: 5, background: '#5A6488'}} />
 			{/* Bahnsteige */}
 			{UBAHN.stations.map((s, i) => (
-				<div key={s.name} style={{position: 'absolute', left: STATION_X[i] - 70, top: 340, width: 140, height: 18, borderRadius: 4, background: '#8B95B8'}} />
+				<div key={s.name} style={{position: 'absolute', left: STATION_X[i] - 70, top: 344, width: 140, height: 14, borderRadius: 4, background: '#8B95B8'}} />
 			))}
 			{/* Zug */}
 			<div style={{position: 'absolute', left: trainX, top: 262, opacity: trainOn}}>
@@ -629,8 +660,11 @@ export const UBahnScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			<div style={{position: 'absolute', left: LAYOUT.left - 20, top: 700}}>
 				<Underground trainX={trainX} trainOn={trainOn} open={open} altOn={altGlow} dim={wkOn * 0.9} />
 			</div>
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 1150, display: 'flex', gap: 10}}>
+			<div style={{position: 'absolute', left: LAYOUT.left + LAYOUT.width - 150, top: 712}}>
 				<Chip kind="SCHEMATISCH" size={15} />
+			</div>
+			<div style={{opacity: interpolate(frame, [atOffen - 4, atOffen + 8], [0, 1], clamp) * (1 - wkOn)}}>
+				<Hint text={UBAHN.alsoOpen} top={1150} kind="LAUT VGF" />
 			</div>
 			{/* Hinweis Wochenende */}
 			{wkOn > 0 ? (
@@ -669,11 +703,10 @@ export const UBahnScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 export const WhyScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const frame = useCurrentFrame();
 	const w1 = cue(cues, 'w1', 0);
-	const atInnen = wordFrame(cues, 'Innenministerium', w1.from + 10);
-	const atFuenf = wordFrame(cues, 'fünf', atInnen + 20);
-	const atVgf = wordFrame(cues, 'VGF-Meldung', atFuenf + 20);
-	const atVier = wordFrame(cues, 'vier', atVgf + 14);
-	const flip = interpolate(frame, [atFuenf - 4, atFuenf + 6], [0, 1], clamp);
+	const atAmt = wordFrame(cues, 'Innenministerium', w1.from + 10);
+	const atFuenf = wordFrame(cues, 'fünf', atAmt + 16);
+	const atVier = wordFrame(cues, 'Versammlungen', atFuenf + 10) + 8;
+	const big = useSpring(atFuenf - 4, 10, 200);
 	const reveal = ASSEMBLIES.map((_, i) => interpolate(frame, [4 + i * 4, 14 + i * 4], [0, 1], clamp));
 	const pulse = ASSEMBLIES.map((_, i) => interpolate(frame, [atFuenf + i * 2, atFuenf + 8 + i * 2, atFuenf + 16 + i * 2], [0, 1, 0], clamp));
 	return (
@@ -683,42 +716,42 @@ export const WhyScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</AbsoluteFill>
 			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.95) 0%, rgba(4,6,20,0.85) 50%, rgba(4,6,20,0.92) 100%)'}} />
 			<SceneTag text="HINTERGRUND · FR 20.11." color={BLUE} icon="users" />
-			<div style={{position: 'absolute', left: LAYOUT.left, top: 372, display: 'flex', alignItems: 'center', gap: 12, opacity: interpolate(frame, [atInnen - 6, atInnen + 4], [0.3, 1], clamp)}}>
+			<div style={{position: 'absolute', left: LAYOUT.left, top: 372, display: 'flex', alignItems: 'center', gap: 12, opacity: interpolate(frame, [atAmt - 6, atAmt + 4], [0.3, 1], clamp)}}>
 				<Chip kind="LAUT INNENMINISTERIUM" size={17} />
-				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Pressemitteilung 18.11.</span>
+				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>{WHY.who}</span>
 			</div>
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 412, display: 'flex', alignItems: 'center', gap: 22}}>
-				<div style={{position: 'relative', width: 170, height: 200}}>
-					<div style={{position: 'absolute', inset: 0, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 210, lineHeight: 0.95, color: COLORS.textMuted, opacity: 1 - flip, translate: `0 ${-flip * 40}px`}}>{WHY.before}</div>
-					<div style={{position: 'absolute', inset: 0, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 210, lineHeight: 0.95, color: COLORS.signal, opacity: flip, translate: `0 ${(1 - flip) * 40}px`, textShadow: `0 0 60px ${withAlpha(COLORS.signal, 0.45)}`}}>{WHY.count}</div>
-				</div>
-				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, lineHeight: 1.02, color: COLORS.text}}>
-					VERSAMMLUNGEN
-					<br />
-					AM FREITAG
+				<div style={{width: 150, height: 200, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 210, lineHeight: 0.95, color: COLORS.signal, opacity: frame >= atFuenf - 5 ? Math.min(1, big * 1.5) : 0.25, scale: String(0.7 + 0.3 * big), textShadow: `0 0 60px ${withAlpha(COLORS.signal, 0.45)}`}}>{WHY.count}</div>
+				<div>
+					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 52, lineHeight: 1.02, color: COLORS.text}}>
+						VERSAMMLUNGEN
+						<br />
+						AM FREITAG
+					</div>
+					<div style={{marginTop: 8, fontFamily: FONTS.body, fontWeight: 700, fontSize: 26, color: COLORS.textMuted}}>{WHY.when}</div>
 				</div>
 			</div>
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 650}}>
 				<DayTimeline events={ASSEMBLIES} width={LAYOUT.width} size={72} reveal={reveal} pulse={pulse} />
 			</div>
-			<In at={atVgf - 4} dy={30} style={{left: LAYOUT.left, top: 880, width: LAYOUT.width}}>
+			<In at={atVier - 4} dy={30} style={{left: LAYOUT.left, top: 880, width: LAYOUT.width}}>
 				<Card color={BLUE} style={{padding: '14px 22px'}} glow={0.25}>
 					<div style={{display: 'flex', alignItems: 'center', gap: 12}}>
 						<Chip kind="LAUT VGF" size={16} />
-						<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Meldung 18.11., 14 Uhr</span>
+						<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 23, color: COLORS.textMuted}}>{WHY.vgf}</span>
 					</div>
 					<div style={{marginTop: 8, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 32, lineHeight: 1.1, color: COLORS.text}}>
-						„<span style={{color: frame >= atVier - 4 ? COLORS.signal : COLORS.text}}>vier</span> Veranstaltungen angemeldet“
+						5 Veranstaltungen, darunter <span style={{color: COLORS.signal}}>4 Demozüge</span>
 					</div>
-					<div style={{marginTop: 8, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, lineHeight: 1.2, color: COLORS.textMuted, opacity: frame >= atVier + 4 ? 1 : 0}}>{WHY.note}</div>
+					<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>auf unterschiedlichen Routen</div>
+					<div style={{marginTop: 8, fontFamily: FONTS.body, fontWeight: 700, fontSize: 23, lineHeight: 1.2, color: COLORS.textMuted}}>{WHY.note}</div>
 				</Card>
 			</In>
 			<SourceBar text={WHY.source} at={8} />
 			<Sfx name="whoosh" at={0} volume={0.35} />
 			<Sfx name="tick" at={6} volume={0.35} />
 			<Sfx name="softImpact" at={atFuenf - 3} volume={0.55} />
-			<Sfx name="paper" at={atVgf - 4} volume={0.4} />
-			<Sfx name="click" at={atVier - 3} volume={0.45} />
+			<Sfx name="paper" at={atVier - 4} volume={0.4} />
 			<Sfx name="whoosh" at={durationInFrames - 12} volume={0.3} />
 		</AbsoluteFill>
 	);
@@ -756,9 +789,9 @@ export const CheckScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				<TransitPhone
 					width={330}
 					header={CHECK.phoneHeader}
-					banner="Betriebsbehinderungen möglich"
+					banner="Behinderungen des Straßenbahnbetriebs"
 					rows={[
-						{lines: [{line: '11', kind: 'tram'}, {line: '12', kind: 'tram'}, {line: '14', kind: 'tram'}], text: 'ab 9 Uhr nicht über die Altstadtstrecke', tone: 'alert'},
+						{lines: [{line: '11', kind: 'tram'}, {line: '12', kind: 'tram'}, {line: '14', kind: 'tram'}], text: 'ab 8:30 Uhr Umleitung über Sachsenhausen', tone: 'alert'},
 						{lines: [{line: '18', kind: 'tram'}, {line: '30', kind: 'bus'}, {line: 'M36', kind: 'bus'}], text: 'möglicherweise betroffen', tone: 'maybe'},
 						{lines: [{line: 'U4', kind: 'ubahn'}, {line: 'U5', kind: 'ubahn'}], text: 'nach bisherigem Stand nach Fahrplan', tone: 'ok'},
 					]}
@@ -772,7 +805,7 @@ export const CheckScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				<Card color={TRAM_COLOR} style={{padding: '14px 20px'}} glow={0.3}>
 					<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 22, letterSpacing: 1.5, color: TRAM_COLOR}}>1 · {CHECK.webLabel}</div>
 					<div style={{marginTop: 4, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 44, color: COLORS.text}}>{CHECK.web}</div>
-					<div style={{marginTop: 2, fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>VGF berichtet am Freitag über Behinderungen</div>
+					<div style={{marginTop: 2, fontFamily: FONTS.body, fontWeight: 700, fontSize: 22, color: COLORS.textMuted}}>VGF berichtet im Laufe des Freitags</div>
 				</Card>
 			</In>
 			<In at={atAnz - 4} dx={40} dy={0} style={{left: 430, top: 760, width: 586}}>
