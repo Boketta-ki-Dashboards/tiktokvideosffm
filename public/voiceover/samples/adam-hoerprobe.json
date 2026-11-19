@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Morgen ist nicht nur Frankfurt dran: {Gen Z regelt|Dschen Zett regelt} listet {73|dreiundsiebzig} Städte. In Köln rechnen die Anmelderinnen mit {5.000 bis 10.000|fünf- bis zehntausend} – an der Deutzer Werft.",
-	"sampleFrom": "frankfurt-erklaert-20nov-bundesweit",
+	"text": "{Ewa|Eywa}, Frankfurt! Die Polizei hat über {2.150|zweitausendeinhundertfünfzig} Menschen kontrolliert: {78|Achtundsiebzig} Strafanzeigen, {435|vierhundertfünfunddreißig} Ordnungswidrigkeiten und {182|hundertzweiundachtzig} Platzverweise.",
+	"sampleFrom": "frankfurt-erklaert-2150-kontrollen",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 186,
-	"cacheKey": "6dc5ba7f8ae63e37b7c1",
-	"durationSeconds": 10.488
+	"characters": 207,
+	"cacheKey": "b47307ba31e59467d6cf",
+	"durationSeconds": 13.128
 }
