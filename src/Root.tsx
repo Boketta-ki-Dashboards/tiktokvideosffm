@@ -136,6 +136,18 @@ import {FrankfurtErklaert20NovemberOepnvCover} from './videos/frankfurt-erklaert
 import {FrankfurtErklaert20NovemberOepnvCoverVorschau} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvCoverVorschau';
 import {FrankfurtErklaert20NovemberOepnvOverlayCheck} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvOverlayCheck';
 import {
+	calculateErklaertKontrollenMetadata,
+	erklaertKontrollenDefaultProps,
+	erklaertKontrollenSchema,
+	FrankfurtErklaert2150Kontrollen,
+} from './videos/frankfurt-erklaert-2150-kontrollen/FrankfurtErklaert2150Kontrollen';
+import {FrankfurtErklaert2150KontrollenCover} from './videos/frankfurt-erklaert-2150-kontrollen/FrankfurtErklaert2150KontrollenCover';
+import {FrankfurtErklaert2150KontrollenCoverVorschau} from './videos/frankfurt-erklaert-2150-kontrollen/FrankfurtErklaert2150KontrollenCoverVorschau';
+import {
+	FrankfurtErklaert2150KontrollenOverlayCheck,
+	FrankfurtErklaert2150KontrollenSourceCheck,
+} from './videos/frankfurt-erklaert-2150-kontrollen/FrankfurtErklaert2150KontrollenOverlayCheck';
+import {
 	calculateErklaertBundesweitMetadata,
 	erklaertBundesweitDefaultProps,
 	erklaertBundesweitSchema,
@@ -154,6 +166,22 @@ export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #13 – Über 2.150 Kontrollen auf der Zeil (Bilanz Innenministerium 18.11.2026): hartes Limit 60 s inkl. Abo-Aufruf, Quellenzeile unter den Untertiteln */}
+				<Composition
+					id="FrankfurtErklaert2150Kontrollen"
+					component={FrankfurtErklaert2150Kontrollen}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertKontrollenSchema}
+					defaultProps={erklaertKontrollenDefaultProps}
+					calculateMetadata={calculateErklaertKontrollenMetadata}
+				/>
+				<Still id="FrankfurtErklaert2150Kontrollen-Cover" component={FrankfurtErklaert2150KontrollenCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert2150Kontrollen-CoverVorschau" component={FrankfurtErklaert2150KontrollenCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert2150Kontrollen-OverlayCheck" component={FrankfurtErklaert2150KontrollenOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert2150Kontrollen-QuellenCheck" component={FrankfurtErklaert2150KontrollenSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #12 – 73 Städte – ein Protesttag! (Stand 19.11.2026, 14 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, erste Folge mit Quellenzeile UNTER den Untertiteln */}
 				<Composition
 					id="FrankfurtErklaert20NovemberBundesweit"
