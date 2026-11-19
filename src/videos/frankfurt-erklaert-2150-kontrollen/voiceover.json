@@ -1,0 +1,919 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-2150-kontrollen",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-2150-kontrollen/voiceover-adam.mp3",
+	"durationMs": 54877,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "z1",
+			"startMs": 1302,
+			"endMs": 6706,
+			"hash": "69821efd07cbb72ae823"
+		},
+		{
+			"id": "z2",
+			"startMs": 6766,
+			"endMs": 10412,
+			"hash": "57c02ace301687a55d45"
+		},
+		{
+			"id": "b1",
+			"startMs": 10532,
+			"endMs": 12906,
+			"hash": "ed29db4454658b13648e"
+		},
+		{
+			"id": "b2",
+			"startMs": 12946,
+			"endMs": 20231,
+			"hash": "a865a2a2c5a922197293"
+		},
+		{
+			"id": "b3",
+			"startMs": 20271,
+			"endMs": 25863,
+			"hash": "0821d24dbcd14d8ca46d"
+		},
+		{
+			"id": "g1",
+			"startMs": 25983,
+			"endMs": 30772,
+			"hash": "e42395a225cf706e2cd1"
+		},
+		{
+			"id": "h1",
+			"startMs": 30892,
+			"endMs": 35751,
+			"hash": "b5c7d132d234793fcf96"
+		},
+		{
+			"id": "h2",
+			"startMs": 35791,
+			"endMs": 38723,
+			"hash": "63bd10fd8b1a5be07696"
+		},
+		{
+			"id": "p1",
+			"startMs": 38843,
+			"endMs": 41949,
+			"hash": "62b23323650f9b207cb4"
+		},
+		{
+			"id": "p2",
+			"startMs": 41989,
+			"endMs": 46883,
+			"hash": "60a8d1576daccb33cadb"
+		},
+		{
+			"id": "w1",
+			"startMs": 46923,
+			"endMs": 49820,
+			"hash": "cfb81fda6db72a973fb2"
+		},
+		{
+			"id": "q1",
+			"startMs": 49940,
+			"endMs": 52988,
+			"hash": "ebe9a85188e133892d8b"
+		},
+		{
+			"id": "cta",
+			"startMs": 53048,
+			"endMs": 54877,
+			"hash": "61e51d89dc2c0f05aaa7"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Auf",
+			"startMs": 1302,
+			"endMs": 1441,
+			"timestampMs": 1372,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 1488,
+			"endMs": 1569,
+			"timestampMs": 1529,
+			"confidence": 1
+		},
+		{
+			"text": " Zeil",
+			"startMs": 1615,
+			"endMs": 1882,
+			"timestampMs": 1749,
+			"confidence": 1
+		},
+		{
+			"text": " hat",
+			"startMs": 1929,
+			"endMs": 2010,
+			"timestampMs": 1970,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 2033,
+			"endMs": 2103,
+			"timestampMs": 2068,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 2150,
+			"endMs": 2591,
+			"timestampMs": 2371,
+			"confidence": 1
+		},
+		{
+			"text": " seit",
+			"startMs": 2660,
+			"endMs": 2823,
+			"timestampMs": 2742,
+			"confidence": 1
+		},
+		{
+			"text": " Anfang",
+			"startMs": 2904,
+			"endMs": 3334,
+			"timestampMs": 3119,
+			"confidence": 1
+		},
+		{
+			"text": " November",
+			"startMs": 3392,
+			"endMs": 3903,
+			"timestampMs": 3648,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 3996,
+			"endMs": 4193,
+			"timestampMs": 4095,
+			"confidence": 1
+		},
+		{
+			"text": " 2.150",
+			"startMs": 4239,
+			"endMs": 5598,
+			"timestampMs": 4919,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen",
+			"startMs": 5644,
+			"endMs": 5911,
+			"timestampMs": 5778,
+			"confidence": 1
+		},
+		{
+			"text": " kontrolliert!",
+			"startMs": 5969,
+			"endMs": 6706,
+			"timestampMs": 6445,
+			"confidence": 1
+		},
+		{
+			"text": " Klar",
+			"startMs": 6766,
+			"endMs": 7114,
+			"timestampMs": 6940,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 7149,
+			"endMs": 7254,
+			"timestampMs": 7202,
+			"confidence": 1
+		},
+		{
+			"text": " aber:",
+			"startMs": 7312,
+			"endMs": 7648,
+			"timestampMs": 7480,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrolliert",
+			"startMs": 7875,
+			"endMs": 8491,
+			"timestampMs": 8183,
+			"confidence": 1
+		},
+		{
+			"text": " heißt",
+			"startMs": 8537,
+			"endMs": 8758,
+			"timestampMs": 8648,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 8816,
+			"endMs": 8967,
+			"timestampMs": 8892,
+			"confidence": 1
+		},
+		{
+			"text": " automatisch",
+			"startMs": 9036,
+			"endMs": 9652,
+			"timestampMs": 9344,
+			"confidence": 1
+		},
+		{
+			"text": " verdächtig.",
+			"startMs": 9675,
+			"endMs": 10412,
+			"timestampMs": 10122,
+			"confidence": 1
+		},
+		{
+			"text": " Jetzt",
+			"startMs": 10532,
+			"endMs": 10799,
+			"timestampMs": 10666,
+			"confidence": 1
+		},
+		{
+			"text": " gibt's",
+			"startMs": 10822,
+			"endMs": 11066,
+			"timestampMs": 10944,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 11112,
+			"endMs": 11182,
+			"timestampMs": 11147,
+			"confidence": 1
+		},
+		{
+			"text": " Bilanz",
+			"startMs": 11229,
+			"endMs": 11565,
+			"timestampMs": 11397,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 11589,
+			"endMs": 11705,
+			"timestampMs": 11647,
+			"confidence": 1
+		},
+		{
+			"text": " Innenministerium:",
+			"startMs": 11774,
+			"endMs": 12906,
+			"timestampMs": 12454,
+			"confidence": 1
+		},
+		{
+			"text": " 78",
+			"startMs": 12946,
+			"endMs": 13701,
+			"timestampMs": 13324,
+			"confidence": 1
+		},
+		{
+			"text": " Strafanzeigen,",
+			"startMs": 13724,
+			"endMs": 14641,
+			"timestampMs": 14183,
+			"confidence": 1
+		},
+		{
+			"text": " 435",
+			"startMs": 14780,
+			"endMs": 15988,
+			"timestampMs": 15384,
+			"confidence": 1
+		},
+		{
+			"text": " Ordnungswidrigkeiten",
+			"startMs": 16046,
+			"endMs": 17160,
+			"timestampMs": 16603,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 17369,
+			"endMs": 17520,
+			"timestampMs": 17445,
+			"confidence": 1
+		},
+		{
+			"text": " 182",
+			"startMs": 17578,
+			"endMs": 18902,
+			"timestampMs": 18240,
+			"confidence": 1
+		},
+		{
+			"text": " Platzverweise.",
+			"startMs": 19041,
+			"endMs": 20231,
+			"timestampMs": 19663,
+			"confidence": 1
+		},
+		{
+			"text": " Achtung:",
+			"startMs": 20271,
+			"endMs": 20817,
+			"timestampMs": 20544,
+			"confidence": 1
+		},
+		{
+			"text": " Anzeige",
+			"startMs": 21032,
+			"endMs": 21578,
+			"timestampMs": 21305,
+			"confidence": 1
+		},
+		{
+			"text": " heißt",
+			"startMs": 21612,
+			"endMs": 21949,
+			"timestampMs": 21781,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 22042,
+			"endMs": 22297,
+			"timestampMs": 22170,
+			"confidence": 1
+		},
+		{
+			"text": " Verurteilung –",
+			"startMs": 22344,
+			"endMs": 23189,
+			"timestampMs": 22767,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 23349,
+			"endMs": 23454,
+			"timestampMs": 23402,
+			"confidence": 1
+		},
+		{
+			"text": " addieren",
+			"startMs": 23512,
+			"endMs": 24069,
+			"timestampMs": 23791,
+			"confidence": 1
+		},
+		{
+			"text": " darf",
+			"startMs": 24243,
+			"endMs": 24452,
+			"timestampMs": 24348,
+			"confidence": 1
+		},
+		{
+			"text": " man",
+			"startMs": 24499,
+			"endMs": 24591,
+			"timestampMs": 24545,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 24615,
+			"endMs": 24684,
+			"timestampMs": 24650,
+			"confidence": 1
+		},
+		{
+			"text": " Zahlen",
+			"startMs": 24754,
+			"endMs": 25160,
+			"timestampMs": 24957,
+			"confidence": 1
+		},
+		{
+			"text": " nicht.",
+			"startMs": 25334,
+			"endMs": 25863,
+			"timestampMs": 25845,
+			"confidence": 1
+		},
+		{
+			"text": " Sichergestellt",
+			"startMs": 25983,
+			"endMs": 26645,
+			"timestampMs": 26314,
+			"confidence": 1
+		},
+		{
+			"text": " wurden",
+			"startMs": 26680,
+			"endMs": 26923,
+			"timestampMs": 26802,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 26981,
+			"endMs": 27167,
+			"timestampMs": 27074,
+			"confidence": 1
+		},
+		{
+			"text": " anderem",
+			"startMs": 27202,
+			"endMs": 27539,
+			"timestampMs": 27371,
+			"confidence": 1
+		},
+		{
+			"text": " Messer,",
+			"startMs": 27585,
+			"endMs": 28026,
+			"timestampMs": 27806,
+			"confidence": 1
+		},
+		{
+			"text": " Pfefferpistolen,",
+			"startMs": 28108,
+			"endMs": 29036,
+			"timestampMs": 28572,
+			"confidence": 1
+		},
+		{
+			"text": " Sturmhauben",
+			"startMs": 29083,
+			"endMs": 29814,
+			"timestampMs": 29449,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 29872,
+			"endMs": 29977,
+			"timestampMs": 29925,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 30035,
+			"endMs": 30186,
+			"timestampMs": 30111,
+			"confidence": 1
+		},
+		{
+			"text": " Axt.",
+			"startMs": 30232,
+			"endMs": 30772,
+			"timestampMs": 30662,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 30892,
+			"endMs": 31124,
+			"timestampMs": 31008,
+			"confidence": 1
+		},
+		{
+			"text": " hessenschau",
+			"startMs": 31171,
+			"endMs": 31728,
+			"timestampMs": 31450,
+			"confidence": 1
+		},
+		{
+			"text": " identifizierte",
+			"startMs": 31821,
+			"endMs": 32494,
+			"timestampMs": 32158,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 32529,
+			"endMs": 32599,
+			"timestampMs": 32564,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 32633,
+			"endMs": 33110,
+			"timestampMs": 32872,
+			"confidence": 1
+		},
+		{
+			"text": " so",
+			"startMs": 33156,
+			"endMs": 33284,
+			"timestampMs": 33220,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 33342,
+			"endMs": 33435,
+			"timestampMs": 33389,
+			"confidence": 1
+		},
+		{
+			"text": " zwei",
+			"startMs": 33458,
+			"endMs": 33609,
+			"timestampMs": 33534,
+			"confidence": 1
+		},
+		{
+			"text": " Tatverdächtige",
+			"startMs": 33655,
+			"endMs": 34340,
+			"timestampMs": 33998,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 34375,
+			"endMs": 34468,
+			"timestampMs": 34422,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween-Krawalle.",
+			"startMs": 34526,
+			"endMs": 35751,
+			"timestampMs": 35263,
+			"confidence": 1
+		},
+		{
+			"text": " Insgesamt",
+			"startMs": 35791,
+			"endMs": 36360,
+			"timestampMs": 36076,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 36383,
+			"endMs": 36534,
+			"timestampMs": 36459,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 36615,
+			"endMs": 36766,
+			"timestampMs": 36691,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 36813,
+			"endMs": 37242,
+			"timestampMs": 37028,
+			"confidence": 1
+		},
+		{
+			"text": " schon",
+			"startMs": 37277,
+			"endMs": 37451,
+			"timestampMs": 37364,
+			"confidence": 1
+		},
+		{
+			"text": " 99",
+			"startMs": 37498,
+			"endMs": 38113,
+			"timestampMs": 37806,
+			"confidence": 1
+		},
+		{
+			"text": " ermittelt.",
+			"startMs": 38159,
+			"endMs": 38723,
+			"timestampMs": 38577,
+			"confidence": 1
+		},
+		{
+			"text": " Innenminister",
+			"startMs": 38843,
+			"endMs": 39470,
+			"timestampMs": 39157,
+			"confidence": 1
+		},
+		{
+			"text": " Poseck",
+			"startMs": 39516,
+			"endMs": 39923,
+			"timestampMs": 39720,
+			"confidence": 1
+		},
+		{
+			"text": " nennt",
+			"startMs": 39981,
+			"endMs": 40120,
+			"timestampMs": 40051,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 40143,
+			"endMs": 40213,
+			"timestampMs": 40178,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrollen",
+			"startMs": 40248,
+			"endMs": 40759,
+			"timestampMs": 40504,
+			"confidence": 1
+		},
+		{
+			"text": " einen",
+			"startMs": 40817,
+			"endMs": 41014,
+			"timestampMs": 40916,
+			"confidence": 1
+		},
+		{
+			"text": " Sicherheitsgewinn.",
+			"startMs": 41049,
+			"endMs": 41949,
+			"timestampMs": 41618,
+			"confidence": 1
+		},
+		{
+			"text": " Kritiker",
+			"startMs": 41989,
+			"endMs": 42407,
+			"timestampMs": 42198,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 42430,
+			"endMs": 42535,
+			"timestampMs": 42483,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 42569,
+			"endMs": 42639,
+			"timestampMs": 42604,
+			"confidence": 1
+		},
+		{
+			"text": " Stadtpolitik",
+			"startMs": 42662,
+			"endMs": 43289,
+			"timestampMs": 42976,
+			"confidence": 1
+		},
+		{
+			"text": " sprechen",
+			"startMs": 43313,
+			"endMs": 43638,
+			"timestampMs": 43476,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 43684,
+			"endMs": 43823,
+			"timestampMs": 43754,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrollen",
+			"startMs": 43881,
+			"endMs": 44485,
+			"timestampMs": 44183,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 44555,
+			"endMs": 44729,
+			"timestampMs": 44642,
+			"confidence": 1
+		},
+		{
+			"text": " Aussehen –",
+			"startMs": 44775,
+			"endMs": 45553,
+			"timestampMs": 45164,
+			"confidence": 1
+		},
+		{
+			"text": " Poseck",
+			"startMs": 45646,
+			"endMs": 46041,
+			"timestampMs": 45844,
+			"confidence": 1
+		},
+		{
+			"text": " widerspricht.",
+			"startMs": 46087,
+			"endMs": 46883,
+			"timestampMs": 46592,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 46923,
+			"endMs": 47074,
+			"timestampMs": 46999,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 47144,
+			"endMs": 47236,
+			"timestampMs": 47190,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 47271,
+			"endMs": 47422,
+			"timestampMs": 47347,
+			"confidence": 1
+		},
+		{
+			"text": " Freitag",
+			"startMs": 47469,
+			"endMs": 48038,
+			"timestampMs": 47754,
+			"confidence": 1
+		},
+		{
+			"text": " sollen",
+			"startMs": 48107,
+			"endMs": 48397,
+			"timestampMs": 48252,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 48432,
+			"endMs": 48502,
+			"timestampMs": 48467,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrollen",
+			"startMs": 48537,
+			"endMs": 49013,
+			"timestampMs": 48775,
+			"confidence": 1
+		},
+		{
+			"text": " weitergehen.",
+			"startMs": 49048,
+			"endMs": 49820,
+			"timestampMs": 49588,
+			"confidence": 1
+		},
+		{
+			"text": " Sinnvolle",
+			"startMs": 49940,
+			"endMs": 50416,
+			"timestampMs": 50178,
+			"confidence": 1
+		},
+		{
+			"text": " Vorsorge",
+			"startMs": 50451,
+			"endMs": 50997,
+			"timestampMs": 50724,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 51055,
+			"endMs": 51252,
+			"timestampMs": 51154,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 51298,
+			"endMs": 51391,
+			"timestampMs": 51345,
+			"confidence": 1
+		},
+		{
+			"text": " viel",
+			"startMs": 51449,
+			"endMs": 51565,
+			"timestampMs": 51507,
+			"confidence": 1
+		},
+		{
+			"text": " Kontrolle –",
+			"startMs": 51600,
+			"endMs": 52134,
+			"timestampMs": 51867,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 52181,
+			"endMs": 52332,
+			"timestampMs": 52257,
+			"confidence": 1
+		},
+		{
+			"text": " meint",
+			"startMs": 52390,
+			"endMs": 52552,
+			"timestampMs": 52471,
+			"confidence": 1
+		},
+		{
+			"text": " ihr?",
+			"startMs": 52610,
+			"endMs": 52988,
+			"timestampMs": 52947,
+			"confidence": 1
+		},
+		{
+			"text": " Folgt",
+			"startMs": 53048,
+			"endMs": 53327,
+			"timestampMs": 53188,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 53350,
+			"endMs": 54279,
+			"timestampMs": 53815,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 54337,
+			"endMs": 54441,
+			"timestampMs": 54389,
+			"confidence": 1
+		},
+		{
+			"text": " mehr!",
+			"startMs": 54476,
+			"endMs": 54877,
+			"timestampMs": 54691,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-19T17:09:56.927Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 975
+	},
+	"measuredLufsBeforeMaster": -13.73
+}
