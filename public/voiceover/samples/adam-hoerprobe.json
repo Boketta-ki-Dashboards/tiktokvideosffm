@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Die {Gen-Z-Demo|Dschen-Zett-Demo} am Freitag läuft jetzt ganz anders als geplant! Kundgebung an der Weseler Werft. Darunter ein Zug von {„GenZ regelt Bundesbewegung“|Dschen Zett regelt Bundesbewegung} – vom Hauptbahnhof nach Bockenheim. Gegen {49|neunundvierzig} Personen laufen Aufenthaltsverbote. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
-	"sampleFrom": "frankfurt-erklaert-20nov-demo-update",
+	"text": "{Ewa|Eywa}, Frankfurt! Laut {VGF|Vau Geh Eff} können die Linien {11|elf}, {12|zwölf} und {14|vierzehn} ab {9 Uhr|neun Uhr} nicht über die Altstadtstrecke fahren. Möglicherweise trifft's auch die {18|Achtzehn} und die Busse {30|dreißig} und {M36|M sechsunddreißig}. Willy-Brandt-Platz und {Dom/Römer|Dom Römer} bleiben offen – {U4|U vier} und {U5|U fünf} sind die Alternative. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"sampleFrom": "frankfurt-erklaert-20nov-oepnv",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 302,
-	"cacheKey": "52a9cb367dd42f7810bd",
-	"durationSeconds": 16.944
+	"characters": 338,
+	"cacheKey": "02f99b1e84226b626334",
+	"durationSeconds": 18.984
 }
