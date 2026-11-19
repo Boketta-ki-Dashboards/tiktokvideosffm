@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaert2150Kontrollen
           - FrankfurtErklaert20NovemberBundesweit
           - FrankfurtErklaert20NovemberOepnv
           - FrankfurtErklaert20NovemberDemoUpdate
