@@ -47,8 +47,25 @@ Die VGF hat ihre Meldung am 19.11. aktualisiert (gleiche URL, neuer Titel „Ver
 
 ## 4. Render
 
-Lauf #66 (19.11., 11:15 UTC) scheiterte vor dem Render an der FFmpeg-Installation („Ubuntu-Paketquellen vom Runner aus nicht erreichbar“,
-0 Credits). Der Ausweichweg im Workflow (statischer FFmpeg-Build) wurde nicht eingebaut – die Änderung war in dieser Sitzung nicht freigegeben.
-Neuer Versuch: Lauf #67.
+- Lauf #66 und #67 scheiterten vor dem Render an der FFmpeg-Installation (apt hing, Ubuntu-Paketquellen vom Runner nicht erreichbar; 0 Credits).
+  Ein Ausweichweg im Workflow (statischer FFmpeg-Build) wurde nicht eingebaut – die Änderung war in dieser Sitzung nicht freigegeben.
+- **Lauf #68 (Run-ID 44516635259, `stimme: vorhanden`, kein ElevenLabs-Aufruf) – erfolgreich.** Artefakte:
+  `FrankfurtRed3_20November_OePNV_ADAM_FINAL-run68` (MP4, Thumbnail, Titelbild- und Overlay-Prüfbogen, ID 14526147829),
+  `…-Technikbericht-run68` (ID 14525529609), `…-Sprecher-Adam-run68` (ID 14527295372).
 
-Lokale Kontrollkopie (nicht zur Veröffentlichung): 1080 × 1920, 30 fps, 1.613 Frames = 53,8 s, 20,8 MB, `verify` bestanden.
+| Prüfung | Ergebnis |
+|---|---|
+| Datei | `FrankfurtRed3_20November_OePNV_ADAM_FINAL.mp4`, **14,09 MiB** (14.776.690 Byte, < 30 MB), SHA-256 `09b38b1242cb41a32be35f1c722c8f63867a8705829c34ee4589e56f9f73973c` |
+| Video | H.264 High, 1080 × 1920, 30/1 fps, yuv420p, BT.709, **1.613 Frames = 53,781 s** (≤ 1.800), Faststart |
+| Audio | AAC LC, 48 kHz, Stereo, 189 kbit/s · **−14,5 LUFS**, LRA 2,4 LU, True Peak −1,3 dBTP (Prüfbericht bestanden) |
+| Dekodierung | vollständig fehlerfrei (ffmpeg, 0 Meldungen) |
+| Stille ≥ 400 ms (−50 dB) / schwarze Bilder ≥ 0,2 s | keine / keine |
+| Titelbild | `FrankfurtRed3_20November_OePNV_THUMBNAIL.png`; Prüfbogen: Titel, Linien und „AB 8:30 UHR“ in allen vier Ansichten lesbar |
+| Overlay | Kopfzeile y 272–342 unter der simulierten Suchleiste; Linienschilder und Karte frei (Prüfbild Uhr/Linien und Karte) |
+| Kontaktbogen | `kontaktbogen-run68.jpg` (alle 2 s aus dem MP4) |
+| Workflow-Prüfungen | `verify-video`, `check-sync`, `check-pauses`, `tech-report --max-seconds 60` – alle grün; `npm run check` 192/192 Tests |
+
+Bekannte Kleinigkeit: Bei dreizeiligen Untertiteln (z. B. „und / Konrad-Adenauer- / Straße.“) liegt die oberste Zeile für ≈ 0,5 s über der Quellenzeile.
+
+Nicht automatisch veröffentlicht. Vor dem Posten am Abend lohnt ein letzter Blick auf vgf-ffm.de – ändert die VGF ihre Meldung erneut,
+stimmt der Stand im Video (19.11., 9 Uhr) nicht mehr.
