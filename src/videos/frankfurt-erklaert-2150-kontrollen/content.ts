@@ -47,18 +47,18 @@ export const STATS: {id: StatId; value: number; title: string; meaning: string; 
 	{id: 'owi', value: 435, title: 'ORDNUNGSWIDRIGKEITEN', meaning: 'Verstöße unterhalb einer Straftat', not: '≠ STRAFTAT', word: '435'},
 	{id: 'platzverweise', value: 182, title: 'PLATZVERWEISE', meaning: 'Ort für eine Zeit verlassen', not: '≠ FESTNAHME', word: '182'},
 ];
-export const NO_SUM = {title: 'NICHT ADDIEREN', sub: 'Verschiedene Maßnahmen – eine Person kann mehrfach erfasst sein'};
+export const NO_SUM = {title: 'NICHT ADDIEREN', sub: 'eine Person kann mehrfach erfasst sein'};
 
 export type ItemId = 'messer' | 'pfeffer' | 'sturmhaube' | 'axt' | 'spray' | 'stock' | 'werkzeug';
 /** Sichergestellte Gegenstände – Mengen exakt wie in der Pressemitteilung („mehrere“, „eine“, „drei“). */
 export const ITEMS: {id: ItemId; name: string; qty: string; word?: string}[] = [
 	{id: 'messer', name: 'MESSER', qty: 'MEHRERE', word: 'Messer'},
-	{id: 'pfeffer', name: 'PFEFFERPISTOLEN', qty: 'MEHRERE', word: 'Pfefferpistolen'},
-	{id: 'sturmhaube', name: 'STURMHAUBEN', qty: 'MEHRERE', word: 'Sturmhauben'},
+	{id: 'pfeffer', name: 'PFEFFER-\nPISTOLEN', qty: 'MEHRERE', word: 'Pfefferpistolen'},
+	{id: 'sturmhaube', name: 'STURM-\nHAUBEN', qty: 'MEHRERE', word: 'Sturmhauben'},
 	{id: 'axt', name: 'AXT', qty: '1', word: 'Axt'},
-	{id: 'spray', name: 'TIERABWEHRSPRAYS', qty: 'MEHRERE'},
-	{id: 'stock', name: 'TELESKOPSCHLAGSTÖCKE', qty: '3'},
-	{id: 'werkzeug', name: 'EINBRUCHSWERKZEUG', qty: 'MEHRERE'},
+	{id: 'spray', name: 'TIERABWEHR-\nSPRAYS', qty: 'MEHRERE'},
+	{id: 'stock', name: 'TELESKOP-\nSCHLAGSTÖCKE', qty: '3'},
+	{id: 'werkzeug', name: 'EINBRUCHS-\nWERKZEUG', qty: 'MEHRERE'},
 ];
 export const ITEMS_NOTE = 'Sichergestellt bei den Kontrollen seit 1.11. – kein belegter Bezug zur Demo am 20.11.';
 
@@ -70,8 +70,8 @@ export const SUSPECTS = {
 };
 
 export const DEBATE = {
-	left: {kicker: 'INNENMINISTER', title: 'SICHERHEITSGEWINN', quote: '„Ich halte diese Kontrollintensität in Frankfurt gegenwärtig für notwendig.“', by: 'Roman Poseck (laut hessenschau)'},
-	right: {kicker: 'KRITIK AUS DER STADTPOLITIK', title: 'KONTROLLEN NACH AUSSEHEN?', sub: 'Vorwurf: Racial Profiling · u. a. Stadtverordnete von SPD und Linke'},
+	left: {kicker: 'INNENMINISTER', title: 'SICHERHEITS-\nGEWINN', quote: '„Ich halte diese Kontrollintensität in Frankfurt gegenwärtig für notwendig.“', by: 'Roman Poseck (laut hessenschau)'},
+	right: {kicker: 'KRITIK AUS DER STADTPOLITIK', title: 'KONTROLLEN\nNACH AUSSEHEN?', sub: 'Vorwurf: Racial Profiling · u. a. Stadtverordnete von SPD und Linke'},
 	reply: {title: 'ZURÜCKGEWIESEN', quote: '„Es geht nicht um Herkunft, es geht um Verhalten.“', by: 'Poseck · Polizei und Ministerium weisen den Vorwurf zurück'},
 	next: 'KONTROLLEN SOLLEN WEITERGEHEN',
 	nextSub: 'auch nach Freitag, 20.11. – laut Poseck',

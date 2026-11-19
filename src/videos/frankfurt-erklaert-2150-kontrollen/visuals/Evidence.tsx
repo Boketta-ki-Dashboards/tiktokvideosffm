@@ -82,26 +82,24 @@ export const ItemIcon: React.FC<{id: ItemId; size: number; color: string; draw?:
 	);
 };
 
-/** Beweismitteltüte mit Symbol, Menge und Name; fällt bei `at` federnd ins Raster. */
+/** Beweismitteltüte (quadratisch) mit Symbol und Mengen-Plakette, darunter das Etikett (bis zwei Zeilen); fällt bei `at` federnd ins Raster. */
 export const EvidenceTile: React.FC<{id: ItemId; name: string; qty: string; at: number; width: number; color: string; highlight?: number}> = ({id, name, qty, at, width, color, highlight = 0}) => {
 	const frame = useCurrentFrame();
 	const t = interpolate(frame, [at, at + 12], [0, 1], {...clamp, easing: EASE_OUT});
 	const draw = interpolate(frame, [at + 4, at + 22], [0, 1], clamp);
 	if (frame < at - 1) return null;
-	const h = width * 1.18;
 	return (
-		<div style={{position: 'relative', width, height: h, opacity: Math.min(1, t * 1.6), translate: `0 ${(1 - t) * -40}px`, rotate: `${(1 - t) * -6}deg`, scale: String(1 + 0.05 * highlight)}}>
+		<div style={{position: 'relative', width, height: width + 92, opacity: Math.min(1, t * 1.6), translate: `0 ${(1 - t) * -40}px`, rotate: `${(1 - t) * -6}deg`, scale: String(1 + 0.05 * highlight)}}>
 			{/* Tüte */}
-			<div style={{position: 'absolute', inset: 0, borderRadius: 16, background: 'linear-gradient(160deg, rgba(210,225,255,0.16), rgba(140,160,210,0.06))', border: `2px solid ${withAlpha('#C9D6F5', 0.45 + 0.4 * highlight)}`, boxShadow: `0 18px 40px rgba(0,0,0,0.45), 0 0 ${24 * highlight}px ${withAlpha(color, 0.6)}`}} />
-			<div style={{position: 'absolute', left: 10, right: 10, top: 12, height: 6, borderRadius: 3, background: withAlpha('#C9D6F5', 0.5)}} />
-			<div style={{position: 'absolute', left: 0, right: 0, top: h * 0.12, display: 'flex', justifyContent: 'center'}}>
-				<ItemIcon id={id} size={width * 0.56} color={withAlpha('#FFFFFF', 0.92)} draw={draw} />
+			<div style={{position: 'absolute', left: 0, top: 0, width, height: width, borderRadius: 18, background: 'linear-gradient(160deg, rgba(210,225,255,0.18), rgba(140,160,210,0.06))', border: `2px solid ${withAlpha('#C9D6F5', 0.45 + 0.4 * highlight)}`, boxShadow: `0 18px 40px rgba(0,0,0,0.45), 0 0 ${24 * highlight}px ${withAlpha(color, 0.6)}`}} />
+			<div style={{position: 'absolute', left: 12, right: 12, top: 12, height: 6, borderRadius: 3, background: withAlpha('#C9D6F5', 0.5)}} />
+			<div style={{position: 'absolute', left: 0, width, top: width * 0.16, display: 'flex', justifyContent: 'center'}}>
+				<ItemIcon id={id} size={width * 0.62} color={withAlpha('#FFFFFF', 0.92)} draw={draw} />
 			</div>
+			{/* Mengen-Plakette */}
+			<div style={{position: 'absolute', right: -8, top: -10, padding: '4px 10px', borderRadius: 10, background: color, border: '2px solid #FFFFFF', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 20, letterSpacing: 0.5, color: '#FFFFFF', boxShadow: '0 6px 16px rgba(0,0,0,0.5)'}}>{qty}</div>
 			{/* Etikett */}
-			<div style={{position: 'absolute', left: 8, right: 8, bottom: 10, padding: '6px 6px 7px', borderRadius: 8, background: '#F1EEE6', textAlign: 'center'}}>
-				<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: Math.min(22, width * 0.12), color: color === COLORS.signal ? '#0B1029' : color, lineHeight: 1}}>{qty}</div>
-				<div style={{marginTop: 3, fontFamily: FONTS.heading, fontWeight: 800, fontSize: Math.min(17, (width * 1.45) / Math.max(8, name.length)), letterSpacing: 0.3, color: '#14141C', whiteSpace: 'nowrap', overflow: 'hidden'}}>{name}</div>
-			</div>
+			<div style={{position: 'absolute', left: -6, right: -6, top: width + 10, textAlign: 'center', fontFamily: FONTS.heading, fontWeight: 900, fontSize: 21, lineHeight: 1.12, color: COLORS.text, whiteSpace: 'pre-line', textShadow: '0 3px 10px rgba(0,0,0,0.9)'}}>{name}</div>
 		</div>
 	);
 };

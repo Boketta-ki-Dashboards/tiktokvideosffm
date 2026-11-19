@@ -126,7 +126,7 @@ export const ZeilScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const z2 = cue(cues, 'z2', 120);
 	const at2150 = wordFrame(cues, '2.150', z1.from + 70);
 	const atStamp = Math.max(at2150 + 20, wordFrame(cues, 'Kontrolliert', z2.from + 20) - 2);
-	const atQuote = Math.max(atStamp + 18, wordFrame(cues, 'verdächtig', z2.from + 50) - 2);
+	const atQuote = Math.min(atStamp + 16, Math.max(atStamp + 8, wordFrame(cues, 'automatisch', z2.from + 30)));
 	const dolly = 3 + interpolate(frame, [0, durationInFrames], [0, 7], {easing: EASE_IN_OUT});
 	const count = interpolate(frame, [2, at2150 + 2], [0, 1], {...clamp, easing: EASE_OUT});
 	const stamp = interpolate(frame, [atStamp, atStamp + 7], [0, 1], {...clamp, easing: EASE_OUT});
@@ -153,20 +153,20 @@ export const ZeilScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</div>
 			{/* KONTROLLIERT ≠ SCHULDIG */}
 			{frame >= atStamp ? (
-				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 860, display: 'flex', justifyContent: 'center'}}>
+				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 930, display: 'flex', justifyContent: 'center'}}>
 					<div style={{padding: '14px 28px', borderRadius: 18, border: `6px solid ${GREEN}`, background: 'rgba(8,10,28,0.94)', rotate: '-4deg', scale: String(1.5 - 0.5 * stamp), opacity: stamp, boxShadow: '0 30px 70px rgba(0,0,0,0.7)', textAlign: 'center'}}>
 						<div style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 60, letterSpacing: 1, color: GREEN, whiteSpace: 'nowrap'}}>{CONTROLS.stamp}</div>
 						<div style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 25, color: COLORS.text, whiteSpace: 'nowrap'}}>{CONTROLS.stampSub}</div>
 					</div>
 				</div>
 			) : null}
-			<In at={atQuote} style={{left: LAYOUT.left, width: LAYOUT.width, top: 1060}} dy={20}>
+			<In at={atQuote} style={{left: LAYOUT.left, width: LAYOUT.width, top: 1100}} dy={20}>
 				<Card color={VIOLET} style={{padding: '14px 22px'}} glow={0.15}>
 					<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 27, lineHeight: 1.3, color: COLORS.text}}>{CONTROLS.quote}</div>
 					<div style={{marginTop: 6, fontFamily: FONTS.body, fontWeight: 600, fontSize: 22, color: COLORS.textMuted}}>{CONTROLS.quoteBy}</div>
 				</Card>
 			</In>
-			<IllustrationMark top={1000} />
+			<IllustrationMark top={1232} />
 			<Sfx name="riser" at={2} volume={0.25} />
 			<Sfx name="softImpact" at={at2150} volume={0.5} />
 			<Sfx name="stamp" at={atStamp + 4} volume={0.6} />
@@ -267,10 +267,12 @@ export const ItemsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const wordAt = (w: string | undefined, fb: number) => (w ? wordFrame(cues, w, fb) - 2 : fb);
 	const named = ITEMS.filter((it) => it.word);
 	const rest = ITEMS.filter((it) => !it.word);
-	const lastNamed = Math.max(...named.map((it, i) => wordAt(it.word, g1.from + 30 + i * 18)));
-	const ats = ITEMS.map((it, i) => (it.word ? wordAt(it.word, g1.from + 30 + i * 18) : lastNamed + 10 + rest.indexOf(it) * 5));
-	const tileW = 250;
-	const gap = 58;
+	const namedAts = named.map((it, i) => wordAt(it.word, g1.from + 30 + i * 18));
+	const lastNamed = Math.max(...namedAts);
+	// nicht gesprochene Gegenstände erscheinen zwischen den genannten (alle sind sichtbar, bevor der Satz endet)
+	const ats = ITEMS.map((it) => (it.word ? namedAts[named.indexOf(it)] : namedAts[Math.min(rest.indexOf(it), namedAts.length - 1)] + 10));
+	const tileW = 196;
+	const gap = 27;
 	const drift = interpolate(frame, [0, durationInFrames], [0, 1]);
 	return (
 		<AbsoluteFill style={{backgroundColor: '#070A1F', overflow: 'hidden'}}>
@@ -290,12 +292,12 @@ export const ItemsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: COLORS.textMuted}}>Kontrollen seit 1.11. · Auswahl</span>
 			</div>
 			{ITEMS.map((it, i) => {
-				const col = i % 3;
-				const row = Math.floor(i / 3);
-				const rowCount = row < 2 ? 3 : ITEMS.length - 6;
+				const row = i < 4 ? 0 : 1;
+				const col = row === 0 ? i : i - 4;
+				const rowCount = row === 0 ? 4 : ITEMS.length - 4;
 				const rowW = rowCount * tileW + (rowCount - 1) * gap;
-				const x = (1080 - 150 + 64 - rowW) / 2 + col * (tileW + gap) - 32;
-				const y = 432 + row * (tileW * 1.18 + 26);
+				const x = LAYOUT.left + (LAYOUT.width - rowW) / 2 + col * (tileW + gap);
+				const y = 436 + row * (tileW + 92);
 				const hl = it.word ? interpolate(frame, [ats[i], ats[i] + 6, ats[i] + 24], [0, 1, 0.25], clamp) : 0;
 				return (
 					<div key={it.id} style={{position: 'absolute', left: x, top: y}}>
@@ -303,11 +305,11 @@ export const ItemsScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</div>
 				);
 			})}
-			<In at={lastNamed + 20} style={{left: LAYOUT.left, width: LAYOUT.width, top: 1230}} dy={14}>
-				<div style={{display: 'flex', alignItems: 'center', gap: 10}}>
-					<P2Icon name="info" size={24} color={COLORS.textMuted} />
-					<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 22, color: COLORS.textMuted}}>{ITEMS_NOTE}</span>
-				</div>
+			<In at={Math.min(lastNamed, namedAts[1] + 14)} style={{left: LAYOUT.left, width: LAYOUT.width, top: 1050}} dy={14}>
+				<Card color={YELLOW} style={{padding: '14px 20px', display: 'flex', alignItems: 'center', gap: 14}} glow={0.12}>
+					<P2Icon name="info" size={34} color={YELLOW} />
+					<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 26, lineHeight: 1.3, color: COLORS.text}}>{ITEMS_NOTE}</span>
+				</Card>
 			</In>
 			<IllustrationMark top={398} />
 			{ats.map((a, i) => (
@@ -415,11 +417,11 @@ export const DebateScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 380, height: 620, translate: `${pan}px 0`}}>
 				{/* links: Innenminister */}
 				<div style={{position: 'absolute', left: 0, top: 0, width: colW, opacity: Math.min(1, left * 1.7) * (1 - 0.35 * focus), translate: `${(1 - left) * -60}px 0`}}>
-					<Card color={BLUE} style={{padding: '20px 20px', height: 560, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 10}} glow={0.2}>
+					<Card color={BLUE} style={{padding: '20px 20px', height: 470, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 10}} glow={0.2}>
 						<Chip kind="POSITION" size={18} style={{alignSelf: 'flex-start'}} />
 						<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 22, letterSpacing: 1.5, color: BLUE}}>{DEBATE.left.kicker}</span>
-						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 38, lineHeight: 1.05, color: COLORS.text}}>{DEBATE.left.title}</span>
-						<P2Icon name="shield" size={70} color={BLUE} />
+						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, lineHeight: 1.05, color: COLORS.text, whiteSpace: 'pre-line'}}>{DEBATE.left.title}</span>
+						<P2Icon name="shield" size={56} color={BLUE} />
 						<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, lineHeight: 1.3, color: COLORS.text}}>{DEBATE.left.quote}</span>
 						<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 22, color: COLORS.textMuted}}>{DEBATE.left.by}</span>
 					</Card>
@@ -427,20 +429,20 @@ export const DebateScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 				{/* rechts: Kritik */}
 				{frame >= atRight - 1 ? (
 					<div style={{position: 'absolute', right: 0, top: 0, width: colW, opacity: Math.min(1, right * 1.7), translate: `${(1 - right) * 60}px 0`}}>
-						<Card color="#FF8A65" style={{padding: '20px 20px', height: 560, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 10}} glow={0.2}>
+						<Card color="#FF8A65" style={{padding: '20px 20px', height: 470, boxSizing: 'border-box', display: 'flex', flexDirection: 'column', gap: 10}} glow={0.2}>
 							<Chip kind="KRITIK" size={18} style={{alignSelf: 'flex-start'}} />
 							<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 22, letterSpacing: 1.2, color: '#FF8A65'}}>{DEBATE.right.kicker}</span>
-							<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 38, lineHeight: 1.05, color: COLORS.text}}>{DEBATE.right.title}</span>
-							<P2Icon name="users" size={70} color="#FF8A65" />
+							<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, lineHeight: 1.05, color: COLORS.text, whiteSpace: 'pre-line'}}>{DEBATE.right.title}</span>
+							<P2Icon name="users" size={56} color="#FF8A65" />
 							<span style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 25, lineHeight: 1.3, color: COLORS.text}}>{DEBATE.right.sub}</span>
 						</Card>
 					</div>
 				) : null}
 				{/* Trennlinie */}
-				<div style={{position: 'absolute', left: LAYOUT.width / 2 - 1.5, top: 30, width: 3, height: 500, background: `linear-gradient(${withAlpha('#FFFFFF', 0)}, ${withAlpha('#FFFFFF', 0.35)}, ${withAlpha('#FFFFFF', 0)})`, opacity: right}} />
+				<div style={{position: 'absolute', left: LAYOUT.width / 2 - 1.5, top: 30, width: 3, height: 410, background: `linear-gradient(${withAlpha('#FFFFFF', 0)}, ${withAlpha('#FFFFFF', 0.35)}, ${withAlpha('#FFFFFF', 0)})`, opacity: right}} />
 			</div>
 			{/* Antwort */}
-			<In at={atReply} style={{left: LAYOUT.left, width: LAYOUT.width, top: 980}} dy={20} out={1 - interpolate(frame, [atNext, atNext + 8], [0, 1], clamp) * 0.35}>
+			<In at={atReply} style={{left: LAYOUT.left, width: LAYOUT.width, top: 878}} dy={20} out={1 - interpolate(frame, [atNext, atNext + 8], [0, 1], clamp) * 0.35}>
 				<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '12px 18px', borderRadius: 16, background: 'rgba(8,10,28,0.95)', border: `2.5px solid ${BLUE}`}}>
 					<span style={{padding: '4px 10px', borderRadius: 10, background: withAlpha(BLUE, 0.2), fontFamily: FONTS.heading, fontWeight: 900, fontSize: 22, color: BLUE, whiteSpace: 'nowrap'}}>{DEBATE.reply.title}</span>
 					<div style={{display: 'flex', flexDirection: 'column'}}>
@@ -451,7 +453,7 @@ export const DebateScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			</In>
 			{/* Ausblick */}
 			{frame >= atNext - 1 ? (
-				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 1112, display: 'flex', justifyContent: 'center', opacity: Math.min(1, next * 1.7), scale: String(0.85 + 0.15 * next)}}>
+				<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 1092, display: 'flex', justifyContent: 'center', opacity: Math.min(1, next * 1.7), scale: String(0.85 + 0.15 * next)}}>
 					<div style={{display: 'flex', alignItems: 'center', gap: 14, padding: '12px 22px', borderRadius: 18, background: RED, boxShadow: '0 20px 50px rgba(255,59,78,0.35)'}}>
 						<P2Icon name="clock" size={36} color="#FFFFFF" />
 						<div style={{display: 'flex', flexDirection: 'column'}}>
