@@ -108,7 +108,7 @@ const dotBillboards = (state: (c: City) => DotState): PlaneBillboard[] =>
  * rote Karte „STÄDTE – EIN PROTESTTAG“, Datum, „4 ZENTRAL · 69 ANGESCHLOSSEN“, Logo + Account; im PNG zusätzlich „WAS PASSIERT MORGEN?“.
  * `morph` (0–1) blendet die Texte aus und fährt die Karte in die Übersicht der Karten-Szene.
  */
-export const BundesweitCover: React.FC<{morph?: number; pulse?: number; thumbnail?: boolean}> = ({morph = 0, pulse = 0, thumbnail = false}) => {
+export const BundesweitCover: React.FC<{morph?: number; pulse?: number; thumbnail?: boolean; meta?: number}> = ({morph = 0, pulse = 0, thumbnail = false, meta = 1}) => {
 	const frame = useCurrentFrame();
 	const L = BUNDESWEIT_COVER_LAYOUT;
 	const m = EASE_IN_OUT(Math.min(1, Math.max(0, morph)));
@@ -151,7 +151,8 @@ export const BundesweitCover: React.FC<{morph?: number; pulse?: number; thumbnai
 						{LOCAL_COUNT} ANGESCHLOSSEN
 					</div>
 				</div>
-				<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.metaTop, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14}}>
+				{/* Logo-Zeile: im Video nur, bis der zweite Satz beginnt (zweizeilige Untertitel reichen bis ≈ y 1.274) */}
+				<div style={{position: 'absolute', left: L.sideMin, right: L.sideMin, top: L.metaTop, display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 14, opacity: meta}}>
 					<BrandLogo size={52} />
 					<span style={{fontFamily: FONTS.heading, fontWeight: 800, fontSize: 30, color: COLORS.textMuted}}>{handleWithAt()}</span>
 				</div>
@@ -176,9 +177,10 @@ export const CoverScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const at73 = wordFrame(cues, '73', h2.from + 50);
 	const pulse = interpolate(frame, [at73 - 2, at73 + 20], [0, 1], clamp);
 	const morph = interpolate(frame, [durationInFrames - 20, durationInFrames - 1], [0, 1], clamp);
+	const meta = 1 - interpolate(frame, [h2.from - 8, h2.from], [0, 1], clamp);
 	return (
 		<AbsoluteFill>
-			<BundesweitCover morph={morph} pulse={pulse > 0 && pulse < 1 ? pulse : 0} />
+			<BundesweitCover morph={morph} pulse={pulse > 0 && pulse < 1 ? pulse : 0} meta={meta} />
 			<Sfx name="softImpact" at={0} volume={0.5} />
 			<Sfx name="riser" at={Math.max(0, at73 - 24)} volume={0.35} />
 			<Sfx name="boom" at={at73} volume={0.4} />
@@ -221,7 +223,8 @@ const MapHeader: React.FC<{atCount: number; countDur: number; atLegend: number; 
 		<>
 			{/* Zähler (bis zur Legende) */}
 			<div style={{position: 'absolute', left: LAYOUT.left, top: 368, opacity: 1 - legend, display: 'flex', alignItems: 'center', gap: 18}}>
-				<CountUp value={CITY_COUNT} at={atCount} dur={countDur} style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 112, lineHeight: 1, color: YELLOW, textShadow: `0 0 40px ${withAlpha(YELLOW, 0.4)}`}} />
+				{/* „73“ ist im Titelbild bereits gesprochen → steht sofort (kein Hochzählen von 0) und pulsiert mit der Welle */}
+				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 112, lineHeight: 1, color: YELLOW, textShadow: `0 0 40px ${withAlpha(YELLOW, 0.4)}`, scale: String(1 + 0.06 * interpolate(frame, [atCount, atCount + 8, atCount + countDur], [0, 1, 0], clamp))}}>{CITY_COUNT}</span>
 				<div style={{display: 'flex', flexDirection: 'column', gap: 6}}>
 					<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 34, color: COLORS.text}}>{MAP.counterLabel}</span>
 					<Chip kind="LAUT WEBSITE" size={20} style={{alignSelf: 'flex-start'}} />
@@ -268,8 +271,9 @@ export const MapScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 		...dotBillboards((c) => {
 			const ns = RANK_NS.get(c.id)!;
 			const we = RANK_WE.get(c.id)!;
+			// Punkte stehen schon im Titelbild → bleiben sichtbar; die Welle Nord → Süd lässt sie nur aufleuchten
 			const appear = atWave + ns * waveDur;
-			const on = interpolate(frame, [appear, appear + 8], [0, 1], clamp);
+			const on = 1;
 			const sweep = atAachen + we * 34;
 			const flashWE = interpolate(frame, [sweep, sweep + 5, sweep + 16], [0, 1, 0], clamp);
 			const flashIn = interpolate(frame, [appear, appear + 4, appear + 14], [0, 1, 0], clamp);
