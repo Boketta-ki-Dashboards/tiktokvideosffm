@@ -24,6 +24,14 @@
 			"koeln": 2324,
 			"berlin": 1361,
 			"muenchen": 769
+		},
+		{
+			"zeit": "2026-11-19T16:09:11+01:00",
+			"total": 20130,
+			"frankfurt": 3695,
+			"koeln": 2342,
+			"berlin": 1375,
+			"muenchen": 776
 		}
 	],
 	"letzter": {

@@ -5,6 +5,9 @@ Video-ID `frankfurt-erklaert-20nov-bundesweit`, Komposition `FrankfurtErklaert20
 
 Alle Zitate wörtlich aus dem HTML-Text der Seiten (curl + Textextraktion, keine KI-Zusammenfassung).
 
+**Erneut geprüft vor der Vertonung: 19.11.2026, 16:09 Uhr MEZ** – Website weiterhin „in 73 Städten“, Städteliste identisch (73 IDs, dieselben 4 zentralen
+Städte), Zähler 20.130 (weiter „rund 20.000“); Polizei Köln: keine neuere Pressemitteilung als 7:58 Uhr.
+
 ## 1. Zahl der Städte – Website „Gen Z regelt“ (genz-regelt.de)
 
 Abgerufen 19.11.2026, 13:47 Uhr MEZ (erneut 14:02 Uhr, unverändert).
