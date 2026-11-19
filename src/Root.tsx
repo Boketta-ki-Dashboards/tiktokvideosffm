@@ -126,12 +126,36 @@ import {
 import {FrankfurtErklaert20NovemberDemoUpdateCover} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateCover';
 import {FrankfurtErklaert20NovemberDemoUpdateCoverVorschau} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateCoverVorschau';
 import {FrankfurtErklaert20NovemberDemoUpdateOverlayCheck} from './videos/frankfurt-erklaert-20nov-demo-update/FrankfurtErklaert20NovemberDemoUpdateOverlayCheck';
+import {
+	calculateErklaertOepnvMetadata,
+	erklaertOepnvDefaultProps,
+	erklaertOepnvSchema,
+	FrankfurtErklaert20NovemberOepnv,
+} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnv';
+import {FrankfurtErklaert20NovemberOepnvCover} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvCover';
+import {FrankfurtErklaert20NovemberOepnvCoverVorschau} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvCoverVorschau';
+import {FrankfurtErklaert20NovemberOepnvOverlayCheck} from './videos/frankfurt-erklaert-20nov-oepnv/FrankfurtErklaert20NovemberOepnvOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #11 – Frankfurt morgen: Diese Bahnen sind betroffen! (Stand VGF 18.11.2026, 14 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, Kopfzeile symmetrisch oben */}
+				<Composition
+					id="FrankfurtErklaert20NovemberOepnv"
+					component={FrankfurtErklaert20NovemberOepnv}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertOepnvSchema}
+					defaultProps={erklaertOepnvDefaultProps}
+					calculateMetadata={calculateErklaertOepnvMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberOepnv-Cover" component={FrankfurtErklaert20NovemberOepnvCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberOepnv-CoverVorschau" component={FrankfurtErklaert20NovemberOepnvCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberOepnv-OverlayCheck" component={FrankfurtErklaert20NovemberOepnvOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #10 – Gen-Z-Demo am 20.11. geändert! (Stand 18.11.2026, 15:28 Uhr): hartes Limit 60 s inkl. Abo-Aufruf, Kopfzeile symmetrisch oben */}
 				<Composition
 					id="FrankfurtErklaert20NovemberDemoUpdate"
