@@ -18,7 +18,7 @@
 	"sampleText": "Ewa, Frankfurt! Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss. Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}. Die Polizei spricht inzwischen von rund {1.000|tausend} Teilnehmenden.",
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
-		{"id": "hook2", "text": "Hier ist die erste Bilanz vom Protesttag!", "pauseAfterMs": 120},
+		{"id": "hook2", "text": "Hier ist die erste Bilanz vom Protesttag!", "pauseAfterMs": 80},
 		{"id": "w1", "text": "An der Weseler Werft waren bis zu {4.000|viertausend} Menschen erwartet.", "pauseAfterMs": 40},
 		{"id": "w2", "text": "Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss.", "pauseAfterMs": 120},
 		{"id": "k1", "text": "Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}.", "pauseAfterMs": 40},

@@ -160,12 +160,40 @@ import {
 	FrankfurtErklaert20NovemberBundesweitSourceCheck,
 	SOURCE_CHECK_SIZE,
 } from './videos/frankfurt-erklaert-20nov-bundesweit/FrankfurtErklaert20NovemberBundesweitOverlayCheck';
+import {
+	calculateErklaertVorbilanzMetadata,
+	erklaertVorbilanzDefaultProps,
+	erklaertVorbilanzSchema,
+	FrankfurtErklaert20NovemberVorbilanz,
+} from './videos/frankfurt-erklaert-20nov-vorbilanz/FrankfurtErklaert20NovemberVorbilanz';
+import {FrankfurtErklaert20NovemberVorbilanzCover} from './videos/frankfurt-erklaert-20nov-vorbilanz/FrankfurtErklaert20NovemberVorbilanzCover';
+import {FrankfurtErklaert20NovemberVorbilanzCoverVorschau} from './videos/frankfurt-erklaert-20nov-vorbilanz/FrankfurtErklaert20NovemberVorbilanzCoverVorschau';
+import {
+	FrankfurtErklaert20NovemberVorbilanzOverlayCheck,
+	FrankfurtErklaert20NovemberVorbilanzSourceCheck,
+} from './videos/frankfurt-erklaert-20nov-vorbilanz/FrankfurtErklaert20NovemberVorbilanzOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #14 – Vorbilanz 20.11.2026 (Stand = letzter Faktencheck, content.ts → STAND): hartes Limit 60 s inkl. Abo-Aufruf, Quellenzeile unter den Untertiteln */}
+				<Composition
+					id="FrankfurtErklaert20NovemberVorbilanz"
+					component={FrankfurtErklaert20NovemberVorbilanz}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertVorbilanzSchema}
+					defaultProps={erklaertVorbilanzDefaultProps}
+					calculateMetadata={calculateErklaertVorbilanzMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberVorbilanz-Cover" component={FrankfurtErklaert20NovemberVorbilanzCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberVorbilanz-CoverVorschau" component={FrankfurtErklaert20NovemberVorbilanzCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberVorbilanz-OverlayCheck" component={FrankfurtErklaert20NovemberVorbilanzOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberVorbilanz-QuellenCheck" component={FrankfurtErklaert20NovemberVorbilanzSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #13 – Über 2.150 Kontrollen auf der Zeil (Bilanz Innenministerium 18.11.2026): hartes Limit 60 s inkl. Abo-Aufruf, Quellenzeile unter den Untertiteln */}
 				<Composition
 					id="FrankfurtErklaert2150Kontrollen"
