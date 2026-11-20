@@ -1,0 +1,38 @@
+{
+	"videoId": "frankfurt-erklaert-20nov-vorbilanz",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf sind bereits geprüfte, bezahlte Aufnahmen (gleicher Cache-Schlüssel wie #11–#13). VORBILANZ vom 20.11.2026 – die exakte Uhrzeit des letzten Faktenchecks steht nur im Bild (content.ts → STAND), nicht im Ton. Zahlen ausgeschrieben, {Gen Z regelt|Dschen Zett regelt}. Hartes Limit 60,0 s inkl. Abo-Aufruf."
+	},
+	"sampleText": "Ewa, Frankfurt! Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss. Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}. Die Polizei spricht inzwischen von rund {1.000|tausend} Teilnehmenden.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Hier ist die erste Bilanz vom Protesttag!", "pauseAfterMs": 120},
+		{"id": "w1", "text": "An der Weseler Werft waren bis zu {4.000|viertausend} Menschen erwartet.", "pauseAfterMs": 40},
+		{"id": "w2", "text": "Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss.", "pauseAfterMs": 120},
+		{"id": "k1", "text": "Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}.", "pauseAfterMs": 40},
+		{"id": "k2", "text": "Die Ortsgruppe hatte mit der Stadt eine Kundgebung ohne Zug vereinbart.", "pauseAfterMs": 40},
+		{"id": "k3", "text": "Die Bundesbewegung rief aber zum Demozug ab Hauptbahnhof auf.", "pauseAfterMs": 40},
+		{"id": "k4", "text": "Laut Ortsgruppe seien ihr Ordner und Equipment gestrichen worden.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Der Zug startete laut {t-online|T-Online} eine halbe Stunde zu spät.", "pauseAfterMs": 40},
+		{"id": "d2", "text": "Über die Alte Oper ging's nach Bockenheim – angekommen rund eine Stunde nach Plan.", "pauseAfterMs": 40},
+		{"id": "d3", "text": "Die Polizei spricht inzwischen von rund {1.000|tausend} Teilnehmenden.", "pauseAfterMs": 120},
+		{"id": "e1", "text": "Erwartet hatte sie bis zu {1.500|fünfzehnhundert}, die Bundesbewegung sprach sogar von bis zu {5.000|fünftausend}.", "pauseAfterMs": 40},
+		{"id": "e2", "text": "Beim Schulstreik am Vormittag waren laut Polizei rund {600|sechshundert} dabei.", "pauseAfterMs": 120},
+		{"id": "p1", "text": "Die Polizei meldet: bisher friedlich – im Demozug wurde aber Pyrotechnik gezündet.", "pauseAfterMs": 40},
+		{"id": "o1", "text": "Eine offizielle Bilanz steht noch aus.", "pauseAfterMs": 120},
+		{"id": "q1", "text": "Wart ihr dabei? Schreibt's unten rein!", "pauseAfterMs": 60},
+		{"id": "cta", "text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!", "pauseAfterMs": 0}
+	]
+}

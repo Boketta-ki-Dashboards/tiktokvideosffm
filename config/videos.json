@@ -1,5 +1,6 @@
 {
 	"$comment": "Auswählbare Videos für den Workflow „Video produzieren“: Komposition → Video-Ordner und Name der fertigen MP4.",
+	"FrankfurtErklaert20NovemberVorbilanz": {"videoId": "frankfurt-erklaert-20nov-vorbilanz", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_20November_Vorbilanz_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_20November_Vorbilanz_THUMBNAIL"},
 	"FrankfurtErklaert2150Kontrollen": {"videoId": "frankfurt-erklaert-2150-kontrollen", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_2150Kontrollen_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_2150Kontrollen_THUMBNAIL"},
 	"FrankfurtErklaert20NovemberBundesweit": {"videoId": "frankfurt-erklaert-20nov-bundesweit", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_20November_Bundesweit_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_20November_Bundesweit_THUMBNAIL"},
 	"FrankfurtErklaert20NovemberOepnv": {"videoId": "frankfurt-erklaert-20nov-oepnv", "folge": null, "format": "frankfurt-erklaert-60", "maxSeconds": 60, "maxPauseMs": 400, "outputName": "FrankfurtRed3_20November_OePNV_ADAM_FINAL", "thumbnailName": "FrankfurtRed3_20November_OePNV_THUMBNAIL"},
