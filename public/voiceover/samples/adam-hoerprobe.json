@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Die Polizei hat über {2.150|zweitausendeinhundertfünfzig} Menschen kontrolliert: {78|Achtundsiebzig} Strafanzeigen, {435|vierhundertfünfunddreißig} Ordnungswidrigkeiten und {182|hundertzweiundachtzig} Platzverweise.",
-	"sampleFrom": "frankfurt-erklaert-2150-kontrollen",
+	"text": "{Ewa|Eywa}, Frankfurt! Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss. Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}. Die Polizei spricht inzwischen von rund {1.000|tausend} Teilnehmenden.",
+	"sampleFrom": "frankfurt-erklaert-20nov-vorbilanz",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 207,
-	"cacheKey": "b47307ba31e59467d6cf",
-	"durationSeconds": 13.128
+	"characters": 199,
+	"cacheKey": "52f155063739aa62798c",
+	"durationSeconds": 10.488
 }
