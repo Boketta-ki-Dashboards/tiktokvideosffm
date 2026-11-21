@@ -172,12 +172,40 @@ import {
 	FrankfurtErklaert20NovemberVorbilanzOverlayCheck,
 	FrankfurtErklaert20NovemberVorbilanzSourceCheck,
 } from './videos/frankfurt-erklaert-20nov-vorbilanz/FrankfurtErklaert20NovemberVorbilanzOverlayCheck';
+import {
+	calculateErklaertStaedteMetadata,
+	erklaertStaedteDefaultProps,
+	erklaertStaedteSchema,
+	FrankfurtErklaert20NovemberStaedte,
+} from './videos/frankfurt-erklaert-20nov-staedte/FrankfurtErklaert20NovemberStaedte';
+import {FrankfurtErklaert20NovemberStaedteCover} from './videos/frankfurt-erklaert-20nov-staedte/FrankfurtErklaert20NovemberStaedteCover';
+import {FrankfurtErklaert20NovemberStaedteCoverVorschau} from './videos/frankfurt-erklaert-20nov-staedte/FrankfurtErklaert20NovemberStaedteCoverVorschau';
+import {
+	FrankfurtErklaert20NovemberStaedteOverlayCheck,
+	FrankfurtErklaert20NovemberStaedteSourceCheck,
+} from './videos/frankfurt-erklaert-20nov-staedte/FrankfurtErklaert20NovemberStaedteOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #15 – Gen-Z-Proteste in anderen Städten (Nachbetrachtung 20.11., Stand 21.11.2026): hartes Limit 60 s inkl. Abo-Aufruf */}
+				<Composition
+					id="FrankfurtErklaert20NovemberStaedte"
+					component={FrankfurtErklaert20NovemberStaedte}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1800}
+					schema={erklaertStaedteSchema}
+					defaultProps={erklaertStaedteDefaultProps}
+					calculateMetadata={calculateErklaertStaedteMetadata}
+				/>
+				<Still id="FrankfurtErklaert20NovemberStaedte-Cover" component={FrankfurtErklaert20NovemberStaedteCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert20NovemberStaedte-CoverVorschau" component={FrankfurtErklaert20NovemberStaedteCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberStaedte-OverlayCheck" component={FrankfurtErklaert20NovemberStaedteOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert20NovemberStaedte-QuellenCheck" component={FrankfurtErklaert20NovemberStaedteSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #14 – Vorbilanz 20.11.2026 (Stand = letzter Faktencheck, content.ts → STAND): hartes Limit 60 s inkl. Abo-Aufruf, Quellenzeile unter den Untertiteln */}
 				<Composition
 					id="FrankfurtErklaert20NovemberVorbilanz"
