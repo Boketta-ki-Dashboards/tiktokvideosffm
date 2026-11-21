@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Laut Reportern vor Ort kamen nur {20 bis 30|zwanzig bis dreißig} – und schnell war Schluss. Der Grund: Zoff bei {Gen Z regelt|Dschen Zett regelt}. Die Polizei spricht inzwischen von rund {1.000|tausend} Teilnehmenden.",
-	"sampleFrom": "frankfurt-erklaert-20nov-vorbilanz",
+	"text": "{Ewa|Eywa}, Frankfurt! Hamburg: laut Polizei rund {4.000|viertausend} vom Dammtor in die Schanze. Gegen mehr als {200|zweihundert} Personen wird wegen schweren Landfriedensbruchs ermittelt. Bremen: Farbe gegen das {CDU-Büro|Ce De U Büro}.",
+	"sampleFrom": "frankfurt-erklaert-20nov-staedte",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 199,
-	"cacheKey": "52f155063739aa62798c",
-	"durationSeconds": 10.488
+	"characters": 207,
+	"cacheKey": "c058afe88b22a983adfb",
+	"durationSeconds": 11.28
 }
