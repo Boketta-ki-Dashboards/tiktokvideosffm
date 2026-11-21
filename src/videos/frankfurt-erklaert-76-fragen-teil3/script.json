@@ -1,0 +1,106 @@
+{
+	"videoId": "frankfurt-erklaert-76-fragen-teil3",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 400,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert (Voice-ID, Modell, Stability, Similarity, Style, Speaker Boost, Seed) mit Kurzformat-Profil speed 1.20 aus config/voice-regeln.json. „Ewa“ wird automatisch „Eywa“ gesprochen, Untertitel zeigen „Ewa“. Schnitt am letzten Buchstaben, Pausen im Satz ≤ 320 ms, 40 ms zwischen Sätzen, 120 ms zwischen den vier Fragen."
+	},
+	"sampleText": "Ewa, Frankfurt! Gekommen sind {8.000 bis 9.000|acht- bis neuntausend} – insgesamt {181|hunderteinundachtzig}. Sie sind strafunmündig, aber Schadenersatz kann möglich sein. Zuerst sind die Versicherungen gefragt.",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 0
+		},
+		{
+			"id": "hook2",
+			"text": "Nach den {76|sechsundsiebzig} Fragen bleiben vier Punkte offen.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "q1a",
+			"text": "Erstens: Die Polizei erwartete rund {2.000|zweitausend} Demonstrierende.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q1b",
+			"text": "Gekommen sind {8.000 bis 9.000|acht- bis neuntausend} – etwa viermal so viele.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q1c",
+			"text": "Warum die Prognose so niedrig lag und was das für den Einsatz hieß, ist bisher unklar.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "q2a",
+			"text": "Zweitens: Laut Innenminister begann die Gewalt schon vor der Auflösung.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q2b",
+			"text": "Bis dahin wurden sechs Polizisten verletzt, einer schwer – insgesamt waren es {181|hunderteinundachtzig}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q2c",
+			"text": "Die große Mehrheit blieb trotzdem friedlich.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "q3a",
+			"text": "Drittens: Zwei Tatverdächtige sind laut Minister unter {14|vierzehn}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q3b",
+			"text": "Sie sind strafunmündig – bestraft werden können sie nicht.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q3c",
+			"text": "Aber das Jugendamt kann eingebunden werden, und Schadenersatz kann möglich sein.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q3d",
+			"text": "Eltern haften nicht automatisch.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "q4a",
+			"text": "Viertens: Wer zahlt die Schäden der Geschäfte?",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q4b",
+			"text": "Die Stadt hat mit Händlern gesprochen: Zuerst sind die Versicherungen gefragt.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q4c",
+			"text": "Reicht das nicht, prüft die Stadt finanzielle Hilfe – ohne feste Zusage.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "q4d",
+			"text": "Der Gesamtschaden ist bisher nicht offiziell beziffert.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "end",
+			"text": "Einiges ist geklärt, vieles offen. Welche Frage ist euch am wichtigsten?",
+			"pauseAfterMs": 0
+		}
+	]
+}

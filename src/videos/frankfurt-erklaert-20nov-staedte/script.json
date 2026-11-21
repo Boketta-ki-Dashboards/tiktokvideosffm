@@ -1,0 +1,35 @@
+{
+	"videoId": "frankfurt-erklaert-20nov-staedte",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf sind bereits geprüfte, bezahlte Aufnahmen (gleicher Cache-Schlüssel wie #11–#14). Nachbetrachtung der Proteste vom Freitag, 20.11.2026, Meldestand 21.11.2026 (Polizei Leipzig 12:30 Uhr, NDR 13:18 Uhr). Zahlen ausgeschrieben, {CDU-Büro|Ce De U Büro}. Hartes Limit 60,0 s inkl. Abo-Aufruf."
+	},
+	"sampleText": "Ewa, Frankfurt! Hamburg: laut Polizei rund {4.000|viertausend} vom Dammtor in die Schanze. Gegen mehr als {200|zweihundert} Personen wird wegen schweren Landfriedensbruchs ermittelt. Bremen: Farbe gegen das {CDU-Büro|Ce De U Büro}.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Was war am Freitag in den anderen Städten los?", "pauseAfterMs": 80},
+		{"id": "h1", "text": "Hamburg: laut Polizei rund {4.000|viertausend} vom Dammtor in die Schanze – weitgehend friedlich.", "pauseAfterMs": 40},
+		{"id": "h2", "text": "Nach dem Ende flogen laut Polizei Pyrotechnik und Eier, mehrere Menschen kamen in Gewahrsam.", "pauseAfterMs": 120},
+		{"id": "l1", "text": "Leipzig: Rund {2.500|zweitausendfünfhundert} zogen um den Ring – nach dem Ende kam es zu massiven Ausschreitungen.", "pauseAfterMs": 40},
+		{"id": "l2", "text": "Wasserwerfer im Einsatz – laut Polizei fünf verletzte Beamte.", "pauseAfterMs": 40},
+		{"id": "l3", "text": "Gegen mehr als {200|zweihundert} Personen wird jetzt wegen schweren Landfriedensbruchs ermittelt.", "pauseAfterMs": 120},
+		{"id": "b1", "text": "Berlin: rund {4.000|viertausend} vom Alexanderplatz bis Kreuzberg – laut Polizei ohne besondere Vorkommnisse.", "pauseAfterMs": 120},
+		{"id": "s1", "text": "Stuttgart: Pyrotechnik, der Zug wurde mehrfach gestoppt – laut Polizei über zwanzig vorläufige Festnahmen.", "pauseAfterMs": 120},
+		{"id": "r1", "text": "Bremen: Farbe gegen das {CDU-Büro|Ce De U Büro} und laut Polizei der Versuch, ein Auto anzuzünden.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Und Frankfurt? Laut Innenminister haben sich die Halloween-Bilder nicht wiederholt.", "pauseAfterMs": 120},
+		{"id": "z1", "text": "Wichtig: Nicht alle, die demonstriert haben, waren an Ausschreitungen beteiligt.", "pauseAfterMs": 120},
+		{"id": "q1", "text": "Wie habt ihr den Freitag erlebt?", "pauseAfterMs": 60},
+		{"id": "cta", "text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!", "pauseAfterMs": 0}
+	]
+}

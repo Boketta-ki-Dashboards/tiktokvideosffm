@@ -1,0 +1,859 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-76-fragen-landtag",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-76-fragen-landtag/voiceover-adam.mp3",
+	"durationMs": 56719,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 200,
+			"endMs": 1872,
+			"hash": "80a90f276d3b471b6cad"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1992,
+			"endMs": 6357,
+			"hash": "09bcf5a7d6a18c637add"
+		},
+		{
+			"id": "docs1",
+			"startMs": 7357,
+			"endMs": 12140,
+			"hash": "5e12baa27bab8427953d"
+		},
+		{
+			"id": "docs2",
+			"startMs": 12390,
+			"endMs": 14294,
+			"hash": "3dc7914d26964ff73f45"
+		},
+		{
+			"id": "q1",
+			"startMs": 14994,
+			"endMs": 18105,
+			"hash": "5f61a51e0498b7f5c034"
+		},
+		{
+			"id": "q2",
+			"startMs": 19805,
+			"endMs": 24263,
+			"hash": "cfbcdf8bc8b22c7e02f2"
+		},
+		{
+			"id": "q3",
+			"startMs": 25963,
+			"endMs": 31954,
+			"hash": "c73d4da23ba6d9be1205"
+		},
+		{
+			"id": "q4",
+			"startMs": 33654,
+			"endMs": 39087,
+			"hash": "f50d358c7747eb929ec0"
+		},
+		{
+			"id": "sess",
+			"startMs": 40787,
+			"endMs": 46917,
+			"hash": "3db0551afd50db8ff99c"
+		},
+		{
+			"id": "note",
+			"startMs": 48017,
+			"endMs": 51918,
+			"hash": "cbbfe8a0202543a0455c"
+		},
+		{
+			"id": "outro",
+			"startMs": 52818,
+			"endMs": 56719,
+			"hash": "3a8743c71506ea404b10"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 200,
+			"endMs": 769,
+			"timestampMs": 485,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 920,
+			"endMs": 1872,
+			"timestampMs": 1396,
+			"confidence": 1
+		},
+		{
+			"text": " Nach",
+			"startMs": 1992,
+			"endMs": 2201,
+			"timestampMs": 2097,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 2236,
+			"endMs": 2317,
+			"timestampMs": 2277,
+			"confidence": 1
+		},
+		{
+			"text": " Krawallnacht",
+			"startMs": 2364,
+			"endMs": 3060,
+			"timestampMs": 2712,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 3118,
+			"endMs": 3188,
+			"timestampMs": 3153,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween",
+			"startMs": 3234,
+			"endMs": 3641,
+			"timestampMs": 3438,
+			"confidence": 1
+		},
+		{
+			"text": " landen",
+			"startMs": 3699,
+			"endMs": 3954,
+			"timestampMs": 3827,
+			"confidence": 1
+		},
+		{
+			"text": " 76",
+			"startMs": 4001,
+			"endMs": 4651,
+			"timestampMs": 4326,
+			"confidence": 1
+		},
+		{
+			"text": " Fragen",
+			"startMs": 4674,
+			"endMs": 5045,
+			"timestampMs": 4860,
+			"confidence": 1
+		},
+		{
+			"text": " im",
+			"startMs": 5080,
+			"endMs": 5150,
+			"timestampMs": 5115,
+			"confidence": 1
+		},
+		{
+			"text": " Hessischen",
+			"startMs": 5208,
+			"endMs": 5533,
+			"timestampMs": 5371,
+			"confidence": 1
+		},
+		{
+			"text": " Landtag.",
+			"startMs": 5579,
+			"endMs": 6357,
+			"timestampMs": 5968,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 7357,
+			"endMs": 7508,
+			"timestampMs": 7433,
+			"confidence": 1
+		},
+		{
+			"text": " Grünen",
+			"startMs": 7543,
+			"endMs": 7926,
+			"timestampMs": 7735,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 8007,
+			"endMs": 8112,
+			"timestampMs": 8060,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 8135,
+			"endMs": 8251,
+			"timestampMs": 8193,
+			"confidence": 1
+		},
+		{
+			"text": " FDP",
+			"startMs": 8286,
+			"endMs": 8634,
+			"timestampMs": 8460,
+			"confidence": 1
+		},
+		{
+			"text": " wollen",
+			"startMs": 8878,
+			"endMs": 9122,
+			"timestampMs": 9000,
+			"confidence": 1
+		},
+		{
+			"text": " wissen,",
+			"startMs": 9168,
+			"endMs": 9435,
+			"timestampMs": 9302,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 9458,
+			"endMs": 9598,
+			"timestampMs": 9528,
+			"confidence": 1
+		},
+		{
+			"text": " am",
+			"startMs": 9656,
+			"endMs": 9725,
+			"timestampMs": 9691,
+			"confidence": 1
+		},
+		{
+			"text": " 31.",
+			"startMs": 9783,
+			"endMs": 10503,
+			"timestampMs": 10143,
+			"confidence": 1
+		},
+		{
+			"text": " Oktober",
+			"startMs": 10550,
+			"endMs": 10886,
+			"timestampMs": 10718,
+			"confidence": 1
+		},
+		{
+			"text": " genau",
+			"startMs": 10921,
+			"endMs": 11142,
+			"timestampMs": 11032,
+			"confidence": 1
+		},
+		{
+			"text": " passiert",
+			"startMs": 11188,
+			"endMs": 11560,
+			"timestampMs": 11374,
+			"confidence": 1
+		},
+		{
+			"text": " ist.",
+			"startMs": 11629,
+			"endMs": 12140,
+			"timestampMs": 11885,
+			"confidence": 1
+		},
+		{
+			"text": " Vier",
+			"startMs": 12390,
+			"endMs": 12634,
+			"timestampMs": 12512,
+			"confidence": 1
+		},
+		{
+			"text": " Punkte",
+			"startMs": 12669,
+			"endMs": 12924,
+			"timestampMs": 12797,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 12959,
+			"endMs": 13075,
+			"timestampMs": 13017,
+			"confidence": 1
+		},
+		{
+			"text": " besonders",
+			"startMs": 13110,
+			"endMs": 13493,
+			"timestampMs": 13302,
+			"confidence": 1
+		},
+		{
+			"text": " spannend.",
+			"startMs": 13516,
+			"endMs": 14294,
+			"timestampMs": 13905,
+			"confidence": 1
+		},
+		{
+			"text": " Was",
+			"startMs": 14994,
+			"endMs": 15145,
+			"timestampMs": 15070,
+			"confidence": 1
+		},
+		{
+			"text": " wusste",
+			"startMs": 15180,
+			"endMs": 15389,
+			"timestampMs": 15285,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 15424,
+			"endMs": 15505,
+			"timestampMs": 15465,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 15540,
+			"endMs": 15981,
+			"timestampMs": 15761,
+			"confidence": 1
+		},
+		{
+			"text": " vorher",
+			"startMs": 16039,
+			"endMs": 16364,
+			"timestampMs": 16202,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 16434,
+			"endMs": 16608,
+			"timestampMs": 16521,
+			"confidence": 1
+		},
+		{
+			"text": " mögliche",
+			"startMs": 16643,
+			"endMs": 16979,
+			"timestampMs": 16811,
+			"confidence": 1
+		},
+		{
+			"text": " Gewalttäter?",
+			"startMs": 17014,
+			"endMs": 18105,
+			"timestampMs": 17560,
+			"confidence": 1
+		},
+		{
+			"text": " Warum",
+			"startMs": 19805,
+			"endMs": 20107,
+			"timestampMs": 19956,
+			"confidence": 1
+		},
+		{
+			"text": " konnten",
+			"startMs": 20177,
+			"endMs": 20432,
+			"timestampMs": 20305,
+			"confidence": 1
+		},
+		{
+			"text": " Geschäfte",
+			"startMs": 20467,
+			"endMs": 20815,
+			"timestampMs": 20641,
+			"confidence": 1
+		},
+		{
+			"text": " geplündert",
+			"startMs": 20850,
+			"endMs": 21256,
+			"timestampMs": 21053,
+			"confidence": 1
+		},
+		{
+			"text": " werden,",
+			"startMs": 21291,
+			"endMs": 21605,
+			"timestampMs": 21448,
+			"confidence": 1
+		},
+		{
+			"text": " obwohl",
+			"startMs": 21639,
+			"endMs": 21988,
+			"timestampMs": 21814,
+			"confidence": 1
+		},
+		{
+			"text": " ein",
+			"startMs": 22057,
+			"endMs": 22197,
+			"timestampMs": 22127,
+			"confidence": 1
+		},
+		{
+			"text": " Schutzkonzept",
+			"startMs": 22243,
+			"endMs": 22940,
+			"timestampMs": 22592,
+			"confidence": 1
+		},
+		{
+			"text": " angekündigt",
+			"startMs": 22975,
+			"endMs": 23485,
+			"timestampMs": 23230,
+			"confidence": 1
+		},
+		{
+			"text": " war?",
+			"startMs": 23532,
+			"endMs": 24263,
+			"timestampMs": 23898,
+			"confidence": 1
+		},
+		{
+			"text": " Welche",
+			"startMs": 25963,
+			"endMs": 26416,
+			"timestampMs": 26190,
+			"confidence": 1
+		},
+		{
+			"text": " Rolle",
+			"startMs": 26497,
+			"endMs": 26764,
+			"timestampMs": 26631,
+			"confidence": 1
+		},
+		{
+			"text": " spielte",
+			"startMs": 26799,
+			"endMs": 27159,
+			"timestampMs": 26979,
+			"confidence": 1
+		},
+		{
+			"text": " TikTok –",
+			"startMs": 27217,
+			"endMs": 27821,
+			"timestampMs": 27519,
+			"confidence": 1
+		},
+		{
+			"text": " nur",
+			"startMs": 27948,
+			"endMs": 28088,
+			"timestampMs": 28018,
+			"confidence": 1
+		},
+		{
+			"text": " Demo-Aufrufe",
+			"startMs": 28146,
+			"endMs": 29144,
+			"timestampMs": 28645,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 29249,
+			"endMs": 29458,
+			"timestampMs": 29354,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 29492,
+			"endMs": 29620,
+			"timestampMs": 29556,
+			"confidence": 1
+		},
+		{
+			"text": " mögliche",
+			"startMs": 29667,
+			"endMs": 29992,
+			"timestampMs": 29830,
+			"confidence": 1
+		},
+		{
+			"text": " Absprachen",
+			"startMs": 30038,
+			"endMs": 30537,
+			"timestampMs": 30288,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 30572,
+			"endMs": 30642,
+			"timestampMs": 30607,
+			"confidence": 1
+		},
+		{
+			"text": " Straftaten?",
+			"startMs": 30677,
+			"endMs": 31954,
+			"timestampMs": 31316,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 33654,
+			"endMs": 33805,
+			"timestampMs": 33730,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 33840,
+			"endMs": 33944,
+			"timestampMs": 33892,
+			"confidence": 1
+		},
+		{
+			"text": " passiert",
+			"startMs": 33991,
+			"endMs": 34304,
+			"timestampMs": 34148,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 34339,
+			"endMs": 34432,
+			"timestampMs": 34386,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 34455,
+			"endMs": 34560,
+			"timestampMs": 34508,
+			"confidence": 1
+		},
+		{
+			"text": " Tatverdächtigen,",
+			"startMs": 34606,
+			"endMs": 35303,
+			"timestampMs": 34955,
+			"confidence": 1
+		},
+		{
+			"text": " wie",
+			"startMs": 35337,
+			"endMs": 35454,
+			"timestampMs": 35396,
+			"confidence": 1
+		},
+		{
+			"text": " werden",
+			"startMs": 35500,
+			"endMs": 35779,
+			"timestampMs": 35640,
+			"confidence": 1
+		},
+		{
+			"text": " geschädigte",
+			"startMs": 35825,
+			"endMs": 36359,
+			"timestampMs": 36092,
+			"confidence": 1
+		},
+		{
+			"text": " Läden",
+			"startMs": 36417,
+			"endMs": 36719,
+			"timestampMs": 36568,
+			"confidence": 1
+		},
+		{
+			"text": " unterstützt,",
+			"startMs": 36777,
+			"endMs": 37439,
+			"timestampMs": 37108,
+			"confidence": 1
+		},
+		{
+			"text": " welche",
+			"startMs": 37543,
+			"endMs": 37787,
+			"timestampMs": 37665,
+			"confidence": 1
+		},
+		{
+			"text": " Konsequenzen",
+			"startMs": 37834,
+			"endMs": 38391,
+			"timestampMs": 38113,
+			"confidence": 1
+		},
+		{
+			"text": " folgen?",
+			"startMs": 38437,
+			"endMs": 39087,
+			"timestampMs": 38762,
+			"confidence": 1
+		},
+		{
+			"text": " Heute",
+			"startMs": 40787,
+			"endMs": 41008,
+			"timestampMs": 40898,
+			"confidence": 1
+		},
+		{
+			"text": " Abend",
+			"startMs": 41077,
+			"endMs": 41275,
+			"timestampMs": 41176,
+			"confidence": 1
+		},
+		{
+			"text": " soll",
+			"startMs": 41298,
+			"endMs": 41437,
+			"timestampMs": 41368,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 41472,
+			"endMs": 41542,
+			"timestampMs": 41507,
+			"confidence": 1
+		},
+		{
+			"text": " Landesregierung",
+			"startMs": 41576,
+			"endMs": 42261,
+			"timestampMs": 41919,
+			"confidence": 1
+		},
+		{
+			"text": " im",
+			"startMs": 42320,
+			"endMs": 42389,
+			"timestampMs": 42355,
+			"confidence": 1
+		},
+		{
+			"text": " Innenausschuss",
+			"startMs": 42494,
+			"endMs": 43213,
+			"timestampMs": 42854,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 43283,
+			"endMs": 43353,
+			"timestampMs": 43318,
+			"confidence": 1
+		},
+		{
+			"text": " Wiesbaden",
+			"startMs": 43411,
+			"endMs": 43980,
+			"timestampMs": 43696,
+			"confidence": 1
+		},
+		{
+			"text": " berichten –",
+			"startMs": 44026,
+			"endMs": 44665,
+			"timestampMs": 44346,
+			"confidence": 1
+		},
+		{
+			"text": " angesetzt",
+			"startMs": 44874,
+			"endMs": 45477,
+			"timestampMs": 45176,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 45582,
+			"endMs": 45744,
+			"timestampMs": 45663,
+			"confidence": 1
+		},
+		{
+			"text": " 20",
+			"startMs": 45803,
+			"endMs": 46162,
+			"timestampMs": 45983,
+			"confidence": 1
+		},
+		{
+			"text": " Uhr.",
+			"startMs": 46197,
+			"endMs": 46917,
+			"timestampMs": 46557,
+			"confidence": 1
+		},
+		{
+			"text": " Wichtig:",
+			"startMs": 48017,
+			"endMs": 48667,
+			"timestampMs": 48342,
+			"confidence": 1
+		},
+		{
+			"text": " Das",
+			"startMs": 49050,
+			"endMs": 49213,
+			"timestampMs": 49132,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 49236,
+			"endMs": 49375,
+			"timestampMs": 49306,
+			"confidence": 1
+		},
+		{
+			"text": " bisher",
+			"startMs": 49410,
+			"endMs": 49700,
+			"timestampMs": 49555,
+			"confidence": 1
+		},
+		{
+			"text": " Fragen,",
+			"startMs": 49747,
+			"endMs": 50304,
+			"timestampMs": 50026,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 50513,
+			"endMs": 50676,
+			"timestampMs": 50595,
+			"confidence": 1
+		},
+		{
+			"text": " keine",
+			"startMs": 50711,
+			"endMs": 50943,
+			"timestampMs": 50827,
+			"confidence": 1
+		},
+		{
+			"text": " Antworten.",
+			"startMs": 50978,
+			"endMs": 51918,
+			"timestampMs": 51448,
+			"confidence": 1
+		},
+		{
+			"text": " Was",
+			"startMs": 52818,
+			"endMs": 53004,
+			"timestampMs": 52911,
+			"confidence": 1
+		},
+		{
+			"text": " wirklich",
+			"startMs": 53039,
+			"endMs": 53294,
+			"timestampMs": 53167,
+			"confidence": 1
+		},
+		{
+			"text": " beantwortet",
+			"startMs": 53329,
+			"endMs": 53886,
+			"timestampMs": 53608,
+			"confidence": 1
+		},
+		{
+			"text": " wird,",
+			"startMs": 53933,
+			"endMs": 54234,
+			"timestampMs": 54084,
+			"confidence": 1
+		},
+		{
+			"text": " zeigen",
+			"startMs": 54385,
+			"endMs": 54699,
+			"timestampMs": 54542,
+			"confidence": 1
+		},
+		{
+			"text": " wir",
+			"startMs": 54734,
+			"endMs": 54908,
+			"timestampMs": 54821,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 54954,
+			"endMs": 55024,
+			"timestampMs": 54989,
+			"confidence": 1
+		},
+		{
+			"text": " Teil",
+			"startMs": 55094,
+			"endMs": 55314,
+			"timestampMs": 55204,
+			"confidence": 1
+		},
+		{
+			"text": " zwei –",
+			"startMs": 55395,
+			"endMs": 55802,
+			"timestampMs": 55599,
+			"confidence": 1
+		},
+		{
+			"text": " folgt",
+			"startMs": 55929,
+			"endMs": 56185,
+			"timestampMs": 56057,
+			"confidence": 1
+		},
+		{
+			"text": " uns!",
+			"startMs": 56266,
+			"endMs": 56719,
+			"timestampMs": 56493,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-10T15:15:35.758Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.16
+		},
+		"seed": 20261104,
+		"characters": 797
+	},
+	"measuredLufsBeforeMaster": -14.13
+}

@@ -1,0 +1,9 @@
+{
+	"name": "typewriter",
+	"text": "Fast typing on a modern laptop keyboard, about ten crisp key presses, dry studio recording, no voice",
+	"model": "eleven_text_to_sound_v3",
+	"durationSeconds": 1.2,
+	"promptInfluence": 0.6,
+	"requestId": null,
+	"generatedAt": "2026-11-05T01:19:54.151Z"
+}

@@ -1,0 +1,14 @@
+{
+	"hook1": {"bild": "Titelbild ab Frame 0: Serientitel, „FRANKFURT MORGEN!“, rote Karte „DIESE BAHNEN SIND BETROFFEN“, Uhr 08:30 + Straßenbahn, Linienschilder 11 · 12 · 14 „AB 8:30 UHR“, Datum, Logo", "beleg": "–"},
+	"hook2": {"bild": "Uhr pulsiert bei „halb neun“, Flug in die Uhr (Kopfzeile oben rechts ab Frame 48)", "beleg": "VGF, 19.11.2026, 9 Uhr"},
+	"t1": {"bild": "Große Uhr läuft auf 08:30, Linienschilder 11/12/14 poppen an den Wort-Cues, 2,5D-Straßenbahn fährt vor die Altstadt-Häuserzeile, Sperrbalken, Karte „ALTSTADTSTRECKE GESPERRT · AB 8:30 UHR · LAUT VGF“", "beleg": "VGF, 19.11.2026, 9 Uhr („von 8 Uhr 30 an nicht über die Altstadtstrecke“)"},
+	"t2": {"bild": "OSM-Karte Hbf–Altstadt–Konstablerwache: Tram 11/12/14 türkis, Abschnitt Hbf–Börneplatz rot, orangefarbener Bogen „Umleitung über Sachsenhausen“ (schematisch), Karte „UMLEITUNG ÜBER SACHSENHAUSEN – die Linien fahren, nur anders“", "beleg": "VGF, 19.11.2026 („Zwischen Börneplatz und HBF … über Sachsenhausen um“); Karte © OpenStreetMap-Mitwirkende"},
+	"m1": {"bild": "Kamera schwenkt nach Osten, Kurt-Schumacher- und Konrad-Adenauer-Straße gelb pulsierend, Schilder 18 · BUS 30 · M36 mit Fragezeichen, „laut VGF nur „möglicherweise““", "beleg": "VGF, 19.11.2026"},
+	"u1": {"bild": "U-Bahn-Szene: „U-BAHNEN PLANMÄSSIG“, Schilder U1–U8 poppen nacheinander, Zitat „nach … Kenntnisstand nach Fahrplan“", "beleg": "VGF, 19.11.2026"},
+	"u2": {"bild": "Querschnitt (schematisch): Altstadt oben, Tunnel unten, Stationen Hbf – Willy-Brandt-Platz – Dom/Römer – Konstablerwache, „BLEIBT OFFEN“ an drei Stationen, U4/U5 leuchten, U-Bahn fährt durch, „LAUT VGF ALS ALTERNATIVE“, Hinweis „Auch Hauptwache und Alte Oper bleiben offen“", "beleg": "VGF, 19.11.2026; Linienverlauf U4/U5 laut OSM"},
+	"u3": {"bild": "Orangefarbene Karte „WOCHENENDE · gilt NICHT für Freitag“: U4 + U5 FALLEN AUS, Sa 21.11. ca. 3:30 – Mo 23.11., DTC-Testfahrten, Dom/Römer am Wochenende geschlossen", "beleg": "VGF, 16.11.2026"},
+	"w1": {"bild": "„5 VERSAMMLUNGEN AM FREITAG“ (laut Innenministerium), Tages-Timeline 10:00–17:30, Karte „laut VGF: 5 Veranstaltungen, darunter 4 Demozüge auf unterschiedlichen Routen“", "beleg": "Innenministerium, 18.11.2026; VGF, 19.11.2026 (Angaben des Ordnungsamts)"},
+	"c1": {"bild": "„VOR DER FAHRT CHECKEN!“, Smartphone-Illustration „Betriebsinfo“ (keine Live-Daten, keine Zeiten), Karte vgf-ffm.de, stilisierte Anzeigetafel mit Lauftext", "beleg": "VGF, 19.11.2026 („im Laufe des Freitags auf ihrer Homepage … berichten“)"},
+	"q1": {"bild": "Sprechblase „WELCHE LINIE NEHMT IHR MORGEN?“", "beleg": "–"},
+	"cta": {"bild": "Offizielles FrankfurtRed-Logo, @frankfurtred3, „FOLGT FÜR MEHR“, Stand-Zeile", "beleg": "–"}
+}

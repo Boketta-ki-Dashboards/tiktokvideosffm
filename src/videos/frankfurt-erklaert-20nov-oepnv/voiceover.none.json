@@ -1,0 +1,1067 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-20nov-oepnv",
+	"source": "none",
+	"audioFile": null,
+	"durationMs": 49707,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1104
+		},
+		{
+			"id": "hook2",
+			"startMs": 1404,
+			"endMs": 4839
+		},
+		{
+			"id": "t1",
+			"startMs": 4959,
+			"endMs": 9653
+		},
+		{
+			"id": "t2",
+			"startMs": 9693,
+			"endMs": 13612
+		},
+		{
+			"id": "m1",
+			"startMs": 13732,
+			"endMs": 19909
+		},
+		{
+			"id": "u1",
+			"startMs": 20029,
+			"endMs": 24626
+		},
+		{
+			"id": "u2",
+			"startMs": 24666,
+			"endMs": 31327
+		},
+		{
+			"id": "u3",
+			"startMs": 31367,
+			"endMs": 35319
+		},
+		{
+			"id": "w1",
+			"startMs": 35439,
+			"endMs": 40826
+		},
+		{
+			"id": "c1",
+			"startMs": 40946,
+			"endMs": 46736
+		},
+		{
+			"id": "q1",
+			"startMs": 46776,
+			"endMs": 48292
+		},
+		{
+			"id": "cta",
+			"startMs": 48352,
+			"endMs": 49707
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 556,
+			"timestampMs": 338,
+			"confidence": null
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 556,
+			"endMs": 1104,
+			"timestampMs": 830,
+			"confidence": null
+		},
+		{
+			"text": " Morgen",
+			"startMs": 1404,
+			"endMs": 1727,
+			"timestampMs": 1566,
+			"confidence": null
+		},
+		{
+			"text": " fahren",
+			"startMs": 1727,
+			"endMs": 2049,
+			"timestampMs": 1888,
+			"confidence": null
+		},
+		{
+			"text": " einige",
+			"startMs": 2049,
+			"endMs": 2533,
+			"timestampMs": 2291,
+			"confidence": null
+		},
+		{
+			"text": " Straßenbahnen",
+			"startMs": 2533,
+			"endMs": 3178,
+			"timestampMs": 2856,
+			"confidence": null
+		},
+		{
+			"text": " anders –",
+			"startMs": 3178,
+			"endMs": 3646,
+			"timestampMs": 3412,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 3646,
+			"endMs": 3807,
+			"timestampMs": 3727,
+			"confidence": null
+		},
+		{
+			"text": " zwar",
+			"startMs": 3807,
+			"endMs": 3968,
+			"timestampMs": 3888,
+			"confidence": null
+		},
+		{
+			"text": " schon",
+			"startMs": 3968,
+			"endMs": 4129,
+			"timestampMs": 4049,
+			"confidence": null
+		},
+		{
+			"text": " ab",
+			"startMs": 4129,
+			"endMs": 4291,
+			"timestampMs": 4210,
+			"confidence": null
+		},
+		{
+			"text": " 9",
+			"startMs": 4291,
+			"endMs": 4452,
+			"timestampMs": 4372,
+			"confidence": null
+		},
+		{
+			"text": " Uhr!",
+			"startMs": 4452,
+			"endMs": 4839,
+			"timestampMs": 4646,
+			"confidence": null
+		},
+		{
+			"text": " Laut",
+			"startMs": 4959,
+			"endMs": 5120,
+			"timestampMs": 5040,
+			"confidence": null
+		},
+		{
+			"text": " VGF",
+			"startMs": 5120,
+			"endMs": 5604,
+			"timestampMs": 5362,
+			"confidence": null
+		},
+		{
+			"text": " können",
+			"startMs": 5604,
+			"endMs": 5927,
+			"timestampMs": 5766,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 5927,
+			"endMs": 6088,
+			"timestampMs": 6008,
+			"confidence": null
+		},
+		{
+			"text": " Linien",
+			"startMs": 6088,
+			"endMs": 6411,
+			"timestampMs": 6250,
+			"confidence": null
+		},
+		{
+			"text": " 11,",
+			"startMs": 6411,
+			"endMs": 6685,
+			"timestampMs": 6548,
+			"confidence": null
+		},
+		{
+			"text": " 12",
+			"startMs": 6685,
+			"endMs": 6846,
+			"timestampMs": 6766,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 6846,
+			"endMs": 7008,
+			"timestampMs": 6927,
+			"confidence": null
+		},
+		{
+			"text": " 14",
+			"startMs": 7008,
+			"endMs": 7330,
+			"timestampMs": 7169,
+			"confidence": null
+		},
+		{
+			"text": " ab",
+			"startMs": 7330,
+			"endMs": 7492,
+			"timestampMs": 7411,
+			"confidence": null
+		},
+		{
+			"text": " 9",
+			"startMs": 7492,
+			"endMs": 7653,
+			"timestampMs": 7573,
+			"confidence": null
+		},
+		{
+			"text": " Uhr",
+			"startMs": 7653,
+			"endMs": 7814,
+			"timestampMs": 7734,
+			"confidence": null
+		},
+		{
+			"text": " nicht",
+			"startMs": 7814,
+			"endMs": 7975,
+			"timestampMs": 7895,
+			"confidence": null
+		},
+		{
+			"text": " über",
+			"startMs": 7975,
+			"endMs": 8298,
+			"timestampMs": 8137,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 8298,
+			"endMs": 8459,
+			"timestampMs": 8379,
+			"confidence": null
+		},
+		{
+			"text": " Altstadtstrecke",
+			"startMs": 8459,
+			"endMs": 9105,
+			"timestampMs": 8782,
+			"confidence": null
+		},
+		{
+			"text": " fahren.",
+			"startMs": 9105,
+			"endMs": 9653,
+			"timestampMs": 9379,
+			"confidence": null
+		},
+		{
+			"text": " Von",
+			"startMs": 9693,
+			"endMs": 9854,
+			"timestampMs": 9774,
+			"confidence": null
+		},
+		{
+			"text": " einem",
+			"startMs": 9854,
+			"endMs": 10177,
+			"timestampMs": 10016,
+			"confidence": null
+		},
+		{
+			"text": " Komplettausfall",
+			"startMs": 10177,
+			"endMs": 10822,
+			"timestampMs": 10500,
+			"confidence": null
+		},
+		{
+			"text": " ist",
+			"startMs": 10822,
+			"endMs": 10983,
+			"timestampMs": 10903,
+			"confidence": null
+		},
+		{
+			"text": " keine",
+			"startMs": 10983,
+			"endMs": 11306,
+			"timestampMs": 11145,
+			"confidence": null
+		},
+		{
+			"text": " Rede –",
+			"startMs": 11306,
+			"endMs": 11773,
+			"timestampMs": 11540,
+			"confidence": null
+		},
+		{
+			"text": " es",
+			"startMs": 11773,
+			"endMs": 11935,
+			"timestampMs": 11854,
+			"confidence": null
+		},
+		{
+			"text": " geht",
+			"startMs": 11935,
+			"endMs": 12096,
+			"timestampMs": 12016,
+			"confidence": null
+		},
+		{
+			"text": " um",
+			"startMs": 12096,
+			"endMs": 12257,
+			"timestampMs": 12177,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 12257,
+			"endMs": 12419,
+			"timestampMs": 12338,
+			"confidence": null
+		},
+		{
+			"text": " Strecke",
+			"startMs": 12419,
+			"endMs": 12741,
+			"timestampMs": 12580,
+			"confidence": null
+		},
+		{
+			"text": " durch",
+			"startMs": 12741,
+			"endMs": 12902,
+			"timestampMs": 12822,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 12902,
+			"endMs": 13064,
+			"timestampMs": 12983,
+			"confidence": null
+		},
+		{
+			"text": " Altstadt.",
+			"startMs": 13064,
+			"endMs": 13612,
+			"timestampMs": 13338,
+			"confidence": null
+		},
+		{
+			"text": " Möglicherweise",
+			"startMs": 13732,
+			"endMs": 14538,
+			"timestampMs": 14135,
+			"confidence": null
+		},
+		{
+			"text": " trifft's",
+			"startMs": 14538,
+			"endMs": 14700,
+			"timestampMs": 14619,
+			"confidence": null
+		},
+		{
+			"text": " auch",
+			"startMs": 14700,
+			"endMs": 14861,
+			"timestampMs": 14781,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 14861,
+			"endMs": 15022,
+			"timestampMs": 14942,
+			"confidence": null
+		},
+		{
+			"text": " 18",
+			"startMs": 15022,
+			"endMs": 15345,
+			"timestampMs": 15184,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 15345,
+			"endMs": 15506,
+			"timestampMs": 15426,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 15506,
+			"endMs": 15667,
+			"timestampMs": 15587,
+			"confidence": null
+		},
+		{
+			"text": " Busse",
+			"startMs": 15667,
+			"endMs": 15990,
+			"timestampMs": 15829,
+			"confidence": null
+		},
+		{
+			"text": " 30",
+			"startMs": 15990,
+			"endMs": 16312,
+			"timestampMs": 16151,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 16312,
+			"endMs": 16474,
+			"timestampMs": 16393,
+			"confidence": null
+		},
+		{
+			"text": " M36 –",
+			"startMs": 16474,
+			"endMs": 17425,
+			"timestampMs": 16950,
+			"confidence": null
+		},
+		{
+			"text": " auf",
+			"startMs": 17425,
+			"endMs": 17587,
+			"timestampMs": 17506,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 17587,
+			"endMs": 17748,
+			"timestampMs": 17668,
+			"confidence": null
+		},
+		{
+			"text": " Kurt-Schumacher-",
+			"startMs": 17748,
+			"endMs": 18393,
+			"timestampMs": 18071,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 18393,
+			"endMs": 18554,
+			"timestampMs": 18474,
+			"confidence": null
+		},
+		{
+			"text": " Konrad-Adenauer-Straße.",
+			"startMs": 18554,
+			"endMs": 19909,
+			"timestampMs": 19232,
+			"confidence": null
+		},
+		{
+			"text": " Die",
+			"startMs": 20029,
+			"endMs": 20190,
+			"timestampMs": 20110,
+			"confidence": null
+		},
+		{
+			"text": " gute",
+			"startMs": 20190,
+			"endMs": 20513,
+			"timestampMs": 20352,
+			"confidence": null
+		},
+		{
+			"text": " Nachricht:",
+			"startMs": 20513,
+			"endMs": 21013,
+			"timestampMs": 20763,
+			"confidence": null
+		},
+		{
+			"text": " U1",
+			"startMs": 21013,
+			"endMs": 21336,
+			"timestampMs": 21175,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 21336,
+			"endMs": 21497,
+			"timestampMs": 21417,
+			"confidence": null
+		},
+		{
+			"text": " U5",
+			"startMs": 21497,
+			"endMs": 21819,
+			"timestampMs": 21658,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 21819,
+			"endMs": 21981,
+			"timestampMs": 21900,
+			"confidence": null
+		},
+		{
+			"text": " U8",
+			"startMs": 21981,
+			"endMs": 22303,
+			"timestampMs": 22142,
+			"confidence": null
+		},
+		{
+			"text": " sollen",
+			"startMs": 22303,
+			"endMs": 22626,
+			"timestampMs": 22465,
+			"confidence": null
+		},
+		{
+			"text": " nach",
+			"startMs": 22626,
+			"endMs": 22787,
+			"timestampMs": 22707,
+			"confidence": null
+		},
+		{
+			"text": " bisherigem",
+			"startMs": 22787,
+			"endMs": 23432,
+			"timestampMs": 23110,
+			"confidence": null
+		},
+		{
+			"text": " Stand",
+			"startMs": 23432,
+			"endMs": 23594,
+			"timestampMs": 23513,
+			"confidence": null
+		},
+		{
+			"text": " nach",
+			"startMs": 23594,
+			"endMs": 23755,
+			"timestampMs": 23675,
+			"confidence": null
+		},
+		{
+			"text": " Fahrplan",
+			"startMs": 23755,
+			"endMs": 24078,
+			"timestampMs": 23917,
+			"confidence": null
+		},
+		{
+			"text": " fahren.",
+			"startMs": 24078,
+			"endMs": 24626,
+			"timestampMs": 24352,
+			"confidence": null
+		},
+		{
+			"text": " Willy-Brandt-Platz",
+			"startMs": 24666,
+			"endMs": 25311,
+			"timestampMs": 24989,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 25311,
+			"endMs": 25472,
+			"timestampMs": 25392,
+			"confidence": null
+		},
+		{
+			"text": " Dom/Römer",
+			"startMs": 25472,
+			"endMs": 25956,
+			"timestampMs": 25714,
+			"confidence": null
+		},
+		{
+			"text": " bleiben",
+			"startMs": 25956,
+			"endMs": 26279,
+			"timestampMs": 26118,
+			"confidence": null
+		},
+		{
+			"text": " offen –",
+			"startMs": 26279,
+			"endMs": 26747,
+			"timestampMs": 26513,
+			"confidence": null
+		},
+		{
+			"text": " U4",
+			"startMs": 26747,
+			"endMs": 27069,
+			"timestampMs": 26908,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 27069,
+			"endMs": 27230,
+			"timestampMs": 27150,
+			"confidence": null
+		},
+		{
+			"text": " U5",
+			"startMs": 27230,
+			"endMs": 27553,
+			"timestampMs": 27392,
+			"confidence": null
+		},
+		{
+			"text": " nennt",
+			"startMs": 27553,
+			"endMs": 27714,
+			"timestampMs": 27634,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 27714,
+			"endMs": 27876,
+			"timestampMs": 27795,
+			"confidence": null
+		},
+		{
+			"text": " VGF",
+			"startMs": 27876,
+			"endMs": 28359,
+			"timestampMs": 28118,
+			"confidence": null
+		},
+		{
+			"text": " als",
+			"startMs": 28359,
+			"endMs": 28521,
+			"timestampMs": 28440,
+			"confidence": null
+		},
+		{
+			"text": " Alternative",
+			"startMs": 28521,
+			"endMs": 29327,
+			"timestampMs": 28924,
+			"confidence": null
+		},
+		{
+			"text": " zwischen",
+			"startMs": 29327,
+			"endMs": 29650,
+			"timestampMs": 29489,
+			"confidence": null
+		},
+		{
+			"text": " Hauptbahnhof",
+			"startMs": 29650,
+			"endMs": 30134,
+			"timestampMs": 29892,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 30134,
+			"endMs": 30295,
+			"timestampMs": 30215,
+			"confidence": null
+		},
+		{
+			"text": " Konstablerwache.",
+			"startMs": 30295,
+			"endMs": 31327,
+			"timestampMs": 30811,
+			"confidence": null
+		},
+		{
+			"text": " Achtung:",
+			"startMs": 31367,
+			"endMs": 31867,
+			"timestampMs": 31617,
+			"confidence": null
+		},
+		{
+			"text": " Ab",
+			"startMs": 31867,
+			"endMs": 32028,
+			"timestampMs": 31948,
+			"confidence": null
+		},
+		{
+			"text": " Samstagfrüh",
+			"startMs": 32028,
+			"endMs": 32512,
+			"timestampMs": 32270,
+			"confidence": null
+		},
+		{
+			"text": " fallen",
+			"startMs": 32512,
+			"endMs": 32835,
+			"timestampMs": 32674,
+			"confidence": null
+		},
+		{
+			"text": " U4",
+			"startMs": 32835,
+			"endMs": 33157,
+			"timestampMs": 32996,
+			"confidence": null
+		},
+		{
+			"text": " und",
+			"startMs": 33157,
+			"endMs": 33319,
+			"timestampMs": 33238,
+			"confidence": null
+		},
+		{
+			"text": " U5",
+			"startMs": 33319,
+			"endMs": 33641,
+			"timestampMs": 33480,
+			"confidence": null
+		},
+		{
+			"text": " wegen",
+			"startMs": 33641,
+			"endMs": 33964,
+			"timestampMs": 33803,
+			"confidence": null
+		},
+		{
+			"text": " Testfahrten",
+			"startMs": 33964,
+			"endMs": 34448,
+			"timestampMs": 34206,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 34448,
+			"endMs": 34609,
+			"timestampMs": 34529,
+			"confidence": null
+		},
+		{
+			"text": " Montag",
+			"startMs": 34609,
+			"endMs": 34932,
+			"timestampMs": 34771,
+			"confidence": null
+		},
+		{
+			"text": " aus.",
+			"startMs": 34932,
+			"endMs": 35319,
+			"timestampMs": 35126,
+			"confidence": null
+		},
+		{
+			"text": " Hintergrund:",
+			"startMs": 35439,
+			"endMs": 36100,
+			"timestampMs": 35770,
+			"confidence": null
+		},
+		{
+			"text": " Laut",
+			"startMs": 36100,
+			"endMs": 36262,
+			"timestampMs": 36181,
+			"confidence": null
+		},
+		{
+			"text": " Innenministerium",
+			"startMs": 36262,
+			"endMs": 37229,
+			"timestampMs": 36746,
+			"confidence": null
+		},
+		{
+			"text": " gibt's",
+			"startMs": 37229,
+			"endMs": 37391,
+			"timestampMs": 37310,
+			"confidence": null
+		},
+		{
+			"text": " morgen",
+			"startMs": 37391,
+			"endMs": 37713,
+			"timestampMs": 37552,
+			"confidence": null
+		},
+		{
+			"text": " sogar",
+			"startMs": 37713,
+			"endMs": 38036,
+			"timestampMs": 37875,
+			"confidence": null
+		},
+		{
+			"text": " fünf",
+			"startMs": 38036,
+			"endMs": 38197,
+			"timestampMs": 38117,
+			"confidence": null
+		},
+		{
+			"text": " Versammlungen –",
+			"startMs": 38197,
+			"endMs": 38987,
+			"timestampMs": 38592,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 38987,
+			"endMs": 39149,
+			"timestampMs": 39068,
+			"confidence": null
+		},
+		{
+			"text": " VGF-Meldung",
+			"startMs": 39149,
+			"endMs": 39955,
+			"timestampMs": 39552,
+			"confidence": null
+		},
+		{
+			"text": " nannte",
+			"startMs": 39955,
+			"endMs": 40278,
+			"timestampMs": 40117,
+			"confidence": null
+		},
+		{
+			"text": " noch",
+			"startMs": 40278,
+			"endMs": 40439,
+			"timestampMs": 40359,
+			"confidence": null
+		},
+		{
+			"text": " vier.",
+			"startMs": 40439,
+			"endMs": 40826,
+			"timestampMs": 40633,
+			"confidence": null
+		},
+		{
+			"text": " Also:",
+			"startMs": 40946,
+			"endMs": 41446,
+			"timestampMs": 41196,
+			"confidence": null
+		},
+		{
+			"text": " Änderungen",
+			"startMs": 41446,
+			"endMs": 42091,
+			"timestampMs": 41769,
+			"confidence": null
+		},
+		{
+			"text": " sind",
+			"startMs": 42091,
+			"endMs": 42252,
+			"timestampMs": 42172,
+			"confidence": null
+		},
+		{
+			"text": " möglich.",
+			"startMs": 42252,
+			"endMs": 42801,
+			"timestampMs": 42527,
+			"confidence": null
+		},
+		{
+			"text": " Checkt",
+			"startMs": 42801,
+			"endMs": 42962,
+			"timestampMs": 42882,
+			"confidence": null
+		},
+		{
+			"text": " vor",
+			"startMs": 42962,
+			"endMs": 43123,
+			"timestampMs": 43043,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 43123,
+			"endMs": 43285,
+			"timestampMs": 43204,
+			"confidence": null
+		},
+		{
+			"text": " Fahrt",
+			"startMs": 43285,
+			"endMs": 43446,
+			"timestampMs": 43366,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 43446,
+			"endMs": 43607,
+			"timestampMs": 43527,
+			"confidence": null
+		},
+		{
+			"text": " VGF-Website",
+			"startMs": 43607,
+			"endMs": 44575,
+			"timestampMs": 44091,
+			"confidence": null
+		},
+		{
+			"text": " oder",
+			"startMs": 44575,
+			"endMs": 44897,
+			"timestampMs": 44736,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 44897,
+			"endMs": 45059,
+			"timestampMs": 44978,
+			"confidence": null
+		},
+		{
+			"text": " Anzeigen",
+			"startMs": 45059,
+			"endMs": 45543,
+			"timestampMs": 45301,
+			"confidence": null
+		},
+		{
+			"text": " an",
+			"startMs": 45543,
+			"endMs": 45704,
+			"timestampMs": 45624,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 45704,
+			"endMs": 45865,
+			"timestampMs": 45785,
+			"confidence": null
+		},
+		{
+			"text": " Haltestelle.",
+			"startMs": 45865,
+			"endMs": 46736,
+			"timestampMs": 46301,
+			"confidence": null
+		},
+		{
+			"text": " Welche",
+			"startMs": 46776,
+			"endMs": 47099,
+			"timestampMs": 46938,
+			"confidence": null
+		},
+		{
+			"text": " Linie",
+			"startMs": 47099,
+			"endMs": 47421,
+			"timestampMs": 47260,
+			"confidence": null
+		},
+		{
+			"text": " nehmt",
+			"startMs": 47421,
+			"endMs": 47582,
+			"timestampMs": 47502,
+			"confidence": null
+		},
+		{
+			"text": " ihr",
+			"startMs": 47582,
+			"endMs": 47744,
+			"timestampMs": 47663,
+			"confidence": null
+		},
+		{
+			"text": " morgen?",
+			"startMs": 47744,
+			"endMs": 48292,
+			"timestampMs": 48018,
+			"confidence": null
+		},
+		{
+			"text": " Folgt",
+			"startMs": 48352,
+			"endMs": 48513,
+			"timestampMs": 48433,
+			"confidence": null
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 48513,
+			"endMs": 49159,
+			"timestampMs": 48836,
+			"confidence": null
+		},
+		{
+			"text": " für",
+			"startMs": 49159,
+			"endMs": 49320,
+			"timestampMs": 49240,
+			"confidence": null
+		},
+		{
+			"text": " mehr!",
+			"startMs": 49320,
+			"endMs": 49707,
+			"timestampMs": 49514,
+			"confidence": null
+		}
+	],
+	"captionsSource": "script-estimate",
+	"generatedAt": "2026-11-19T08:29:55.461Z"
+}

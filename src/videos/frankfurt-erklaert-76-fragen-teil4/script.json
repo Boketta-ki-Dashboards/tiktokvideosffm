@@ -1,0 +1,106 @@
+{
+	"videoId": "frankfurt-erklaert-76-fragen-teil4",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 66000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20. „Ewa“ automatisch „Eywa“ (Untertitel „Ewa“). Schnitt am letzten Buchstaben, Pausen im Satz ≤ 320 ms, 40 ms zwischen Sätzen, 60 ms nach dem Hook, 120 ms zwischen den Antworten. Ausnahme Länge: Informationsteil (bis „end“) ≤ 61,5 s, danach kurzer Abo-Aufruf (Segment „cta“), gesamt ≤ 66 s (config/videos.json → ausnahme)."
+	},
+	"sampleText": "Ewa, Frankfurt! Laut Wiesbadener Kurier ein sechsstelliger Schaden. Schreckschusswaffen sichergestellt, ein {18-Jähriger|Achtzehnjähriger} in Untersuchungshaft. Folgt {FrankfurtRed3|Frankfurt Red Drei} für mehr.",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 0
+		},
+		{
+			"id": "hook2",
+			"text": "Nach den ersten Antworten im Landtag gibt's jetzt vier weitere wichtige Erkenntnisse.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "p1a",
+			"text": "Erstens: Warum war die Polizei nicht überall gleichzeitig?",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p1b",
+			"text": "Laut Polizei gab es zeitweise bis zu {30|dreißig} Einsatzorte gleichzeitig, verteilt über die Innenstadt.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p1c",
+			"text": "Viele Straßen, Gassen und Innenhöfe, sehr viele Randalierer – und die Krawalle verlagerten sich.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p1d",
+			"text": "Das erklärt die schwierige Lage – ob alles richtig lief, beantwortet es aber nicht.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p2a",
+			"text": "Zweitens: Die Anfangsbilanz nannte {17|siebzehn} beschädigte und {5|fünf} geplünderte Geschäfte.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p2b",
+			"text": "Nach einem Bericht des Wiesbadener Kurier nannte Poseck später in der Sitzung {35|fünfunddreißig} beschädigte sowie {6|sechs} geplünderte Läden und einen sechsstelligen Schaden.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p3a",
+			"text": "Drittens: das Waffengeschäft.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p3b",
+			"text": "Laut Polizei wurden dort Schreckschusswaffen sichergestellt.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p3c",
+			"text": "Ein {18-Jähriger|Achtzehnjähriger} kam in Untersuchungshaft – Vorwurf: Diebstahl einer Waffe.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p3d",
+			"text": "Das ist noch keine Verurteilung.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p4a",
+			"text": "Viertens: Laut Polizei gab es {110|hundertzehn} Strafanzeigen und {53|dreiundfünfzig} Festnahmen.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p4b",
+			"text": "Der Minister zählt {73|dreiundsiebzig} Tatverdächtige.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p4c",
+			"text": "Aber verdächtig heißt nicht verurteilt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "end",
+			"text": "Das waren vier weitere Antworten.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr.",
+			"pauseAfterMs": 0
+		}
+	]
+}

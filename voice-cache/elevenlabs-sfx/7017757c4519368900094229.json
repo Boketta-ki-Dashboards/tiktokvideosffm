@@ -1,0 +1,9 @@
+{
+	"name": "notify",
+	"text": "Short friendly two-tone smartphone notification chime, clean and modern, no voice",
+	"model": "eleven_text_to_sound_v3",
+	"durationSeconds": 0.8,
+	"promptInfluence": 0.6,
+	"requestId": null,
+	"generatedAt": "2026-11-05T01:19:55.879Z"
+}

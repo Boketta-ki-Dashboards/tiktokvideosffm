@@ -1,0 +1,17 @@
+{
+	"hook1": {"bild": "Titelbild ab Frame 0: Logo, „GEN-Z-DEMO AM 20.11.“, „GEÄNDERT!“, Vorher/Nachher-Mini, „WAS IST JETZT ANDERS?“", "beleg": "–"},
+	"hook2": {"bild": "Titelbild verwandelt sich in die erste Inhaltsszene (Kopfzeile oben rechts ab Frame 48)", "beleg": "Stadt Frankfurt laut t-online, 17.11.2026"},
+	"w1": {"bild": "2,5D-Abstraktstadt: Punkte-Zug läuft SYMBOLISCH, „VORHER“ durchgestrichen, Punkte sammeln sich zum Ring an der Werft, „JETZT STATIONÄRE KUNDGEBUNG“", "beleg": "Stadt Frankfurt laut t-online, 17.11.2026 („Ursprünglich war ein Demonstrationszug …“)"},
+	"w2": {"bild": "Perspektivische OSM-Karte Ostend (Main, Flößerbrücke, EZB, Skyline), Werft-Fläche, Zeitkarte 14:00–16:30 + Zitat „um 17 Uhr ein klares Ende“", "beleg": "Stadt Frankfurt laut t-online 17.11.; t-online 18.11. (16:38 Uhr); Innenministerium, PM 18.11."},
+	"w3": {"bild": "Große Zahl „BIS ZU 4.000“ läuft hoch, Chip PROGNOSE, „keine Zählung“", "beleg": "Stadt Frankfurt laut t-online 17.11. („Erwartet werden bis zu 4.000 Menschen“); Innenministerium, PM 18.11."},
+	"a1": {"bild": "Auflagen-Karten mit Stempel: Pyro · Alkohol/Glas · Hunde · Vermummung", "beleg": "Stadt Frankfurt laut t-online, 17.11.2026"},
+	"a2": {"bild": "Karte „STANGEN: MAX. 2 METER“ mit Maßlinie", "beleg": "Stadt Frankfurt laut t-online, 17.11.2026"},
+	"v1": {"bild": "Zähler 4 → 5, Tages-Timeline mit fünf Markierungen, NEU-Plakette", "beleg": "Hessisches Innenministerium, PM „Appell zur friedlichen Demonstration“, 18.11.2026"},
+	"v2": {"bild": "Karte „GenZ regelt Bundesbewegung“: 15:00, Kaisersack (Hbf) → Bockenheimer Depot, gestrichelt (Verlauf nicht veröffentlicht), bis 1.500", "beleg": "Innenministerium, PM 18.11.2026"},
+	"p1": {"bild": "Pressekonferenz als Nachrichtengrafik (drei Pulte ohne Personen, ILLUSTRATION), Balken 1.300 (31.10.) → über 2.000 (20.11.)", "beleg": "Innenministerium, PM 18.11.; t-online 18.11. (16:38 Uhr)"},
+	"p2": {"bild": "Karten 49 Aufenthaltsverbote · 36 Meldeauflagen", "beleg": "Innenministerium, PM 18.11.2026"},
+	"p3": {"bild": "Karte „Zeil: Zugangskontrollen bei Bedarf“", "beleg": "Innenministerium, PM 18.11.2026"},
+	"f1": {"bild": "Rückblick-Chips, Stempel „NICHT ABGESAGT“, „ABLAUF GEÄNDERT“", "beleg": "Zusammenfassung der obigen Quellen"},
+	"q1": {"bild": "Fragen-Sprechblase", "beleg": "–"},
+	"cta": {"bild": "Offizielles FrankfurtRed-Logo, @frankfurtred3, Stand-Zeile", "beleg": "–"}
+}

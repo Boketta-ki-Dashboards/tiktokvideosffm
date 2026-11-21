@@ -1,0 +1,9 @@
+{
+	"name": "boom",
+	"text": "Deep cinematic trailer impact, low sub boom with a long dark reverb tail, no music, no voice",
+	"model": "eleven_text_to_sound_v3",
+	"durationSeconds": 3,
+	"promptInfluence": 0.6,
+	"requestId": null,
+	"generatedAt": "2026-11-05T01:19:52.729Z"
+}

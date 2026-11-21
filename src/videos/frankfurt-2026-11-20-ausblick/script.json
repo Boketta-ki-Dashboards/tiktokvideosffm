@@ -1,0 +1,32 @@
+{
+	"videoId": "frankfurt-2026-11-20-ausblick",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 112000,
+	"voice": {
+		"engine": "elevenlabs",
+		"$comment": "Stimme Adam – Einstellungen ausschließlich zentral in config/voice.json (speed 1.16, zuletzt akzeptiert)."
+	},
+	"segments": [
+		{"id": "hook1", "text": "Frankfurt, der {20. November|zwanzigste November}.", "pauseAfterMs": 250},
+		{"id": "hook2", "text": "Nach den Krawallen an Halloween fragen sich viele: Eskaliert es wieder genauso?", "pauseAfterMs": 250},
+		{"id": "hook3", "text": "Fakt ist: {Gen Z|Dschen Zett} regelt ruft wieder zu Protesten auf – und distanziert sich von Gewalt. Unsere Einschätzung: Diesmal könnte einiges anders laufen.", "pauseAfterMs": 450},
+		{"id": "hal1", "text": "Erstens: Halloween. Am {31. Oktober|einunddreißigsten Oktober} waren neben Demonstrierenden viele Feiernde unterwegs, oft verkleidet.", "pauseAfterMs": 200},
+		{"id": "hal2", "text": "Verkleidet heißt nicht Randalierer – aber die Innenstadt war voll und unübersichtlich.", "pauseAfterMs": 200},
+		{"id": "hal3", "text": "Am Zwanzigsten fehlt dieser Trubel – die Lage könnte leichter zu überblicken sein.", "pauseAfterMs": 450},
+		{"id": "pol1", "text": "Zweitens: die Polizei. Innenminister Poseck kündigt ein noch stärkeres Aufgebot an.", "pauseAfterMs": 200},
+		{"id": "pol2", "text": "Eine vergleichbare Versammlung dürfe es nicht noch einmal geben. Ein Verbot wird diskutiert – entschieden ist bisher nichts.", "pauseAfterMs": 200},
+		{"id": "pol3", "text": "Mehr Polizei könnte abschrecken – garantiert ist das nicht. Friedlicher Protest bleibt geschützt.", "pauseAfterMs": 450},
+		{"id": "shop1", "text": "Drittens: die Läden. Schon vor Halloween sicherten viele Geschäfte ihre Schaufenster mit Holzplatten.", "pauseAfterMs": 200},
+		{"id": "shop2", "text": "Nach den Plünderungen dürften Händler noch genauer überlegen: mehr Platten, Security, früher schließen?", "pauseAfterMs": 200},
+		{"id": "shop3", "text": "Wer das wirklich plant, ist aber noch offen.", "pauseAfterMs": 450},
+		{"id": "sum1", "text": "Kein Halloween-Trubel, mehr Polizei, besser vorbereitete Läden.", "pauseAfterMs": 200},
+		{"id": "sum2", "text": "Einiges spricht dafür, dass es ruhiger wird. Sicher vorhersagen kann das aber niemand.", "pauseAfterMs": 500},
+		{"id": "tw1", "text": "Und wer gewinnt am Zwanzigsten wirklich?", "pauseAfterMs": 600},
+		{"id": "tw2", "text": "Nicht die Politik. Nicht die Polizei. Sondern der schlaue Typ, der gerade eine Firma für Schaufenster-Schutzwände gegründet hat.", "pauseAfterMs": 300},
+		{"id": "tw3", "text": "Während Frankfurt diskutiert, schraubt der schon die nächste Holzplatte fest.", "pauseAfterMs": 500},
+		{"id": "end1", "text": "Unsere Einschätzung: Es könnte deutlich ruhiger werden. Realistisch – oder wieder Eskalation? Schreibt's in die Kommentare!", "pauseAfterMs": 600},
+		{"id": "outro", "text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!", "pauseAfterMs": 0}
+	]
+}

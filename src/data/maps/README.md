@@ -1,0 +1,13 @@
+# Kartendaten
+
+| Datei | Gebiet | Quelle | Lizenz | Abruf |
+|---|---|---|---|---|
+| `frankfurt-innenstadt-nordwest.json` | Innenstadt mit Hauptwache, Bockenheimer Warte, Westend-Süd und Matthäuskirche (bbox 8.6440,50.1050 – 8.6920,50.1260; sechs API-Kacheln zusammengeführt) – perspektivische Karte der Folge „Nur 13 Demonstranten?“ (`CityPlane`) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 16.11.2026 |
+| `berlin-charlottenburg.json` | Berlin-Charlottenburg/Halensee: Savignyplatz – Kurfürstendamm – S Halensee (bbox 13.2850,52.4930 – 13.3360,52.5090; drei API-Kacheln zusammengeführt) – perspektivische Karte der Folge „Gen Z regelt – Phase 2“ (`TiltedPlane`) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 15.11.2026 |
+| `frankfurt-innenstadt-west.json` | Innenstadt bis Bockenheimer Warte (bbox 8.6490,50.1080 – 8.6915,50.1210; zwei API-Kacheln zusammengeführt, da die API max. 50.000 Knoten liefert) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 14.11.2026 |
+| `frankfurt-innenstadt.json` | Frankfurt Innenstadt (bbox 8.6700,50.1085 – 8.6915,50.1185) | OpenStreetMap-API | **ODbL 1.0** – © OpenStreetMap-Mitwirkende | 03.11.2026 |
+
+Erzeugt mit `node scripts/maps/build-osm-map.mjs --bbox <minLon,minLat,maxLon,maxLat> --out <datei>`.
+Die Datei ist eine abgeleitete Datenbank der OpenStreetMap-Daten und steht ebenfalls unter der ODbL 1.0
+(https://opendatacommons.org/licenses/odbl/1-0/). In jedem Video, das sie zeigt, muss
+„© OpenStreetMap-Mitwirkende“ sichtbar sein – `<CityStreetMap>` blendet das automatisch ein.

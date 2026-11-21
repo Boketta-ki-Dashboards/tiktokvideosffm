@@ -1,0 +1,1087 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-20nov-staedte",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-20nov-staedte/voiceover-adam.mp3",
+	"durationMs": 57147,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1302,
+			"endMs": 3502,
+			"hash": "b69758c5c2420ef082d1"
+		},
+		{
+			"id": "h1",
+			"startMs": 3582,
+			"endMs": 8690,
+			"hash": "95297946ac6bc462827b"
+		},
+		{
+			"id": "h2",
+			"startMs": 8730,
+			"endMs": 13995,
+			"hash": "89cc843374fdad3657bb"
+		},
+		{
+			"id": "l1",
+			"startMs": 14115,
+			"endMs": 19944,
+			"hash": "ee39d44b067c341528da"
+		},
+		{
+			"id": "l2",
+			"startMs": 19984,
+			"endMs": 23786,
+			"hash": "9c26d55a7a25c1fbd7a5"
+		},
+		{
+			"id": "l3",
+			"startMs": 23826,
+			"endMs": 28104,
+			"hash": "7ef3f81c2f71b3edd1ff"
+		},
+		{
+			"id": "b1",
+			"startMs": 28224,
+			"endMs": 33919,
+			"hash": "f0104c9c89fdecacd3c2"
+		},
+		{
+			"id": "s1",
+			"startMs": 34039,
+			"endMs": 39764,
+			"hash": "0db0f01ccdc03f8c89b0"
+		},
+		{
+			"id": "r1",
+			"startMs": 39884,
+			"endMs": 44859,
+			"hash": "3571ab002f1eacce0a6c"
+		},
+		{
+			"id": "f1",
+			"startMs": 44979,
+			"endMs": 49020,
+			"hash": "3aba7ccf4bff69913981"
+		},
+		{
+			"id": "z1",
+			"startMs": 49140,
+			"endMs": 53518,
+			"hash": "dcc4d517eb39b75d263e"
+		},
+		{
+			"id": "q1",
+			"startMs": 53638,
+			"endMs": 55258,
+			"hash": "1fbf8847b599c2db2411"
+		},
+		{
+			"id": "cta",
+			"startMs": 55318,
+			"endMs": 57147,
+			"hash": "61e51d89dc2c0f05aaa7"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Was",
+			"startMs": 1302,
+			"endMs": 1499,
+			"timestampMs": 1401,
+			"confidence": 1
+		},
+		{
+			"text": " war",
+			"startMs": 1546,
+			"endMs": 1662,
+			"timestampMs": 1604,
+			"confidence": 1
+		},
+		{
+			"text": " am",
+			"startMs": 1685,
+			"endMs": 1766,
+			"timestampMs": 1726,
+			"confidence": 1
+		},
+		{
+			"text": " Freitag",
+			"startMs": 1824,
+			"endMs": 2126,
+			"timestampMs": 1975,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 2173,
+			"endMs": 2219,
+			"timestampMs": 2196,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 2254,
+			"endMs": 2359,
+			"timestampMs": 2307,
+			"confidence": 1
+		},
+		{
+			"text": " anderen",
+			"startMs": 2417,
+			"endMs": 2695,
+			"timestampMs": 2556,
+			"confidence": 1
+		},
+		{
+			"text": " Städten",
+			"startMs": 2718,
+			"endMs": 2997,
+			"timestampMs": 2858,
+			"confidence": 1
+		},
+		{
+			"text": " los?",
+			"startMs": 3043,
+			"endMs": 3502,
+			"timestampMs": 3380,
+			"confidence": 1
+		},
+		{
+			"text": " Hamburg:",
+			"startMs": 3582,
+			"endMs": 4290,
+			"timestampMs": 3936,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 4482,
+			"endMs": 4644,
+			"timestampMs": 4563,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 4679,
+			"endMs": 5178,
+			"timestampMs": 4929,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 5236,
+			"endMs": 5387,
+			"timestampMs": 5312,
+			"confidence": 1
+		},
+		{
+			"text": " 4.000",
+			"startMs": 5445,
+			"endMs": 6038,
+			"timestampMs": 5742,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 6084,
+			"endMs": 6200,
+			"timestampMs": 6142,
+			"confidence": 1
+		},
+		{
+			"text": " Dammtor",
+			"startMs": 6281,
+			"endMs": 6664,
+			"timestampMs": 6473,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 6699,
+			"endMs": 6746,
+			"timestampMs": 6723,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 6781,
+			"endMs": 6850,
+			"timestampMs": 6816,
+			"confidence": 1
+		},
+		{
+			"text": " Schanze –",
+			"startMs": 6897,
+			"endMs": 7419,
+			"timestampMs": 7158,
+			"confidence": 1
+		},
+		{
+			"text": " weitgehend",
+			"startMs": 7558,
+			"endMs": 8034,
+			"timestampMs": 7796,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich.",
+			"startMs": 8081,
+			"endMs": 8690,
+			"timestampMs": 8522,
+			"confidence": 1
+		},
+		{
+			"text": " Nach",
+			"startMs": 8730,
+			"endMs": 8904,
+			"timestampMs": 8817,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 8927,
+			"endMs": 9032,
+			"timestampMs": 8980,
+			"confidence": 1
+		},
+		{
+			"text": " Ende",
+			"startMs": 9102,
+			"endMs": 9310,
+			"timestampMs": 9206,
+			"confidence": 1
+		},
+		{
+			"text": " flogen",
+			"startMs": 9357,
+			"endMs": 9659,
+			"timestampMs": 9508,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 9705,
+			"endMs": 9903,
+			"timestampMs": 9804,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 9949,
+			"endMs": 10390,
+			"timestampMs": 10170,
+			"confidence": 1
+		},
+		{
+			"text": " Pyrotechnik",
+			"startMs": 10471,
+			"endMs": 11180,
+			"timestampMs": 10826,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 11249,
+			"endMs": 11331,
+			"timestampMs": 11290,
+			"confidence": 1
+		},
+		{
+			"text": " Eier,",
+			"startMs": 11435,
+			"endMs": 11830,
+			"timestampMs": 11633,
+			"confidence": 1
+		},
+		{
+			"text": " mehrere",
+			"startMs": 12039,
+			"endMs": 12387,
+			"timestampMs": 12213,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen",
+			"startMs": 12434,
+			"endMs": 12701,
+			"timestampMs": 12568,
+			"confidence": 1
+		},
+		{
+			"text": " kamen",
+			"startMs": 12759,
+			"endMs": 13002,
+			"timestampMs": 12881,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 13061,
+			"endMs": 13142,
+			"timestampMs": 13102,
+			"confidence": 1
+		},
+		{
+			"text": " Gewahrsam.",
+			"startMs": 13188,
+			"endMs": 13995,
+			"timestampMs": 13746,
+			"confidence": 1
+		},
+		{
+			"text": " Leipzig:",
+			"startMs": 14115,
+			"endMs": 14754,
+			"timestampMs": 14435,
+			"confidence": 1
+		},
+		{
+			"text": " Rund",
+			"startMs": 14893,
+			"endMs": 15113,
+			"timestampMs": 15003,
+			"confidence": 1
+		},
+		{
+			"text": " 2.500",
+			"startMs": 15148,
+			"endMs": 16228,
+			"timestampMs": 15688,
+			"confidence": 1
+		},
+		{
+			"text": " zogen",
+			"startMs": 16286,
+			"endMs": 16565,
+			"timestampMs": 16426,
+			"confidence": 1
+		},
+		{
+			"text": " um",
+			"startMs": 16600,
+			"endMs": 16669,
+			"timestampMs": 16635,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 16716,
+			"endMs": 16855,
+			"timestampMs": 16786,
+			"confidence": 1
+		},
+		{
+			"text": " Ring –",
+			"startMs": 16936,
+			"endMs": 17361,
+			"timestampMs": 17149,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 17465,
+			"endMs": 17616,
+			"timestampMs": 17541,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 17651,
+			"endMs": 17755,
+			"timestampMs": 17703,
+			"confidence": 1
+		},
+		{
+			"text": " Ende",
+			"startMs": 17837,
+			"endMs": 18127,
+			"timestampMs": 17982,
+			"confidence": 1
+		},
+		{
+			"text": " kam",
+			"startMs": 18185,
+			"endMs": 18382,
+			"timestampMs": 18284,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 18417,
+			"endMs": 18464,
+			"timestampMs": 18441,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 18533,
+			"endMs": 18615,
+			"timestampMs": 18574,
+			"confidence": 1
+		},
+		{
+			"text": " massiven",
+			"startMs": 18661,
+			"endMs": 19032,
+			"timestampMs": 18847,
+			"confidence": 1
+		},
+		{
+			"text": " Ausschreitungen.",
+			"startMs": 19079,
+			"endMs": 19944,
+			"timestampMs": 19689,
+			"confidence": 1
+		},
+		{
+			"text": " Wasserwerfer",
+			"startMs": 19984,
+			"endMs": 20704,
+			"timestampMs": 20344,
+			"confidence": 1
+		},
+		{
+			"text": " im",
+			"startMs": 20750,
+			"endMs": 20843,
+			"timestampMs": 20797,
+			"confidence": 1
+		},
+		{
+			"text": " Einsatz –",
+			"startMs": 20936,
+			"endMs": 21563,
+			"timestampMs": 21250,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 21702,
+			"endMs": 21888,
+			"timestampMs": 21795,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 21923,
+			"endMs": 22399,
+			"timestampMs": 22161,
+			"confidence": 1
+		},
+		{
+			"text": " fünf",
+			"startMs": 22469,
+			"endMs": 22689,
+			"timestampMs": 22579,
+			"confidence": 1
+		},
+		{
+			"text": " verletzte",
+			"startMs": 22712,
+			"endMs": 23095,
+			"timestampMs": 22904,
+			"confidence": 1
+		},
+		{
+			"text": " Beamte.",
+			"startMs": 23142,
+			"endMs": 23786,
+			"timestampMs": 23537,
+			"confidence": 1
+		},
+		{
+			"text": " Gegen",
+			"startMs": 23826,
+			"endMs": 24093,
+			"timestampMs": 23960,
+			"confidence": 1
+		},
+		{
+			"text": " mehr",
+			"startMs": 24128,
+			"endMs": 24290,
+			"timestampMs": 24209,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 24325,
+			"endMs": 24430,
+			"timestampMs": 24378,
+			"confidence": 1
+		},
+		{
+			"text": " 200",
+			"startMs": 24523,
+			"endMs": 24975,
+			"timestampMs": 24749,
+			"confidence": 1
+		},
+		{
+			"text": " Personen",
+			"startMs": 25010,
+			"endMs": 25405,
+			"timestampMs": 25208,
+			"confidence": 1
+		},
+		{
+			"text": " wird",
+			"startMs": 25486,
+			"endMs": 25672,
+			"timestampMs": 25579,
+			"confidence": 1
+		},
+		{
+			"text": " jetzt",
+			"startMs": 25730,
+			"endMs": 25916,
+			"timestampMs": 25823,
+			"confidence": 1
+		},
+		{
+			"text": " wegen",
+			"startMs": 25962,
+			"endMs": 26171,
+			"timestampMs": 26067,
+			"confidence": 1
+		},
+		{
+			"text": " schweren",
+			"startMs": 26194,
+			"endMs": 26566,
+			"timestampMs": 26380,
+			"confidence": 1
+		},
+		{
+			"text": " Landfriedensbruchs",
+			"startMs": 26624,
+			"endMs": 27437,
+			"timestampMs": 27031,
+			"confidence": 1
+		},
+		{
+			"text": " ermittelt.",
+			"startMs": 27495,
+			"endMs": 28104,
+			"timestampMs": 27843,
+			"confidence": 1
+		},
+		{
+			"text": " Berlin:",
+			"startMs": 28224,
+			"endMs": 28921,
+			"timestampMs": 28573,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 29048,
+			"endMs": 29234,
+			"timestampMs": 29141,
+			"confidence": 1
+		},
+		{
+			"text": " 4.000",
+			"startMs": 29281,
+			"endMs": 29861,
+			"timestampMs": 29571,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 29896,
+			"endMs": 30000,
+			"timestampMs": 29948,
+			"confidence": 1
+		},
+		{
+			"text": " Alexanderplatz",
+			"startMs": 30058,
+			"endMs": 30685,
+			"timestampMs": 30372,
+			"confidence": 1
+		},
+		{
+			"text": " bis",
+			"startMs": 30709,
+			"endMs": 30801,
+			"timestampMs": 30755,
+			"confidence": 1
+		},
+		{
+			"text": " Kreuzberg –",
+			"startMs": 30848,
+			"endMs": 31614,
+			"timestampMs": 31231,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 31684,
+			"endMs": 31846,
+			"timestampMs": 31765,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 31881,
+			"endMs": 32369,
+			"timestampMs": 32125,
+			"confidence": 1
+		},
+		{
+			"text": " ohne",
+			"startMs": 32438,
+			"endMs": 32636,
+			"timestampMs": 32537,
+			"confidence": 1
+		},
+		{
+			"text": " besondere",
+			"startMs": 32671,
+			"endMs": 33042,
+			"timestampMs": 32857,
+			"confidence": 1
+		},
+		{
+			"text": " Vorkommnisse.",
+			"startMs": 33089,
+			"endMs": 33919,
+			"timestampMs": 33745,
+			"confidence": 1
+		},
+		{
+			"text": " Stuttgart:",
+			"startMs": 34039,
+			"endMs": 34631,
+			"timestampMs": 34335,
+			"confidence": 1
+		},
+		{
+			"text": " Pyrotechnik,",
+			"startMs": 34770,
+			"endMs": 35409,
+			"timestampMs": 35090,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 35432,
+			"endMs": 35513,
+			"timestampMs": 35473,
+			"confidence": 1
+		},
+		{
+			"text": " Zug",
+			"startMs": 35560,
+			"endMs": 35722,
+			"timestampMs": 35641,
+			"confidence": 1
+		},
+		{
+			"text": " wurde",
+			"startMs": 35757,
+			"endMs": 35920,
+			"timestampMs": 35839,
+			"confidence": 1
+		},
+		{
+			"text": " mehrfach",
+			"startMs": 35966,
+			"endMs": 36303,
+			"timestampMs": 36135,
+			"confidence": 1
+		},
+		{
+			"text": " gestoppt –",
+			"startMs": 36338,
+			"endMs": 36960,
+			"timestampMs": 36649,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 37099,
+			"endMs": 37262,
+			"timestampMs": 37181,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 37296,
+			"endMs": 37703,
+			"timestampMs": 37500,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 37772,
+			"endMs": 37947,
+			"timestampMs": 37860,
+			"confidence": 1
+		},
+		{
+			"text": " zwanzig",
+			"startMs": 38005,
+			"endMs": 38388,
+			"timestampMs": 38197,
+			"confidence": 1
+		},
+		{
+			"text": " vorläufige",
+			"startMs": 38411,
+			"endMs": 38899,
+			"timestampMs": 38655,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen.",
+			"startMs": 38945,
+			"endMs": 39764,
+			"timestampMs": 39479,
+			"confidence": 1
+		},
+		{
+			"text": " Bremen:",
+			"startMs": 39884,
+			"endMs": 40546,
+			"timestampMs": 40215,
+			"confidence": 1
+		},
+		{
+			"text": " Farbe",
+			"startMs": 40755,
+			"endMs": 41057,
+			"timestampMs": 40906,
+			"confidence": 1
+		},
+		{
+			"text": " gegen",
+			"startMs": 41091,
+			"endMs": 41266,
+			"timestampMs": 41179,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 41289,
+			"endMs": 41393,
+			"timestampMs": 41341,
+			"confidence": 1
+		},
+		{
+			"text": " CDU-Büro",
+			"startMs": 41428,
+			"endMs": 42171,
+			"timestampMs": 41800,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 42241,
+			"endMs": 42322,
+			"timestampMs": 42282,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 42392,
+			"endMs": 42543,
+			"timestampMs": 42468,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 42578,
+			"endMs": 42961,
+			"timestampMs": 42770,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 42995,
+			"endMs": 43065,
+			"timestampMs": 43030,
+			"confidence": 1
+		},
+		{
+			"text": " Versuch,",
+			"startMs": 43112,
+			"endMs": 43495,
+			"timestampMs": 43304,
+			"confidence": 1
+		},
+		{
+			"text": " ein",
+			"startMs": 43518,
+			"endMs": 43634,
+			"timestampMs": 43576,
+			"confidence": 1
+		},
+		{
+			"text": " Auto",
+			"startMs": 43704,
+			"endMs": 43947,
+			"timestampMs": 43826,
+			"confidence": 1
+		},
+		{
+			"text": " anzuzünden.",
+			"startMs": 44017,
+			"endMs": 44859,
+			"timestampMs": 44528,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 44979,
+			"endMs": 45130,
+			"timestampMs": 45055,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt?",
+			"startMs": 45165,
+			"endMs": 45710,
+			"timestampMs": 45438,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 45903,
+			"endMs": 46088,
+			"timestampMs": 45996,
+			"confidence": 1
+		},
+		{
+			"text": " Innenminister",
+			"startMs": 46146,
+			"endMs": 46727,
+			"timestampMs": 46437,
+			"confidence": 1
+		},
+		{
+			"text": " haben",
+			"startMs": 46762,
+			"endMs": 46971,
+			"timestampMs": 46867,
+			"confidence": 1
+		},
+		{
+			"text": " sich",
+			"startMs": 47005,
+			"endMs": 47122,
+			"timestampMs": 47064,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 47156,
+			"endMs": 47226,
+			"timestampMs": 47191,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween-Bilder",
+			"startMs": 47272,
+			"endMs": 48027,
+			"timestampMs": 47650,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 48062,
+			"endMs": 48225,
+			"timestampMs": 48144,
+			"confidence": 1
+		},
+		{
+			"text": " wiederholt.",
+			"startMs": 48248,
+			"endMs": 49020,
+			"timestampMs": 48730,
+			"confidence": 1
+		},
+		{
+			"text": " Wichtig:",
+			"startMs": 49140,
+			"endMs": 49651,
+			"timestampMs": 49396,
+			"confidence": 1
+		},
+		{
+			"text": " Nicht",
+			"startMs": 49913,
+			"endMs": 50157,
+			"timestampMs": 50035,
+			"confidence": 1
+		},
+		{
+			"text": " alle,",
+			"startMs": 50238,
+			"endMs": 50609,
+			"timestampMs": 50424,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 50702,
+			"endMs": 50795,
+			"timestampMs": 50749,
+			"confidence": 1
+		},
+		{
+			"text": " demonstriert",
+			"startMs": 50842,
+			"endMs": 51422,
+			"timestampMs": 51132,
+			"confidence": 1
+		},
+		{
+			"text": " haben,",
+			"startMs": 51469,
+			"endMs": 51724,
+			"timestampMs": 51597,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 51759,
+			"endMs": 52026,
+			"timestampMs": 51893,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 52084,
+			"endMs": 52165,
+			"timestampMs": 52125,
+			"confidence": 1
+		},
+		{
+			"text": " Ausschreitungen",
+			"startMs": 52223,
+			"endMs": 52769,
+			"timestampMs": 52496,
+			"confidence": 1
+		},
+		{
+			"text": " beteiligt.",
+			"startMs": 52804,
+			"endMs": 53518,
+			"timestampMs": 53292,
+			"confidence": 1
+		},
+		{
+			"text": " Wie",
+			"startMs": 53638,
+			"endMs": 53812,
+			"timestampMs": 53725,
+			"confidence": 1
+		},
+		{
+			"text": " habt",
+			"startMs": 53859,
+			"endMs": 54044,
+			"timestampMs": 53952,
+			"confidence": 1
+		},
+		{
+			"text": " ihr",
+			"startMs": 54068,
+			"endMs": 54137,
+			"timestampMs": 54103,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 54160,
+			"endMs": 54253,
+			"timestampMs": 54207,
+			"confidence": 1
+		},
+		{
+			"text": " Freitag",
+			"startMs": 54300,
+			"endMs": 54636,
+			"timestampMs": 54468,
+			"confidence": 1
+		},
+		{
+			"text": " erlebt?",
+			"startMs": 54706,
+			"endMs": 55258,
+			"timestampMs": 55055,
+			"confidence": 1
+		},
+		{
+			"text": " Folgt",
+			"startMs": 55318,
+			"endMs": 55597,
+			"timestampMs": 55458,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 55620,
+			"endMs": 56549,
+			"timestampMs": 56085,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 56607,
+			"endMs": 56711,
+			"timestampMs": 56659,
+			"confidence": 1
+		},
+		{
+			"text": " mehr!",
+			"startMs": 56746,
+			"endMs": 57147,
+			"timestampMs": 56961,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-21T16:46:57.006Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1025
+	},
+	"measuredLufsBeforeMaster": -13.87
+}
