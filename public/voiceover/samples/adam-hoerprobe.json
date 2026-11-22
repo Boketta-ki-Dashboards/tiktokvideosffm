@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Hamburg: laut Polizei rund {4.000|viertausend} vom Dammtor in die Schanze. Gegen mehr als {200|zweihundert} Personen wird wegen schweren Landfriedensbruchs ermittelt. Bremen: Farbe gegen das {CDU-Büro|Ce De U Büro}.",
-	"sampleFrom": "frankfurt-erklaert-20nov-staedte",
+	"text": "{Ewa|Eywa}, Frankfurt! Trotzdem macht {Gen Z regelt|Dschen Zett regelt} weiter: Am Samstag, {12. Dezember|dem zwölften Dezember}, soll der nächste bundesweite Protesttag sein. Die Website nennt {73|dreiundsiebzig} Städte. Und lokale Gruppen können Geld aus einem Förderpool beantragen.",
+	"sampleFrom": "frankfurt-erklaert-12dez-ausblick",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 207,
-	"cacheKey": "c058afe88b22a983adfb",
-	"durationSeconds": 11.28
+	"characters": 244,
+	"cacheKey": "41300147faf47fbbd82e",
+	"durationSeconds": 14.616
 }
