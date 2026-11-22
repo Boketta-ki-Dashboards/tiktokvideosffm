@@ -184,12 +184,40 @@ import {
 	FrankfurtErklaert20NovemberStaedteOverlayCheck,
 	FrankfurtErklaert20NovemberStaedteSourceCheck,
 } from './videos/frankfurt-erklaert-20nov-staedte/FrankfurtErklaert20NovemberStaedteOverlayCheck';
+import {
+	calculateErklaertAusblickMetadata,
+	erklaertAusblickDefaultProps,
+	erklaertAusblickSchema,
+	FrankfurtErklaert12DezemberAusblick,
+} from './videos/frankfurt-erklaert-12dez-ausblick/FrankfurtErklaert12DezemberAusblick';
+import {FrankfurtErklaert12DezemberAusblickCover} from './videos/frankfurt-erklaert-12dez-ausblick/FrankfurtErklaert12DezemberAusblickCover';
+import {FrankfurtErklaert12DezemberAusblickCoverVorschau} from './videos/frankfurt-erklaert-12dez-ausblick/FrankfurtErklaert12DezemberAusblickCoverVorschau';
+import {
+	FrankfurtErklaert12DezemberAusblickOverlayCheck,
+	FrankfurtErklaert12DezemberAusblickSourceCheck,
+} from './videos/frankfurt-erklaert-12dez-ausblick/FrankfurtErklaert12DezemberAusblickOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #16 – Wie geht es weiter? Nächster Protesttag 12.12.2026 (Stand 22.11.2026): Längen-Ausnahme, Informationsteil ≤ 61,5 s + Abo-Aufruf, gesamt ≤ 66 s */}
+				<Composition
+					id="FrankfurtErklaert12DezemberAusblick"
+					component={FrankfurtErklaert12DezemberAusblick}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaertAusblickSchema}
+					defaultProps={erklaertAusblickDefaultProps}
+					calculateMetadata={calculateErklaertAusblickMetadata}
+				/>
+				<Still id="FrankfurtErklaert12DezemberAusblick-Cover" component={FrankfurtErklaert12DezemberAusblickCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaert12DezemberAusblick-CoverVorschau" component={FrankfurtErklaert12DezemberAusblickCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert12DezemberAusblick-OverlayCheck" component={FrankfurtErklaert12DezemberAusblickOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaert12DezemberAusblick-QuellenCheck" component={FrankfurtErklaert12DezemberAusblickSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #15 – Gen-Z-Proteste in anderen Städten (Nachbetrachtung 20.11., Stand 21.11.2026): hartes Limit 60 s inkl. Abo-Aufruf */}
 				<Composition
 					id="FrankfurtErklaert20NovemberStaedte"
