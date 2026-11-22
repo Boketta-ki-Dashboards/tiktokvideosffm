@@ -13,21 +13,21 @@
 			"mode": "letters",
 			"maxInnerGapMs": 320
 		},
-		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung (Intro) und Abo-Aufruf (Follow-Outro) sind die geprüften, bezahlten Aufnahmen aus dem Cache (#11–#15). Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Stand: Website genz-regelt.de 22.11.2026 (73 Städte, Standort/Uhrzeit „folgt“)."
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung (Intro) und Abo-Aufruf (Follow-Outro) sind die geprüften, bezahlten Aufnahmen aus dem Cache (#11–#15). Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Stand: Website genz-regelt.de 22.11.2026, 17:54 Uhr (73 Städte, Standort/Uhrzeit „folgt“)."
 	},
 	"sampleText": "Ewa, Frankfurt! Trotzdem geht es weiter – {Gen Z regelt|Dschen Zett regelt} kündigt den nächsten bundesweiten Protesttag an: Samstag, {12. Dezember|der zwölfte Dezember}. Die Website nennt {73|dreiundsiebzig} Städte. Und lokale Gruppen können Geld aus einem Förderpool beantragen.",
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
 		{"id": "hook2", "text": "Nach dem {20. November|zwanzigsten November} ist schon die nächste Demo geplant!", "pauseAfterMs": 120},
 		{"id": "r1", "text": "{Der 20.|Der Zwanzigste} lief hier weitgehend friedlich, aber mit deutlich weniger Leuten als angekündigt.", "pauseAfterMs": 40},
-		{"id": "r2", "text": "Dazu kamen unterschiedliche Planungen von Ortsgruppe und Bundesinitiative.", "pauseAfterMs": 120},
+		{"id": "r2", "text": "Dazu kamen unterschiedliche Planungen von Ortsgruppe und Bundesinitiative.", "pauseAfterMs": 40},
 		{"id": "n1", "text": "Trotzdem geht es weiter – {Gen Z regelt|Dschen Zett regelt} kündigt den nächsten bundesweiten Protesttag an: Samstag, {12. Dezember|der zwölfte Dezember}.", "pauseAfterMs": 40},
 		{"id": "n2", "text": "Die Website nennt {73|dreiundsiebzig} Städte – dieselbe Liste wie beim letzten Mal.", "pauseAfterMs": 120},
 		{"id": "f1", "text": "Frankfurt gehört wieder zu den vier Städten, in denen die Initiative selbst organisiert – neben Berlin, München und Köln.", "pauseAfterMs": 40},
 		{"id": "f2", "text": "Treffpunkt und Uhrzeit stehen aber noch nicht fest – auf der Website steht nur: folgt.", "pauseAfterMs": 40},
 		{"id": "f3", "text": "Und: Das ist eine Veranstalter-Ankündigung – von Stadt oder Polizei gibt es dazu noch nichts.", "pauseAfterMs": 40},
 		{"id": "f4", "text": "Ob die Demo angemeldet ist, ist öffentlich nicht bekannt.", "pauseAfterMs": 120},
-		{"id": "m1", "text": "Neu: Die Initiative sucht Helfer und Ordner – die sollen dafür sorgen, dass alles friedlich bleibt.", "pauseAfterMs": 40},
+		{"id": "m1", "text": "Neu: Die Initiative sucht Helfer – und Ordner, die für einen friedlichen Ablauf sorgen sollen.", "pauseAfterMs": 40},
 		{"id": "m2", "text": "Und lokale Gruppen können Geld aus einem Förderpool beantragen.", "pauseAfterMs": 120},
 		{"id": "z1", "text": "Wichtig: Online-Zusagen sind keine Teilnehmerzahlen, schreibt die Initiative selbst.", "pauseAfterMs": 120},
 		{"id": "q1", "text": "Bleibt die Frage: Kommen am {12. Dezember|zwölften Dezember} wieder mehr Menschen?", "pauseAfterMs": 120},
