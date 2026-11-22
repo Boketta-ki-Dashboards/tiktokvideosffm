@@ -1,0 +1,1185 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-12dez-ausblick",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-12dez-ausblick/voiceover-adam.mp3",
+	"durationMs": 59170,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1302,
+			"endMs": 3967,
+			"hash": "4703afcb590997da779e"
+		},
+		{
+			"id": "r1",
+			"startMs": 4087,
+			"endMs": 8975,
+			"hash": "924c79608528e3dcfc95"
+		},
+		{
+			"id": "r2",
+			"startMs": 9015,
+			"endMs": 13038,
+			"hash": "df011cf3a66891b13dd2"
+		},
+		{
+			"id": "n1",
+			"startMs": 13158,
+			"endMs": 19851,
+			"hash": "68b11eea2c9623e087fb"
+		},
+		{
+			"id": "n2",
+			"startMs": 19891,
+			"endMs": 23786,
+			"hash": "954fdfddae3c9f09540e"
+		},
+		{
+			"id": "f1",
+			"startMs": 23906,
+			"endMs": 30599,
+			"hash": "b2e5b25d1c094ddf55f6"
+		},
+		{
+			"id": "f2",
+			"startMs": 30639,
+			"endMs": 35219,
+			"hash": "3445399d205be1a66f04"
+		},
+		{
+			"id": "f3",
+			"startMs": 35259,
+			"endMs": 40472,
+			"hash": "610b1747f14612492da1"
+		},
+		{
+			"id": "m1",
+			"startMs": 40592,
+			"endMs": 46096,
+			"hash": "b237cf653e0c4ce00a7e"
+		},
+		{
+			"id": "m2",
+			"startMs": 46136,
+			"endMs": 49300,
+			"hash": "c51e0b68facdb4bd8afe"
+		},
+		{
+			"id": "z1",
+			"startMs": 49420,
+			"endMs": 54065,
+			"hash": "39b253e521f6bb216a2f"
+		},
+		{
+			"id": "q1",
+			"startMs": 54185,
+			"endMs": 57221,
+			"hash": "7f36d6878412ea6bbbe9"
+		},
+		{
+			"id": "cta",
+			"startMs": 57341,
+			"endMs": 59170,
+			"hash": "61e51d89dc2c0f05aaa7"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Nach",
+			"startMs": 1302,
+			"endMs": 1488,
+			"timestampMs": 1395,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 1511,
+			"endMs": 1615,
+			"timestampMs": 1563,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 1662,
+			"endMs": 2068,
+			"timestampMs": 1865,
+			"confidence": 1
+		},
+		{
+			"text": " November",
+			"startMs": 2091,
+			"endMs": 2405,
+			"timestampMs": 2248,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 2428,
+			"endMs": 2498,
+			"timestampMs": 2463,
+			"confidence": 1
+		},
+		{
+			"text": " schon",
+			"startMs": 2521,
+			"endMs": 2660,
+			"timestampMs": 2591,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 2695,
+			"endMs": 2765,
+			"timestampMs": 2730,
+			"confidence": 1
+		},
+		{
+			"text": " nächste",
+			"startMs": 2800,
+			"endMs": 3020,
+			"timestampMs": 2910,
+			"confidence": 1
+		},
+		{
+			"text": " Demo",
+			"startMs": 3067,
+			"endMs": 3287,
+			"timestampMs": 3177,
+			"confidence": 1
+		},
+		{
+			"text": " geplant!",
+			"startMs": 3322,
+			"endMs": 3967,
+			"timestampMs": 3659,
+			"confidence": 1
+		},
+		{
+			"text": " Der",
+			"startMs": 4087,
+			"endMs": 4226,
+			"timestampMs": 4157,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 4261,
+			"endMs": 4656,
+			"timestampMs": 4459,
+			"confidence": 1
+		},
+		{
+			"text": " lief",
+			"startMs": 4714,
+			"endMs": 4865,
+			"timestampMs": 4790,
+			"confidence": 1
+		},
+		{
+			"text": " hier",
+			"startMs": 4900,
+			"endMs": 5016,
+			"timestampMs": 4958,
+			"confidence": 1
+		},
+		{
+			"text": " weitgehend",
+			"startMs": 5062,
+			"endMs": 5527,
+			"timestampMs": 5295,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich,",
+			"startMs": 5573,
+			"endMs": 6119,
+			"timestampMs": 5846,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 6357,
+			"endMs": 6577,
+			"timestampMs": 6467,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 6612,
+			"endMs": 6717,
+			"timestampMs": 6665,
+			"confidence": 1
+		},
+		{
+			"text": " deutlich",
+			"startMs": 6752,
+			"endMs": 7088,
+			"timestampMs": 6920,
+			"confidence": 1
+		},
+		{
+			"text": " weniger",
+			"startMs": 7135,
+			"endMs": 7448,
+			"timestampMs": 7292,
+			"confidence": 1
+		},
+		{
+			"text": " Leuten",
+			"startMs": 7495,
+			"endMs": 7820,
+			"timestampMs": 7658,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 7901,
+			"endMs": 8052,
+			"timestampMs": 7977,
+			"confidence": 1
+		},
+		{
+			"text": " angekündigt.",
+			"startMs": 8121,
+			"endMs": 8975,
+			"timestampMs": 8598,
+			"confidence": 1
+		},
+		{
+			"text": " Dazu",
+			"startMs": 9015,
+			"endMs": 9317,
+			"timestampMs": 9166,
+			"confidence": 1
+		},
+		{
+			"text": " kamen",
+			"startMs": 9375,
+			"endMs": 9595,
+			"timestampMs": 9485,
+			"confidence": 1
+		},
+		{
+			"text": " unterschiedliche",
+			"startMs": 9665,
+			"endMs": 10246,
+			"timestampMs": 9956,
+			"confidence": 1
+		},
+		{
+			"text": " Planungen",
+			"startMs": 10292,
+			"endMs": 10768,
+			"timestampMs": 10530,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 10815,
+			"endMs": 10931,
+			"timestampMs": 10873,
+			"confidence": 1
+		},
+		{
+			"text": " Ortsgruppe",
+			"startMs": 11012,
+			"endMs": 11453,
+			"timestampMs": 11233,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 11511,
+			"endMs": 11604,
+			"timestampMs": 11558,
+			"confidence": 1
+		},
+		{
+			"text": " Bundesinitiative.",
+			"startMs": 11685,
+			"endMs": 13038,
+			"timestampMs": 12463,
+			"confidence": 1
+		},
+		{
+			"text": " Trotzdem",
+			"startMs": 13158,
+			"endMs": 13611,
+			"timestampMs": 13385,
+			"confidence": 1
+		},
+		{
+			"text": " macht",
+			"startMs": 13634,
+			"endMs": 13797,
+			"timestampMs": 13716,
+			"confidence": 1
+		},
+		{
+			"text": " Gen",
+			"startMs": 13820,
+			"endMs": 14006,
+			"timestampMs": 13913,
+			"confidence": 1
+		},
+		{
+			"text": " Z",
+			"startMs": 14075,
+			"endMs": 14261,
+			"timestampMs": 14168,
+			"confidence": 1
+		},
+		{
+			"text": " regelt",
+			"startMs": 14319,
+			"endMs": 14563,
+			"timestampMs": 14441,
+			"confidence": 1
+		},
+		{
+			"text": " weiter:",
+			"startMs": 14586,
+			"endMs": 15062,
+			"timestampMs": 14824,
+			"confidence": 1
+		},
+		{
+			"text": " Am",
+			"startMs": 15201,
+			"endMs": 15329,
+			"timestampMs": 15265,
+			"confidence": 1
+		},
+		{
+			"text": " Samstag,",
+			"startMs": 15364,
+			"endMs": 16002,
+			"timestampMs": 15683,
+			"confidence": 1
+		},
+		{
+			"text": " 12.",
+			"startMs": 16130,
+			"endMs": 16722,
+			"timestampMs": 16426,
+			"confidence": 1
+		},
+		{
+			"text": " Dezember,",
+			"startMs": 16722,
+			"endMs": 17430,
+			"timestampMs": 17076,
+			"confidence": 1
+		},
+		{
+			"text": " soll",
+			"startMs": 17558,
+			"endMs": 17709,
+			"timestampMs": 17634,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 17732,
+			"endMs": 17814,
+			"timestampMs": 17773,
+			"confidence": 1
+		},
+		{
+			"text": " nächste",
+			"startMs": 17848,
+			"endMs": 18115,
+			"timestampMs": 17982,
+			"confidence": 1
+		},
+		{
+			"text": " bundesweite",
+			"startMs": 18162,
+			"endMs": 18684,
+			"timestampMs": 18423,
+			"confidence": 1
+		},
+		{
+			"text": " Protesttag",
+			"startMs": 18719,
+			"endMs": 19311,
+			"timestampMs": 19015,
+			"confidence": 1
+		},
+		{
+			"text": " sein.",
+			"startMs": 19358,
+			"endMs": 19851,
+			"timestampMs": 19672,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 19891,
+			"endMs": 20042,
+			"timestampMs": 19967,
+			"confidence": 1
+		},
+		{
+			"text": " Website",
+			"startMs": 20077,
+			"endMs": 20530,
+			"timestampMs": 20304,
+			"confidence": 1
+		},
+		{
+			"text": " nennt",
+			"startMs": 20576,
+			"endMs": 20831,
+			"timestampMs": 20704,
+			"confidence": 1
+		},
+		{
+			"text": " 73",
+			"startMs": 20924,
+			"endMs": 21632,
+			"timestampMs": 21278,
+			"confidence": 1
+		},
+		{
+			"text": " Städte –",
+			"startMs": 21656,
+			"endMs": 22109,
+			"timestampMs": 21883,
+			"confidence": 1
+		},
+		{
+			"text": " dieselbe",
+			"startMs": 22178,
+			"endMs": 22538,
+			"timestampMs": 22358,
+			"confidence": 1
+		},
+		{
+			"text": " Liste",
+			"startMs": 22573,
+			"endMs": 22770,
+			"timestampMs": 22672,
+			"confidence": 1
+		},
+		{
+			"text": " wie",
+			"startMs": 22793,
+			"endMs": 22863,
+			"timestampMs": 22828,
+			"confidence": 1
+		},
+		{
+			"text": " beim",
+			"startMs": 22898,
+			"endMs": 23014,
+			"timestampMs": 22956,
+			"confidence": 1
+		},
+		{
+			"text": " letzten",
+			"startMs": 23061,
+			"endMs": 23316,
+			"timestampMs": 23189,
+			"confidence": 1
+		},
+		{
+			"text": " Mal.",
+			"startMs": 23339,
+			"endMs": 23786,
+			"timestampMs": 23751,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 23906,
+			"endMs": 24301,
+			"timestampMs": 24104,
+			"confidence": 1
+		},
+		{
+			"text": " gehört",
+			"startMs": 24336,
+			"endMs": 24545,
+			"timestampMs": 24441,
+			"confidence": 1
+		},
+		{
+			"text": " wieder",
+			"startMs": 24568,
+			"endMs": 24719,
+			"timestampMs": 24644,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 24754,
+			"endMs": 24823,
+			"timestampMs": 24789,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 24858,
+			"endMs": 24986,
+			"timestampMs": 24922,
+			"confidence": 1
+		},
+		{
+			"text": " vier",
+			"startMs": 25032,
+			"endMs": 25206,
+			"timestampMs": 25119,
+			"confidence": 1
+		},
+		{
+			"text": " Städten,",
+			"startMs": 25241,
+			"endMs": 25555,
+			"timestampMs": 25398,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 25578,
+			"endMs": 25636,
+			"timestampMs": 25607,
+			"confidence": 1
+		},
+		{
+			"text": " denen",
+			"startMs": 25694,
+			"endMs": 25938,
+			"timestampMs": 25816,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 25984,
+			"endMs": 26065,
+			"timestampMs": 26025,
+			"confidence": 1
+		},
+		{
+			"text": " Initiative",
+			"startMs": 26112,
+			"endMs": 26716,
+			"timestampMs": 26414,
+			"confidence": 1
+		},
+		{
+			"text": " selbst",
+			"startMs": 26762,
+			"endMs": 27041,
+			"timestampMs": 26902,
+			"confidence": 1
+		},
+		{
+			"text": " organisiert –",
+			"startMs": 27099,
+			"endMs": 27969,
+			"timestampMs": 27534,
+			"confidence": 1
+		},
+		{
+			"text": " neben",
+			"startMs": 28062,
+			"endMs": 28306,
+			"timestampMs": 28184,
+			"confidence": 1
+		},
+		{
+			"text": " Berlin,",
+			"startMs": 28341,
+			"endMs": 28980,
+			"timestampMs": 28661,
+			"confidence": 1
+		},
+		{
+			"text": " München",
+			"startMs": 29119,
+			"endMs": 29583,
+			"timestampMs": 29351,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 29792,
+			"endMs": 29955,
+			"timestampMs": 29874,
+			"confidence": 1
+		},
+		{
+			"text": " Köln.",
+			"startMs": 30036,
+			"endMs": 30599,
+			"timestampMs": 30501,
+			"confidence": 1
+		},
+		{
+			"text": " Treffpunkt",
+			"startMs": 30639,
+			"endMs": 31150,
+			"timestampMs": 30895,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 31208,
+			"endMs": 31289,
+			"timestampMs": 31249,
+			"confidence": 1
+		},
+		{
+			"text": " Uhrzeit",
+			"startMs": 31370,
+			"endMs": 31870,
+			"timestampMs": 31620,
+			"confidence": 1
+		},
+		{
+			"text": " stehen",
+			"startMs": 31916,
+			"endMs": 32172,
+			"timestampMs": 32044,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 32230,
+			"endMs": 32369,
+			"timestampMs": 32300,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 32404,
+			"endMs": 32520,
+			"timestampMs": 32462,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 32555,
+			"endMs": 32694,
+			"timestampMs": 32625,
+			"confidence": 1
+		},
+		{
+			"text": " fest –",
+			"startMs": 32729,
+			"endMs": 33124,
+			"timestampMs": 32927,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 33170,
+			"endMs": 33274,
+			"timestampMs": 33222,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 33309,
+			"endMs": 33391,
+			"timestampMs": 33350,
+			"confidence": 1
+		},
+		{
+			"text": " Website",
+			"startMs": 33425,
+			"endMs": 33867,
+			"timestampMs": 33646,
+			"confidence": 1
+		},
+		{
+			"text": " steht",
+			"startMs": 33913,
+			"endMs": 34168,
+			"timestampMs": 34041,
+			"confidence": 1
+		},
+		{
+			"text": " nur:",
+			"startMs": 34226,
+			"endMs": 34517,
+			"timestampMs": 34372,
+			"confidence": 1
+		},
+		{
+			"text": " folgt.",
+			"startMs": 34610,
+			"endMs": 35219,
+			"timestampMs": 34970,
+			"confidence": 1
+		},
+		{
+			"text": " Und:",
+			"startMs": 35259,
+			"endMs": 35747,
+			"timestampMs": 35503,
+			"confidence": 1
+		},
+		{
+			"text": " Das",
+			"startMs": 35927,
+			"endMs": 36124,
+			"timestampMs": 36026,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 36182,
+			"endMs": 36263,
+			"timestampMs": 36223,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 36333,
+			"endMs": 36530,
+			"timestampMs": 36432,
+			"confidence": 1
+		},
+		{
+			"text": " Veranstalter-Ankündigung –",
+			"startMs": 36565,
+			"endMs": 38074,
+			"timestampMs": 37320,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 38156,
+			"endMs": 38307,
+			"timestampMs": 38232,
+			"confidence": 1
+		},
+		{
+			"text": " Stadt",
+			"startMs": 38342,
+			"endMs": 38562,
+			"timestampMs": 38452,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 38620,
+			"endMs": 38771,
+			"timestampMs": 38696,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 38806,
+			"endMs": 39235,
+			"timestampMs": 39021,
+			"confidence": 1
+		},
+		{
+			"text": " gibt",
+			"startMs": 39294,
+			"endMs": 39456,
+			"timestampMs": 39375,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 39491,
+			"endMs": 39549,
+			"timestampMs": 39520,
+			"confidence": 1
+		},
+		{
+			"text": " dazu",
+			"startMs": 39595,
+			"endMs": 39793,
+			"timestampMs": 39694,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 39862,
+			"endMs": 39979,
+			"timestampMs": 39921,
+			"confidence": 1
+		},
+		{
+			"text": " nichts.",
+			"startMs": 40013,
+			"endMs": 40472,
+			"timestampMs": 40356,
+			"confidence": 1
+		},
+		{
+			"text": " Neu:",
+			"startMs": 40592,
+			"endMs": 41045,
+			"timestampMs": 40819,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 41272,
+			"endMs": 41388,
+			"timestampMs": 41330,
+			"confidence": 1
+		},
+		{
+			"text": " Initiative",
+			"startMs": 41434,
+			"endMs": 42073,
+			"timestampMs": 41754,
+			"confidence": 1
+		},
+		{
+			"text": " sucht",
+			"startMs": 42108,
+			"endMs": 42293,
+			"timestampMs": 42201,
+			"confidence": 1
+		},
+		{
+			"text": " Helfer",
+			"startMs": 42317,
+			"endMs": 42595,
+			"timestampMs": 42456,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 42665,
+			"endMs": 42770,
+			"timestampMs": 42718,
+			"confidence": 1
+		},
+		{
+			"text": " Ordner –",
+			"startMs": 42862,
+			"endMs": 43408,
+			"timestampMs": 43135,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 43501,
+			"endMs": 43582,
+			"timestampMs": 43542,
+			"confidence": 1
+		},
+		{
+			"text": " sollen",
+			"startMs": 43605,
+			"endMs": 43803,
+			"timestampMs": 43704,
+			"confidence": 1
+		},
+		{
+			"text": " dafür",
+			"startMs": 43838,
+			"endMs": 44081,
+			"timestampMs": 43960,
+			"confidence": 1
+		},
+		{
+			"text": " sorgen,",
+			"startMs": 44116,
+			"endMs": 44546,
+			"timestampMs": 44331,
+			"confidence": 1
+		},
+		{
+			"text": " dass",
+			"startMs": 44639,
+			"endMs": 44801,
+			"timestampMs": 44720,
+			"confidence": 1
+		},
+		{
+			"text": " alles",
+			"startMs": 44883,
+			"endMs": 45103,
+			"timestampMs": 44993,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich",
+			"startMs": 45150,
+			"endMs": 45498,
+			"timestampMs": 45324,
+			"confidence": 1
+		},
+		{
+			"text": " bleibt.",
+			"startMs": 45556,
+			"endMs": 46096,
+			"timestampMs": 45841,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 46136,
+			"endMs": 46310,
+			"timestampMs": 46223,
+			"confidence": 1
+		},
+		{
+			"text": " lokale",
+			"startMs": 46357,
+			"endMs": 46682,
+			"timestampMs": 46520,
+			"confidence": 1
+		},
+		{
+			"text": " Gruppen",
+			"startMs": 46716,
+			"endMs": 46984,
+			"timestampMs": 46850,
+			"confidence": 1
+		},
+		{
+			"text": " können",
+			"startMs": 47065,
+			"endMs": 47343,
+			"timestampMs": 47204,
+			"confidence": 1
+		},
+		{
+			"text": " Geld",
+			"startMs": 47390,
+			"endMs": 47610,
+			"timestampMs": 47500,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 47634,
+			"endMs": 47703,
+			"timestampMs": 47669,
+			"confidence": 1
+		},
+		{
+			"text": " einem",
+			"startMs": 47750,
+			"endMs": 47889,
+			"timestampMs": 47820,
+			"confidence": 1
+		},
+		{
+			"text": " Förderpool",
+			"startMs": 47936,
+			"endMs": 48435,
+			"timestampMs": 48186,
+			"confidence": 1
+		},
+		{
+			"text": " beantragen.",
+			"startMs": 48481,
+			"endMs": 49300,
+			"timestampMs": 48957,
+			"confidence": 1
+		},
+		{
+			"text": " Wichtig:",
+			"startMs": 49420,
+			"endMs": 49966,
+			"timestampMs": 49693,
+			"confidence": 1
+		},
+		{
+			"text": " Online-Zusagen",
+			"startMs": 50193,
+			"endMs": 51121,
+			"timestampMs": 50657,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 51156,
+			"endMs": 51284,
+			"timestampMs": 51220,
+			"confidence": 1
+		},
+		{
+			"text": " keine",
+			"startMs": 51342,
+			"endMs": 51563,
+			"timestampMs": 51453,
+			"confidence": 1
+		},
+		{
+			"text": " Teilnehmerzahlen,",
+			"startMs": 51609,
+			"endMs": 52457,
+			"timestampMs": 52033,
+			"confidence": 1
+		},
+		{
+			"text": " schreibt",
+			"startMs": 52503,
+			"endMs": 52747,
+			"timestampMs": 52625,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 52770,
+			"endMs": 52840,
+			"timestampMs": 52805,
+			"confidence": 1
+		},
+		{
+			"text": " Initiative",
+			"startMs": 52886,
+			"endMs": 53455,
+			"timestampMs": 53171,
+			"confidence": 1
+		},
+		{
+			"text": " selbst.",
+			"startMs": 53490,
+			"endMs": 54065,
+			"timestampMs": 53943,
+			"confidence": 1
+		},
+		{
+			"text": " Bleibt",
+			"startMs": 54185,
+			"endMs": 54406,
+			"timestampMs": 54296,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 54429,
+			"endMs": 54498,
+			"timestampMs": 54464,
+			"confidence": 1
+		},
+		{
+			"text": " Frage:",
+			"startMs": 54533,
+			"endMs": 55021,
+			"timestampMs": 54777,
+			"confidence": 1
+		},
+		{
+			"text": " Kommen",
+			"startMs": 55160,
+			"endMs": 55427,
+			"timestampMs": 55294,
+			"confidence": 1
+		},
+		{
+			"text": " am",
+			"startMs": 55474,
+			"endMs": 55532,
+			"timestampMs": 55503,
+			"confidence": 1
+		},
+		{
+			"text": " 12.",
+			"startMs": 55590,
+			"endMs": 55926,
+			"timestampMs": 55758,
+			"confidence": 1
+		},
+		{
+			"text": " Dezember",
+			"startMs": 55973,
+			"endMs": 56310,
+			"timestampMs": 56142,
+			"confidence": 1
+		},
+		{
+			"text": " wieder",
+			"startMs": 56333,
+			"endMs": 56484,
+			"timestampMs": 56409,
+			"confidence": 1
+		},
+		{
+			"text": " mehr",
+			"startMs": 56519,
+			"endMs": 56658,
+			"timestampMs": 56589,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen?",
+			"startMs": 56704,
+			"endMs": 57221,
+			"timestampMs": 57047,
+			"confidence": 1
+		},
+		{
+			"text": " Folgt",
+			"startMs": 57341,
+			"endMs": 57620,
+			"timestampMs": 57481,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 57643,
+			"endMs": 58572,
+			"timestampMs": 58108,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 58630,
+			"endMs": 58734,
+			"timestampMs": 58682,
+			"confidence": 1
+		},
+		{
+			"text": " mehr!",
+			"startMs": 58769,
+			"endMs": 59170,
+			"timestampMs": 58984,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-22T16:36:51.605Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1099
+	},
+	"measuredLufsBeforeMaster": -14.27
+}
