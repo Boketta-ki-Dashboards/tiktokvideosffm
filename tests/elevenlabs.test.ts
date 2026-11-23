@@ -34,7 +34,8 @@ test('zentrale Konfiguration: Standard ist ElevenLabs Adam mit eleven_multilingu
 	for (const [comp, v] of Object.entries<{videoId: string; outputName: string}>(videos)) {
 		if (comp.startsWith('$')) continue;
 		read(`../src/videos/${v.videoId}/script.json`);
-		assert.match(v.outputName, /^FrankfurtRed3_[A-Za-z0-9_]+$/);
+		// Kanalname bis #16 FrankfurtRed3, ab #17 (23.11.2026) FrankfurtRedNews (src/theme/brand.ts → BRAND_NEWS)
+		assert.match(v.outputName, /^FrankfurtRed(3|News)_[A-Za-z0-9_]+$/);
 	}
 });
 
