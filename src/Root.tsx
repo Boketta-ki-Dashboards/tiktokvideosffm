@@ -196,12 +196,40 @@ import {
 	FrankfurtErklaert12DezemberAusblickOverlayCheck,
 	FrankfurtErklaert12DezemberAusblickSourceCheck,
 } from './videos/frankfurt-erklaert-12dez-ausblick/FrankfurtErklaert12DezemberAusblickOverlayCheck';
+import {
+	calculateErklaertCondorMetadata,
+	erklaertCondorDefaultProps,
+	erklaertCondorSchema,
+	FrankfurtErklaertCondorFluege,
+} from './videos/frankfurt-erklaert-condor-fluege/FrankfurtErklaertCondorFluege';
+import {FrankfurtErklaertCondorFluegeCover} from './videos/frankfurt-erklaert-condor-fluege/FrankfurtErklaertCondorFluegeCover';
+import {FrankfurtErklaertCondorFluegeCoverVorschau} from './videos/frankfurt-erklaert-condor-fluege/FrankfurtErklaertCondorFluegeCoverVorschau';
+import {
+	FrankfurtErklaertCondorFluegeOverlayCheck,
+	FrankfurtErklaertCondorFluegeSourceCheck,
+} from './videos/frankfurt-erklaert-condor-fluege/FrankfurtErklaertCondorFluegeOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #17 – Zwei Condor-Flüge, Krankheitsfälle (22.11.2026, Stand 23.11.): erste Folge als FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
+				<Composition
+					id="FrankfurtErklaertCondorFluege"
+					component={FrankfurtErklaertCondorFluege}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaertCondorSchema}
+					defaultProps={erklaertCondorDefaultProps}
+					calculateMetadata={calculateErklaertCondorMetadata}
+				/>
+				<Still id="FrankfurtErklaertCondorFluege-Cover" component={FrankfurtErklaertCondorFluegeCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaertCondorFluege-CoverVorschau" component={FrankfurtErklaertCondorFluegeCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertCondorFluege-OverlayCheck" component={FrankfurtErklaertCondorFluegeOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertCondorFluege-QuellenCheck" component={FrankfurtErklaertCondorFluegeSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #16 – Wie geht es weiter? Nächster Protesttag 12.12.2026 (Stand 22.11.2026): Längen-Ausnahme, Informationsteil ≤ 61,5 s + Abo-Aufruf, gesamt ≤ 66 s */}
 				<Composition
 					id="FrankfurtErklaert12DezemberAusblick"
