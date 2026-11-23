@@ -11,7 +11,7 @@
 		"profile": "kurzformat-60",
 		"trim": {
 			"mode": "letters",
-			"maxInnerGapMs": 320
+			"maxInnerGapMs": 280
 		},
 		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung (Intro) aus dem Cache (#11–#16). NEU ab #17: Kanal heißt FrankfurtRedNews (src/theme/brand.ts → BRAND_NEWS) – Abo-Aufruf „Für mehr Nachrichten aus Frankfurt folgt FrankfurtRedNews!“, gesprochen „Frankfurt Rett News“. Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s ab 0), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Stand: Recherche 23.11.2026."
 	},
@@ -30,7 +30,8 @@
 		{"id": "e1", "text": "Doch was steckt dahinter?", "pauseAfterMs": 40},
 		{"id": "e2", "text": "Medien berichten über einen Norovirus-Verdacht – bestätigt ist das aber nicht.", "pauseAfterMs": 40},
 		{"id": "e3", "text": "Laut Condor waren es Charterflüge nach einer Kreuzfahrt – laut hessenschau sollen Betroffene schon vor dem Abflug krank gewesen sein.", "pauseAfterMs": 120},
-		{"id": "f1", "text": "Das Frankfurter Gesundheitsamt wurde eingeschaltet und soll klären, was dahintersteckt.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Das Frankfurter Gesundheitsamt wurde eingeschaltet und soll klären, was dahintersteckt.", "pauseAfterMs": 40},
+		{"id": "f2", "text": "Ein Ergebnis ist bisher nicht bekannt.", "pauseAfterMs": 120},
 		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
 	]
 }
