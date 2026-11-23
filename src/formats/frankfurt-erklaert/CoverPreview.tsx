@@ -57,7 +57,7 @@ const Guides: React.FC<{scale: number}> = ({scale}) => {
 };
 
 /** Neutrale Nachzeichnung typischer Bedienelemente einer Kurzvideo-App (keine Logos, keine Marken). */
-export const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => React.ReactNode}> = ({caption, avatar}) => {
+export const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => React.ReactNode; handle?: string}> = ({caption, avatar, handle = handleWithAt()}) => {
 	const icon = (y: number, d: React.ReactNode, count: string) => (
 		<div style={{position: 'absolute', left: 950, top: y, width: 110, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4}}>
 			<svg width={84} height={84} viewBox="0 0 24 24" style={{filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.6))'}}>
@@ -84,9 +84,9 @@ export const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => R
 			{icon(1600, <path d="M14 4l7 7-7 7v-4c-6 0-9 2-11 6 1-6 4-10 11-11V4z" fill="#FFFFFF" />, 'Teilen')}
 			{/* unten links: Account, Beschreibung, Ton */}
 			<div style={{position: 'absolute', left: 32, top: 1590, width: 860, display: 'flex', flexDirection: 'column', gap: 10, textShadow: '0 2px 6px rgba(0,0,0,0.8)'}}>
-				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, color: '#FFFFFF'}}>{handleWithAt()}</span>
+				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 36, color: '#FFFFFF'}}>{handle}</span>
 				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 30, color: '#FFFFFF'}}>{caption}</span>
-				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 28, color: 'rgba(255,255,255,0.85)'}}>♫ Originalton – {handleWithAt()}</span>
+				<span style={{fontFamily: FONTS.body, fontWeight: 600, fontSize: 28, color: 'rgba(255,255,255,0.85)'}}>♫ Originalton – {handle}</span>
 			</div>
 			{/* untere Navigationsleiste */}
 			<div style={{position: 'absolute', left: 0, right: 0, bottom: 0, height: 120, background: '#000', display: 'flex', justifyContent: 'space-around', alignItems: 'center', fontFamily: FONTS.body, fontWeight: 700, fontSize: 24, color: 'rgba(255,255,255,0.85)'}}>
@@ -101,14 +101,14 @@ export const AppOverlay: React.FC<{caption: string; avatar?: (size: number) => R
 };
 
 /** Nachgebautes Profil mit 3-Spalten-Raster (Kacheln 3:4, mittig beschnitten). */
-const ProfileGrid: React.FC<{tiles: {node: React.ReactNode; label?: string; views: string; pinned?: boolean; mark?: string}[]; width: number; avatar?: (size: number) => React.ReactNode}> = ({tiles, width, avatar}) => {
+const ProfileGrid: React.FC<{tiles: {node: React.ReactNode; label?: string; views: string; pinned?: boolean; mark?: string}[]; width: number; avatar?: (size: number) => React.ReactNode; handle?: string}> = ({tiles, width, avatar, handle = handleWithAt()}) => {
 	const gap = 4;
 	const tw = (width - 2 * gap) / 3;
 	return (
 		<div style={{width, borderRadius: 36, background: '#0E0E12', border: '3px solid #2A2A35', overflow: 'hidden', paddingBottom: 12}}>
 			<div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '26px 0 18px'}}>
 				{avatar ? avatar(96) : <BrandAvatar size={96} />}
-				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 26, color: '#FFFFFF'}}>{handleWithAt()}</span>
+				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 26, color: '#FFFFFF'}}>{handle}</span>
 				<div style={{display: 'flex', gap: 30, fontFamily: FONTS.body, fontWeight: 700, fontSize: 18, color: 'rgba(255,255,255,0.7)'}}>
 					<span>Gefolgt</span>
 					<span>Follower</span>
@@ -141,7 +141,9 @@ export const CoverPreviewSheet: React.FC<{
 	caption?: string;
 	/** Profilbild im Profilraster und in der App-Knopfleiste (Standard: altes „S“ – neue Folgen übergeben `<BrandLogo>`) */
 	avatar?: (size: number) => React.ReactNode;
-}> = ({title, cover, videoFrame, previous = [], caption = '76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr', avatar}) => {
+	/** Angezeigter Account (Standard: bisheriger Handle – neue Folgen ab #17 übergeben `handleWithAt('news')`) */
+	handle?: string;
+}> = ({title, cover, videoFrame, previous = [], caption = '76 FRAGEN – 4 DINGE SIND IMMER NOCH OFFEN! … mehr', avatar, handle = handleWithAt()}) => {
 	const s = 0.5;
 	return (
 		<AbsoluteFill style={{background: '#0A0C1C', padding: '30px 40px'}}>
@@ -168,6 +170,7 @@ export const CoverPreviewSheet: React.FC<{
 					<ProfileGrid
 						width={600}
 						avatar={avatar}
+						handle={handle}
 						tiles={[
 							{node: cover, views: '0', pinned: true, mark: 'NEU'},
 							...previous.map((p) => ({node: p.node, views: '–', mark: p.label})),
@@ -179,7 +182,7 @@ export const CoverPreviewSheet: React.FC<{
 					<Label n="4" title="Video + App" sub="Frame 15 mit Untertitel" />
 					<Window width={W * s}>
 						{videoFrame}
-						<AppOverlay caption={caption} avatar={avatar} />
+						<AppOverlay caption={caption} avatar={avatar} handle={handle} />
 					</Window>
 				</div>
 			</div>

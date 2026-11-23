@@ -72,7 +72,7 @@ export type OverlayCheckPanel = {
 	zones?: boolean;
 };
 
-export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPanel[]; heading?: string; note?: string}> = ({title, panels, heading = 'SERIEN-OVERLAY-PRÜFUNG', note = 'Prüfansicht – Suchleiste nur simuliert, nicht im Video'}) => {
+export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPanel[]; heading?: string; note?: string; handle?: string}> = ({title, panels, heading = 'SERIEN-OVERLAY-PRÜFUNG', note = 'Prüfansicht – Suchleiste nur simuliert, nicht im Video', handle}) => {
 	const w = 520;
 	const s = w / 1080;
 	return (
@@ -92,7 +92,7 @@ export const OverlayCheckSheet: React.FC<{title: string; panels: OverlayCheckPan
 							<div style={{position: 'absolute', left: 0, top: 0, width: 1080, height: 1920, scale: String(s), transformOrigin: '0 0'}}>
 								{p.node}
 								{p.search ? <SearchBarSim /> : null}
-								{p.app ? <AppOverlay caption={p.app} avatar={(sz) => <BrandLogo size={sz} border={false} />} /> : null}
+								{p.app ? <AppOverlay caption={p.app} avatar={(sz) => <BrandLogo size={sz} border={false} />} handle={handle} /> : null}
 								{p.zones ? <SourceZoneLines /> : null}
 							</div>
 						</div>

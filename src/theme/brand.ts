@@ -18,4 +18,20 @@ export const BRAND = {
 	avatarGradient: ['#FF3B4E', '#8B1E3F'] as const,
 } as const;
 
-export const handleWithAt = () => `@${BRAND.handle}`;
+/**
+ * Kanalname ab „Krankheitsfälle auf zwei Condor-Flügen“ (#17, 23.11.2026): Der TikTok-Account heißt jetzt **FrankfurtRedNews**
+ * (vorher FrankfurtRed3). Profilbild/Logo, Farben und Stil bleiben unverändert. Fertige Folgen (#01–#16) behalten `BRAND.handle`
+ * und werden nicht verändert – neue Folgen wählen ausdrücklich `'news'` (Outro, Titelbild-Logozeile, Prüfbögen).
+ * `spoken` = Lautschrift für Adam (wie „Frankfurt Rett Drei“ bei FrankfurtRed3, damit „Red“ nicht wie „rät“ klingt).
+ */
+export const BRAND_NEWS = {
+	name: 'FrankfurtRedNews',
+	handle: 'frankfurtrednews',
+	spoken: 'Frankfurt Rett News',
+	since: '2026-11-23',
+} as const;
+
+/** Kanal-Variante: `'red3'` = bisheriger Name (Standard für alle fertigen Folgen), `'news'` = FrankfurtRedNews (ab #17). */
+export type BrandVariant = 'red3' | 'news';
+
+export const handleWithAt = (variant: BrandVariant = 'red3') => `@${variant === 'news' ? BRAND_NEWS.handle : BRAND.handle}`;

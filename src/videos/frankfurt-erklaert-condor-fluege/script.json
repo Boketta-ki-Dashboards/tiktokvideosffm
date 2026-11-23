@@ -1,0 +1,36 @@
+{
+	"videoId": "frankfurt-erklaert-condor-fluege",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 66000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung (Intro) aus dem Cache (#11–#16). NEU ab #17: Kanal heißt FrankfurtRedNews (src/theme/brand.ts → BRAND_NEWS) – Abo-Aufruf „Für mehr Nachrichten aus Frankfurt folgt FrankfurtRedNews!“, gesprochen „Frankfurt Rett News“. Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s ab 0), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Stand: Recherche 23.11.2026."
+	},
+	"sampleText": "Ewa, Frankfurt! Laut Condor waren es Charterflüge nach einer Kreuzfahrt. Medien berichten über einen Norovirus-Verdacht. Laut Fraport vorsorglich mit zusätzlichen Kräften. Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Zwei Flugzeuge nach Frankfurt – und an Bord klagen zahlreiche Passagiere über Übelkeit!", "pauseAfterMs": 120},
+		{"id": "a1", "text": "Am Sonntag landeten zwei Condor-Maschinen aus La Romana in der Dominikanischen Republik in Frankfurt.", "pauseAfterMs": 40},
+		{"id": "a2", "text": "Schon während der Flüge meldeten Reisende Übelkeit, Unwohlsein und Erbrechen.", "pauseAfterMs": 120},
+		{"id": "b1", "text": "An Bord waren rund {620|sechshundertzwanzig} Menschen – aber wichtig: Nicht alle waren krank!", "pauseAfterMs": 40},
+		{"id": "b2", "text": "Laut Condor waren rund {30|dreißig} Passagiere betroffen, andere Berichte nennen {40|vierzig}.", "pauseAfterMs": 120},
+		{"id": "c1", "text": "Weil die Lage unklar war, standen Rettungskräfte schon vor der Landung bereit.", "pauseAfterMs": 40},
+		{"id": "c2", "text": "Laut Fraport vorsorglich mit zusätzlichen Kräften – medizinische Teams untersuchten die Menschen an Bord.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Zwei Personen kamen ins Krankenhaus – laut Condor eine wegen Kreislaufproblemen, eine auf eigenen Wunsch.", "pauseAfterMs": 40},
+		{"id": "d2", "text": "Alle anderen konnten ihre Reise fortsetzen.", "pauseAfterMs": 120},
+		{"id": "e1", "text": "Doch was steckt dahinter?", "pauseAfterMs": 40},
+		{"id": "e2", "text": "Medien berichten über einen Norovirus-Verdacht – bestätigt ist das aber nicht.", "pauseAfterMs": 40},
+		{"id": "e3", "text": "Laut Condor waren es Charterflüge nach einer Kreuzfahrt – laut hessenschau sollen Betroffene schon vor dem Abflug krank gewesen sein.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Das Frankfurter Gesundheitsamt wurde eingeschaltet und soll klären, was dahintersteckt.", "pauseAfterMs": 120},
+		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
+	]
+}
