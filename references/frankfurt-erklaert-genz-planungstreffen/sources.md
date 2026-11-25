@@ -4,9 +4,11 @@ Komposition `FrankfurtErklaertGenZPlanungstreffen` · produziert 25.11.2026 · T
 Organisation der Gen-Z-Demos vom 31.10. und 20.11., Einladung zu einem offenen Planungstreffen (Di 24.11., 19 Uhr, DGB-Haus) und die
 angekündigte Demo am Sa 12.12., 14 Uhr, Gallusanlage – und was davon offen ist.
 
-**Letzter Faktencheck: 25.11.2026, 16:40 Uhr** (MEZ) – Website der Bundesinitiative (Startseite + Datenliste), Polizei Frankfurt (presseportal),
+**Letzter Faktencheck: 25.11.2026, 17:08 Uhr** (MEZ; erste Recherche 16:40 Uhr) – Website der Bundesinitiative (Startseite + Datenliste, 17:08 Uhr
+unverändert: Frankfurt „Standort folgt“, Skript-Version v=171), Polizei Frankfurt (presseportal, jüngste Meldung weiter 1472),
 Innenministerium (Presse), hessenschau, t-online Frankfurt, FFH, Radio Frankfurt, DGB Frankfurt-Rhein-Main, Websuche (Planungstreffen, Gallusanlage,
-DGB-Haus). Stand im Bild: `content.ts → STAND`, nicht im Ton.
+DGB-Haus); um 17:08 Uhr erneut Website, presseportal, innen.hessen.de/presse und hessenschau – keine neue Meldung. Stand im Bild:
+`content.ts → STAND`, nicht im Ton.
 
 ## Grundsätze dieser Folge
 

@@ -208,12 +208,40 @@ import {
 	FrankfurtErklaertCondorFluegeOverlayCheck,
 	FrankfurtErklaertCondorFluegeSourceCheck,
 } from './videos/frankfurt-erklaert-condor-fluege/FrankfurtErklaertCondorFluegeOverlayCheck';
+import {
+	calculateErklaertPlanungMetadata,
+	erklaertPlanungDefaultProps,
+	erklaertPlanungSchema,
+	FrankfurtErklaertGenZPlanungstreffen,
+} from './videos/frankfurt-erklaert-genz-planungstreffen/FrankfurtErklaertGenZPlanungstreffen';
+import {FrankfurtErklaertGenZPlanungstreffenCover} from './videos/frankfurt-erklaert-genz-planungstreffen/FrankfurtErklaertGenZPlanungstreffenCover';
+import {FrankfurtErklaertGenZPlanungstreffenCoverVorschau} from './videos/frankfurt-erklaert-genz-planungstreffen/FrankfurtErklaertGenZPlanungstreffenCoverVorschau';
+import {
+	FrankfurtErklaertGenZPlanungstreffenOverlayCheck,
+	FrankfurtErklaertGenZPlanungstreffenSourceCheck,
+} from './videos/frankfurt-erklaert-genz-planungstreffen/FrankfurtErklaertGenZPlanungstreffenOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #18 – Gen Z regelt Frankfurt: Kritik, Planungstreffen 24.11., Demo 12.12. Gallusanlage (Stand 25.11.2026, 16:40 Uhr), FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
+				<Composition
+					id="FrankfurtErklaertGenZPlanungstreffen"
+					component={FrankfurtErklaertGenZPlanungstreffen}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaertPlanungSchema}
+					defaultProps={erklaertPlanungDefaultProps}
+					calculateMetadata={calculateErklaertPlanungMetadata}
+				/>
+				<Still id="FrankfurtErklaertGenZPlanungstreffen-Cover" component={FrankfurtErklaertGenZPlanungstreffenCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaertGenZPlanungstreffen-CoverVorschau" component={FrankfurtErklaertGenZPlanungstreffenCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertGenZPlanungstreffen-OverlayCheck" component={FrankfurtErklaertGenZPlanungstreffenOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertGenZPlanungstreffen-QuellenCheck" component={FrankfurtErklaertGenZPlanungstreffenSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #17 – Zwei Condor-Flüge, Krankheitsfälle (22.11.2026, Stand 23.11.): erste Folge als FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
 				<Composition
 					id="FrankfurtErklaertCondorFluege"
