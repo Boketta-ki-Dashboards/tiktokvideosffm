@@ -268,8 +268,8 @@ export const OrgaScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	];
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
-			<NightBack progress={pull} lit={0.3} />
-			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.95) 0%, rgba(4,6,20,0.86) 50%, rgba(4,6,20,0.92) 100%)'}} />
+			<NightBack progress={pull} lit={0.5} />
+			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.9) 0%, rgba(4,6,20,0.6) 50%, rgba(4,6,20,0.82) 100%)'}} />
 			<SceneTag text="KRITIK · PLANUNG" color={AMBER} icon="alert" />
 			<In at={0} dy={20} style={{left: LAYOUT.left, top: 378, width: LAYOUT.width}}>
 				<Card color={AMBER} style={{padding: '12px 18px'}} glow={0.3}>
@@ -279,7 +279,7 @@ export const OrgaScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 					</div>
 				</Card>
 			</In>
-			<In at={atSpaet} dy={24} style={{left: LAYOUT.left, top: 540, width: LAYOUT.width}}>
+			<In at={Math.min(atSpaet, 6)} dy={24} style={{left: LAYOUT.left, top: 540, width: LAYOUT.width}}>
 				<div style={{display: 'flex', gap: 20, alignItems: 'center'}}>
 					<div style={{flexShrink: 0, width: 150, height: 150, borderRadius: 24, background: 'linear-gradient(160deg, #FF6A78, #D93448)', boxShadow: '0 16px 36px rgba(0,0,0,0.5)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
 						<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 84, lineHeight: 0.9, color: '#FFFFFF'}}>3</span>
@@ -656,8 +656,8 @@ export const OffenScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const ats = [0, atAnm, atAnm + 8, atOeff + 4];
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
-			<NightBack progress={pull} mood="police" lit={0.3} />
-			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.95) 0%, rgba(4,6,20,0.88) 50%, rgba(4,6,20,0.94) 100%)'}} />
+			<NightBack progress={pull} mood="police" lit={0.5} />
+			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.9) 0%, rgba(4,6,20,0.6) 50%, rgba(4,6,20,0.84) 100%)'}} />
 			<SceneTag text="WAS IST OFFEN?" color={ACCENT.no} icon="clock" />
 			<div style={{position: 'absolute', left: LAYOUT.left, width: LAYOUT.width, top: 400, display: 'flex', flexDirection: 'column', gap: 22}}>
 				{STUFEN.map((s, i) => {
