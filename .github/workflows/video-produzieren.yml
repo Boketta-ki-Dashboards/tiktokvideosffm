@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaertGenZPlanungstreffen
           - FrankfurtErklaertCondorFluege
           - FrankfurtErklaert12DezemberAusblick
           - FrankfurtErklaert20NovemberStaedte
