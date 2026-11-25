@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Laut Condor waren es Charterflüge nach einer Kreuzfahrt. Medien berichten über einen Norovirus-Verdacht. Laut Fraport vorsorglich mit zusätzlichen Kräften. Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!",
-	"sampleFrom": "frankfurt-erklaert-condor-fluege",
+	"text": "{Ewa|Eywa}, Frankfurt! Nach den letzten {Gen-Z-Demos|Dschen Zett Demos} in Frankfurt soll sich einiges ändern! Offenes Planungstreffen im {DGB-Haus|De-Ge-Be-Haus}. {14 Uhr|vierzehn Uhr}, Gallusanlage. Auch Telegram kritisiert sie.",
+	"sampleFrom": "frankfurt-erklaert-genz-planungstreffen",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -14,7 +14,7 @@
 		"speed": 1.2
 	},
 	"seed": 20261104,
-	"characters": 234,
-	"cacheKey": "c55105aa984957a377ab",
-	"durationSeconds": 12.432
+	"characters": 190,
+	"cacheKey": "678ef66e6f2c0cd667f1",
+	"durationSeconds": 11.784
 }
