@@ -28,7 +28,7 @@
 		{"id": "d2", "text": "Die Freifahrten kosten die Stadt laut {FAZ|Eff A Zett} {400.000 Euro|vierhunderttausend Euro}.", "pauseAfterMs": 40},
 		{"id": "d3", "text": "Und bei Händlern ohne Versicherung will sie für Sachschäden einstehen.", "pauseAfterMs": 120},
 		{"id": "e1", "text": "Dazu kommen eine Werbekampagne fürs Weihnachtsshopping und am {6. Januar|sechsten Januar} eine Einkaufsaktion.", "pauseAfterMs": 120},
-		{"id": "f1", "text": "Spannend ist der erste Termin: Für den {12. Dezember|zwölften Dezember} ist auch die nächste {Gen-Z-Demo|Dschen Zett Demo} in Frankfurt angekündigt.", "pauseAfterMs": 40},
+		{"id": "f1", "text": "Spannend ist der erste Termin: Für den {12. Dezember|zwölften Dezember} ist in Frankfurt auch eine {Gen-Z-Demo|Dschen Zett Demo} angekündigt.", "pauseAfterMs": 40},
 		{"id": "f2", "text": "Gratis-Nahverkehr, Weihnachtsshopping und Demo – alles am selben Samstag.", "pauseAfterMs": 40},
 		{"id": "f3", "text": "Ein direkter Zusammenhang ist bislang nicht belegt.", "pauseAfterMs": 120},
 		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
