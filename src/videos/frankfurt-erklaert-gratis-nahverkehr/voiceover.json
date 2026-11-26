@@ -3,7 +3,7 @@
 	"videoId": "frankfurt-erklaert-gratis-nahverkehr",
 	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
 	"audioFile": "voiceover/frankfurt-erklaert-gratis-nahverkehr/voiceover-adam.mp3",
-	"durationMs": 62516,
+	"durationMs": 62456,
 	"segments": [
 		{
 			"id": "hook1",
@@ -19,80 +19,80 @@
 		},
 		{
 			"id": "a1",
-			"startMs": 5273,
-			"endMs": 8564,
+			"startMs": 5213,
+			"endMs": 8504,
 			"hash": "22c6dded43bcb8baa28f"
 		},
 		{
 			"id": "a2",
-			"startMs": 8604,
-			"endMs": 15843,
+			"startMs": 8544,
+			"endMs": 15783,
 			"hash": "0049863dcbed6254ca90"
 		},
 		{
 			"id": "b1",
-			"startMs": 15883,
-			"endMs": 20974,
+			"startMs": 15823,
+			"endMs": 20914,
 			"hash": "13617cd4c2aedd42d034"
 		},
 		{
 			"id": "c1",
-			"startMs": 21094,
-			"endMs": 23561,
+			"startMs": 21034,
+			"endMs": 23501,
 			"hash": "811dba71dbd531a40a60"
 		},
 		{
 			"id": "c2",
-			"startMs": 23601,
-			"endMs": 28889,
+			"startMs": 23541,
+			"endMs": 28829,
 			"hash": "f996f0160d35a5444743"
 		},
 		{
 			"id": "d1",
-			"startMs": 29009,
-			"endMs": 34599,
+			"startMs": 28949,
+			"endMs": 34539,
 			"hash": "2b58a19b00bdbb5b25a6"
 		},
 		{
 			"id": "d2",
-			"startMs": 34639,
-			"endMs": 38790,
+			"startMs": 34579,
+			"endMs": 38730,
 			"hash": "9f4f832c658122ba1182"
 		},
 		{
 			"id": "d3",
-			"startMs": 38830,
-			"endMs": 41994,
+			"startMs": 38770,
+			"endMs": 41934,
 			"hash": "4f9bab9fa2afffa6ce87"
 		},
 		{
 			"id": "e1",
-			"startMs": 42114,
-			"endMs": 47368,
+			"startMs": 42054,
+			"endMs": 47308,
 			"hash": "9d5ccacbd1d74846a006"
 		},
 		{
 			"id": "f1",
-			"startMs": 47488,
-			"endMs": 53032,
+			"startMs": 47428,
+			"endMs": 52972,
 			"hash": "decb4851607fbda8ec3d"
 		},
 		{
 			"id": "f2",
-			"startMs": 53072,
-			"endMs": 57004,
+			"startMs": 53012,
+			"endMs": 56944,
 			"hash": "c8840dd15d5c4ca5f88f"
 		},
 		{
 			"id": "f3",
-			"startMs": 57044,
-			"endMs": 59476,
+			"startMs": 56984,
+			"endMs": 59416,
 			"hash": "f5a751786de603b12814"
 		},
 		{
 			"id": "cta",
-			"startMs": 59596,
-			"endMs": 62516,
+			"startMs": 59536,
+			"endMs": 62456,
 			"hash": "f7a67b3208185b801db0"
 		}
 	],
@@ -183,1029 +183,1029 @@
 		},
 		{
 			"text": " Die",
-			"startMs": 5273,
-			"endMs": 5424,
-			"timestampMs": 5349,
+			"startMs": 5213,
+			"endMs": 5364,
+			"timestampMs": 5289,
 			"confidence": 1
 		},
 		{
 			"text": " Stadt",
-			"startMs": 5459,
-			"endMs": 5621,
-			"timestampMs": 5540,
+			"startMs": 5399,
+			"endMs": 5561,
+			"timestampMs": 5480,
 			"confidence": 1
 		},
 		{
 			"text": " hat",
-			"startMs": 5656,
-			"endMs": 5726,
-			"timestampMs": 5691,
+			"startMs": 5596,
+			"endMs": 5666,
+			"timestampMs": 5631,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 5772,
-			"endMs": 5830,
-			"timestampMs": 5801,
+			"startMs": 5712,
+			"endMs": 5770,
+			"timestampMs": 5741,
 			"confidence": 1
 		},
 		{
 			"text": " Mittwoch",
-			"startMs": 5865,
-			"endMs": 6144,
-			"timestampMs": 6005,
+			"startMs": 5805,
+			"endMs": 6084,
+			"timestampMs": 5945,
 			"confidence": 1
 		},
 		{
 			"text": " ein",
-			"startMs": 6190,
-			"endMs": 6260,
-			"timestampMs": 6225,
+			"startMs": 6130,
+			"endMs": 6200,
+			"timestampMs": 6165,
 			"confidence": 1
 		},
 		{
 			"text": " Paket",
-			"startMs": 6318,
-			"endMs": 6701,
-			"timestampMs": 6510,
+			"startMs": 6258,
+			"endMs": 6641,
+			"timestampMs": 6450,
 			"confidence": 1
 		},
 		{
 			"text": " für",
-			"startMs": 6747,
-			"endMs": 6875,
-			"timestampMs": 6811,
+			"startMs": 6687,
+			"endMs": 6815,
+			"timestampMs": 6751,
 			"confidence": 1
 		},
 		{
 			"text": " Innenstadt",
-			"startMs": 6922,
-			"endMs": 7340,
-			"timestampMs": 7131,
+			"startMs": 6862,
+			"endMs": 7280,
+			"timestampMs": 7071,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 7386,
-			"endMs": 7456,
-			"timestampMs": 7421,
+			"startMs": 7326,
+			"endMs": 7396,
+			"timestampMs": 7361,
 			"confidence": 1
 		},
 		{
 			"text": " Handel",
-			"startMs": 7514,
-			"endMs": 7758,
-			"timestampMs": 7636,
+			"startMs": 7454,
+			"endMs": 7698,
+			"timestampMs": 7576,
 			"confidence": 1
 		},
 		{
 			"text": " vorgestellt.",
-			"startMs": 7804,
-			"endMs": 8564,
-			"timestampMs": 8257,
+			"startMs": 7744,
+			"endMs": 8504,
+			"timestampMs": 8197,
 			"confidence": 1
 		},
 		{
 			"text": " An",
-			"startMs": 8604,
-			"endMs": 8790,
-			"timestampMs": 8697,
+			"startMs": 8544,
+			"endMs": 8730,
+			"timestampMs": 8637,
 			"confidence": 1
 		},
 		{
 			"text": " zwei",
-			"startMs": 8825,
-			"endMs": 9034,
-			"timestampMs": 8930,
+			"startMs": 8765,
+			"endMs": 8974,
+			"timestampMs": 8870,
 			"confidence": 1
 		},
 		{
 			"text": " Samstagen,",
-			"startMs": 9080,
-			"endMs": 9602,
-			"timestampMs": 9341,
+			"startMs": 9020,
+			"endMs": 9542,
+			"timestampMs": 9281,
 			"confidence": 1
 		},
 		{
 			"text": " dem",
-			"startMs": 9626,
-			"endMs": 9753,
-			"timestampMs": 9690,
+			"startMs": 9566,
+			"endMs": 9693,
+			"timestampMs": 9630,
 			"confidence": 1
 		},
 		{
 			"text": " 12.",
-			"startMs": 9823,
-			"endMs": 10229,
-			"timestampMs": 10026,
+			"startMs": 9763,
+			"endMs": 10169,
+			"timestampMs": 9966,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 10276,
-			"endMs": 10345,
-			"timestampMs": 10311,
+			"startMs": 10216,
+			"endMs": 10285,
+			"timestampMs": 10251,
 			"confidence": 1
 		},
 		{
 			"text": " 19.",
-			"startMs": 10427,
-			"endMs": 11030,
-			"timestampMs": 10729,
+			"startMs": 10367,
+			"endMs": 10970,
+			"timestampMs": 10669,
 			"confidence": 1
 		},
 		{
 			"text": " Dezember,",
-			"startMs": 11077,
-			"endMs": 11681,
-			"timestampMs": 11379,
+			"startMs": 11017,
+			"endMs": 11621,
+			"timestampMs": 11319,
 			"confidence": 1
 		},
 		{
 			"text": " sind",
-			"startMs": 11855,
-			"endMs": 12006,
-			"timestampMs": 11931,
+			"startMs": 11795,
+			"endMs": 11946,
+			"timestampMs": 11871,
 			"confidence": 1
 		},
 		{
 			"text": " alle",
-			"startMs": 12064,
-			"endMs": 12284,
-			"timestampMs": 12174,
+			"startMs": 12004,
+			"endMs": 12224,
+			"timestampMs": 12114,
 			"confidence": 1
 		},
 		{
 			"text": " RMV-Verkehrsmittel",
-			"startMs": 12366,
-			"endMs": 13712,
-			"timestampMs": 13039,
+			"startMs": 12306,
+			"endMs": 13652,
+			"timestampMs": 12979,
 			"confidence": 1
 		},
 		{
 			"text": " im",
-			"startMs": 13759,
-			"endMs": 13805,
-			"timestampMs": 13782,
+			"startMs": 13699,
+			"endMs": 13745,
+			"timestampMs": 13722,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurter",
-			"startMs": 13852,
-			"endMs": 14304,
-			"timestampMs": 14078,
+			"startMs": 13792,
+			"endMs": 14244,
+			"timestampMs": 14018,
 			"confidence": 1
 		},
 		{
 			"text": " Tarifgebiet",
-			"startMs": 14351,
-			"endMs": 14943,
-			"timestampMs": 14647,
+			"startMs": 14291,
+			"endMs": 14883,
+			"timestampMs": 14587,
 			"confidence": 1
 		},
 		{
 			"text": " kostenlos.",
-			"startMs": 15001,
-			"endMs": 15843,
-			"timestampMs": 15634,
+			"startMs": 14941,
+			"endMs": 15783,
+			"timestampMs": 15574,
 			"confidence": 1
 		},
 		{
 			"text": " Also",
-			"startMs": 15883,
-			"endMs": 16162,
-			"timestampMs": 16023,
+			"startMs": 15823,
+			"endMs": 16102,
+			"timestampMs": 15963,
 			"confidence": 1
 		},
 		{
 			"text": " Bus,",
-			"startMs": 16208,
-			"endMs": 16498,
-			"timestampMs": 16353,
+			"startMs": 16148,
+			"endMs": 16438,
+			"timestampMs": 16293,
 			"confidence": 1
 		},
 		{
 			"text": " Straßenbahn,",
-			"startMs": 16568,
-			"endMs": 17288,
-			"timestampMs": 16928,
+			"startMs": 16508,
+			"endMs": 17228,
+			"timestampMs": 16868,
 			"confidence": 1
 		},
 		{
 			"text": " U-",
-			"startMs": 17357,
-			"endMs": 17578,
-			"timestampMs": 17468,
+			"startMs": 17297,
+			"endMs": 17518,
+			"timestampMs": 17408,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 17601,
-			"endMs": 17729,
-			"timestampMs": 17665,
+			"startMs": 17541,
+			"endMs": 17669,
+			"timestampMs": 17605,
 			"confidence": 1
 		},
 		{
 			"text": " S-Bahn –",
-			"startMs": 17799,
-			"endMs": 18391,
-			"timestampMs": 18095,
+			"startMs": 17739,
+			"endMs": 18331,
+			"timestampMs": 18035,
 			"confidence": 1
 		},
 		{
 			"text": " jeweils",
-			"startMs": 18484,
-			"endMs": 18832,
-			"timestampMs": 18658,
+			"startMs": 18424,
+			"endMs": 18772,
+			"timestampMs": 18598,
 			"confidence": 1
 		},
 		{
 			"text": " von",
-			"startMs": 18855,
-			"endMs": 18960,
-			"timestampMs": 18908,
+			"startMs": 18795,
+			"endMs": 18900,
+			"timestampMs": 18848,
 			"confidence": 1
 		},
 		{
 			"text": " 0",
-			"startMs": 18983,
-			"endMs": 19157,
-			"timestampMs": 19070,
+			"startMs": 18923,
+			"endMs": 19097,
+			"timestampMs": 19010,
 			"confidence": 1
 		},
 		{
 			"text": " Uhr",
-			"startMs": 19227,
-			"endMs": 19343,
-			"timestampMs": 19285,
+			"startMs": 19167,
+			"endMs": 19283,
+			"timestampMs": 19225,
 			"confidence": 1
 		},
 		{
 			"text": " bis",
-			"startMs": 19366,
-			"endMs": 19470,
-			"timestampMs": 19418,
+			"startMs": 19306,
+			"endMs": 19410,
+			"timestampMs": 19358,
 			"confidence": 1
 		},
 		{
 			"text": " 5",
-			"startMs": 19517,
-			"endMs": 19749,
-			"timestampMs": 19633,
+			"startMs": 19457,
+			"endMs": 19689,
+			"timestampMs": 19573,
 			"confidence": 1
 		},
 		{
 			"text": " Uhr",
-			"startMs": 19842,
-			"endMs": 19946,
-			"timestampMs": 19894,
+			"startMs": 19782,
+			"endMs": 19886,
+			"timestampMs": 19834,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 19981,
-			"endMs": 20051,
-			"timestampMs": 20016,
+			"startMs": 19921,
+			"endMs": 19991,
+			"timestampMs": 19956,
 			"confidence": 1
 		},
 		{
 			"text": " Sonntagmorgen.",
-			"startMs": 20097,
-			"endMs": 20974,
-			"timestampMs": 20591,
+			"startMs": 20037,
+			"endMs": 20914,
+			"timestampMs": 20531,
 			"confidence": 1
 		},
 		{
 			"text": " Aber",
-			"startMs": 21094,
-			"endMs": 21349,
-			"timestampMs": 21222,
+			"startMs": 21034,
+			"endMs": 21289,
+			"timestampMs": 21162,
 			"confidence": 1
 		},
 		{
 			"text": " Achtung:",
-			"startMs": 21396,
-			"endMs": 21767,
-			"timestampMs": 21582,
+			"startMs": 21336,
+			"endMs": 21707,
+			"timestampMs": 21522,
 			"confidence": 1
 		},
 		{
 			"text": " Der",
-			"startMs": 21907,
-			"endMs": 22034,
-			"timestampMs": 21971,
+			"startMs": 21847,
+			"endMs": 21974,
+			"timestampMs": 21911,
 			"confidence": 1
 		},
 		{
 			"text": " Flughafen",
-			"startMs": 22069,
-			"endMs": 22603,
-			"timestampMs": 22336,
+			"startMs": 22009,
+			"endMs": 22543,
+			"timestampMs": 22276,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 22650,
-			"endMs": 22766,
-			"timestampMs": 22708,
+			"startMs": 22590,
+			"endMs": 22706,
+			"timestampMs": 22648,
 			"confidence": 1
 		},
 		{
 			"text": " ausgenommen.",
-			"startMs": 22824,
-			"endMs": 23561,
-			"timestampMs": 23352,
+			"startMs": 22764,
+			"endMs": 23501,
+			"timestampMs": 23292,
 			"confidence": 1
 		},
 		{
 			"text": " Wer",
-			"startMs": 23601,
-			"endMs": 23798,
-			"timestampMs": 23700,
+			"startMs": 23541,
+			"endMs": 23738,
+			"timestampMs": 23640,
 			"confidence": 1
 		},
 		{
 			"text": " aus",
-			"startMs": 23822,
-			"endMs": 23914,
-			"timestampMs": 23868,
+			"startMs": 23762,
+			"endMs": 23854,
+			"timestampMs": 23808,
 			"confidence": 1
 		},
 		{
 			"text": " dem",
-			"startMs": 23949,
-			"endMs": 24054,
-			"timestampMs": 24002,
+			"startMs": 23889,
+			"endMs": 23994,
+			"timestampMs": 23942,
 			"confidence": 1
 		},
 		{
 			"text": " Umland",
-			"startMs": 24135,
-			"endMs": 24530,
-			"timestampMs": 24333,
+			"startMs": 24075,
+			"endMs": 24470,
+			"timestampMs": 24273,
 			"confidence": 1
 		},
 		{
 			"text": " kommt,",
-			"startMs": 24599,
-			"endMs": 24878,
-			"timestampMs": 24739,
+			"startMs": 24539,
+			"endMs": 24818,
+			"timestampMs": 24679,
 			"confidence": 1
 		},
 		{
 			"text": " etwa",
-			"startMs": 24913,
-			"endMs": 25157,
-			"timestampMs": 25035,
+			"startMs": 24853,
+			"endMs": 25097,
+			"timestampMs": 24975,
 			"confidence": 1
 		},
 		{
 			"text": " aus",
-			"startMs": 25192,
-			"endMs": 25354,
-			"timestampMs": 25273,
+			"startMs": 25132,
+			"endMs": 25294,
+			"timestampMs": 25213,
 			"confidence": 1
 		},
 		{
 			"text": " Offenbach,",
-			"startMs": 25424,
-			"endMs": 25981,
-			"timestampMs": 25703,
+			"startMs": 25364,
+			"endMs": 25921,
+			"timestampMs": 25643,
 			"confidence": 1
 		},
 		{
 			"text": " zahlt",
-			"startMs": 26109,
-			"endMs": 26387,
-			"timestampMs": 26248,
+			"startMs": 26049,
+			"endMs": 26327,
+			"timestampMs": 26188,
 			"confidence": 1
 		},
 		{
 			"text": " bis",
-			"startMs": 26422,
-			"endMs": 26538,
-			"timestampMs": 26480,
+			"startMs": 26362,
+			"endMs": 26478,
+			"timestampMs": 26420,
 			"confidence": 1
 		},
 		{
 			"text": " zur",
-			"startMs": 26596,
-			"endMs": 26736,
-			"timestampMs": 26666,
+			"startMs": 26536,
+			"endMs": 26676,
+			"timestampMs": 26606,
 			"confidence": 1
 		},
 		{
 			"text": " Stadtgrenze",
-			"startMs": 26782,
-			"endMs": 27467,
-			"timestampMs": 27125,
+			"startMs": 26722,
+			"endMs": 27407,
+			"timestampMs": 27065,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 27595,
-			"endMs": 27769,
-			"timestampMs": 27682,
+			"startMs": 27535,
+			"endMs": 27709,
+			"timestampMs": 27622,
 			"confidence": 1
 		},
 		{
 			"text": " normalen",
-			"startMs": 27792,
-			"endMs": 28233,
-			"timestampMs": 28013,
+			"startMs": 27732,
+			"endMs": 28173,
+			"timestampMs": 27953,
 			"confidence": 1
 		},
 		{
 			"text": " Preis.",
-			"startMs": 28291,
-			"endMs": 28889,
-			"timestampMs": 28709,
+			"startMs": 28231,
+			"endMs": 28829,
+			"timestampMs": 28649,
 			"confidence": 1
 		},
 		{
 			"text": " Hintergrund:",
-			"startMs": 29009,
-			"endMs": 29694,
-			"timestampMs": 29352,
+			"startMs": 28949,
+			"endMs": 29634,
+			"timestampMs": 29292,
 			"confidence": 1
 		},
 		{
 			"text": " Nach",
-			"startMs": 29833,
-			"endMs": 29984,
-			"timestampMs": 29909,
+			"startMs": 29773,
+			"endMs": 29924,
+			"timestampMs": 29849,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 30007,
-			"endMs": 30100,
-			"timestampMs": 30054,
+			"startMs": 29947,
+			"endMs": 30040,
+			"timestampMs": 29994,
 			"confidence": 1
 		},
 		{
 			"text": " Ausschreitungen",
-			"startMs": 30158,
-			"endMs": 30750,
-			"timestampMs": 30454,
+			"startMs": 30098,
+			"endMs": 30690,
+			"timestampMs": 30394,
 			"confidence": 1
 		},
 		{
 			"text": " vom",
-			"startMs": 30785,
-			"endMs": 30890,
-			"timestampMs": 30838,
+			"startMs": 30725,
+			"endMs": 30830,
+			"timestampMs": 30778,
 			"confidence": 1
 		},
 		{
 			"text": " 31.",
-			"startMs": 30948,
-			"endMs": 31644,
-			"timestampMs": 31296,
+			"startMs": 30888,
+			"endMs": 31584,
+			"timestampMs": 31236,
 			"confidence": 1
 		},
 		{
 			"text": " Oktober",
-			"startMs": 31714,
-			"endMs": 32225,
-			"timestampMs": 31970,
+			"startMs": 31654,
+			"endMs": 32165,
+			"timestampMs": 31910,
 			"confidence": 1
 		},
 		{
 			"text": " hatte",
-			"startMs": 32399,
-			"endMs": 32585,
-			"timestampMs": 32492,
+			"startMs": 32339,
+			"endMs": 32525,
+			"timestampMs": 32432,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 32620,
-			"endMs": 32689,
-			"timestampMs": 32655,
+			"startMs": 32560,
+			"endMs": 32629,
+			"timestampMs": 32595,
 			"confidence": 1
 		},
 		{
 			"text": " Stadt",
-			"startMs": 32724,
-			"endMs": 32956,
-			"timestampMs": 32840,
+			"startMs": 32664,
+			"endMs": 32896,
+			"timestampMs": 32780,
 			"confidence": 1
 		},
 		{
 			"text": " dem",
-			"startMs": 32980,
-			"endMs": 33096,
-			"timestampMs": 33038,
+			"startMs": 32920,
+			"endMs": 33036,
+			"timestampMs": 32978,
 			"confidence": 1
 		},
 		{
 			"text": " Handel",
-			"startMs": 33154,
-			"endMs": 33409,
-			"timestampMs": 33282,
+			"startMs": 33094,
+			"endMs": 33349,
+			"timestampMs": 33222,
 			"confidence": 1
 		},
 		{
 			"text": " Hilfe",
-			"startMs": 33456,
-			"endMs": 33676,
-			"timestampMs": 33566,
+			"startMs": 33396,
+			"endMs": 33616,
+			"timestampMs": 33506,
 			"confidence": 1
 		},
 		{
 			"text": " zugesagt.",
-			"startMs": 33723,
-			"endMs": 34599,
-			"timestampMs": 34269,
+			"startMs": 33663,
+			"endMs": 34539,
+			"timestampMs": 34209,
 			"confidence": 1
 		},
 		{
 			"text": " Die",
-			"startMs": 34639,
-			"endMs": 34767,
-			"timestampMs": 34703,
+			"startMs": 34579,
+			"endMs": 34707,
+			"timestampMs": 34643,
 			"confidence": 1
 		},
 		{
 			"text": " Freifahrten",
-			"startMs": 34802,
-			"endMs": 35312,
-			"timestampMs": 35057,
+			"startMs": 34742,
+			"endMs": 35252,
+			"timestampMs": 34997,
 			"confidence": 1
 		},
 		{
 			"text": " kosten",
-			"startMs": 35359,
-			"endMs": 35626,
-			"timestampMs": 35493,
+			"startMs": 35299,
+			"endMs": 35566,
+			"timestampMs": 35433,
 			"confidence": 1
 		},
 		{
 			"text": " die",
-			"startMs": 35661,
-			"endMs": 35730,
-			"timestampMs": 35696,
+			"startMs": 35601,
+			"endMs": 35670,
+			"timestampMs": 35636,
 			"confidence": 1
 		},
 		{
 			"text": " Stadt",
-			"startMs": 35765,
-			"endMs": 35974,
-			"timestampMs": 35870,
+			"startMs": 35705,
+			"endMs": 35914,
+			"timestampMs": 35810,
 			"confidence": 1
 		},
 		{
 			"text": " laut",
-			"startMs": 36032,
-			"endMs": 36230,
-			"timestampMs": 36131,
+			"startMs": 35972,
+			"endMs": 36170,
+			"timestampMs": 36071,
 			"confidence": 1
 		},
 		{
 			"text": " FAZ",
-			"startMs": 36322,
-			"endMs": 37089,
-			"timestampMs": 36706,
+			"startMs": 36262,
+			"endMs": 37029,
+			"timestampMs": 36646,
 			"confidence": 1
 		},
 		{
 			"text": " 400.000",
-			"startMs": 37321,
-			"endMs": 38134,
-			"timestampMs": 37728,
+			"startMs": 37261,
+			"endMs": 38074,
+			"timestampMs": 37668,
 			"confidence": 1
 		},
 		{
 			"text": " Euro.",
-			"startMs": 38226,
-			"endMs": 38790,
-			"timestampMs": 38569,
+			"startMs": 38166,
+			"endMs": 38730,
+			"timestampMs": 38509,
 			"confidence": 1
 		},
 		{
 			"text": " Und",
-			"startMs": 38830,
-			"endMs": 39027,
-			"timestampMs": 38929,
+			"startMs": 38770,
+			"endMs": 38967,
+			"timestampMs": 38869,
 			"confidence": 1
 		},
 		{
 			"text": " bei",
-			"startMs": 39074,
-			"endMs": 39178,
-			"timestampMs": 39126,
+			"startMs": 39014,
+			"endMs": 39118,
+			"timestampMs": 39066,
 			"confidence": 1
 		},
 		{
 			"text": " Händlern",
-			"startMs": 39213,
-			"endMs": 39561,
-			"timestampMs": 39387,
+			"startMs": 39153,
+			"endMs": 39501,
+			"timestampMs": 39327,
 			"confidence": 1
 		},
 		{
 			"text": " ohne",
-			"startMs": 39631,
-			"endMs": 39794,
-			"timestampMs": 39713,
+			"startMs": 39571,
+			"endMs": 39734,
+			"timestampMs": 39653,
 			"confidence": 1
 		},
 		{
 			"text": " Versicherung",
-			"startMs": 39828,
-			"endMs": 40258,
-			"timestampMs": 40043,
+			"startMs": 39768,
+			"endMs": 40198,
+			"timestampMs": 39983,
 			"confidence": 1
 		},
 		{
 			"text": " will",
-			"startMs": 40304,
-			"endMs": 40409,
-			"timestampMs": 40357,
+			"startMs": 40244,
+			"endMs": 40349,
+			"timestampMs": 40297,
 			"confidence": 1
 		},
 		{
 			"text": " sie",
-			"startMs": 40432,
-			"endMs": 40502,
-			"timestampMs": 40467,
+			"startMs": 40372,
+			"endMs": 40442,
+			"timestampMs": 40407,
 			"confidence": 1
 		},
 		{
 			"text": " für",
-			"startMs": 40537,
-			"endMs": 40653,
-			"timestampMs": 40595,
+			"startMs": 40477,
+			"endMs": 40593,
+			"timestampMs": 40535,
 			"confidence": 1
 		},
 		{
 			"text": " Sachschäden",
-			"startMs": 40676,
-			"endMs": 41175,
-			"timestampMs": 40926,
+			"startMs": 40616,
+			"endMs": 41115,
+			"timestampMs": 40866,
 			"confidence": 1
 		},
 		{
 			"text": " einstehen.",
-			"startMs": 41268,
-			"endMs": 41994,
-			"timestampMs": 41721,
+			"startMs": 41208,
+			"endMs": 41934,
+			"timestampMs": 41661,
 			"confidence": 1
 		},
 		{
 			"text": " Dazu",
-			"startMs": 42114,
-			"endMs": 42416,
-			"timestampMs": 42265,
+			"startMs": 42054,
+			"endMs": 42356,
+			"timestampMs": 42205,
 			"confidence": 1
 		},
 		{
 			"text": " kommen",
-			"startMs": 42462,
-			"endMs": 42660,
-			"timestampMs": 42561,
+			"startMs": 42402,
+			"endMs": 42600,
+			"timestampMs": 42501,
 			"confidence": 1
 		},
 		{
 			"text": " eine",
-			"startMs": 42706,
-			"endMs": 42857,
-			"timestampMs": 42782,
+			"startMs": 42646,
+			"endMs": 42797,
+			"timestampMs": 42722,
 			"confidence": 1
 		},
 		{
 			"text": " Werbekampagne",
-			"startMs": 42880,
-			"endMs": 43542,
-			"timestampMs": 43211,
+			"startMs": 42820,
+			"endMs": 43482,
+			"timestampMs": 43151,
 			"confidence": 1
 		},
 		{
 			"text": " fürs",
-			"startMs": 43588,
-			"endMs": 43739,
-			"timestampMs": 43664,
+			"startMs": 43528,
+			"endMs": 43679,
+			"timestampMs": 43604,
 			"confidence": 1
 		},
 		{
 			"text": " Weihnachtsshopping",
-			"startMs": 43786,
-			"endMs": 44482,
-			"timestampMs": 44134,
+			"startMs": 43726,
+			"endMs": 44422,
+			"timestampMs": 44074,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 44691,
-			"endMs": 44808,
-			"timestampMs": 44750,
+			"startMs": 44631,
+			"endMs": 44748,
+			"timestampMs": 44690,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 44866,
-			"endMs": 44935,
-			"timestampMs": 44901,
+			"startMs": 44806,
+			"endMs": 44875,
+			"timestampMs": 44841,
 			"confidence": 1
 		},
 		{
 			"text": " 6.",
-			"startMs": 44982,
-			"endMs": 45295,
-			"timestampMs": 45139,
+			"startMs": 44922,
+			"endMs": 45235,
+			"timestampMs": 45079,
 			"confidence": 1
 		},
 		{
 			"text": " Januar",
-			"startMs": 45353,
-			"endMs": 45760,
-			"timestampMs": 45557,
+			"startMs": 45293,
+			"endMs": 45700,
+			"timestampMs": 45497,
 			"confidence": 1
 		},
 		{
 			"text": " eine",
-			"startMs": 45969,
-			"endMs": 46131,
-			"timestampMs": 46050,
+			"startMs": 45909,
+			"endMs": 46071,
+			"timestampMs": 45990,
 			"confidence": 1
 		},
 		{
 			"text": " Einkaufsaktion.",
-			"startMs": 46166,
-			"endMs": 47368,
-			"timestampMs": 47043,
+			"startMs": 46106,
+			"endMs": 47308,
+			"timestampMs": 46983,
 			"confidence": 1
 		},
 		{
 			"text": " Spannend",
-			"startMs": 47488,
-			"endMs": 47871,
-			"timestampMs": 47680,
+			"startMs": 47428,
+			"endMs": 47811,
+			"timestampMs": 47620,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 47918,
-			"endMs": 47987,
-			"timestampMs": 47953,
+			"startMs": 47858,
+			"endMs": 47927,
+			"timestampMs": 47893,
 			"confidence": 1
 		},
 		{
 			"text": " der",
-			"startMs": 48010,
-			"endMs": 48092,
-			"timestampMs": 48051,
+			"startMs": 47950,
+			"endMs": 48032,
+			"timestampMs": 47991,
 			"confidence": 1
 		},
 		{
 			"text": " erste",
-			"startMs": 48161,
-			"endMs": 48428,
-			"timestampMs": 48295,
+			"startMs": 48101,
+			"endMs": 48368,
+			"timestampMs": 48235,
 			"confidence": 1
 		},
 		{
 			"text": " Termin:",
-			"startMs": 48463,
-			"endMs": 49032,
-			"timestampMs": 48748,
+			"startMs": 48403,
+			"endMs": 48972,
+			"timestampMs": 48688,
 			"confidence": 1
 		},
 		{
 			"text": " Für",
-			"startMs": 49160,
-			"endMs": 49311,
-			"timestampMs": 49236,
+			"startMs": 49100,
+			"endMs": 49251,
+			"timestampMs": 49176,
 			"confidence": 1
 		},
 		{
 			"text": " den",
-			"startMs": 49334,
-			"endMs": 49438,
-			"timestampMs": 49386,
+			"startMs": 49274,
+			"endMs": 49378,
+			"timestampMs": 49326,
 			"confidence": 1
 		},
 		{
 			"text": " 12.",
-			"startMs": 49473,
-			"endMs": 49775,
-			"timestampMs": 49624,
+			"startMs": 49413,
+			"endMs": 49715,
+			"timestampMs": 49564,
 			"confidence": 1
 		},
 		{
 			"text": " Dezember",
-			"startMs": 49810,
-			"endMs": 50170,
-			"timestampMs": 49990,
+			"startMs": 49750,
+			"endMs": 50110,
+			"timestampMs": 49930,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 50193,
-			"endMs": 50274,
-			"timestampMs": 50234,
+			"startMs": 50133,
+			"endMs": 50214,
+			"timestampMs": 50174,
 			"confidence": 1
 		},
 		{
 			"text": " in",
-			"startMs": 50332,
-			"endMs": 50379,
-			"timestampMs": 50356,
+			"startMs": 50272,
+			"endMs": 50319,
+			"timestampMs": 50296,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurt",
-			"startMs": 50425,
-			"endMs": 50762,
-			"timestampMs": 50594,
+			"startMs": 50365,
+			"endMs": 50702,
+			"timestampMs": 50534,
 			"confidence": 1
 		},
 		{
 			"text": " auch",
-			"startMs": 50808,
-			"endMs": 50936,
-			"timestampMs": 50872,
+			"startMs": 50748,
+			"endMs": 50876,
+			"timestampMs": 50812,
 			"confidence": 1
 		},
 		{
 			"text": " eine",
-			"startMs": 51006,
-			"endMs": 51226,
-			"timestampMs": 51116,
+			"startMs": 50946,
+			"endMs": 51166,
+			"timestampMs": 51056,
 			"confidence": 1
 		},
 		{
 			"text": " Gen-Z-Demo",
-			"startMs": 51273,
-			"endMs": 52109,
-			"timestampMs": 51691,
+			"startMs": 51213,
+			"endMs": 52049,
+			"timestampMs": 51631,
 			"confidence": 1
 		},
 		{
 			"text": " angekündigt.",
-			"startMs": 52178,
-			"endMs": 53032,
-			"timestampMs": 52713,
+			"startMs": 52118,
+			"endMs": 52972,
+			"timestampMs": 52653,
 			"confidence": 1
 		},
 		{
 			"text": " Gratis-Nahverkehr,",
-			"startMs": 53072,
-			"endMs": 54012,
-			"timestampMs": 53542,
+			"startMs": 53012,
+			"endMs": 53952,
+			"timestampMs": 53482,
 			"confidence": 1
 		},
 		{
 			"text": " Weihnachtsshopping",
-			"startMs": 54036,
-			"endMs": 54779,
-			"timestampMs": 54408,
+			"startMs": 53976,
+			"endMs": 54719,
+			"timestampMs": 54348,
 			"confidence": 1
 		},
 		{
 			"text": " und",
-			"startMs": 54848,
-			"endMs": 54964,
-			"timestampMs": 54906,
+			"startMs": 54788,
+			"endMs": 54904,
+			"timestampMs": 54846,
 			"confidence": 1
 		},
 		{
 			"text": " Demo –",
-			"startMs": 55022,
-			"endMs": 55547,
-			"timestampMs": 55285,
+			"startMs": 54962,
+			"endMs": 55487,
+			"timestampMs": 55225,
 			"confidence": 1
 		},
 		{
 			"text": " alles",
-			"startMs": 55686,
-			"endMs": 55918,
-			"timestampMs": 55802,
+			"startMs": 55626,
+			"endMs": 55858,
+			"timestampMs": 55742,
 			"confidence": 1
 		},
 		{
 			"text": " am",
-			"startMs": 55964,
-			"endMs": 56023,
-			"timestampMs": 55994,
+			"startMs": 55904,
+			"endMs": 55963,
+			"timestampMs": 55934,
 			"confidence": 1
 		},
 		{
 			"text": " selben",
-			"startMs": 56069,
-			"endMs": 56266,
-			"timestampMs": 56168,
+			"startMs": 56009,
+			"endMs": 56206,
+			"timestampMs": 56108,
 			"confidence": 1
 		},
 		{
 			"text": " Samstag.",
-			"startMs": 56290,
-			"endMs": 57004,
-			"timestampMs": 56789,
+			"startMs": 56230,
+			"endMs": 56944,
+			"timestampMs": 56729,
 			"confidence": 1
 		},
 		{
 			"text": " Ein",
-			"startMs": 57044,
-			"endMs": 57195,
-			"timestampMs": 57120,
+			"startMs": 56984,
+			"endMs": 57135,
+			"timestampMs": 57060,
 			"confidence": 1
 		},
 		{
 			"text": " direkter",
-			"startMs": 57230,
-			"endMs": 57520,
-			"timestampMs": 57375,
+			"startMs": 57170,
+			"endMs": 57460,
+			"timestampMs": 57315,
 			"confidence": 1
 		},
 		{
 			"text": " Zusammenhang",
-			"startMs": 57555,
-			"endMs": 58054,
-			"timestampMs": 57805,
+			"startMs": 57495,
+			"endMs": 57994,
+			"timestampMs": 57745,
 			"confidence": 1
 		},
 		{
 			"text": " ist",
-			"startMs": 58112,
-			"endMs": 58193,
-			"timestampMs": 58153,
+			"startMs": 58052,
+			"endMs": 58133,
+			"timestampMs": 58093,
 			"confidence": 1
 		},
 		{
 			"text": " bislang",
-			"startMs": 58240,
-			"endMs": 58565,
-			"timestampMs": 58403,
+			"startMs": 58180,
+			"endMs": 58505,
+			"timestampMs": 58343,
 			"confidence": 1
 		},
 		{
 			"text": " nicht",
-			"startMs": 58611,
-			"endMs": 58797,
-			"timestampMs": 58704,
+			"startMs": 58551,
+			"endMs": 58737,
+			"timestampMs": 58644,
 			"confidence": 1
 		},
 		{
 			"text": " belegt.",
-			"startMs": 58832,
-			"endMs": 59476,
-			"timestampMs": 59262,
+			"startMs": 58772,
+			"endMs": 59416,
+			"timestampMs": 59202,
 			"confidence": 1
 		},
 		{
 			"text": " Für",
-			"startMs": 59596,
-			"endMs": 59724,
-			"timestampMs": 59660,
+			"startMs": 59536,
+			"endMs": 59664,
+			"timestampMs": 59600,
 			"confidence": 1
 		},
 		{
 			"text": " mehr",
-			"startMs": 59747,
-			"endMs": 59863,
-			"timestampMs": 59805,
+			"startMs": 59687,
+			"endMs": 59803,
+			"timestampMs": 59745,
 			"confidence": 1
 		},
 		{
 			"text": " Nachrichten",
-			"startMs": 59898,
-			"endMs": 60281,
-			"timestampMs": 60090,
+			"startMs": 59838,
+			"endMs": 60221,
+			"timestampMs": 60030,
 			"confidence": 1
 		},
 		{
 			"text": " aus",
-			"startMs": 60316,
-			"endMs": 60397,
-			"timestampMs": 60357,
+			"startMs": 60256,
+			"endMs": 60337,
+			"timestampMs": 60297,
 			"confidence": 1
 		},
 		{
 			"text": " Frankfurt",
-			"startMs": 60432,
-			"endMs": 60734,
-			"timestampMs": 60583,
+			"startMs": 60372,
+			"endMs": 60674,
+			"timestampMs": 60523,
 			"confidence": 1
 		},
 		{
 			"text": " folgt",
-			"startMs": 60769,
-			"endMs": 60989,
-			"timestampMs": 60879,
+			"startMs": 60709,
+			"endMs": 60929,
+			"timestampMs": 60819,
 			"confidence": 1
 		},
 		{
 			"text": " FrankfurtRedNews!",
-			"startMs": 61024,
-			"endMs": 62516,
-			"timestampMs": 61796,
+			"startMs": 60964,
+			"endMs": 62456,
+			"timestampMs": 61736,
 			"confidence": 1
 		}
 	],
 	"captionsSource": "elevenlabs-alignment",
-	"generatedAt": "2026-11-26T13:51:53.050Z",
+	"generatedAt": "2026-11-26T13:54:00.794Z",
 	"voice": {
 		"provider": "elevenlabs",
 		"name": "Adam - Dominant, Firm",
@@ -1222,5 +1222,5 @@
 		"seed": 20261104,
 		"characters": 1169
 	},
-	"measuredLufsBeforeMaster": -13.9
+	"measuredLufsBeforeMaster": -13.94
 }
