@@ -55,6 +55,11 @@ jobs:
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4 --frames 0,60,300,600,900,1200,1500,1800 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaert76FragenTeil4-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertGratisNahverkehr --frames 0,60,150,300,450,600,750,900,1050,1200,1350,1500,1650,1800,1900 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertGratisNahverkehr-Cover --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertGratisNahverkehr-CoverVorschau --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertGratisNahverkehr-OverlayCheck --frames 0 --scale 0.5
+          node scripts/render-still.mjs --comp FrankfurtErklaertGratisNahverkehr-QuellenCheck --frames 0 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaertGenZPlanungstreffen --frames 0,60,150,300,450,600,750,900,1050,1200,1350,1500,1650,1800,1900 --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaertGenZPlanungstreffen-Cover --scale 0.5
           node scripts/render-still.mjs --comp FrankfurtErklaertGenZPlanungstreffen-CoverVorschau --frames 0 --scale 0.5

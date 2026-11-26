@@ -220,12 +220,40 @@ import {
 	FrankfurtErklaertGenZPlanungstreffenOverlayCheck,
 	FrankfurtErklaertGenZPlanungstreffenSourceCheck,
 } from './videos/frankfurt-erklaert-genz-planungstreffen/FrankfurtErklaertGenZPlanungstreffenOverlayCheck';
+import {
+	calculateErklaertGratisMetadata,
+	erklaertGratisDefaultProps,
+	erklaertGratisSchema,
+	FrankfurtErklaertGratisNahverkehr,
+} from './videos/frankfurt-erklaert-gratis-nahverkehr/FrankfurtErklaertGratisNahverkehr';
+import {FrankfurtErklaertGratisNahverkehrCover} from './videos/frankfurt-erklaert-gratis-nahverkehr/FrankfurtErklaertGratisNahverkehrCover';
+import {FrankfurtErklaertGratisNahverkehrCoverVorschau} from './videos/frankfurt-erklaert-gratis-nahverkehr/FrankfurtErklaertGratisNahverkehrCoverVorschau';
+import {
+	FrankfurtErklaertGratisNahverkehrOverlayCheck,
+	FrankfurtErklaertGratisNahverkehrSourceCheck,
+} from './videos/frankfurt-erklaert-gratis-nahverkehr/FrankfurtErklaertGratisNahverkehrOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #19 – Frankfurt macht Bus und Bahn kostenlos (12./19.12.), ausgerechnet am Gen-Z-Protesttag (Stand 26.11.2026), FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
+				<Composition
+					id="FrankfurtErklaertGratisNahverkehr"
+					component={FrankfurtErklaertGratisNahverkehr}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={1980}
+					schema={erklaertGratisSchema}
+					defaultProps={erklaertGratisDefaultProps}
+					calculateMetadata={calculateErklaertGratisMetadata}
+				/>
+				<Still id="FrankfurtErklaertGratisNahverkehr-Cover" component={FrankfurtErklaertGratisNahverkehrCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaertGratisNahverkehr-CoverVorschau" component={FrankfurtErklaertGratisNahverkehrCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertGratisNahverkehr-OverlayCheck" component={FrankfurtErklaertGratisNahverkehrOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertGratisNahverkehr-QuellenCheck" component={FrankfurtErklaertGratisNahverkehrSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #18 – Gen Z regelt Frankfurt: Kritik, Planungstreffen 24.11., Demo 12.12. Gallusanlage (Stand 25.11.2026, 16:40 Uhr), FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
 				<Composition
 					id="FrankfurtErklaertGenZPlanungstreffen"

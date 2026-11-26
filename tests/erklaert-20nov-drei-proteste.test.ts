@@ -225,7 +225,7 @@ test('Serien-Overlay ab #09 oben rechts unter der TikTok-Suchleiste; fertige Fol
 	assert.match(read('../src/formats/frankfurt-erklaert/Branding.tsx'), /placement = 'top-left'/);
 	for (const d of readdirSync(new URL('../src/videos/', import.meta.url))) {
 		// neue Folgen ab #09 setzen das Overlay oben rechts (CLAUDE.md), fertige Folgen #01–#08 bleiben unverändert
-		if (!d.startsWith('frankfurt-erklaert') || ['frankfurt-erklaert-20nov-drei-proteste', 'frankfurt-erklaert-20nov-demo-update', 'frankfurt-erklaert-20nov-oepnv', 'frankfurt-erklaert-20nov-bundesweit', 'frankfurt-erklaert-2150-kontrollen', 'frankfurt-erklaert-20nov-vorbilanz', 'frankfurt-erklaert-20nov-staedte', 'frankfurt-erklaert-12dez-ausblick', 'frankfurt-erklaert-condor-fluege', 'frankfurt-erklaert-genz-planungstreffen'].includes(d)) continue;
+		if (!d.startsWith('frankfurt-erklaert') || ['frankfurt-erklaert-20nov-drei-proteste', 'frankfurt-erklaert-20nov-demo-update', 'frankfurt-erklaert-20nov-oepnv', 'frankfurt-erklaert-20nov-bundesweit', 'frankfurt-erklaert-2150-kontrollen', 'frankfurt-erklaert-20nov-vorbilanz', 'frankfurt-erklaert-20nov-staedte', 'frankfurt-erklaert-12dez-ausblick', 'frankfurt-erklaert-condor-fluege', 'frankfurt-erklaert-genz-planungstreffen', 'frankfurt-erklaert-gratis-nahverkehr'].includes(d)) continue;
 		for (const f of readdirSync(new URL(`../src/videos/${d}/`, import.meta.url)).filter((x) => x.endsWith('.tsx'))) {
 			assert.doesNotMatch(read(`../src/videos/${d}/${f}`), /badgePlacement/, `${d}/${f} bleibt unverändert`);
 		}
