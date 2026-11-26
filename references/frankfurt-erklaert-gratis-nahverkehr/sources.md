@@ -8,6 +8,11 @@ des ersten Termins mit dem angekündigten Gen-Z-Protesttag.
 Polizei Frankfurt (presseportal), Innenministerium (Presse), Website „Gen Z regelt“ (Startseite + Datenliste). Stand im Bild: `content.ts → STAND`.
 Wortlaut-Auszüge aller Artikel: `wortlaute-2026-11-26.md`.
 
+**Nachkontrolle vor dem Render: 26.11.2026, 15:17 Uhr** (MEZ) – Websuche (Freifahrten 12./19.12., „Gen Z regelt“ 12.12. Frankfurt): keine neue
+oder abweichende Meldung (Radio Frankfurt und beloud wie bisher: Tarifgebiet 5000 inkl. Grenztarifgebiete, Flughafen 5090 ausgenommen,
+400.000 Euro). Datenliste der Website `javascript/script.js?v=175`: Frankfurt weiterhin „Standort folgt“. Die Startseite antwortete diesmal
+mit 403 – nicht umgangen; maßgeblich bleibt der Abruf von 14:40 Uhr. Stand im Bild unverändert (14:40 Uhr = letzte vollständige Prüfung).
+
 ## Grundsätze dieser Folge
 
 - **Zwei befristete Aktionstage**, keine dauerhafte Abschaffung der Fahrpreise („NUR AN DIESEN BEIDEN TAGEN“ im Bild).
