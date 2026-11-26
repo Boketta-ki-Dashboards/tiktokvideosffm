@@ -8,18 +8,18 @@ Export `FrankfurtRedNews_Kostenloser_Nahverkehr_12_19Dezember_26Nov2026.mp4` + `
 
 | Prüfung | Ergebnis |
 |---|---|
-| Länge | **{LEN}** (Längen-Ausnahme: gesamt ≤ 66 s / 1.980 Frames) ✅ |
+| Länge | **64,149 s = 1.924 Frames** (Längen-Ausnahme: gesamt ≤ 66 s / 1.980 Frames) ✅ |
 | Informationsteil | **59,62 s** bis Ende von f3 (Grenze 61,5 s), davon **58,61 s nach der Begrüßung** (Ziel 59–61 s, Toleranz 58–63 s) ✅ |
 | Intro / Outro | Begrüßung „Ewa, Frankfurt!“ 0,12–1,00 s (Titelbild bis ≈ 5,2 s) · Abo-Aufruf 59,74–62,66 s + 1,5 s Abo-Phase ✅ |
-| Datei | {FILE} ✅ |
+| Datei | 16,93 MB (17.749.429 Byte), SHA-256 `5f084a4a4b0256c5…`; Sprecherspur SHA-256 `660bcaaf351b3597…` (identisch mit Lauf #100) ✅ |
 | Video | H.264 High · 1080 × 1920 · 30 fps konstant · yuv420p · BT.709 · Faststart ✅ |
-| Audio | AAC LC 48 kHz · **{LUFS}** ✅ |
-| Dekodierung (ffmpeg, komplette Datei) | {DECODE} |
-| Stille ≥ 0,4 s (−50 dB) | {SILENCE} |
-| Schwarzbilder (`blackdetect` d=0,2 s, 95 %) | Lauf #100: 15,17–15,37 s (Szenenanfang „Verkehrsmittel“ nach dem Blitz-Übergang: Bus erst ab Frame 4–6, dunkler Hintergrund) → Bus ab Frame 0, Hintergrund heller; zusätzlich „Weihnachtsgeschäft“ (Plakat erst nach ≈ 0,9 s) → Plakat ab Frame 0 → **Lauf #101: {BLACK}** |
+| Audio | AAC LC 48 kHz · **−14,5 LUFS** · LRA 2,0 LU · True Peak **−1,5 dBTP** ✅ |
+| Dekodierung (ffmpeg, komplette Datei) | fehlerfrei ✅ |
+| Stille ≥ 0,4 s (−50 dB) | keine ✅ |
+| Schwarzbilder (`blackdetect` d=0,2 s, 95 %) | Lauf #100: 15,17–15,37 s (Szenenanfang „Verkehrsmittel“ nach dem Blitz-Übergang: Bus erst ab Frame 4–6, dunkler Hintergrund) → Bus ab Frame 0, Hintergrund heller; zusätzlich „Weihnachtsgeschäft“ (Plakat erst nach ≈ 0,9 s) → Plakat ab Frame 0 → **Lauf #101: keine** ✅ |
 | Pausenprüfung Sprecherspur | längste Pause 394 ms (Grenze 400) ✅ |
 | Whisper-Gegenprobe (medium) | Lauf #98: „Jane Z. regelt“ → f1 geteilt („Spannend ist der erste Termin.“ + „Gen Z regelt …“ am Satzanfang, wie #16) → Lauf #99: „Gen Z regelt hat für den 12. Dezember auch in Frankfurt den nächsten Protesttag angekündigt.“ ✅ · Begrüßung „Ey wa Frankfurt!“ ✅ · „Tarifgebiet“, „Flughafen ist ausgenommen“, „Offenbach“, „FAZ 400.000 Euro“, „Weihnachtsshopping“ ✅ · Abo-Aufruf in der Gesamtspur ausgelassen (bekannte Whisper-Lücke), Datei byte-gleich mit der geprüften Fassung aus #17/#18 ✅ |
-| Tests | `npm run check` grün (TypeScript, ESLint, 297 Tests), davon 13 in `tests/erklaert-gratis-nahverkehr.test.ts`; {CI} ✅ |
+| Tests | `npm run check` grün (TypeScript, ESLint, 297 Tests), davon 13 in `tests/erklaert-gratis-nahverkehr.test.ts`; CI #134 grün (Stand vor der Szenenkorrektur), Technikbericht Lauf #101 bestanden ✅ |
 
 ## Stimme
 
