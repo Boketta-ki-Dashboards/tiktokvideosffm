@@ -1,0 +1,36 @@
+{
+	"videoId": "frankfurt-erklaert-gratis-nahverkehr",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 66000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 280
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf (FrankfurtRedNews) aus dem Cache von #17/#18. Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s ab 0), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Kampagnenname „Frankfurt Christmas Shopping“ nur im Bild (Aussprache). Stand: Recherche 26.11.2026, 14:40 Uhr."
+	},
+	"sampleText": "Ewa, Frankfurt! Also Bus, Straßenbahn, U- und S-Bahn. An zwei Samstagen sind alle {RMV-Verkehrsmittel|Er Em Vau Verkehrsmittel} im Frankfurter Tarifgebiet kostenlos. Die Freifahrten kosten die Stadt laut {FAZ|Eff A Zett} {400.000 Euro|vierhunderttausend Euro}. Für den {12. Dezember|zwölften Dezember} ist auch die nächste {Gen-Z-Demo|Dschen Zett Demo} angekündigt.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Frankfurt macht Bus und Bahn kostenlos – ausgerechnet am {12. Dezember|zwölften Dezember}!", "pauseAfterMs": 120},
+		{"id": "a1", "text": "Die Stadt hat am Mittwoch ein Paket für Innenstadt und Handel vorgestellt.", "pauseAfterMs": 40},
+		{"id": "a2", "text": "An zwei Samstagen, dem {12.|zwölften} und {19. Dezember|neunzehnten Dezember}, sind alle {RMV-Verkehrsmittel|Er Em Vau Verkehrsmittel} im Frankfurter Tarifgebiet kostenlos.", "pauseAfterMs": 40},
+		{"id": "b1", "text": "Also Bus, Straßenbahn, U- und S-Bahn – jeweils von {0 Uhr|null Uhr} bis {5 Uhr|fünf Uhr} am Sonntagmorgen.", "pauseAfterMs": 120},
+		{"id": "c1", "text": "Aber Achtung: Der Flughafen ist ausgenommen.", "pauseAfterMs": 40},
+		{"id": "c2", "text": "Wer aus dem Umland kommt, etwa aus Offenbach, zahlt bis zur Stadtgrenze den normalen Preis.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Hintergrund: Nach den Ausschreitungen vom {31. Oktober|einunddreißigsten Oktober} hatte die Stadt dem Handel Hilfe zugesagt.", "pauseAfterMs": 40},
+		{"id": "d2", "text": "Die Freifahrten kosten die Stadt laut {FAZ|Eff A Zett} {400.000 Euro|vierhunderttausend Euro}.", "pauseAfterMs": 40},
+		{"id": "d3", "text": "Und bei Händlern ohne Versicherung will sie für Sachschäden einstehen.", "pauseAfterMs": 120},
+		{"id": "e1", "text": "Dazu kommen eine Werbekampagne fürs Weihnachtsshopping und am {6. Januar|sechsten Januar} eine Einkaufsaktion.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Spannend ist der erste Termin: Für den {12. Dezember|zwölften Dezember} ist auch die nächste {Gen-Z-Demo|Dschen Zett Demo} in Frankfurt angekündigt.", "pauseAfterMs": 40},
+		{"id": "f2", "text": "Gratis-Nahverkehr, Weihnachtsshopping und Demo – alles am selben Samstag.", "pauseAfterMs": 40},
+		{"id": "f3", "text": "Ein direkter Zusammenhang ist bislang nicht belegt.", "pauseAfterMs": 120},
+		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
+	]
+}
