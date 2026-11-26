@@ -287,13 +287,15 @@ export const FahrzeugeScene: React.FC<SceneProps> = ({cues, durationInFrames}) =
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
 			<XmasNight progress={pull} lit={0.45} garland={0.6} />
-			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.94) 0%, rgba(4,6,20,0.78) 40%, rgba(4,6,20,0.78) 70%, rgba(4,6,20,0.92) 100%)'}} />
+			<AbsoluteFill style={{background: 'linear-gradient(rgba(4,6,20,0.88) 0%, rgba(4,6,20,0.6) 40%, rgba(4,6,20,0.6) 70%, rgba(4,6,20,0.88) 100%)'}} />
 			<SceneTag text="ALLE RMV-VERKEHRSMITTEL" color={GREEN} icon="route" />
 			{rows.map((r, i) => {
-				const s = interpolate(frame, [r.at, r.at + 14], [0, 1], {...clamp, easing: EASE_OUT});
+				// Erste Reihe (Bus) schon ab Frame 0 halb im Bild – kein leerer Szenenanfang nach dem Blitz-Übergang (blackdetect Lauf #100).
+				const first = i === 0;
+				const s = first ? interpolate(frame, [0, 10], [0.6, 1], {...clamp, easing: EASE_OUT}) : interpolate(frame, [r.at, r.at + 14], [0, 1], {...clamp, easing: EASE_OUT});
 				return (
-					<div key={r.label} style={{position: 'absolute', left: 0, top: 380 + i * 150, width: 1080, height: 150, opacity: frame < r.at - 1 ? 0 : 1}}>
-						<div style={{position: 'absolute', left: -600 + s * 640 + (frame - r.at) * 0.6, top: 0}}>{r.node}</div>
+					<div key={r.label} style={{position: 'absolute', left: 0, top: 380 + i * 150, width: 1080, height: 150, opacity: first || frame >= r.at - 1 ? 1 : 0}}>
+						<div style={{position: 'absolute', left: -600 + s * 640 + Math.max(0, frame - (first ? 0 : r.at)) * 0.6, top: 0}}>{r.node}</div>
 						<div style={{position: 'absolute', right: 150, top: 40, opacity: s, padding: '6px 16px', borderRadius: 14, background: 'rgba(8,10,28,0.94)', border: `3px solid ${r.color}`, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 30, color: COLORS.text, whiteSpace: 'nowrap'}}>{r.label}</div>
 					</div>
 				);
@@ -501,7 +503,8 @@ export const KampagneScene: React.FC<SceneProps> = ({cues, durationInFrames}) =>
 	const atKamp = Math.max(2, wordFrame(cues, 'Werbekampagne', e1.from) - 6);
 	const at6 = wordFrame(cues, '6', atKamp + 20) - 6;
 	const dolly = interpolate(frame, [0, durationInFrames], [4, 14], clamp);
-	const poster = useSpring(atKamp, 12, 170);
+	// Plakat ab Frame 0 (keine leeren Szenenanfänge, blackdetect Lauf #100); Taschen am Wort-Cue.
+	const poster = useSpring(0, 12, 170);
 	const bags = [0, 1, 2, 3];
 	return (
 		<AbsoluteFill style={{backgroundColor: COLORS.night, overflow: 'hidden'}}>
@@ -543,7 +546,7 @@ export const KampagneScene: React.FC<SceneProps> = ({cues, durationInFrames}) =>
 			</In>
 			<Mark top={1236} />
 			<Sfx name="whoosh" at={0} volume={0.35} />
-			<Sfx name="pop" at={atKamp} volume={0.45} />
+			<Sfx name="pop" at={Math.max(4, atKamp)} volume={0.45} />
 			<Sfx name="paper" at={at6} volume={0.45} />
 		</AbsoluteFill>
 	);
