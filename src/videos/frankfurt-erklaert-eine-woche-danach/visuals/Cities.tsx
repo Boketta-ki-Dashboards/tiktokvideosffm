@@ -225,12 +225,15 @@ const Dresden: React.FC<{accent: string}> = ({accent}) => {
 			<path d={`M205 ${base - 292} l8 -14 l8 14 l8 -14 l6 14`} stroke={fill(C.stoneHi)} strokeWidth={3} fill="none" />
 			<Windows x={84} y={base - 128} w={272} h={100} cols={12} rows={3} seed="dd-so" lit={0.7} />
 			{/* Katholische Hofkirche: schlanker Turm */}
+			<g transform="translate(-50 0)">
 			<rect x={410} y={base - 150} width={150} height={150} fill={fill(C.stone)} stroke={fill(C.stoneHi)} strokeWidth={2} />
 			<rect x={466} y={base - 330} width={38} height={190} fill={fill(C.stone)} stroke={fill(C.stoneHi)} strokeWidth={2} />
 			<path d={`M462 ${base - 330} Q485 ${base - 380} 508 ${base - 330} Z`} fill={fill(C.copper)} stroke={fill(C.copperHi)} strokeWidth={2} />
 			<path d={`M485 ${base - 378} L485 ${base - 410}`} stroke={fill(C.copperHi)} strokeWidth={4} />
 			<Windows x={420} y={base - 135} w={130} h={110} cols={6} rows={3} seed="dd-hk" lit={0.5} />
+			</g>
 			{/* Frauenkirche: Glockenkuppel, Ecktürme, Laterne */}
+			<g transform="translate(-130 0)">
 			<rect x={640} y={base - 170} width={200} height={170} fill={fill(C.stone)} stroke={fill(C.stoneHi)} strokeWidth={2} />
 			{[640, 812].map((x) => (
 				<g key={x}>
@@ -242,6 +245,7 @@ const Dresden: React.FC<{accent: string}> = ({accent}) => {
 			<rect x={727} y={base - 420} width={26} height={54} fill={fill(C.stoneHi)} stroke={fill('#C9B892')} strokeWidth={2} />
 			<path d={`M740 ${base - 420} L740 ${base - 452} M730 ${base - 440} L750 ${base - 440}`} stroke={fill('#E8D7A8')} strokeWidth={4} />
 			<Windows x={660} y={base - 150} w={160} h={120} cols={5} rows={3} seed="dd-fk" lit={0.6} size={0.4} />
+			</g>
 			<Water y={base} seed="dd-w" accent={accent} />
 			{/* Augustusbrücke: Bogenbrücke über die Elbe */}
 			<path d={`M-20 ${base + 40} L1100 ${base + 40} L1100 ${base + 70} L-20 ${base + 70} Z`} fill={fill(C.stone)} stroke={fill(C.stoneHi)} strokeWidth={2} />
@@ -275,11 +279,13 @@ const Stuttgart: React.FC = () => {
 				return <circle key={i} cx={x} cy={y} r={2.5} fill={fill(C.win)} opacity={0.6} />;
 			})}
 			{/* Fernsehturm auf dem Hang */}
-			<path d={`M900 ${base - 300} L908 ${base - 560} L920 ${base - 560} L928 ${base - 300} Z`} fill={fill('#C9CCD8')} stroke={fill('#E4E8F5')} strokeWidth={1.5} opacity={0.95} />
-			<path d={`M890 ${base - 560} L938 ${base - 560} L934 ${base - 600} L894 ${base - 600} Z`} fill={fill('#D7DAE6')} stroke={fill('#FFFFFF')} strokeWidth={1.5} />
-			<rect x={896} y={base - 590} width={36} height={10} fill={fill(withAlpha(C.win, 0.8))} />
-			<path d={`M914 ${base - 600} L914 ${base - 690}`} stroke={fill('#E4E8F5')} strokeWidth={4} />
-			<circle cx={914} cy={base - 692} r={4} fill={fill('#FF4D5E')} />
+			<g transform="translate(-150 30)">
+			<path d={`M900 ${base - 280} L908 ${base - 470} L920 ${base - 470} L928 ${base - 280} Z`} fill={fill('#C9CCD8')} stroke={fill('#E4E8F5')} strokeWidth={1.5} opacity={0.95} />
+			<path d={`M890 ${base - 470} L938 ${base - 470} L934 ${base - 510} L894 ${base - 510} Z`} fill={fill('#D7DAE6')} stroke={fill('#FFFFFF')} strokeWidth={1.5} />
+			<rect x={896} y={base - 500} width={36} height={10} fill={fill(withAlpha(C.win, 0.8))} />
+			<path d={`M914 ${base - 510} L914 ${base - 580}`} stroke={fill('#E4E8F5')} strokeWidth={4} />
+			<circle cx={914} cy={base - 582} r={4} fill={fill('#FF4D5E')} />
+			</g>
 			{/* Neues Schloss: Mittelbau + Seitenflügel */}
 			<rect x={300} y={base - 170} width={400} height={170} fill={fill(C.body2)} stroke={fill(C.edge)} strokeWidth={2} />
 			<path d={`M300 ${base - 170} L500 ${base - 205} L700 ${base - 170} Z`} fill={fill(C.copper)} stroke={fill(C.copperHi)} strokeWidth={2} />
@@ -312,11 +318,13 @@ const Berlin: React.FC = () => {
 		<g>
 			<FarRow seed="be-far" base={base} maxH={100} />
 			{/* Fernsehturm */}
+			<g transform="translate(-40 0)">
 			<path d={`M770 ${base} L780 ${base - 380} L796 ${base - 380} L806 ${base} Z`} fill={fill('#C9CCD8')} stroke={fill('#E4E8F5')} strokeWidth={1.5} />
 			<circle cx={788} cy={base - 420} r={46} fill={fill('#B9BDCC')} stroke={fill('#FFFFFF')} strokeWidth={2} />
 			<path d={`M744 ${base - 420} L832 ${base - 420}`} stroke={fill(withAlpha(C.win, 0.8))} strokeWidth={5} />
 			<path d={`M788 ${base - 466} L788 ${base - 600}`} stroke={fill('#E4E8F5')} strokeWidth={6} />
 			<path d={`M788 ${base - 600} L788 ${base - 660}`} stroke={fill('#FF4D5E')} strokeWidth={4} />
+			</g>
 			{/* Reichstagsgebäude mit Glaskuppel */}
 			<rect x={420} y={base - 150} width={290} height={150} fill={fill(C.stone)} stroke={fill(C.stoneHi)} strokeWidth={2} />
 			{[420, 676].map((x) => (
@@ -349,12 +357,12 @@ const DRAW: Record<Exclude<CityId, 'frankfurt'>, React.FC<{accent: string}>> = {
 };
 
 /** Stadtpanorama (1080 × 760). `crop` = Ausschnitt [x, y, w, h], `mono` = nur Silhouette in der Akzentfarbe (Dashboard). */
-export const CityPanorama: React.FC<{city: Exclude<CityId, 'frankfurt'>; accent: string; width?: number; crop?: [number, number, number, number]; mono?: boolean; style?: React.CSSProperties}> = ({city, accent, width = PANO.width, crop, mono = false, style}) => {
+export const CityPanorama: React.FC<{city: Exclude<CityId, 'frankfurt'>; accent: string; width?: number; height?: number; crop?: [number, number, number, number]; mono?: boolean; style?: React.CSSProperties}> = ({city, accent, width = PANO.width, height, crop, mono = false, style}) => {
 	const [x, y, w, h] = crop ?? [0, 0, PANO.width, PANO.height];
 	const Draw = DRAW[city];
 	return (
 		<ModeCtx.Provider value={{mono, accent}}>
-			<svg width={width} height={(width * h) / w} viewBox={`${x} ${y} ${w} ${h}`} style={{display: 'block', overflow: 'hidden', ...style}}>
+			<svg width={height ? (height * w) / h : width} height={height ?? (width * h) / w} viewBox={`${x} ${y} ${w} ${h}`} preserveAspectRatio="xMaxYMax meet" style={{display: 'block', overflow: 'hidden', ...style}}>
 				<Sky accent={accent} seed={`${city}-${mono ? 'm' : 'f'}`} />
 				<Draw accent={accent} />
 			</svg>
@@ -370,3 +378,22 @@ export const LANDMARK_CROP: Record<Exclude<CityId, 'frankfurt'>, [number, number
 	stuttgart: [180, -110, 900, 740],
 	berlin: [40, -80, 940, 700],
 };
+
+/** Frankfurt-Silhouette für das Dashboard (Commerzbank Tower, Main Tower, Messeturm-Spitze, Westendturm-Krone) – nur Umriss in der Akzentfarbe. */
+export const FrankfurtMini: React.FC<{height: number; color: string}> = ({height, color}) => (
+	<svg width={(height * 200) / 60} height={height} viewBox="0 0 200 60" style={{display: 'block'}}>
+		<g fill={withAlpha(color, 0.9)}>
+			<rect x={4} y={34} width={18} height={26} />
+			<path d="M26 60 L26 14 L32 4 L38 14 L38 60 Z" />
+			<rect x={44} y={22} width={16} height={38} />
+			<path d="M64 60 L64 10 L72 2 L80 10 L80 60 Z" />
+			<rect x={84} y={8} width={14} height={52} />
+			<path d="M84 8 L91 0 L98 8 Z" />
+			<rect x={104} y={26} width={20} height={34} />
+			<path d="M128 60 L128 12 L136 2 L144 12 L144 60 Z" />
+			<rect x={148} y={30} width={16} height={30} />
+			<path d="M168 60 L168 20 L176 16 L184 20 L184 60 Z" />
+			<rect x={188} y={38} width={10} height={22} />
+		</g>
+	</svg>
+);

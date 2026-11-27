@@ -232,12 +232,42 @@ import {
 	FrankfurtErklaertGratisNahverkehrOverlayCheck,
 	FrankfurtErklaertGratisNahverkehrSourceCheck,
 } from './videos/frankfurt-erklaert-gratis-nahverkehr/FrankfurtErklaertGratisNahverkehrOverlayCheck';
+import {
+	calculateErklaertWocheMetadata,
+	erklaertWocheDefaultProps,
+	erklaertWocheSchema,
+	FrankfurtErklaertEineWocheDanach,
+} from './videos/frankfurt-erklaert-eine-woche-danach/FrankfurtErklaertEineWocheDanach';
+import {FrankfurtErklaertEineWocheDanachCover} from './videos/frankfurt-erklaert-eine-woche-danach/FrankfurtErklaertEineWocheDanachCover';
+import {FrankfurtErklaertEineWocheDanachCoverVorschau} from './videos/frankfurt-erklaert-eine-woche-danach/FrankfurtErklaertEineWocheDanachCoverVorschau';
+import {
+	FrankfurtErklaertEineWocheDanachInfografik,
+	FrankfurtErklaertEineWocheDanachOverlayCheck,
+	FrankfurtErklaertEineWocheDanachSourceCheck,
+} from './videos/frankfurt-erklaert-eine-woche-danach/FrankfurtErklaertEineWocheDanachOverlayCheck';
 import {OVERLAY_CHECK_SIZE} from './formats/frankfurt-erklaert/OverlayCheck';
 
 export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Folder name="Videos">
+				{/* Format B #20 – Eine Woche nach den Gen-Z-Protesten: Ermittlungen in sechs Städten + bundesweites Dashboard (Recherchestand 27.11.2026), FrankfurtRedNews; verlängerte Sonderausgabe ≤ 80 s */}
+				<Composition
+					id="FrankfurtErklaertEineWocheDanach"
+					component={FrankfurtErklaertEineWocheDanach}
+					width={VIDEO.width}
+					height={VIDEO.height}
+					fps={VIDEO.fps}
+					durationInFrames={2400}
+					schema={erklaertWocheSchema}
+					defaultProps={erklaertWocheDefaultProps}
+					calculateMetadata={calculateErklaertWocheMetadata}
+				/>
+				<Still id="FrankfurtErklaertEineWocheDanach-Cover" component={FrankfurtErklaertEineWocheDanachCover} width={VIDEO.width} height={VIDEO.height} />
+				<Composition id="FrankfurtErklaertEineWocheDanach-CoverVorschau" component={FrankfurtErklaertEineWocheDanachCoverVorschau} width={COVER_PREVIEW_SIZE.width} height={COVER_PREVIEW_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertEineWocheDanach-OverlayCheck" component={FrankfurtErklaertEineWocheDanachOverlayCheck} width={OVERLAY_CHECK_SIZE.width} height={OVERLAY_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertEineWocheDanach-QuellenCheck" component={FrankfurtErklaertEineWocheDanachSourceCheck} width={SOURCE_CHECK_SIZE.width} height={SOURCE_CHECK_SIZE.height} fps={VIDEO.fps} durationInFrames={1} />
+				<Composition id="FrankfurtErklaertEineWocheDanach-Infografik" component={FrankfurtErklaertEineWocheDanachInfografik} width={VIDEO.width} height={VIDEO.height} fps={VIDEO.fps} durationInFrames={1} />
 				{/* Format B #19 – Frankfurt macht Bus und Bahn kostenlos (12./19.12.), ausgerechnet am Gen-Z-Protesttag (Stand 26.11.2026), FrankfurtRedNews; Längen-Ausnahme ≤ 66 s */}
 				<Composition
 					id="FrankfurtErklaertGratisNahverkehr"

@@ -26,6 +26,9 @@ export type CityStat = {
 	note: string;
 	/** Meldestand der verwendeten Angaben (≠ Recherchedatum 27.11.). */
 	stand: string;
+	/** Kurzform für Karten: Meldestand ohne Jahr + Urheber. */
+	standShort: string;
+	sourceShort: string;
 	sources: CitySource[];
 	/** Aktualitätsprüfung 22.–27.11.2026. */
 	update: string;
@@ -42,10 +45,12 @@ export const CITIES: CityStat[] = [
 		name: 'LEIPZIG',
 		lat: 51.3397,
 		lon: 12.3731,
-		main: {value: 'ÜBER 200', count: 200, prefix: 'ÜBER ', label: 'Personen erfasst (Identität festgestellt)'},
-		extras: ['darunter über 40 Jugendliche + 4 Kinder', 'Anfangsverdacht § 125a StGB', 'rund 800 Einsatzkräfte'],
+		main: {value: 'ÜBER 200', count: 200, prefix: 'ÜBER ', label: 'Personen – Identität festgestellt'},
+		extras: ['darunter 4 Kinder', 'und über 40 Jugendliche', 'Anfangsverdacht § 125a StGB'],
 		note: 'Staatsanwaltschaft: schwerer Fall des Landfriedensbruchs',
 		stand: '21.11.2026',
+		standShort: '21.11.',
+		sourceShort: 'Polizei Sachsen',
 		sources: [
 			{name: 'Polizei Sachsen (PD Leipzig), Ergänzungsmeldung Nr. 417/26', url: 'https://www.medienservice.sachsen.de/medien/news/1101307', date: '21.11.2026, 12:26 Uhr'},
 			{name: 'PD Leipzig, Medieninformation Nr. 416/26', url: 'https://medienservice.sachsen.de/medien/news/1101306', date: '20.11.2026, 23:40 Uhr'},
@@ -59,9 +64,11 @@ export const CITIES: CityStat[] = [
 		lat: 53.5511,
 		lon: 9.9937,
 		main: {value: 'MEHRERE', label: 'Festnahmen und Gewahrsamnahmen'},
-		extras: ['Gesamtzahl öffentlich nicht bekannt', 'Anfragen vom 23.11. – noch ohne Antwort', 'Meldung korrigiert: Pyrotechnik statt Flaschen'],
+		extras: ['Gesamtzahl öffentlich nicht bekannt', 'Anfragen vom 23.11. – ohne Antwort', 'Korrektur: Pyrotechnik statt Flaschen'],
 		note: 'Bürgerschaft (Drs. 23/6066) und Bezirksversammlung Mitte (Drs. 23-2220)',
 		stand: '21.–23.11.2026',
+		standShort: '21.–23.11.',
+		sourceShort: 'NDR · BPol · Anfragen',
 		sources: [
 			{name: 'NDR, Polizeiangaben', url: 'https://www.ndr.de/nachrichten/hamburg/gen-z-regelt-nach-friedlichen-demos-in-hamburg-vereinzelt-ausschreitungen,genz-288.html', date: '21.11.2026, 13:18 Uhr'},
 			{name: 'Bundespolizeiinspektion Hamburg, Korrektur', url: 'https://www.presseportal.de/blaulicht/pm/70254/6395189', date: '21.11.2026, 11:07 Uhr'},
@@ -80,6 +87,8 @@ export const CITIES: CityStat[] = [
 		extras: ['Verdacht u. a. Landfriedensbruch', 'Barrikade + Flaschenwurf (Verdacht)', 'mind. 3 Polizisten leicht verletzt'],
 		note: 'keine Festnahmezahl – Personalien aufgenommen',
 		stand: '20.11.2026',
+		standShort: '20.11.',
+		sourceShort: 'Polizei Dresden',
 		sources: [{name: 'Polizeidirektion Dresden, Medieninformation Nr. 581/26', url: 'https://www.medienservice.sachsen.de/medien/news/1101305', date: '20.11.2026, Stand 20:30 Uhr'}],
 		update: 'keine neuere Meldung bis 27.11.',
 		color: '#B794F6',
@@ -93,6 +102,8 @@ export const CITIES: CityStat[] = [
 		extras: ['Vorwürfe u. a.: Vermummung', 'Beleidigung · Widerstand', 'nicht jede Person jeder Vorwurf'],
 		note: 'versammlungstypische Straftaten laut Polizei',
 		stand: '20.11.2026',
+		standShort: '20.11.',
+		sourceShort: 'Polizei Stuttgart',
 		sources: [{name: 'Polizeipräsidium Stuttgart', url: 'https://www.presseportal.de/blaulicht/pm/110977/6395101', date: '20.11.2026, 22:47 Uhr'}],
 		update: 'keine Nachtragsmeldung bis 27.11.',
 		color: '#FF9F43',
@@ -103,9 +114,11 @@ export const CITIES: CityStat[] = [
 		lat: 52.52,
 		lon: 13.405,
 		main: {value: 'RUND 4.000', count: 4000, prefix: 'RUND ', label: 'Teilnehmende laut Polizei'},
-		extras: ['friedlicher Verlauf', 'ohne besondere Vorkommnisse', 'keine Ermittlungszahlen veröffentlicht'],
+		extras: ['friedlicher Verlauf', 'ohne besondere Vorkommnisse', 'keine Ermittlungszahlen genannt'],
 		note: 'eine Meldung nennt rund 4.500 (laut Polizei)',
 		stand: '20./21.11.2026',
+		standShort: '20./21.11.',
+		sourceShort: 'Polizei (dpa)',
 		sources: [
 			{name: 'tagesschau (Polizeiangaben)', url: 'https://www.tagesschau.de/inland/gesellschaft/jugendproteste-krawalle-gen-z-100.html', date: '21.11.2026, 03:38 Uhr'},
 			{name: 'Tagesspiegel (dpa)', url: 'https://www.tagesspiegel.de/berlin/tausende-bei-gen-z-protesten-in-berlin-es-wird-so-viel-geld-in-aufrustung-gesteckt-und-die-universitaten-fallen-auseinander-16305132.html', date: '20.11.2026, 17:38 Uhr'},
@@ -118,10 +131,12 @@ export const CITIES: CityStat[] = [
 		name: 'FRANKFURT',
 		lat: 50.1109,
 		lon: 8.6821,
-		main: {value: '10', count: 10, label: 'Festnahmen'},
+		main: {value: '10', count: 10, label: 'Festnahmen (gesamter Einsatz)'},
 		extras: ['16 Strafanzeigen', '342 Personenkontrollen', '52 Platzverweise · rund 2.900 Kräfte'],
 		note: 'gesamter Polizeieinsatz (mehrere Versammlungen)',
 		stand: '21.11.2026',
+		standShort: '21.11.',
+		sourceShort: 'Innenministerium',
 		sources: [{name: 'Hessisches Innenministerium', url: 'https://innen.hessen.de/presse/polizei-zieht-bilanz-der-versammlungen-am-20-november', date: '21.11.2026'}],
 		update: 'keine neuere Meldung bis 27.11.',
 		color: '#FF5A6E',
