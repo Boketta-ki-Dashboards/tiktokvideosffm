@@ -1,0 +1,1332 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-eine-woche-danach",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-eine-woche-danach/voiceover-adam.mp3",
+	"durationMs": 72697,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "o1",
+			"startMs": 1302,
+			"endMs": 5849,
+			"hash": "26f26e99b39a937290ba"
+		},
+		{
+			"id": "l1",
+			"startMs": 5969,
+			"endMs": 13905,
+			"hash": "f7fbf8677b9ef0ff6341"
+		},
+		{
+			"id": "l2",
+			"startMs": 13945,
+			"endMs": 20304,
+			"hash": "e8f29b084fa42a22bc4a"
+		},
+		{
+			"id": "l3",
+			"startMs": 20344,
+			"endMs": 25320,
+			"hash": "39d64114f8f93bd13695"
+		},
+		{
+			"id": "h1",
+			"startMs": 25440,
+			"endMs": 31832,
+			"hash": "a0ba3fb9f0ed855e0c29"
+		},
+		{
+			"id": "h2",
+			"startMs": 31872,
+			"endMs": 37034,
+			"hash": "aa5042a56b1462de6b39"
+		},
+		{
+			"id": "d1",
+			"startMs": 37154,
+			"endMs": 43815,
+			"hash": "fce89acb3c80dac9c638"
+		},
+		{
+			"id": "s1",
+			"startMs": 43935,
+			"endMs": 51282,
+			"hash": "e7c0cf6849c084b0268b"
+		},
+		{
+			"id": "b1",
+			"startMs": 51402,
+			"endMs": 55786,
+			"hash": "ed366299a8adc2df37f0"
+		},
+		{
+			"id": "f1",
+			"startMs": 55906,
+			"endMs": 62379,
+			"hash": "7576e6d646cb7b1fc59b"
+		},
+		{
+			"id": "z1",
+			"startMs": 62499,
+			"endMs": 64618,
+			"hash": "8430d185989c21f00254"
+		},
+		{
+			"id": "z2",
+			"startMs": 64658,
+			"endMs": 69657,
+			"hash": "7c1789d1d02079d0423b"
+		},
+		{
+			"id": "cta",
+			"startMs": 69777,
+			"endMs": 72697,
+			"hash": "f7a67b3208185b801db0"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Eine",
+			"startMs": 1302,
+			"endMs": 1557,
+			"timestampMs": 1430,
+			"confidence": 1
+		},
+		{
+			"text": " Woche",
+			"startMs": 1581,
+			"endMs": 1720,
+			"timestampMs": 1651,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 1743,
+			"endMs": 1848,
+			"timestampMs": 1796,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 1871,
+			"endMs": 1964,
+			"timestampMs": 1918,
+			"confidence": 1
+		},
+		{
+			"text": " Jugendprotesten",
+			"startMs": 2010,
+			"endMs": 2811,
+			"timestampMs": 2411,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 2846,
+			"endMs": 2951,
+			"timestampMs": 2899,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 2997,
+			"endMs": 3450,
+			"timestampMs": 3224,
+			"confidence": 1
+		},
+		{
+			"text": " November:",
+			"startMs": 3496,
+			"endMs": 4054,
+			"timestampMs": 3775,
+			"confidence": 1
+		},
+		{
+			"text": " Was",
+			"startMs": 4206,
+			"endMs": 4392,
+			"timestampMs": 4299,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 4438,
+			"endMs": 4531,
+			"timestampMs": 4485,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 4577,
+			"endMs": 4659,
+			"timestampMs": 4618,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 4693,
+			"endMs": 4786,
+			"timestampMs": 4740,
+			"confidence": 1
+		},
+		{
+			"text": " Ermittlungen",
+			"startMs": 4844,
+			"endMs": 5227,
+			"timestampMs": 5036,
+			"confidence": 1
+		},
+		{
+			"text": " geworden?",
+			"startMs": 5262,
+			"endMs": 5849,
+			"timestampMs": 5779,
+			"confidence": 1
+		},
+		{
+			"text": " Leipzig:",
+			"startMs": 5969,
+			"endMs": 6619,
+			"timestampMs": 6294,
+			"confidence": 1
+		},
+		{
+			"text": " Nach",
+			"startMs": 6806,
+			"endMs": 6968,
+			"timestampMs": 6887,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 7003,
+			"endMs": 7073,
+			"timestampMs": 7038,
+			"confidence": 1
+		},
+		{
+			"text": " Demo",
+			"startMs": 7131,
+			"endMs": 7444,
+			"timestampMs": 7288,
+			"confidence": 1
+		},
+		{
+			"text": " stellte",
+			"startMs": 7491,
+			"endMs": 7769,
+			"timestampMs": 7630,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 7816,
+			"endMs": 7885,
+			"timestampMs": 7851,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 7909,
+			"endMs": 8361,
+			"timestampMs": 8135,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 8420,
+			"endMs": 8489,
+			"timestampMs": 8455,
+			"confidence": 1
+		},
+		{
+			"text": " Identität",
+			"startMs": 8536,
+			"endMs": 9116,
+			"timestampMs": 8826,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 9163,
+			"endMs": 9267,
+			"timestampMs": 9215,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 9337,
+			"endMs": 9488,
+			"timestampMs": 9413,
+			"confidence": 1
+		},
+		{
+			"text": " 200",
+			"startMs": 9546,
+			"endMs": 10010,
+			"timestampMs": 9778,
+			"confidence": 1
+		},
+		{
+			"text": " Personen",
+			"startMs": 10045,
+			"endMs": 10474,
+			"timestampMs": 10260,
+			"confidence": 1
+		},
+		{
+			"text": " fest –",
+			"startMs": 10533,
+			"endMs": 11020,
+			"timestampMs": 10777,
+			"confidence": 1
+		},
+		{
+			"text": " darunter",
+			"startMs": 11090,
+			"endMs": 11461,
+			"timestampMs": 11276,
+			"confidence": 1
+		},
+		{
+			"text": " vier",
+			"startMs": 11508,
+			"endMs": 11682,
+			"timestampMs": 11595,
+			"confidence": 1
+		},
+		{
+			"text": " Kinder",
+			"startMs": 11728,
+			"endMs": 12181,
+			"timestampMs": 11955,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 12448,
+			"endMs": 12576,
+			"timestampMs": 12512,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 12634,
+			"endMs": 12785,
+			"timestampMs": 12710,
+			"confidence": 1
+		},
+		{
+			"text": " vierzig",
+			"startMs": 12820,
+			"endMs": 13098,
+			"timestampMs": 12959,
+			"confidence": 1
+		},
+		{
+			"text": " Jugendliche.",
+			"startMs": 13122,
+			"endMs": 13905,
+			"timestampMs": 13604,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 13945,
+			"endMs": 14073,
+			"timestampMs": 14009,
+			"confidence": 1
+		},
+		{
+			"text": " Staatsanwaltschaft",
+			"startMs": 14108,
+			"endMs": 14885,
+			"timestampMs": 14497,
+			"confidence": 1
+		},
+		{
+			"text": " wertet",
+			"startMs": 14932,
+			"endMs": 15257,
+			"timestampMs": 15095,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 15280,
+			"endMs": 15431,
+			"timestampMs": 15356,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 15501,
+			"endMs": 15663,
+			"timestampMs": 15582,
+			"confidence": 1
+		},
+		{
+			"text": " schweren",
+			"startMs": 15686,
+			"endMs": 16046,
+			"timestampMs": 15866,
+			"confidence": 1
+		},
+		{
+			"text": " Fall",
+			"startMs": 16104,
+			"endMs": 16348,
+			"timestampMs": 16226,
+			"confidence": 1
+		},
+		{
+			"text": " des",
+			"startMs": 16406,
+			"endMs": 16499,
+			"timestampMs": 16453,
+			"confidence": 1
+		},
+		{
+			"text": " Landfriedensbruchs.",
+			"startMs": 16557,
+			"endMs": 17532,
+			"timestampMs": 17045,
+			"confidence": 1
+		},
+		{
+			"text": " Ermittelt",
+			"startMs": 17685,
+			"endMs": 17999,
+			"timestampMs": 17842,
+			"confidence": 1
+		},
+		{
+			"text": " wird",
+			"startMs": 18022,
+			"endMs": 18150,
+			"timestampMs": 18086,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 18185,
+			"endMs": 18312,
+			"timestampMs": 18249,
+			"confidence": 1
+		},
+		{
+			"text": " wegen",
+			"startMs": 18370,
+			"endMs": 18579,
+			"timestampMs": 18475,
+			"confidence": 1
+		},
+		{
+			"text": " Brandstiftung",
+			"startMs": 18614,
+			"endMs": 19172,
+			"timestampMs": 18893,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 19230,
+			"endMs": 19299,
+			"timestampMs": 19265,
+			"confidence": 1
+		},
+		{
+			"text": " Körperverletzung.",
+			"startMs": 19369,
+			"endMs": 20304,
+			"timestampMs": 19926,
+			"confidence": 1
+		},
+		{
+			"text": " Wichtig:",
+			"startMs": 20344,
+			"endMs": 20924,
+			"timestampMs": 20634,
+			"confidence": 1
+		},
+		{
+			"text": " Beschuldigte",
+			"startMs": 21135,
+			"endMs": 21703,
+			"timestampMs": 21419,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 21750,
+			"endMs": 21878,
+			"timestampMs": 21814,
+			"confidence": 1
+		},
+		{
+			"text": " keine",
+			"startMs": 21924,
+			"endMs": 22133,
+			"timestampMs": 22029,
+			"confidence": 1
+		},
+		{
+			"text": " Verurteilten –",
+			"startMs": 22156,
+			"endMs": 22888,
+			"timestampMs": 22522,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 22923,
+			"endMs": 23039,
+			"timestampMs": 22981,
+			"confidence": 1
+		},
+		{
+			"text": " Kinder",
+			"startMs": 23085,
+			"endMs": 23317,
+			"timestampMs": 23201,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 23352,
+			"endMs": 23515,
+			"timestampMs": 23434,
+			"confidence": 1
+		},
+		{
+			"text": " vierzehn",
+			"startMs": 23561,
+			"endMs": 23898,
+			"timestampMs": 23730,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 23944,
+			"endMs": 24060,
+			"timestampMs": 24002,
+			"confidence": 1
+		},
+		{
+			"text": " strafunmündig.",
+			"startMs": 24107,
+			"endMs": 25320,
+			"timestampMs": 24815,
+			"confidence": 1
+		},
+		{
+			"text": " Hamburg:",
+			"startMs": 25440,
+			"endMs": 26067,
+			"timestampMs": 25754,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 26219,
+			"endMs": 26370,
+			"timestampMs": 26295,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 26405,
+			"endMs": 26788,
+			"timestampMs": 26597,
+			"confidence": 1
+		},
+		{
+			"text": " gab",
+			"startMs": 26834,
+			"endMs": 26962,
+			"timestampMs": 26898,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 27008,
+			"endMs": 27055,
+			"timestampMs": 27032,
+			"confidence": 1
+		},
+		{
+			"text": " mehrere",
+			"startMs": 27101,
+			"endMs": 27438,
+			"timestampMs": 27270,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen",
+			"startMs": 27496,
+			"endMs": 28042,
+			"timestampMs": 27769,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 28123,
+			"endMs": 28251,
+			"timestampMs": 28187,
+			"confidence": 1
+		},
+		{
+			"text": " Gewahrsamnahmen –",
+			"startMs": 28320,
+			"endMs": 29388,
+			"timestampMs": 28854,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 29423,
+			"endMs": 29621,
+			"timestampMs": 29522,
+			"confidence": 1
+		},
+		{
+			"text": " Gesamtzahl",
+			"startMs": 29644,
+			"endMs": 30317,
+			"timestampMs": 29981,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 30399,
+			"endMs": 30526,
+			"timestampMs": 30463,
+			"confidence": 1
+		},
+		{
+			"text": " öffentlich",
+			"startMs": 30584,
+			"endMs": 30956,
+			"timestampMs": 30770,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 31014,
+			"endMs": 31165,
+			"timestampMs": 31090,
+			"confidence": 1
+		},
+		{
+			"text": " bekannt.",
+			"startMs": 31211,
+			"endMs": 31832,
+			"timestampMs": 31728,
+			"confidence": 1
+		},
+		{
+			"text": " Seit",
+			"startMs": 31872,
+			"endMs": 32093,
+			"timestampMs": 31983,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 32116,
+			"endMs": 32209,
+			"timestampMs": 32163,
+			"confidence": 1
+		},
+		{
+			"text": " 23.",
+			"startMs": 32244,
+			"endMs": 32929,
+			"timestampMs": 32587,
+			"confidence": 1
+		},
+		{
+			"text": " November",
+			"startMs": 32952,
+			"endMs": 33335,
+			"timestampMs": 33144,
+			"confidence": 1
+		},
+		{
+			"text": " liegen",
+			"startMs": 33381,
+			"endMs": 33602,
+			"timestampMs": 33492,
+			"confidence": 1
+		},
+		{
+			"text": " dazu",
+			"startMs": 33637,
+			"endMs": 34031,
+			"timestampMs": 33834,
+			"confidence": 1
+		},
+		{
+			"text": " politische",
+			"startMs": 34113,
+			"endMs": 34635,
+			"timestampMs": 34374,
+			"confidence": 1
+		},
+		{
+			"text": " Anfragen",
+			"startMs": 34693,
+			"endMs": 35204,
+			"timestampMs": 34949,
+			"confidence": 1
+		},
+		{
+			"text": " vor –",
+			"startMs": 35262,
+			"endMs": 35681,
+			"timestampMs": 35472,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 35821,
+			"endMs": 35984,
+			"timestampMs": 35903,
+			"confidence": 1
+		},
+		{
+			"text": " ohne",
+			"startMs": 36042,
+			"endMs": 36262,
+			"timestampMs": 36152,
+			"confidence": 1
+		},
+		{
+			"text": " Antwort.",
+			"startMs": 36309,
+			"endMs": 37034,
+			"timestampMs": 36919,
+			"confidence": 1
+		},
+		{
+			"text": " Dresden:",
+			"startMs": 37154,
+			"endMs": 37862,
+			"timestampMs": 37508,
+			"confidence": 1
+		},
+		{
+			"text": " Bei",
+			"startMs": 38003,
+			"endMs": 38130,
+			"timestampMs": 38067,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 38165,
+			"endMs": 38304,
+			"timestampMs": 38235,
+			"confidence": 1
+		},
+		{
+			"text": " achtzig",
+			"startMs": 38386,
+			"endMs": 38641,
+			"timestampMs": 38514,
+			"confidence": 1
+		},
+		{
+			"text": " Personen",
+			"startMs": 38664,
+			"endMs": 39106,
+			"timestampMs": 38885,
+			"confidence": 1
+		},
+		{
+			"text": " nahm",
+			"startMs": 39187,
+			"endMs": 39349,
+			"timestampMs": 39268,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 39396,
+			"endMs": 39465,
+			"timestampMs": 39431,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 39489,
+			"endMs": 39883,
+			"timestampMs": 39686,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 39918,
+			"endMs": 39988,
+			"timestampMs": 39953,
+			"confidence": 1
+		},
+		{
+			"text": " Personalien",
+			"startMs": 40023,
+			"endMs": 40719,
+			"timestampMs": 40371,
+			"confidence": 1
+		},
+		{
+			"text": " auf –",
+			"startMs": 40801,
+			"endMs": 41196,
+			"timestampMs": 40999,
+			"confidence": 1
+		},
+		{
+			"text": " Verdacht",
+			"startMs": 41324,
+			"endMs": 41649,
+			"timestampMs": 41487,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 41707,
+			"endMs": 41881,
+			"timestampMs": 41794,
+			"confidence": 1
+		},
+		{
+			"text": " anderem:",
+			"startMs": 41927,
+			"endMs": 42497,
+			"timestampMs": 42212,
+			"confidence": 1
+		},
+		{
+			"text": " Landfriedensbruch.",
+			"startMs": 42637,
+			"endMs": 43815,
+			"timestampMs": 43398,
+			"confidence": 1
+		},
+		{
+			"text": " Stuttgarts",
+			"startMs": 43935,
+			"endMs": 44318,
+			"timestampMs": 44127,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 44341,
+			"endMs": 44724,
+			"timestampMs": 44533,
+			"confidence": 1
+		},
+		{
+			"text": " meldete",
+			"startMs": 44783,
+			"endMs": 45084,
+			"timestampMs": 44934,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 45131,
+			"endMs": 45282,
+			"timestampMs": 45207,
+			"confidence": 1
+		},
+		{
+			"text": " zwanzig",
+			"startMs": 45317,
+			"endMs": 45665,
+			"timestampMs": 45491,
+			"confidence": 1
+		},
+		{
+			"text": " vorläufige",
+			"startMs": 45688,
+			"endMs": 46176,
+			"timestampMs": 45932,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen –",
+			"startMs": 46211,
+			"endMs": 46965,
+			"timestampMs": 46588,
+			"confidence": 1
+		},
+		{
+			"text": " Vorwürfe",
+			"startMs": 47012,
+			"endMs": 47650,
+			"timestampMs": 47331,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 47697,
+			"endMs": 47917,
+			"timestampMs": 47807,
+			"confidence": 1
+		},
+		{
+			"text": " anderem:",
+			"startMs": 47964,
+			"endMs": 48475,
+			"timestampMs": 48220,
+			"confidence": 1
+		},
+		{
+			"text": " Vermummung,",
+			"startMs": 48627,
+			"endMs": 49381,
+			"timestampMs": 49004,
+			"confidence": 1
+		},
+		{
+			"text": " Beleidigung,",
+			"startMs": 49474,
+			"endMs": 50301,
+			"timestampMs": 49888,
+			"confidence": 1
+		},
+		{
+			"text": " Widerstand.",
+			"startMs": 50428,
+			"endMs": 51282,
+			"timestampMs": 50992,
+			"confidence": 1
+		},
+		{
+			"text": " Anders",
+			"startMs": 51402,
+			"endMs": 51692,
+			"timestampMs": 51547,
+			"confidence": 1
+		},
+		{
+			"text": " Berlin:",
+			"startMs": 51750,
+			"endMs": 52273,
+			"timestampMs": 52012,
+			"confidence": 1
+		},
+		{
+			"text": " Rund",
+			"startMs": 52413,
+			"endMs": 52622,
+			"timestampMs": 52518,
+			"confidence": 1
+		},
+		{
+			"text": " viertausend",
+			"startMs": 52680,
+			"endMs": 53191,
+			"timestampMs": 52936,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen",
+			"startMs": 53249,
+			"endMs": 53539,
+			"timestampMs": 53394,
+			"confidence": 1
+		},
+		{
+			"text": " zogen",
+			"startMs": 53609,
+			"endMs": 53888,
+			"timestampMs": 53749,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 53934,
+			"endMs": 54108,
+			"timestampMs": 54021,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 54155,
+			"endMs": 54584,
+			"timestampMs": 54370,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich",
+			"startMs": 54654,
+			"endMs": 54991,
+			"timestampMs": 54823,
+			"confidence": 1
+		},
+		{
+			"text": " durch",
+			"startMs": 55025,
+			"endMs": 55165,
+			"timestampMs": 55095,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 55200,
+			"endMs": 55269,
+			"timestampMs": 55235,
+			"confidence": 1
+		},
+		{
+			"text": " Stadt.",
+			"startMs": 55304,
+			"endMs": 55786,
+			"timestampMs": 55745,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt:",
+			"startMs": 55906,
+			"endMs": 56486,
+			"timestampMs": 56196,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 56695,
+			"endMs": 56893,
+			"timestampMs": 56794,
+			"confidence": 1
+		},
+		{
+			"text": " Innenministerium",
+			"startMs": 56951,
+			"endMs": 57764,
+			"timestampMs": 57358,
+			"confidence": 1
+		},
+		{
+			"text": " zehn",
+			"startMs": 57822,
+			"endMs": 57973,
+			"timestampMs": 57898,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen",
+			"startMs": 58031,
+			"endMs": 58518,
+			"timestampMs": 58275,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 58692,
+			"endMs": 58832,
+			"timestampMs": 58762,
+			"confidence": 1
+		},
+		{
+			"text": " sechzehn",
+			"startMs": 58878,
+			"endMs": 59250,
+			"timestampMs": 59064,
+			"confidence": 1
+		},
+		{
+			"text": " Strafanzeigen –",
+			"startMs": 59296,
+			"endMs": 60318,
+			"timestampMs": 59807,
+			"confidence": 1
+		},
+		{
+			"text": " Exzesse",
+			"startMs": 60422,
+			"endMs": 60933,
+			"timestampMs": 60678,
+			"confidence": 1
+		},
+		{
+			"text": " wie",
+			"startMs": 60968,
+			"endMs": 61072,
+			"timestampMs": 61020,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 61096,
+			"endMs": 61154,
+			"timestampMs": 61125,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween",
+			"startMs": 61200,
+			"endMs": 61572,
+			"timestampMs": 61386,
+			"confidence": 1
+		},
+		{
+			"text": " blieben",
+			"startMs": 61618,
+			"endMs": 61850,
+			"timestampMs": 61734,
+			"confidence": 1
+		},
+		{
+			"text": " aus.",
+			"startMs": 61897,
+			"endMs": 62379,
+			"timestampMs": 62245,
+			"confidence": 1
+		},
+		{
+			"text": " Hier",
+			"startMs": 62499,
+			"endMs": 62696,
+			"timestampMs": 62598,
+			"confidence": 1
+		},
+		{
+			"text": " seht",
+			"startMs": 62743,
+			"endMs": 62894,
+			"timestampMs": 62819,
+			"confidence": 1
+		},
+		{
+			"text": " ihr",
+			"startMs": 62963,
+			"endMs": 63045,
+			"timestampMs": 63004,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 63068,
+			"endMs": 63138,
+			"timestampMs": 63103,
+			"confidence": 1
+		},
+		{
+			"text": " Bilanzen",
+			"startMs": 63172,
+			"endMs": 63567,
+			"timestampMs": 63370,
+			"confidence": 1
+		},
+		{
+			"text": " aller",
+			"startMs": 63625,
+			"endMs": 63753,
+			"timestampMs": 63689,
+			"confidence": 1
+		},
+		{
+			"text": " sechs",
+			"startMs": 63776,
+			"endMs": 63950,
+			"timestampMs": 63863,
+			"confidence": 1
+		},
+		{
+			"text": " Städte.",
+			"startMs": 63997,
+			"endMs": 64618,
+			"timestampMs": 64340,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 64658,
+			"endMs": 64809,
+			"timestampMs": 64734,
+			"confidence": 1
+		},
+		{
+			"text": " meisten",
+			"startMs": 64844,
+			"endMs": 65111,
+			"timestampMs": 64978,
+			"confidence": 1
+		},
+		{
+			"text": " Zahlen",
+			"startMs": 65157,
+			"endMs": 65436,
+			"timestampMs": 65297,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 65482,
+			"endMs": 65598,
+			"timestampMs": 65540,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 65645,
+			"endMs": 65749,
+			"timestampMs": 65697,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 65773,
+			"endMs": 65842,
+			"timestampMs": 65808,
+			"confidence": 1
+		},
+		{
+			"text": " ersten",
+			"startMs": 65889,
+			"endMs": 66132,
+			"timestampMs": 66011,
+			"confidence": 1
+		},
+		{
+			"text": " Polizeimeldungen –",
+			"startMs": 66156,
+			"endMs": 67213,
+			"timestampMs": 66685,
+			"confidence": 1
+		},
+		{
+			"text": " Anklagen",
+			"startMs": 67283,
+			"endMs": 67864,
+			"timestampMs": 67574,
+			"confidence": 1
+		},
+		{
+			"text": " oder",
+			"startMs": 67910,
+			"endMs": 68096,
+			"timestampMs": 68003,
+			"confidence": 1
+		},
+		{
+			"text": " Urteile",
+			"startMs": 68154,
+			"endMs": 68653,
+			"timestampMs": 68404,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 68688,
+			"endMs": 68816,
+			"timestampMs": 68752,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 68862,
+			"endMs": 69013,
+			"timestampMs": 68938,
+			"confidence": 1
+		},
+		{
+			"text": " bekannt.",
+			"startMs": 69048,
+			"endMs": 69657,
+			"timestampMs": 69513,
+			"confidence": 1
+		},
+		{
+			"text": " Für",
+			"startMs": 69777,
+			"endMs": 69905,
+			"timestampMs": 69841,
+			"confidence": 1
+		},
+		{
+			"text": " mehr",
+			"startMs": 69928,
+			"endMs": 70044,
+			"timestampMs": 69986,
+			"confidence": 1
+		},
+		{
+			"text": " Nachrichten",
+			"startMs": 70079,
+			"endMs": 70462,
+			"timestampMs": 70271,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 70497,
+			"endMs": 70578,
+			"timestampMs": 70538,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 70613,
+			"endMs": 70915,
+			"timestampMs": 70764,
+			"confidence": 1
+		},
+		{
+			"text": " folgt",
+			"startMs": 70950,
+			"endMs": 71170,
+			"timestampMs": 71060,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRedNews!",
+			"startMs": 71205,
+			"endMs": 72697,
+			"timestampMs": 71977,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-27T14:24:51.935Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1346
+	},
+	"measuredLufsBeforeMaster": -14.15
+}
