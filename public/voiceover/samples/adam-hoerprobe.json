@@ -1,6 +1,6 @@
 {
-	"text": "{Ewa|Eywa}, Frankfurt! Also Bus, Straßenbahn, U- und S-Bahn. An zwei Samstagen sind alle {RMV-Verkehrsmittel|Er Em Vau Verkehrsmittel} im Frankfurter Tarifgebiet kostenlos. Die Freifahrten kosten die Stadt laut {FAZ|Eff A Zett} {400.000 Euro|vierhunderttausend Euro}. Für den {12. Dezember|zwölften Dezember} ist auch die nächste {Gen-Z-Demo|Dschen Zett Demo} angekündigt.",
-	"sampleFrom": "frankfurt-erklaert-gratis-nahverkehr",
+	"text": "{Ewa|Eywa}, Frankfurt! Leipzig: Nach der Demo stellte die Polizei die Identität von über {200|zweihundert} Personen fest. Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Kinder unter vierzehn sind strafunmündig. Hamburg: Laut Polizei gab es mehrere Festnahmen und Gewahrsamnahmen.",
+	"sampleFrom": "frankfurt-erklaert-eine-woche-danach",
 	"provider": "elevenlabs",
 	"name": "Adam - Dominant, Firm",
 	"voiceId": "pNInz6obpgDQGcFmaJgB",
@@ -15,6 +15,6 @@
 	},
 	"seed": 20261104,
 	"characters": 296,
-	"cacheKey": "1c5adc023be738739495",
-	"durationSeconds": 18.528
+	"cacheKey": "b7cb28de77e99c1a2d81",
+	"durationSeconds": 18
 }
