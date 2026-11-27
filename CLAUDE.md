@@ -271,6 +271,15 @@ Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichte
   - **Sonderausnahme (nur mit ausdrücklicher Freigabe des Kanalbetreibers je Folge, erstmals #09):** `sonderausnahme` (Begründung) in
     `config/videos.json` → Informationsteil bis `FORMAT.specialInfoMaxSeconds` (69 s), gesamt bis `FORMAT.specialMaxSeconds` (75 s); geprüft in
     `tests/erklaert-format.test.ts`. Alle anderen Folgen bleiben bei 60 s bzw. 66 s.
+  - **Verlängerte Sonderausgabe (nur mit ausdrücklichem Auftrag des Kanalbetreibers je Folge, erstmals #20 „Eine Woche danach“, 27.11.2026):**
+    `sonderausgabe` (Begründung) in `config/videos.json` → Informationsteil bis `FORMAT.editionInfoMaxSeconds` (73,5 s ab Frame 0, ≈ 70 s nach der
+    Begrüßung), gesamt bis `FORMAT.editionMaxSeconds` (80 s); geprüft in `tests/erklaert-format.test.ts`. Serienname „in 60 Sekunden“ bleibt.
+  - **Bundesweites Stadt-Dashboard (ab #20, wiederverwendbar):** `src/formats/frankfurt-erklaert/visuals/CityDashboard.tsx` (+ testbare Geometrie
+    `city-dashboard-geometry.ts`): 2 × 3 gleich große Karten (x 64–930, y 500–1262), je Karte Hauptzahl + eigene Kategorie + ≤ 3 Zusatzangaben +
+    Meldestand/Urheber; keine Rangliste, keine Summe, keine gemeinsame Skala; Text statt geschätzter Zahl, wenn keine Zahl veröffentlicht ist.
+    Daten aus EINER Datei je Folge (z. B. `data/staedte.ts`), die auch die Stadtszenen lesen. Aufbau ≤ 1,7 s, danach ≥ 4 s völlig ruhig (Pausierbild).
+    Optionaler Export als Infografik-PNG: Komposition `<Name>-Infografik` (exakt ein Videoframe) + `infografikName` in `config/videos.json` →
+    Workflow legt `<infografikName>.png` ins Artefakt.
   - **60-s-Grenze vierfach geprüft:**
     1. `enforceMaxFrames` (`src/formats/frankfurt-erklaert/timeline.ts`) kürzt automatisch den stummen Nachlauf bzw. bricht ab, wenn schon die Stimme
        zu lang ist (mit Angabe, um wie viel gekürzt werden muss).

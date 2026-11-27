@@ -5,6 +5,11 @@ Verlängerte Sonderausgabe (Informationsteil ≈ 70 s, ausdrücklicher Wunsch de
 
 **Letzter Faktencheck: 27.11.2026, 15:15 Uhr** (MEZ). Recherchestand im Bild: `content.ts → STAND`.
 
+**Nachkontrolle vor dem Render: 27.11.2026, 15:49 Uhr** (MEZ) – Einsatzseite PD Leipzig (jüngstes Update weiter 21.11., 12:30 Uhr), Medienservice Sachsen
+(Suche „Landfriedensbruch“: jüngster Treffer 1101307), Polizei Frankfurt (bis Nr. 1479, ohne Bezug), Polizei Stuttgart (bis 27.11., 15:44 Uhr, ohne Bezug),
+Polizei Hamburg (ohne Bezug), Bezirksversammlung Mitte Drs. 23-2220 (weiter ohne Antwort), Bürgerschaft Drs. 23/6066 (Metadaten unverändert, Original
+erneut nicht erreichbar): **keine Änderung**.
+
 > **Ergebnis der Aktualitätsprüfung (22.–27.11.2026):** Für Leipzig, Dresden, Stuttgart, Berlin und Frankfurt wurde **keine neuere
 > offizielle Meldung** zu den Ermittlungen des 20.11. gefunden als die Meldungen vom 20./21.11. Neu seit dem Wochenende sind nur die
 > **zwei Anfragen in Hamburg vom 23.11.2026** (Bürgerschaft und Bezirksversammlung Hamburg-Mitte) – Antworten sind bis 27.11. nicht
