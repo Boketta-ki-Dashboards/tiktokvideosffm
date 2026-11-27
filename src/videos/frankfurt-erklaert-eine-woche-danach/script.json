@@ -15,7 +15,8 @@
 	"sampleText": "Ewa, Frankfurt! Leipzig: Nach der Demo stellte die Polizei die Identität von über {200|zweihundert} Personen fest. Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Kinder unter vierzehn sind strafunmündig. Hamburg: Laut Polizei gab es mehrere Festnahmen und Gewahrsamnahmen.",
 	"segments": [
 		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
-		{"id": "o1", "text": "Eine Woche nach den Jugendprotesten vom {20. November|zwanzigsten November}: Was ist aus den Ermittlungen geworden?", "pauseAfterMs": 120},
+		{"id": "o1", "text": "Eine Woche nach den Jugendprotesten vom {20. November|zwanzigsten November}: Was ist aus den Ermittlungen geworden?", "pauseAfterMs": 60},
+		{"id": "o2", "text": "Wir schauen auf sechs Städte.", "pauseAfterMs": 120},
 		{"id": "l1", "text": "Leipzig: Nach der Demo stellte die Polizei die Identität von über {200|zweihundert} Personen fest – darunter vier Kinder und über vierzig Jugendliche.", "pauseAfterMs": 40},
 		{"id": "l2", "text": "Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Ermittelt wird auch wegen Brandstiftung und Körperverletzung.", "pauseAfterMs": 40},
 		{"id": "l3", "text": "Wichtig: Beschuldigte sind keine Verurteilten – und Kinder unter vierzehn sind strafunmündig.", "pauseAfterMs": 120},

@@ -94,6 +94,7 @@ Verlängerte Sonderausgabe (Informationsteil ≈ 70 s, ausdrücklicher Wunsch de
 |---|---|---|
 | hook1 | „Ewa, Frankfurt!“ | Begrüßung (Cache) |
 | o1 | „Eine Woche nach den Jugendprotesten vom 20. November: Was ist aus den Ermittlungen geworden?“ | TS (Jugendproteste in vielen Städten), Recherchestand 27.11. |
+| o2 | „Wir schauen auf sechs Städte.“ | Auswahl laut Auftrag (Leipzig, Hamburg, Dresden, Stuttgart, Berlin, Frankfurt) |
 | l1 | „Leipzig: Nach der Demo stellte die Polizei die Identität von über 200 Personen fest – darunter vier Kinder und über vierzig Jugendliche.“ | LE-417 |
 | l2 | „Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Ermittelt wird auch wegen Brandstiftung und Körperverletzung.“ | LE-417 („stufte … als schweren Fall des Landfriedensbruchs ein“; Ermittlungsverfahren u. a. wegen Brandstiftung, Körperverletzungsdelikten) |
 | l3 | „Wichtig: Beschuldigte sind keine Verurteilten – und Kinder unter vierzehn sind strafunmündig.“ | Einordnung; § 19 StGB |
