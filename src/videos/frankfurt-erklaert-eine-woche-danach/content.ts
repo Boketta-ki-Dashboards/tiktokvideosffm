@@ -3,7 +3,7 @@
  * Alle Zahlen kommen aus `data/staedte.ts` (eine Quelle für Stadtszenen UND Dashboard); hier stehen nur Texte, Etiketten und Quellenzeilen.
  * Belege: references/frankfurt-erklaert-eine-woche-danach/sources.md.
  */
-import {RECHERCHE} from './data/staedte';
+import {RECHERCHE} from './data/staedte.ts';
 
 export const STAND = {date: RECHERCHE.date, time: RECHERCHE.time, label: RECHERCHE.label} as const;
 
@@ -93,7 +93,7 @@ export const OUTRO = {line: 'FÜR MEHR NACHRICHTEN AUS FRANKFURT'} as const;
 
 /** Quellenzeile UNTER den Untertiteln (y 1.512–1.630), wechselt mit dem Sprechersegment. */
 export const SOURCE_LINE = [
-	{from: 'o1', text: `Recherchestand ${STAND.date}, ${STAND.time} Uhr · Polizei, Staatsanwaltschaften, Parlamente, Medien – Meldestände 20.–23.11.`},
+	{from: 'o1', text: `Recherchestand ${STAND.date}, ${STAND.time} Uhr · jüngste Meldestände vom 20. bis 23.11.2026`},
 	{from: 'l1', text: 'Polizei Sachsen (PD Leipzig), Ergänzungsmeldung Nr. 417/26 vom 21.11.2026'},
 	{from: 'l3', text: '§ 19 StGB (gesetze-im-internet.de) · keine Rechtsberatung'},
 	{from: 'h1', text: 'NDR 21.11.2026 · Bundespolizei Hamburg, Korrektur 21.11.2026, 11:07 Uhr'},

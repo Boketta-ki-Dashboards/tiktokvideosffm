@@ -26,6 +26,8 @@ const YELLOW = COLORS.signal;
 const GREEN = '#3DDC97';
 const NEWS = 'news' as const;
 const ORDER: CityId[] = ['leipzig', 'hamburg', 'dresden', 'stuttgart', 'berlin', 'frankfurt'];
+/** Farben der Leipziger Teilgruppen (Kinder, Jugendliche) – Teil der Gesamtmenge, nie zusätzlich. */
+const GROUP_COLORS = ['#B794F6', '#FFB547'];
 
 /* ------------------------------------------------------------------ Bausteine (wie #15–#19) */
 
@@ -342,7 +344,7 @@ export const LeipzigScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 			{/* Phase A: über 200 Personen, Raster mit Teilgruppen */}
 			<div style={{opacity: pA}}>
 				<In at={atId} dy={30} style={{left: LAYOUT.left, top: 720}}>
-					<Counter value={200} prefix="ÜBER " from={atId} to={at200} size={124} color={c.color} />
+					<Counter value={c.main.count ?? 0} prefix={c.main.prefix} from={atId} to={at200} size={124} color={c.color} />
 				</In>
 				<In at={atId + 4} dy={20} style={{left: LAYOUT.left, top: 852}}>
 					<Label text={LEIPZIG.label} size={32} />
@@ -352,13 +354,13 @@ export const LeipzigScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 				</In>
 				{frame >= atId ? (
 					<div style={{position: 'absolute', left: LAYOUT.left, top: 960}}>
-						<PersonGrid total={200} cols={40} width={LAYOUT.width} fill={gridFill} groups={[{n: 4, color: '#B794F6', on: frame >= atKinder ? 1 : 0}, {n: 40, color: '#FFB547', on: frame >= atJug ? 1 : 0}]} />
+						<PersonGrid total={c.main.count ?? 0} cols={40} width={LAYOUT.width} fill={gridFill} groups={(c.groups ?? []).map((g, i) => ({n: g.n, color: GROUP_COLORS[i], on: frame >= [atKinder, atJug][i] ? 1 : 0}))} />
 					</div>
 				) : null}
 				<In at={atKinder} dy={16} style={{left: LAYOUT.left, top: 1100, display: 'flex', gap: 12, alignItems: 'center'}}>
 					<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, letterSpacing: 2, color: COLORS.textMuted}}>{LEIPZIG.subgroups}</span>
-					<Pill text={LEIPZIG.kids} color="#B794F6" size={26} />
-					{frame >= atJug ? <Pill text={LEIPZIG.teens} color="#FFB547" size={26} /> : null}
+					<Pill text={c.groups?.[0]?.label ?? ''} color={GROUP_COLORS[0]} size={26} />
+					{frame >= atJug ? <Pill text={c.groups?.[1]?.label ?? ''} color={GROUP_COLORS[1]} size={26} /> : null}
 				</In>
 				<In at={atJug + 8} dy={10} style={{left: LAYOUT.left, top: 1172}}>
 					<div style={{fontFamily: FONTS.body, fontWeight: 700, fontSize: 23, color: COLORS.textMuted}}>↳ {LEIPZIG.notExtra} (in den über 200 enthalten)</div>
@@ -513,14 +515,14 @@ export const DresdenScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 	return (
 		<CityStage city="dresden" prev="hamburg" tag={DRESDEN.tag} icon="shield" durationInFrames={durationInFrames} pano={<CityPanorama city="dresden" accent={c.color} width={1080} />}>
 			<In at={atStart} dy={30} style={{left: LAYOUT.left, top: 720}}>
-				<Counter value={80} prefix="RUND " from={atStart} to={at80} size={124} color={c.color} />
+				<Counter value={c.main.count ?? 0} prefix={c.main.prefix} from={atStart} to={at80} size={124} color={c.color} />
 			</In>
 			<In at={atStart + 4} dy={20} style={{left: LAYOUT.left, top: 852}}>
 				<Label text={DRESDEN.label} size={32} />
 			</In>
 			{frame >= atStart ? (
 				<div style={{position: 'absolute', left: LAYOUT.left, top: 920}}>
-					<PersonGrid total={80} cols={20} width={560} fill={interpolate(frame, [atStart, at80], [0, 1], clamp)} base="#B9A8E8" />
+					<PersonGrid total={c.main.count ?? 0} cols={20} width={560} fill={interpolate(frame, [atStart, at80], [0, 1], clamp)} base="#B9A8E8" />
 				</div>
 			) : null}
 			<In at={atPers} dx={30} dy={0} style={{left: 660, top: 930}}>
@@ -545,6 +547,7 @@ export const DresdenScene: React.FC<SceneProps> = ({cues, durationInFrames}) => 
 /* ------------------------------------------------------------------ Szene 5: Stuttgart */
 
 export const StuttgartScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
+	const frame = useCurrentFrame();
 	const c = cityById('stuttgart');
 	const s1 = cue(cues, 's1', 0);
 	const at20 = wordFrame(cues, 'zwanzig', s1.from + 20);
@@ -554,20 +557,23 @@ export const StuttgartScene: React.FC<SceneProps> = ({cues, durationInFrames}) =
 	return (
 		<CityStage city="stuttgart" prev="dresden" tag={STUTTGART.tag} icon="shield" durationInFrames={durationInFrames} pano={<CityPanorama city="stuttgart" accent={c.color} width={1080} />}>
 			<In at={atStart} dy={30} style={{left: LAYOUT.left, top: 720}}>
-				<Counter value={20} prefix="ÜBER " from={atStart} to={at20} size={124} color={c.color} />
+				<Counter value={c.main.count ?? 0} prefix={c.main.prefix} from={atStart} to={at20} size={124} color={c.color} />
 			</In>
 			<In at={atStart + 4} dy={20} style={{left: LAYOUT.left, top: 852}}>
 				<Label text={STUTTGART.label} size={36} />
 				<div style={{marginTop: 4, fontFamily: FONTS.body, fontWeight: 700, fontSize: 23, color: COLORS.textMuted}}>laut Polizei · vorläufig ≠ Haft ≠ Urteil</div>
 			</In>
-			<In at={atVorw} dy={14} style={{left: LAYOUT.left, top: 968}}>
+			<In at={atStart + 8} dy={14} style={{left: LAYOUT.left, top: 968}}>
 				<span style={{fontFamily: FONTS.heading, fontWeight: 900, fontSize: 24, letterSpacing: 2, color: COLORS.textMuted}}>{STUTTGART.head}</span>
 			</In>
-			{STUTTGART.charges.map((ch, i) => (
-				<In key={ch} at={chargeAt[i]} dy={20} style={{left: LAYOUT.left + [0, 300, 590][i], top: 1010}}>
-					<Pill text={ch} color={c.color} size={27} />
-				</In>
-			))}
+			{STUTTGART.charges.map((ch, i) => {
+				const lit = interpolate(frame, [chargeAt[i], chargeAt[i] + 6], [0, 1], clamp);
+				return (
+					<In key={ch} at={atStart + 10 + i * 3} dy={20} style={{left: LAYOUT.left + [0, 300, 590][i], top: 1010, opacity: 0.35 + 0.65 * lit, scale: String(1 + 0.08 * Math.sin(Math.min(1, lit) * Math.PI))}}>
+						<Pill text={ch} color={lit > 0.5 ? c.color : '#6B7396'} size={27} />
+					</In>
+				);
+			})}
 			<In at={chargeAt[2] + 10} dy={10} style={{left: 0, top: 0, width: 1080}}>
 				<Note text={`${STUTTGART.note} · laut Polizei „versammlungstypische Straftaten“`} top={1100} icon="info" />
 			</In>
@@ -599,6 +605,34 @@ const PeacefulCrowd: React.FC<{top: number}> = ({top}) => {
 	);
 };
 
+/** Friedlicher Demonstrationszug (ILLUSTRATION): anonyme Figuren mit leeren Schildern, langsam von links nach rechts. */
+const MarchingCrowd: React.FC = () => {
+	const frame = useCurrentFrame();
+	return (
+		<div style={{position: 'relative', width: 1080, height: 170, overflow: 'hidden'}}>
+			{new Array(30).fill(0).map((_, i) => {
+				const row = i % 3;
+				const x = ((i * 41 + frame * (1.1 + row * 0.15)) % 1200) - 80;
+				const bob = Math.sin(frame / 5 + i) * 2;
+				const s = 1.2 - row * 0.15;
+				const sign = i % 5 === 0;
+				return (
+					<svg key={i} width={44 * s} height={86 * s} viewBox="0 0 44 86" style={{position: 'absolute', left: x, top: 60 - row * 26 + bob, opacity: 1 - row * 0.18}}>
+						{sign ? (
+							<>
+								<rect x={6} y={0} width={32} height={20} rx={3} fill="#E8ECFF" />
+								<path d="M22 20 L22 40" stroke="#E8ECFF" strokeWidth={3} />
+							</>
+						) : null}
+						<circle cx={22} cy={34} r={9} fill="#C9D3F2" />
+						<path d="M6 86 Q6 46 22 46 Q38 46 38 86 Z" fill={['#3DDC97', '#4FC3F7', '#B794F6', '#FFD23F', '#FF9F43'][i % 5]} />
+					</svg>
+				);
+			})}
+		</div>
+	);
+};
+
 export const BerlinScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 	const c = cityById('berlin');
 	const b1 = cue(cues, 'b1', 0);
@@ -620,16 +654,19 @@ export const BerlinScene: React.FC<SceneProps> = ({cues, durationInFrames}) => {
 			}
 		>
 			<In at={atStart} dy={30} style={{left: LAYOUT.left, top: 720}}>
-				<Counter value={4000} prefix="RUND " from={atStart} to={at4000} size={118} color={c.color} />
+				<Counter value={c.main.count ?? 0} prefix={c.main.prefix} from={atStart} to={at4000} size={118} color={c.color} />
 			</In>
 			<In at={atStart + 4} dy={20} style={{left: LAYOUT.left, top: 846}}>
 				<Label text={BERLIN.label} size={34} />
 			</In>
-			<In at={atFried} dy={20} style={{left: LAYOUT.left, top: 930}}>
+			<In at={atStart + 6} dy={20} style={{left: 0, top: 900, width: 1080}}>
+				<MarchingCrowd />
+			</In>
+			<In at={atFried} dy={20} style={{left: LAYOUT.left, top: 1090}}>
 				<Pill text={BERLIN.peaceful} color={c.color} icon="check" size={34} solid />
 			</In>
 			<In at={atFried + 8} dy={10} style={{left: 0, top: 0, width: 1080}}>
-				<Note text={`${BERLIN.alt} · keine Ermittlungszahlen veröffentlicht`} top={1040} icon="info" />
+				<Note text={`${BERLIN.alt} · keine Ermittlungszahlen veröffentlicht`} top={1186} icon="info" />
 			</In>
 			<Sfx name="softImpact" at={at4000} volume={0.4} />
 			<Sfx name="pop" at={atFried} volume={0.45} />
@@ -663,13 +700,13 @@ export const FrankfurtScene: React.FC<SceneProps> = ({cues, durationInFrames}) =
 		>
 			<In at={atStart} dy={30} style={{left: LAYOUT.left, top: 720}}>
 				<div style={{display: 'flex', alignItems: 'flex-end', gap: 14}}>
-					<Counter value={10} from={atStart} to={at10} size={124} color={c.color} />
+					<Counter value={c.main.count ?? 0} from={atStart} to={at10} size={124} color={c.color} />
 					<span style={{marginBottom: 14, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 34, color: COLORS.text}}>FESTNAHMEN</span>
 				</div>
 			</In>
 			<In at={at16 - 6} dy={30} style={{left: 520, top: 720}}>
 				<div style={{display: 'flex', alignItems: 'flex-end', gap: 14}}>
-					<Counter value={16} from={at16 - 6} to={at16} size={124} color={COLORS.text} />
+					<Counter value={c.second?.count ?? 0} from={at16 - 6} to={at16} size={124} color={COLORS.text} />
 					<span style={{marginBottom: 14, fontFamily: FONTS.heading, fontWeight: 900, fontSize: 28, lineHeight: 1, color: COLORS.text}}>
 						STRAF-
 						<br />

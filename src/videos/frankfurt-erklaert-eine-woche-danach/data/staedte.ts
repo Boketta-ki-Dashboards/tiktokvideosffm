@@ -20,7 +20,11 @@ export type CityStat = {
 	lon: number;
 	/** Hauptkennzahl: `value` wie im Bild (z. B. „ÜBER 200“), `count` nur für den Zähler (Zahl ohne Zusatz), `label` = Kategorie. */
 	main: {value: string; count?: number; prefix?: string; label: string};
-	/** Bis zu drei Zusatzangaben (kurz, im Dashboard ≥ 22 px). */
+	/** Teilgruppen INNERHALB der Hauptzahl (nie addieren) – Leipzig: Kinder, Jugendliche. */
+	groups?: Array<{n: number; label: string}>;
+	/** Zweite Kennzahl (Frankfurt: Strafanzeigen) – erscheint in der Szene als eigener Zähler und im Dashboard als erste Zusatzangabe. */
+	second?: {count: number; label: string};
+	/** Bis zu drei Zusatzangaben (kurz, im Dashboard ≥ 20 px). */
 	extras: string[];
 	/** Redaktionelle Einordnung (eine Zeile). */
 	note: string;
@@ -46,6 +50,10 @@ export const CITIES: CityStat[] = [
 		lat: 51.3397,
 		lon: 12.3731,
 		main: {value: 'ÜBER 200', count: 200, prefix: 'ÜBER ', label: 'Personen – Identität festgestellt'},
+		groups: [
+			{n: 4, label: '4 Kinder'},
+			{n: 40, label: 'über 40 Jugendliche'},
+		],
 		extras: ['darunter 4 Kinder', 'und über 40 Jugendliche', 'Anfangsverdacht § 125a StGB'],
 		note: 'Staatsanwaltschaft: schwerer Fall des Landfriedensbruchs',
 		stand: '21.11.2026',
@@ -132,6 +140,7 @@ export const CITIES: CityStat[] = [
 		lat: 50.1109,
 		lon: 8.6821,
 		main: {value: '10', count: 10, label: 'Festnahmen (gesamter Einsatz)'},
+		second: {count: 16, label: 'Strafanzeigen'},
 		extras: ['16 Strafanzeigen', '342 Personenkontrollen', '52 Platzverweise · rund 2.900 Kräfte'],
 		note: 'gesamter Polizeieinsatz (mehrere Versammlungen)',
 		stand: '21.11.2026',

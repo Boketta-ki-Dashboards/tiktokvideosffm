@@ -1,7 +1,7 @@
 import React from 'react';
 import {COLORS, FONTS} from '../../../theme/tokens';
 import {withAlpha} from '../../../lib/color';
-import {LAYOUT} from '../theme';
+import {DASHBOARD_LAYOUT, dashboardCell} from './city-dashboard-geometry';
 
 /**
  * Bundesweites Stadt-Dashboard (Format B, erstmals #20 „Eine Woche danach“, 27.11.2026) – wiederverwendbar, datengetrieben, deterministisch.
@@ -13,6 +13,8 @@ import {LAYOUT} from '../theme';
  * Animation kommt von außen (`appear` je Karte 0…1, optional `from` = Startpunkt auf dem Bildschirm, `count` 0…1 für Zähler) – stehen alle
  * Werte auf 1, ist das Dashboard vollständig ruhig (Pausier-Bild, Infografik-PNG).
  */
+export {DASHBOARD_LAYOUT, dashboardCell};
+
 export type DashboardCard = {
 	id: string;
 	name: string;
@@ -26,33 +28,6 @@ export type DashboardCard = {
 	extras: string[];
 	stand: string;
 	source: string;
-};
-
-export const DASHBOARD_LAYOUT = {
-	top: 362,
-	headerTitleTop: 392,
-	hintTop: 452,
-	gridTop: 508,
-	gridBottom: 1280,
-	left: LAYOUT.left,
-	width: LAYOUT.width,
-	cols: 2,
-	colGap: 14,
-	rowGap: 12,
-	valueSize: 48,
-	labelSize: 21,
-	extraSize: 20,
-	footSize: 20,
-	nameSize: 28,
-} as const;
-
-export const dashboardCell = (i: number, n: number, L = DASHBOARD_LAYOUT) => {
-	const rows = Math.ceil(n / L.cols);
-	const w = (L.width - (L.cols - 1) * L.colGap) / L.cols;
-	const h = (L.gridBottom - L.gridTop - (rows - 1) * L.rowGap) / rows;
-	const col = i % L.cols;
-	const row = Math.floor(i / L.cols);
-	return {x: L.left + col * (w + L.colGap), y: L.gridTop + row * (h + L.rowGap), w, h};
 };
 
 const fmt = (n: number) => n.toLocaleString('de-DE');
