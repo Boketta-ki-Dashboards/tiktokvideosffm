@@ -21,6 +21,7 @@ on:
         default: FrankfurtNov20Forecast
         type: choice
         options:
+          - FrankfurtErklaertEineWocheDanach
           - FrankfurtErklaertGratisNahverkehr
           - FrankfurtErklaertGenZPlanungstreffen
           - FrankfurtErklaertCondorFluege
@@ -258,6 +259,7 @@ jobs:
             ${{ steps.job.outputs.max_seconds != '' && format('--max {0}', steps.job.outputs.max_seconds) || '' }}
 
       - name: Cover-Bild rendern
+        id: stills
         if: steps.job.outputs.aktion == 'video'
         run: |
           if npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-Cover "; then
@@ -283,6 +285,12 @@ jobs:
             THUMB=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].thumbnailName // empty' config/videos.json)
             QCHECK="${THUMB%_THUMBNAIL}"; QCHECK="${QCHECK:-${{ steps.job.outputs.out }}}_QUELLEN_PRUEFUNG"
             npx remotion still src/index.ts "${{ steps.job.outputs.video }}-QuellenCheck" "output/$QCHECK.png"
+          fi
+          # Optionale Infografik (ab #20): vollständig aufgebauter Dashboard-Frame aus dem Video als eigenes PNG (config/videos.json: infografikName)
+          INFO=$(jq -r --arg v "${{ steps.job.outputs.video }}" '.[$v].infografikName // empty' config/videos.json)
+          if [ -n "$INFO" ] && npx remotion compositions src/index.ts 2>/dev/null | grep -q "^${{ steps.job.outputs.video }}-Infografik "; then
+            npx remotion still src/index.ts "${{ steps.job.outputs.video }}-Infografik" "output/$INFO.png"
+            echo "file=$INFO.png" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Technische Qualitätskontrolle
@@ -335,6 +343,7 @@ jobs:
             output/*_COVER_VORSCHAU.png
             output/*_OVERLAY_PRUEFUNG.png
             output/*_QUELLEN_PRUEFUNG.png
+            ${{ steps.stills.outputs.file != '' && format('output/{0}', steps.stills.outputs.file) || 'output/__keine_infografik__' }}
             output/${{ steps.job.outputs.out }}.report.json
           if-no-files-found: error
           retention-days: 30

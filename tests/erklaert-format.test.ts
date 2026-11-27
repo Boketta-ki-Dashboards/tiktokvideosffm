@@ -8,7 +8,7 @@ import {test} from 'node:test';
 import {FORMAT} from '../src/formats/frankfurt-erklaert/theme.ts';
 
 const read = (f: string) => readFileSync(new URL(f, import.meta.url), 'utf8');
-const videos: Record<string, {videoId: string; format?: string; maxSeconds?: number; infoMaxSeconds?: number; ausnahme?: string; sonderausnahme?: string}> = JSON.parse(read('../config/videos.json'));
+const videos: Record<string, {videoId: string; format?: string; maxSeconds?: number; infoMaxSeconds?: number; ausnahme?: string; sonderausnahme?: string; sonderausgabe?: string}> = JSON.parse(read('../config/videos.json'));
 const limited = Object.entries(videos).filter(([, v]) => v.maxSeconds !== undefined);
 
 test('mindestens eine Kurzfolge ist registriert', () => {
@@ -23,8 +23,10 @@ for (const [comp, v] of limited) {
 		if (max !== FORMAT.maxSeconds) {
 			// Sonderausnahme (ausdrückliche Freigabe des Kanalbetreibers, `sonderausnahme`): bis 75 s gesamt, Informationsteil bis 69 s
 			const special = (v.sonderausnahme ?? '').length > 20;
-			const maxAllowed = special ? FORMAT.specialMaxSeconds : FORMAT.extendedMaxSeconds;
-			const infoAllowed = special ? FORMAT.specialInfoMaxSeconds : FORMAT.infoMaxSeconds;
+			// Verlängerte Sonderausgabe (ausdrücklicher Auftrag je Folge, `sonderausgabe`, erstmals #20): bis 80 s gesamt, Informationsteil bis 73,5 s
+			const edition = (v.sonderausgabe ?? '').length > 20;
+			const maxAllowed = edition ? FORMAT.editionMaxSeconds : special ? FORMAT.specialMaxSeconds : FORMAT.extendedMaxSeconds;
+			const infoAllowed = edition ? FORMAT.editionInfoMaxSeconds : special ? FORMAT.specialInfoMaxSeconds : FORMAT.infoMaxSeconds;
 			assert.ok(max <= maxAllowed, `maxSeconds ${max} > ${maxAllowed}`);
 			assert.ok((v.ausnahme ?? '').length > 20, 'Längen-Ausnahme ohne Begründung (config/videos.json → ausnahme)');
 			assert.ok((v.infoMaxSeconds ?? 99) <= infoAllowed, `infoMaxSeconds fehlt oder > ${infoAllowed} s`);

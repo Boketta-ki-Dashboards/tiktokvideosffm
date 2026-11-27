@@ -24,6 +24,13 @@ export const FORMAT = {
 	 */
 	specialMaxSeconds: 75,
 	specialInfoMaxSeconds: 69,
+	/**
+	 * Verlängerte Sonderausgabe (nur mit ausdrücklichem Auftrag des Kanalbetreibers je Folge, `sonderausgabe` in config/videos.json; erstmals #20
+	 * „Eine Woche nach den Gen-Z-Protesten“, 27.11.2026: Informationsteil ≈ 70 s + Intro + Abo-Aufruf): Informationsteil bis 73,5 s ab Frame 0
+	 * (≈ 72 s nach der Begrüßung), gesamt bis 80 s. Serienname „in 60 Sekunden“ bleibt; alle anderen Folgen unverändert.
+	 */
+	editionMaxSeconds: 80,
+	editionInfoMaxSeconds: 73.5,
 } as const;
 
 /** Akzentfarben des Formats (konsistent über alle Folgen). */
