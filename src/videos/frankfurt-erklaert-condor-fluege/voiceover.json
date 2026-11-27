@@ -1,0 +1,1260 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-condor-fluege",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-condor-fluege/voiceover-adam.mp3",
+	"durationMs": 63100,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1302,
+			"endMs": 5499,
+			"hash": "6f622dfbd581cc29053b"
+		},
+		{
+			"id": "a1",
+			"startMs": 5619,
+			"endMs": 11151,
+			"hash": "910fff7aa738bf8bbcaf"
+		},
+		{
+			"id": "a2",
+			"startMs": 11191,
+			"endMs": 15841,
+			"hash": "7aa481f63ed37afa22c9"
+		},
+		{
+			"id": "b1",
+			"startMs": 15961,
+			"endMs": 20021,
+			"hash": "46288cdbcd7e81079a16"
+		},
+		{
+			"id": "b2",
+			"startMs": 20061,
+			"endMs": 24084,
+			"hash": "27f22765c656f5d49cb5"
+		},
+		{
+			"id": "c1",
+			"startMs": 24204,
+			"endMs": 27948,
+			"hash": "252e7618ba8bbfa07a79"
+		},
+		{
+			"id": "c2",
+			"startMs": 27988,
+			"endMs": 33603,
+			"hash": "ec1b945d2f6fa86eb01c"
+		},
+		{
+			"id": "d1",
+			"startMs": 33723,
+			"endMs": 39593,
+			"hash": "b4482103275dda944dd8"
+		},
+		{
+			"id": "d2",
+			"startMs": 39633,
+			"endMs": 41537,
+			"hash": "6bc64d205ad2a3f13b31"
+		},
+		{
+			"id": "e1",
+			"startMs": 41657,
+			"endMs": 42835,
+			"hash": "da45ddb3fdbb08d59bb3"
+		},
+		{
+			"id": "e2",
+			"startMs": 42875,
+			"endMs": 46956,
+			"hash": "ec2dc9b1c27e21f8d3f6"
+		},
+		{
+			"id": "e3",
+			"startMs": 46996,
+			"endMs": 53306,
+			"hash": "f48f0da5e4277066cc07"
+		},
+		{
+			"id": "f1",
+			"startMs": 53426,
+			"endMs": 57913,
+			"hash": "3c5fd4919afcb8453958"
+		},
+		{
+			"id": "f2",
+			"startMs": 57953,
+			"endMs": 60060,
+			"hash": "ec866e1d8b28b23c5b9b"
+		},
+		{
+			"id": "cta",
+			"startMs": 60180,
+			"endMs": 63100,
+			"hash": "f7a67b3208185b801db0"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Zwei",
+			"startMs": 1302,
+			"endMs": 1557,
+			"timestampMs": 1430,
+			"confidence": 1
+		},
+		{
+			"text": " Flugzeuge",
+			"startMs": 1604,
+			"endMs": 2010,
+			"timestampMs": 1807,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 2045,
+			"endMs": 2161,
+			"timestampMs": 2103,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt –",
+			"startMs": 2196,
+			"endMs": 2626,
+			"timestampMs": 2411,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 2660,
+			"endMs": 2776,
+			"timestampMs": 2718,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 2835,
+			"endMs": 2916,
+			"timestampMs": 2876,
+			"confidence": 1
+		},
+		{
+			"text": " Bord",
+			"startMs": 2974,
+			"endMs": 3194,
+			"timestampMs": 3084,
+			"confidence": 1
+		},
+		{
+			"text": " klagen",
+			"startMs": 3241,
+			"endMs": 3566,
+			"timestampMs": 3404,
+			"confidence": 1
+		},
+		{
+			"text": " zahlreiche",
+			"startMs": 3612,
+			"endMs": 4030,
+			"timestampMs": 3821,
+			"confidence": 1
+		},
+		{
+			"text": " Passagiere",
+			"startMs": 4077,
+			"endMs": 4530,
+			"timestampMs": 4304,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 4576,
+			"endMs": 4727,
+			"timestampMs": 4652,
+			"confidence": 1
+		},
+		{
+			"text": " Übelkeit!",
+			"startMs": 4785,
+			"endMs": 5499,
+			"timestampMs": 5203,
+			"confidence": 1
+		},
+		{
+			"text": " Am",
+			"startMs": 5619,
+			"endMs": 5758,
+			"timestampMs": 5689,
+			"confidence": 1
+		},
+		{
+			"text": " Sonntag",
+			"startMs": 5793,
+			"endMs": 6095,
+			"timestampMs": 5944,
+			"confidence": 1
+		},
+		{
+			"text": " landeten",
+			"startMs": 6141,
+			"endMs": 6501,
+			"timestampMs": 6321,
+			"confidence": 1
+		},
+		{
+			"text": " zwei",
+			"startMs": 6536,
+			"endMs": 6745,
+			"timestampMs": 6641,
+			"confidence": 1
+		},
+		{
+			"text": " Condor-Maschinen",
+			"startMs": 6815,
+			"endMs": 7744,
+			"timestampMs": 7280,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 7837,
+			"endMs": 8022,
+			"timestampMs": 7930,
+			"confidence": 1
+		},
+		{
+			"text": " La",
+			"startMs": 8104,
+			"endMs": 8220,
+			"timestampMs": 8162,
+			"confidence": 1
+		},
+		{
+			"text": " Romana",
+			"startMs": 8266,
+			"endMs": 8835,
+			"timestampMs": 8551,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 8893,
+			"endMs": 8963,
+			"timestampMs": 8928,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 8998,
+			"endMs": 9079,
+			"timestampMs": 9039,
+			"confidence": 1
+		},
+		{
+			"text": " Dominikanischen",
+			"startMs": 9114,
+			"endMs": 9775,
+			"timestampMs": 9445,
+			"confidence": 1
+		},
+		{
+			"text": " Republik",
+			"startMs": 9822,
+			"endMs": 10217,
+			"timestampMs": 10020,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 10263,
+			"endMs": 10309,
+			"timestampMs": 10286,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt.",
+			"startMs": 10367,
+			"endMs": 11151,
+			"timestampMs": 10896,
+			"confidence": 1
+		},
+		{
+			"text": " Schon",
+			"startMs": 11191,
+			"endMs": 11388,
+			"timestampMs": 11290,
+			"confidence": 1
+		},
+		{
+			"text": " während",
+			"startMs": 11423,
+			"endMs": 11679,
+			"timestampMs": 11551,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 11702,
+			"endMs": 11783,
+			"timestampMs": 11743,
+			"confidence": 1
+		},
+		{
+			"text": " Flüge",
+			"startMs": 11841,
+			"endMs": 12282,
+			"timestampMs": 12062,
+			"confidence": 1
+		},
+		{
+			"text": " meldeten",
+			"startMs": 12340,
+			"endMs": 12770,
+			"timestampMs": 12555,
+			"confidence": 1
+		},
+		{
+			"text": " Reisende",
+			"startMs": 12840,
+			"endMs": 13316,
+			"timestampMs": 13078,
+			"confidence": 1
+		},
+		{
+			"text": " Übelkeit,",
+			"startMs": 13409,
+			"endMs": 14082,
+			"timestampMs": 13746,
+			"confidence": 1
+		},
+		{
+			"text": " Unwohlsein",
+			"startMs": 14152,
+			"endMs": 14895,
+			"timestampMs": 14524,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 14976,
+			"endMs": 15069,
+			"timestampMs": 15023,
+			"confidence": 1
+		},
+		{
+			"text": " Erbrechen.",
+			"startMs": 15150,
+			"endMs": 15841,
+			"timestampMs": 15562,
+			"confidence": 1
+		},
+		{
+			"text": " An",
+			"startMs": 15961,
+			"endMs": 16089,
+			"timestampMs": 16025,
+			"confidence": 1
+		},
+		{
+			"text": " Bord",
+			"startMs": 16124,
+			"endMs": 16263,
+			"timestampMs": 16194,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 16298,
+			"endMs": 16530,
+			"timestampMs": 16414,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 16565,
+			"endMs": 16727,
+			"timestampMs": 16646,
+			"confidence": 1
+		},
+		{
+			"text": " 620",
+			"startMs": 16785,
+			"endMs": 17494,
+			"timestampMs": 17140,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen –",
+			"startMs": 17528,
+			"endMs": 17946,
+			"timestampMs": 17737,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 17981,
+			"endMs": 18144,
+			"timestampMs": 18063,
+			"confidence": 1
+		},
+		{
+			"text": " wichtig:",
+			"startMs": 18167,
+			"endMs": 18666,
+			"timestampMs": 18417,
+			"confidence": 1
+		},
+		{
+			"text": " Nicht",
+			"startMs": 18842,
+			"endMs": 19040,
+			"timestampMs": 18941,
+			"confidence": 1
+		},
+		{
+			"text": " alle",
+			"startMs": 19086,
+			"endMs": 19225,
+			"timestampMs": 19156,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 19260,
+			"endMs": 19493,
+			"timestampMs": 19377,
+			"confidence": 1
+		},
+		{
+			"text": " krank!",
+			"startMs": 19551,
+			"endMs": 20021,
+			"timestampMs": 20056,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 20061,
+			"endMs": 20258,
+			"timestampMs": 20160,
+			"confidence": 1
+		},
+		{
+			"text": " Condor",
+			"startMs": 20305,
+			"endMs": 20607,
+			"timestampMs": 20456,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 20641,
+			"endMs": 20897,
+			"timestampMs": 20769,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 20943,
+			"endMs": 21118,
+			"timestampMs": 21031,
+			"confidence": 1
+		},
+		{
+			"text": " 30",
+			"startMs": 21141,
+			"endMs": 21477,
+			"timestampMs": 21309,
+			"confidence": 1
+		},
+		{
+			"text": " Passagiere",
+			"startMs": 21512,
+			"endMs": 21965,
+			"timestampMs": 21739,
+			"confidence": 1
+		},
+		{
+			"text": " betroffen,",
+			"startMs": 22000,
+			"endMs": 22429,
+			"timestampMs": 22215,
+			"confidence": 1
+		},
+		{
+			"text": " andere",
+			"startMs": 22453,
+			"endMs": 22755,
+			"timestampMs": 22604,
+			"confidence": 1
+		},
+		{
+			"text": " Berichte",
+			"startMs": 22789,
+			"endMs": 23126,
+			"timestampMs": 22958,
+			"confidence": 1
+		},
+		{
+			"text": " nennen",
+			"startMs": 23184,
+			"endMs": 23393,
+			"timestampMs": 23289,
+			"confidence": 1
+		},
+		{
+			"text": " 40.",
+			"startMs": 23440,
+			"endMs": 24084,
+			"timestampMs": 23864,
+			"confidence": 1
+		},
+		{
+			"text": " Weil",
+			"startMs": 24204,
+			"endMs": 24378,
+			"timestampMs": 24291,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 24401,
+			"endMs": 24471,
+			"timestampMs": 24436,
+			"confidence": 1
+		},
+		{
+			"text": " Lage",
+			"startMs": 24506,
+			"endMs": 24726,
+			"timestampMs": 24616,
+			"confidence": 1
+		},
+		{
+			"text": " unklar",
+			"startMs": 24796,
+			"endMs": 25191,
+			"timestampMs": 24994,
+			"confidence": 1
+		},
+		{
+			"text": " war,",
+			"startMs": 25226,
+			"endMs": 25377,
+			"timestampMs": 25302,
+			"confidence": 1
+		},
+		{
+			"text": " standen",
+			"startMs": 25400,
+			"endMs": 25655,
+			"timestampMs": 25528,
+			"confidence": 1
+		},
+		{
+			"text": " Rettungskräfte",
+			"startMs": 25725,
+			"endMs": 26340,
+			"timestampMs": 26033,
+			"confidence": 1
+		},
+		{
+			"text": " schon",
+			"startMs": 26375,
+			"endMs": 26561,
+			"timestampMs": 26468,
+			"confidence": 1
+		},
+		{
+			"text": " vor",
+			"startMs": 26619,
+			"endMs": 26781,
+			"timestampMs": 26700,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 26816,
+			"endMs": 26909,
+			"timestampMs": 26863,
+			"confidence": 1
+		},
+		{
+			"text": " Landung",
+			"startMs": 26967,
+			"endMs": 27315,
+			"timestampMs": 27141,
+			"confidence": 1
+		},
+		{
+			"text": " bereit.",
+			"startMs": 27350,
+			"endMs": 27948,
+			"timestampMs": 27797,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 27988,
+			"endMs": 28220,
+			"timestampMs": 28104,
+			"confidence": 1
+		},
+		{
+			"text": " Fraport",
+			"startMs": 28267,
+			"endMs": 28638,
+			"timestampMs": 28453,
+			"confidence": 1
+		},
+		{
+			"text": " vorsorglich",
+			"startMs": 28661,
+			"endMs": 29323,
+			"timestampMs": 28992,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 29381,
+			"endMs": 29486,
+			"timestampMs": 29434,
+			"confidence": 1
+		},
+		{
+			"text": " zusätzlichen",
+			"startMs": 29521,
+			"endMs": 30136,
+			"timestampMs": 29829,
+			"confidence": 1
+		},
+		{
+			"text": " Kräften –",
+			"startMs": 30182,
+			"endMs": 30811,
+			"timestampMs": 30497,
+			"confidence": 1
+		},
+		{
+			"text": " medizinische",
+			"startMs": 30892,
+			"endMs": 31438,
+			"timestampMs": 31165,
+			"confidence": 1
+		},
+		{
+			"text": " Teams",
+			"startMs": 31507,
+			"endMs": 31821,
+			"timestampMs": 31664,
+			"confidence": 1
+		},
+		{
+			"text": " untersuchten",
+			"startMs": 31949,
+			"endMs": 32448,
+			"timestampMs": 32199,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 32471,
+			"endMs": 32541,
+			"timestampMs": 32506,
+			"confidence": 1
+		},
+		{
+			"text": " Menschen",
+			"startMs": 32587,
+			"endMs": 32866,
+			"timestampMs": 32727,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 32924,
+			"endMs": 33005,
+			"timestampMs": 32965,
+			"confidence": 1
+		},
+		{
+			"text": " Bord.",
+			"startMs": 33063,
+			"endMs": 33603,
+			"timestampMs": 33493,
+			"confidence": 1
+		},
+		{
+			"text": " Zwei",
+			"startMs": 33723,
+			"endMs": 33990,
+			"timestampMs": 33857,
+			"confidence": 1
+		},
+		{
+			"text": " Personen",
+			"startMs": 34036,
+			"endMs": 34478,
+			"timestampMs": 34257,
+			"confidence": 1
+		},
+		{
+			"text": " kamen",
+			"startMs": 34536,
+			"endMs": 34756,
+			"timestampMs": 34646,
+			"confidence": 1
+		},
+		{
+			"text": " ins",
+			"startMs": 34780,
+			"endMs": 34861,
+			"timestampMs": 34821,
+			"confidence": 1
+		},
+		{
+			"text": " Krankenhaus –",
+			"startMs": 34907,
+			"endMs": 35594,
+			"timestampMs": 35251,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 35733,
+			"endMs": 35896,
+			"timestampMs": 35815,
+			"confidence": 1
+		},
+		{
+			"text": " Condor",
+			"startMs": 35942,
+			"endMs": 36360,
+			"timestampMs": 36151,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 36418,
+			"endMs": 36662,
+			"timestampMs": 36540,
+			"confidence": 1
+		},
+		{
+			"text": " wegen",
+			"startMs": 36720,
+			"endMs": 36940,
+			"timestampMs": 36830,
+			"confidence": 1
+		},
+		{
+			"text": " Kreislaufproblemen,",
+			"startMs": 36987,
+			"endMs": 38020,
+			"timestampMs": 37504,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 38194,
+			"endMs": 38531,
+			"timestampMs": 38363,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 38566,
+			"endMs": 38659,
+			"timestampMs": 38613,
+			"confidence": 1
+		},
+		{
+			"text": " eigenen",
+			"startMs": 38740,
+			"endMs": 39065,
+			"timestampMs": 38903,
+			"confidence": 1
+		},
+		{
+			"text": " Wunsch.",
+			"startMs": 39100,
+			"endMs": 39593,
+			"timestampMs": 39379,
+			"confidence": 1
+		},
+		{
+			"text": " Alle",
+			"startMs": 39633,
+			"endMs": 39842,
+			"timestampMs": 39738,
+			"confidence": 1
+		},
+		{
+			"text": " anderen",
+			"startMs": 39888,
+			"endMs": 40225,
+			"timestampMs": 40057,
+			"confidence": 1
+		},
+		{
+			"text": " konnten",
+			"startMs": 40283,
+			"endMs": 40539,
+			"timestampMs": 40411,
+			"confidence": 1
+		},
+		{
+			"text": " ihre",
+			"startMs": 40585,
+			"endMs": 40748,
+			"timestampMs": 40667,
+			"confidence": 1
+		},
+		{
+			"text": " Reise",
+			"startMs": 40794,
+			"endMs": 41049,
+			"timestampMs": 40922,
+			"confidence": 1
+		},
+		{
+			"text": " fortsetzen.",
+			"startMs": 41084,
+			"endMs": 41537,
+			"timestampMs": 41311,
+			"confidence": 1
+		},
+		{
+			"text": " Doch",
+			"startMs": 41657,
+			"endMs": 41854,
+			"timestampMs": 41756,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 41889,
+			"endMs": 42017,
+			"timestampMs": 41953,
+			"confidence": 1
+		},
+		{
+			"text": " steckt",
+			"startMs": 42040,
+			"endMs": 42249,
+			"timestampMs": 42145,
+			"confidence": 1
+		},
+		{
+			"text": " dahinter?",
+			"startMs": 42272,
+			"endMs": 42835,
+			"timestampMs": 42661,
+			"confidence": 1
+		},
+		{
+			"text": " Medien",
+			"startMs": 42875,
+			"endMs": 43363,
+			"timestampMs": 43119,
+			"confidence": 1
+		},
+		{
+			"text": " berichten",
+			"startMs": 43409,
+			"endMs": 43723,
+			"timestampMs": 43566,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 43792,
+			"endMs": 43955,
+			"timestampMs": 43874,
+			"confidence": 1
+		},
+		{
+			"text": " einen",
+			"startMs": 44001,
+			"endMs": 44222,
+			"timestampMs": 44112,
+			"confidence": 1
+		},
+		{
+			"text": " Norovirus-Verdacht –",
+			"startMs": 44268,
+			"endMs": 45394,
+			"timestampMs": 44831,
+			"confidence": 1
+		},
+		{
+			"text": " bestätigt",
+			"startMs": 45476,
+			"endMs": 45998,
+			"timestampMs": 45737,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 46056,
+			"endMs": 46172,
+			"timestampMs": 46114,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 46195,
+			"endMs": 46312,
+			"timestampMs": 46254,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 46358,
+			"endMs": 46497,
+			"timestampMs": 46428,
+			"confidence": 1
+		},
+		{
+			"text": " nicht.",
+			"startMs": 46521,
+			"endMs": 46956,
+			"timestampMs": 46858,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 46996,
+			"endMs": 47205,
+			"timestampMs": 47101,
+			"confidence": 1
+		},
+		{
+			"text": " Condor",
+			"startMs": 47240,
+			"endMs": 47565,
+			"timestampMs": 47403,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 47611,
+			"endMs": 47855,
+			"timestampMs": 47733,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 47902,
+			"endMs": 47971,
+			"timestampMs": 47937,
+			"confidence": 1
+		},
+		{
+			"text": " Charterflüge",
+			"startMs": 48041,
+			"endMs": 48587,
+			"timestampMs": 48314,
+			"confidence": 1
+		},
+		{
+			"text": " nach",
+			"startMs": 48621,
+			"endMs": 48737,
+			"timestampMs": 48679,
+			"confidence": 1
+		},
+		{
+			"text": " einer",
+			"startMs": 48784,
+			"endMs": 48923,
+			"timestampMs": 48854,
+			"confidence": 1
+		},
+		{
+			"text": " Kreuzfahrt –",
+			"startMs": 48958,
+			"endMs": 49573,
+			"timestampMs": 49266,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 49643,
+			"endMs": 49806,
+			"timestampMs": 49725,
+			"confidence": 1
+		},
+		{
+			"text": " hessenschau",
+			"startMs": 49852,
+			"endMs": 50386,
+			"timestampMs": 50119,
+			"confidence": 1
+		},
+		{
+			"text": " sollen",
+			"startMs": 50560,
+			"endMs": 50827,
+			"timestampMs": 50694,
+			"confidence": 1
+		},
+		{
+			"text": " Betroffene",
+			"startMs": 50862,
+			"endMs": 51245,
+			"timestampMs": 51054,
+			"confidence": 1
+		},
+		{
+			"text": " schon",
+			"startMs": 51268,
+			"endMs": 51466,
+			"timestampMs": 51367,
+			"confidence": 1
+		},
+		{
+			"text": " vor",
+			"startMs": 51524,
+			"endMs": 51686,
+			"timestampMs": 51605,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 51710,
+			"endMs": 51814,
+			"timestampMs": 51762,
+			"confidence": 1
+		},
+		{
+			"text": " Abflug",
+			"startMs": 51872,
+			"endMs": 52186,
+			"timestampMs": 52029,
+			"confidence": 1
+		},
+		{
+			"text": " krank",
+			"startMs": 52209,
+			"endMs": 52406,
+			"timestampMs": 52308,
+			"confidence": 1
+		},
+		{
+			"text": " gewesen",
+			"startMs": 52429,
+			"endMs": 52813,
+			"timestampMs": 52621,
+			"confidence": 1
+		},
+		{
+			"text": " sein.",
+			"startMs": 52859,
+			"endMs": 53306,
+			"timestampMs": 53155,
+			"confidence": 1
+		},
+		{
+			"text": " Das",
+			"startMs": 53426,
+			"endMs": 53612,
+			"timestampMs": 53519,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurter",
+			"startMs": 53647,
+			"endMs": 54030,
+			"timestampMs": 53839,
+			"confidence": 1
+		},
+		{
+			"text": " Gesundheitsamt",
+			"startMs": 54053,
+			"endMs": 54680,
+			"timestampMs": 54367,
+			"confidence": 1
+		},
+		{
+			"text": " wurde",
+			"startMs": 54703,
+			"endMs": 54889,
+			"timestampMs": 54796,
+			"confidence": 1
+		},
+		{
+			"text": " eingeschaltet",
+			"startMs": 54959,
+			"endMs": 55597,
+			"timestampMs": 55278,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 55655,
+			"endMs": 55725,
+			"timestampMs": 55690,
+			"confidence": 1
+		},
+		{
+			"text": " soll",
+			"startMs": 55760,
+			"endMs": 55945,
+			"timestampMs": 55853,
+			"confidence": 1
+		},
+		{
+			"text": " klären,",
+			"startMs": 56015,
+			"endMs": 56630,
+			"timestampMs": 56323,
+			"confidence": 1
+		},
+		{
+			"text": " was",
+			"startMs": 56805,
+			"endMs": 56979,
+			"timestampMs": 56892,
+			"confidence": 1
+		},
+		{
+			"text": " dahintersteckt.",
+			"startMs": 57037,
+			"endMs": 57913,
+			"timestampMs": 57577,
+			"confidence": 1
+		},
+		{
+			"text": " Ein",
+			"startMs": 57953,
+			"endMs": 58162,
+			"timestampMs": 58058,
+			"confidence": 1
+		},
+		{
+			"text": " Ergebnis",
+			"startMs": 58232,
+			"endMs": 58673,
+			"timestampMs": 58453,
+			"confidence": 1
+		},
+		{
+			"text": " ist",
+			"startMs": 58731,
+			"endMs": 58847,
+			"timestampMs": 58789,
+			"confidence": 1
+		},
+		{
+			"text": " bisher",
+			"startMs": 58893,
+			"endMs": 59172,
+			"timestampMs": 59033,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 59230,
+			"endMs": 59381,
+			"timestampMs": 59306,
+			"confidence": 1
+		},
+		{
+			"text": " bekannt.",
+			"startMs": 59416,
+			"endMs": 60060,
+			"timestampMs": 59846,
+			"confidence": 1
+		},
+		{
+			"text": " Für",
+			"startMs": 60180,
+			"endMs": 60308,
+			"timestampMs": 60244,
+			"confidence": 1
+		},
+		{
+			"text": " mehr",
+			"startMs": 60331,
+			"endMs": 60447,
+			"timestampMs": 60389,
+			"confidence": 1
+		},
+		{
+			"text": " Nachrichten",
+			"startMs": 60482,
+			"endMs": 60865,
+			"timestampMs": 60674,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 60900,
+			"endMs": 60981,
+			"timestampMs": 60941,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 61016,
+			"endMs": 61318,
+			"timestampMs": 61167,
+			"confidence": 1
+		},
+		{
+			"text": " folgt",
+			"startMs": 61353,
+			"endMs": 61573,
+			"timestampMs": 61463,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRedNews!",
+			"startMs": 61608,
+			"endMs": 63100,
+			"timestampMs": 62380,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-23T10:24:33.076Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1205
+	},
+	"measuredLufsBeforeMaster": -13.97
+}

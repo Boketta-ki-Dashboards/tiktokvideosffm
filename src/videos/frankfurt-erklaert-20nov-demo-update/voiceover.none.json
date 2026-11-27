@@ -1,0 +1,1075 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-20nov-demo-update",
+	"source": "none",
+	"audioFile": null,
+	"durationMs": 51763,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1104
+		},
+		{
+			"id": "hook2",
+			"startMs": 1404,
+			"endMs": 4210
+		},
+		{
+			"id": "w1",
+			"startMs": 4330,
+			"endMs": 8588
+		},
+		{
+			"id": "w2",
+			"startMs": 8628,
+			"endMs": 11096
+		},
+		{
+			"id": "w3",
+			"startMs": 11136,
+			"endMs": 15007
+		},
+		{
+			"id": "a1",
+			"startMs": 15127,
+			"endMs": 20175
+		},
+		{
+			"id": "a2",
+			"startMs": 20215,
+			"endMs": 22392
+		},
+		{
+			"id": "v1",
+			"startMs": 22512,
+			"endMs": 26141
+		},
+		{
+			"id": "v2",
+			"startMs": 26181,
+			"endMs": 32471
+		},
+		{
+			"id": "p1",
+			"startMs": 32591,
+			"endMs": 37156
+		},
+		{
+			"id": "p2",
+			"startMs": 37196,
+			"endMs": 42696
+		},
+		{
+			"id": "p3",
+			"startMs": 42736,
+			"endMs": 45381
+		},
+		{
+			"id": "f1",
+			"startMs": 45501,
+			"endMs": 48469
+		},
+		{
+			"id": "q1",
+			"startMs": 48509,
+			"endMs": 50348
+		},
+		{
+			"id": "cta",
+			"startMs": 50408,
+			"endMs": 51763
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 556,
+			"timestampMs": 338,
+			"confidence": null
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 556,
+			"endMs": 1104,
+			"timestampMs": 830,
+			"confidence": null
+		},
+		{
+			"text": " Die",
+			"startMs": 1404,
+			"endMs": 1565,
+			"timestampMs": 1485,
+			"confidence": null
+		},
+		{
+			"text": " Gen-Z-Demo",
+			"startMs": 1565,
+			"endMs": 2210,
+			"timestampMs": 1888,
+			"confidence": null
+		},
+		{
+			"text": " am",
+			"startMs": 2210,
+			"endMs": 2372,
+			"timestampMs": 2291,
+			"confidence": null
+		},
+		{
+			"text": " Freitag",
+			"startMs": 2372,
+			"endMs": 2694,
+			"timestampMs": 2533,
+			"confidence": null
+		},
+		{
+			"text": " läuft",
+			"startMs": 2694,
+			"endMs": 2855,
+			"timestampMs": 2775,
+			"confidence": null
+		},
+		{
+			"text": " jetzt",
+			"startMs": 2855,
+			"endMs": 3017,
+			"timestampMs": 2936,
+			"confidence": null
+		},
+		{
+			"text": " ganz",
+			"startMs": 3017,
+			"endMs": 3178,
+			"timestampMs": 3098,
+			"confidence": null
+		},
+		{
+			"text": " anders",
+			"startMs": 3178,
+			"endMs": 3500,
+			"timestampMs": 3339,
+			"confidence": null
+		},
+		{
+			"text": " als",
+			"startMs": 3500,
+			"endMs": 3662,
+			"timestampMs": 3581,
+			"confidence": null
+		},
+		{
+			"text": " geplant!",
+			"startMs": 3662,
+			"endMs": 4210,
+			"timestampMs": 3936,
+			"confidence": null
+		},
+		{
+			"text": " Statt",
+			"startMs": 4330,
+			"endMs": 4491,
+			"timestampMs": 4411,
+			"confidence": null
+		},
+		{
+			"text": " Demozug",
+			"startMs": 4491,
+			"endMs": 4975,
+			"timestampMs": 4733,
+			"confidence": null
+		},
+		{
+			"text": " durch",
+			"startMs": 4975,
+			"endMs": 5136,
+			"timestampMs": 5056,
+			"confidence": null
+		},
+		{
+			"text": " die",
+			"startMs": 5136,
+			"endMs": 5298,
+			"timestampMs": 5217,
+			"confidence": null
+		},
+		{
+			"text": " Stadt",
+			"startMs": 5298,
+			"endMs": 5459,
+			"timestampMs": 5379,
+			"confidence": null
+		},
+		{
+			"text": " gibt's",
+			"startMs": 5459,
+			"endMs": 5620,
+			"timestampMs": 5540,
+			"confidence": null
+		},
+		{
+			"text": " laut",
+			"startMs": 5620,
+			"endMs": 5782,
+			"timestampMs": 5701,
+			"confidence": null
+		},
+		{
+			"text": " Stadt",
+			"startMs": 5782,
+			"endMs": 5943,
+			"timestampMs": 5863,
+			"confidence": null
+		},
+		{
+			"text": " eine",
+			"startMs": 5943,
+			"endMs": 6265,
+			"timestampMs": 6104,
+			"confidence": null
+		},
+		{
+			"text": " stationäre",
+			"startMs": 6265,
+			"endMs": 6911,
+			"timestampMs": 6588,
+			"confidence": null
+		},
+		{
+			"text": " Kundgebung",
+			"startMs": 6911,
+			"endMs": 7394,
+			"timestampMs": 7153,
+			"confidence": null
+		},
+		{
+			"text": " an",
+			"startMs": 7394,
+			"endMs": 7556,
+			"timestampMs": 7475,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 7556,
+			"endMs": 7717,
+			"timestampMs": 7637,
+			"confidence": null
+		},
+		{
+			"text": " Weseler",
+			"startMs": 7717,
+			"endMs": 8201,
+			"timestampMs": 7959,
+			"confidence": null
+		},
+		{
+			"text": " Werft.",
+			"startMs": 8201,
+			"endMs": 8588,
+			"timestampMs": 8395,
+			"confidence": null
+		},
+		{
+			"text": " Von",
+			"startMs": 8628,
+			"endMs": 8789,
+			"timestampMs": 8709,
+			"confidence": null
+		},
+		{
+			"text": " 14",
+			"startMs": 8789,
+			"endMs": 9112,
+			"timestampMs": 8951,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 9112,
+			"endMs": 9273,
+			"timestampMs": 9193,
+			"confidence": null
+		},
+		{
+			"text": " 16:30",
+			"startMs": 9273,
+			"endMs": 9435,
+			"timestampMs": 9354,
+			"confidence": null
+		},
+		{
+			"text": " Uhr –",
+			"startMs": 9435,
+			"endMs": 9741,
+			"timestampMs": 9588,
+			"confidence": null
+		},
+		{
+			"text": " vor",
+			"startMs": 9741,
+			"endMs": 9902,
+			"timestampMs": 9822,
+			"confidence": null
+		},
+		{
+			"text": " Einbruch",
+			"startMs": 9902,
+			"endMs": 10225,
+			"timestampMs": 10064,
+			"confidence": null
+		},
+		{
+			"text": " der",
+			"startMs": 10225,
+			"endMs": 10386,
+			"timestampMs": 10306,
+			"confidence": null
+		},
+		{
+			"text": " Dunkelheit.",
+			"startMs": 10386,
+			"endMs": 11096,
+			"timestampMs": 10741,
+			"confidence": null
+		},
+		{
+			"text": " Erwartet",
+			"startMs": 11136,
+			"endMs": 11620,
+			"timestampMs": 11378,
+			"confidence": null
+		},
+		{
+			"text": " werden",
+			"startMs": 11620,
+			"endMs": 11942,
+			"timestampMs": 11781,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 11942,
+			"endMs": 12104,
+			"timestampMs": 12023,
+			"confidence": null
+		},
+		{
+			"text": " zu",
+			"startMs": 12104,
+			"endMs": 12265,
+			"timestampMs": 12185,
+			"confidence": null
+		},
+		{
+			"text": " 4.000",
+			"startMs": 12265,
+			"endMs": 12749,
+			"timestampMs": 12507,
+			"confidence": null
+		},
+		{
+			"text": " Leute –",
+			"startMs": 12749,
+			"endMs": 13217,
+			"timestampMs": 12983,
+			"confidence": null
+		},
+		{
+			"text": " eine",
+			"startMs": 13217,
+			"endMs": 13539,
+			"timestampMs": 13378,
+			"confidence": null
+		},
+		{
+			"text": " Prognose,",
+			"startMs": 13539,
+			"endMs": 14136,
+			"timestampMs": 13838,
+			"confidence": null
+		},
+		{
+			"text": " keine",
+			"startMs": 14136,
+			"endMs": 14459,
+			"timestampMs": 14298,
+			"confidence": null
+		},
+		{
+			"text": " Zählung.",
+			"startMs": 14459,
+			"endMs": 15007,
+			"timestampMs": 14733,
+			"confidence": null
+		},
+		{
+			"text": " Dazu",
+			"startMs": 15127,
+			"endMs": 15450,
+			"timestampMs": 15289,
+			"confidence": null
+		},
+		{
+			"text": " gelten",
+			"startMs": 15450,
+			"endMs": 15772,
+			"timestampMs": 15611,
+			"confidence": null
+		},
+		{
+			"text": " Auflagen:",
+			"startMs": 15772,
+			"endMs": 16433,
+			"timestampMs": 16103,
+			"confidence": null
+		},
+		{
+			"text": " keine",
+			"startMs": 16433,
+			"endMs": 16756,
+			"timestampMs": 16595,
+			"confidence": null
+		},
+		{
+			"text": " Pyro,",
+			"startMs": 16756,
+			"endMs": 17191,
+			"timestampMs": 16974,
+			"confidence": null
+		},
+		{
+			"text": " kein",
+			"startMs": 17191,
+			"endMs": 17353,
+			"timestampMs": 17272,
+			"confidence": null
+		},
+		{
+			"text": " Alkohol,",
+			"startMs": 17353,
+			"endMs": 17949,
+			"timestampMs": 17651,
+			"confidence": null
+		},
+		{
+			"text": " kein",
+			"startMs": 17949,
+			"endMs": 18111,
+			"timestampMs": 18030,
+			"confidence": null
+		},
+		{
+			"text": " Glas,",
+			"startMs": 18111,
+			"endMs": 18385,
+			"timestampMs": 18248,
+			"confidence": null
+		},
+		{
+			"text": " keine",
+			"startMs": 18385,
+			"endMs": 18707,
+			"timestampMs": 18546,
+			"confidence": null
+		},
+		{
+			"text": " Hunde,",
+			"startMs": 18707,
+			"endMs": 19143,
+			"timestampMs": 18925,
+			"confidence": null
+		},
+		{
+			"text": " keine",
+			"startMs": 19143,
+			"endMs": 19465,
+			"timestampMs": 19304,
+			"confidence": null
+		},
+		{
+			"text": " Vermummung.",
+			"startMs": 19465,
+			"endMs": 20175,
+			"timestampMs": 19820,
+			"confidence": null
+		},
+		{
+			"text": " Und",
+			"startMs": 20215,
+			"endMs": 20376,
+			"timestampMs": 20296,
+			"confidence": null
+		},
+		{
+			"text": " Transparent-Stangen:",
+			"startMs": 20376,
+			"endMs": 21360,
+			"timestampMs": 20868,
+			"confidence": null
+		},
+		{
+			"text": " höchstens",
+			"startMs": 21360,
+			"endMs": 21682,
+			"timestampMs": 21521,
+			"confidence": null
+		},
+		{
+			"text": " zwei",
+			"startMs": 21682,
+			"endMs": 21844,
+			"timestampMs": 21763,
+			"confidence": null
+		},
+		{
+			"text": " Meter.",
+			"startMs": 21844,
+			"endMs": 22392,
+			"timestampMs": 22118,
+			"confidence": null
+		},
+		{
+			"text": " Neu",
+			"startMs": 22512,
+			"endMs": 22673,
+			"timestampMs": 22593,
+			"confidence": null
+		},
+		{
+			"text": " seit",
+			"startMs": 22673,
+			"endMs": 22835,
+			"timestampMs": 22754,
+			"confidence": null
+		},
+		{
+			"text": " heute:",
+			"startMs": 22835,
+			"endMs": 23335,
+			"timestampMs": 23085,
+			"confidence": null
+		},
+		{
+			"text": " Laut",
+			"startMs": 23335,
+			"endMs": 23496,
+			"timestampMs": 23416,
+			"confidence": null
+		},
+		{
+			"text": " Innenministerium",
+			"startMs": 23496,
+			"endMs": 24464,
+			"timestampMs": 23980,
+			"confidence": null
+		},
+		{
+			"text": " sind",
+			"startMs": 24464,
+			"endMs": 24625,
+			"timestampMs": 24545,
+			"confidence": null
+		},
+		{
+			"text": " es",
+			"startMs": 24625,
+			"endMs": 24786,
+			"timestampMs": 24706,
+			"confidence": null
+		},
+		{
+			"text": " sogar",
+			"startMs": 24786,
+			"endMs": 25109,
+			"timestampMs": 24948,
+			"confidence": null
+		},
+		{
+			"text": " fünf",
+			"startMs": 25109,
+			"endMs": 25270,
+			"timestampMs": 25190,
+			"confidence": null
+		},
+		{
+			"text": " Versammlungen.",
+			"startMs": 25270,
+			"endMs": 26141,
+			"timestampMs": 25706,
+			"confidence": null
+		},
+		{
+			"text": " Darunter",
+			"startMs": 26181,
+			"endMs": 26665,
+			"timestampMs": 26423,
+			"confidence": null
+		},
+		{
+			"text": " ein",
+			"startMs": 26665,
+			"endMs": 26826,
+			"timestampMs": 26746,
+			"confidence": null
+		},
+		{
+			"text": " Zug",
+			"startMs": 26826,
+			"endMs": 26987,
+			"timestampMs": 26907,
+			"confidence": null
+		},
+		{
+			"text": " von",
+			"startMs": 26987,
+			"endMs": 27149,
+			"timestampMs": 27068,
+			"confidence": null
+		},
+		{
+			"text": " „GenZ",
+			"startMs": 27149,
+			"endMs": 27633,
+			"timestampMs": 27391,
+			"confidence": null
+		},
+		{
+			"text": " regelt",
+			"startMs": 27633,
+			"endMs": 28116,
+			"timestampMs": 27875,
+			"confidence": null
+		},
+		{
+			"text": " Bundesbewegung“ –",
+			"startMs": 28116,
+			"endMs": 28745,
+			"timestampMs": 28431,
+			"confidence": null
+		},
+		{
+			"text": " ab",
+			"startMs": 28745,
+			"endMs": 28907,
+			"timestampMs": 28826,
+			"confidence": null
+		},
+		{
+			"text": " 15",
+			"startMs": 28907,
+			"endMs": 29149,
+			"timestampMs": 29028,
+			"confidence": null
+		},
+		{
+			"text": " Uhr",
+			"startMs": 29149,
+			"endMs": 29391,
+			"timestampMs": 29270,
+			"confidence": null
+		},
+		{
+			"text": " vom",
+			"startMs": 29391,
+			"endMs": 29552,
+			"timestampMs": 29472,
+			"confidence": null
+		},
+		{
+			"text": " Hauptbahnhof",
+			"startMs": 29552,
+			"endMs": 30036,
+			"timestampMs": 29794,
+			"confidence": null
+		},
+		{
+			"text": " nach",
+			"startMs": 30036,
+			"endMs": 30197,
+			"timestampMs": 30117,
+			"confidence": null
+		},
+		{
+			"text": " Bockenheim,",
+			"startMs": 30197,
+			"endMs": 30794,
+			"timestampMs": 30496,
+			"confidence": null
+		},
+		{
+			"text": " bis",
+			"startMs": 30794,
+			"endMs": 30955,
+			"timestampMs": 30875,
+			"confidence": null
+		},
+		{
+			"text": " zu",
+			"startMs": 30955,
+			"endMs": 31116,
+			"timestampMs": 31036,
+			"confidence": null
+		},
+		{
+			"text": " 1.500",
+			"startMs": 31116,
+			"endMs": 31761,
+			"timestampMs": 31439,
+			"confidence": null
+		},
+		{
+			"text": " erwartet.",
+			"startMs": 31761,
+			"endMs": 32471,
+			"timestampMs": 32116,
+			"confidence": null
+		},
+		{
+			"text": " Die",
+			"startMs": 32591,
+			"endMs": 32752,
+			"timestampMs": 32672,
+			"confidence": null
+		},
+		{
+			"text": " Polizei",
+			"startMs": 32752,
+			"endMs": 33236,
+			"timestampMs": 32994,
+			"confidence": null
+		},
+		{
+			"text": " plant",
+			"startMs": 33236,
+			"endMs": 33398,
+			"timestampMs": 33317,
+			"confidence": null
+		},
+		{
+			"text": " mit",
+			"startMs": 33398,
+			"endMs": 33559,
+			"timestampMs": 33479,
+			"confidence": null
+		},
+		{
+			"text": " über",
+			"startMs": 33559,
+			"endMs": 33881,
+			"timestampMs": 33720,
+			"confidence": null
+		},
+		{
+			"text": " 2.000",
+			"startMs": 33881,
+			"endMs": 34365,
+			"timestampMs": 34123,
+			"confidence": null
+		},
+		{
+			"text": " Einsatzkräften –",
+			"startMs": 34365,
+			"endMs": 35156,
+			"timestampMs": 34761,
+			"confidence": null
+		},
+		{
+			"text": " an",
+			"startMs": 35156,
+			"endMs": 35317,
+			"timestampMs": 35237,
+			"confidence": null
+		},
+		{
+			"text": " Halloween",
+			"startMs": 35317,
+			"endMs": 35801,
+			"timestampMs": 35559,
+			"confidence": null
+		},
+		{
+			"text": " waren",
+			"startMs": 35801,
+			"endMs": 36124,
+			"timestampMs": 35963,
+			"confidence": null
+		},
+		{
+			"text": " es",
+			"startMs": 36124,
+			"endMs": 36285,
+			"timestampMs": 36205,
+			"confidence": null
+		},
+		{
+			"text": " 1.300.",
+			"startMs": 36285,
+			"endMs": 37156,
+			"timestampMs": 36721,
+			"confidence": null
+		},
+		{
+			"text": " Gegen",
+			"startMs": 37196,
+			"endMs": 37519,
+			"timestampMs": 37358,
+			"confidence": null
+		},
+		{
+			"text": " 49",
+			"startMs": 37519,
+			"endMs": 38164,
+			"timestampMs": 37842,
+			"confidence": null
+		},
+		{
+			"text": " Personen",
+			"startMs": 38164,
+			"endMs": 38648,
+			"timestampMs": 38406,
+			"confidence": null
+		},
+		{
+			"text": " laufen",
+			"startMs": 38648,
+			"endMs": 38970,
+			"timestampMs": 38809,
+			"confidence": null
+		},
+		{
+			"text": " Aufenthaltsverbote,",
+			"startMs": 38970,
+			"endMs": 40051,
+			"timestampMs": 39511,
+			"confidence": null
+		},
+		{
+			"text": " gegen",
+			"startMs": 40051,
+			"endMs": 40373,
+			"timestampMs": 40212,
+			"confidence": null
+		},
+		{
+			"text": " 36",
+			"startMs": 40373,
+			"endMs": 41019,
+			"timestampMs": 40696,
+			"confidence": null
+		},
+		{
+			"text": " Tatverdächtige",
+			"startMs": 41019,
+			"endMs": 41825,
+			"timestampMs": 41422,
+			"confidence": null
+		},
+		{
+			"text": " Meldeauflagen.",
+			"startMs": 41825,
+			"endMs": 42696,
+			"timestampMs": 42261,
+			"confidence": null
+		},
+		{
+			"text": " Bei",
+			"startMs": 42736,
+			"endMs": 42897,
+			"timestampMs": 42817,
+			"confidence": null
+		},
+		{
+			"text": " Bedarf",
+			"startMs": 42897,
+			"endMs": 43220,
+			"timestampMs": 43059,
+			"confidence": null
+		},
+		{
+			"text": " werden",
+			"startMs": 43220,
+			"endMs": 43542,
+			"timestampMs": 43381,
+			"confidence": null
+		},
+		{
+			"text": " alle",
+			"startMs": 43542,
+			"endMs": 43865,
+			"timestampMs": 43704,
+			"confidence": null
+		},
+		{
+			"text": " Zugänge",
+			"startMs": 43865,
+			"endMs": 44349,
+			"timestampMs": 44107,
+			"confidence": null
+		},
+		{
+			"text": " zur",
+			"startMs": 44349,
+			"endMs": 44510,
+			"timestampMs": 44430,
+			"confidence": null
+		},
+		{
+			"text": " Zeil",
+			"startMs": 44510,
+			"endMs": 44671,
+			"timestampMs": 44591,
+			"confidence": null
+		},
+		{
+			"text": " kontrolliert.",
+			"startMs": 44671,
+			"endMs": 45381,
+			"timestampMs": 45026,
+			"confidence": null
+		},
+		{
+			"text": " Heißt:",
+			"startMs": 45501,
+			"endMs": 45840,
+			"timestampMs": 45671,
+			"confidence": null
+		},
+		{
+			"text": " Die",
+			"startMs": 45840,
+			"endMs": 46001,
+			"timestampMs": 45921,
+			"confidence": null
+		},
+		{
+			"text": " Kundgebung",
+			"startMs": 46001,
+			"endMs": 46485,
+			"timestampMs": 46243,
+			"confidence": null
+		},
+		{
+			"text": " ist",
+			"startMs": 46485,
+			"endMs": 46646,
+			"timestampMs": 46566,
+			"confidence": null
+		},
+		{
+			"text": " nicht",
+			"startMs": 46646,
+			"endMs": 46808,
+			"timestampMs": 46727,
+			"confidence": null
+		},
+		{
+			"text": " abgesagt –",
+			"startMs": 46808,
+			"endMs": 47437,
+			"timestampMs": 47123,
+			"confidence": null
+		},
+		{
+			"text": " sie",
+			"startMs": 47437,
+			"endMs": 47598,
+			"timestampMs": 47518,
+			"confidence": null
+		},
+		{
+			"text": " läuft",
+			"startMs": 47598,
+			"endMs": 47759,
+			"timestampMs": 47679,
+			"confidence": null
+		},
+		{
+			"text": " nur",
+			"startMs": 47759,
+			"endMs": 47921,
+			"timestampMs": 47840,
+			"confidence": null
+		},
+		{
+			"text": " anders.",
+			"startMs": 47921,
+			"endMs": 48469,
+			"timestampMs": 48195,
+			"confidence": null
+		},
+		{
+			"text": " Was",
+			"startMs": 48509,
+			"endMs": 48670,
+			"timestampMs": 48590,
+			"confidence": null
+		},
+		{
+			"text": " haltet",
+			"startMs": 48670,
+			"endMs": 48993,
+			"timestampMs": 48832,
+			"confidence": null
+		},
+		{
+			"text": " ihr",
+			"startMs": 48993,
+			"endMs": 49154,
+			"timestampMs": 49074,
+			"confidence": null
+		},
+		{
+			"text": " von",
+			"startMs": 49154,
+			"endMs": 49316,
+			"timestampMs": 49235,
+			"confidence": null
+		},
+		{
+			"text": " den",
+			"startMs": 49316,
+			"endMs": 49477,
+			"timestampMs": 49397,
+			"confidence": null
+		},
+		{
+			"text": " Änderungen?",
+			"startMs": 49477,
+			"endMs": 50348,
+			"timestampMs": 49913,
+			"confidence": null
+		},
+		{
+			"text": " Folgt",
+			"startMs": 50408,
+			"endMs": 50569,
+			"timestampMs": 50489,
+			"confidence": null
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 50569,
+			"endMs": 51215,
+			"timestampMs": 50892,
+			"confidence": null
+		},
+		{
+			"text": " für",
+			"startMs": 51215,
+			"endMs": 51376,
+			"timestampMs": 51296,
+			"confidence": null
+		},
+		{
+			"text": " mehr!",
+			"startMs": 51376,
+			"endMs": 51763,
+			"timestampMs": 51570,
+			"confidence": null
+		}
+	],
+	"captionsSource": "script-estimate",
+	"generatedAt": "2026-11-18T18:46:51.002Z"
+}

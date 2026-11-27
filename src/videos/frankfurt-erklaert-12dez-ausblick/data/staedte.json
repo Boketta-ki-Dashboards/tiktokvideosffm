@@ -1,0 +1,445 @@
+{
+	"$comment": "Städteliste „Gen Z regelt“ für den 12.12.2026, abgerufen von genz-regelt.de am 22.11.2026, 17:26 Uhr MEZ, beim letzten Faktencheck um 17:54 Uhr erneut verglichen: unverändert (Seitentitel „Protest am 12.12. in 73 Städten“; Reihenfolge wie in der Liste der Website; alle Einträge „Standort folgt“ / „Uhrzeit folgt“). Die Liste ist namensgleich mit der vom 19.11.2026 (Frankfurt jetzt „Frankfurt am Main“, Halle jetzt „Halle (Saale)“). Koordinaten = Lage der Stadt aus den Kartendaten der Website vom 19.11.2026 (frankfurt-erklaert-20nov-bundesweit/data/staedte.json) – KEINE Treffpunkte für den 12.12. (noch nicht veröffentlicht). central = „Unsere 4 Städte: Hier organisiert Gen Z regelt Inhalte und Ablauf“.",
+	"source": "https://genz-regelt.de/",
+	"retrieved": "2026-11-22T17:26+01:00",
+	"cities": [
+		{
+			"name": "Berlin",
+			"lat": 52.5219,
+			"lon": 13.4132,
+			"central": true
+		},
+		{
+			"name": "Frankfurt am Main",
+			"lat": 50.1083,
+			"lon": 8.6975,
+			"central": true
+		},
+		{
+			"name": "München",
+			"lat": 48.1506,
+			"lon": 11.5803,
+			"central": true
+		},
+		{
+			"name": "Köln",
+			"lat": 50.943,
+			"lon": 6.9644,
+			"central": true
+		},
+		{
+			"name": "Aachen",
+			"lat": 50.7745,
+			"lon": 6.087,
+			"central": false
+		},
+		{
+			"name": "Augsburg",
+			"lat": 48.3668,
+			"lon": 10.8985,
+			"central": false
+		},
+		{
+			"name": "Bamberg",
+			"lat": 49.9006,
+			"lon": 10.8995,
+			"central": false
+		},
+		{
+			"name": "Bonn",
+			"lat": 50.7326,
+			"lon": 7.1045,
+			"central": false
+		},
+		{
+			"name": "Bremen",
+			"lat": 53.0756,
+			"lon": 8.8069,
+			"central": false
+		},
+		{
+			"name": "Chemnitz",
+			"lat": 50.8386,
+			"lon": 12.9232,
+			"central": false
+		},
+		{
+			"name": "Dortmund",
+			"lat": 51.5114,
+			"lon": 7.4664,
+			"central": false
+		},
+		{
+			"name": "Dresden",
+			"lat": 51.054,
+			"lon": 13.736,
+			"central": false
+		},
+		{
+			"name": "Düsseldorf",
+			"lat": 51.2197,
+			"lon": 6.7942,
+			"central": false
+		},
+		{
+			"name": "Duisburg",
+			"lat": 51.495,
+			"lon": 6.7745,
+			"central": false
+		},
+		{
+			"name": "Erfurt",
+			"lat": 50.9769,
+			"lon": 11.0239,
+			"central": false
+		},
+		{
+			"name": "Essen",
+			"lat": 51.4565,
+			"lon": 7.011,
+			"central": false
+		},
+		{
+			"name": "Freiburg",
+			"lat": 47.9952,
+			"lon": 7.8459,
+			"central": false
+		},
+		{
+			"name": "Gladbeck",
+			"lat": 51.5713,
+			"lon": 6.9877,
+			"central": false
+		},
+		{
+			"name": "Göttingen",
+			"lat": 51.5334,
+			"lon": 9.9356,
+			"central": false
+		},
+		{
+			"name": "Halle (Saale)",
+			"lat": 51.4828,
+			"lon": 11.975,
+			"central": false
+		},
+		{
+			"name": "Hamburg",
+			"lat": 53.553,
+			"lon": 9.9928,
+			"central": false
+		},
+		{
+			"name": "Hannover",
+			"lat": 52.3731,
+			"lon": 9.7401,
+			"central": false
+		},
+		{
+			"name": "Karlsruhe",
+			"lat": 49.0113,
+			"lon": 8.3988,
+			"central": false
+		},
+		{
+			"name": "Kassel",
+			"lat": 51.3132,
+			"lon": 9.493,
+			"central": false
+		},
+		{
+			"name": "Kiel",
+			"lat": 54.3205,
+			"lon": 10.13,
+			"central": false
+		},
+		{
+			"name": "Leipzig",
+			"lat": 51.3392,
+			"lon": 12.3808,
+			"central": false
+		},
+		{
+			"name": "Lörrach",
+			"lat": 47.615,
+			"lon": 7.663,
+			"central": false
+		},
+		{
+			"name": "Magdeburg",
+			"lat": 52.13,
+			"lon": 11.629,
+			"central": false
+		},
+		{
+			"name": "Mainz",
+			"lat": 49.9988,
+			"lon": 8.2716,
+			"central": false
+		},
+		{
+			"name": "Mannheim",
+			"lat": 49.4841,
+			"lon": 8.4757,
+			"central": false
+		},
+		{
+			"name": "Moers",
+			"lat": 51.4516,
+			"lon": 6.6326,
+			"central": false
+		},
+		{
+			"name": "Marburg",
+			"lat": 50.8095,
+			"lon": 8.7697,
+			"central": false
+		},
+		{
+			"name": "Schwerin",
+			"lat": 53.634,
+			"lon": 11.4072,
+			"central": false
+		},
+		{
+			"name": "Bensheim",
+			"lat": 49.6812,
+			"lon": 8.619,
+			"central": false
+		},
+		{
+			"name": "Bremerhaven",
+			"lat": 53.5365,
+			"lon": 8.5925,
+			"central": false
+		},
+		{
+			"name": "Darmstadt",
+			"lat": 49.8725,
+			"lon": 8.6295,
+			"central": false
+		},
+		{
+			"name": "Emden",
+			"lat": 53.3687,
+			"lon": 7.2048,
+			"central": false
+		},
+		{
+			"name": "Heidelberg",
+			"lat": 49.4035,
+			"lon": 8.6905,
+			"central": false
+		},
+		{
+			"name": "Ingolstadt",
+			"lat": 48.7636,
+			"lon": 11.425,
+			"central": false
+		},
+		{
+			"name": "Jena",
+			"lat": 50.9283,
+			"lon": 11.5885,
+			"central": false
+		},
+		{
+			"name": "Lübeck",
+			"lat": 53.8706,
+			"lon": 10.6878,
+			"central": false
+		},
+		{
+			"name": "Neubrandenburg",
+			"lat": 53.558,
+			"lon": 13.2615,
+			"central": false
+		},
+		{
+			"name": "Trier",
+			"lat": 49.7597,
+			"lon": 6.6439,
+			"central": false
+		},
+		{
+			"name": "Wiesbaden",
+			"lat": 50.0703,
+			"lon": 8.2435,
+			"central": false
+		},
+		{
+			"name": "Bayreuth",
+			"lat": 49.9446,
+			"lon": 11.5826,
+			"central": false
+		},
+		{
+			"name": "Bielefeld",
+			"lat": 52.0232,
+			"lon": 8.5333,
+			"central": false
+		},
+		{
+			"name": "Bochum",
+			"lat": 51.4787,
+			"lon": 7.2234,
+			"central": false
+		},
+		{
+			"name": "Braunschweig",
+			"lat": 52.2626,
+			"lon": 10.519,
+			"central": false
+		},
+		{
+			"name": "Cottbus",
+			"lat": 51.7588,
+			"lon": 14.3343,
+			"central": false
+		},
+		{
+			"name": "Eberswalde",
+			"lat": 52.8335,
+			"lon": 13.821,
+			"central": false
+		},
+		{
+			"name": "Erlangen",
+			"lat": 49.598,
+			"lon": 11.005,
+			"central": false
+		},
+		{
+			"name": "Gießen",
+			"lat": 50.5848,
+			"lon": 8.678,
+			"central": false
+		},
+		{
+			"name": "Hildesheim",
+			"lat": 52.134,
+			"lon": 9.969,
+			"central": false
+		},
+		{
+			"name": "Ilmenau",
+			"lat": 50.686,
+			"lon": 10.914,
+			"central": false
+		},
+		{
+			"name": "Kaiserslautern",
+			"lat": 49.444,
+			"lon": 7.7695,
+			"central": false
+		},
+		{
+			"name": "Koblenz",
+			"lat": 50.351,
+			"lon": 7.5885,
+			"central": false
+		},
+		{
+			"name": "Königs Wusterhausen",
+			"lat": 52.297,
+			"lon": 13.632,
+			"central": false
+		},
+		{
+			"name": "Leverkusen",
+			"lat": 51.069,
+			"lon": 7.006,
+			"central": false
+		},
+		{
+			"name": "Lüdenscheid",
+			"lat": 51.219,
+			"lon": 7.629,
+			"central": false
+		},
+		{
+			"name": "Lüneburg",
+			"lat": 53.249,
+			"lon": 10.405,
+			"central": false
+		},
+		{
+			"name": "Potsdam",
+			"lat": 52.3955,
+			"lon": 13.06,
+			"central": false
+		},
+		{
+			"name": "Stralsund",
+			"lat": 54.317,
+			"lon": 13.095,
+			"central": false
+		},
+		{
+			"name": "Weimar",
+			"lat": 50.9785,
+			"lon": 11.326,
+			"central": false
+		},
+		{
+			"name": "Münster",
+			"lat": 51.9625,
+			"lon": 7.6256,
+			"central": false
+		},
+		{
+			"name": "Nürnberg",
+			"lat": 49.4487,
+			"lon": 11.0768,
+			"central": false
+		},
+		{
+			"name": "Passau",
+			"lat": 48.5737,
+			"lon": 13.4575,
+			"central": false
+		},
+		{
+			"name": "Ravensburg",
+			"lat": 47.781,
+			"lon": 9.6115,
+			"central": false
+		},
+		{
+			"name": "Regensburg",
+			"lat": 49.0197,
+			"lon": 12.0953,
+			"central": false
+		},
+		{
+			"name": "Rosenheim",
+			"lat": 47.8561,
+			"lon": 12.1289,
+			"central": false
+		},
+		{
+			"name": "Stuttgart",
+			"lat": 48.7786,
+			"lon": 9.1799,
+			"central": false
+		},
+		{
+			"name": "Ulm",
+			"lat": 48.3991,
+			"lon": 9.9884,
+			"central": false
+		},
+		{
+			"name": "Wuppertal",
+			"lat": 51.2726,
+			"lon": 7.2,
+			"central": false
+		},
+		{
+			"name": "Würzburg",
+			"lat": 49.7937,
+			"lon": 9.9297,
+			"central": false
+		}
+	]
+}

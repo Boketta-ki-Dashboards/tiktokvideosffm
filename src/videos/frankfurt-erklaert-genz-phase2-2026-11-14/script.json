@@ -1,0 +1,96 @@
+{
+	"videoId": "frankfurt-erklaert-genz-phase2-2026-11-14",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 900,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“. Pausen 40 ms im Thema, 60–120 ms zwischen Themen. Hartes Limit 60,0 s inkl. Abo-Aufruf (keine Längen-Ausnahme)."
+	},
+	"sampleText": "Ewa, Frankfurt! {Gen-Z-Proteste|Dschen Zett Proteste} in Bremen, Karlsruhe und Stuttgart. In Berlin vom Savignyplatz – Sawinjiplatz – über den Ku'damm bis Halensee. {20|Zwanzig} vorläufige Festnahmen, {28|achtundzwanzig} Strafanzeigen. Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "hook2",
+			"text": "Gestern gab's wieder {Gen-Z-Proteste|Dschen Zett Proteste} in mehreren Städten – Phase {2|zwei}.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "bremen",
+			"text": "Bremen: laut Polizei bis zu {670|sechshundertsiebzig} Leute, friedlich.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "karlsruhe",
+			"text": "Karlsruhe: rund {220|zweihundertzwanzig}, weitgehend friedlich.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "stuttgart",
+			"text": "Stuttgart: mehrere Hundert – der Demozug wurde untersagt.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "berlin1",
+			"text": "Und Berlin? Krass: Angemeldet waren {100|hundert}, gekommen sind laut Polizei rund {1.200|zwölfhundert}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "berlin2",
+			"text": "{700|Siebenhundert} Polizisten waren im Einsatz, der Zug lief vom {Savignyplatz|Sawinjiplatz} über den Ku'damm bis Halensee.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "inc1",
+			"text": "Laut Polizei versuchten einige Teilnehmende, die Polizeikette zu durchbrechen.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "inc2",
+			"text": "Später gab's Pyrotechnik und Auseinandersetzungen bei Festnahmen.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "stats",
+			"text": "Die Bilanz von Sonntag: {20|zwanzig} vorläufige Festnahmen, {28|achtundzwanzig} Strafanzeigen, drei verletzte Polizisten.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "charges",
+			"text": "Die Vorwürfe: unter anderem Landfriedensbruch und Widerstand.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "context",
+			"text": "Das betrifft einzelne Vorfälle, nicht alle Demonstrierenden – und festgenommen heißt nicht verurteilt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "ffm",
+			"text": "Am {20. November|zwanzigsten November} sind weitere Jugendproteste angekündigt – auch in Frankfurt.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "q1",
+			"text": "Wie bewertet ihr Berlin?",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+			"pauseAfterMs": 0
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"videoId": "frankfurt-erklaert-eine-woche-danach",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 80000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {"mode": "letters", "maxInnerGapMs": 280},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf (FrankfurtRedNews) aus dem Cache. Verlängerte Sonderausgabe auf Wunsch des Kanalbetreibers (27.11.2026): Informationsteil ≈ 70 s nach der Begrüßung (≤ 73,5 s ab 0), danach Abo-Aufruf (cta), gesamt ≤ 80 s. „Gen Z“ wird bewusst nicht gesprochen (nur im Bild). Recherchestand 27.11.2026, 15:15 Uhr."
+	},
+	"sampleText": "Ewa, Frankfurt! Leipzig: Nach der Demo stellte die Polizei die Identität von über {200|zweihundert} Personen fest. Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Kinder unter vierzehn sind strafunmündig. Hamburg: Laut Polizei gab es mehrere Festnahmen und Gewahrsamnahmen.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "o1", "text": "Eine Woche nach den Jugendprotesten vom {20. November|zwanzigsten November}: Was ist aus den Ermittlungen geworden?", "pauseAfterMs": 60},
+		{"id": "o2", "text": "Wir schauen auf sechs Städte.", "pauseAfterMs": 120},
+		{"id": "l1", "text": "Leipzig: Nach der Demo stellte die Polizei die Identität von über {200|zweihundert} Personen fest – darunter vier Kinder und über vierzig Jugendliche.", "pauseAfterMs": 40},
+		{"id": "l2", "text": "Die Staatsanwaltschaft wertet das als schweren Fall des Landfriedensbruchs. Ermittelt wird auch wegen Brandstiftung und Körperverletzung.", "pauseAfterMs": 40},
+		{"id": "l3", "text": "Wichtig: Beschuldigte sind keine Verurteilten – und Kinder unter vierzehn sind strafunmündig.", "pauseAfterMs": 120},
+		{"id": "h1", "text": "Hamburg: Laut Polizei gab es mehrere Festnahmen und Gewahrsamnahmen – eine Gesamtzahl ist öffentlich nicht bekannt.", "pauseAfterMs": 40},
+		{"id": "h2", "text": "Seit dem {23. November|dreiundzwanzigsten November} liegen dazu politische Anfragen vor – noch ohne Antwort.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Dresden: Bei rund achtzig Personen nahm die Polizei die Personalien auf – Verdacht unter anderem: Landfriedensbruch.", "pauseAfterMs": 120},
+		{"id": "s1", "text": "Stuttgarts Polizei meldete über zwanzig vorläufige Festnahmen – Vorwürfe unter anderem: Vermummung, Beleidigung, Widerstand.", "pauseAfterMs": 120},
+		{"id": "b1", "text": "Anders Berlin: Rund viertausend Menschen zogen laut Polizei friedlich durch die Stadt.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Frankfurt: laut Innenministerium zehn Festnahmen und sechzehn Strafanzeigen – Exzesse wie an Halloween blieben aus.", "pauseAfterMs": 120},
+		{"id": "z1", "text": "Hier seht ihr die Bilanzen aller sechs Städte.", "pauseAfterMs": 40},
+		{"id": "z2", "text": "Die meisten Zahlen sind noch die ersten Polizeimeldungen – Anklagen oder Urteile sind nicht bekannt.", "pauseAfterMs": 120},
+		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
+	]
+}

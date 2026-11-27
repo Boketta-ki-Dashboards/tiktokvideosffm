@@ -1,0 +1,351 @@
+# CLAUDE.md – SmokingTikTok Studio
+
+Dauerhafte Produktions- und Designvorgaben für dieses Repository. Gilt für jede Session.
+
+## Projekt in einem Satz
+
+Cloudbasiertes Produktionssystem für animierte TikTok-Erklärvideos (Nachrichten, Hintergründe) mit
+**Remotion + React + TypeScript**, gerendert in **GitHub Actions**. Einziger bezahlter Dienst: **ElevenLabs** (Stimme Adam).
+
+## Harte Regeln
+
+1. **Standardstimme für ALLE FrankfurtRed3-Videos: ElevenLabs „Adam“** (Folge 3, 4, 5 …; Starter-Tarif des Kanalbetreibers).
+   - Konfiguration nur zentral in `config/voice.json` (Voice-ID `pNInz6obpgDQGcFmaJgB`, Modell `eleven_multilingual_v2`,
+     Stability/Similarity/Style/Speed). Keine Ersatz- oder Bibliotheksstimme mit ähnlichem Namen – das Skript prüft per API.
+   - API-Key **nur** als GitHub-Actions-Secret `ELEVENLABS_API_KEY`; nie im Code, in Dateien, Logs, Commits – und nie im Chat
+     danach fragen. Claude Code Cloud hat keinen Zugriff darauf → Erzeugung läuft im Workflow „Video produzieren (ElevenLabs Adam)“
+     (vor dem Merge per `voice-jobs/auftrag.json`, siehe `voice-jobs/README.md`).
+   - Credits sparen: erzeugte Sätze liegen in `voice-cache/elevenlabs/<video>/` (im Repository) und werden wiederverwendet,
+     solange Text, Stimme und Einstellungen gleich sind. Erst Hörprobe (`aktion: hoerprobe`), dann die ganze Folge.
+   - Fällt ElevenLabs aus, bricht der Workflow mit Erklärung ab. **Kein** automatischer Wechsel zu Chatterbox/Piper;
+     diese bleiben nur als manueller Fallback (`npm run voice:chatterbox` / `voice:piper`).
+   - Keine weiteren bezahlten Dienste/API-Keys ohne ausdrückliche Freigabe. Videos werden nie automatisch veröffentlicht.
+2. **Fakten nur mit Beleg.** Jede Zahl, jedes Zitat, jede Schlagzeile steht mit Quelle und Abrufdatum in
+   `references/<video-id>/sources.md` und im `content.ts` des Videos. Nichts erfinden, nichts zuspitzen.
+   - Zahlen immer mit Urheber („laut Polizei“, „laut Veranstalter“, „laut Innenminister …“).
+   - Bei abweichenden Angaben die vorsichtigere Formulierung („rund“, „mindestens“) oder beide nennen.
+   - Schlagzeilen **wörtlich** übernehmen; Übersetzungen als „DE:“ kennzeichnen.
+   - Umstrittene Einzelbehauptungen (z. B. Herkunft von Tatverdächtigen) nur mit sorgfältiger Einordnung – im
+     Zweifel weglassen und in `sources.md` unter „Bewusst NICHT verwendet“ begründen.
+   - Platzhalter (Showcase) klar als „Beispiel/Platzhalter“ kennzeichnen.
+   - **Neuester überprüfbarer Meldestand (dauerhaft):** vor der Vertonung erneut recherchieren; Zahlen aus der jüngsten belegten Meldung
+     (Uhrzeit der Aktualisierung in `sources.md`, Stand-Datum im Bild/in der Quellenzeile). Frühere oder abweichende Zwischenstände
+     (z. B. Samstagabend-Zahlen) nie als aktuelle Bilanz – höchstens als „zuerst genannt“; nicht abrufbare Quellen unter „Bewusst NICHT
+     verwendet“. Titelbild-Aussagen müssen ebenso stimmen (z. B. nicht „Proteste in 4 Städten“, wenn es mehr gab).
+   - **Terminmeldungen** (Demos, Verbote): Stufen trennen – Gerücht · Ankündigung (Veranstalter) · Anmeldung · behördliche Entscheidung (siehe
+     `references/frankfurt-2026-11-04-naechste-demo/sources.md`). Nie als „angekündigt/beschlossen“ ausgeben, was nur als Gerücht oder politische Äußerung belegt ist; Stand-Datum im Video nennen.
+   - Eigene Beobachtung des Kanalbetreibers vor Ort ist ein Beleg (`"art": "augenzeuge"`), wenn sie im Video offen als solche
+     benannt wird („wir haben es vor Ort gesehen“). Sie wird nie als Polizei- oder Medienangabe ausgegeben.
+   - Referenzvideos **vollständig** Bild für Bild auswerten (Kontaktbogen mit 2 fps, verdächtige Stellen mit 5–10 fps), nicht nur Ausschnitte.
+   - **Rechts-Erklärvideos:** allgemeine Info, im Bild „keine Rechtsberatung“ + Stand-Datum; Normen aus dem amtlichen Text (gesetze-im-internet.de) bzw.
+     Landesrecht mit Stand; keine Pauschalaussagen („musst du nie …“), keine Aufforderung zu Widerstand; persönliche Schilderungen (auch von Politikern)
+     nur im Konjunktiv als SCHILDERUNG, mit Hinweis, ob die Behörde sie bestätigt hat.
+   - **Slang:** nur über die Wortwahl (≈ 2–4 Ausdrücke pro Video), nie über Stimme/Akzent; neue Ausdrücke vorab per Hörprobe
+     (`sampleText` im Skript, Workflow `aktion: hoerprobe` nutzt ihn automatisch) + Whisper/Tonhöhe prüfen.
+   - **Prognose-Videos:** jede Aussage sichtbar als FAKT · ANGEKÜNDIGT · EINSCHÄTZUNG · OFFEN · FIKTION kennzeichnen (`StatusChip`); keine Prozentwerte,
+     „Verbot diskutiert“ ≠ „verboten“; Witze mit erfundenen Firmen klar als Fiktion, ohne echte Namen/Beträge.
+   - **Medienzählungen** („X Medien in Y Ländern“): nur selbst abgerufene Berichte mit wörtlich geprüfter Schlagzeile zählen; Agentur-Übernahme
+     (Reuters/AFP/AP/dpa …) und eigener Bericht getrennt kennzeichnen; immer „mindestens“ + „Stichprobe“, nie als weltweite Gesamtzahl.
+     Zahl im Ton muss aus den Daten folgen (Test). Virale Inhalte nur mit Herkunft (Agentur/Medium); keine View-/Like-Zahlen ohne Beleg;
+     Nicht-Verifizierbares (z. B. „Power Rangers“) weglassen und unter „Bewusst NICHT verwendet“ begründen.
+3. **Keine fremden Logos/Marken nachbauen.** Medien erscheinen als neutrale Wortmarke (`MediaBadge`).
+   Echte Logos nur mit Nutzungsrecht als Datei in `public/` (`logoFile`-Prop).
+4. **Keine realen Personen darstellen.** Figuren sind anonyme, stilisierte Vektorfiguren. Gewalt nicht
+   explizit zeigen – Lichtstimmung, Symbole, Zahlen.
+5. **Keine großen Binärdateien committen.** MP4/MOV/WebM sind per `.gitignore` ausgeschlossen; Renderings
+   landen in `output/` (ignoriert) bzw. als GitHub-Artefakt. Erlaubt: Sprecher-MP3 (128 kbit/s, ≈ 1 MB pro Minute), kurze SFX-WAVs, kleine Standbilder (< 200 KB).
+6. **Branding nur aus `src/theme/brand.ts`** (TikTok: **@frankfurtrednews** ab #17, vorher @frankfurtred3). Nie Accountnamen hart codieren.
+   - **Kanalname FrankfurtRedNews (dauerhaft ab #17 „Condor-Flüge“, 23.11.2026):** zentral `BRAND_NEWS` (Name, Handle `frankfurtrednews`, Lautschrift
+     „Frankfurt Rett News“); neue Folgen nutzen `handleWithAt('news')` (Outro, Titelbild-Logozeile) und übergeben `handle={handleWithAt('news')}` an
+     `CoverPreviewSheet`/`OverlayCheckSheet`. Abo-Aufruf: „Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!“ (Hörprobe:
+     Whisper „Frankfurt Red News“). Profilbild/Logo, Farben, Stil, Intro bleiben unverändert. Fertige Folgen (#01–#16) behalten `handleWithAt()` =
+     @frankfurtred3 und „FrankfurtRed3“ im Abo-Aufruf (Test). Exportnamen neuer Folgen beginnen mit `FrankfurtRedNews_`.
+   - **Offizielles Logo (dauerhaft ab „Gen Z regelt – Phase 2“, 15.11.2026):** `public/brand/frankfurtred-logo.webp` (768 × 768, vom Kanalbetreiber
+     gestellt, nur skaliert – nie neu generieren, nachzeichnen oder verändern), zentral `BRAND.logoFile`, Komponente
+     `src/components/brand/BrandLogo.tsx`. Alle NEUEN Outros, Abo-Aufrufe, Profilhinweise und Titelbilder nutzen das Logo; im Prüfbogen
+     `CoverPreviewSheet avatar={(s) => <BrandLogo size={s} border={false} />}`. Das alte „S“ (`BrandAvatar`) bleibt nur in fertigen Folgen und
+     ist kein Ersatz; fertige MP4s werden nicht geändert. Fehlt die Datei, abbrechen statt Platzhalter zeigen.
+7. **Schadensangaben dreistufig trennen:** sichtbarer Sachschaden · dokumentiertes Eindringen · nachgewiesene Entwendung.
+   „Geplündert“ nur bei belegter Entwendung. Offizielle Zahlen (17 beschädigt / 5 davon geplündert) nie mit eigener
+   Recherche-Zählung vermischen; die 5 sind Teil der 17. Keine erfundenen Schadenssummen.
+8. **Fotos:** nur eigene/lizenzierte Bilder, keine erkennbaren Personen, Pressefotos nicht übernehmen; Fassadenfotos nie als
+   Schadensfoto ausgeben; sonst `StorefrontIllustration` (im Bild als „Illustration“ gekennzeichnet). Rechte in `references/<id>/medienrechte.md`.
+9. **Remotion-Pakete immer exakt gleiche Version** (`--save-exact`, aktuell 4.0.540). Upgrade mit
+   `npx remotion upgrade`, danach Typecheck + Testrender.
+
+## Exportnorm (TikTok / iPhone)
+
+| Parameter | Wert |
+|---|---|
+| Auflösung | 1080 × 1920 (9:16) |
+| Bildrate | 30 fps |
+| Video | H.264 High, yuv420p, BT.709, CRF 18, `+faststart` |
+| Audio | AAC 192 kbit/s, 48 kHz; Sprecher auf −14 LUFS, True Peak −1,5 dBTP |
+| Länge | Standard-News 20–60 s (Frankfurt-Video ≈ 50 s inkl. Abspann) |
+
+`npm run render -- <Komposition>` erzeugt genau diese Norm, `npm run verify -- <datei>` prüft sie.
+
+## Design-System
+
+- Tokens ausschließlich aus `src/theme/tokens.ts` (Farben, Schriften, Größen, Sicherheitszonen).
+- Schriften: **Montserrat** 700–900 (Titel, Untertitel), **Inter** 500–800 (Text, Quellen) – lokal über
+  `@fontsource`, kein Netzwerk beim Rendern. Jede Komposition ruft `ensureFontsLoaded()` auf.
+- Farben: Nachtblau-Basis (`night`, `navy`), Akzente `signal` (Gelb, Hervorhebung), `alert` (Rot, Eskalation),
+  `cyan` (Verbindungen), `violet`.
+- **TikTok-Sicherheitszonen** (`SAFE_AREA`): oben 200 px, rechts 150 px, unten 430 px, links 64 px.
+  Texte, Zahlen, Quellen immer innerhalb (`<SafeArea>`). Untertitel sitzen ~550 px über dem unteren Rand.
+- Mindestschriftgrößen: Titel ≥ 58 px, Fließtext ≥ 27 px, Quellen ≥ 22 px.
+- Jede Szene hat Bewegung (Kamera-Drift, Parallaxe, Partikel) – kein statisches Standbild länger als 1 s.
+- **Motion-Graphics-Qualität (dauerhaft, alle neuen Videos):** Karten bevorzugt als 2,5D-Ebene (`src/components/map/TiltedPlane.tsx`: CSS-3D mit
+  gestapelten Schichten für Extrusion, Kamerafahrten über `interpolateCamera`, weicher Kartenrand per `mask`); Beschriftungen/Ortsmarken NICHT im
+  3D-Kontext, sondern per `projectPlanePoint` als 2D-Ebene darüber (Chrome schneidet aufrechte 3D-Elemente sonst am Ebenenrand ab).
+  Beliebige OSM-Ausschnitte als perspektivische Stadtkarte: `src/components/map/CityPlane.tsx` (Bodenkreise `spots` für Orte ohne Routen).
+  Keine leeren Szenenanfänge, Zähler laufen vom Erscheinen bis zum gesprochenen Wert (kein stehendes „0“), Hervorhebungen an Wort-Cues,
+  Illustrationen (Figuren, Polizei, Pyrotechnik) stilisiert und als ILLUSTRATION gekennzeichnet. Vor jedem Render Standbilder mit echten
+  Adam-Zeiten (`--every 45`) ansehen.
+- Untertitel: TikTok-Stil, 1–3 Wörter pro Seite, aktives Wort gelb, dicker schwarzer Rand.
+- **Quellen UNTER den Untertiteln (dauerhaft ab #12 „73 Städte“, 19.11.2026, für ALLE neuen Videos):** Quellenangaben stehen nicht mehr über,
+  sondern unter den Sprecher-Untertiteln – kleiner, hellgrau, kleines Dokument-Symbol, halbtransparenter Hintergrund, 1–2 Zeilen, immer im selben
+  Bereich **y 1.512–1.630** (`LAYOUT.sourceLineTop`/`sourceLineMaxBottom`, mittig auf der Untertitel-Achse x 64–930, links der App-Knöpfe). Die
+  Untertitel wachsen von ihrer Unterkante y 1.440 (`LAYOUT.subtitleBottomPad` 480) nach oben → bei 1, 2 oder 3 Zeilen bleibt der Abstand ≥ 24 px.
+  Kurze Labels statt URLs („Polizei Köln, Pressemitteilung vom 19.11.2026, 7:58 Uhr“), wechseln mit dem Sprechersegment. Format B: `ErklaertEpisode.sourceLine`
+  (`[{from: '<Segment-ID>', text: '…'}]`, Logik `src/formats/frankfurt-erklaert/source-line.ts`, Darstellung `SourceLine.tsx`); Szenen zeichnen dann
+  KEINE `SourceBar` mehr. Dass die TikTok-Beschreibung die Quelle in der App teilweise überdeckt, ist akzeptiert. Prüfbogen `<Name>-QuellenCheck`
+  (1- und 2-zeilige Untertitel mit Hilfslinien, Zahlenvergleich, Karte, simulierte App-Oberfläche) → Workflow-Artefakt `*_QUELLEN_PRUEFUNG.png`.
+  Fertige Folgen (#01–#11) behalten ihre alte Quellenzeile und werden nicht neu gerendert.
+
+## Animationsregeln (Remotion)
+
+- Alles über `useCurrentFrame()` + `interpolate()`/`spring()` – **keine** CSS-Transitions/-Animationen.
+- `useCurrentFrame()` so tief wie möglich verwenden (nur dort, wo animiert wird).
+- Zeitangaben in Szenen über `fps` aus `useVideoConfig()` bzw. die Sprecher-`cues`.
+- Bevorzugt CSS-Eigenschaften `scale`, `translate`, `rotate` statt `transform`-Strings.
+- Zufall nur über `random(seed)` aus `remotion` (deterministisch).
+- SVG für Grafiken (bleibt bei Kamera-Zoom scharf); teure Filter (Blur) sparsam.
+- Übergänge: DOM-basiert (`src/components/transitions/presentations.tsx`, `@remotion/transitions` fade/slide/wipe).
+  WebGL-/HtmlInCanvas-Übergänge nur nach Test im Headless-Render.
+
+## Ton & Stimme
+
+- Sprechertext steht in `src/videos/<id>/script.json`, Markup `{Anzeige|Gesprochen}` für Zahlen/Abkürzungen.
+- Eine Sprecherspur erzeugt immer: Audio unter `public/voiceover/<id>/` + `src/videos/<id>/voiceover.json` (aktives Manifest).
+  Adam: `voiceover-adam.mp3`, Untertitel exakt aus den ElevenLabs-Zeichen-Zeitstempeln (`captionsSource: elevenlabs-alignment`).
+  Ältere Fassungen anderer Engines bleiben als `voiceover.<engine>.json` + eigene MP3 erhalten.
+- Szenenlängen und Untertitel werden **aus dem Manifest berechnet** (`buildTimeline`) – nie Frames hart codieren,
+  die an gesprochene Sätze gebunden sind. Schnitte werden NIE gegenüber der Stimme verschoben; mehr Zeit für eine
+  Szene → `pauseAfterMs` im Skript erhöhen. `maxDurationMs` kürzt nur den Nachlauf (Tests: `npm test`).
+- Piper ist leicht zufällig (Dauer schwankt ±0,3 s): nach jedem `voice:piper` Länge prüfen und die erzeugten
+  Dateien committen – der Workflow (`voice: repo`) rendert dann reproduzierbar.
+- Wege: **Workflow „Video produzieren (ElevenLabs Adam)“** (Standard) bzw. `node scripts/voice/elevenlabs-tts.mjs --video <id>`
+  (nur mit Secret; `--dry-run` zeigt Plan und Credits, `--offline` nutzt nur den Cache) ·
+  Fallback: `npm run voice:chatterbox -- --check` · `npm run voice:piper` (schnell, künstlich) ·
+  `npm run voice:import -- --file …` (fertige MP3/WAV,
+  auch per Workflow: Datei nach `voice-input/<video-id>.mp3`, dann `voice: import`) ·
+  `node scripts/voice/estimate-manifest.mjs` (stumm) · optional `npm run captions:whisper` (wortgenau).
+- Soundeffekte und Musikbett nur selbst erzeugt (`scripts/audio/generate-sfx.mjs`, `generate-music.mjs`), CC0 mit Nachweis in `references/` (siehe `references/musik.md`)
+  oder als ElevenLabs-Premium-Effekt (s. u.).
+- **Reine Bild-Überarbeitungen (Premium-Fassungen):** neue Komposition, die die Original-Komposition unsichtbar (`display: none`, Untertitel aus) als
+  einzige Tonquelle mountet; gleiche Timeline/Übergänge/Cue-Formeln; Premium-Szenen erzeugen keinen eigenen Ton. Workflow mit `stimme: vorhanden`
+  (kein ElevenLabs-Aufruf), Eintrag `vergleich` in `config/videos.json` → Ton-Identitätsprüfung, FFprobe-Bericht (`scripts/tech-report.mjs`) und
+  Vorher-Nachher-Bogen (`scripts/compare-scenes.mjs`). Die Original-Fassung bleibt unverändert erhalten.
+- **SFX-System (ab `FrankfurtWorldwide` für alle neuen Videos):** Effekte nur über `src/lib/sfx.ts` (semantische Namen, dezente Grundlautstärken ≤ 0,4)
+  und `<Sfx name="…" at={frame} />` direkt in der Szene neben der auslösenden Animation (bildgenau, an Stimm-Cues). Komposition umschließt alles mit
+  `<SfxProvider enabled={sfx}>`. Zuordnung: Text/Kalender/Chips → `click`/`pop` · Social-Karten → `notify` · Statistik → `softImpact` · Karte/Land → `blip`,
+  Schwenk → `whoosh` · Schlagzeilen → `typewriter`/`paper` · Faktencheck → `stamp` · Weltkarten-Finale → `riser` + `boom` ·
+  Uhrzeit/Timeline-Markierung → `tick` (selbst erzeugt, ab #09) · Türklingel → `notify` (Ding-Dong).
+  `generate-sfx.mjs` überschreibt vorhandene Dateien nie (fertige Folgen klingen gleich), `--force` nur bewusst.
+- **ElevenLabs Sound Effects** (`POST /v1/sound-generation`, `eleven_text_to_sound_v3`): wenige kurze Effekte in `config/sfx-elevenlabs.json`, einmal erzeugt
+  (`scripts/audio/elevenlabs-sfx.mjs`, Workflow-Schritt bei `aktion: video`), Cache `voice-cache/elevenlabs-sfx/`, Ausgabe `public/sfx/premium/` + `src/lib/sfx-premium.ts`
+  (ersetzt gleichnamige Synth-Effekte automatisch, für alle Folgen wiederverwendet). Fehlt dem Key die Berechtigung: genau EINE Probe-Anfrage, Erklärung in der
+  Zusammenfassung, Fallback auf Synth-Effekte – nie umgehen, nie nach dem Key fragen.
+- **Aussprache (dauerhaft, alle neuen FrankfurtRed3-Videos):** „Ewa“ wird immer **Ewa** geschrieben/angezeigt und **„Eywa“** gesprochen.
+  Zentral in `config/voice-regeln.json → aussprache.regeln` (`{"Ewa": "Eywa"}`), automatisch als `{Ewa|Eywa}` angewandt (`scripts/lib/aussprache.mjs`);
+  Untertitel zeigen nie „Eywa“ (Test). Bereits fertige Videos stehen in `aussprache.ausnahmen` (byte-gleiche Spur aus dem Cache).
+- **Kurzvideos (dauerhaft, alle neuen FrankfurtRed3-Kurzvideos ≤ 66 s):** Adam mit Profil `kurzformat-60` (speed 1.20), „Ewa“ → „Eywa“,
+  keine Pause > 400 ms (`check-pauses`), 2–3 milde Slang-Ausdrücke nur über die Wortwahl. Längen-Schätzung (`estimate-manifest`) ist zu
+  optimistisch: Adam spricht ≈ 17,5–18 Zeichen/s inkl. Pausen → für 60 s inkl. Abo-Aufruf höchstens ≈ 1.020 gesprochene Zeichen planen.
+  Nach jeder Erzeugung Whisper-Gegenprobe der Begrüßung: hört Whisper „Eva“/„Ava“ statt „Ey, war“, die bereits geprüfte Fassung mit identischem
+  Cache-Schlüssel aus einer früheren Folge übernehmen (`voice-cache/elevenlabs/<id>/<key>.mp3|json`) – am besten schon VOR der Vollvertonung
+  in den Cache-Ordner der neuen Folge kopieren (spart Credits). „Gen Z“ nie direkt nach „zwei“/„der“ sprechen lassen (verschmilzt zu
+  „zweitigen“/„Ginzette“); sicher erkannt wird `{Gen Z regelt|Dschen Zett regelt}`. Zeichenbudget bei reinem Fließtext eher ≈ 18,5 Zeichen/s.
+- **Sprechtempo: Adam `speed` 1.16 – zuletzt erfolgreich verwendet und vom Kanalbetreiber akzeptiert (Folge 3, Commit d99eacd); gilt fest für ALLE Folgen.**
+  Übrige Adam-Werte ebenso fest: stability 0.45, similarity_boost 0.8, style 0.2, use_speaker_boost true, seed 20261104, `mp3_44100_128`.
+  Nie automatisch zwischen Folgen ändern; nur auf ausdrücklichen Wunsch in `config/voice.json` (dann Hörprobe). (Fallback: Chatterbox `tempo` 1.05–1.12, Piper `lengthScale` 0.78–0.88).
+- Adam-Lautschrift: Zahlen/Daten ausschreiben (`{14. November|vierzehnte November}`), `{Gen Z|Dschen Zett}`; nach jeder Erzeugung
+  `node scripts/voice/check-sync.mjs` (läuft im Workflow) und, falls lokal vorhanden, Whisper-Gegenprobe (`--check`).
+- Chatterbox-Lautschrift (Fallback): englische Namen eindeutschen (`{Snipes|Snaips}`), Zahlen/Uhrzeiten ausschreiben,
+  Abkürzungen buchstabieren (`{AFP|A F P}`). Nach jeder Erzeugung `--check` (Whisper-Gegenprobe) lesen.
+- Uhrzeiten nur so genau wie belegt („kurz vor 23 Uhr“ statt erfundener Minute); Ticker-Zeiten als „Meldung“ kennzeichnen.
+- Karten: Bewegungen/Routen nur zeigen, wenn belegt – sonst „Reihenfolge der Meldungen“ und so beschriften.
+  OpenStreetMap-Hinweis „© OpenStreetMap-Mitwirkende“ muss sichtbar sein (macht `CityStreetMap`).
+
+## Videos
+
+| Komposition | Ordner | Inhalt |
+|---|---|---|
+| `FrankfurtErklaertEineWocheDanach` | `src/videos/frankfurt-erklaert-eine-woche-danach/` | **Format B** #20 „Eine Woche nach den Gen-Z-Protesten – was ist aus den Ermittlungen geworden?“ (Ereignis Fr 20.11., produziert 27.11.2026; **Recherchestand 27.11.2026, 15:15 Uhr**, Nachkontrolle 15:49 Uhr ohne Änderung; FrankfurtRedNews; **erste verlängerte Sonderausgabe**: Informationsteil 70,32 s nach der Begrüßung, `sonderausgabe`): Aktualitätsprüfung 22.–27.11. – keine neueren Polizei-/StA-Bilanzen, neu nur zwei Hamburger Anfragen vom 23.11. (Bürgerschaft Drs. 23/6066 Die Linke, Original nicht erreichbar → nur Metadaten; Bezirksversammlung Mitte Drs. 23-2220 AfD-Fraktion), beide ohne Antwort · Kartenreise über die 2,5D-Deutschlandkarte (`GermanyPlane`, Natural Earth, echte Koordinaten) mit Kartenflug + Zoom aus dem Stadtmarker in jede Stadt und Mini-Deutschlandkarte als Navigator · **Leipzig** (19,35 s): Identität von über 200 Personen festgestellt (Polizei nennt sie „Beschuldigte“), darunter 4 Kinder und über 40 Jugendliche als Teilgruppen im Personen-Raster (nie addiert), StA: schwerer Fall des Landfriedensbruchs (§ 125a, Anfangsverdacht), weitere Verfahren u. a. Brandstiftung/Körperverletzung (Zahl offen), „Beschuldigte ≠ Verurteilte“, „Kinder unter 14 = strafunmündig“ (§ 19 StGB) · **Hamburg**: mehrere Festnahmen/Gewahrsamnahmen, Gesamtzahl öffentlich nicht bekannt (keine Zahl erfunden), Korrektur Bundespolizei „Pyrotechnik statt Flaschen“ nur für diese Meldung, zwei Drucksachen mit Stempel „noch ohne Antwort“ · **Dresden**: rund 80 Personalien (≠ Festnahmen), Verdacht u. a. Landfriedensbruch · **Stuttgart**: über 20 vorläufige Festnahmen, Vorwürfe einzeln an Wort-Cues · **Berlin**: rund 4.000 laut Polizei (andere Meldung 4.500 im Bild), friedlicher Zug als Illustration · **Frankfurt** (kurz): 10 Festnahmen, 16 Strafanzeigen, 342 Kontrollen – gesamter Einsatz, 31.10.-Festnahme mit Einordnung · **bundesweites Dashboard** (modulare Komponente `formats/frankfurt-erklaert/visuals/CityDashboard.tsx`, Karten fliegen aus den Kartenmarkern, 2 × 3 gleich große Karten, keine Rangliste/Summe, Meldestand je Stadt), eine Datenquelle `data/staedte.ts` für Szenen und Dashboard (Test) · neue Stadtpanoramen `visuals/Cities.tsx` (Leipzig, Hamburg, Dresden, Stuttgart, Berlin; Frankfurt `FrankfurtSkyline`), Ermittlungs-Illustrationen `visuals/Investigation.tsx`; „Gen Z“ nur im Bild, nicht gesprochen; Hörprobe #102, Stimme #103 + #104 (nur o2), Render **Lauf #105: 75,01 s = 2.250 Frames, 19,75 MB, −14,6 LUFS**; Tests `tests/erklaert-eine-woche-danach.test.ts`; Export `FrankfurtRedNews_GenZ_EineWocheDanach_Ermittlungsbilanz_27Nov2026.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` + **`FrankfurtRedNews_GenZ_BundesweiteStatistik_27Nov2026.png`** |
+| `FrankfurtErklaertGratisNahverkehr` | `src/videos/frankfurt-erklaert-gratis-nahverkehr/` | **Format B** #19 „Frankfurt macht Bus und Bahn kostenlos – ausgerechnet am 12. Dezember!“ (produziert 26.11.2026; **Stand = Faktencheck 26.11.2026, 14:40 Uhr**, Nachkontrolle 15:17 Uhr ohne Änderung; FrankfurtRedNews): Maßnahmenpaket der Stadt (PK Mi 25.11., frankfurt.de-PM nicht abrufbar → FAZ, hessenschau, Journal Frankfurt, Radio Frankfurt) · Sa 12.12. + Sa 19.12. **alle RMV-Verkehrsmittel im Tarifgebiet 5000 inkl. Grenztarifgebiete** kostenlos, 0 Uhr bis 5 Uhr am Sonntagmorgen, „NUR AN DIESEN BEIDEN TAGEN“ · **Flughafen (5090) ausgenommen**, Umland (Offenbach, Bad Homburg) bis zur Stadtgrenze regulär (FAZ „angrenzende Gebiete“ bewusst nicht als „Nachbarorte gratis“) · keine Ticketregeln erfunden (RMV/traffiQ ohne eigene Meldung) · Hintergrund 31.10. + OB-Zitat, Kosten **400.000 Euro nur „laut FAZ“**, Sachschäden bei Händlern ohne Versicherung, Land 600.000 € nur im Bild · Kampagne „Frankfurt Christmas Shopping“ bis 19.12., „Zu Gast in Frankfurt“ 6.1.2027 · **Überschneidung mit dem Gen-Z-Protesttag 12.12.** nur zeitlich („ZWEI EREIGNISSE – EIN DATUM“, „BEIDES AM GLEICHEN TAG“, „DIREKTER ZUSAMMENHANG NICHT BELEGT“; im Ton „Ein direkter Zusammenhang ist bislang nicht belegt.“), Ort/Uhrzeit der Frankfurter Gruppe nur im Bild, keine Teilnahmeaufforderung/Prognose; neue Illustrationen `visuals/Transport.tsx` (Stadtbus, S-Bahn, Lichterkette, Einkaufstaschen, Münzstapel, 2,5D-Tarifkarte `TariffPlane` aus OSM `frankfurt-tarif-uebersicht.json` mit Stadtgrenze, Flughafen-Schraffur, Nachbarorten, SCHEMATISCH), Straßenbahn/U-Bahn/Römer/Zeil aus früheren Folgen; Whisper: „Er Em Vau“ → „alle Busse und Bahnen“, „Gen Z regelt“ nach Doppelpunkt („Jane Z.“) → eigener Satz am Satzanfang; Hörprobe #96, Stimme #97–#99, Render **Lauf #101: 64,15 s = 1.924 Frames, 16,9 MB, −14,5 LUFS** (Lauf #100 ersetzt: Szenenanfang „Verkehrsmittel“ laut `blackdetect` zu leer/dunkel); Tests `tests/erklaert-gratis-nahverkehr.test.ts`; Export `FrankfurtRedNews_Kostenloser_Nahverkehr_12_19Dezember_26Nov2026.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaertGenZPlanungstreffen` | `src/videos/frankfurt-erklaert-genz-planungstreffen/` | **Format B** #18 „Gen Z regelt Frankfurt – was soll sich am 12. Dezember ändern?“ (produziert 25.11.2026; **Stand = letzter Faktencheck 25.11.2026, 17:08 Uhr**; FrankfurtRedNews): TikTok-Bildbeitrag einer Frankfurter Gruppe (#GENZREGELT, vom Kanalbetreiber als Screenshots übermittelt, **Account im Screenshot nicht sichtbar** → „eine Frankfurter Gruppe“, nie „die Ortsgruppe“) – Kritik an der Organisation vom 31.10./20.11. nur als AUSSAGE DER GRUPPE im Konjunktiv (Infos zu spät, Ordner/Technik/Route kurz vorher, Telegram, Polizei „zu hunderten jeden Tag wahllos kontrolliert“) mit wörtlichen Kurzzitaten (Test gegen die Transkription in `sources.md`), daneben Innenministerium wörtlich („nicht die Herkunft eines Menschen, sondern konkretes Verhalten“, über 2.150 seit 1.11. Stand 18.11., 342 am 20.11.); konfrontative Sätze („Schikane … nicht unbeantwortet“, „GenZ zusammenstehen“) bewusst NICHT übernommen · **Planungstreffen Di 24.11., 19 Uhr, DGB-Haus Saal A nur als Einladung** („lud … ein“), Ergebnisse „öffentlich nicht bekannt“, DGB-Haus = Ort (Gewerkschaftshaus Wilhelm-Leuschner-Str. 69–77 laut OSM), Beteiligung des DGB nicht bekannt · Abstimmung mit der Bundesinitiative nur als FRAGE; Rückblick 20.11. „getrennte Planungen“ (laut Innenministerium 21.11.: Weseler Werft ca. 30, Zug „Gen Z Bundesweit“ ca. 1.000 – nur im Bild, nicht addiert), kein „Zerwürfnis“/„Spaltung“ · 12.12.: laut Gruppe 14 Uhr Gallusanlage ≠ Website der Bundesinitiative „Standort folgt“ ≠ Anmeldung ? ≠ Behörde ? (Stufenleiste mit „Zusammenarbeit noch offen“); Screenshots nicht eingebettet (eigene Nachbildung auf neutralem Handy, „Nachbildung“); neue Illustrationen `visuals/Planning.tsx` (Gewerkschaftshaus am Abend mit Saalfenster und Ankommenden, Saal mit Stuhlkreis/Flipchart als SYMBOLBILD, Handy-Nachbildung, Ordnerweste, Technik, Route mit „?“, Chat mit Schloss, zwei Strukturen mit Verbindung), neue OSM-Karte `frankfurt-gallus-gewerkschaftshaus.json` (Hbf, DGB-Haus, Gallusanlage), Zeil-Kontrolle aus #13 (`ZeilStreet`); Hörprobe #92, Stimme #93 (Begrüßung/Abo-Aufruf aus #17, g1 aus #16, Informationsteil 60,95 s, davon 59,94 s nach der Begrüßung), Render **Lauf #95: 65,47 s = 1.964 Frames, 16,7 MB, −14,6 LUFS** (Lauf #94 ersetzt: zwei zu dunkle Szenenanfänge laut `blackdetect`); Tests `tests/erklaert-genz-planungstreffen.test.ts`; Export `FrankfurtRedNews_GenZ_Planungstreffen_12Dezember_25Nov2026.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaertCondorFluege` | `src/videos/frankfurt-erklaert-condor-fluege/` | **Format B** #17 „Zwei Flugzeuge – Passagiere krank an Bord“ (Ereignis So 22.11.2026, produziert 23.11.2026; **Stand = letzter Faktencheck 23.11.2026, 11:30 Uhr**; **erste Folge als FrankfurtRedNews**): zwei Condor-Flüge aus La Romana (DE3705 9:32 / DE3845 10:56 Uhr laut aeroTELEGRAPH, nur im Bild) · Beschwerden laut Condor (Übelkeit, Unwohlsein, Erbrechen) · **rund 620 Menschen an Bord ≠ Erkrankte** (Personenraster 620, ≈ 30 laut Condor markiert, ≈ 40 laut anderen Berichten gestrichelt, „NICHT ALLE KRANK“) · Rettungskräfte schon vor der Landung bereit (hessenschau), laut Fraport vorsorglich zusätzliche Kräfte, Untersuchung an Bord · 2 Klinikaufnahmen (laut Condor Kreislauf / eigener Wunsch; laut Fraport je eine pro Flug) · Norovirus nur als Verdacht aus Medien („NICHT BESTÄTIGT“), laut Condor Charterflüge nach Kreuzfahrt, laut hessenschau Betroffene schon vor Abflug krank · Gesundheitsamt eingeschaltet, Ergebnis nicht bekannt; MANV 25, Schiffsname, Düsseldorf-Flug, „plötzlich“ unter „Bewusst NICHT verwendet“; neue Illustrationen `visuals/Aviation.tsx` (Großraumjet ohne Airline-Lackierung, Draufsicht-Symbol, Rettungswagen, Feuerwehr, Treppe, Vorfeld mit Terminal/Tower, Kabine von vorn, Personenraster, Klinik, Mikroskop, Virussymbol, Amt, Akte) + eigene Routenkarte (Natural Earth); Hörprobe #87, Stimme #88 (Runner-FFmpeg-Ausfall, 0 Credits) → #89, Nachvertonung #90 (f2, Pausen im Satz ≤ 280 ms); Längen-Ausnahme (Informationsteil 60,06 s, davon 59,06 s nach der Begrüßung); Render **Lauf #91**; Tests `tests/erklaert-condor-fluege.test.ts`; Export `FrankfurtRedNews_Condor_Flughafen_Krankheitsfaelle_23Nov2026.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert12DezemberAusblick` | `src/videos/frankfurt-erklaert-12dez-ausblick/` | **Format B** #16 „Nach dem 20. November: Schon die nächste Demo geplant?“ (produziert 22.11.2026; **Stand = letzter Faktencheck 22.11.2026, 17:54 Uhr**): kurzer Rückblick 20.11. (≈ 9 s: laut Polizei weitgehend friedlich, weniger als angekündigt – ≈ 1.700 bei vier Demos zusammen, 2.900 Kräfte / 10 Festnahmen / 342 Kontrollen laut Innenministerium über hessenschau 21.11., 12:17 Uhr; „unterschiedliche Planungen“ Ortsgruppe Weseler Werft vs. Bundesinitiative Bahnhofsviertel, **keine Spaltung behauptet**) · laut Website ANGEKÜNDIGT: Samstag 12.12.2026, **73 Städte** (namensgleich mit der Liste vom 19.11., Test), Frankfurt eine der „4 Städte“, in denen die Initiative selbst organisiert · Frankfurt: Datum fest, Treffpunkt/Uhrzeit „folgt“, Route nicht veröffentlicht; Stufen **Ankündigung ✓ · Anmeldung ? (öffentlich nicht bekannt) · Behörde ? (keine Mitteilung)** im Ton (f3, f4) und Bild; Auftrags-Angabe „Treffpunkt Hauptbahnhof/Kaiserstraße“ nicht belegt → „Bewusst NICHT verwendet“ (Test) · Mitmachen (Helfer, Ordner ab 18 für friedlichen Ablauf, Team) + Förderpool · Online-Zusagen ≠ Teilnehmende (Zähler 814 um 17:54 nur im Bild, Rohdaten gesichert) · Schlussfrage ohne Prognose (Vergleich 20.11. laut Polizei | 12.12. OFFEN); Längen-Ausnahme (Informationsteil 60,95 s ≤ 61,5 s, davon ≈ 59,9 s nach der Begrüßung, + Abo-Aufruf, gesamt 65,4 s = 1.962 Frames ≤ 66 s); Whisper hörte „Gen Z regelt“ nach „macht“ als „Dejen Zet“ → nach Gedankenstrich gestellt (wie #10); 2,5D-Deutschlandkarte (`GermanyPlane`) mit 73 Punkten, OSM-Karte `frankfurt-altstadt-oepnv.json` (zwei Planungsorte), Kalender 20.11. → 12.12., Stufenleiste, Helfer-/Ordner-Figuren, Förderpool-Topf, Zusagen-Handy; Hörprobe #82, Stimme #83–#85, Render **Lauf #86**; Tests `tests/erklaert-12dez-ausblick.test.ts`; Export `FrankfurtRed3_GenZ_WieGehtEsWeiter_12Dezember.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberStaedte` | `src/videos/frankfurt-erklaert-20nov-staedte/` | **Format B** #15 „Gen-Z-Proteste: Was ist in Hamburg, Leipzig und den anderen Städten passiert?“ (Nachbetrachtung des 20.11., produziert 21.11.2026; **Stand = letzter Faktencheck 21.11.2026, 17:51 Uhr**): Hamburg laut Polizei rund 4.000 (Dammtor → Schanze, weitgehend friedlich) | nach dem Ende Pyrotechnik + Eier, mehrere in Gewahrsam (NDR 21.11., 13:18 Uhr; Polizei-Korrektur „Pyrotechnik statt Flaschen“ übernommen) · Leipzig rund 2.500 um den Ring | nach dem Ende massive Ausschreitungen, Wasserwerfer kurz eingesetzt, 5 verletzte Beamte, > 200 Identitäten (4 Kinder, > 40 Jugendliche), Ermittlungen § 125a StGB (Ergänzungsmeldung PD Leipzig 21.11., 12:30 Uhr; VERDACHT ≠ SCHULD) · Berlin rund 4.000, ohne besondere Vorkommnisse · Stuttgart über 20 vorläufige Festnahmen (PM 20.11., 22:47) · Bremen Farbe gegen CDU-Parteibüro + Brandversuch an Auto (PM Nr. 0733) · Frankfurt: Poseck „Bilder vom 31. Oktober nicht wiederholt“ · Einordnung „DEMO ≠ AUSSCHREITUNG“, Städte nie addiert; Phasen-Leiste „Demo | nach dem Ende“ (`visuals/Infographics.tsx`: `PhaseBar`, `RouteMini`, `RingMini`), 2,5D-Deutschlandkarte (`GermanyPlane` aus #07) mit sechs Städten nach Polizeiangaben eingefärbt (friedlich / Zwischenfälle während / Ausschreitungen nach dem Ende); Medien-Datumsfehler („Samstagabend“) und Oktober-Zahlen unter „Bewusst NICHT verwendet“; Whisper-Doppelung im Berlin-Satz als Halluzination geprüft (Einzelabschnitt korrekt); Hörprobe #79, Stimme #80, Render **Lauf #81**; Tests `tests/erklaert-20nov-staedte.test.ts`; Export `FrankfurtRed3_20November_Staedte_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberVorbilanz` | `src/videos/frankfurt-erklaert-20nov-vorbilanz/` | **Format B** #14 Eilproduktion „Frankfurt 20.11. – was ist heute wirklich passiert?“ (VORBILANZ am Abend des Protesttags; **Stand = letzter Faktencheck 20.11.2026, 19:18 Uhr**, `content.ts → STAND`, nur im Bild, nicht im Ton): Weseler Werft laut Polizei bis 4.000 erwartet („erwartet“ statt hessenschau-„angemeldet“), laut Reportern 20–30 vor Ort (hessenschau; t-online ≈ 25), früh beendet (Meldung 14:46) · Streit Ortsgruppe (mit der Stadt vereinbart: kein Zug) vs. Bundesbewegung (Demozug ab Hbf), Schilderung „Ordner und Equipment seien gestrichen worden“ im Konjunktiv + „nicht unabhängig bestätigt“ · Demozug laut t-online ≈ 30 Min. verspätet, Alte Oper (laut Polizei, 17:36), Bockenheim rund 1 Std. nach Plan (FFH 18:27), laut Polizei rund 1.000 (hessenschau 17:57; t-online 900–1.000; inoffiziell 1.300 nur als „nicht bestätigt“) · Erwartung vs. tatsächlich je Versammlung, **nie addiert**, nie „nur 25 in ganz Frankfurt“ · Polizei laut FFH bisher friedlich, Pyrotechnik gezündet · offen: Polizeibilanz; 2,5D-Weseler-Werft aus #10 (graue Punkte = erwartet, helle = tatsächlich), Demozug-Karte auf OSM `frankfurt-innenstadt-nordwest.json` nur mit gemeldeten Punkten (Verlauf schematisch, wandernde Punkte), Tages-Zeitleiste mit **Meldungszeiten** auf dem Titelbild, Regen-Ebene `visuals/Weather.tsx`; Hörprobe #76, Stimme #77 (Pause nach hook2 408 → 378 ms offline), Render **Lauf #78**; Tests `tests/erklaert-20nov-vorbilanz.test.ts`; Export `FrankfurtRed3_20November_Vorbilanz_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert2150Kontrollen` | `src/videos/frankfurt-erklaert-2150-kontrollen/` | **Format B** #13 „Über 2.150 Kontrollen auf der Zeil – was hat die Polizei gefunden?“ (produziert 19.11.2026; **Stand: Bilanz Innenministerium 18.11., Kontrollen seit 01.11.**, am 19.11. keine neuere): über 2.150 Kontrollierte, 78 Strafanzeigen, 435 Ordnungswidrigkeiten, 182 Platzverweise (wörtlich, nicht addieren), Leitplanken kontrolliert ≠ schuldig · Anzeige ≠ Verurteilung · OWi ≠ Straftat · Platzverweis ≠ Festnahme; Sicherstellungen mit exakten Mengen als neutrale Liniensymbole in Beweismitteltüten (`visuals/Evidence.tsx`), kein Demo-Bezug; 2 durch die Kontrollen identifizierte Halloween-Tatverdächtige (laut hessenschau) getrennt von insgesamt 99 (Polizeipräsident); Bewertung (Poseck: „Sicherheitsgewinn“) vs. Kritik (Racial-Profiling-Vorwurf, SPD/Linke-Stadtverordnete) mit Zurückweisung, „Kontrollen sollen weitergehen“ (ANGEKÜNDIGT); 2,5D-Zeil aus der Folge „Polizeikontrollen“ wiederverwendet; Quellenzeile unter den Untertiteln; „Racial Profiling“ nur im Bild; Hörprobe #73, Stimme #74, Render **Lauf #75: 56,4 s = 1.691 Frames, 13,0 MiB**; Tests `tests/erklaert-2150-kontrollen.test.ts`; Export `FrankfurtRed3_2150Kontrollen_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberBundesweit` | `src/videos/frankfurt-erklaert-20nov-bundesweit/` | **Format B** #12 „73 Städte – ein Protesttag! Was passiert morgen?“ (produziert 19.11.2026 für Fr 20.11.; **Stand 19.11., 14 Uhr**): Website „Gen Z regelt“ listet **73 Städte** (Auftrag nannte 54, SZ 16.11.: 39 → überall 73 + „Stand: Donnerstagmittag“), Städteliste mit Treffpunkt-Koordinaten der Website `data/staedte.json` (Extrempunkte Kiel/Lörrach/Aachen/Cottbus per Test), 4 zentral (Berlin, Frankfurt, München, Köln, orange) vs. 69 angeschlossen (lokale Gruppen); Frankfurt „bis zu 4.000 erwartet“ (Stadt; nicht „angemeldet“) vs. Köln „5.000–10.000“ (Anmelderinnen laut Polizei Köln, PM 19.11., 7:58 Uhr; Deutzer Werft statt Innenstadt) mit Stempel „Angaben zur Planung – keine tatsächliche Teilnehmerzahl“; drei Arten von Zahlen (Online-Zusagen ≈ 20.000 laut Zähler, „keine Garantie“ · Anmeldung/Erwartung · tatsächlich offen); Forderungen als POSITION (3 von 6); 2,5D-Deutschlandkarte (`GermanyPlane` aus #07) mit 73 Punkten; **erste Folge mit Quellenzeile UNTER den Untertiteln** (`sourceLine`, Prüfbogen `-QuellenCheck`); Website-Angabe „Laufdemo ab Hbf“ bewusst nicht verwendet; Begrüßung + Abo-Aufruf aus dem #11-Cache; Hörprobe #69 zunächst am Kontingent gescheitert (0 Credits), nach Aufstockung Hörprobe #70, Vollvertonung #71 (Pause nach „73 Städte!“ 412 ms → `pauseAfterMs` 80, offline neu gebaut), finaler Render **Lauf #72: 56,6 s = 1.698 Frames, 14,49 MiB**; Tests `tests/erklaert-20nov-bundesweit.test.ts`; Export `FrankfurtRed3_20November_Bundesweit_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` + `…_QUELLEN_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberOepnv` | `src/videos/frankfurt-erklaert-20nov-oepnv/` | **Format B** #11 „Frankfurt morgen: Diese Bahnen sind betroffen!“ (produziert 19.11.2026 für Fr 20.11.; **Stand VGF 19.11., 9 Uhr** – aktualisierte Meldung, zuerst 18.11., 14 Uhr mit „ab 9 Uhr“): Straßenbahn 11/12/14 **ab 8:30 Uhr** nicht über die Altstadtstrecke, zwischen Börneplatz und Hbf kein Tram-Betrieb, Umleitung über Sachsenhausen (Verlauf nicht veröffentlicht → orangefarbener Bogen, schematisch); 18/30/M36 nur „möglicherweise“ (Kurt-Schumacher-/Konrad-Adenauer-Straße); U1–U5/U8 nach Fahrplan, U4/U5 als Alternative (beide Hbf – Willy-Brandt-Platz – Dom/Römer – Konstablerwache laut OSM), offen auch Hauptwache/Alte Oper; Hinweis Wochenende (DTC, U4/U5 Sa 3:30–Mo, VGF 16.11.) „gilt NICHT für Freitag“; Hintergrund fünf Versammlungen; OSM-Karte `frankfurt-altstadt-oepnv.json` (vier Kacheln) + **Linienverläufe aus OSM-Routenrelationen** (`scripts/maps/build-osm-routes.mjs` → `….routes.json`); ÖPNV-Illustrationen `visuals/Transit.tsx` (2,5D-Tram, U-Bahn, Uhr, Linienschilder, Römer-Giebel, Betriebsinfo-Handy und Anzeigetafel ohne Zeiten/Live-Daten); **ElevenLabs-Kontingent am 19.11. aufgebraucht** → t2 bezahlte Aufnahme wiederverwendet, w1 bezahlte Aufnahme nach „Versammlungen“ gekürzt (`derivedFrom` im Cache-Eintrag), Spur offline gebaut; Tests `tests/erklaert-20nov-oepnv.test.ts`; Export `FrankfurtRed3_20November_OePNV_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberDemoUpdate` | `src/videos/frankfurt-erklaert-20nov-demo-update/` | **Format B** #10 „Gen-Z-Demo am 20.11. geändert!“ (Stand 18.11.2026, 16:38 Uhr, nach der Sicherheits-Pressekonferenz): laut Stadt stationäre Kundgebung statt Demozug an der Weseler Werft 14–16:30 Uhr (Ordnungsdezernent: „um 17 Uhr ein klares Ende“ – offen als Zitat), **4.000 nur „erwartet“ (Prognose, keine Zählung)** – Quellen sagen nicht „angemeldet“; Vorher/Nachher als abstrakte 2,5D-Stadt (Zug SYMBOLISCH, Route nie veröffentlicht); perspektivische OSM-Karte Ostend `frankfurt-ostend-weseler-werft.json` mit Main, Flößerbrücke (Pylone), EZB, Skyline (`CityPlane` mit optionalen `ground`/`groundExtras`, Standard unverändert); Auflagen als Stempel-Karten; laut Innenministerium fünf Versammlungen (neu 15:00 „GenZ regelt Bundesbewegung“, Kaisersack → Carlo-Schmid-Platz am Bockenheimer Depot, bis 1.500, eigene Versammlung, Verlauf nicht veröffentlicht); Pressekonferenz als Nachrichtengrafik ohne Personen (über 2.000 statt 1.300 Kräfte, 49 Aufenthaltsverbote, 36 Meldeauflagen, Zeil bei Bedarf); Fazit „NICHT ABGESAGT – ABLAUF GEÄNDERT“; hartes Limit 60 s inkl. Abo-Aufruf (**58,1 s = 1.743 Frames**, Lauf #62); Kopfzeile symmetrisch oben (`TopTag` + Overlay rechts); Lautschrift `{Gen-Z-Demo|Dschen Zett Demo}`, Name „GenZ regelt Bundesbewegung“ nach Doppelpunkt (sonst Whisper „Dedenzett“); ElevenLabs-Client mit Zeitgrenze pro Anfrage (Störung 18.11.); Tests `tests/erklaert-20nov-demo-update.test.ts`; Export `FrankfurtRed3_20November_DemoUpdate_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` |
+| `FrankfurtErklaert20NovemberDreiProteste` | `src/videos/frankfurt-erklaert-20nov-drei-proteste/` | **Format B** #09 „4 Proteste – 1 Freitag! Was passiert am 20.11. in Frankfurt?“ (Stand 17.11.2026, überarbeitet auf Wunsch des Kanalbetreibers): laut Stadt (über t-online, 17.11., 13:27 Uhr) vier getrennte Versammlungen, **chronologisch je ein eigener Punkt** – 10:00 Schulstreik Willy-Brandt-Platz → Campus Westend (ver.di-Jugend, bis 1.200; „laut Aufruf“ auch gegen Krieg/Sozialkürzungen), 11:00 kleiner Zug quer über den Campus (Internationaler Jugendverband, 75; OSM-Karte `frankfurt-campus-westend.json`, Start/Ziel laut Anmeldung, Verlauf schematisch über `CityPlane.arrows`), 14:00 Gen Z regelt als stationäre Kundgebung an der Weseler Werft bis 16:30 (bis 4.000 erwartet; Website „Standort folgt“; längster Protest-Teil), 17:30 Gewerkschaftsjugend am Bockenheimer DEPOT (ver.di-Jugend, bis 500, Route wird geprüft = OFFEN); Auflagen für alle vier; Titel „4 PROTESTE“ statt „3“; Orientierungsleiste läuft nur vorwärts (Haken); 340 ms Pause nach „Ewa, Frankfurt!“; **Batman-Sequenz nach Younes' eigenem TikTok** (@ichbinyounes, „20.11 Hausarrest“, Tonspur lokal per Whisper transkribiert → `references/…/younes-transkript.md`): Polizei habe geklingelt, am 20. nicht nach Frankfurt, zweimal melden (LAUT YOUNES), Tür-Animation, Smartphone, Kalender + „Hausarrest“-Stempel – keine Begründungen/Vorwürfe, keine Verbindung zum Halloween-Festnahmefoto, Masken-Symbol statt Fledermaus-Logo; wiederverwendbare Tages-Timeline `DayTimeline.tsx` (Titelbild + Leiste mit `done`); **erste Folge mit Serien-Overlay oben rechts + symmetrischer Kopfzeile** (`TopTag`); Sonderausnahme Länge (71,8 s, Info 68,2 s); Thumbnail unverändert; Tests `tests/erklaert-20nov-drei-proteste.test.ts`; Export `FrankfurtRed3_20November_3Proteste_BATMAN_UPDATED.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` + `…_OVERLAY_PRUEFUNG.png` |
+| `FrankfurtErklaert13Demonstranten` | `src/videos/frankfurt-erklaert-13-demonstranten-2026-11-14/` | **Format B** #08 „Nur 13 Demonstranten? – Warum war bei der Gen-Z-Demo kaum jemand?“ (Frankfurt 14.11., Stand 16.11.2026): laut FNP (Reporter vor Ort) zwei Kundgebungen mit zusammen rund 13 Demonstrierenden – Hauptwache rund 10 (Schluss gegen 14 Uhr, Teilnehmer: „sollte nur auf den 20. November hinweisen“ = AUSSAGE), Bockenheimer Warte 3 (Anmelder laut Polizeisprecher nicht erschienen, Schaulustige nicht mitgezählt); 16 Mannschaftswagen als Bereitstellung vor der Matthäuskirche (≠ Kundgebungsort, OSM-Punkt); Datumschaos (tagesschau 01.11., taz 12.11., Polizei-PM 13.11.) nur als MÖGLICHE ERKLÄRUNG – NICHT BEWIESEN; Vorbereitung (PM 13.11.) vs. Verlauf (laut FNP: Zeil ruhig, Absperrungen nicht nötig); 31.10. (≈ 8.000 laut Polizei) nur als Größenordnung; 20.11. laut genz-regelt.de; wiederverwendbare perspektivische Stadtkarte `src/components/map/CityPlane.tsx` + OSM `frankfurt-innenstadt-nordwest.json`; Längen-Ausnahme (Info 56,2 s + Abo-Aufruf, 60,0 s, ≤ 64 s); Tests `tests/erklaert-13-demonstranten.test.ts`; Export `FrankfurtRed3_13Demonstranten_ADAM_FINAL.mp4` + `FrankfurtRed3_13Demonstranten_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
+| `FrankfurtErklaertGenZPhase2` | `src/videos/frankfurt-erklaert-genz-phase2-2026-11-14/` | **Format B** #07 „Gen Z regelt – Phase 2: friedliche Demos, aber 20 Festnahmen in Berlin“ (Proteste 14.11., Meldestand 15.11.2026, 13 Uhr): 2,5D-Deutschlandkarte (`visuals/GermanyPlane.tsx`, Natural Earth) mit Bremen (bis zu 670, friedlich) · Karlsruhe (rund 220, weitgehend friedlich) · Stuttgart (mehrere Hundert, Aufzug untersagt) + Hinweis Düsseldorf/Wuppertal (WDR); Berlin perspektivisch (`visuals/BerlinPlane.tsx`, OSM `berlin-charlottenburg.json`): 100 angemeldet / laut Polizei rund 1.200, 700 Kräfte, Strecke Savignyplatz → Ku'damm → S Halensee (rbb24; Verbindung zum Ku'damm schematisch); Zwischenfälle laut Polizei als Illustration (`visuals/IncidentStreet.tsx`); Bilanz Stand 15.11.: 20 vorläufige Festnahmen (zuerst 22), 28 Strafanzeigen, 3 verletzte Polizisten, Festnahme ≠ Verurteilung; 20.11. angekündigt; erstes Video mit offiziellem Logo; hartes Limit 60 s (≈ 59,0 s inkl. Abo-Aufruf); Tests `tests/erklaert-genz-phase2.test.ts`; Export `FrankfurtRed3_GenZPhase2_15November_ADAM_FINAL.mp4` + `FrankfurtRed3_GenZPhase2_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
+| `FrankfurtErklaert14November` | `src/videos/frankfurt-erklaert-14-november-2026/` | **Format B** #06 Sondervideo „14.11. – doch eine Gen-Z-Demo in Frankfurt?“ (14.11.2026): Datum erst kurz auf der Website von „Gen Z regelt“ genannt, dann entfernt („bald“, tagesschau 01.11.), inzwischen doch Aktionstag „Phase 2“; Polizei-PM 13.11.: Kundgebung Hauptwache 12:30–15:00 (Gen Z regelt zugerechnet) · Bockenheimer Warte 17–19 (Veranstalter nicht genannt) · Aufzug Goetheplatz zum Irankonflikt (1.000 erwartet, keine Gen-Z-Demo), mehr Kräfte als am 31.10., Zugangskontrollen zur Zeil nur im Bedarfsfall, keine konkreten Hinweise auf Ausschreitungen; Verlauf bei Redaktionsschluss offen (Stand im Bild); 20.11. laut GEW Hessen; Hauptwache-Illustration (`visuals/Hauptwache.tsx`), OSM-Karte `frankfurt-innenstadt-west.json`; Längen-Ausnahme (Info 58,1 s + Abo-Aufruf, 61,3 s); Tests `tests/erklaert-14-november.test.ts`; Export `FrankfurtRed3_14November_ADAM_FINAL.mp4` + `FrankfurtRed3_14November_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
+| `FrankfurtErklaert76FragenTeil4` | `src/videos/frankfurt-erklaert-76-fragen-teil4/` | **Format B** #05 „76 Fragen – Teil 4: 4 weitere Antworten“ (12.11.2026): bis zu 30 Einsatzorte gleichzeitig (Polizei 1.11., OSM-Karte mit 11 belegten Schadensorten, Schilde/Linien symbolisch, Erklärung ≠ Bewertung), Schaden 17/5 (offiziell) → 35/6 + sechsstellig nur als BERICHT des Wiesbadener Kurier (Bezahlinhalt, nicht selbst einsehbar), Waffengeschäft (Schreckschusswaffen sichergestellt, 18-Jähriger in U-Haft ≠ Verurteilung), Strafverfolgung 110/53/73 (nicht addieren, verdächtig ≠ verurteilt); „160 Durchsuchungen“, „vollständig/nicht schussfähig“ ohne Beleg → nicht verwendet; erste Folge mit Längen-Ausnahme (Info 59,4 s + Abo-Aufruf, 62,8 s); Tests `tests/erklaert-76-teil4.test.ts`; Export `FrankfurtRed3_76Fragen_Teil4_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
+| `FrankfurtErklaert76FragenTeil3` | `src/videos/frankfurt-erklaert-76-fragen-teil3/` | **Format B** #04 „76 Fragen – Teil 3: Was ist immer noch offen?“ (12.11.2026): vier Fragen ohne Wiederholung von Teil 2 – Teilnehmerprognose (Polizei ≈ 2.000 vs. 8.000–9.000, Ursache offen), Gewalt schon bis zur Auflösung (6 von insgesamt 181 laut Innenminister, Mehrheit friedlich), zwei Tatverdächtige unter 14 (§ 19 StGB, Jugendamt § 27 SGB VIII, § 828/§ 832 BGB – Eltern nicht automatisch, keine Rechtsberatung), Schäden (Versicherung zuerst, Stadt prüft ohne feste Zusage, Gesamtschaden nicht beziffert); erstes Cover nach `COVER_ZONE` + Prüfbogen `-CoverVorschau`; Tests `tests/erklaert-76-teil3.test.ts`; Export `FrankfurtRed3_76Fragen_Teil3_ADAM_FINAL.mp4` + `…_THUMBNAIL.png` + `…_COVER_VORSCHAU.png` |
+| `FrankfurtErklaert76FragenTeil2` | `src/videos/frankfurt-erklaert-76-fragen-teil2/` | **Format B** #03 „76 Fragen – Teil 2: erste Antworten“ (11.11.2026): Angaben des Innenministers im Innenausschuss laut hr/dpa (181 verletzte Polizisten, 13 bislang nicht dienstfähig, 73 Tatverdächtige: ≈ 2/3 unter 21, > 1/2 polizeibekannt, ≈ 1/4 aus Frankfurt; ≈ 1.300 Kräfte über den Abend), offene Fragen (Plünderungen, TikTok), Maßnahmenbündel 20.11. (angekündigt, kein Verbot), Kontroverse als POSITION; Titelbild = erste Szene; Kurzformat-Stimme 1.20, Pausen ≤ 400 ms; Tests `tests/erklaert-76-teil2.test.ts`; Export `FrankfurtRed3_76Fragen_Teil2_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_Teil2_THUMBNAIL.png` |
+| `FrankfurtErklaert76Fragen` | `src/videos/frankfurt-erklaert-76-fragen-landtag/` | **Format B** #02 „76 Fragen nach der Krawallnacht“ (Teil 1, 10.11.2026): Innenausschuss 51. Sitzung (20 Uhr geplant, Wiesbaden), Drs. 21/5450 (Grüne, 21 Fragen) + 21/5459 (FDP, 55 Fragen) = 76; vier Themen als FRAGEN (Gefahrenprognose I.1–8, Schutzkonzept V.6, TikTok I.8, Konsequenzen) – keine Antworten/Ergebnisse; 57,1 s; Politik-Bausteine `formats/frankfurt-erklaert/visuals/Politics.tsx` (Landtag, BigCount, QuestionNumber, Dossier, CalendarSheet, FeedPhone) für Teil 2 (`references/…/teil2-notiz.md`); Tests `tests/erklaert-76-fragen.test.ts`; Export `FrankfurtRed3_76Fragen_Innenausschuss_ADAM_FINAL.mp4` + `FrankfurtRed3_76Fragen_THUMBNAIL.png` |
+| `FrankfurtErklaertDemoFilmen` | `src/videos/frankfurt-erklaert-01-demo-filmen/` (+ Formatsystem `src/formats/frankfurt-erklaert/`) | **Format B** „Frankfurt erklärt in 60 Sekunden“ #01 „Nur gefilmt – trotzdem Ärger?“: Art. 8 GG, § 125 StGB (eigene Beteiligung), Filmen grundsätzlich erlaubt vs. Veröffentlichen (§§ 22, 23 KUG, § 201 StGB), Kontrolle auch als Zeuge (§ 163b Abs. 2 StPO), Beweismittel/Sicherstellung (§§ 94, 98 StPO) ≠ automatische Galerie-Durchsicht (§ 110 StPO), Auflösung → unverzüglich entfernen (§ 14 Abs. 7 HVersFG); VG Frankfurt 2025 nicht verifizierbar → nicht verwendet; 59,1 s (1.773 Frames); Tests `tests/erklaert-demo-filmen.test.ts` + `tests/erklaert-format.test.ts`; Export `FrankfurtRed3_Erklaert01_DemoFilmen_ADAM_FINAL.mp4` |
+| `FrankfurtPoliceRights` | `src/videos/frankfurt-2026-11-polizeikontrollen/` | „Polizei will deine Galerie sehen – musst du das?“: verstärkte Kontrollen auf der Zeil (hessenschau), Schilderung eines Stadtverordneten (nicht bestätigt), Zeugenaufruf ≠ Pflicht, freiwillige Bitte vs. angeordnete Maßnahme (§ 18 HSOG, §§ 94, 98, 110, 163b StPO, BGH 2 StR 232/24), Tipps für Kontrollen; Kategorien OFFIZIELL · BERICHT · SCHILDERUNG · RECHT · TIPP; leichter Frankfurter Slang (≈ 4 Ausdrücke, nur Wortwahl); 2,5D-Zeil (`visuals/ZeilStreet`), Smartphone-UI, Figuren; Tests `tests/polizeirechte.test.ts`; Export `FrankfurtRed3_Polizeikontrollen_Rechte_ADAM_FINAL.mp4` |
+| `FrankfurtWorldwide` | `src/videos/frankfurt-2026-10-31-international/` | „Wie Frankfurt weltweit Schlagzeilen machte“ – Neufassung der unveröffentlichten Folge 1 (ohne Folgennummer im Bild): **V2:** kurzer Ablauf + Bilanz, virale Bilder (Batman mit Selbstdarstellung des Accounts @ichbinyounes – nie als Festgenommener/Täter, kein Gesicht; Meme „3 linke Schuhe“ als anonyme Illustration), Weltkarte, Schlagzeilen nach Regionen; Medienliste `data/medien.json` (Tests: `tests/international.test.ts`), Export `FrankfurtRed3_International_ADAM_FINAL_V2.mp4` |
+| `FrankfurtNov20Forecast` | `src/videos/frankfurt-2026-11-20-ausblick/` | Ausblick „20. November – wieder Eskalation?“: Halloween-Faktor, Polizei (angekündigt), Läden (möglich), Fazit als Einschätzung, Plot-Twist mit erfundener Firma (als FIKTION markiert), Kommentarfrage; jede Aussage mit Status FAKT/ANGEKÜNDIGT/EINSCHÄTZUNG/OFFEN/FIKTION (Tests: `tests/nov20.test.ts`), Export `FrankfurtRed3_20November_Ausblick_ADAM_FINAL.mp4` |
+| `FrankfurtNov20ForecastPremium` | `src/videos/frankfurt-2026-11-20-ausblick/` (`premium/`, `FrankfurtNov20ForecastPremium.tsx`) | PREMIUM-Bildfassung des Ausblicks: neue Szenen in `premium/scenes/`, Designsystem `premium/kit.tsx`, Illustrationen (NightCity, Storefront, Person, PoliceVan, Craftsman). Ton/Timing/Untertitel/Outro unverändert – Original-Komposition läuft unsichtbar als Tonquelle; Sperrdatei `premium/lock.json` (SHA-256 von Skript, Manifest, Adam-MP3, Musik, voice.json), Tests `tests/nov20-premium.test.ts`; Export `FrankfurtRed3_20November_Ausblick_ADAM_PREMIUM_FINAL.mp4` (Workflow mit `stimme: vorhanden`) |
+| `FrankfurtHeadlines` | `src/videos/frankfurt-2026-10-31/` | Folge 1 (Sicherung, unveröffentlicht): Demo, Nacht, internationale Schlagzeilen |
+| `FrankfurtShops` | `src/videos/frankfurt-2026-10-31-geschaefte/` | Folge 2 (veröffentlicht): Schadenskarte aller recherchierten Geschäfte; Daten in `data/shops.json` (Tests: `tests/shops.test.ts`) |
+| `FrankfurtNextDemo` | `src/videos/frankfurt-2026-11-04-naechste-demo/` | Folge 3: „Wann geht es weiter?“ – Termine 14./20./21.11., Polizei, Verbotsdebatte, Recht; Daten in `data/termine.json` (Tests: `tests/termine.test.ts`) |
+
+## Formate (dauerhaft)
+
+- **Format A – Hintergrund/News (bisherige Folgen):** 20–130 s, Thema/Ereignis im Mittelpunkt, freie Szenenzahl, Kategorien-Chips je Video,
+  Outro aus Folge 2. Bisherige Folgen werden nicht nachträglich verändert (neue Fassungen nur als eigene Komposition).
+- **Format B – „FRANKFURT ERKLÄRT · IN 60 SEKUNDEN“** (Marke FrankfurtRed3, `src/formats/frankfurt-erklaert/`):
+  - Eine Frage pro Folge; **max. 60 s = 1.800 Frames bei 30 fps inkl. Intro und Outro**, Ziel 56–59,5 s.
+  - Eintrag in `config/videos.json` mit `"format": "frankfurt-erklaert-60", "maxSeconds": 60`.
+  - Aufbau: Format-Intro (`IntroSting`, unter „Ewa, Frankfurt!“) → Hook mit Frage-Plakette → 3–4 Kapitel mit Nummer im Bild (`ChapterTitle`;
+    Nummerierung NICHT im Ton) → Fazit → `ShortOutro` (≤ 100 Frames).
+  - Durchgehend `FormatBadge` (60-s-Ring), Untertitel, leises Musikbett, Whoosh an Schnitten.
+  - Bausteine:
+    - Rahmen und Kurzkarten: `ErklaertFrame`, `InfoCard`, `LawChip`, `Equation` (≠ / =, `layout="compact"`), `SourceBar` (nur fertige Folgen #01–#11), `Pop`;
+      Quellenzeile unter den Untertiteln ab #12: `ErklaertEpisode.sourceLine` (siehe Design-System).
+    - Bildszenen: `CameraPhone`/`CameraOverlay` (Aufnehmen vs. Veröffentlichen), `DemoStreet` (2,5D-Demo, Hervorhebung, abstrakte Konfliktzone, Auseinandergehen),
+      `IsoCity` (erhöhte Stadtansicht, allgemeine Pfeile).
+  - Eine Folge liefert nur `content.ts`, `plan.ts`, `scenes/`, eine `ErklaertEpisode` + Cover.
+  - Höchstens 1–2 Slang-Ausdrücke. Bei Rechtsthemen „Allgemeine Info, keine Rechtsberatung · Stand“ im Bild; Szenen als „ILLUSTRATION“ kennzeichnen.
+  - Gewalt nur abstrakt (Lichtschein, Flugbahnen); keine Taktiken, Fluchtwege oder Absperrungen; nie Widerstand gegen Maßnahmen nahelegen.
+  - **Kurzformat-Regeln ab Teil 2 der „76 Fragen“ (11.11.2026, für alle NEUEN Format-B-Folgen):**
+    - Stimme: `script.json → "voice": {"profile": "kurzformat-60"}` → Adam mit speed **1.20** (`config/voice-regeln.json → profiles`; `config/voice.json` selbst bleibt unverändert), alle anderen
+      Werte unverändert; längere Videos und bereits fertige Folgen bleiben bei 1.16. Bei unnatürlichem Klang hat Verständlichkeit Vorrang (Hörprobe).
+    - Timing: `"trim": {"mode": "letters", "maxInnerGapMs": 320}` (Schnitt am letzten Buchstaben statt am Satzzeichen, Pausen im Satz ≤ 320 ms),
+      `pauseAfterMs` 0–60 ms zwischen Sätzen, ≈ 120 ms zwischen Themen, **keine Füllpausen** (lieber 55 s ohne Leerlauf als 60 s mit);
+      `"maxPauseMs": 400` in Skript und `config/videos.json` → `scripts/voice/check-pauses.mjs` prüft die Spur (auch im Workflow).
+    - Szenen: Übergänge ≤ 10 Frames; neue Grafik spätestens mit dem neuen Satz; Schlüsselwort-Cues für jede Einblendung; kein Element erst
+      am Szenenende; keine leeren Szenenanfänge (erste Information ab Frame 0–6).
+    - Inhalt: hohe Informationsdichte, Zahlen immer mit Urheber, Kategorien OFFIZIELL · BERICHT · POSITION · OFFEN · ANGEKÜNDIGT im Bild.
+    - **Titelbild im Video:** die erste Szene IST das Titelbild (vollständiger Titel ab Frame 0, ≈ 1–1,5 s stehend), danach Verwandlung in die
+      erste Inhaltsszene ohne Schwarzblende; dieselbe Komponente rendert das PNG (`<Name>-Cover`, Workflow `thumbnailName`);
+      `ErklaertEpisode.badgeFrom` blendet das Format-Badge erst danach ein.
+    - **Titelbild-Position (dauerhaft ab Teil 3 der „76 Fragen“, 12.11.2026):** Beim Upload von Teil 2 wurden Serientitel und Zahl im
+      Profilraster (mittiger 3:4-Ausschnitt) oben angeschnitten, unten blieb Fläche frei. Deshalb gilt `COVER_ZONE`
+      (`src/formats/frankfurt-erklaert/theme.ts`): Serientitel, große Zahl, Hauptgrafik, Themenkarte, Untertitelzeile in der Kernzone
+      **y 330–1450**, alles Wesentliche im **3:4-Ausschnitt y 240–1680**, Serientitel nicht über ≈ y 390, Themenkarte nicht in der oberen
+      Hälfte, Seitenrand ≥ 90 px, rechts ab x ≈ 930 / y ≈ 1000 liegen die App-Knöpfe. Im Video enden die Coverelemente über dem
+      Untertitel-Band (≤ y 1300); das PNG darf dieses Band zusätzlich nutzen (z. B. Themenzeile). Oberer Bildteil = dekorativer Himmel.
+      Layout-Werte als eigene `.ts`-Konstante (z. B. `cover-layout.ts`) und per Test gegen `COVER_ZONE` prüfen.
+    - **Titelbild-Prüfbogen vor jedem Export:** Komposition `<Name>-CoverVorschau` (`CoverPreviewSheet`): 9:16 mit Zonen, 3:4-Ausschnitt,
+      nachgebautes Profilraster neben den Vorgänger-Covern, Videoframe mit Untertitel und neutral nachgezeichneten App-Elementen (keine
+      Logos). Der Workflow legt ihn als `*_COVER_VORSCHAU.png` ins Artefakt (nicht zur Veröffentlichung). Hauptüberschrift und Teil-Kennung
+      müssen in allen vier Ansichten vollständig lesbar sein; sonst Layout verschieben/verkleinern und erneut prüfen.
+      Bereits veröffentlichte Cover werden nicht nachträglich geändert.
+  - **Kopfzeile ab #09 (dauerhaft für alle NEUEN Format-B-Folgen, 17.11.2026): Serien-Overlay oben RECHTS + Szenen-Box links, symmetrisch.**
+    Das `FormatBadge` (60-s-Ring, „FRANKFURT ERKLÄRT“, rot „IN 60 SEKUNDEN · #NN“) lag oben links unter der TikTok-Suchleiste (≈ y 90–238) und wurde verdeckt.
+    Neue Folgen setzen `ErklaertEpisode.badgePlacement: 'top-right'` → rechtsbündig, Abstand rechts `LAYOUT.badgeRightInset` (48 px), Oberkante
+    `LAYOUT.badgeTopRight` (**y 272**, ≥ 30 px unter der Suchleiste), feste Höhe `LAYOUT.topBarHeight` (70 px); Aussehen, Timer, Nummer und Animation unverändert.
+    Die Szenen-Box oben links ist IMMER `TopTag` (`src/formats/frankfurt-erklaert/Branding.tsx`): gleiche Oberkante, gleiche Höhe, gleiche Pillenform →
+    beide Boxen stehen exakt auf einer Linie (y 272–342). Keine eigenen Tags mehr bei y 290. Szenen-Inhalte beginnen darunter (Leiste ab ≈ y 366).
+    NUR diese Kopfzeile ist betroffen – großes Intro, Titelbild und Thumbnail bleiben in Stil und Position unverändert. Fertige Folgen behalten
+    `top-left` (Standard, `LAYOUT.badgeTop` 196) und werden nicht neu gerendert.
+    Vor jedem finalen Render: Komposition `<Name>-OverlayCheck` (`src/formats/frankfurt-erklaert/OverlayCheck.tsx`, drei Prüfbilder: Rohframe · Frame mit
+    neutral simulierter Suchleiste · dichteste Szene mit Suchleiste); der Workflow legt sie als `*_OVERLAY_PRUEFUNG.png` ins Artefakt. Die Suchleiste wird
+    NIE ins MP4 gerendert. Test: `tests/erklaert-20nov-drei-proteste.test.ts` (Lage unter der Suchleiste, TopTag-Symmetrie, alte Folgen ohne `badgePlacement`).
+  - **Tages-Timeline (ab #09):** `src/formats/frankfurt-erklaert/visuals/DayTimeline.tsx` – leuchtende Achse, Markierungen mit Mini-Illustrationen
+    (`book`/`flag`/`sign`/`banner`), `variant="full"` (Titelbild/Übersicht) bzw. `"strip"` (Orientierungsleiste mit `active`); gleichmäßige Abstände =
+    Reihenfolge, KEINE Routen. `done` setzt grüne Haken für bereits erklärte Termine – Szenen chronologisch ordnen, damit die Leiste nur vorwärts läuft
+    (Wunsch Kanalbetreiber: kein Hin-und-her-Springen). Geometrie für Layout-Tests in `day-timeline-geometry.ts`.
+  - **Längen-Ausnahme (ab Teil 4 der „76 Fragen“, 12.11.2026, nur auf ausdrücklichen Wunsch je Folge):** Informationsteil ≤ 61,5 s (`FORMAT.infoMaxSeconds`), danach ein kurzer Abo-Aufruf als letztes Segment mit der ID `cta` (bis #16 „Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr.“, ab #17 „Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!“ – Nachlauf dann ≈ 1,5 s, damit gesamt ≤ 66 s – Adam sprach „FrankfurtRed3“ sonst wie „Frankfurt rät 3“; kein „macht das Plus weg“), Abo-Phase 3–4 s über `tailMs`, gesamt ≤ 66 s (`FORMAT.extendedMaxSeconds`). Eintrag in `config/videos.json`: `maxSeconds` ≤ 66, `infoMaxSeconds`, Begründung `ausnahme`; `ErklaertEpisode.maxSeconds` aus der Config. `tests/erklaert-format.test.ts` prüft Begründung, `cta` und Informationsteil. Ohne Ausnahme gilt weiter 60 s.
+  - **Sonderausnahme (nur mit ausdrücklicher Freigabe des Kanalbetreibers je Folge, erstmals #09):** `sonderausnahme` (Begründung) in
+    `config/videos.json` → Informationsteil bis `FORMAT.specialInfoMaxSeconds` (69 s), gesamt bis `FORMAT.specialMaxSeconds` (75 s); geprüft in
+    `tests/erklaert-format.test.ts`. Alle anderen Folgen bleiben bei 60 s bzw. 66 s.
+  - **Verlängerte Sonderausgabe (nur mit ausdrücklichem Auftrag des Kanalbetreibers je Folge, erstmals #20 „Eine Woche danach“, 27.11.2026):**
+    `sonderausgabe` (Begründung) in `config/videos.json` → Informationsteil bis `FORMAT.editionInfoMaxSeconds` (73,5 s ab Frame 0, ≈ 70 s nach der
+    Begrüßung), gesamt bis `FORMAT.editionMaxSeconds` (80 s); geprüft in `tests/erklaert-format.test.ts`. Serienname „in 60 Sekunden“ bleibt.
+  - **Bundesweites Stadt-Dashboard (ab #20, wiederverwendbar):** `src/formats/frankfurt-erklaert/visuals/CityDashboard.tsx` (+ testbare Geometrie
+    `city-dashboard-geometry.ts`): 2 × 3 gleich große Karten (x 64–930, y 500–1262), je Karte Hauptzahl + eigene Kategorie + ≤ 3 Zusatzangaben +
+    Meldestand/Urheber; keine Rangliste, keine Summe, keine gemeinsame Skala; Text statt geschätzter Zahl, wenn keine Zahl veröffentlicht ist.
+    Daten aus EINER Datei je Folge (z. B. `data/staedte.ts`), die auch die Stadtszenen lesen. Aufbau ≤ 1,7 s, danach ≥ 4 s völlig ruhig (Pausierbild).
+    Optionaler Export als Infografik-PNG: Komposition `<Name>-Infografik` (exakt ein Videoframe) + `infografikName` in `config/videos.json` →
+    Workflow legt `<infografikName>.png` ins Artefakt.
+  - **60-s-Grenze vierfach geprüft:**
+    1. `enforceMaxFrames` (`src/formats/frankfurt-erklaert/timeline.ts`) kürzt automatisch den stummen Nachlauf bzw. bricht ab, wenn schon die Stimme
+       zu lang ist (mit Angabe, um wie viel gekürzt werden muss).
+    2. `tests/erklaert-format.test.ts` gilt für jede Folge mit `maxSeconds`.
+    3. Workflow: `render.mjs --max` (verify).
+    4. Workflow: `tech-report.mjs --max-seconds` (FFprobe am fertigen MP4).
+  - Korrektur bei Überlänge: Sprechertext kürzen (nur geänderte Sätze werden neu vertont). Reine Pausen-Änderungen offline aus dem Cache:
+    `node scripts/voice/elevenlabs-tts.mjs --video <id> --offline` (0 Credits).
+
+## Projektstruktur
+
+```
+src/
+  components/   wiederverwendbare Bausteine (backgrounds, characters, map, media, infographics,
+                camera, transitions, text, subtitles, audio, layout)
+  lib/          Animation, Farben, Format, Skript-Timing, Szenenplan
+  formats/      Formatsysteme (z. B. frankfurt-erklaert = Format B „in 60 Sekunden“: Rahmen, Branding, Karten, Visuals)
+  theme/        Design-Tokens, Schriften
+  videos/<id>/  ein Ordner pro Video: script.json, voiceover.json, content.ts, scenes/, Komposition
+  showcase/     Vorschau aller Bausteine (Platzhalter)
+  Root.tsx      Registrierung aller Kompositionen
+public/         statische Dateien (voiceover/, sfx/)
+voices/         Stimmvorlagen für Chatterbox (nur mit Lizenz, siehe voices/README.md)
+src/data/maps/  Stadtpläne aus OpenStreetMap (ODbL)
+voice-input/    hochgeladene Roh-Sprecherdateien (<video-id>.mp3|wav|m4a)
+tests/          Unit-Tests (node --test)
+scripts/        Node-Skripte: render, verify, still, voice/*, audio/*
+references/     Quellen, Recherche, Lizenznachweise
+output/         Renderings (nicht versioniert)
+.claude/skills/ offizielle Remotion Agent Skills (remotion-dev/skills)
+```
+
+## Neues Video anlegen (Checkliste)
+
+1. Recherche → `references/<id>/sources.md` (Quellen, Abrufdatum, „bewusst nicht verwendet“).
+2. `src/videos/<id>/script.json` (Segmente = Sätze) und `content.ts` (alle Fakten mit Quelle).
+3. Szenen in `scenes/` aus Bibliotheks-Bausteinen bauen; `SceneSpec`s den Segmenten zuordnen.
+4. Komposition in `src/Root.tsx` registrieren (mit `calculateMetadata`).
+5. Neues Video in `config/videos.json` und als Option im Workflow `video-produzieren.yml` eintragen.
+6. `npm run check`, `npm run still -- --comp <Id> --every 30`, Bilder ansehen (auch Frame 0 = TikTok-Vorschau).
+5a. Stimme immer mit Adam: Auftrag `{"video": "<Komposition>", "aktion": "hoerprobe"}` → anhören → `"aktion": "video"`.
+7. `npm run render -- <Id>` → Prüfbericht muss grün sein → GitHub-Workflow „Video produzieren (ElevenLabs Adam)“ (Artefakt `FrankfurtRed3_Folge<N>_…`).
+
+## Befehle
+
+```bash
+npm run dev                                   # Remotion Studio (Vorschau)
+npm run check                                 # TypeScript + ESLint + Unit-Tests
+npm run still -- --comp FrankfurtHeadlines --every 30
+npm run render -- FrankfurtHeadlines          # MP4 + Prüfbericht in output/
+npm run verify -- output/FrankfurtHeadlines.mp4
+npm run voice:setup-chatterbox && npm run voice:chatterbox -- --video frankfurt-2026-10-31 --check
+npm run voice:setup-piper && npm run voice:piper -- --video frankfurt-2026-10-31
+node scripts/maps/build-osm-map.mjs --bbox 8.6700,50.1085,8.6915,50.1185 --out src/data/maps/frankfurt-innenstadt.json
+npm run voice:import -- --video frankfurt-2026-10-31 --file voice-input/sprecher.mp3
+```
+
+In Cloud-Containern mit vorinstallierter Chrome Headless Shell wird diese automatisch gefunden
+(`scripts/lib/remotion.mjs`), sonst `REMOTION_BROWSER_EXECUTABLE` setzen oder `npx remotion browser ensure`.
+
+## Lizenzen (Kurzfassung)
+
+- Remotion: frei für Einzelpersonen, Firmen bis 3 Mitarbeitende und Non-Profits, sonst Firmenlizenz (remotion.pro).
+- Stills: In `<Still>` ist `useCurrentFrame()` immer 0 → für Cover `<Sequence from={-N}>` statt `<Freeze>` nutzen.
+- Kartendaten: Natural Earth (gemeinfrei) via `world-atlas` (ISC).
+- Schriften: Montserrat, Inter – SIL Open Font License.
+- Stimme Adam: ElevenLabs-Standardstimme; kommerzielle Nutzung durch den bezahlten Tarif (Starter) abgedeckt.
+- Fallback-Stimme `de_DE-thorsten-high`: Datensatz Thorsten-Voice, CC0. Piper-Engine: GPL-3.0 (nur Werkzeug).

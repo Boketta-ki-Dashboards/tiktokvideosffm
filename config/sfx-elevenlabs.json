@@ -1,0 +1,13 @@
+{
+	"$comment": "Optionale Premium-Soundeffekte von ElevenLabs (Sound Effects API). Werden EINMAL erzeugt, im Repository gecacht (voice-cache/elevenlabs-sfx/) und in allen Folgen wiederverwendet. Fehlt dem API-Key die Berechtigung, bleiben die selbst erzeugten Effekte aus public/sfx/ aktiv. Name = Schlüssel aus src/lib/sfx.ts, der ersetzt wird.",
+	"modelId": "eleven_text_to_sound_v3",
+	"outputFormat": "mp3_44100_128",
+	"promptInfluence": 0.6,
+	"peakDb": -3,
+	"effects": [
+		{"name": "boom", "text": "Deep cinematic trailer impact, low sub boom with a long dark reverb tail, no music, no voice", "durationSeconds": 3},
+		{"name": "typewriter", "text": "Fast typing on a modern laptop keyboard, about ten crisp key presses, dry studio recording, no voice", "durationSeconds": 1.2},
+		{"name": "notify", "text": "Short friendly two-tone smartphone notification chime, clean and modern, no voice", "durationSeconds": 0.8},
+		{"name": "blip", "text": "Short soft electronic data blip for a digital map marker appearing, futuristic UI sound, no voice", "durationSeconds": 0.6}
+	]
+}

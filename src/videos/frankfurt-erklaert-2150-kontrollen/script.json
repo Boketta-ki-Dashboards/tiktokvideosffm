@@ -1,0 +1,91 @@
+{
+	"videoId": "frankfurt-erklaert-2150-kontrollen",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf sind bereits geprüfte, bezahlte Aufnahmen (gleicher Cache-Schlüssel wie #11/#12). Zahlen ausgeschrieben, „Racial Profiling“ nicht im Ton (englischer Fachbegriff) – im Bild. Stand: Innenministerium 18.11.2026 (Bilanz seit 01.11.), hessenschau 18.11., 19:41 Uhr (aktualisiert 19.11., 10:05 Uhr); am 19.11. keine neuere Bilanz. Hartes Limit 60,0 s inkl. Abo-Aufruf."
+	},
+	"sampleText": "Ewa, Frankfurt! Die Polizei hat über {2.150|zweitausendeinhundertfünfzig} Menschen kontrolliert: {78|Achtundsiebzig} Strafanzeigen, {435|vierhundertfünfunddreißig} Ordnungswidrigkeiten und {182|hundertzweiundachtzig} Platzverweise.",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 300
+		},
+		{
+			"id": "z1",
+			"text": "Auf der Zeil hat die Polizei seit Anfang November über {2.150|zweitausendeinhundertfünfzig} Menschen kontrolliert!",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "z2",
+			"text": "Klar ist aber: Kontrolliert heißt nicht automatisch verdächtig.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "b1",
+			"text": "Jetzt gibt's die Bilanz vom Innenministerium:",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "b2",
+			"text": "{78|Achtundsiebzig} Strafanzeigen, {435|vierhundertfünfunddreißig} Ordnungswidrigkeiten und {182|hundertzweiundachtzig} Platzverweise.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "b3",
+			"text": "Achtung: Anzeige heißt nicht Verurteilung – und addieren darf man die Zahlen nicht.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "g1",
+			"text": "Sichergestellt wurden unter anderem Messer, Pfefferpistolen, Sturmhauben und eine Axt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "h1",
+			"text": "Laut hessenschau identifizierte die Polizei so auch zwei Tatverdächtige der Halloween-Krawalle.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "h2",
+			"text": "Insgesamt sind laut Polizei schon {99|neunundneunzig} ermittelt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p1",
+			"text": "Innenminister Poseck nennt die Kontrollen einen Sicherheitsgewinn.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p2",
+			"text": "Kritiker aus der Stadtpolitik sprechen von Kontrollen nach Aussehen – Poseck widerspricht.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "w1",
+			"text": "Und auch nach Freitag sollen die Kontrollen weitergehen.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "q1",
+			"text": "Sinnvolle Vorsorge oder zu viel Kontrolle – was meint ihr?",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+			"pauseAfterMs": 0
+		}
+	]
+}

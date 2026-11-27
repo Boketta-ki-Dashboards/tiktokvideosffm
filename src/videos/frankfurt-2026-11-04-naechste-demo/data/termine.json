@@ -1,0 +1,122 @@
+{
+	"meta": {
+		"title": "Frankfurt Part 2 – 14. oder 21. November? Wann geht es wirklich weiter?",
+		"stand": "04.11.2026",
+		"hinweis": "Stufen: geruecht < ankuendigung < anmeldung < behoerdlich. Nur 'ankuendigung' (Veranstalter) ist für den 20.11. belegt; Anmeldung und behördliche Entscheidung sind nicht bekannt."
+	},
+	"quellen": {
+		"website": {"name": "genz-regelt.de (Veranstalter-Website)", "url": "https://genz-regelt.de/", "abgerufen": "2026-11-04"},
+		"telegram": {"name": "Telegram-Kanal Gen Z regelt", "url": "https://t.me/s/genzregelt", "abgerufen": "2026-11-04"},
+		"apollo": {"name": "Apollo News", "url": "https://apollo-news.net/nach-gewalt-eskalation-gen-z-regelt-kndigt-weiteren-protest-an-und-lscht-aufruf-kurz-darauf-wieder/", "abgerufen": "2026-11-04", "datum": "2026-11-01"},
+		"dpa-lsw": {"name": "dpa/lsw via Staatsanzeiger BW", "url": "https://heidelbergexpress.de/gen-z-proteste-heidelberg/", "abgerufen": "2026-11-04", "datum": "2026-11-02"},
+		"innenministerium": {"name": "Hessisches Innenministerium, Pressemitteilung", "url": "https://innen.hessen.de/presse/erste-einordnung-nach-gewaltausbruechen-waehrend-und-nach-der-versammlung-der-generation-z", "abgerufen": "2026-11-04", "datum": "2026-11-02"},
+		"hessenschau-jahn": {"name": "hessenschau.de (Prof. Matthias Jahn)", "url": "https://www.hessenschau.de/gesellschaft/naechste-gen-z-demo-in-frankfurt-jurist-warnt-vor-schnellen-verbotsforderungen-v1,ausschreitungen-frankfurt-genz-verbotsforderung-experte-100.html", "abgerufen": "2026-11-04", "datum": "2026-11-02"},
+		"hessenschau-debatte": {"name": "hessenschau.de", "url": "https://www.hessenschau.de/gesellschaft/ausschreitungen-in-frankfurt-gehen-die-forderungen-der-gen-z-in-der-debatte-unter-v4,genz-demos-reax-100.html", "abgerufen": "2026-11-04", "datum": "2026-11-02"},
+		"hessenschau-thema": {"name": "hessenschau.de Themenseite Ausschreitungen", "url": "https://www.hessenschau.de/themen/ausschreitungen-frankfurt-news-100.html", "abgerufen": "2026-11-04", "datum": "2026-11-03"},
+		"taz": {"name": "taz", "url": "https://taz.de/Nach-Gen-Z-regelt-Protest/!6226354/", "abgerufen": "2026-11-04", "datum": "2026-11-01"},
+		"junge-welt": {"name": "junge Welt", "url": "https://www.jungewelt.de/artikel/532566.n%C3%A4chster-schulstreik-gegen-wehrpflicht-am-20-november.html", "abgerufen": "2026-11-04", "datum": "2026-11-02"},
+		"wikipedia": {"name": "Wikipedia: Gen Z regelt", "url": "https://de.wikipedia.org/wiki/Gen_Z_regelt", "abgerufen": "2026-11-04"},
+		"reuters": {"name": "Reuters via Korea Times", "url": "https://www.koreatimes.co.kr/world/20261101/rioters-loot-stores-in-frankfurt-as-gen-z-led-protests-in-germany-turn-violent", "abgerufen": "2026-11-04", "datum": "2026-11-01"},
+		"grundgesetz": {"name": "Grundgesetz Art. 8", "url": "https://www.gesetze-im-internet.de/gg/art_8.html", "abgerufen": "2026-11-04"}
+	},
+	"termine": [
+		{
+			"id": "14-11",
+			"datum": "2026-11-14",
+			"tag": 14,
+			"wochentag": "Samstag",
+			"stufe": "geruecht",
+			"label": "UNBESTÄTIGT",
+			"kurz": "Aufruf stand kurz im Telegram-Kanal, wurde gelöscht. Kein Frankfurter Termin belegt.",
+			"details": "Apollo News (01.11.): Telegram-Beitrag „Am 14.11. geht es weiter!“ später entfernt; die Website nannte nur „Weitere Demonstrationen geplant. Informationen folgen.“ dpa/lsw (02.11.): „weitere bundesweite Proteste am 14. November“, ohne Städte. Heute nennt die Website nur den 20.11.",
+			"frankfurt": "keine Angabe",
+			"quellen": ["apollo", "dpa-lsw", "website"]
+		},
+		{
+			"id": "20-11",
+			"datum": "2026-11-20",
+			"tag": 20,
+			"wochentag": "Freitag",
+			"stufe": "ankuendigung",
+			"label": "ANGEKÜNDIGT",
+			"kurz": "Veranstalter ruft ab 14 Uhr in 34 Städten zum Protest auf, auch in Frankfurt (Standort folgt).",
+			"details": "Website 04.11.: „Freitag, 20. November 2026 ab 14 Uhr in 34 Städten“, „Die Standorte folgen“, Frankfurt: „Standort folgt“. Beteiligung am europaweiten Jugendstreiktag (taz, hessenschau, junge Welt). Anmeldung und behördliche Entscheidung nicht bekannt.",
+			"uhrzeit": "14 Uhr",
+			"staedte": 34,
+			"frankfurt": "Standort folgt",
+			"anmeldung": "nicht bekannt",
+			"behoerdlicheEntscheidung": "nicht bekannt",
+			"quellen": ["website", "taz", "hessenschau-debatte", "hessenschau-jahn", "innenministerium", "junge-welt", "wikipedia"]
+		},
+		{
+			"id": "21-11",
+			"datum": "2026-11-21",
+			"tag": 21,
+			"wochentag": "Samstag",
+			"stufe": "geruecht",
+			"label": "UNBESTÄTIGT",
+			"kurz": "Keine Quelle gefunden – weder Veranstalter noch Polizei, Stadt oder Medien.",
+			"details": "Geprüft: Website, Telegram-Kanal, hessenschau (inkl. Themenseite), taz, Innenministerium, Agenturen. Kein Treffer für den 21.11. Herkunft des Datums unklar; nicht spekuliert.",
+			"frankfurt": "keine Angabe",
+			"quellen": ["website", "telegram", "hessenschau-thema", "taz", "innenministerium"]
+		}
+	],
+	"politik": {
+		"ankuendigungen": [
+			{"wer": "Roman Poseck (CDU), Innenminister", "was": "noch stärkeres Polizeiaufgebot, „von Anfang an robust vorgehen“", "datum": "2026-11-02", "art": "politische Ankündigung", "quelle": "innenministerium"},
+			{"wer": "Roman Poseck (CDU), Innenminister", "was": "„Aus meiner Sicht darf am 20. November daher auch keine mit gestern vergleichbare Versammlung in Frankfurt stattfinden.“", "datum": "2026-11-02", "art": "persönliche Einschätzung", "quelle": "innenministerium"},
+			{"wer": "Roman Poseck (CDU), Innenminister", "was": "„Zunächst muss man sehen, ob diese Veranstaltungen am 20. November überhaupt so stattfinden können.“ (ARD-Tagesthemen 01.11.)", "datum": "2026-11-01", "art": "politische Ankündigung", "quelle": "hessenschau-jahn"}
+		],
+		"verbotBeschlossen": false,
+		"hinweisEntscheidung": "Bis 03.11. in der Berichterstattung keine Verbotsverfügung, keine Auflagen und keine Anmeldung für den 20.11. bekannt."
+	},
+	"recht": {
+		"experte": "Prof. Matthias Jahn, Goethe-Universität Frankfurt (Strafrecht)",
+		"quelle": "hessenschau-jahn",
+		"artikel8": {
+			"absatz1": "Alle Deutschen haben das Recht, sich ohne Anmeldung oder Erlaubnis friedlich und ohne Waffen zu versammeln.",
+			"absatz2": "Für Versammlungen unter freiem Himmel kann dieses Recht durch Gesetz oder auf Grund eines Gesetzes beschränkt werden."
+		},
+		"huerden": [
+			{"id": "gefahr", "titel": "Konkrete Gefahr", "text": "Die Behörde müsste belegen, dass ein friedlicher Verlauf trotz aller Bemühungen unwahrscheinlich ist."},
+			{"id": "auflagen", "titel": "Auflagen reichen nicht", "text": "Verbot oder Auflösung setzen voraus, dass Beschränkungen allein nicht ausreichen."},
+			{"id": "letztes-mittel", "titel": "Nur letztes Mittel", "text": "Ein Verbot ist die letzte Option – Gerichte prüfen streng."}
+		]
+	},
+	"staedte": [
+		{"id": "berlin", "name": "Berlin", "lon": 13.405, "lat": 52.52, "selbst": true},
+		{"id": "frankfurt", "name": "Frankfurt", "lon": 8.6821, "lat": 50.1109, "selbst": true},
+		{"id": "hamburg", "name": "Hamburg", "lon": 9.9937, "lat": 53.5511, "selbst": true},
+		{"id": "muenchen", "name": "München", "lon": 11.582, "lat": 48.1351, "selbst": true},
+		{"id": "koeln", "name": "Köln", "lon": 6.9603, "lat": 50.9375, "selbst": true},
+		{"id": "hannover", "name": "Hannover", "lon": 9.732, "lat": 52.3759, "selbst": false},
+		{"id": "dortmund", "name": "Dortmund", "lon": 7.4653, "lat": 51.5136, "selbst": false},
+		{"id": "essen", "name": "Essen", "lon": 7.0116, "lat": 51.4556, "selbst": false},
+		{"id": "bielefeld", "name": "Bielefeld", "lon": 8.5325, "lat": 52.0302, "selbst": false},
+		{"id": "stuttgart", "name": "Stuttgart", "lon": 9.1829, "lat": 48.7758, "selbst": false},
+		{"id": "bremen", "name": "Bremen", "lon": 8.8017, "lat": 53.0793, "selbst": false},
+		{"id": "nuernberg", "name": "Nürnberg", "lon": 11.0767, "lat": 49.4521, "selbst": false},
+		{"id": "dresden", "name": "Dresden", "lon": 13.7373, "lat": 51.0504, "selbst": false},
+		{"id": "leipzig", "name": "Leipzig", "lon": 12.3731, "lat": 51.3397, "selbst": false},
+		{"id": "duesseldorf", "name": "Düsseldorf", "lon": 6.7735, "lat": 51.2277, "selbst": false},
+		{"id": "bonn", "name": "Bonn", "lon": 7.0982, "lat": 50.7374, "selbst": false},
+		{"id": "freiburg", "name": "Freiburg", "lon": 7.8421, "lat": 47.999, "selbst": false},
+		{"id": "mainz", "name": "Mainz", "lon": 8.2711, "lat": 49.9929, "selbst": false},
+		{"id": "magdeburg", "name": "Magdeburg", "lon": 11.6276, "lat": 52.1205, "selbst": false},
+		{"id": "erfurt", "name": "Erfurt", "lon": 11.0299, "lat": 50.9848, "selbst": false},
+		{"id": "karlsruhe", "name": "Karlsruhe", "lon": 8.4037, "lat": 49.0069, "selbst": false},
+		{"id": "ulm", "name": "Ulm", "lon": 9.9876, "lat": 48.3984, "selbst": false},
+		{"id": "aachen", "name": "Aachen", "lon": 6.0839, "lat": 50.7753, "selbst": false},
+		{"id": "augsburg", "name": "Augsburg", "lon": 10.8978, "lat": 48.3705, "selbst": false},
+		{"id": "chemnitz", "name": "Chemnitz", "lon": 12.9214, "lat": 50.8278, "selbst": false},
+		{"id": "goettingen", "name": "Göttingen", "lon": 9.9158, "lat": 51.5413, "selbst": false},
+		{"id": "loerrach", "name": "Lörrach", "lon": 7.6613, "lat": 47.6121, "selbst": false},
+		{"id": "mannheim", "name": "Mannheim", "lon": 8.466, "lat": 49.4875, "selbst": false},
+		{"id": "duisburg", "name": "Duisburg", "lon": 6.7623, "lat": 51.4344, "selbst": false},
+		{"id": "wuppertal", "name": "Wuppertal", "lon": 7.1508, "lat": 51.2562, "selbst": false},
+		{"id": "regensburg", "name": "Regensburg", "lon": 12.1016, "lat": 49.0134, "selbst": false},
+		{"id": "gladbeck", "name": "Gladbeck", "lon": 6.9857, "lat": 51.5733, "selbst": false},
+		{"id": "kiel", "name": "Kiel", "lon": 10.1228, "lat": 54.3233, "selbst": false},
+		{"id": "kassel", "name": "Kassel", "lon": 9.4797, "lat": 51.3127, "selbst": false}
+	]
+}

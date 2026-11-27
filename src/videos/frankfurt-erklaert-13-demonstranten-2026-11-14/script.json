@@ -1,0 +1,101 @@
+{
+	"videoId": "frankfurt-erklaert-13-demonstranten-2026-11-14",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1600,
+	"maxDurationMs": 64000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 320
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“. Pausen 40–60 ms im Thema, 120 ms zwischen Themen. Längen-Ausnahme: Informationsteil ≤ 61,5 s, danach Abo-Aufruf, gesamt ≤ 64 s."
+	},
+	"sampleText": "Ewa, Frankfurt! Sechzehn Mannschaftswagen – aber zu zwei {Gen-Z-Kundgebungen|Dschen Zett Kundgebungen} kamen gerade mal dreizehn Leute. An der Bockenheimer Warte kam nicht mal der Anmelder. Nach Halloween stand der Vierzehnte kurz auf der Website. Was meint ihr: Terminchaos oder nur 'ne kleine Werbeaktion? Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+	"segments": [
+		{
+			"id": "hook1",
+			"text": "Ewa, Frankfurt!",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "hook2",
+			"text": "Am Samstag standen laut Frankfurter Neuer Presse {16|sechzehn} Mannschaftswagen bereit.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "hook3",
+			"text": "Aber zu zwei Kundgebungen von {Gen Z regelt|Dschen Zett regelt} kamen zusammen gerade mal {13|dreizehn} Leute!",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "hw1",
+			"text": "An der Hauptwache waren es rund zehn – gegen {14 Uhr|vierzehn Uhr} war schon Schluss.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "hw2",
+			"text": "Ein Teilnehmer sagte der Zeitung: Die Demo sollte nur auf den {20. November|zwanzigsten November} hinweisen.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "bw1",
+			"text": "An der Bockenheimer Warte waren es drei – laut Polizei kam nicht mal der Anmelder.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "why",
+			"text": "Warum so wenige?",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "d1",
+			"text": "Nach Halloween stand der {14.|Vierzehnte} kurz auf der Website der Initiative – dann war er wieder weg.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "d2",
+			"text": "Als nächster großer Termin galt der {20.|Zwanzigste}.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "d3",
+			"text": "Später rief sie doch zum Aktionstag auf, die Polizei nannte die Kundgebungen am Freitag.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "d4",
+			"text": "Ob das Hin und Her Leute ferngehalten hat, ist nicht belegt.",
+			"pauseAfterMs": 120
+		},
+		{
+			"id": "p1",
+			"text": "Die Polizei hatte nach Halloween vorgesorgt – für mögliche Störungen.",
+			"pauseAfterMs": 40
+		},
+		{
+			"id": "p2",
+			"text": "Absperrgitter standen bereit, nötig waren sie laut dem Bericht nicht. Die Zeil blieb ruhig.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "n1",
+			"text": "Am {20. November|zwanzigsten November} ruft die Initiative wieder bundesweit auf – auch in Frankfurt.",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "q1",
+			"text": "Was meint ihr: Terminchaos oder nur 'ne kleine Werbeaktion?",
+			"pauseAfterMs": 60
+		},
+		{
+			"id": "cta",
+			"text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!",
+			"pauseAfterMs": 0
+		}
+	]
+}

@@ -1,0 +1,31 @@
+{
+	"videoId": "frankfurt-2026-10-31-international",
+	"language": "de-DE",
+	"leadInMs": 200,
+	"tailMs": 500,
+	"maxDurationMs": 110000,
+	"voice": {
+		"engine": "elevenlabs",
+		"$comment": "Stimme Adam – Einstellungen ausschließlich zentral in config/voice.json (speed 1.16, zuletzt akzeptiert)."
+	},
+	"segments": [
+		{"id": "hook1", "text": "Eine Nacht in Frankfurt.", "pauseAfterMs": 250},
+		{"id": "hook2", "text": "Und plötzlich berichten Medien auf der ganzen Welt.", "pauseAfterMs": 500},
+		{"id": "ev1", "text": "Halloween, {31. Oktober|einunddreißigster Oktober}. Laut Polizei demonstrieren rund {8.000|achttausend} Menschen – zunächst friedlich.", "pauseAfterMs": 250},
+		{"id": "ev2b", "text": "Nach der Demo eskaliert es rund um die Zeil.", "pauseAfterMs": 250},
+		{"id": "num1b", "text": "Laut Innenministerium werden {17|siebzehn} Geschäfte beschädigt, fünf davon geplündert – und mindestens {100|hundert} Polizisten verletzt.", "pauseAfterMs": 500},
+		{"id": "viral1", "text": "Online wird die Nacht vor allem durch ihre Bilder groß.", "pauseAfterMs": 250},
+		{"id": "bat1", "text": "Allen voran: Batman vor einem Feuer. {AP|A P} und {Reuters|Roiters} fotografieren ihn, Medien von Großbritannien bis Indien zeigen das Bild.", "pauseAfterMs": 250},
+		{"id": "bat2", "text": "Auf TikTok zeigt sich der Account {@ichbinyounes|ich bin Junes} selbst im Batman-Kostüm – Clips mit Hunderttausenden Aufrufen.", "pauseAfterMs": 200},
+		{"id": "bat3", "text": "Aus einem Kostüm wird ein wiedererkennbarer Social-Media-Moment.", "pauseAfterMs": 500},
+		{"id": "shoe1", "text": "Und dann: der Typ mit den drei linken Schuhen.", "pauseAfterMs": 250},
+		{"id": "shoe2", "text": "Ein Bild aus dem geplünderten Sneakerladen – angeblich mit drei linken Schuhen – wird zu Edits, Witzen und Memes.", "pauseAfterMs": 250},
+		{"id": "shoe3", "text": "Viele einzelne linke Schuhe wurden laut Snipes tatsächlich gestohlen. Aber manche Meme-Bilder sind als {KI-generiert|Ka-I-generiert} markiert – nicht alles, was viral geht, ist echt.", "pauseAfterMs": 500},
+		{"id": "w1", "text": "Noch in der Nacht meldet {Reuters|Roiters}: Randalierer plündern Geschäfte in Frankfurt.", "pauseAfterMs": 250},
+		{"id": "w2", "text": "Die Agenturmeldung landet in Südkorea, Saudi-Arabien und Australien. Eigene Berichte gibt es etwa in Österreich, Polen und den {USA|U S A}.", "pauseAfterMs": 250},
+		{"id": "w3", "text": "Mehrere Berichte vergleichen mit Frankreich: Die Krawalle greifen auf Deutschland über, Frankfurt als Brennpunkt.", "pauseAfterMs": 250},
+		{"id": "w4", "text": "Wir zählen mindestens {26|sechsundzwanzig} Medien in {24|vierundzwanzig} Ländern – und das ist nur eine Stichprobe.", "pauseAfterMs": 500},
+		{"id": "end1", "text": "Aus einer Nacht voller Ausschreitungen, ungewöhnlicher Bilder und viraler Memes wurde eine Nachricht, die weit über Deutschland hinausging.", "pauseAfterMs": 700},
+		{"id": "outro", "text": "Danke fürs Zusehen – Plus wegmachen nicht vergessen!", "pauseAfterMs": 0}
+	]
+}

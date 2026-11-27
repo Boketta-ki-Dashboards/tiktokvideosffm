@@ -1,0 +1,591 @@
+{
+	"$comment": "Städteliste „Gen Z regelt“ für den 20.11.2026, abgerufen von der Website der Initiative am 19.11.2026, 13:47 Uhr MEZ (Seitentitel „Protest am 20.11. in 73 Städten“). Reihenfolge wie in der Liste der Website; Koordinaten = Treffpunkte aus den Kartendaten der Website (Datei javascript/script.js, Feld lat/lng), auf 4 Stellen gerundet. central = „Unsere 4 Städte“ (orange, laut Website von Gen Z regelt hauptverantwortlich betreut); pending = „Standort folgt“. Nur Positionen, keine Teilnehmerzahlen.",
+	"stand": "2026-11-19T13:47:00+01:00",
+	"count": 73,
+	"cities": [
+		{
+			"id": "berlin",
+			"name": "Berlin",
+			"lat": 52.5219,
+			"lon": 13.4132,
+			"central": true,
+			"pending": false
+		},
+		{
+			"id": "frankfurt",
+			"name": "Frankfurt",
+			"lat": 50.1083,
+			"lon": 8.6975,
+			"central": true,
+			"pending": false
+		},
+		{
+			"id": "hamburg",
+			"name": "Hamburg",
+			"lat": 53.553,
+			"lon": 9.9928,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "muenchen",
+			"name": "München",
+			"lat": 48.1506,
+			"lon": 11.5803,
+			"central": true,
+			"pending": false
+		},
+		{
+			"id": "koeln",
+			"name": "Köln",
+			"lat": 50.943,
+			"lon": 6.9644,
+			"central": true,
+			"pending": false
+		},
+		{
+			"id": "hannover",
+			"name": "Hannover",
+			"lat": 52.3731,
+			"lon": 9.7401,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "dortmund",
+			"name": "Dortmund",
+			"lat": 51.5114,
+			"lon": 7.4664,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "essen",
+			"name": "Essen",
+			"lat": 51.4565,
+			"lon": 7.011,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "stuttgart",
+			"name": "Stuttgart",
+			"lat": 48.7786,
+			"lon": 9.1799,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bremen",
+			"name": "Bremen",
+			"lat": 53.0756,
+			"lon": 8.8069,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "nuernberg",
+			"name": "Nürnberg",
+			"lat": 49.4487,
+			"lon": 11.0768,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "dresden",
+			"name": "Dresden",
+			"lat": 51.054,
+			"lon": 13.736,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "leipzig",
+			"name": "Leipzig",
+			"lat": 51.3392,
+			"lon": 12.3808,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "duesseldorf",
+			"name": "Düsseldorf",
+			"lat": 51.2197,
+			"lon": 6.7942,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bonn",
+			"name": "Bonn",
+			"lat": 50.7326,
+			"lon": 7.1045,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "freiburg",
+			"name": "Freiburg",
+			"lat": 47.9952,
+			"lon": 7.8459,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "mainz",
+			"name": "Mainz",
+			"lat": 49.9988,
+			"lon": 8.2716,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "magdeburg",
+			"name": "Magdeburg",
+			"lat": 52.13,
+			"lon": 11.629,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "erfurt",
+			"name": "Erfurt",
+			"lat": 50.9769,
+			"lon": 11.0239,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "karlsruhe",
+			"name": "Karlsruhe",
+			"lat": 49.0113,
+			"lon": 8.3988,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "ulm",
+			"name": "Ulm",
+			"lat": 48.3991,
+			"lon": 9.9884,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "aachen",
+			"name": "Aachen",
+			"lat": 50.7745,
+			"lon": 6.087,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "augsburg",
+			"name": "Augsburg",
+			"lat": 48.3668,
+			"lon": 10.8985,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "chemnitz",
+			"name": "Chemnitz",
+			"lat": 50.8386,
+			"lon": 12.9232,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "goettingen",
+			"name": "Göttingen",
+			"lat": 51.5334,
+			"lon": 9.9356,
+			"central": false,
+			"pending": true
+		},
+		{
+			"id": "loerrach",
+			"name": "Lörrach",
+			"lat": 47.615,
+			"lon": 7.663,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "mannheim",
+			"name": "Mannheim",
+			"lat": 49.4841,
+			"lon": 8.4757,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "duisburg",
+			"name": "Duisburg",
+			"lat": 51.495,
+			"lon": 6.7745,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "regensburg",
+			"name": "Regensburg",
+			"lat": 49.0197,
+			"lon": 12.0953,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "gladbeck",
+			"name": "Gladbeck",
+			"lat": 51.5713,
+			"lon": 6.9877,
+			"central": false,
+			"pending": true
+		},
+		{
+			"id": "kiel",
+			"name": "Kiel",
+			"lat": 54.3205,
+			"lon": 10.13,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "kassel",
+			"name": "Kassel",
+			"lat": 51.3132,
+			"lon": 9.493,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "halle",
+			"name": "Halle",
+			"lat": 51.4828,
+			"lon": 11.975,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "muenster",
+			"name": "Münster",
+			"lat": 51.9625,
+			"lon": 7.6256,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "ravensburg",
+			"name": "Ravensburg",
+			"lat": 47.781,
+			"lon": 9.6115,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "rosenheim",
+			"name": "Rosenheim",
+			"lat": 47.8561,
+			"lon": 12.1289,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "passau",
+			"name": "Passau",
+			"lat": 48.5737,
+			"lon": 13.4575,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "wuerzburg",
+			"name": "Würzburg",
+			"lat": 49.7937,
+			"lon": 9.9297,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bamberg",
+			"name": "Bamberg",
+			"lat": 49.9006,
+			"lon": 10.8995,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "moers",
+			"name": "Moers",
+			"lat": 51.4516,
+			"lon": 6.6326,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "marburg",
+			"name": "Marburg",
+			"lat": 50.8095,
+			"lon": 8.7697,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "schwerin",
+			"name": "Schwerin",
+			"lat": 53.634,
+			"lon": 11.4072,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bensheim",
+			"name": "Bensheim",
+			"lat": 49.6812,
+			"lon": 8.619,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bremerhaven",
+			"name": "Bremerhaven",
+			"lat": 53.5365,
+			"lon": 8.5925,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "darmstadt",
+			"name": "Darmstadt",
+			"lat": 49.8725,
+			"lon": 8.6295,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "emden",
+			"name": "Emden",
+			"lat": 53.3687,
+			"lon": 7.2048,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "heidelberg",
+			"name": "Heidelberg",
+			"lat": 49.4035,
+			"lon": 8.6905,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "ingolstadt",
+			"name": "Ingolstadt",
+			"lat": 48.7636,
+			"lon": 11.425,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "jena",
+			"name": "Jena",
+			"lat": 50.9283,
+			"lon": 11.5885,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "luebeck",
+			"name": "Lübeck",
+			"lat": 53.8706,
+			"lon": 10.6878,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "neubrandenburg",
+			"name": "Neubrandenburg",
+			"lat": 53.558,
+			"lon": 13.2615,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "trier",
+			"name": "Trier",
+			"lat": 49.7597,
+			"lon": 6.6439,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "wiesbaden",
+			"name": "Wiesbaden",
+			"lat": 50.0703,
+			"lon": 8.2435,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bayreuth",
+			"name": "Bayreuth",
+			"lat": 49.9446,
+			"lon": 11.5826,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bielefeld",
+			"name": "Bielefeld",
+			"lat": 52.0232,
+			"lon": 8.5333,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "bochum",
+			"name": "Bochum",
+			"lat": 51.4787,
+			"lon": 7.2234,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "braunschweig",
+			"name": "Braunschweig",
+			"lat": 52.2626,
+			"lon": 10.519,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "cottbus",
+			"name": "Cottbus",
+			"lat": 51.7588,
+			"lon": 14.3343,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "eberswalde",
+			"name": "Eberswalde",
+			"lat": 52.8335,
+			"lon": 13.821,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "erlangen",
+			"name": "Erlangen",
+			"lat": 49.598,
+			"lon": 11.005,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "giessen",
+			"name": "Gießen",
+			"lat": 50.5848,
+			"lon": 8.678,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "hildesheim",
+			"name": "Hildesheim",
+			"lat": 52.134,
+			"lon": 9.969,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "ilmenau",
+			"name": "Ilmenau",
+			"lat": 50.686,
+			"lon": 10.914,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "kaiserslautern",
+			"name": "Kaiserslautern",
+			"lat": 49.444,
+			"lon": 7.7695,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "koblenz",
+			"name": "Koblenz",
+			"lat": 50.351,
+			"lon": 7.5885,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "luedenscheid",
+			"name": "Lüdenscheid",
+			"lat": 51.219,
+			"lon": 7.629,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "lueneburg",
+			"name": "Lüneburg",
+			"lat": 53.249,
+			"lon": 10.405,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "potsdam",
+			"name": "Potsdam",
+			"lat": 52.3955,
+			"lon": 13.06,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "stralsund",
+			"name": "Stralsund",
+			"lat": 54.317,
+			"lon": 13.095,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "weimar",
+			"name": "Weimar",
+			"lat": 50.9785,
+			"lon": 11.326,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "wuppertal",
+			"name": "Wuppertal",
+			"lat": 51.2726,
+			"lon": 7.2,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "koenigswusterhausen",
+			"name": "Königs Wusterhausen",
+			"lat": 52.297,
+			"lon": 13.632,
+			"central": false,
+			"pending": false
+		},
+		{
+			"id": "leverkusen",
+			"name": "Leverkusen",
+			"lat": 51.069,
+			"lon": 7.006,
+			"central": false,
+			"pending": false
+		}
+	]
+}

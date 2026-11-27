@@ -1,0 +1,32 @@
+{
+	"videoId": "frankfurt-erklaert-20nov-bundesweit",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 60000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {"mode": "letters", "maxInnerGapMs": 320},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf sind bereits geprüfte, bezahlte Aufnahmen aus #11 (gleicher Cache-Schlüssel). Name der Initiative nach Doppelpunkt (sonst verschluckt Adam „Dschen Zett“). Stand: genz-regelt.de 19.11.2026, ≈ 13:50 Uhr MEZ (73 Städte, ≈ 20.000 Online-Zusagen); Polizei Köln 19.11., 7:58 Uhr; Stadt Frankfurt 17./18.11. Hartes Limit 60,0 s inkl. Abo-Aufruf."
+	},
+	"sampleText": "Ewa, Frankfurt! Morgen ist nicht nur Frankfurt dran: {Gen Z regelt|Dschen Zett regelt} listet {73|dreiundsiebzig} Städte. In Köln rechnen die Anmelderinnen mit {5.000 bis 10.000|fünf- bis zehntausend} – an der Deutzer Werft.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Morgen ist nicht nur Frankfurt dran: {Gen Z regelt|Dschen Zett regelt} listet {73|dreiundsiebzig} Städte!", "pauseAfterMs": 80},
+		{"id": "k1", "text": "Von Kiel bis Lörrach, von Aachen bis Cottbus – Stand: Donnerstagmittag.", "pauseAfterMs": 120},
+		{"id": "z1", "text": "Aber: Selbst organisiert die Initiative nur vier – Berlin, Frankfurt, München und Köln.", "pauseAfterMs": 40},
+		{"id": "z2", "text": "Die anderen {69|neunundsechzig} haben sich angeschlossen, dort sind lokale Gruppen zuständig.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "In Frankfurt erwartet die Stadt bis zu {4.000|viertausend} Leute an der Weseler Werft.", "pauseAfterMs": 40},
+		{"id": "k2", "text": "In Köln rechnen die Anmelderinnen laut Polizei mit {5.000 bis 10.000|fünf- bis zehntausend} – an der Deutzer Werft statt in der Innenstadt.", "pauseAfterMs": 120},
+		{"id": "n1", "text": "Wichtig: Das sind Planungszahlen, keine Zählung.", "pauseAfterMs": 40},
+		{"id": "n2", "text": "Und die Online-Zusagen? Bundesweit rund {20.000|zwanzigtausend} – laut Website keine Garantie, dass so viele kommen.", "pauseAfterMs": 40},
+		{"id": "n3", "text": "Wie viele wirklich da sind, weiß man erst morgen.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Die Forderungen laut Website: Geld für Bildung, ein bezahlbares Leben – und Nein zur Wehrpflicht.", "pauseAfterMs": 120},
+		{"id": "e1", "text": "Morgen zeigt sich, wie groß der Protesttag wirklich wird.", "pauseAfterMs": 40},
+		{"id": "q1", "text": "Welche Stadt wird am größten?", "pauseAfterMs": 60},
+		{"id": "cta", "text": "Folgt {FrankfurtRed3|Frankfurt Rett Drei} für mehr!", "pauseAfterMs": 0}
+	]
+}

@@ -1,0 +1,1302 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-14-november-2026",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-14-november-2026/voiceover-adam.mp3",
+	"durationMs": 60235,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1062,
+			"endMs": 5375,
+			"hash": "366473e4deba81b8a724"
+		},
+		{
+			"id": "w1",
+			"startMs": 5495,
+			"endMs": 9471,
+			"hash": "59560a5ae86ba987a44c"
+		},
+		{
+			"id": "w2",
+			"startMs": 9511,
+			"endMs": 12135,
+			"hash": "e9974b07177a04acdc4d"
+		},
+		{
+			"id": "w3",
+			"startMs": 12175,
+			"endMs": 14096,
+			"hash": "57be6fd1f9bbde2aadcd"
+		},
+		{
+			"id": "w4",
+			"startMs": 14136,
+			"endMs": 19036,
+			"hash": "5ebbc7ae5fa19564cbf6"
+		},
+		{
+			"id": "f1",
+			"startMs": 19156,
+			"endMs": 24630,
+			"hash": "d9812ea06dd267552cb2"
+		},
+		{
+			"id": "f2",
+			"startMs": 24670,
+			"endMs": 27137,
+			"hash": "f08e098b7b2a43945720"
+		},
+		{
+			"id": "m1",
+			"startMs": 27257,
+			"endMs": 32429,
+			"hash": "0019c7c6677983faf4dd"
+		},
+		{
+			"id": "m2",
+			"startMs": 32469,
+			"endMs": 37688,
+			"hash": "f913d928036744e825c4"
+		},
+		{
+			"id": "p1",
+			"startMs": 37748,
+			"endMs": 42595,
+			"hash": "a18d86d05c8891088159"
+		},
+		{
+			"id": "p2",
+			"startMs": 42635,
+			"endMs": 46786,
+			"hash": "1546709044ec47981869"
+		},
+		{
+			"id": "p3",
+			"startMs": 46826,
+			"endMs": 50872,
+			"hash": "8a67aa6aeb0329557c18"
+		},
+		{
+			"id": "n1",
+			"startMs": 50932,
+			"endMs": 56662,
+			"hash": "00800a91b955a7bf909b"
+		},
+		{
+			"id": "q1",
+			"startMs": 56782,
+			"endMs": 58077,
+			"hash": "b09c179f20af978d13c1"
+		},
+		{
+			"id": "cta",
+			"startMs": 58197,
+			"endMs": 60235,
+			"hash": "99c97df45c06fd44a79c"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Der",
+			"startMs": 1062,
+			"endMs": 1259,
+			"timestampMs": 1161,
+			"confidence": 1
+		},
+		{
+			"text": " 14.",
+			"startMs": 1317,
+			"endMs": 1747,
+			"timestampMs": 1532,
+			"confidence": 1
+		},
+		{
+			"text": " war",
+			"startMs": 1782,
+			"endMs": 1875,
+			"timestampMs": 1829,
+			"confidence": 1
+		},
+		{
+			"text": " doch",
+			"startMs": 1898,
+			"endMs": 2037,
+			"timestampMs": 1968,
+			"confidence": 1
+		},
+		{
+			"text": " gestrichen –",
+			"startMs": 2060,
+			"endMs": 2583,
+			"timestampMs": 2322,
+			"confidence": 1
+		},
+		{
+			"text": " warum",
+			"startMs": 2618,
+			"endMs": 2850,
+			"timestampMs": 2734,
+			"confidence": 1
+		},
+		{
+			"text": " stand",
+			"startMs": 2873,
+			"endMs": 3071,
+			"timestampMs": 2972,
+			"confidence": 1
+		},
+		{
+			"text": " heute",
+			"startMs": 3117,
+			"endMs": 3291,
+			"timestampMs": 3204,
+			"confidence": 1
+		},
+		{
+			"text": " trotzdem",
+			"startMs": 3326,
+			"endMs": 3651,
+			"timestampMs": 3489,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 3709,
+			"endMs": 3883,
+			"timestampMs": 3796,
+			"confidence": 1
+		},
+		{
+			"text": " Gen-Z-Kundgebung",
+			"startMs": 3930,
+			"endMs": 4940,
+			"timestampMs": 4435,
+			"confidence": 1
+		},
+		{
+			"text": " an?",
+			"startMs": 5021,
+			"endMs": 5375,
+			"timestampMs": 5224,
+			"confidence": 1
+		},
+		{
+			"text": " Nach",
+			"startMs": 5495,
+			"endMs": 5704,
+			"timestampMs": 5600,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween",
+			"startMs": 5727,
+			"endMs": 6203,
+			"timestampMs": 5965,
+			"confidence": 1
+		},
+		{
+			"text": " stand",
+			"startMs": 6250,
+			"endMs": 6482,
+			"timestampMs": 6366,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 6505,
+			"endMs": 6586,
+			"timestampMs": 6546,
+			"confidence": 1
+		},
+		{
+			"text": " 14.",
+			"startMs": 6621,
+			"endMs": 6981,
+			"timestampMs": 6801,
+			"confidence": 1
+		},
+		{
+			"text": " November",
+			"startMs": 7028,
+			"endMs": 7329,
+			"timestampMs": 7179,
+			"confidence": 1
+		},
+		{
+			"text": " kurz",
+			"startMs": 7376,
+			"endMs": 7550,
+			"timestampMs": 7463,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 7585,
+			"endMs": 7654,
+			"timestampMs": 7620,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 7689,
+			"endMs": 7759,
+			"timestampMs": 7724,
+			"confidence": 1
+		},
+		{
+			"text": " Website",
+			"startMs": 7794,
+			"endMs": 8165,
+			"timestampMs": 7980,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 8189,
+			"endMs": 8305,
+			"timestampMs": 8247,
+			"confidence": 1
+		},
+		{
+			"text": " Gen",
+			"startMs": 8351,
+			"endMs": 8630,
+			"timestampMs": 8491,
+			"confidence": 1
+		},
+		{
+			"text": " Z",
+			"startMs": 8699,
+			"endMs": 8885,
+			"timestampMs": 8792,
+			"confidence": 1
+		},
+		{
+			"text": " regelt.",
+			"startMs": 8943,
+			"endMs": 9471,
+			"timestampMs": 9309,
+			"confidence": 1
+		},
+		{
+			"text": " Dann",
+			"startMs": 9511,
+			"endMs": 9755,
+			"timestampMs": 9633,
+			"confidence": 1
+		},
+		{
+			"text": " war",
+			"startMs": 9790,
+			"endMs": 9883,
+			"timestampMs": 9837,
+			"confidence": 1
+		},
+		{
+			"text": " das",
+			"startMs": 9906,
+			"endMs": 9999,
+			"timestampMs": 9953,
+			"confidence": 1
+		},
+		{
+			"text": " Datum",
+			"startMs": 10057,
+			"endMs": 10370,
+			"timestampMs": 10214,
+			"confidence": 1
+		},
+		{
+			"text": " weg –",
+			"startMs": 10428,
+			"endMs": 10776,
+			"timestampMs": 10602,
+			"confidence": 1
+		},
+		{
+			"text": " nur",
+			"startMs": 10881,
+			"endMs": 11055,
+			"timestampMs": 10968,
+			"confidence": 1
+		},
+		{
+			"text": " noch:",
+			"startMs": 11078,
+			"endMs": 11357,
+			"timestampMs": 11218,
+			"confidence": 1
+		},
+		{
+			"text": " bald.",
+			"startMs": 11572,
+			"endMs": 12135,
+			"timestampMs": 12072,
+			"confidence": 1
+		},
+		{
+			"text": " Als",
+			"startMs": 12175,
+			"endMs": 12384,
+			"timestampMs": 12280,
+			"confidence": 1
+		},
+		{
+			"text": " Nächstes",
+			"startMs": 12442,
+			"endMs": 12732,
+			"timestampMs": 12587,
+			"confidence": 1
+		},
+		{
+			"text": " galt",
+			"startMs": 12767,
+			"endMs": 12918,
+			"timestampMs": 12843,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 12941,
+			"endMs": 13011,
+			"timestampMs": 12976,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 13057,
+			"endMs": 13452,
+			"timestampMs": 13255,
+			"confidence": 1
+		},
+		{
+			"text": " November.",
+			"startMs": 13510,
+			"endMs": 14096,
+			"timestampMs": 13934,
+			"confidence": 1
+		},
+		{
+			"text": " Inzwischen",
+			"startMs": 14136,
+			"endMs": 14542,
+			"timestampMs": 14339,
+			"confidence": 1
+		},
+		{
+			"text": " ruft",
+			"startMs": 14566,
+			"endMs": 14740,
+			"timestampMs": 14653,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 14763,
+			"endMs": 14844,
+			"timestampMs": 14804,
+			"confidence": 1
+		},
+		{
+			"text": " Initiative",
+			"startMs": 14891,
+			"endMs": 15529,
+			"timestampMs": 15210,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 15576,
+			"endMs": 15645,
+			"timestampMs": 15611,
+			"confidence": 1
+		},
+		{
+			"text": " heute",
+			"startMs": 15692,
+			"endMs": 15877,
+			"timestampMs": 15785,
+			"confidence": 1
+		},
+		{
+			"text": " doch",
+			"startMs": 15924,
+			"endMs": 16110,
+			"timestampMs": 16017,
+			"confidence": 1
+		},
+		{
+			"text": " zum",
+			"startMs": 16145,
+			"endMs": 16237,
+			"timestampMs": 16191,
+			"confidence": 1
+		},
+		{
+			"text": " Aktionstag",
+			"startMs": 16307,
+			"endMs": 16969,
+			"timestampMs": 16638,
+			"confidence": 1
+		},
+		{
+			"text": " auf –",
+			"startMs": 17038,
+			"endMs": 17451,
+			"timestampMs": 17245,
+			"confidence": 1
+		},
+		{
+			"text": " Motto:",
+			"startMs": 17544,
+			"endMs": 18020,
+			"timestampMs": 17782,
+			"confidence": 1
+		},
+		{
+			"text": " Phase",
+			"startMs": 18194,
+			"endMs": 18484,
+			"timestampMs": 18339,
+			"confidence": 1
+		},
+		{
+			"text": " 2.",
+			"startMs": 18530,
+			"endMs": 19036,
+			"timestampMs": 19006,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 19156,
+			"endMs": 19411,
+			"timestampMs": 19284,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 19446,
+			"endMs": 19922,
+			"timestampMs": 19684,
+			"confidence": 1
+		},
+		{
+			"text": " war",
+			"startMs": 19992,
+			"endMs": 20096,
+			"timestampMs": 20044,
+			"confidence": 1
+		},
+		{
+			"text": " dafür",
+			"startMs": 20143,
+			"endMs": 20433,
+			"timestampMs": 20288,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 20456,
+			"endMs": 20514,
+			"timestampMs": 20485,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 20561,
+			"endMs": 20921,
+			"timestampMs": 20741,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 20956,
+			"endMs": 21072,
+			"timestampMs": 21014,
+			"confidence": 1
+		},
+		{
+			"text": " Kundgebung",
+			"startMs": 21106,
+			"endMs": 21606,
+			"timestampMs": 21356,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 21664,
+			"endMs": 21733,
+			"timestampMs": 21699,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 21768,
+			"endMs": 21850,
+			"timestampMs": 21809,
+			"confidence": 1
+		},
+		{
+			"text": " Hauptwache",
+			"startMs": 21896,
+			"endMs": 22337,
+			"timestampMs": 22117,
+			"confidence": 1
+		},
+		{
+			"text": " angekündigt,",
+			"startMs": 22384,
+			"endMs": 23150,
+			"timestampMs": 22767,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 23289,
+			"endMs": 23428,
+			"timestampMs": 23359,
+			"confidence": 1
+		},
+		{
+			"text": " 12:30",
+			"startMs": 23475,
+			"endMs": 23614,
+			"timestampMs": 23545,
+			"confidence": 1
+		},
+		{
+			"text": " bis",
+			"startMs": 23696,
+			"endMs": 23904,
+			"timestampMs": 23800,
+			"confidence": 1
+		},
+		{
+			"text": " 15",
+			"startMs": 23939,
+			"endMs": 24055,
+			"timestampMs": 23997,
+			"confidence": 1
+		},
+		{
+			"text": " Uhr.",
+			"startMs": 24090,
+			"endMs": 24630,
+			"timestampMs": 24526,
+			"confidence": 1
+		},
+		{
+			"text": " Eine",
+			"startMs": 24670,
+			"endMs": 24867,
+			"timestampMs": 24769,
+			"confidence": 1
+		},
+		{
+			"text": " Bilanz",
+			"startMs": 24891,
+			"endMs": 25169,
+			"timestampMs": 25030,
+			"confidence": 1
+		},
+		{
+			"text": " dazu",
+			"startMs": 25192,
+			"endMs": 25425,
+			"timestampMs": 25309,
+			"confidence": 1
+		},
+		{
+			"text": " gab",
+			"startMs": 25483,
+			"endMs": 25634,
+			"timestampMs": 25559,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 25680,
+			"endMs": 25727,
+			"timestampMs": 25704,
+			"confidence": 1
+		},
+		{
+			"text": " bei",
+			"startMs": 25773,
+			"endMs": 25866,
+			"timestampMs": 25820,
+			"confidence": 1
+		},
+		{
+			"text": " Redaktionsschluss",
+			"startMs": 25901,
+			"endMs": 26551,
+			"timestampMs": 26226,
+			"confidence": 1
+		},
+		{
+			"text": " noch",
+			"startMs": 26597,
+			"endMs": 26713,
+			"timestampMs": 26655,
+			"confidence": 1
+		},
+		{
+			"text": " nicht.",
+			"startMs": 26760,
+			"endMs": 27137,
+			"timestampMs": 26969,
+			"confidence": 1
+		},
+		{
+			"text": " Dazu",
+			"startMs": 27257,
+			"endMs": 27559,
+			"timestampMs": 27408,
+			"confidence": 1
+		},
+		{
+			"text": " kommen",
+			"startMs": 27605,
+			"endMs": 27803,
+			"timestampMs": 27704,
+			"confidence": 1
+		},
+		{
+			"text": " eine",
+			"startMs": 27861,
+			"endMs": 28023,
+			"timestampMs": 27942,
+			"confidence": 1
+		},
+		{
+			"text": " Kundgebung",
+			"startMs": 28058,
+			"endMs": 28685,
+			"timestampMs": 28372,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 28894,
+			"endMs": 29010,
+			"timestampMs": 28952,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 29045,
+			"endMs": 29138,
+			"timestampMs": 29092,
+			"confidence": 1
+		},
+		{
+			"text": " Bockenheimer",
+			"startMs": 29173,
+			"endMs": 29637,
+			"timestampMs": 29405,
+			"confidence": 1
+		},
+		{
+			"text": " Warte",
+			"startMs": 29683,
+			"endMs": 29997,
+			"timestampMs": 29840,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 30055,
+			"endMs": 30125,
+			"timestampMs": 30090,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 30148,
+			"endMs": 30241,
+			"timestampMs": 30195,
+			"confidence": 1
+		},
+		{
+			"text": " größte",
+			"startMs": 30276,
+			"endMs": 30612,
+			"timestampMs": 30444,
+			"confidence": 1
+		},
+		{
+			"text": " Aufzug",
+			"startMs": 30659,
+			"endMs": 31204,
+			"timestampMs": 30932,
+			"confidence": 1
+		},
+		{
+			"text": " ab",
+			"startMs": 31286,
+			"endMs": 31413,
+			"timestampMs": 31350,
+			"confidence": 1
+		},
+		{
+			"text": " dem",
+			"startMs": 31483,
+			"endMs": 31599,
+			"timestampMs": 31541,
+			"confidence": 1
+		},
+		{
+			"text": " Goetheplatz.",
+			"startMs": 31669,
+			"endMs": 32429,
+			"timestampMs": 32157,
+			"confidence": 1
+		},
+		{
+			"text": " Rund",
+			"startMs": 32469,
+			"endMs": 32933,
+			"timestampMs": 32701,
+			"confidence": 1
+		},
+		{
+			"text": " 1.000",
+			"startMs": 33166,
+			"endMs": 33572,
+			"timestampMs": 33369,
+			"confidence": 1
+		},
+		{
+			"text": " Erwartete –",
+			"startMs": 33642,
+			"endMs": 34327,
+			"timestampMs": 33985,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 34466,
+			"endMs": 34640,
+			"timestampMs": 34553,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 34675,
+			"endMs": 35116,
+			"timestampMs": 34896,
+			"confidence": 1
+		},
+		{
+			"text": " zum",
+			"startMs": 35174,
+			"endMs": 35279,
+			"timestampMs": 35227,
+			"confidence": 1
+		},
+		{
+			"text": " Irankonflikt,",
+			"startMs": 35337,
+			"endMs": 36138,
+			"timestampMs": 35738,
+			"confidence": 1
+		},
+		{
+			"text": " also",
+			"startMs": 36161,
+			"endMs": 36347,
+			"timestampMs": 36254,
+			"confidence": 1
+		},
+		{
+			"text": " keine",
+			"startMs": 36393,
+			"endMs": 36602,
+			"timestampMs": 36498,
+			"confidence": 1
+		},
+		{
+			"text": " Gen-Z-Demo.",
+			"startMs": 36637,
+			"endMs": 37688,
+			"timestampMs": 37270,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 37748,
+			"endMs": 37887,
+			"timestampMs": 37818,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 37922,
+			"endMs": 38317,
+			"timestampMs": 38120,
+			"confidence": 1
+		},
+		{
+			"text": " setzt",
+			"startMs": 38363,
+			"endMs": 38572,
+			"timestampMs": 38468,
+			"confidence": 1
+		},
+		{
+			"text": " mehr",
+			"startMs": 38642,
+			"endMs": 38793,
+			"timestampMs": 38718,
+			"confidence": 1
+		},
+		{
+			"text": " Kräfte",
+			"startMs": 38828,
+			"endMs": 39141,
+			"timestampMs": 38985,
+			"confidence": 1
+		},
+		{
+			"text": " ein",
+			"startMs": 39211,
+			"endMs": 39397,
+			"timestampMs": 39304,
+			"confidence": 1
+		},
+		{
+			"text": " als",
+			"startMs": 39478,
+			"endMs": 39652,
+			"timestampMs": 39565,
+			"confidence": 1
+		},
+		{
+			"text": " an",
+			"startMs": 39698,
+			"endMs": 39803,
+			"timestampMs": 39751,
+			"confidence": 1
+		},
+		{
+			"text": " Halloween,",
+			"startMs": 39861,
+			"endMs": 40476,
+			"timestampMs": 40169,
+			"confidence": 1
+		},
+		{
+			"text": " mit",
+			"startMs": 40650,
+			"endMs": 40755,
+			"timestampMs": 40703,
+			"confidence": 1
+		},
+		{
+			"text": " Verstärkung",
+			"startMs": 40778,
+			"endMs": 41254,
+			"timestampMs": 41016,
+			"confidence": 1
+		},
+		{
+			"text": " aus",
+			"startMs": 41312,
+			"endMs": 41428,
+			"timestampMs": 41370,
+			"confidence": 1
+		},
+		{
+			"text": " anderen",
+			"startMs": 41498,
+			"endMs": 41788,
+			"timestampMs": 41643,
+			"confidence": 1
+		},
+		{
+			"text": " Präsidien.",
+			"startMs": 41835,
+			"endMs": 42595,
+			"timestampMs": 42323,
+			"confidence": 1
+		},
+		{
+			"text": " Bei",
+			"startMs": 42635,
+			"endMs": 42821,
+			"timestampMs": 42728,
+			"confidence": 1
+		},
+		{
+			"text": " Bedarf",
+			"startMs": 42867,
+			"endMs": 43250,
+			"timestampMs": 43059,
+			"confidence": 1
+		},
+		{
+			"text": " kann",
+			"startMs": 43308,
+			"endMs": 43436,
+			"timestampMs": 43372,
+			"confidence": 1
+		},
+		{
+			"text": " sie",
+			"startMs": 43471,
+			"endMs": 43541,
+			"timestampMs": 43506,
+			"confidence": 1
+		},
+		{
+			"text": " alle",
+			"startMs": 43587,
+			"endMs": 43761,
+			"timestampMs": 43674,
+			"confidence": 1
+		},
+		{
+			"text": " Zugänge",
+			"startMs": 43819,
+			"endMs": 44226,
+			"timestampMs": 44023,
+			"confidence": 1
+		},
+		{
+			"text": " zur",
+			"startMs": 44272,
+			"endMs": 44376,
+			"timestampMs": 44324,
+			"confidence": 1
+		},
+		{
+			"text": " Zeil",
+			"startMs": 44423,
+			"endMs": 44632,
+			"timestampMs": 44528,
+			"confidence": 1
+		},
+		{
+			"text": " kontrollieren,",
+			"startMs": 44678,
+			"endMs": 45259,
+			"timestampMs": 44969,
+			"confidence": 1
+		},
+		{
+			"text": " Absperrgitter",
+			"startMs": 45305,
+			"endMs": 45932,
+			"timestampMs": 45619,
+			"confidence": 1
+		},
+		{
+			"text": " liegen",
+			"startMs": 45967,
+			"endMs": 46153,
+			"timestampMs": 46060,
+			"confidence": 1
+		},
+		{
+			"text": " bereit.",
+			"startMs": 46176,
+			"endMs": 46786,
+			"timestampMs": 46635,
+			"confidence": 1
+		},
+		{
+			"text": " Konkrete",
+			"startMs": 46826,
+			"endMs": 47209,
+			"timestampMs": 47018,
+			"confidence": 1
+		},
+		{
+			"text": " Hinweise",
+			"startMs": 47232,
+			"endMs": 47685,
+			"timestampMs": 47459,
+			"confidence": 1
+		},
+		{
+			"text": " auf",
+			"startMs": 47720,
+			"endMs": 47801,
+			"timestampMs": 47761,
+			"confidence": 1
+		},
+		{
+			"text": " geplante",
+			"startMs": 47848,
+			"endMs": 48254,
+			"timestampMs": 48051,
+			"confidence": 1
+		},
+		{
+			"text": " Ausschreitungen",
+			"startMs": 48312,
+			"endMs": 48997,
+			"timestampMs": 48655,
+			"confidence": 1
+		},
+		{
+			"text": " gab",
+			"startMs": 49102,
+			"endMs": 49322,
+			"timestampMs": 49212,
+			"confidence": 1
+		},
+		{
+			"text": " es",
+			"startMs": 49380,
+			"endMs": 49438,
+			"timestampMs": 49409,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 49508,
+			"endMs": 49659,
+			"timestampMs": 49584,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 49694,
+			"endMs": 50158,
+			"timestampMs": 49926,
+			"confidence": 1
+		},
+		{
+			"text": " aber",
+			"startMs": 50216,
+			"endMs": 50402,
+			"timestampMs": 50309,
+			"confidence": 1
+		},
+		{
+			"text": " nicht.",
+			"startMs": 50437,
+			"endMs": 50872,
+			"timestampMs": 50814,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 50932,
+			"endMs": 51118,
+			"timestampMs": 51025,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 51141,
+			"endMs": 51234,
+			"timestampMs": 51188,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 51269,
+			"endMs": 51652,
+			"timestampMs": 51461,
+			"confidence": 1
+		},
+		{
+			"text": " November?",
+			"startMs": 51698,
+			"endMs": 52128,
+			"timestampMs": 51913,
+			"confidence": 1
+		},
+		{
+			"text": " Da",
+			"startMs": 52337,
+			"endMs": 52476,
+			"timestampMs": 52407,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 52499,
+			"endMs": 52627,
+			"timestampMs": 52563,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 52685,
+			"endMs": 52732,
+			"timestampMs": 52709,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt",
+			"startMs": 52801,
+			"endMs": 53173,
+			"timestampMs": 52987,
+			"confidence": 1
+		},
+		{
+			"text": " Schulstreik,",
+			"startMs": 53208,
+			"endMs": 53858,
+			"timestampMs": 53533,
+			"confidence": 1
+		},
+		{
+			"text": " Gen-Z-Demo",
+			"startMs": 53893,
+			"endMs": 54787,
+			"timestampMs": 54340,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 54833,
+			"endMs": 54903,
+			"timestampMs": 54868,
+			"confidence": 1
+		},
+		{
+			"text": " Gewerkschaftsjugend",
+			"startMs": 54949,
+			"endMs": 55739,
+			"timestampMs": 55344,
+			"confidence": 1
+		},
+		{
+			"text": " angekündigt.",
+			"startMs": 55820,
+			"endMs": 56662,
+			"timestampMs": 56302,
+			"confidence": 1
+		},
+		{
+			"text": " Wie",
+			"startMs": 56782,
+			"endMs": 56921,
+			"timestampMs": 56852,
+			"confidence": 1
+		},
+		{
+			"text": " habt",
+			"startMs": 56945,
+			"endMs": 57072,
+			"timestampMs": 57009,
+			"confidence": 1
+		},
+		{
+			"text": " ihr",
+			"startMs": 57095,
+			"endMs": 57165,
+			"timestampMs": 57130,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 57188,
+			"endMs": 57281,
+			"timestampMs": 57235,
+			"confidence": 1
+		},
+		{
+			"text": " Tag",
+			"startMs": 57328,
+			"endMs": 57490,
+			"timestampMs": 57409,
+			"confidence": 1
+		},
+		{
+			"text": " erlebt?",
+			"startMs": 57548,
+			"endMs": 58077,
+			"timestampMs": 57839,
+			"confidence": 1
+		},
+		{
+			"text": " Folgt",
+			"startMs": 58197,
+			"endMs": 58418,
+			"timestampMs": 58308,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 58441,
+			"endMs": 59126,
+			"timestampMs": 58784,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 59172,
+			"endMs": 59265,
+			"timestampMs": 59219,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 59288,
+			"endMs": 59358,
+			"timestampMs": 59323,
+			"confidence": 1
+		},
+		{
+			"text": " nächsten",
+			"startMs": 59393,
+			"endMs": 59625,
+			"timestampMs": 59509,
+			"confidence": 1
+		},
+		{
+			"text": " Entwicklungen!",
+			"startMs": 59660,
+			"endMs": 60235,
+			"timestampMs": 59950,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-14T16:18:37.269Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1163
+	},
+	"measuredLufsBeforeMaster": -13.84
+}

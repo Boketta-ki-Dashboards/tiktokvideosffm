@@ -1,0 +1,37 @@
+{
+	"videoId": "frankfurt-erklaert-genz-planungstreffen",
+	"language": "de-DE",
+	"format": "frankfurt-erklaert-60",
+	"leadInMs": 120,
+	"tailMs": 1500,
+	"maxDurationMs": 66000,
+	"maxPauseMs": 400,
+	"voice": {
+		"engine": "elevenlabs",
+		"profile": "kurzformat-60",
+		"trim": {
+			"mode": "letters",
+			"maxInnerGapMs": 280
+		},
+		"$comment": "Adam unverändert mit Kurzformat-Profil speed 1.20 (config/voice-regeln.json). „Ewa“ automatisch „Eywa“; Begrüßung und Abo-Aufruf (FrankfurtRedNews) aus dem Cache von #17, g1 aus dem Cache von #16 (Whisper-geprüft). Längen-Ausnahme auf Wunsch des Kanalbetreibers: Informationsteil ≈ 60 s (≤ 61,5 s ab 0), danach Abo-Aufruf (cta), gesamt ≤ 66 s. Stand: Recherche 25.11.2026, 16:40 Uhr."
+	},
+	"sampleText": "Ewa, Frankfurt! Nach den letzten {Gen-Z-Demos|Dschen Zett Demos} in Frankfurt soll sich einiges ändern! Offenes Planungstreffen im {DGB-Haus|De-Ge-Be-Haus}. {14 Uhr|vierzehn Uhr}, Gallusanlage. Auch Telegram kritisiert sie.",
+	"segments": [
+		{"id": "hook1", "text": "Ewa, Frankfurt!", "pauseAfterMs": 300},
+		{"id": "hook2", "text": "Nach den letzten {Gen-Z-Demos|Dschen Zett Demos} in Frankfurt soll sich einiges ändern!", "pauseAfterMs": 120},
+		{"id": "a1", "text": "Eine Frankfurter Gruppe kritisiert auf TikTok die Organisation der Demos vom {31. Oktober|einunddreißigsten Oktober} und {20. November|zwanzigsten November}.", "pauseAfterMs": 40},
+		{"id": "b1", "text": "Infos seien zu spät gekommen – Ordner, Technik, sogar eine Route hätten kurz vorher gefehlt.", "pauseAfterMs": 120},
+		{"id": "c1", "text": "Auch Telegram und den Umgang mit der Polizei kritisiert sie: Jugendliche würden zu Hunderten wahllos kontrolliert.", "pauseAfterMs": 40},
+		{"id": "c2", "text": "Laut Innenministerium zählt dabei Verhalten, nicht Herkunft.", "pauseAfterMs": 120},
+		{"id": "d1", "text": "Neuer Ansatz: Für Dienstagabend lud die Gruppe zu einem offenen Planungstreffen im {DGB-Haus|De-Ge-Be-Haus} ein.", "pauseAfterMs": 40},
+		{"id": "d2", "text": "Mehr als zwei Wochen vor der nächsten Demo.", "pauseAfterMs": 40},
+		{"id": "d3", "text": "Was dort besprochen wurde, ist öffentlich nicht bekannt.", "pauseAfterMs": 120},
+		{"id": "e1", "text": "Stimmen sich Frankfurter Gruppe und Bundesinitiative diesmal besser ab?", "pauseAfterMs": 40},
+		{"id": "e2", "text": "Denn am {20. November|zwanzigsten November} gab es getrennte Planungen – Kundgebung an der Weseler Werft, Zug der Bundesinitiative.", "pauseAfterMs": 120},
+		{"id": "f1", "text": "Für den {12. Dezember|zwölften Dezember} nennt die Gruppe: {14 Uhr|vierzehn Uhr}, Gallusanlage.", "pauseAfterMs": 40},
+		{"id": "f2", "text": "Die Bundesinitiative nennt für Frankfurt bislang: Standort folgt.", "pauseAfterMs": 40},
+		{"id": "g1", "text": "Ob die Demo angemeldet ist, ist öffentlich nicht bekannt.", "pauseAfterMs": 120},
+		{"id": "q1", "text": "Wird die nächste Demo besser organisiert? Das ist offen.", "pauseAfterMs": 120},
+		{"id": "cta", "text": "Für mehr Nachrichten aus Frankfurt folgt {FrankfurtRedNews|Frankfurt Rett News}!", "pauseAfterMs": 0}
+	]
+}

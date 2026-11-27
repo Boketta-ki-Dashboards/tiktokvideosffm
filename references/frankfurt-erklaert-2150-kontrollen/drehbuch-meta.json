@@ -1,0 +1,16 @@
+{
+	"hook1": {"bild": "Titelbild ab Frame 0: Zeil bei Nacht (2,5D, Blaulicht-Akzent), Serientitel, große gelbe „2.150+“, rote Karte „POLIZEIKONTROLLEN AUF DER ZEIL“, „WAS HAT DIE POLIZEI GEFUNDEN?“, „SEIT 1. NOVEMBER 2026 · LAUT INNENMINISTERIUM“, Logo; Fahrt in die Zeil", "beleg": "–"},
+	"z1": {"bild": "2,5D-Zeil (Fassaden, Glasfassade, Platanen, anonyme Passanten und Einsatzkräfte, ILLUSTRATION), Zähler läuft bis „2.150+“ beim gesprochenen Wert, „KONTROLLIERTE PERSONEN · SEIT 1. NOVEMBER · LAUT INNENMINISTERIUM“, Personen-Symbolraster füllt sich", "beleg": "Innenministerium, PM 18.11.2026"},
+	"z2": {"bild": "Stempel „KONTROLLIERT ≠ SCHULDIG – nicht automatisch tatverdächtig · nicht festgenommen“, Zitat Poseck „Dass auch Unbescholtene in Kontrollen hineingeraten können …“", "beleg": "Innenministerium, PM 18.11.2026 (Zitat Poseck)"},
+	"b1": {"bild": "„BILANZ SEIT 1. NOVEMBER“, LAUT INNENMINISTERIUM · Stand 18.11.2026, erste Karte erscheint", "beleg": "Innenministerium, PM 18.11.2026"},
+	"b2": {"bild": "Drei Karten an den Wort-Cues: 78 STRAFANZEIGEN (Dokument) · 435 ORDNUNGSWIDRIGKEITEN (Warnsymbol) · 182 PLATZVERWEISE (Ortsmarke), Zähler laufen bis zum gesprochenen Wert", "beleg": "Innenministerium, PM 18.11.2026"},
+	"b3": {"bild": "Stempel „≠ VERURTEILUNG“, „≠ STRAFTAT“, „≠ FESTNAHME“; Band „NICHT ADDIEREN – eine Person kann mehrfach erfasst sein“", "beleg": "Einordnung (Begriffe)"},
+	"g1": {"bild": "Sicherstellungs-Übersicht: neutrale Liniensymbole in Beweismitteltüten mit Mengen wie in der PM (mehrere Messer, Pfefferpistolen, Sturmhauben, 1 Axt, mehrere Tierabwehrsprays, 3 Teleskopschlagstöcke, mehrere Einbruchswerkzeuge), Hinweis „kein belegter Bezug zur Demo am 20.11.“", "beleg": "Innenministerium, PM 18.11.2026"},
+	"h1": {"bild": "Ermittlungsakte „ZEIL-KONTROLLEN“ (ILLUSTRATION), Karte „2 TATVERDÄCHTIGE IDENTIFIZIERT – Krawalle vom 31. Oktober · durch die Zeil-Kontrollen · laut hessenschau / Polizeiangaben“ mit anonymen Silhouetten", "beleg": "hessenschau, 18.11.2026"},
+	"h2": {"bild": "Getrennte Karte „99 TATVERDÄCHTIGE INSGESAMT ERMITTELT – laut Polizeipräsident“, „VERDACHT ≠ SCHULD“, „Die 2 sind NICHT die ganze Halloween-Bilanz“", "beleg": "hessenschau, 18.11.2026 (Polizeipräsident Müller)"},
+	"p1": {"bild": "Links: POSITION · INNENMINISTER · „SICHERHEITSGEWINN“ mit Zitat „Ich halte diese Kontrollintensität … für notwendig.“", "beleg": "Innenministerium PM 18.11.; hessenschau 18.11."},
+	"p2": {"bild": "Rechts: KRITIK AUS DER STADTPOLITIK · „KONTROLLEN NACH AUSSEHEN?“ – Vorwurf Racial Profiling (u. a. Stadtverordnete von SPD und Linke); Zeile „ZURÜCKGEWIESEN: „Es geht nicht um Herkunft, es geht um Verhalten.““", "beleg": "t-online 16.11.; Die Linke im Römer 04.11.; hessenschau 18.11."},
+	"w1": {"bild": "Rotes Band „KONTROLLEN SOLLEN WEITERGEHEN – auch nach Freitag, 20.11. – laut Poseck“, ANGEKÜNDIGT", "beleg": "hessenschau, 18.11.2026"},
+	"q1": {"bild": "Frage „SINNVOLLE VORSORGE ODER ZU VIEL KONTROLLE?“ über der Skyline", "beleg": "–"},
+	"cta": {"bild": "Offizielles FrankfurtRed-Logo, @frankfurtred3, „FOLGEN FÜR MEHR“", "beleg": "–"}
+}

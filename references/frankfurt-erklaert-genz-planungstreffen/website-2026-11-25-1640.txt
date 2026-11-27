@@ -1,0 +1,18 @@
+# Auszug genz-regelt.de, abgerufen 25.11.2026, 16:40 Uhr (MEZ)
+# Startseite (HTML → Text), Zeilen zu Frankfurt:
+ Frankfurt am MainPlatz 1
+ Standort folgt
+–dabei
+Ich bin dabei: Frankfurt am Main
+ Samstag, 12.12., Uhrzeit folgt
+ Telegram-Gruppe Frankfurt
+ –
+
+# Datenliste der Seite (javascript/script.js?v=171), Eintrag Frankfurt:
+7:    { id: "frankfurt", name: "Frankfurt am Main", short: "Frankfurt", place: "Standort folgt", placeEn: "location to follow", unknown: true, lat: 50.1083, lng: 8.6975, lead: true, telegram: "(Link entfernt)" },
+
+# FAQ:
+Gen Z regelt (auch GenZregelt oder #genzregelt), eine überparteiliche Initiative der Generation Z. In Berlin, Frankfurt am Main, München und Köln sind wir hauptverantwortlich für Inhalte und Organisation. Die weiteren Städte haben sich der Initiative angeschlossen und werden von anderen Gruppen vor Ort organisiert. Wer diese Seite betreibt, steht im Impressum.
+
+# Hinweis Telegram/Instagram/TikTok (Fußzeile):
+Neuigkeiten, Treffpunkte und Videos zum 12. Dezember gibt es auf Instagram und TikTok. Für kurzfristige Infos komm in unsere Telegram-Gruppe.

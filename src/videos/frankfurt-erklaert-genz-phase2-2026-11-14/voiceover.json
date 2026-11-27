@@ -1,0 +1,981 @@
+{
+	"version": 1,
+	"videoId": "frankfurt-erklaert-genz-phase2-2026-11-14",
+	"source": "elevenlabs:Adam - Dominant, Firm:pNInz6obpgDQGcFmaJgB:eleven_multilingual_v2",
+	"audioFile": "voiceover/frankfurt-erklaert-genz-phase2-2026-11-14/voiceover-adam.mp3",
+	"durationMs": 58082,
+	"segments": [
+		{
+			"id": "hook1",
+			"startMs": 120,
+			"endMs": 1002,
+			"hash": "f50850868202c0738f23"
+		},
+		{
+			"id": "hook2",
+			"startMs": 1062,
+			"endMs": 4679,
+			"hash": "844fa2168b8ad04ccded"
+		},
+		{
+			"id": "bremen",
+			"startMs": 4739,
+			"endMs": 8646,
+			"hash": "b24d2a814205595b2b22"
+		},
+		{
+			"id": "karlsruhe",
+			"startMs": 8686,
+			"endMs": 12791,
+			"hash": "90edc9d3e4a679968d0f"
+		},
+		{
+			"id": "stuttgart",
+			"startMs": 12831,
+			"endMs": 16273,
+			"hash": "f4e14d6072fdc255520a"
+		},
+		{
+			"id": "berlin1",
+			"startMs": 16333,
+			"endMs": 21356,
+			"hash": "0561db0971bb10e00452"
+		},
+		{
+			"id": "berlin2",
+			"startMs": 21396,
+			"endMs": 27520,
+			"hash": "ece1561876285dffdc26"
+		},
+		{
+			"id": "inc1",
+			"startMs": 27640,
+			"endMs": 31454,
+			"hash": "d8fb8589d84fe65a6d59"
+		},
+		{
+			"id": "inc2",
+			"startMs": 31494,
+			"endMs": 35145,
+			"hash": "f4614425db3652548b34"
+		},
+		{
+			"id": "stats",
+			"startMs": 35265,
+			"endMs": 42122,
+			"hash": "c5c746f8592fd717b063"
+		},
+		{
+			"id": "charges",
+			"startMs": 42162,
+			"endMs": 45372,
+			"hash": "135184a90ab3bb5af3ef"
+		},
+		{
+			"id": "context",
+			"startMs": 45412,
+			"endMs": 50812,
+			"hash": "3e101bc5e98ec6c4f3bd"
+		},
+		{
+			"id": "ffm",
+			"startMs": 50932,
+			"endMs": 55083,
+			"hash": "ece16413ff668595b908"
+		},
+		{
+			"id": "q1",
+			"startMs": 55143,
+			"endMs": 56449,
+			"hash": "c11defe7bd6ee5f159f0"
+		},
+		{
+			"id": "cta",
+			"startMs": 56509,
+			"endMs": 58082,
+			"hash": "61e51d89dc2c0f05aaa7"
+		}
+	],
+	"captions": [
+		{
+			"text": "Ewa,",
+			"startMs": 120,
+			"endMs": 422,
+			"timestampMs": 271,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt!",
+			"startMs": 445,
+			"endMs": 1002,
+			"timestampMs": 724,
+			"confidence": 1
+		},
+		{
+			"text": " Gestern",
+			"startMs": 1062,
+			"endMs": 1399,
+			"timestampMs": 1231,
+			"confidence": 1
+		},
+		{
+			"text": " gab's",
+			"startMs": 1434,
+			"endMs": 1596,
+			"timestampMs": 1515,
+			"confidence": 1
+		},
+		{
+			"text": " wieder",
+			"startMs": 1631,
+			"endMs": 1793,
+			"timestampMs": 1712,
+			"confidence": 1
+		},
+		{
+			"text": " Gen-Z-Proteste",
+			"startMs": 1828,
+			"endMs": 2687,
+			"timestampMs": 2258,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 2734,
+			"endMs": 2792,
+			"timestampMs": 2763,
+			"confidence": 1
+		},
+		{
+			"text": " mehreren",
+			"startMs": 2838,
+			"endMs": 3198,
+			"timestampMs": 3018,
+			"confidence": 1
+		},
+		{
+			"text": " Städten –",
+			"startMs": 3245,
+			"endMs": 3744,
+			"timestampMs": 3495,
+			"confidence": 1
+		},
+		{
+			"text": " Phase",
+			"startMs": 3767,
+			"endMs": 4081,
+			"timestampMs": 3924,
+			"confidence": 1
+		},
+		{
+			"text": " 2.",
+			"startMs": 4127,
+			"endMs": 4679,
+			"timestampMs": 4499,
+			"confidence": 1
+		},
+		{
+			"text": " Bremen:",
+			"startMs": 4739,
+			"endMs": 5401,
+			"timestampMs": 5070,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 5528,
+			"endMs": 5691,
+			"timestampMs": 5610,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 5726,
+			"endMs": 6190,
+			"timestampMs": 5958,
+			"confidence": 1
+		},
+		{
+			"text": " bis",
+			"startMs": 6248,
+			"endMs": 6388,
+			"timestampMs": 6318,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 6457,
+			"endMs": 6562,
+			"timestampMs": 6510,
+			"confidence": 1
+		},
+		{
+			"text": " 670",
+			"startMs": 6643,
+			"endMs": 7479,
+			"timestampMs": 7061,
+			"confidence": 1
+		},
+		{
+			"text": " Leute,",
+			"startMs": 7525,
+			"endMs": 7897,
+			"timestampMs": 7711,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich.",
+			"startMs": 7967,
+			"endMs": 8646,
+			"timestampMs": 8443,
+			"confidence": 1
+		},
+		{
+			"text": " Karlsruhe:",
+			"startMs": 8686,
+			"endMs": 9568,
+			"timestampMs": 9127,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 9795,
+			"endMs": 10027,
+			"timestampMs": 9911,
+			"confidence": 1
+		},
+		{
+			"text": " 220,",
+			"startMs": 10073,
+			"endMs": 11234,
+			"timestampMs": 10654,
+			"confidence": 1
+		},
+		{
+			"text": " weitgehend",
+			"startMs": 11426,
+			"endMs": 12053,
+			"timestampMs": 11740,
+			"confidence": 1
+		},
+		{
+			"text": " friedlich.",
+			"startMs": 12111,
+			"endMs": 12791,
+			"timestampMs": 12558,
+			"confidence": 1
+		},
+		{
+			"text": " Stuttgart:",
+			"startMs": 12831,
+			"endMs": 13435,
+			"timestampMs": 13133,
+			"confidence": 1
+		},
+		{
+			"text": " mehrere",
+			"startMs": 13562,
+			"endMs": 13946,
+			"timestampMs": 13754,
+			"confidence": 1
+		},
+		{
+			"text": " Hundert –",
+			"startMs": 13980,
+			"endMs": 14491,
+			"timestampMs": 14236,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 14619,
+			"endMs": 14723,
+			"timestampMs": 14671,
+			"confidence": 1
+		},
+		{
+			"text": " Demozug",
+			"startMs": 14781,
+			"endMs": 15304,
+			"timestampMs": 15043,
+			"confidence": 1
+		},
+		{
+			"text": " wurde",
+			"startMs": 15339,
+			"endMs": 15490,
+			"timestampMs": 15415,
+			"confidence": 1
+		},
+		{
+			"text": " untersagt.",
+			"startMs": 15525,
+			"endMs": 16273,
+			"timestampMs": 15943,
+			"confidence": 1
+		},
+		{
+			"text": " Und",
+			"startMs": 16333,
+			"endMs": 16461,
+			"timestampMs": 16397,
+			"confidence": 1
+		},
+		{
+			"text": " Berlin?",
+			"startMs": 16507,
+			"endMs": 17064,
+			"timestampMs": 16786,
+			"confidence": 1
+		},
+		{
+			"text": " Krass:",
+			"startMs": 17245,
+			"endMs": 17904,
+			"timestampMs": 17575,
+			"confidence": 1
+		},
+		{
+			"text": " Angemeldet",
+			"startMs": 18064,
+			"endMs": 18633,
+			"timestampMs": 18349,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 18656,
+			"endMs": 18877,
+			"timestampMs": 18767,
+			"confidence": 1
+		},
+		{
+			"text": " 100,",
+			"startMs": 18912,
+			"endMs": 19225,
+			"timestampMs": 19069,
+			"confidence": 1
+		},
+		{
+			"text": " gekommen",
+			"startMs": 19248,
+			"endMs": 19550,
+			"timestampMs": 19399,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 19573,
+			"endMs": 19701,
+			"timestampMs": 19637,
+			"confidence": 1
+		},
+		{
+			"text": " laut",
+			"startMs": 19771,
+			"endMs": 19910,
+			"timestampMs": 19841,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 19957,
+			"endMs": 20363,
+			"timestampMs": 20160,
+			"confidence": 1
+		},
+		{
+			"text": " rund",
+			"startMs": 20409,
+			"endMs": 20560,
+			"timestampMs": 20485,
+			"confidence": 1
+		},
+		{
+			"text": " 1.200.",
+			"startMs": 20595,
+			"endMs": 21356,
+			"timestampMs": 21112,
+			"confidence": 1
+		},
+		{
+			"text": " 700",
+			"startMs": 21396,
+			"endMs": 22023,
+			"timestampMs": 21710,
+			"confidence": 1
+		},
+		{
+			"text": " Polizisten",
+			"startMs": 22058,
+			"endMs": 22569,
+			"timestampMs": 22314,
+			"confidence": 1
+		},
+		{
+			"text": " waren",
+			"startMs": 22603,
+			"endMs": 22847,
+			"timestampMs": 22725,
+			"confidence": 1
+		},
+		{
+			"text": " im",
+			"startMs": 22882,
+			"endMs": 22940,
+			"timestampMs": 22911,
+			"confidence": 1
+		},
+		{
+			"text": " Einsatz,",
+			"startMs": 23021,
+			"endMs": 23555,
+			"timestampMs": 23288,
+			"confidence": 1
+		},
+		{
+			"text": " der",
+			"startMs": 23730,
+			"endMs": 23834,
+			"timestampMs": 23782,
+			"confidence": 1
+		},
+		{
+			"text": " Zug",
+			"startMs": 23869,
+			"endMs": 24055,
+			"timestampMs": 23962,
+			"confidence": 1
+		},
+		{
+			"text": " lief",
+			"startMs": 24113,
+			"endMs": 24264,
+			"timestampMs": 24189,
+			"confidence": 1
+		},
+		{
+			"text": " vom",
+			"startMs": 24298,
+			"endMs": 24473,
+			"timestampMs": 24386,
+			"confidence": 1
+		},
+		{
+			"text": " Savignyplatz",
+			"startMs": 24542,
+			"endMs": 25483,
+			"timestampMs": 25013,
+			"confidence": 1
+		},
+		{
+			"text": " über",
+			"startMs": 25541,
+			"endMs": 25668,
+			"timestampMs": 25605,
+			"confidence": 1
+		},
+		{
+			"text": " den",
+			"startMs": 25692,
+			"endMs": 25785,
+			"timestampMs": 25739,
+			"confidence": 1
+		},
+		{
+			"text": " Ku'damm",
+			"startMs": 25843,
+			"endMs": 26261,
+			"timestampMs": 26052,
+			"confidence": 1
+		},
+		{
+			"text": " bis",
+			"startMs": 26330,
+			"endMs": 26493,
+			"timestampMs": 26412,
+			"confidence": 1
+		},
+		{
+			"text": " Halensee.",
+			"startMs": 26586,
+			"endMs": 27520,
+			"timestampMs": 27126,
+			"confidence": 1
+		},
+		{
+			"text": " Laut",
+			"startMs": 27640,
+			"endMs": 27837,
+			"timestampMs": 27739,
+			"confidence": 1
+		},
+		{
+			"text": " Polizei",
+			"startMs": 27872,
+			"endMs": 28279,
+			"timestampMs": 28076,
+			"confidence": 1
+		},
+		{
+			"text": " versuchten",
+			"startMs": 28313,
+			"endMs": 28685,
+			"timestampMs": 28499,
+			"confidence": 1
+		},
+		{
+			"text": " einige",
+			"startMs": 28755,
+			"endMs": 29033,
+			"timestampMs": 28894,
+			"confidence": 1
+		},
+		{
+			"text": " Teilnehmende,",
+			"startMs": 29091,
+			"endMs": 29811,
+			"timestampMs": 29451,
+			"confidence": 1
+		},
+		{
+			"text": " die",
+			"startMs": 29834,
+			"endMs": 29927,
+			"timestampMs": 29881,
+			"confidence": 1
+		},
+		{
+			"text": " Polizeikette",
+			"startMs": 29962,
+			"endMs": 30589,
+			"timestampMs": 30276,
+			"confidence": 1
+		},
+		{
+			"text": " zu",
+			"startMs": 30647,
+			"endMs": 30717,
+			"timestampMs": 30682,
+			"confidence": 1
+		},
+		{
+			"text": " durchbrechen.",
+			"startMs": 30763,
+			"endMs": 31454,
+			"timestampMs": 31245,
+			"confidence": 1
+		},
+		{
+			"text": " Später",
+			"startMs": 31494,
+			"endMs": 31877,
+			"timestampMs": 31686,
+			"confidence": 1
+		},
+		{
+			"text": " gab's",
+			"startMs": 31924,
+			"endMs": 32191,
+			"timestampMs": 32058,
+			"confidence": 1
+		},
+		{
+			"text": " Pyrotechnik",
+			"startMs": 32318,
+			"endMs": 32945,
+			"timestampMs": 32632,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 33015,
+			"endMs": 33096,
+			"timestampMs": 33056,
+			"confidence": 1
+		},
+		{
+			"text": " Auseinandersetzungen",
+			"startMs": 33166,
+			"endMs": 34025,
+			"timestampMs": 33596,
+			"confidence": 1
+		},
+		{
+			"text": " bei",
+			"startMs": 34083,
+			"endMs": 34188,
+			"timestampMs": 34136,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen.",
+			"startMs": 34234,
+			"endMs": 35145,
+			"timestampMs": 34745,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 35265,
+			"endMs": 35404,
+			"timestampMs": 35335,
+			"confidence": 1
+		},
+		{
+			"text": " Bilanz",
+			"startMs": 35428,
+			"endMs": 35857,
+			"timestampMs": 35643,
+			"confidence": 1
+		},
+		{
+			"text": " von",
+			"startMs": 36089,
+			"endMs": 36287,
+			"timestampMs": 36188,
+			"confidence": 1
+		},
+		{
+			"text": " Sonntag:",
+			"startMs": 36333,
+			"endMs": 36902,
+			"timestampMs": 36618,
+			"confidence": 1
+		},
+		{
+			"text": " 20",
+			"startMs": 37041,
+			"endMs": 37413,
+			"timestampMs": 37227,
+			"confidence": 1
+		},
+		{
+			"text": " vorläufige",
+			"startMs": 37436,
+			"endMs": 37924,
+			"timestampMs": 37680,
+			"confidence": 1
+		},
+		{
+			"text": " Festnahmen,",
+			"startMs": 37959,
+			"endMs": 38609,
+			"timestampMs": 38284,
+			"confidence": 1
+		},
+		{
+			"text": " 28",
+			"startMs": 38801,
+			"endMs": 39381,
+			"timestampMs": 39091,
+			"confidence": 1
+		},
+		{
+			"text": " Strafanzeigen,",
+			"startMs": 39405,
+			"endMs": 40229,
+			"timestampMs": 39817,
+			"confidence": 1
+		},
+		{
+			"text": " drei",
+			"startMs": 40456,
+			"endMs": 40700,
+			"timestampMs": 40578,
+			"confidence": 1
+		},
+		{
+			"text": " verletzte",
+			"startMs": 40769,
+			"endMs": 41176,
+			"timestampMs": 40973,
+			"confidence": 1
+		},
+		{
+			"text": " Polizisten.",
+			"startMs": 41222,
+			"endMs": 42122,
+			"timestampMs": 41826,
+			"confidence": 1
+		},
+		{
+			"text": " Die",
+			"startMs": 42162,
+			"endMs": 42301,
+			"timestampMs": 42232,
+			"confidence": 1
+		},
+		{
+			"text": " Vorwürfe:",
+			"startMs": 42348,
+			"endMs": 42998,
+			"timestampMs": 42673,
+			"confidence": 1
+		},
+		{
+			"text": " unter",
+			"startMs": 43126,
+			"endMs": 43323,
+			"timestampMs": 43225,
+			"confidence": 1
+		},
+		{
+			"text": " anderem",
+			"startMs": 43369,
+			"endMs": 43636,
+			"timestampMs": 43503,
+			"confidence": 1
+		},
+		{
+			"text": " Landfriedensbruch",
+			"startMs": 43706,
+			"endMs": 44414,
+			"timestampMs": 44060,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 44484,
+			"endMs": 44588,
+			"timestampMs": 44536,
+			"confidence": 1
+		},
+		{
+			"text": " Widerstand.",
+			"startMs": 44635,
+			"endMs": 45372,
+			"timestampMs": 45047,
+			"confidence": 1
+		},
+		{
+			"text": " Das",
+			"startMs": 45412,
+			"endMs": 45598,
+			"timestampMs": 45505,
+			"confidence": 1
+		},
+		{
+			"text": " betrifft",
+			"startMs": 45633,
+			"endMs": 45923,
+			"timestampMs": 45778,
+			"confidence": 1
+		},
+		{
+			"text": " einzelne",
+			"startMs": 45969,
+			"endMs": 46341,
+			"timestampMs": 46155,
+			"confidence": 1
+		},
+		{
+			"text": " Vorfälle,",
+			"startMs": 46387,
+			"endMs": 46875,
+			"timestampMs": 46631,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 46898,
+			"endMs": 47072,
+			"timestampMs": 46985,
+			"confidence": 1
+		},
+		{
+			"text": " alle",
+			"startMs": 47119,
+			"endMs": 47258,
+			"timestampMs": 47189,
+			"confidence": 1
+		},
+		{
+			"text": " Demonstrierenden –",
+			"startMs": 47304,
+			"endMs": 48256,
+			"timestampMs": 47780,
+			"confidence": 1
+		},
+		{
+			"text": " und",
+			"startMs": 48426,
+			"endMs": 48519,
+			"timestampMs": 48473,
+			"confidence": 1
+		},
+		{
+			"text": " festgenommen",
+			"startMs": 48554,
+			"endMs": 49053,
+			"timestampMs": 48804,
+			"confidence": 1
+		},
+		{
+			"text": " heißt",
+			"startMs": 49123,
+			"endMs": 49460,
+			"timestampMs": 49292,
+			"confidence": 1
+		},
+		{
+			"text": " nicht",
+			"startMs": 49587,
+			"endMs": 49889,
+			"timestampMs": 49738,
+			"confidence": 1
+		},
+		{
+			"text": " verurteilt.",
+			"startMs": 49947,
+			"endMs": 50812,
+			"timestampMs": 50516,
+			"confidence": 1
+		},
+		{
+			"text": " Am",
+			"startMs": 50932,
+			"endMs": 51106,
+			"timestampMs": 51019,
+			"confidence": 1
+		},
+		{
+			"text": " 20.",
+			"startMs": 51129,
+			"endMs": 51512,
+			"timestampMs": 51321,
+			"confidence": 1
+		},
+		{
+			"text": " November",
+			"startMs": 51547,
+			"endMs": 51861,
+			"timestampMs": 51704,
+			"confidence": 1
+		},
+		{
+			"text": " sind",
+			"startMs": 51884,
+			"endMs": 52000,
+			"timestampMs": 51942,
+			"confidence": 1
+		},
+		{
+			"text": " weitere",
+			"startMs": 52035,
+			"endMs": 52314,
+			"timestampMs": 52175,
+			"confidence": 1
+		},
+		{
+			"text": " Jugendproteste",
+			"startMs": 52360,
+			"endMs": 53033,
+			"timestampMs": 52697,
+			"confidence": 1
+		},
+		{
+			"text": " angekündigt –",
+			"startMs": 53080,
+			"endMs": 53811,
+			"timestampMs": 53446,
+			"confidence": 1
+		},
+		{
+			"text": " auch",
+			"startMs": 53904,
+			"endMs": 54102,
+			"timestampMs": 54003,
+			"confidence": 1
+		},
+		{
+			"text": " in",
+			"startMs": 54148,
+			"endMs": 54218,
+			"timestampMs": 54183,
+			"confidence": 1
+		},
+		{
+			"text": " Frankfurt.",
+			"startMs": 54276,
+			"endMs": 55083,
+			"timestampMs": 54857,
+			"confidence": 1
+		},
+		{
+			"text": " Wie",
+			"startMs": 55143,
+			"endMs": 55294,
+			"timestampMs": 55219,
+			"confidence": 1
+		},
+		{
+			"text": " bewertet",
+			"startMs": 55317,
+			"endMs": 55654,
+			"timestampMs": 55486,
+			"confidence": 1
+		},
+		{
+			"text": " ihr",
+			"startMs": 55700,
+			"endMs": 55805,
+			"timestampMs": 55753,
+			"confidence": 1
+		},
+		{
+			"text": " Berlin?",
+			"startMs": 55840,
+			"endMs": 56449,
+			"timestampMs": 56235,
+			"confidence": 1
+		},
+		{
+			"text": " Folgt",
+			"startMs": 56509,
+			"endMs": 56753,
+			"timestampMs": 56631,
+			"confidence": 1
+		},
+		{
+			"text": " FrankfurtRed3",
+			"startMs": 56776,
+			"endMs": 57531,
+			"timestampMs": 57154,
+			"confidence": 1
+		},
+		{
+			"text": " für",
+			"startMs": 57577,
+			"endMs": 57682,
+			"timestampMs": 57630,
+			"confidence": 1
+		},
+		{
+			"text": " mehr!",
+			"startMs": 57705,
+			"endMs": 58082,
+			"timestampMs": 57920,
+			"confidence": 1
+		}
+	],
+	"captionsSource": "elevenlabs-alignment",
+	"generatedAt": "2026-11-15T17:09:44.265Z",
+	"voice": {
+		"provider": "elevenlabs",
+		"name": "Adam - Dominant, Firm",
+		"voiceId": "pNInz6obpgDQGcFmaJgB",
+		"category": "premade",
+		"modelId": "eleven_multilingual_v2",
+		"voiceSettings": {
+			"stability": 0.45,
+			"similarity_boost": 0.8,
+			"style": 0.2,
+			"use_speaker_boost": true,
+			"speed": 1.2
+		},
+		"seed": 20261104,
+		"characters": 1023
+	},
+	"measuredLufsBeforeMaster": -13.73
+}
